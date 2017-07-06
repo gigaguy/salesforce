@@ -1,0 +1,6 @@
+<aura:event type="APPLICATION" description="Event template">
+  <aura:attribute name="candpkg" type="TQB_Candidate_Package__c"/>
+  <aura:attribute name="candAttachedDocId" type="Id"/>
+  <aura:attribute name="candAttachedDocName" type="String"  />
+  <aura:attribute name="candAttachedDocType" type="String" />
+</aura:event>

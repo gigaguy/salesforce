@@ -1,0 +1,21 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+
+
+  
+ 	<aura:attribute name="candPackage" type="TQB_Candidate_Package__c"/>
+ 	<aura:attribute name="loggedInUserRole" type="User" />
+  <aura:attribute name="comment" type="TQB_Comment__c"/>
+  <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
+  <!-- added by Chris 6/7/2017 -->
+  <aura:handler event="c:TQBCPAttachNavigator" action="{!c.populateInitMethods}"/> 
+
+
+    <div aura:id="messages">
+      {!v.messages}
+    </div>
+
+	<!-- call the file controller component -->
+    <div class="slds-panel__section" aura:id="ListAttachmentView">
+        <c:TQBFileController />
+    </div>
+</aura:component>

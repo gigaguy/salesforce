@@ -1,0 +1,93 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+    <aura:attribute name="candPackage" type="TQB_Candidate_Package__c"/>
+    <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
+    <aura:attribute name="loggedInUserRole" type="User" />
+    <aura:attribute name="listOfTQBPanelMembers" type="User[]" />
+    <aura:attribute name="checkedPanelMembersName" type="String[]" />
+    <aura:attribute name="coordinatorEmail" type="String" />
+
+    <aura:attribute name="selectedRecord" type="User" default="{}" />
+
+    <aura:handler name="oSelectedUserEvent" event="c:TQBSearchSelectedPanelMember" action="{!c.handlePanelMember}"/>
+
+    <div aura:id="messages">
+      {!v.messages}
+    </div>
+
+     <div class="slds-size--1-of-3">
+        <c:TQBCustomLookUp />
+     </div>
+
+    <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+      <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+       <div class="slds-panel__section">
+        <h3 class="slds-text-heading_small slds-m-bottom_medium">TQB Panel Members</h3>
+         <form role="form" class="slds-form slds-form--stacked slds-grid slds-wrap">
+          <div class="slds-col--padded slds-size--2-of-3">
+            <div class="slds-form-element">
+                 <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_striped">
+                    <thead>
+                      <tr class="slds-text-title_caps">
+                        <th scope="col">
+                         <div class="slds-truncate" title="Full Name"> Full Name</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Title">Title</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Phone">Phone</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Email">Email</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Delete"></div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                       <aura:iteration items="{!v.listOfTQBPanelMembers}" var="tqbPanelMember">
+                         <tr>
+    						           <td scope="row" data-label="FullName">
+    						             <div class="slds-truncate" title="FullName">
+    						               {!tqbPanelMember.Name}
+    						             </div>
+    						           </td>
+  						             <td data-label="Title">
+  						               <div class="slds-truncate" title="Title">
+  						        	      {!tqbPanelMember.Title}
+  						               </div>
+  						              </td>
+  						              <td data-label="Phone">
+  						                <div class="slds-truncate" title="Phone">{!tqbPanelMember.Phone}</div>
+  						              </td>
+  						              <td data-label="Email">
+  						                <div class="slds-truncate" title="Phone">{!tqbPanelMember.Email}</div>
+  						             </td>
+                           <td data-label="Delete">
+                              <div class="slds-truncate" title="Delete">
+                                <button type="button" aura:id="tqbPanelMemberButton" class="slds-button slds-button--neutral" data-record="{!tqbPanelMember.Id}" onclick="{!c.deletePanelMemberController}">Delete</button>
+                              </div>
+                           </td>
+						             </tr>
+                       </aura:iteration>
+                   </tbody>
+                   </table>
+              </div>
+            </div>
+            <div class="slds-col--padded slds-size--1-of-3">
+            </div>
+          </form>
+	    </div>
+	  </div>
+	</div>
+  <div>
+    <br/>
+      <div class="slds-col--padded slds-size--1-of-3">
+         <ui:inputText label="Coordinator Email:" value="{!v.coordinatorEmail}" required="true"/>
+         <br/>
+         <ui:button aura:id="button" buttonTitle="Notify" class="button" label="Notify Coordinator" press="{!c.notifyCoordinator}"/>
+      </div>
+    <br/>
+  </div>
+</aura:component>

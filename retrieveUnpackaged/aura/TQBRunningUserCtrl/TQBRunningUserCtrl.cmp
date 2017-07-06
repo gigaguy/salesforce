@@ -1,0 +1,13 @@
+<!--  
+//
+//
+// Author: Chris Alley
+// Purpose: TQBRunningUserCtrl controller that displays
+// the current running user name on TQB app web pages.
+//
+-->
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="TQBRunningUserCtrl">
+    <aura:attribute name="runningUser" type="User" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <p>User: <ui:outputText value="{!v.runningUser.FirstName + ' ' + v.runningUser.LastName}"/></p>
+</aura:component>

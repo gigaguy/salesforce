@@ -1,0 +1,111 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+
+  <aura:attribute name="candPackage" type="TQB_Candidate_Package__c"/>
+  <aura:attribute name="candLOI" type="TQB_Letter_of_Intent__c" />
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <aura:attribute name="listOfQuestions" type="TQB_Candidate_Questionnaire__c[]"/>
+  <aura:attribute name="loggedInUserRole" type="User" />
+  <aura:handler event="c:TQBCPQuestionNavigator" action="{!c.populateQA}"/>
+  <aura:handler event="c:TQBCPViewQA" action="{!c.showQADetailHideList}"/>
+  <aura:handler event="c:TQBCPEditQA" action="{!c.showEditQAHideList}"/>
+  <!--<aura:handler event="c:TQBCPBackToQAList" action="{!c.backToQAList}"/>-->
+  <aura:handler event="c:TQBCPBackToQAView" action="{!c.showQADetailHideList}"/>
+
+  <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
+
+  <!-- Render the CP header summary information  -->
+  <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+    <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+      <div class="slds-panel__section">
+        <h3 class="slds-text-heading_small slds-m-bottom_medium">Candidate Information</h3>
+         <form role="form" class="slds-form slds-form--stacked slds-grid slds-wrap">
+          <div class="slds-col--padded slds-size--1-of-3">
+              <div class="slds-form-element">
+                  <aura:if isTrue="{!(v.loggedInUserRole.UserRole.Name != 'TQB Candidate Role')}">
+                       <label class="slds-form-element__label" for="combobox-unique-id">Candidate Name</label>
+                       <div class="slds-form-element__control">
+                          <ui:outputText value="{!v.candLOI.Candidate_Name__c}" />
+                       </div>
+                  </aura:if>
+                  <aura:if isTrue="{!(v.loggedInUserRole.UserRole.Name != 'TQB 1st Line Supervisor Role')}">
+                        <label class="slds-form-element__label" for="combobox-unique-id">1st Line Supervisor</label>
+                        <div class="slds-form-element__control">
+                          <ui:outputText value="{!v.candPackage.Candidates_1st_Line_Supervisor_Name__r.Name}" />
+                        </div>
+                  </aura:if>
+                  <aura:if isTrue="{!(v.loggedInUserRole.UserRole.Name != 'TQB 2nd Line Supervisor Role')}">
+                        <label class="slds-form-element__label" for="combobox-unique-id">2nd Line Supervisor</label>
+                        <div class="slds-form-element__control">
+                          <ui:outputText value="{!v.candPackage.Candidates_2nd_Line_Supervisor_Name__r.Name}" />
+                        </div>
+                  </aura:if>
+              </div>
+           </div>
+           <div class="slds-col--padded slds-size--1-of-3">
+                <label class="slds-form-element__label" for="combobox-unique-id">Package Name</label>
+                <div class="slds-form-element__control">
+                  <ui:outputText value="{!v.candPackage.Name}" />
+                </div>
+                <label class="slds-form-element__label" for="combobox-unique-id">Current Lab Work Location</label>
+                <div class="slds-form-element__control">
+                  <ui:outputDate value="{!v.candLOI.Current_Lab_Work_Location_Assignment__c}" />
+                </div>
+           </div>
+           <div class="slds-col--padded slds-size--1-of-3">
+                <div class="slds-form-element ">
+                  <label class="slds-form-element__label" for="combobox-unique-id">Intended Track</label>
+                  <div class="slds-form-element__control">
+                    <ui:outputText value="{!v.candLOI.IntendedTrack__c}" />
+                  </div>
+                  <label class="slds-form-element__label" for="combobox-unique-id">GS Level</label>
+                  <div class="slds-form-element__control">
+                    <ui:outputDate value="{!v.candLOI.Current_GS_Level__c}" />
+                  </div>
+                </div>
+           </div>
+         </form>
+      </div>
+    </div>
+  </div>
+  <hr/>
+
+  <div class="slds-panel__section" aura:id="questionListView">
+    <h3 class="slds-text-heading_small slds-m-bottom_medium">Questionnaire</h3>
+    <br/>
+    <div aura:id="messages">
+      {!v.messages}
+    </div>
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_striped slds-size--2-of-3 slds-table--fixed-layout">
+      <thead>
+        <tr class="slds-text-title_caps">
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Category">Category</div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Question">Question</div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Answer">Answer</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <aura:iteration items="{!v.listOfQuestions}" var="question" indexVar="index">
+          <c:TQBCPWizardQA candPackage="{!v.candPackage}" questionIndex="{!index+1}" question="{!question}"/>
+        </aura:iteration>
+      </tbody>
+    </table>
+    <br/>
+    <button type="button" class="slds-button slds-button--neutral" onclick="{!c.goToAttach}">Next</button>
+  </div>
+
+
+  <div class="slds-panel__section" aura:id="questionDetailView">
+    <c:TQBCPWizardQAView />
+  </div>
+
+  <div class="slds-panel__section" aura:id="questionEditView">
+    <c:TQBCPWizardQAEdit />
+  </div>
+
+</aura:component>

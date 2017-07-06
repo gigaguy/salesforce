@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Letters that candidates fill out and submit to communicate their intent to pursue a promotion.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Candidate_Address__c</fullName>
+        <description>Candidates Address</description>
+        <externalId>false</externalId>
+        <formula>$User.Street&amp; &quot; &quot; &amp; $User.City &amp; &quot; &quot; &amp; $User.State &amp; &quot; &quot; &amp;  $User.PostalCode</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Candidates Address</inlineHelpText>
+        <label>Candidate Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Candidate_Name__c</fullName>
+        <description>Users first and last name for display on the LOI</description>
+        <externalId>false</externalId>
+        <formula>CreatedBy.FirstName &amp;&apos; &apos;  &amp; CreatedBy.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Users first and last name for display on the LOI</inlineHelpText>
+        <label>Candidate Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Candidates_1st_Line_Supervisor_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Candidates 1st Line Supervisor</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Candidates 1st Line Supervisor</inlineHelpText>
+        <label>Candidates 1st Line Supervisor Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.UserRole.DeveloperName</field>
+                <operation>equals</operation>
+                <value>X1st_Line_Supervisor_Role</value>
+            </filterItems>
+            <infoMessage>Please select your 1st Line Supervisors Name.</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>TQB_Letters_of_Intent2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Candidates_2nd_Line_Supervisor_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Candidates 2nd Line Supervisor Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Candidates 2nd Line Supervisor Name</inlineHelpText>
+        <label>Candidates 2nd Line Supervisor Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.UserRole.DeveloperName</field>
+                <operation>equals</operation>
+                <value>X2nd_Line_Supervisor_Role</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>TQB_Letters_of_Intent3</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CurrentRegion__c</fullName>
+        <description>Candidates EPA work region</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Candidates EPA work region</inlineHelpText>
+        <label>Current Region</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Region 1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Region 10</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Current_GS_Level__c</fullName>
+        <description>Candidates Current GS Level</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Candidates Current GS Level</inlineHelpText>
+        <label>Current GS Level</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>GS 13</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GS 14</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GS 15</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Current_Lab_Work_Location_Assignment__c</fullName>
+        <description>Candidates current physical work location</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Candidates current physical work location</inlineHelpText>
+        <label>Current Lab Work Location Assignment</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>National_Health_and_Environmental_Effects_Research_Lab</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>National_Exposure_Research_Lab</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>National_Risk_Management_Research_Lab</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>National_Center_for_Environmental_Assessment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>National Center for Computational Toxicology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>National Homeland Security Research Center</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>National Center for Environmental Research</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>National Research Programs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Immediate Office of the Assistant Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of the Science Adviser</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Science Policy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Science Information Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Program Accountability and Resource Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Office of Administration and Research Support</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IntendedTrack__c</fullName>
+        <description>Candidates intended promotion track.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Candidates intended promotion track.</inlineHelpText>
+        <label>Intended Track</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Research</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Expert</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LOI_Reject_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>LOI Reject Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>--None--</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Candidate does not meet length of employment requirement.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Candidate does not meet education requirement.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Candidate does not meet experience requirement.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Candidate does not meet promotion prerequisite.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Candidate received below average performance review.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Candidate received below average peer review.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Review_Comments__c</fullName>
+        <description>Comments about the Letter of intent</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Comments</inlineHelpText>
+        <label>Review Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>30</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status_Date__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <externalId>false</externalId>
+        <label>Status Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Returned</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>TQB Letter of Intent</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Candidate_Name__c</columns>
+        <columns>Candidates_1st_Line_Supervisor_Name__c</columns>
+        <columns>Candidates_2nd_Line_Supervisor_Name__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Current_GS_Level__c</columns>
+        <columns>Current_Lab_Work_Location_Assignment__c</columns>
+        <columns>IntendedTrack__c</columns>
+        <columns>CurrentRegion__c</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <columns>Status__c</columns>
+        <columns>Status_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>LOI-{00000000}</displayFormat>
+        <label>TQB Letter Of Intent</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>TQB Letters of Intent</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Conditional_status_approved</fullName>
+        <active>false</active>
+        <description>No reject reason should be selected when status is approved</description>
+        <errorConditionFormula>ISPICKVAL( Status__c , &quot;Rejected&quot;) = False  &amp;&amp;  ISBLANK( LOI_Reject_Reason__c ) = False</errorConditionFormula>
+        <errorMessage>Reject reason should not be selected when status is other than Rejected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Conditional_status_rejected</fullName>
+        <active>true</active>
+        <description>user can select reject reasons only when status is rejected</description>
+        <errorConditionFormula>$Profile.Name = &quot;TQB 1st Line Supervisor Profile&quot;  &amp;&amp; ISPICKVAL( Status__c ,&quot;Rejected&quot;)   &amp;&amp;  ISBLANK(TEXT( LOI_Reject_Reason__c ))</errorConditionFormula>
+        <errorMessage>LOI Reject Reason should be selected when status is in Rejected</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Status_field_value_1st_supervisor</fullName>
+        <active>true</active>
+        <description>1st line supervisor should select any status value other than Not Started, Submitted</description>
+        <errorConditionFormula>$Profile.Name =&quot;TQB 1st Line Supervisor Profile&quot;  &amp;&amp; (ISPICKVAL( Status__c , &quot;Not Started&quot;) || ISPICKVAL( Status__c , &quot;In Progress&quot;))</errorConditionFormula>
+        <errorDisplayField>Status__c</errorDisplayField>
+        <errorMessage>Incorrect status value selected</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Status_value</fullName>
+        <active>true</active>
+        <description>Status field value should be valid one</description>
+        <errorConditionFormula>$Profile.Name =&quot;TQB 1st Line Supervisor Profile&quot;  &amp;&amp;  ISBLANK(TEXT(  Status__c ))</errorConditionFormula>
+        <errorDisplayField>Status__c</errorDisplayField>
+        <errorMessage>Status field cannot be blank</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>condition_status_returned</fullName>
+        <active>true</active>
+        <description>if the user selects Returned as status value then review comments field should be filled out</description>
+        <errorConditionFormula>$Profile.Name = &quot;TQB 1st Line Supervisor Profile&quot;  &amp;&amp; ISPICKVAL( Status__c ,&quot;Returned&quot;)  &amp;&amp;    LEN( Review_Comments__c ) = 0</errorConditionFormula>
+        <errorMessage>Review comments should be filled out if the status is Returned</errorMessage>
+    </validationRules>
+</CustomObject>

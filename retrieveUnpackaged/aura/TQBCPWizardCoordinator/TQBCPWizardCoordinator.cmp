@@ -1,0 +1,214 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+    <aura:attribute name="candPackage" type="TQB_Candidate_Package__c"/>
+    <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
+    <aura:attribute name="loggedInUserRole" type="User" />
+    <aura:attribute name="listOfTQBChairPersons" type="User[]" />
+    <aura:attribute name="listOfTQBPanelMembers" type="User[]" />
+    <aura:attribute name="IsChairPersonEmailreceived" type="Boolean" />
+    <aura:attribute name="tqbChairPersonName" type="String" />
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    <aura:attribute name="listOfAdhocSelectedMembers" type="TQB_Ad_Hoc_Entry__c[]" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <div aura:id="messages">
+      {!v.messages}
+    </div>
+
+   
+ <aura:if isTrue="{!v.IsChairPersonEmailreceived}">
+  <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+      <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+       <div class="slds-panel__section">
+        <div>
+          <h1 class="slds-text-heading_small slds-m-bottom_medium"><b>Selected Chair Person:</b>{!v.tqbChairPersonName}</h1>
+        </div>
+        <br/>
+        <h3 class="slds-text-heading_small slds-m-bottom_medium">TQB Panel Members</h3>
+         <form role="form" class="slds-form slds-form--stacked slds-grid slds-wrap">
+          <div class="slds-col--padded slds-size--2-of-3">
+            <div class="slds-form-element">
+                 <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_striped">
+                    <thead>
+                      <tr class="slds-text-title_caps">
+                        <th scope="col">
+                         <div class="slds-truncate" title="Full Name"> Full Name</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Title">Title</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Phone">Phone</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Email">Email</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Action">Action</div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                       <aura:iteration items="{!v.listOfTQBPanelMembers}" var="tqbPanelMember">
+                         <tr>
+                           <td scope="row" data-label="FullName">
+                             <div class="slds-truncate" title="FullName">
+                               {!tqbPanelMember.Name}
+                             </div>
+                           </td>
+                           <td data-label="Title">
+                             <div class="slds-truncate" title="Title">
+                              {!tqbPanelMember.Title}
+                             </div>
+                            </td>
+                            <td data-label="Phone">
+                              <div class="slds-truncate" title="Phone">{!tqbPanelMember.Phone}</div>
+                            </td>
+                            <td data-label="Email">
+                              <div class="slds-truncate" title="Phone">{!tqbPanelMember.Email}</div>
+                           </td>
+                           <td data-label="Delete">
+                              <div class="slds-truncate" title="Delete">
+                                <button type="button" aura:id="tqbPanelMemberNotifyButton" class="slds-button slds-button--neutral" data-record="{!tqbPanelMember.Id}" onclick="{!c.sendNotificationToPanelPerson}">Notify</button>
+                                <button type="button" aura:id="tqbPanelMemberButton" class="slds-button slds-button--neutral" data-record="{!tqbPanelMember.Id}" onclick="{!c.deletePanelMemberController}">Delete</button>
+                                <button type="button" class="slds-button slds-button--neutral" onclick="{!c.addPanelMemberComment}" data-record="{!tqbPanelMember.Id}">Add Comment</button>
+                              </div>
+                           </td>
+                         </tr>
+                       </aura:iteration>
+                   </tbody>
+                   </table>
+              </div>
+            </div>
+            <div class="slds-col--padded slds-size--1-of-3">
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+<aura:set attribute="else">
+   <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+      <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+       <div class="slds-panel__section">
+        <h3 class="slds-text-heading_small slds-m-bottom_medium">TQB Chair Persons</h3>
+         <form role="form" class="slds-form slds-form--stacked slds-grid slds-wrap">
+          <div class="slds-col--padded slds-size--2-of-3">
+            <div class="slds-form-element">
+                 <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_striped">
+                    <thead>
+                      <tr class="slds-text-title_caps">
+                        <th scope="col">
+                         <div class="slds-truncate" title="Full Name"> Full Name</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Title">Title</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Phone">Phone</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Email">Email</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Action"></div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                       <aura:iteration items="{!v.listOfTQBChairPersons}" var="tqbChairPerson">
+                         <tr>
+                  <th scope="row" data-label="FullName">
+                    <div class="slds-truncate" title="FullName">
+                      {!tqbChairPerson.Name}
+                    </div>
+                  </th>
+                  <td data-label="Title">
+                    <div class="slds-truncate" title="Title">
+                      {!tqbChairPerson.Title}
+                    </div>
+                  </td>
+                  <td data-label="Phone">
+                    <div class="slds-truncate" title="Phone">{!tqbChairPerson.Phone}</div>
+                  </td>
+                  <td data-label="Email">
+                    <div class="slds-truncate" title="Phone">{!tqbChairPerson.Email}</div>
+                  </td>
+                  <td>
+                    <div class="slds-truncate">
+                      <button type="button" aura:id="tqbChairPersonNotifyButton" class="slds-button slds-button--neutral" data-record="{!tqbChairPerson.Id}" onclick="{!c.sendNotificationToChairPerson}">Notify</button>
+                    </div>
+                  </td>
+                 </tr>
+                       </aura:iteration>
+                   </tbody>
+                   </table>
+              </div>
+            </div>
+            <div class="slds-col--padded slds-size--1-of-3">
+            </div>
+          </form>
+      </div>
+    </div>
+  </div> 
+ </aura:set>
+</aura:if>
+ <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+      <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+       <div class="slds-panel__section">
+        <h3 class="slds-text-heading_small slds-m-bottom_medium">TQB Adhoc Members:(select only one)</h3>
+         <form role="form" class="slds-form slds-form--stacked slds-grid slds-wrap">
+          <div class="slds-col--padded slds-size--3-of-5">
+            <div class="slds-form-element">
+                  <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_striped">
+                    <thead>
+                      <tr class="slds-text-title_caps">
+                        <th scope="col">
+                         <div class="slds-truncate" title="Select">Select</div>
+                        </th>
+                        <th scope="col">
+                         <div class="slds-truncate" title="Name">Name</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Mailing Address">Mailing Address</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Research Area">Research Area</div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                       <aura:iteration items="{!v.listOfAdhocSelectedMembers}" var="tqbAdhocMember">
+                         <tr>
+                           <td scope="row" data-label="Select">
+                             <div class="slds-truncate" title="Select">
+                              <ui:inputCheckbox aura:id="checkBox" text="{!tqbAdhocMember.Id}" />
+                             </div>
+                           </td>
+                           <td scope="row" data-label="Name">
+                             <div class="slds-truncate" title="Name">
+                               {!tqbAdhocMember.First_Name__c + '' + tqbAdhocMember.Last_Name__c}
+                             </div>
+                           </td>
+                           <td data-label="Mailing Address">
+                             <div class="slds-truncate" title="Mailing Address">
+                              {!tqbAdhocMember.Mailing_Address__c}
+                             </div>
+                            </td>
+                            <td data-label="Research Area">
+                              <div class="slds-truncate" title="Research Area">{!tqbAdhocMember.Research_Area__c}</div>
+                            </td>
+                         </tr>
+                       </aura:iteration>
+                   </tbody>
+               </table>
+            </div>
+            <br/>
+          <button type="button" aura:id="tqbAdhocMemberNotifyButton" class="slds-button slds-button--neutral" 
+               onclick="{!c.sendNotificationToAdhocMember}">Notify Adhoc Member</button>
+          </div>
+          <div class="slds-col--padded slds-size--2-of-5">
+          </div>
+        </form>
+      </div>
+     </div>
+ </div>
+</aura:component>

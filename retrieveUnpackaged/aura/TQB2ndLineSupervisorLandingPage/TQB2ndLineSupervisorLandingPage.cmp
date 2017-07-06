@@ -1,0 +1,73 @@
+<aura:component controller="TQB2ndLineSupervisorLPController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" 
+	access="global">
+
+ <aura:attribute name="TQBCandidatePackageList" type="TQB_Candidate_Package__c[]"/>
+ <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	  <div class="slds-grid">
+		  <div class="slds-col">
+		    <div class="slds-box slds-box--x-small slds-theme--shade slds-text-align--left">Candidate Package (CP)</div>
+		  </div>
+	  </div>
+      <div class="slds-grid slds-grid--vertical-stretch">
+       <div class="slds-col">
+         <div class="slds-box  slds-theme--shade">
+           <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+              <thead>
+                <tr class="slds-text-title--caps">
+                  <th  class="slds-is-sortable"  scope="col">
+                    <div class="slds-truncate" title="ID Number">ID Number</div>
+                  </th>
+                  <th class="slds-is-sortable"  scope="col">
+                    <div class="slds-truncate" title="Candidate_Name">Candidate Name</div>
+                  </th>
+                  <th class="slds-is-sortable"  scope="col">
+                    <div class="slds-truncate" title="Status">Status</div>
+                  </th>
+                  <th class="slds-is-sortable"  scope="col">
+                  <div class="slds-truncate" title="Last Status Date">Last Status Date</div>
+                  </th>
+                 <!-- <th scope="col">
+                    <div class="slds-truncate" title="CP History">CP History</div>
+                  </th> -->
+                 </tr>
+              </thead>
+              <tbody>
+                 <aura:iteration items="{!v.TQBCandidatePackageList}" var="CP">
+                    <tr>
+                      <td data-label="Name">
+                        <div class="slds-truncate" title="Name">
+                          <a data-record="{!CP.Id}" onclick="{!c.redirectToComponent}">{!CP.Name}</a>
+                        </div>
+                      </td>
+                      <td data-label="Candidate_Name">
+                        <div class="slds-truncate" title="Candidate_Name">
+                          <ui:outputText value="{!CP.Candidate_Name__c}"/>
+                        </div>
+                      </td>
+                      <td data-label="Status">
+                        <div class="slds-truncate" title="Status">
+                          <ui:outputText value="{!CP.Status__c}"/>
+                        </div>
+                      </td>
+                      <td data-label="Status_Date">
+                        <div class="slds-truncate" title="Status_Date">
+                          <ui:outputDate value="{!CP.Status_Date__c}"/>
+                       </div>
+                      </td>
+                     <!-- <td data-label="CP_History">
+                        <div class="slds-truncate" title="CP_History">
+                          <a data-record="{!CP.Id}" onclick="{!c.redirectToSobjectRelatedCP}">{!CP.Name}</a>
+                       </div>
+                      </td> -->
+                    </tr>
+                 </aura:iteration>
+              </tbody>   
+        </table>
+      </div>
+     </div>
+   </div>
+   <br/>
+   <br/>
+   <div class="slds-border--bottom">
+   </div>
+</aura:component>

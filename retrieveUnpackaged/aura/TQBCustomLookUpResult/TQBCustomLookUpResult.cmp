@@ -1,0 +1,16 @@
+<aura:component >
+    <aura:attribute name="panelMember" type="User" />
+  <!--Register the component level event-->
+    <aura:registerEvent name="oSelectedUserEvent" type="c:TQBSearchSelectedPanelMember"/>    
+    
+    <li role="presentation">
+        <span class="slds-lookup__item-action slds-media slds-media--center" id="lookup-option-350" role="option">
+         <div class="slds-media__body">
+          <div class="slds-input-has-icon slds-input-has-icon--right">
+            <c:svgTQBCpWizard class="slds-input__icon" xlinkHref="{!$Resource.SLDS24 + '/assets/icons/standard-sprite/svg/symbols.svg#account'}" />                   
+            <div class="slds-lookup__result-text"><a onclick="{!c.selectUser}">{!v.panelMember.Name + ',' + v.panelMember.Title }</a></div>
+          </div>
+        </div>    
+        </span>
+    </li>
+</aura:component>

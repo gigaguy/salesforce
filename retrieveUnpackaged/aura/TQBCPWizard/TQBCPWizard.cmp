@@ -1,0 +1,111 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+
+
+  <!--<aura:attribute name="newPackage" type="TQB_Candidate_Package__c"  default="{ 'sobjectType': 'TQB_Candidate_Package__c',
+    'Name': '',
+    'Status__c': '',
+    'Status_Date__c': '',
+    'File_Type__c' : 'Other',
+    'Candidates_1st_Line_Supervisor_Name__c': '',
+    'Candidates_2nd_Line_Supervisor_Name__c': ''
+    }"/>-->
+    <aura:attribute name="newPackage" type="TQB_Candidate_Package__c"/>
+    <aura:attribute name="packageId" type="Id"/>
+    <aura:attribute name="loggedInUserRole" type="User" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:registerEvent name="navigateToQuestions" type="c:TQBCPQuestionNavigator" />
+    <!--<aura:handler event="c:TQBCPPackageNavigator" action="{!c.showPackageHideOther}"/>-->
+    <aura:handler event="c:TQBCPQuestionNavigator" action="{!c.showQuestionsHideOther}"/>
+    <aura:handler event="c:TQBCPAttachNavigator" action="{!c.showAttachHideOther}"/>
+    <aura:handler event="c:TQBCPAdHocNavigator" action="{!c.showAdHocHideOther}"/>
+    <aura:handler event="c:TQBCPSummaryNavigator" action="{!c.showSummaryHideOther}"/>
+    <aura:handler event="c:TQBCPRecoNavigator" action="{!c.showRecoHideOther}"/>
+    <aura:handler event="c:TQBCPMeetPrepNavigator" action="{!c.showMeetPrepHideOther}"/>
+    
+
+    <div class="slds-grid">
+      <div class="slds-p-horizontal_small slds-size_1-of-2">
+        <div class="slds-tabs--path" role="application" >
+          <h1 class="slds-text-heading_medium"  style="text-align:center;">Candidate Package Form</h1>
+          <br/>
+          <ul class="slds-tabs--path__nav" role="tablist">
+
+            <li aura:id= "questionStepId" class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+              <a class="slds-tabs--path__link" id="tabs-path-93" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" onclick= "{!c.goToQuestionnaire}" aria-live="assertive">
+                <span class="slds-tabs--path__stage">
+                  <!--<lightning:icon aura:id="status1icon" iconName="utility:check" size="xx-small" alternativeText="Stage Complete"/>-->
+                </span>
+                <span class="slds-tabs--path__title">Questionnaire</span>
+              </a>
+            </li>
+            <li aura:id= "attachStepId" class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+              <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" onclick= "{!c.goToAttach}" aria-live="assertive">
+                <span class="slds-tabs--path__stage">
+                </span>
+                <span class="slds-tabs--path__title">Attachments</span>
+              </a>
+            </li>
+            <li aura:id= "adhocStepId" class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+              <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" onclick= "{!c.goToAdHoc}" aria-live="assertive">
+                <span class="slds-tabs--path__stage">
+                </span>
+                <span class="slds-tabs--path__title">Ad Hoc Info</span>
+              </a>
+            </li>
+            <li aura:id= "summaryStepId" class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+              <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" onclick= "{!c.goToSummary}" aria-live="assertive">
+                <span class="slds-tabs--path__stage">
+                </span>
+                <span class="slds-tabs--path__title">Summary</span>
+              </a>
+            </li>
+            <aura:if isTrue="{!or(v.loggedInUserRole.UserRole.Name == 'TQB 1st Line Supervisor Role', v.loggedInUserRole.UserRole.Name == 'TQB 2nd Line Supervisor Role', v.loggedInUserRole.UserRole.Name == 'EPA Enterprise')}">              
+            <li aura:id= "recoStepId" class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+              <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" onclick="{!c.goToReviewReco}" aria-live="assertive">
+                <span class="slds-tabs--path__stage">
+                </span>
+                <span class="slds-tabs--path__title">Review Recommendation</span>
+              </a>
+            </li>
+          </aura:if>
+          <aura:if isTrue="{!or(v.loggedInUserRole.UserRole.Name == 'TQB COORDINATOR',v.loggedInUserRole.UserRole.Name == 'TQB CHAIR')}"> 
+            <li aura:id= "MeetPrepStepId" class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+              <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" onclick="{!c.goTQBMeetPrep}" aria-live="assertive">
+                <span class="slds-tabs--path__stage">
+                </span>
+                <span class="slds-tabs--path__title">TQB Meeting Prep</span>
+              </a>
+            </li>
+         </aura:if> 
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="panel panel-default" aura:id="questionsView">
+      <c:TQBCPWizardQuestions />
+    </div>
+
+    <div class="panel panel-default" aura:id="attachView">
+      <c:TQBCPWizardAttach />
+    </div>
+
+    <div class="panel panel-default" aura:id="adhocView">
+      <c:TQBCPWizardAdHoc />
+    </div>
+
+    <div class="panel panel-default" aura:id="summaryView">
+      <c:TQBCPWizardSummary />
+    </div>
+
+    <div class="panel panel-default" aura:id="recoView">
+      <c:TQBCPWizardReco />
+    </div>
+
+    <div class="panel panel-default" aura:id="MeetPrepView">
+      <c:TQBCPWizardMeetPrep />
+    </div>
+
+    <br/><br/><br/>
+  </aura:component>

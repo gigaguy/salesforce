@@ -1,0 +1,52 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+
+    <aura:attribute name="question" type="TQB_Candidate_Questionnaire__c"/>
+    <aura:attribute name="candPackage" type="TQB_Candidate_Package__c"/>
+    <aura:attribute name="firstLineSupComment" type="String"  />
+    <aura:attribute name="secondLineSupComment" type="String" />
+    <aura:attribute name="loggedInUserRole" type="User" />
+    <aura:attribute name="answerLength" type="Integer"/>
+    <aura:handler event="c:TQBCPEditQA" action="{!c.gotoQAEditable}"/>
+
+    <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
+
+    <div aura:id="messages">
+      {!v.messages}
+    </div>
+
+    <!--<div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+      <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+        <div class="slds-panel__section">-->
+          <h3 class="slds-text-heading_small slds-m-bottom_medium">Question Detail</h3>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputText label="Category" class="slds-input" disabled="true" labelClass="slds-form-element__label" value="{!v.question.Category__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2">
+            <div class="slds-form-element__control">
+              <!--<ui:inputText label="Question" class="slds-input" disabled="true" labelClass="slds-form-element__label" value="{!v.question.Question__c}" />-->
+              <ui:inputTextArea label="Question" rows="4" class="slds-textarea slds-size-1-of-2" disabled="true" aura:id="question" value="{!v.question.Question__c}"/>
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <!--<ui:inputText label="Answer" class="slds-input" disabled="true" labelClass="slds-form-element__label" value="{!v.question.Answer__c}" />-->
+              <ui:inputTextArea label="Answer" rows="20" class="slds-textarea slds-size-1-of-2" aura:id="answer" placeholder="Enter your response here" value="{!v.question.Answer__c}"
+                    keyup="{!c.textCounter}" updateOn="keyup"/>
+            </div>
+            <ui:outputText value="{!v.answerLength + '/ 3840'}"/>
+          </div>
+
+
+
+        <br/>
+          <div>
+            <button type="button" class="slds-button slds-button--neutral" onclick="{!c.backToQAView}">Cancel</button>
+            <button type="button" class="slds-button slds-button--neutral" onclick="{!c.saveQuesAns}">Save</button>
+          </div>
+      <!--</div>
+    </div>
+  </div>-->
+
+</aura:component>

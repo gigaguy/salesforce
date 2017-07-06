@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="TQBpoliciesAndProcedures" type="TQB_Policies_and_Procedures__c"/>   
+    <p><ui:outputUrl value="{!v.TQBpoliciesAndProcedures.Link__c}" label="{!v.TQBpoliciesAndProcedures.Link_Title__c}"/> 
+    </p>
+</aura:component>

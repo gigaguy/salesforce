@@ -1,0 +1,175 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+
+  <aura:attribute name="candPackage" type="TQB_Candidate_Package__c"/>
+  <aura:attribute name="candLOI" type="TQB_Letter_of_Intent__c" />
+  <aura:attribute name="listOfAdHocEntries" type="TQB_Ad_Hoc_Entry__c[]"/>
+  <aura:handler event="c:TQBCPAdHocNavigator" action="{!c.populateAdHoc}"/>
+  <aura:handler event="c:TQBCPEditAdHoc" action="{!c.showEditAdHocHideList}"/>
+  <aura:handler event="c:TQBCPViewAdHoc" action="{!c.showAdHocDetailHideList}"/>
+  <aura:handler event="c:TQBCPNewAdHoc" action="{!c.showEditAdHocHideList}"/>
+  <aura:handler event="c:TQBCPBackToAdHocList" action="{!c.backToAdHocList}"/>
+  <aura:handler event="c:TQBCPBackToAdHocDetail" action="{!c.backToAdHocDetail}"/>
+  <aura:handler event="c:TQBCPDeleteAdHoc" action="{!c.handleDeleteAdHoc}"/>
+  <aura:attribute name="firstLineSupAdHocComment" type="String"  />
+  <aura:attribute name="secondLineSupAdHocComment" type="String" />
+  <aura:attribute name="loggedInUserRole" type="User" />
+  <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
+
+
+   <!-- Render the CP header summary information  -->
+<div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+    <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+      <div class="slds-panel__section">
+        <h3 class="slds-text-heading_small slds-m-bottom_medium">Candidate Information</h3>
+         <form role="form" class="slds-form slds-form--stacked slds-grid slds-wrap">
+          <div class="slds-col--padded slds-size--1-of-3">
+              <div class="slds-form-element">
+                  <aura:if isTrue="{!(v.loggedInUserRole.UserRole.Name != 'TQB Candidate Role')}">
+                       <label class="slds-form-element__label" for="combobox-unique-id">Candidate Name</label>
+                       <div class="slds-form-element__control">
+                          <ui:outputText value="{!v.candLOI.Candidate_Name__c}" />
+                       </div>
+                  </aura:if>
+                  <aura:if isTrue="{!(v.loggedInUserRole.UserRole.Name != 'TQB 1st Line Supervisor Role')}">
+                        <label class="slds-form-element__label" for="combobox-unique-id">1st Line Supervisor</label>
+                        <div class="slds-form-element__control">
+                          <ui:outputText value="{!v.candPackage.Candidates_1st_Line_Supervisor_Name__r.Name}" />
+                        </div>
+                  </aura:if>
+                  <aura:if isTrue="{!(v.loggedInUserRole.UserRole.Name != 'TQB 2nd Line Supervisor Role')}">
+                        <label class="slds-form-element__label" for="combobox-unique-id">2nd Line Supervisor</label>
+                        <div class="slds-form-element__control">
+                          <ui:outputText value="{!v.candPackage.Candidates_2nd_Line_Supervisor_Name__r.Name}" />
+                        </div>
+                  </aura:if>
+              </div>
+           </div>
+           <div class="slds-col--padded slds-size--1-of-3">
+                <label class="slds-form-element__label" for="combobox-unique-id">Package Name</label>
+                <div class="slds-form-element__control">
+                  <ui:outputText value="{!v.candPackage.Name}" />
+                </div>
+                <label class="slds-form-element__label" for="combobox-unique-id">Current Lab Work Location</label>
+                <div class="slds-form-element__control">
+                  <ui:outputDate value="{!v.candLOI.Current_Lab_Work_Location_Assignment__c}" />
+                </div>
+           </div>
+           <div class="slds-col--padded slds-size--1-of-3">
+                <div class="slds-form-element ">
+                  <label class="slds-form-element__label" for="combobox-unique-id">Intended Track</label>
+                  <div class="slds-form-element__control">
+                    <ui:outputText value="{!v.candLOI.IntendedTrack__c}" />
+                  </div>
+                  <label class="slds-form-element__label" for="combobox-unique-id">GS Level</label>
+                  <div class="slds-form-element__control">
+                    <ui:outputDate value="{!v.candLOI.Current_GS_Level__c}" />
+                  </div>
+                </div>
+           </div>
+         </form>
+      </div>
+    </div>
+  </div>
+<hr>
+</hr>
+ <div aura:id="messages">
+    {!v.messages}
+  </div>
+  <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap" aura:id="adHocListView">
+    <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+      <div class="slds-panel__section">
+        <h3 class="slds-text-heading_small slds-m-bottom_medium">Ad Hoc Entries</h3>
+         <form role="form" class="slds-form slds-form--stacked slds-grid slds-wrap">
+          <div class="slds-col--padded slds-size--1-of-2">
+            <div class="slds-form-element">
+              <aura:if isTrue="{!and(v.loggedInUserRole.UserRole.Name != 'TQB 1st Line Supervisor Role', v.loggedInUserRole.UserRole.Name != 'TQB 2nd Line Supervisor Role')}">
+                  <button type="button" class="slds-button slds-button--neutral" onclick="{!c.createAdHocEntry}">New Entry</button>
+              </aura:if>
+              <br/>
+              <br/>
+                 <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_striped">
+                    <thead>
+                      <tr class="slds-text-title_caps">
+                        <th scope="col">
+                         <div class="slds-truncate" title="First Name">Name</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Mailing Address">Mailing Address</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Research Area">Research Area</div>
+                        </th>
+                        <!--<th scope="col">
+                          <div class="slds-truncate" title="Phone">Phone</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Email">Email</div>
+                        </th>-->
+                        <th scope="col">
+                          <div class="slds-truncate" title="Delete"></div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                       <aura:iteration items="{!v.listOfAdHocEntries}" var="adhocentry">
+                         <c:TQBCPWizardAdHocEntry candPackage="{!v.candPackage}" adHocEntry="{!adhocentry}"/>
+                       </aura:iteration>
+                   </tbody>
+                   </table>
+              </div>
+            </div>
+             <div class="slds-col--padded slds-size--1-of-2">
+                <div class="slds-form-element">
+                   <aura:if isTrue="{!or(v.loggedInUserRole.UserRole.Name == 'EPA Enterprise', v.loggedInUserRole.UserRole.Name == 'TQB 1st Line Supervisor Role')}">
+                     <div>
+                        <label class="slds-text-color_weak" for="answer">1st Line Supervisor Ad Hoc Comments</label><br/>
+                        <lightning:inputRichText placeholder="Please enter a comment." aura:id="firstLineSupAdHocCommentId"  value="{!v.firstLineSupAdHocComment}"/>
+                        <button type="button" class="slds-button slds-button--neutral" onclick="{!c.saveAdHocCommentFirstLine}">Save</button>
+                     </div>
+                     <div>
+                        <ui:inputTextArea placeholder="Please enter a comment." label="2nd Line Supervisor Ad Hoc Comments" rows="4" class="slds-textarea slds-size-3-of-3" disabled="True" aura:id="secondLineSupAdHocCommentId"  value="{!v.secondLineSupAdHocComment}"/>
+                      </div>
+                  <aura:set attribute="else">
+                          <aura:if isTrue="{!or(v.loggedInUserRole.UserRole.Name == 'None', v.loggedInUserRole.UserRole.Name == 'TQB 2nd Line Supervisor Role')}">
+                            <div>
+                              <ui:inputTextArea placeholder="Please enter a comment." label="1st Line Supervisor Ad Hoc Comments" rows="4" class="slds-textarea slds-size-3-of-3" disabled="True" value="{!v.firstLineSupAdHocComment}" aura:id="firstLineSupAdHocCommentId" />
+                             </div>
+                               <div>
+                                  <label class="slds-text-color_weak" for="answer">2nd Line Supervisor Ad Hoc Comments</label><br/>
+                                  <lightning:inputRichText placeholder="Please enter a comment." aura:id="secondLineSupAdHocCommentId"  value="{!v.secondLineSupAdHocComment}"/>
+                                  <button type="button" class="slds-button slds-button--neutral" onclick="{!c.saveAdHocCommentSecondLine}">Save</button>
+                              </div>
+                              <aura:set attribute="else">
+                                  <div>
+                                    <ui:inputTextArea placeholder="Please enter a comment." label="1st Line Supervisor Ad Hoc Comments" rows="4" class="slds-textarea slds-size-3-of-3" disabled="True" value="{!v.firstLineSupAdHocComment}" aura:id="firstLineSupAdHocCommentId" />
+                                 </div>
+                                  <div>
+                                    <ui:inputTextArea placeholder="Please enter a comment." label="2nd Line Supervisor Ad Hoc Comments" rows="4" class="slds-textarea slds-size-3-of-3" disabled="True" aura:id="secondLineSupAdHocCommentId"  value="{!v.secondLineSupAdHocComment}"/>
+                                  </div>
+                      </aura:set>
+                   </aura:if>
+                 </aura:set>
+               </aura:if>
+             </div>
+           </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+    <br/>
+    <div>
+      <button type="button" class="slds-button slds-button--neutral" onclick="{!c.goToAttach}">Previous</button>
+      <button type="button" class="slds-button slds-button--neutral" onclick="{!c.goToSummary}">Next</button>
+    </div>
+
+  <div class="slds-panel__section" aura:id="adHocDetailView">
+    <!--<c:TQBCPWizardAdHocEntryDetail candPackage="{!candPackage}" adHocEntry="{!adhocentry}"/>-->
+    <c:TQBCPWizardAdHocEntryDetail candPackage="{!v.candPackage}"/>
+  </div>
+
+  <div class="slds-panel__section" aura:id="adHocEditView">
+    <!--<c:TQBCPWizardAdHocEdit candPackage="{!candPackage}" adHocEntry="{!adhocentry}"/>-->
+    <c:TQBCPWizardAdHocEdit candPackage="{!v.candPackage}"/>
+  </div>
+</aura:component>

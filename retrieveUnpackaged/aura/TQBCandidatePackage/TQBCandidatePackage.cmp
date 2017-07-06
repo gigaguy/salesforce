@@ -1,0 +1,10 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="TQBbulletinBoardController">
+    <aura:attribute name="TQBCandidatePackage" type="TQB_Letter_of_Intent__c"/>
+    <p>Candidate Package</p>
+      <ui:outputNumber value="{!v.TQBCandidatePackage.Name}"/>
+
+      <ui:outputText value="{!v.TQBCandidatePackage.unknown_custom_field}"/>
+  
+      <ui:outputDate value="{!v.TQBCandidatePackage.Status_Date__c}"/>
+ 
+</aura:component>

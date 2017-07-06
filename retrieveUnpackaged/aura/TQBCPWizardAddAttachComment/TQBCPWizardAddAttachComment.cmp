@@ -1,0 +1,92 @@
+<!--
+//
+// Developer: Chris Alley
+// Purpose: Add an attachment comment for 1st or 2nd line supervisor
+//
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+ 
+    <aura:attribute name="candPackage" type="TQB_Candidate_Package__c" />
+    <aura:attribute name="candLOI" type="TQB_Letter_of_Intent__c" />
+    <aura:attribute name="candAttachedDoc" type="AttachedContentDocument[]"/>
+    <aura:attribute name="candAttachedDocId" type="Id"/>
+    <aura:attribute name="candAttachedDocName" type="String"/>
+    <aura:attribute name="candAttachedDocType" type="String"/>
+    <aura:attribute name="firstLineSupComment" type="String"  />
+    <aura:attribute name="secondLineSupComment" type="String" />
+    <aura:attribute name="loggedInUserRole" type="User" />
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    <aura:attribute name="debugOn" type="boolean" default="false"/>
+    <!-- <aura:set attribute="candAttachedDocName" />
+    <aura:set attribute="candAttachedDocType" /> -->
+
+    <!-- set up the attribuites and aura ID for on screen messages to the user -->
+    <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
+      <div aura:id="messages">
+          {!v.messages}
+      </div>
+    <!-- Event Handlers used on the attachment section of the CP Wizard -->
+     <aura:handler event="c:TQBCPAddAttachmentCommentEvent" action="{!c.populateInitMethods}"/>
+
+
+    <div aura:id="addAttachCommentView">
+
+       <div class="slds-panel__section">
+         <form role="form" class="slds-form slds-form--stacked slds-grid slds-wrap">
+          <div class="slds-col--padded slds-size--1-of-1 slds-medium-size--1-of-2">
+            <div class="slds-form-element " >
+             <label class="slds-form-element__label">Attachment File Name</label>
+              <div class="slds-form-element__control">
+                <ui:outputText value="{!v.candAttachedDocName}" />
+              </div>
+              <label class="slds-form-element__label" >Attachment Content Type</label>
+              <div class="slds-form-element__control">
+               <ui:outputText value="{!v.candAttachedDocType}" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    <aura:if isTrue="{!v.debugOn}">
+          <label class="slds-form-element__label">Logged in user role Name:</label>
+          <ui:outputText value="{!v.loggedInUserRole}" />
+          <ui:outputText value="{!v.loggedInUserRole.UserRole.Name}" />
+    </aura:if>
+
+
+
+    <aura:if isTrue="{!or(v.loggedInUserRole.UserRole.Name == 'TQB 1st Line Supervisor Role', v.loggedInUserRole.UserRole.Name == 'EPA Enterprise')}">
+
+             <div>
+                <ui:inputTextArea placeholder="Please enter a comment." label="1st Line Supervisor Attachment Comments" rows="4" class="slds-textarea slds-size-1-of-1" disabled="False" value="{!v.firstLineSupComment}" aura:id="firstLineSupCommentId"/>
+              <button type="button" class="slds-button slds-button--neutral" onclick="{!c.saveAttachCommentFirstLine}">Save</button>
+             </div>
+              <div>
+                <ui:inputTextArea placeholder="Please enter a comment." label="2nd Line Supervisor Attachment Comments" rows="4" class="slds-textarea slds-size-1-of-1" disabled="True" aura:id="secondLineSupCommentId"  value="{!v.secondLineSupComment}"/>
+              </div>
+          <aura:set attribute="else">
+            <aura:if isTrue="{!or(v.loggedInUserRole.UserRole.Name == 'TQB 2nd Line Supervisor Role', v.loggedInUserRole.UserRole.Name == 'EPA Enterprise' )}">
+                    <div>
+                      <ui:inputTextArea placeholder="Please enter a comment." label="1st Line Supervisor Attachment Comments" rows="4" class="slds-textarea slds-size-1-of-1" disabled="True" value="{!v.firstLineSupComment}" aura:id="firstLineSupCommentId" />
+                   </div>
+                    <div>
+                      <ui:inputTextArea placeholder="Please enter a comment." label="2nd Line Supervisor Attachment Comments" rows="4" class="slds-textarea slds-size-1-of-1" disabled="False" aura:id="secondLineSupCommentId"  value="{!v.secondLineSupComment}"/>
+                      <button type="button" class="slds-button slds-button--neutral" onclick="{!c.saveAttachCommentSecondLine}">Save</button>
+                    </div>
+              <aura:set attribute="else">
+                      <div>
+                        <ui:inputTextArea placeholder="Please enter a comment." label="1st Line Supervisor Attachment Comments" rows="4" class="slds-textarea slds-size-1-of-1" disabled="True" value="{!v.firstLineSupComment}" aura:id="firstLineSupCommentId" />
+                     </div>
+                      <div>
+                        <ui:inputTextArea placeholder="Please enter a comment." label="2nd Line Supervisor Attachment Comments" rows="4" class="slds-textarea slds-size-1-of-1" disabled="True" aura:id="secondLineSupCommentId"  value="{!v.secondLineSupComment}"/>
+                      </div>
+                </aura:set>
+            </aura:if>
+          </aura:set>
+       </aura:if>
+    </div>
+
+  
+</aura:component>

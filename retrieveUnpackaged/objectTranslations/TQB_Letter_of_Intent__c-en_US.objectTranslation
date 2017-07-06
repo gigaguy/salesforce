@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>TQB Letter of Intent</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>TQB Letters of Intent</value>
+    </caseValues>
+    <fields>
+        <help><!-- Candidates Address --></help>
+        <label><!-- Candidate Address --></label>
+        <name>Candidate_Address__c</name>
+    </fields>
+    <fields>
+        <help><!-- Users first and last name for display on the LOI --></help>
+        <label><!-- Candidate Name --></label>
+        <name>Candidate_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Candidates 1st Line Supervisor --></help>
+        <label><!-- Candidates 1st Line Supervisor Name --></label>
+        <name>Candidates_1st_Line_Supervisor_Name__c</name>
+        <relationshipLabel><!-- TQB Letters of Intent (Candidates 1st Line Supervisor Name) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Candidates 2nd Line Supervisor Name --></help>
+        <label><!-- Candidates 2nd Line Supervisor Name --></label>
+        <name>Candidates_2nd_Line_Supervisor_Name__c</name>
+        <relationshipLabel><!-- TQB Letters of Intent (Candidates 2nd Line Supervisor Name) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Candidates EPA work region --></help>
+        <label><!-- Current Region --></label>
+        <name>CurrentRegion__c</name>
+        <picklistValues>
+            <masterLabel>Region 1</masterLabel>
+            <translation><!-- Region 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10</masterLabel>
+            <translation><!-- Region 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2</masterLabel>
+            <translation><!-- Region 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3</masterLabel>
+            <translation><!-- Region 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4</masterLabel>
+            <translation><!-- Region 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5</masterLabel>
+            <translation><!-- Region 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6</masterLabel>
+            <translation><!-- Region 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7</masterLabel>
+            <translation><!-- Region 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8</masterLabel>
+            <translation><!-- Region 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9</masterLabel>
+            <translation><!-- Region 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Candidates Current GS Level --></help>
+        <label><!-- Current GS Level --></label>
+        <name>Current_GS_Level__c</name>
+        <picklistValues>
+            <masterLabel>GS 13</masterLabel>
+            <translation><!-- GS 13 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GS 14</masterLabel>
+            <translation><!-- GS 14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GS 15</masterLabel>
+            <translation><!-- GS 15 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Candidates current physical work location --></help>
+        <label><!-- Current Lab Work Location Assignment --></label>
+        <name>Current_Lab_Work_Location_Assignment__c</name>
+        <picklistValues>
+            <masterLabel>Immediate Office of the Assistant Administrator</masterLabel>
+            <translation><!-- Immediate Office of the Assistant Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Center for Computational Toxicology</masterLabel>
+            <translation><!-- National Center for Computational Toxicology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Center for Environmental Assessment</masterLabel>
+            <translation><!-- National Center for Environmental Assessment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Center for Environmental Research</masterLabel>
+            <translation><!-- National Center for Environmental Research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Exposure  Research Lab</masterLabel>
+            <translation><!-- National Exposure  Research Lab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Health and Environmental  Effects Research Lab</masterLabel>
+            <translation><!-- National Health and Environmental  Effects Research Lab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Homeland Security Research Center</masterLabel>
+            <translation><!-- National Homeland Security Research Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Research Programs</masterLabel>
+            <translation><!-- National Research Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Risk Management Research Lab</masterLabel>
+            <translation><!-- National Risk Management Research Lab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Administration and Research Support</masterLabel>
+            <translation><!-- Office of Administration and Research Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Program Accountability and Resource Management</masterLabel>
+            <translation><!-- Office of Program Accountability and Resource Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Science Information Management</masterLabel>
+            <translation><!-- Office of Science Information Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Science Policy</masterLabel>
+            <translation><!-- Office of Science Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of the Science Adviser</masterLabel>
+            <translation><!-- Office of the Science Adviser --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Candidates intended promotion track. --></help>
+        <label><!-- Intended Track --></label>
+        <name>IntendedTrack__c</name>
+        <picklistValues>
+            <masterLabel>Development</masterLabel>
+            <translation><!-- Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expert</masterLabel>
+            <translation><!-- Expert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Research</masterLabel>
+            <translation><!-- Research --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LOI Reject Reason --></label>
+        <name>LOI_Reject_Reason__c</name>
+        <picklistValues>
+            <masterLabel>--None--</masterLabel>
+            <translation><!-- - - None- -  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Candidate does not meet education requirement.</masterLabel>
+            <translation><!-- Candidate does not meet education requirement. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Candidate does not meet experience requirement.</masterLabel>
+            <translation><!-- Candidate does not meet experience requirement. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Candidate does not meet length of employment requirement.</masterLabel>
+            <translation><!-- Candidate does not meet length of employment requirement. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Candidate does not meet promotion prerequisite.</masterLabel>
+            <translation><!-- Candidate does not meet promotion prerequisite. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Candidate received below average peer review.</masterLabel>
+            <translation><!-- Candidate received below average peer review. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Candidate received below average performance review.</masterLabel>
+            <translation><!-- Candidate received below average performance review. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Comments --></help>
+        <label><!-- Review Comments --></label>
+        <name>Review_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Date --></label>
+        <name>Status_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Returned</masterLabel>
+            <translation><!-- Returned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>TQB Letter of Intent Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Reject reason should not be selected when status is other than Rejected. --></errorMessage>
+        <name>Conditional_status_approved</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- LOI Reject Reason should be selected when status is in Rejected --></errorMessage>
+        <name>Conditional_status_rejected</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Incorrect status value selected --></errorMessage>
+        <name>Status_field_value_1st_supervisor</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Status field cannot be blank --></errorMessage>
+        <name>Status_value</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Review comments should be filled out if the status is Returned --></errorMessage>
+        <name>condition_status_returned</name>
+    </validationRules>
+</CustomObjectTranslation>

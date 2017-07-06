@@ -1,0 +1,228 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+
+    <aura:attribute name="candPackage" type="TQB_Candidate_Package__c"/>
+    <aura:attribute name="candLOI" type="TQB_Letter_of_Intent__c" />
+    <aura:attribute name="listOfQuestions" type="TQB_Candidate_Questionnaire__c[]"/>
+    <aura:attribute name="candAttachedDocs" type="AttachedContentDocument[]"/>
+    <aura:attribute name="listOfAdHocEntries" type="TQB_Ad_Hoc_Entry__c[]"/>
+    <aura:attribute name="listofComments" type="TQB_Comment__c[]"/>
+    <aura:attribute name="loggedInUserRole" type="User" />
+    <aura:handler event="c:TQBCPSummaryNavigator" action="{!c.populateSummary}"/>
+    <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
+    <!--<aura:registerEvent name="navigateToQuestions" type="c:TQBCPQuestionNavigator" />-->
+
+    <div aura:id="messages">
+      {!v.messages}
+    </div>
+
+     <!-- Render the CP header summary information  -->
+  <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+    <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+      <div class="slds-panel__section">
+        <h3 class="slds-text-heading_small slds-m-bottom_medium">Candidate Information</h3>
+         <form role="form" class="slds-form slds-form--stacked slds-grid slds-wrap">
+          <div class="slds-col--padded slds-size--1-of-3">
+              <div class="slds-form-element">
+                  <aura:if isTrue="{!(v.loggedInUserRole.UserRole.Name != 'TQB Candidate Role')}">
+                       <label class="slds-form-element__label" for="combobox-unique-id">Candidate Name</label>
+                       <div class="slds-form-element__control">
+                          <ui:outputText value="{!v.candLOI.Candidate_Name__c}" />
+                       </div>
+                  </aura:if>
+                  <aura:if isTrue="{!(v.loggedInUserRole.UserRole.Name != 'TQB 1st Line Supervisor Role')}">
+                        <label class="slds-form-element__label" for="combobox-unique-id">1st Line Supervisor</label>
+                        <div class="slds-form-element__control">
+                          <ui:outputText value="{!v.candPackage.Candidates_1st_Line_Supervisor_Name__r.Name}" />
+                        </div>
+                  </aura:if>
+                  <aura:if isTrue="{!(v.loggedInUserRole.UserRole.Name != 'TQB 2nd Line Supervisor Role')}">
+                        <label class="slds-form-element__label" for="combobox-unique-id">2nd Line Supervisor</label>
+                        <div class="slds-form-element__control">
+                          <ui:outputText value="{!v.candPackage.Candidates_2nd_Line_Supervisor_Name__r.Name}" />
+                        </div>
+                  </aura:if>
+              </div>
+           </div>
+           <div class="slds-col--padded slds-size--1-of-3">
+                <label class="slds-form-element__label" for="combobox-unique-id">Package Name</label>
+                <div class="slds-form-element__control">
+                  <ui:outputText value="{!v.candPackage.Name}" />
+                </div>
+                <label class="slds-form-element__label" for="combobox-unique-id">Package Status</label>
+                <div class="slds-form-element__control">
+                  <ui:outputText value="{!v.candPackage.Status__c}" />
+                </div>
+                <label class="slds-form-element__label" for="combobox-unique-id">Current Lab Work Location</label>
+                <div class="slds-form-element__control">
+                  <ui:outputDate value="{!v.candLOI.Current_Lab_Work_Location_Assignment__c}" />
+                </div>
+           </div>
+           <div class="slds-col--padded slds-size--1-of-3">
+                <div class="slds-form-element ">
+                  <label class="slds-form-element__label" for="combobox-unique-id">Intended Track</label>
+                  <div class="slds-form-element__control">
+                    <ui:outputText value="{!v.candLOI.IntendedTrack__c}" />
+                  </div>
+                  <label class="slds-form-element__label" for="combobox-unique-id">GS Level</label>
+                  <div class="slds-form-element__control">
+                    <ui:outputDate value="{!v.candLOI.Current_GS_Level__c}" />
+                  </div>
+                </div>
+           </div>
+         </form>
+      </div>
+    </div>
+  </div>
+<hr>
+</hr>
+  	<div class="slds-grid">
+  	  <div class="slds-col--padded  slds-size--1-of-3 ">
+           <h2>Intended Track Questionnaire</h2>
+           <div class="slds-border_left slds-border_bottom slds-border_right slds-border_top">
+              <p>Questions where answer field is Null are colored in RED and others BLUE</p>
+              <p>Click a Question link to go to to that in the form</p>
+                <table class="slds-table slds-cell-wrap slds-table_striped " role="grid">
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            <th scope="col">
+                                <div class="slds-truncate" title="Question">Question</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Answered">Answered</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.listOfQuestions}" var="question" indexVar="i">
+                            <tr >
+                                <td class="slds-cell-wrap slds-truncate">
+                                  <aura:if isTrue="{!question.Answer__c}">
+                                    <a onclick="{!c.linkQuestionPage}">Question {!i+1}</a>
+                                  </aura:if>
+                                  <aura:if isTrue="{!question.Answer__c == null}">
+                                    <a style="color:red" onclick="{!c.linkQuestionPage}">Question {!i+1}</a>
+                                  </aura:if>
+                                </td>
+                                <td class="slds-cell-wrap slds-truncate">
+                                  <aura:if isTrue="{!question.Answer__c}">
+                                    <p>Yes</p>
+                                  </aura:if>
+                                  <aura:if isTrue="{!question.Answer__c == null}">
+                                    <p style="color:red"> No </p>
+                                  </aura:if>
+                                </td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+              </table>
+           </div>
+  	  </div>
+  	  <div class="slds-col--padded  slds-size--1-of-3">
+        <h2>List of Attachments</h2>
+           <div class="slds-border_left slds-border_bottom slds-border_right slds-border_top">
+              <p>Select an Attachment Name to go to Attachment page</p>
+                <table class="slds-table slds-cell-wrap slds-table_striped" role="grid">
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            <th scope="col">
+                                <div class="slds-truncate" title="Attachment Name">Attachment Name</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Account Name">Attachment Type</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.candAttachedDocs}" var="candAttachedDoc">
+                            <tr >
+                                <td class="slds-truncate" >
+                                  <a onclick="{!c.linkAttachmentPage}"> {!candAttachedDoc.Name} </a>
+                                </td>
+                                <td class="slds-truncate "><ui:outputText value="{!candAttachedDoc.Description}" /></td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+              </table>
+           </div>
+      </div>
+      <div class="slds-col--padded  slds-size--1-of-3">
+        <h2>Adhoc Entries</h2>
+        <div class="slds-border_left slds-border_bottom slds-border_right slds-border_top">
+              <p>Select an Adhoc name to go to Adhoc page</p>
+                <table class="slds-table slds-cell-wrap slds-table_striped" role="grid">
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            <th scope="col">
+                                <div class="slds-truncate" title="Name">Name</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Research Area">Research Area</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.listOfAdHocEntries}" var="adhocentry">
+                            <tr >
+                                <td class="slds-truncate" >
+                                  <a onclick="{!c.linkAdhocPage}">{!adhocentry.First_Name__c + ' ' + adhocentry.Last_Name__c}
+                                  </a>
+                                </td>
+                                <td class="slds-truncate ">{!adhocentry.Research_Area__c}</td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+              </table>
+           </div>
+      </div>
+   </div>
+    <br/>
+    <br/>
+   <div class="slds-grid">
+      <div class="slds-col--padded  slds-size--3-of-5">
+        <h2>Review Comments</h2>
+        <div class="slds-border_left slds-border_bottom slds-border_right slds-border_top">
+                <table class="slds-table slds-cell-wrap slds-table_striped" role="grid">
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            <th scope="col">
+                                <div class="slds-truncate" title="Research Area">Commented by</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Research Area">Comment</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.listofComments}" var="comment">
+                            <tr >
+                                <td class="slds-truncate">{!comment.CreatedBy.Name}</td>
+                                <td class="slds-truncate">{!comment.Comment__c}</td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+              </table>
+           </div>
+      </div>
+      <div class="slds-col--padded  slds-size--2-of-5">
+      </div>
+    </div>
+    <br/>
+    <br/>
+
+    <button type="button" class="slds-button slds-button--neutral" onclick="{!c.goToAdHoc}">Previous</button>
+    <aura:if isTrue="{!or(v.loggedInUserRole.UserRole.Name == 'TQB COORDINATOR', v.loggedInUserRole.UserRole.Name == 'TQB CHAIR')}">
+      <button type="button" class="slds-button slds-button--neutral" onclick="{!c.goToMeetPrep}">Next</button>
+    </aura:if>
+    <aura:if isTrue="{!v.loggedInUserRole.UserRole.Name == 'TQB Candidate Role'}">
+      <aura:if isTrue="{!v.candPackage.Status__c =='In Progress' || v.candPackage.Status__c =='Returned' }">
+        <button type="button" class="slds-button slds-button--neutral" onclick="{!c.submitPackage}">Submit</button>
+      </aura:if>
+    </aura:if>
+    <aura:if isTrue="{!or(v.loggedInUserRole.UserRole.Name != 'TQB Candidate Role', v.loggedInUserRole.UserRole.Name != 'TQB CHAIR', v.loggedInUserRole.UserRole.Name != 'TQB COORDINATOR')}">
+        <!--<aura:if isTrue="{!v.candPackage.Status__c =='Submitted' || v.candPackage.Status__c == 'Approved By 1st Line Supervisor'}">-->
+           <button type="button" class="slds-button slds-button--neutral" onclick="{!c.gotoReviewRecoApprove}">Approve</button>
+           <button type="button" class="slds-button slds-button--neutral" onclick="{!c.gotoReviewRecoReject}">Reject</button>
+           <button type="button" class="slds-button slds-button--neutral" onclick="{!c.gotoReviewRecoReturn}">Return</button>
+        <!--</aura:if>-->
+    </aura:if>
+</aura:component>

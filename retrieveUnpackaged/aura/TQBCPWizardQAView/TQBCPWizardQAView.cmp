@@ -1,0 +1,114 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+
+    <aura:attribute name="question" type="TQB_Candidate_Questionnaire__c"/>
+    <aura:attribute name="questionIndex" type="String"/> 
+    <aura:attribute name="questionCount" type="String"/>
+    <aura:attribute name="hasNext" type="boolean" default="false"/>
+    <aura:attribute name="hasPrev" type="boolean" default="true"/>
+    
+    <aura:attribute name="questionId" type="TQB_Candidate_Questionnaire__c.id"/>
+
+    <aura:attribute name="candPackage" type="TQB_Candidate_Package__c"/>
+    <!--<aura:handler event="c:TQBCPEditAdHoc" action="{!c.populateAdHocForSave}"/>-->
+    <aura:handler event="c:TQBCPViewQA" action="{!c.populateQADetail}"/>
+
+    <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
+    <!-- comment attributes -->
+    <aura:attribute name="firstLineSupQuestionComment" type="TQB_Comment__c"  />
+    <aura:attribute name="secondLineSupQuestionComment" type="TQB_Comment__c" />
+    <aura:attribute name="loggedInUserRole" type="User" />
+    <aura:attribute name="answerLength" type="Integer"/>
+    <aura:attribute name="answerWithoutTags" type="String"/>
+   <aura:attribute name="answerWithNoWhiteSpaceNTags" type="String"/>
+
+    <div aura:id="messages">
+      {!v.messages}
+    </div>
+
+  <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+    <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+      <div class="slds-panel__section">
+        <h3 class="slds-text-heading_small slds-m-bottom_medium">Question Detail</h3>
+         <form role="form" class="slds-form slds-form--stacked slds-grid slds-wrap">
+          <div class="slds-col--padded slds-size--1-of-1 slds-medium-size--1-of-2">
+            <div class="slds-form-element" >
+                <div class="slds-form-element__control">
+                  <ui:inputText label="Category" class="slds-input" disabled="true" labelClass="slds-form-element__label" value="{!v.question.Category__c}" />
+                </div>
+            </div>
+            <div class="slds-form-element">
+              <div class="slds-form-element__control">
+                <!--<ui:inputText label="Question" class="slds-input" disabled="true" labelClass="slds-form-element__label" value="{!v.question.Question__c}" />-->
+                <ui:inputTextArea label="Question" rows="4" class="slds-textarea slds-size-1-of-2" disabled="true" aura:id="question" value="{!v.question.Question__c}"/>
+              </div>
+            </div>
+            <div class="slds-form-element" >
+               <aura:if isTrue="{!and(v.loggedInUserRole.UserRole.Name != 'TQB 1st Line Supervisor Role', v.loggedInUserRole.UserRole.Name  != 'TQB 2nd Line Supervisor Role') }">
+                  <div class="slds-form-element__control">
+                    <!--<ui:inputRichText label="Answer" rows="20" class="slds-textarea slds-size-1-of-2" aura:id="answer" placeholder="Enter your response here" value="{!v.question.Answer__c}" keyup="{!c.textCounter}" updateOn="keyup"/>
+                    <ui:outputText value="{!v.answerLength + '/ 3840'}"/>-->
+                    <label class="slds-text-color_default" for="answer">Answer</label> <br/>
+                       <ui:outputText value="{!v.answerLength + '/ 3840'}"/>
+                      <lightning:inputRichText aura:id="answer"  placeholder="Enter your response here" value="{!v.question.Answer__c}"
+                      onfocus="{!c.textCounter}" onblur="{!c.textCounter}" />
+                    <br/>
+                    <button type="button" class="slds-button slds-button--neutral" onclick="{!c.saveQuesAns}">Save Question</button>
+                  </div>
+                  <aura:set attribute="else">
+                     <ui:inputTextArea label="Answer" rows="20" disabled="True" class="slds-textarea slds-size-1-of-2" aura:id="answer" placeholder="Enter your response here" value="{!v.answerWithoutTags}"/>
+                  </aura:set>
+                </aura:if>
+                <div>
+                  <br/>
+                  [Question Number/Total Questions] : [{!v.questionIndex}/{!v.questionCount}]
+                  <br/>
+                  <br/>
+                  <br/>
+                    <div>
+                     <button type="button" class="slds-float--left slds-button slds-button--neutral" onclick="{!c.backToQAList}">Back</button>
+                     <ui:button aura:id="buttonNext" buttonTitle="Next Question" class="slds-float--right button" label="Next Question" press="{!c.next}" disabled="{!v.hasNext}"/>
+                     <ui:button aura:id="buttonPrev" buttonTitle="Prev Question" class="slds-float--right button" label="Prev Question" press="{!c.prev}" disabled="{!v.hasPrev}"/>
+                 </div>
+                </div>
+           </div>
+            <br/>
+         </div>
+         <div class="slds-col--padded slds-size--1-of-1 slds-medium-size--1-of-2">
+              <div class="slds-form-element" >
+            <aura:if isTrue="{!v.loggedInUserRole.UserRole.Name == 'TQB 1st Line Supervisor Role'}">
+                <div>
+                  <label class="slds-text-color_weak" for="answer">1st Line Supervisor Question Comments</label><br/>
+                  <lightning:inputRichText placeholder="Please enter a comment." aura:id="firstLineSupQuestionCommentId"  value="{!v.firstLineSupQuestionComment}"/>
+                  <button type="button" class="slds-button slds-button--neutral" onclick="{!c.saveQuestionCommentFirstLine}">Save</button>
+                </div>
+                <div>
+                  <ui:inputTextArea placeholder="Please enter a comment." label="2nd Line Supervisor Question Comments" rows="4" class="slds-textarea slds-size-3-of-3" disabled="True" aura:id="secondLineSupQuestionCommentId"  value="{!v.secondLineSupQuestionComment}"/>
+                </div>
+            <aura:set attribute="else">
+               <aura:if isTrue="{!v.loggedInUserRole.UserRole.Name == 'TQB 2nd Line Supervisor Role'}">
+                     <div>
+                       <ui:inputTextArea placeholder="Please enter a comment." label="1st Line Supervisor Question Comments" rows="4" class="slds-textarea slds-size-3-of-3" disabled="True" value="{!v.firstLineSupQuestionComment}" aura:id="firstLineSupQuestionCommentId" />
+                    </div>
+                    <div>
+                       <label class="slds-text-color_weak" for="answer">2nd Line Supervisor Question Comments</label><br/>
+                       <lightning:inputRichText placeholder="Please enter a comment." aura:id="secondLineSupQuestionCommentId"  value="{!v.secondLineSupQuestionComment}"/>
+                       <button type="button" class="slds-button slds-button--neutral" onclick="{!c.saveQuestionCommentSecondLine}">Save</button>
+                    </div>
+                 <aura:set attribute="else">
+                      <div>
+                        <ui:inputTextArea placeholder="Please enter a comment." label="1st Line Supervisor Question Comments" rows="4" class="slds-textarea slds-size-3-of-3" disabled="True" value="{!v.firstLineSupQuestionComment}" aura:id="firstLineSupQuestionCommentId" />
+                     </div>
+                      <div>
+                        <ui:inputTextArea placeholder="Please enter a comment." label="2nd Line Supervisor Question Comments" rows="4" class="slds-textarea slds-size-3-of-3" disabled="True" aura:id="secondLineSupQuestionCommentId"  value="{!v.secondLineSupQuestionComment}"/>
+                      </div>
+                </aura:set>
+              </aura:if>
+            </aura:set>
+           </aura:if>
+         </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</aura:component>

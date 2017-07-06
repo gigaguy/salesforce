@@ -1,0 +1,174 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+
+  <aura:attribute name="candPackage" type="TQB_Candidate_Package__c"/>
+  <aura:attribute name="loggedInUserRole" type="User" />
+  <aura:attribute name="listOfAdHocEntries" type="TQB_Ad_Hoc_Entry__c[]"/>
+  <aura:attribute name="adHocEntryName" type="String"/>
+
+  <!--<aura:attribute name="newComment" type="TQB_Comment__c"/>-->
+  <aura:attribute name="newComment" type="TQB_Comment__c" default="{'sobjectType' : 'TQB_Comment__c', 'Comment__c':'', 'Comment_Type__c':'Review', 'Comment_Type_ID__c':'', TQB_Candidate_Package_ID__c : ''}"/>
+  <aura:attribute name="candAttachedDocs" type="AttachedContentDocument[]"/>
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <!--<aura:handler event="c:TQBCPApproveReview" action="{!c.gotoApproveReview}"/>-->
+  <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
+
+
+  <!-- Event Handlers used on the attachment section of the CP Wizard -->
+  <aura:handler event="c:TQBCPRecoNavigator" action="{!c.populateAllAttachment}"/>
+  <aura:handler event="c:TQBCPNewAttachment" action="{!c.showHideAddAttachment}"/>
+
+  <h3 class="slds-text-heading_small slds-m-bottom_medium">Candidate Package Approval</h3>
+
+  <div aura:id="messages">
+    {!v.messages}
+  </div>
+
+<!-- display the attached documents data table in the CP Wizard review recommendation screen only for 1st line supervisors-->
+<aura:if isTrue="{!or(v.loggedInUserRole.UserRole.Name == 'EPA Enterprise', v.loggedInUserRole.UserRole.Name == 'TQB 1st Line Supervisor Role')}">
+
+  <div class="slds-panel__section" aura:id="ListAttachmentView">
+    <h1 class="panel-title"><b>*Attachments (Approval requires attachment of position description and recommendation memo documents)</b></h1>
+
+    <div class="slds-panel__section">
+      <div>
+        <button type="button" class="slds-button slds-button--neutral" onclick="{!c.addNewAttachment}">Add Attachment</button>
+      </div>
+      <br/>
+
+
+      <div class="slds-form-element slds-size--2-of-3">
+        <div class="panel-heading">
+          <h1 class="panel-title"><b>List of Attachments</b></h1><br/>
+        </div>
+        <table class="slds-table slds-cell-wrap slds-table_bordered slds-table_col-bordered slds-table_resizable-cols slds-table_fixed-layout slds-table_striped" role="grid">
+          <thead>
+            <tr class="slds-text-title_caps">
+              <th scope="col">
+                <div class="slds-truncate slds-cell-buffer_left " title="Attachment Name">Attachment Name</div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate slds-cell-buffer_left " title="Account Name">Content Type</div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate slds-cell-buffer_left " title="Delete">Action Menu</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <aura:iteration items="{!v.candAttachedDocs}" var="candAttachedDoc">
+              <tr >
+                <td class="slds-truncate slds-cell-buffer_left slds-cell-wrap" data-label="File Name" title="{!candAttachedDoc.Name}">{!candAttachedDoc.Name}</td>
+                <td class="slds-truncate slds-cell-buffer_left" data-label="Description" title="{!candAttachedDoc.Description}"><ui:outputText value="{!candAttachedDoc.Description}" /></td>
+                <td class="slds-cell-buffer_left"> <button type="button" class="slds-button slds-button--neutral" onclick="{!c.deleteAttachment}" id="{!candAttachedDoc.Id}">Delete</button>
+                <a  class="slds-button slds-button--neutral" href="{!'/servlet/servlet.FileDownload?file='+ candAttachedDoc.Id}">View</a>
+              </td>
+            </tr>
+          </aura:iteration>
+        </tbody>
+      </table> <!-- end main table tag -->
+    </div>
+  </div>
+
+</div>
+</aura:if>
+
+
+  <div class="slds-panel__section slds-nowrap"  aura:id="adHocListSelectionView">
+    <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y slds-is-sortable">
+      <div class="slds-panel__section">
+        <div class="slds-col--padded slds-size--1-of-2">
+
+          <aura:if isTrue="{!or(v.loggedInUserRole.UserRole.Name == 'EPA Enterprise', v.loggedInUserRole.UserRole.Name == 'TQB 2nd Line Supervisor Role')}">
+            <h3 class="slds-text-heading_small slds-m-bottom_medium">*Ad Hoc Selection (Approval requires selection of a minimum of 3 ad hoc entries.)</h3>
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_striped">
+              <thead>
+                <tr class="slds-text-title_caps ">
+                  <th scope="col">
+                    <div class="slds-truncate" title="First Name">Name</div>
+                  </th>
+                  <th scope="col">
+                    <div class="slds-truncate" title="Mailing Address">Mailing Address</div>
+                  </th>
+                  <th scope="col">
+                    <div class="slds-truncate" title="Research Area">Research Area</div>
+                  </th>
+                  <th scope="col">
+                    <div class="slds-truncate" title="Select">Selected?</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <aura:iteration items="{!v.listOfAdHocEntries}" var="adHocEntry">
+                  <tr>
+                    <th scope="row" data-label="Name">
+                      <div class="slds-truncate" title="Name">
+                        <a  onclick="{!c.linkAdhocPage}">{!adHocEntry.First_Name__c + ' ' + adHocEntry.Last_Name__c}</a>
+                      </div>
+                    </th>
+                    <td data-label="Mailing Address">
+                      <div  class="slds-truncate" title="Mailing Address">{!adHocEntry.Mailing_Address__c + ', ' + adHocEntry.City__c + ' ' + adHocEntry.State__c + ' ' + adHocEntry.Postal_Code__c}</div>
+                    </td>
+                    <td data-label="Research Area">
+                      <div  class="slds-truncate" title="Research Area">{!adHocEntry.Research_Area__c}</div>
+                    </td>
+                    <td>
+                      <div class="slds-truncate" align="center">
+                        <ui:inputCheckbox text="{!adHocEntry.Name}" value="{!adHocEntry.Selected__c}" aura:id="checkBox"/>
+                      </div>
+                    </td>
+                  </tr>
+                </aura:iteration>
+              </tbody>
+            </table>
+            <div align = "right">
+              <br/>
+              <ui:button aura:id="button" buttonTitle="save" class="button" label="Save Selections" press="{!c.getSelectedAdhocEntries}"/>
+            </div>
+          </aura:if>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- display the new entry button for 2nd line sup only. -->
+  <aura:if isTrue="{!or(v.loggedInUserRole.UserRole.Name == 'EPA Enterprise', v.loggedInUserRole.UserRole.Name == 'TQB 2nd Line Supervisor Role')}">
+   
+      <h3 class="slds-text-heading_small slds-m-bottom_medium">Enter a new Ad Hoc Reference.</h3>
+      <button type="button" class="slds-button slds-button--neutral" onclick="{!c.createAdHocEntry}">New Entry</button>
+    
+  </aura:if>
+  <!-- do not display until after the user clicks the New Entry button -->
+  <div class="slds-panel__section" aura:id="adHocEditView">
+    <c:TQBCPWizardAdHocEdit candPackage="{!v.candPackage}" onRecoReviewScreen="true" listOfAdHocEntries="{!v.listOfAdHocEntries}"/>
+  </div>
+
+
+
+
+
+  <div class="slds-form-element slds-size--1-of-2" aura:id="comment">
+      <h1 class="panel-title"><b>*Comments</b></h1>
+    <div class="slds-form-element__control">
+      <!--<ui:inputText label="Answer" class="slds-input" disabled="true" labelClass="slds-form-element__label" value="{!v.question.Answer__c}" />-->
+      <ui:inputTextArea rows="5" class="slds-textarea slds-size-1-of-2"  placeholder="Enter your comments here" value="{!v.newComment.Comment__c}"/>
+    </div>
+ </div>
+
+
+  <div aura:id="showHideCancelSubmitApprovalButtons">
+    <button type="button" class="slds-button slds-button--neutral" onclick="{!c.cancelApproveReview}">Cancel</button>
+    <button type="button" class="slds-button slds-button--neutral" onclick="{!c.submitApproveReview}">Submit Approval</button>
+  </div>
+
+ 
+
+
+<div class="slds-panel__section" aura:id="addAttachmentView">
+  <c:TQBCpWizardReviewAddAttach candPackage="{!v.candPackage}"/>
+</div>
+
+
+
+</aura:component>

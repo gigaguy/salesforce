@@ -1,0 +1,273 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="TQBLOIProgressBarController">
+    <aura:attribute name="LettersOfIntent" type="TQB_Letter_of_Intent__c[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:dependency resource="markup://force:navigateToSObject" type="EVENT"/>
+    
+    <div class="slds-box slds-box--x-small slds-theme--shade">
+        <p>Task List</p>
+    </div>
+    <br/>
+    
+    <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+        <thead>
+            <tr class="slds-text-title--caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Item">Item</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="ID Number">ID Number</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Status">Status</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Status Date">Status Date</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Item History">Item History</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.LettersOfIntent}" var="letter">
+                
+                <tr>
+                    <td data-label="Item" title="Item">
+                        <div>Letter of Intent</div>
+                    </td>
+                    <td data-label="Id Number" title="ID Number">
+                        <div><a data-record="{!letter.Id}" onclick="{!c.redirectToSobject}">{!letter.Name}</a></div>
+                    </td>
+                    <td data-label="Status" title="Status">
+                        <div>{!letter.Status__c}</div>
+                    </td>
+                    <td data-label="Status Date" title="Status Date">
+                        <div>{!letter.Status_Date__c}</div>
+                    </td>
+                    <td data-label="Item History" title="Item History">
+                        <div>Item History</div>
+                    </td>
+                </tr>
+                <br/>
+                <tr>
+                    <td align="center" colspan="5">
+                        <div class="slds-grid">
+                            <div class="slds-tabs--path" role="application">
+                                <ul class="slds-tabs--path__nav" role="tablist">
+                                    
+                                    <aura:if isTrue="{!letter.Status__c == 'Not Started'}">
+                                        <li aura:id= "status1" class="slds-tabs--path__item slds-is-current" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-93" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                    <!--<lightning:icon aura:id="status1icon" iconName="utility:check" size="xx-small" alternativeText="Stage Complete"/>-->
+                                                </span>
+                                                <span class="slds-tabs--path__title">Not Started</span>
+                                            </a>
+                                        </li>
+                                        <li aura:id= "status2" class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                </span>
+                                                <span class="slds-tabs--path__title">In Progress</span>
+                                            </a>
+                                        </li>
+                                        <li aura:id= "status3" class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                </span>
+                                                <span class="slds-tabs--path__title">Submitted</span>
+                                            </a>
+                                        </li>
+                                        <li aura:id= "status4" class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                </span>
+                                                <span class="slds-tabs--path__title">Approved/Rejected</span>
+                                            </a>
+                                        </li>
+                                        <li aura:id= "status5" class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                </span>
+                                                <span class="slds-tabs--path__title">Completed</span>
+                                            </a>
+                                        </li>
+                                    </aura:if>
+                                    
+                                    <aura:if isTrue="{!letter.Status__c == 'In Progress'}">
+                                        <li aura:id= "status1" class="slds-tabs--path__item slds-is-complete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-93" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                    <lightning:icon aura:id="status1icon" iconName="utility:check" size="xx-small" alternativeText="Stage Complete"/>
+                                                </span>
+                                                <span class="slds-tabs--path__title">Not Started</span>
+                                            </a>
+                                        </li>
+                                        <li aura:id= "status2" class="slds-tabs--path__item slds-is-current" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                </span>
+                                                <span class="slds-tabs--path__title">In Progress</span>
+                                            </a>
+                                        </li>
+                                        <li aura:id= "status3" class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                </span>
+                                                <span class="slds-tabs--path__title">Submitted</span>
+                                            </a>
+                                        </li>
+                                        <li aura:id= "status4" class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                </span>
+                                                <span class="slds-tabs--path__title">Approved/Rejected</span>
+                                            </a>
+                                        </li>
+                                        <li aura:id= "status5" class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                </span>
+                                                <span class="slds-tabs--path__title">Completed</span>
+                                            </a>
+                                        </li>
+                                    </aura:if>
+                                    
+                                    <aura:if isTrue="{!letter.Status__c == 'Submitted'}">
+                                        <li class="slds-tabs--path__item slds-is-complete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-93" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                    <lightning:icon iconName="utility:check" size="xx-small" alternativeText="Stage Complete"/>
+                                                </span>
+                                                <span class="slds-tabs--path__title">Not Started</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-tabs--path__item slds-is-complete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                    <lightning:icon iconName="utility:check" size="xx-small" alternativeText="Stage Complete"/>
+                                                </span>
+                                                <span class="slds-tabs--path__title">In Progress</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-tabs--path__item slds-is-current" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                </span>
+                                                <span class="slds-tabs--path__title">Submitted</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                </span>
+                                                <span class="slds-tabs--path__title">Approved/Rejected</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                </span>
+                                                <span class="slds-tabs--path__title">Completed</span>
+                                            </a>
+                                        </li>
+                                    </aura:if>
+                                    
+                                    <aura:if isTrue="{!letter.Status__c == 'Approved/Rejected'}">
+                                        <li class="slds-tabs--path__item slds-is-complete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-93" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                    <lightning:icon iconName="utility:check" size="xx-small" alternativeText="Stage Complete"/>
+                                                </span>
+                                                <span class="slds-tabs--path__title">Not Started</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-tabs--path__item slds-is-complete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                    <lightning:icon iconName="utility:check" size="xx-small" alternativeText="Stage Complete"/>
+                                                </span>
+                                                <span class="slds-tabs--path__title">In Progress</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-tabs--path__item slds-is-complete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                    <lightning:icon iconName="utility:check" size="xx-small" alternativeText="Stage Complete"/>
+                                                </span>
+                                                <span class="slds-tabs--path__title">Submitted</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-tabs--path__item slds-is-current" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                </span>
+                                                <span class="slds-tabs--path__title">Approved/Rejected</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                </span>
+                                                <span class="slds-tabs--path__title">Completed</span>
+                                            </a>
+                                        </li>
+                                    </aura:if>
+                                    
+                                    <aura:if isTrue="{!letter.Status__c == 'Completed'}">
+                                        <li class="slds-tabs--path__item slds-is-complete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-93" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                    <lightning:icon iconName="utility:check" size="xx-small" alternativeText="Stage Complete"/>
+                                                </span>
+                                                <span class="slds-tabs--path__title">Not Started</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-tabs--path__item slds-is-complete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                    <lightning:icon iconName="utility:check" size="xx-small" alternativeText="Stage Complete"/>
+                                                </span>
+                                                <span class="slds-tabs--path__title">In Progress</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-tabs--path__item slds-is-complete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                    <lightning:icon iconName="utility:check" size="xx-small" alternativeText="Stage Complete"/>
+                                                </span>
+                                                <span class="slds-tabs--path__title">Submitted</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-tabs--path__item slds-is-complete" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                    <lightning:icon iconName="utility:check" size="xx-small" alternativeText="Stage Complete"/>
+                                                </span>
+                                                <span class="slds-tabs--path__title">Approved/Rejected</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-tabs--path__item slds-is-current" role="presentation">
+                                            <a class="slds-tabs--path__link" id="tabs-path-94" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                                <span class="slds-tabs--path__stage">
+                                                </span>
+                                                <span class="slds-tabs--path__title">Completed</span>
+                                            </a>
+                                        </li>
+                                    </aura:if>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <br/>
+            </aura:iteration>
+            
+        </tbody>
+        
+    </table>
+    
+    
+    
+    
+</aura:component>

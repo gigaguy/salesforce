@@ -1,0 +1,207 @@
+<!--
+//
+// Developer: Chris Alley
+// Purpose: File upload TEST component.
+//
+//   TESTING SUBLIME UPLOAD 4
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+
+    <aura:attribute name="candPackage" type="TQB_Candidate_Package__c" />
+    <aura:attribute name="candLOI" type="TQB_Letter_of_Intent__c" />
+    <aura:attribute name="candAttachedDoc" type="AttachedContentDocument[]"/>
+    <aura:attribute name="candAttachedDocId" type="Id"/>
+    <aura:attribute name="candAttachedDocName" type="String"/>
+    <aura:attribute name="candAttachedDocType" type="String"/>
+    <aura:attribute name="firstLineSupComment" type="String"  />
+    <aura:attribute name="secondLineSupComment" type="String" />
+    <aura:attribute name="loggedInUserRole" type="User" />
+<!-- boolean for modal pop up box to enter comments -->
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+
+    <!-- set up the attribuites and aura ID for on screen messages to the user -->
+    <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
+      <div aura:id="messages">
+          {!v.messages}
+      </div>
+    <!-- Event Handlers used on the attachment section of the CP Wizard -->
+  <!--  <aura:handler event="c:TQBCPAttachNavigator" action="{!c.populateAllAttachment}"/>-->
+
+ <aura:handler event="c:TQBCPNewAttachment" action="{!c.showHideAddAttachment}"/> <!-- needed or it will break for candidates -->
+   <aura:handler event="c:TQBCPFileControllerEvent" action="{!c.populateInitMethods}"/>
+   <aura:handler event="c:TQBCPAddAttachmentCommentEvent" action="{!c.showHideAddAttachComment}"/>
+
+<!-- Render the CP header summary information  -->
+  <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+    <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+      <div class="slds-panel__section">
+        <h3 class="slds-text-heading_small slds-m-bottom_medium">Candidate Information</h3>
+         <form role="form" class="slds-form slds-form--stacked slds-grid slds-wrap">
+          <div class="slds-col--padded slds-size--1-of-3">
+              <div class="slds-form-element">
+                  <aura:if isTrue="{!(v.loggedInUserRole.UserRole.Name != 'TQB Candidate Role')}">
+                       <label class="slds-form-element__label" for="combobox-unique-id">Candidate Name</label>
+                       <div class="slds-form-element__control">
+                          <ui:outputText value="{!v.candLOI.Candidate_Name__c}" />
+                       </div>
+                  </aura:if>
+                  <aura:if isTrue="{!(v.loggedInUserRole.UserRole.Name != 'TQB 1st Line Supervisor Role')}">
+                        <label class="slds-form-element__label" for="combobox-unique-id">1st Line Supervisor</label>
+                        <div class="slds-form-element__control">
+                          <ui:outputText value="{!v.candPackage.Candidates_1st_Line_Supervisor_Name__r.Name}" />
+                        </div>
+                  </aura:if>
+                  <aura:if isTrue="{!(v.loggedInUserRole.UserRole.Name != 'TQB 2nd Line Supervisor Role')}">
+                        <label class="slds-form-element__label" for="combobox-unique-id">2nd Line Supervisor</label>
+                        <div class="slds-form-element__control">
+                          <ui:outputText value="{!v.candPackage.Candidates_2nd_Line_Supervisor_Name__r.Name}" />
+                        </div>
+                  </aura:if>
+              </div>
+           </div>
+           <div class="slds-col--padded slds-size--1-of-3">
+                <label class="slds-form-element__label" for="combobox-unique-id">Package Name</label>
+                <div class="slds-form-element__control">
+                  <ui:outputText value="{!v.candPackage.Name}" />
+                </div>
+                <label class="slds-form-element__label" for="combobox-unique-id">Current Lab Work Location</label>
+                <div class="slds-form-element__control">
+                  <ui:outputDate value="{!v.candLOI.Current_Lab_Work_Location_Assignment__c}" />
+                </div>
+           </div>
+           <div class="slds-col--padded slds-size--1-of-3">
+                <div class="slds-form-element ">
+                  <label class="slds-form-element__label" for="combobox-unique-id">Intended Track</label>
+                  <div class="slds-form-element__control">
+                    <ui:outputText value="{!v.candLOI.IntendedTrack__c}" />
+                  </div>
+                  <label class="slds-form-element__label" for="combobox-unique-id">GS Level</label>
+                  <div class="slds-form-element__control">
+                    <ui:outputDate value="{!v.candLOI.Current_GS_Level__c}" />
+                  </div>
+                </div>
+           </div>
+         </form>
+      </div>
+    </div>
+  </div>
+  <hr/>
+
+
+  <div class="slds-panel__section" aura:id="ListAttachmentView">
+
+  <!-- Render the attachment user interface of the CP Wizard -->
+
+  <aura:if isTrue="{!v.loggedInUserRole.UserRole.Name == 'TQB Candidate Role'}">
+      <h3 class="slds-text-heading_small slds-m-bottom_medium">Attachments</h3>
+      <h3 class="slds-text-heading_small slds-m-bottom_medium">Please attach the appropriate documents and provide the content type where indicated.</h3>
+        <div>
+            <button type="button" class="slds-button slds-button--neutral" onclick="{!c.addNewAttachment}">Add Attachment</button>
+        </div>
+ </aura:if>
+
+
+<div class="slds-panel slds-nowrap">
+  <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+    <div class="slds-panel__section">
+      <div class="slds-col--padded slds-size--1-of-1 ">
+         <div class="panel-heading">
+            <h3 class="slds-text-heading_small slds-m-bottom_medium">List of Attachments</h3>
+         </div>
+        <table class="slds-table slds-cell-wrap slds-table_bordered slds-table_col-bordered slds-table_resizable-cols slds-table_fixed-layout slds-table_striped" role="grid">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <div class="slds-truncate slds-cell-buffer_left " title="Attachment Name">Attachment Name</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate slds-cell-buffer_left " title="Account Name">Content Type</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate slds-cell-buffer_left " title="Delete">Action Menu</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.candAttachedDoc}" var="candAttachedDoc" indexVar="index">
+                    <tr>
+                        <td class="slds-truncate slds-cell-buffer_left slds-cell-wrap" data-label="Attachment Name" title="{!candAttachedDoc.Name}">
+                          <ui:outputText value="{!candAttachedDoc.Name}"/>
+                        </td>
+                        <td class="slds-truncate slds-cell-buffer_left" data-label="Description" title="{!candAttachedDoc.Description}">
+                          <ui:outputText value="{!candAttachedDoc.Description}" />
+                        </td>
+                        <td class="slds-cell-buffer_left">
+                          <aura:if isTrue="{!v.loggedInUserRole.UserRole.Name == 'TQB Candidate Role'}">
+                            <button type="button" class="slds-button slds-button--neutral" onclick="{!c.deleteAttachment}" id="{!candAttachedDoc.Id}">Delete</button>
+                          </aura:if>
+
+                          <a class="slds-button slds-button--neutral" href="{!'/servlet/servlet.FileDownload?file='+ candAttachedDoc.Id}">View</a>
+                        <!-- disable add comments for supervisors if the CP is in completed, rejected, returned or approved status -->
+
+                      <aura:if isTrue="{!and(v.candPackage.Status != 'Completed', v.candPackage.Status != 'Rejected', v.candPackage.Status != 'Returned', v.candPackage.Status != 'Approved By 1st Line Supervisor', v.candPackage.Status != 'Approved By 2nd Line Supervisor')}"> 
+                        <!-- only display add comment if the user is a 1st or 2nd line supervisor all others see  view comments only-->
+                            <aura:if isTrue="{!or(v.loggedInUserRole.UserRole.Name == 'TQB 1st Line Supervisor Role', v.loggedInUserRole.UserRole.Name == 'TQB 2nd Line Supervisor Role')}">
+                                    <button type="button" class="slds-button slds-button--neutral" onclick="{!c.addAttachmentComment}" data-record="{!candAttachedDoc.Id}">Add Comment</button>
+                                  <aura:set attribute="else">
+                                        <button type="button" class="slds-button slds-button--neutral" onclick="{!c.addAttachmentComment}" data-record="{!candAttachedDoc.Id}">See Comment</button>
+                                  </aura:set>
+                                </aura:if>
+                          </aura:if>  <!--CP status check do not show add comment if CP status is completed approved, returned or rejected-->
+                        </td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table> <!-- end main table tag -->
+    </div>
+  </div>
+</div>
+</div>
+
+</div> <!-- end grid -->
+
+
+  <!--Use aura:if tag to display Model Box, on the bese of conditions. [isOpen boolean attribute] -->
+    <aura:if isTrue="{!v.isOpen}">
+
+   <!--###### MODAL BOX Start From Here ######-->
+      <div role="dialog" tabindex="-1" aria-labelledby="header" class="slds-modal slds-fade-in-open ">
+        <div class="slds-modal__container">
+          <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+          <div class="slds-modal__header">
+            <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModal}">
+            <span class="slds-assistive-text">Close</span>
+            </button>
+            <h2 id="header" class="slds-text-heading--medium">Supervisor's Attachment Commments</h2>
+          </div>
+          <!--###### MODAL BOX BODY Part Start From Here ######-->
+          <div class="slds-modal__content slds-p-around--medium">
+               <div class="slds-panel__section slds-form-element slds-col--padded slds-size--1-of-1" aura:id="addAttachCommentView">
+                <c:TQBCPWizardAddAttachComment candAttachedDocName="{!v.candAttachedDocName}" candAttachedDocType="{!v.candAttachedDocType}" loggedInUserRole="{!v.loggedInUserRole}" />
+              </div>
+          </div>
+          <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+          <div class="slds-modal__footer">
+            <button class="slds-button slds-button--neutral" onclick="{!c.closeModal}">Close</button>
+          </div>
+        </div>
+      </div>
+      <div class="slds-backdrop slds-backdrop--open"></div>
+      <!--###### MODAL BOX Part END Here ######-->
+
+ </aura:if>
+
+
+
+
+    <button type="button" class="slds-button slds-button--neutral" onclick="{!c.goToQuestionnaire}">Previous</button>
+    <button type="button" class="slds-button slds-button--neutral" onclick="{!c.goToAdHoc}">Next</button>
+
+
+  <div class="slds-panel__section" aura:id="addAttachmentView">
+    <c:TQBCPWizardAddAttachment />
+ </div>
+
+
+</aura:component>

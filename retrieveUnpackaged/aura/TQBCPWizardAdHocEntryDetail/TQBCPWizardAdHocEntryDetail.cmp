@@ -1,0 +1,72 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+
+    <aura:attribute name="adHocEntry" type="TQB_Ad_Hoc_Entry__c"/>
+    <aura:attribute name="candPackage" type="TQB_Candidate_Package__c"/>
+    <!--<aura:handler event="c:TQBCPEditAdHoc" action="{!c.populateAdHocForSave}"/>-->
+    <aura:handler event="c:TQBCPViewAdHoc" action="{!c.populateAdHocDetail}"/>
+
+    <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
+
+    <div aura:id="messages">
+      {!v.messages}
+    </div>
+
+    <!--<div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+      <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+        <div class="slds-panel__section">-->
+          <h3 class="slds-text-heading_small slds-m-bottom_medium">Ad Hoc Entry Detail</h3>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputText label="First Name" class="slds-input" disabled="true" labelClass="slds-form-element__label" value="{!v.adHocEntry.First_Name__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2">
+            <div class="slds-form-element__control">
+              <ui:inputText label="Last Name" class="slds-input" disabled="true" labelClass="slds-form-element__label" value="{!v.adHocEntry.Last_Name__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputText label="Mailing Address" class="slds-input" disabled="true" labelClass="slds-form-element__label" value="{!v.adHocEntry.Mailing_Address__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputText label="City" class="slds-input" disabled="true" labelClass="slds-form-element__label" value="{!v.adHocEntry.City__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputText label="State" class="slds-input" disabled="true" labelClass="slds-form-element__label" value="{!v.adHocEntry.State__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputText label="Postal Code" class="slds-input" disabled="true" labelClass="slds-form-element__label" value="{!v.adHocEntry.Postal_Code__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputText label="Research Area" class="slds-input" disabled="true" labelClass="slds-form-element__label" value="{!v.adHocEntry.Research_Area__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputText label="Phone" class="slds-input" disabled="true" labelClass="slds-form-element__label" value="{!v.adHocEntry.Phone__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputText label="Email" class="slds-input" disabled="true" labelClass="slds-form-element__label" value="{!v.adHocEntry.Email__c}" />
+            </div>
+          </div>
+        <br/>
+          <div>
+            <button type="button" class="slds-button slds-button--neutral" onclick="{!c.backToAdHocList}">Back</button>
+            <button type="button" class="slds-button slds-button--neutral" onclick="{!c.editAdHoc}">Edit</button>
+          </div>
+      <!--</div>
+    </div>
+  </div>-->
+
+</aura:component>

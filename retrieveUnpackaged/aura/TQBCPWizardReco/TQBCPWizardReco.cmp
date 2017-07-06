@@ -1,0 +1,100 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+
+  <aura:attribute name="candPackage" type="TQB_Candidate_Package__c"/>
+
+  <aura:attribute name="candLOI" type="TQB_Letter_of_Intent__c" />
+  <aura:attribute name="loggedInUserRole" type="User" />
+  <aura:attribute name="adHocEntry" type="TQB_Ad_Hoc_Entry__c"/>
+  <aura:attribute name="recoType" type="String"/>
+  <aura:attribute name="adHocEntryId" type="String"/>
+  <aura:attribute name="adHocEntrySelected" type="Boolean"/>
+  <aura:attribute name="newComment" type="TQB_Comment__c"/>
+  <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
+  <aura:attribute name="candAttachedDoc" type="AttachedContentDocument[]"/>
+  <aura:attribute name="candAttachedDocs" type="AttachedContentDocument[]"/>
+  <aura:attribute name="selectedEntryArray" type="String[]"/>
+  <aura:attribute name="newValue" type="Boolean"/>
+  <aura:attribute name="adHocEntryName" type="String"/>
+  <aura:attribute name="listOfAdHocEntries" type="TQB_Ad_Hoc_Entry__c[]"/>
+
+
+
+  <aura:handler event="c:TQBCPRecoNavigator" action="{!c.populateReco}"/>
+
+  <div aura:id="messages">
+    {!v.messages}
+  </div>
+
+  <!-- Render the CP header summary information  -->
+  <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+    <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+      <div class="slds-panel__section">
+        <h3 class="slds-text-heading_small slds-m-bottom_medium">Candidate Information</h3>
+        <form role="form" class="slds-form slds-form--stacked slds-grid slds-wrap">
+          <div class="slds-col--padded slds-size--1-of-3">
+            <div class="slds-form-element">
+              <aura:if isTrue="{!(v.loggedInUserRole.UserRole.Name != 'TQB Candidate Role')}">
+                <label class="slds-form-element__label" for="combobox-unique-id">Candidate Name</label>
+                <div class="slds-form-element__control">
+                  <ui:outputText value="{!v.candLOI.Candidate_Name__c}" />
+                </div>
+              </aura:if>
+              <aura:if isTrue="{!(v.loggedInUserRole.UserRole.Name != 'TQB 1st Line Supervisor Role')}">
+                <label class="slds-form-element__label" for="combobox-unique-id">1st Line Supervisor</label>
+                <div class="slds-form-element__control">
+                  <ui:outputText value="{!v.candPackage.Candidates_1st_Line_Supervisor_Name__r.Name}" />
+                </div>
+              </aura:if>
+              <aura:if isTrue="{!(v.loggedInUserRole.UserRole.Name != 'TQB 2nd Line Supervisor Role')}">
+                <label class="slds-form-element__label" for="combobox-unique-id">2nd Line Supervisor</label>
+                <div class="slds-form-element__control">
+                  <ui:outputText value="{!v.candPackage.Candidates_2nd_Line_Supervisor_Name__r.Name}" />
+                </div>
+              </aura:if>
+            </div>
+          </div>
+          <div class="slds-col--padded slds-size--1-of-3">
+            <label class="slds-form-element__label" for="combobox-unique-id">Package Name</label>
+            <div class="slds-form-element__control">
+              <ui:outputText value="{!v.candPackage.Name}" />
+            </div>
+            <label class="slds-form-element__label" for="combobox-unique-id">Current Lab Work Location</label>
+            <div class="slds-form-element__control">
+              <ui:outputDate value="{!v.candLOI.Current_Lab_Work_Location_Assignment__c}" />
+            </div>
+          </div>
+          <div class="slds-col--padded slds-size--1-of-3">
+            <div class="slds-form-element ">
+              <label class="slds-form-element__label" for="combobox-unique-id">Intended Track</label>
+              <div class="slds-form-element__control">
+                <ui:outputText value="{!v.candLOI.IntendedTrack__c}" />
+              </div>
+              <label class="slds-form-element__label" for="combobox-unique-id">GS Level</label>
+              <div class="slds-form-element__control">
+                <ui:outputDate value="{!v.candLOI.Current_GS_Level__c}" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <hr/>
+
+ 
+    <div class="slds-panel__section" aura:id="approveReviewView">
+      <c:TQBCPWizardApproveReview candPackage="{!v.candPackage}"/>
+    </div>
+ 
+ 
+    <div class="slds-panel__section" aura:id="returnReviewView">
+      <c:TQBCPWizardReturnReview candPackage="{!v.candPackage}"/>
+    </div>
+ 
+ 
+    <div class="slds-panel__section" aura:id="rejectReviewView">
+      <c:TQBCPWizardRejectReview candPackage="{!v.candPackage}"/>
+    </div>
+ 
+
+</aura:component>

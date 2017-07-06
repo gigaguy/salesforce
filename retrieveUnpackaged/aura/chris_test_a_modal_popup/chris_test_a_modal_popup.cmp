@@ -1,0 +1,11 @@
+<aura:component >
+    <aura:attribute name="myText" type="String" default="Popup Component Container to test modal pop up windows"/>
+    <ui:outputText value="{!v.myText}" />
+    
+    <div>
+        <ui:inputTextArea label="2nd Line Supervisor Attachment Comments" rows="4" class="slds-textarea slds-size-3-of-3" disabled="False" aura:id="secondLineSupCommentId"  value="{!v.secondLineSupComment}"/>
+        <button type="button" class="slds-button slds-button--neutral" onclick="{!c.saveAttachCommentSecondLine}">Save</button>
+        <button type="button" class="slds-button slds-button--neutral" onclick="{!c.backToAttachView}">Back</button>
+    </div>
+    
+</aura:component>

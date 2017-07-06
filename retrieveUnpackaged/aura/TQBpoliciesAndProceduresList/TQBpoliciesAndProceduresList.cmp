@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="TQBpoliciesAndProceduresController">
+    
+    <aura:attribute name="TQBpoliciesAndProceduresList" type="TQB_Policies_and_Procedures__c[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <p>TQB Policies and Procedures </p>
+    <div class="slds-grid">
+        <div class="slds-col">
+          <div class="slds-box slds-box--small slds-theme--shade">
+            <aura:iteration items="{!v.TQBpoliciesAndProceduresList}" var="policiesAndProcedures">
+               <c:TQBpoliciesAndProcedures TQBpoliciesAndProcedures="{!policiesAndProcedures}"/>
+            </aura:iteration>            
+          </div>
+        </div>
+    </div>
+</aura:component>

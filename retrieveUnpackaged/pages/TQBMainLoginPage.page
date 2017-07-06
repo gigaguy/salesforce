@@ -1,0 +1,35 @@
+<apex:page id="loginPage"  controller="SiteLoginController" showHeader="false" title="TQB Login Page">
+<apex:image id="EPAImage" value="{!$Resource.EPA_Logo}" width="200" height="200"/>
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+ </head>
+ 
+  <apex:form >
+     <div class="col-md-7" >
+        <apex:pageMessages id="error"/>
+        <apex:panelGrid columns="2" style="margin-top:1em;">
+            <apex:outputLabel value="{!$Label.site.username}" for="username"/>
+            <apex:inputText id="username" value="{!username}"/>
+            <apex:outputLabel value="{!$Label.site.password}" for="password"/>
+            <apex:inputSecret id="password" value="{!password}"/>
+            <apex:outputText value=""/>
+            <apex:outputText value=""/>
+            <apex:outputText value=""/>
+            <apex:commandButton action="{!login}" value="Sign In" id="loginButton"/>
+            <apex:outputText value=""/>
+            <apex:outputText value=""/>
+            <apex:outputText value=""/>
+      </apex:panelGrid>
+     </div>
+     
+     <div class="col-md-5">
+            <apex:outputText value="TQB Bulletin Board"/>
+         <div style="border-width:1px;border-style:solid;border-color:black;left:10px;background-color:skyblue">
+            <apex:dataList value="{!bulletinPosts}" var="ct">
+               <apex:outputText id="bulletinBoard" value="{!ct.BulletinBoardPostText__c}"/>
+               <br/>
+            </apex:dataList>
+         </div>
+     </div>
+  </apex:form>
+</apex:page>

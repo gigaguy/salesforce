@@ -1,0 +1,107 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBLOIWizardPickList" >
+
+    <aura:handler name="init" value="{!this}" action="{!c.loadFormDropdownData}" /> 
+    
+    <aura:attribute name="newLOIPackage" type="TQB_Letter_of_Intent__c"  default="{ 'sobjectType': 'TQB_Letter_of_Intent__c',
+    'Candidates_1st_Line_Supervisor_Name__c': '',
+    'Candidates_2nd_Line_Supervisor_Name__c': '',
+    'Current_GS_Level__c': '',
+    'Current_Lab_Work_Location_Assignment__c': '',
+    'CurrentRegion__c': '',
+    'IntendedTrack__c': '',
+    'Status__c': '',
+    'unknown_custom_field': ''
+     }"/>
+
+    <aura:attribute name="LOI1stlineSupervisor" type="TQB_Letter_of_Intent__c[]" />  
+    <aura:attribute name="LOI2ndlineSupervisor" type="List" />
+    <aura:attribute name="currentLabAssignment" type="List" />
+    <aura:attribute name="currentGSLevel" type="List" />
+    <aura:attribute name="currentRegion" type="List" />
+    <aura:attribute name="LOIStatus" type="List" />
+    <aura:attribute name="LOIIntendedTrack" type="List" />
+
+  <div class="container-fluid" aura:id="addLOIView">
+    <h3 class="slds-text-heading_small slds-m-bottom_medium">Letter of Intent form</h3>
+     <form role="form" class="slds-form slds-form--stacked slds-grid slds-wrap">
+      <div class="slds-col--padded slds-size--1-of-1 slds-medium-size--1-of-2">
+        <div class="slds-form-element">
+             <div class="slds-form-element__control">
+                  <lightning:select name="LOI1stline" aura:id="LOI1stline" label="Candidate 1st Line Supervisor">
+                    <aura:iteration items="{!v.LOI1stlineSupervisor}" var="LOI1stline">
+                        <option value="{!LOI1stline.LastName + ' [' + LOI1stline.Title + '] '}" text="{!LOI1stline.LastName + '[' + LOI1stline.Title + ']'}"></option>
+                    </aura:iteration>
+                  </lightning:select>
+              </div>
+        </div>
+        <div class="slds-form-element">
+              <div class="slds-form-element__control">
+                <lightning:select name="LOI2ndline" aura:id="LOI2ndline" label="Candidate 2nd Line Supervisor">
+                    <aura:iteration items="{!v.LOI2ndlineSupervisor}" var="LOI2ndline">
+                        <option value="{!LOI2ndline.LastName + ' [' + LOI2ndline.Title + '] '}" text="{!LOI2ndline.LastName + '[' + LOI2ndline.Title + ']'}"></option>
+                    </aura:iteration>
+                  </lightning:select>
+               </div>
+        </div>
+     
+        <div class="slds-form-element">
+              <div class="slds-form-element__control">
+                <lightning:select name="LOICurrentLab" aura:id="LOICurrentLab" label="Current Lab Work Location Assignment">
+                    <aura:iteration items="{!v.currentLabAssignment}" var="currentLab">
+                        <option value="{!currentLab}" text="{!currentLab}"></option>
+                    </aura:iteration>
+                  </lightning:select>
+               </div>
+        </div> 
+        <div class="slds-form-element">
+              <div class="slds-form-element__control">
+                 <lightning:select name="LOICurrentGSlevel" aura:id="LOICurrentGSlevel"  label="Current GS Level">
+                    <aura:iteration items="{!v.currentGSLevel}" var="currentGS">
+                        <option value="{!currentGS}" text="{!currentGS}"></option>
+                    </aura:iteration>
+                  </lightning:select>
+               </div>
+        </div>
+        <div>
+             <c:LOIRejectReasonMultiSelectPickList />
+        </div>
+        <br/>
+         <button type="button" class="slds-button slds-button--neutral" onclick="{!c.cancelLOI}">Cancel</button>
+         <button type="button" class="slds-button slds-button--neutral" onclick="{!c.saveLOI}">Save</button>
+         <button type="button" class="slds-button slds-button--neutral" onclick="{!c.saveReturnLOI}">Save and Return</button>
+         <button type="button" class="slds-button slds-button--neutral" onclick="{!c.saveApproveLOI}">Save and Approve</button>
+         <button type="button" class="slds-button slds-button--neutral" onclick="{!c.DenialLOI}">Denial</button>
+     </div>
+     <div class="slds-col--padded slds-size--1-of-1 slds-medium-size--1-of-2">
+         <div class="slds-form-element">
+              <div class="slds-form-element__control">
+                <lightning:select name="LOICurrentRegion" aura:id="LOICurrentRegion" label="Current Region">
+                    <aura:iteration items="{!v.currentRegion}" var="currentRegion">
+                        <option value="{!currentRegion}" text="{!currentRegion}"></option>
+                    </aura:iteration>
+                  </lightning:select>
+               </div>
+        </div>
+        <div class="slds-form-element">
+              <div class="slds-form-element__control">
+                <lightning:select name="LOIIntendedTrack" aura:id="LOIIntendedTrack" label="Intended Track">
+                    <aura:iteration items="{!v.LOIIntendedTrack}" var="intendedTrack">
+                        <option value="{!intendedTrack}" text="{!intendedTrack}"></option>
+                    </aura:iteration>
+                  </lightning:select>
+               </div>
+        </div>
+         <div class="slds-form-element">
+              <div class="slds-form-element__control">
+                <lightning:select name="LOIStatus" aura:id="LOIStatus" label="Status">
+                    <aura:iteration items="{!v.LOIStatus}" var="status">
+                        <option value="{!status}" text="{!status}"></option>
+                    </aura:iteration>
+                  </lightning:select>
+               </div>
+        </div>
+      </div>
+     </form>
+</div>
+	
+</aura:component>

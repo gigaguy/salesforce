@@ -1,0 +1,54 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+
+  <!--<aura:handler name="init" value="{!this}" action="{!c.doInit}" />-->
+  <!--<aura:attribute name="candPackage" type="TQB_Candidate_Package__c"/>-->
+
+    <aura:attribute name="candPackage" type="TQB_Candidate_Package__c"  default="{ 'sobjectType': 'TQB_Candidate_Package__c',
+      'Name': '',
+      'Status__c': '',
+      'Status_Date__c': '',
+      'Candidates_1st_Line_Supervisor_Name__c': '',
+      'Candidates_2nd_Line_Supervisor_Name__c': '',
+      'Reject_Reason__c' : 'Other'
+      }"/>
+  <aura:attribute name="newComment" type="TQB_Comment__c" default="{'sobjectType' : 'TQB_Comment__c', 'Comment__c':'', 'Comment_Type__c':'Review', 'Comment_Type_ID__c':'', TQB_Candidate_Package_ID__c : ''}"/>
+  <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
+  <aura:handler event="c:TQBCPRecoNavigator" action="{!c.populateRecoReview}"/>
+  <aura:attribute name="listOfAdHocEntries" type="TQB_Ad_Hoc_Entry__c[]"/>
+  <aura:handler event="c:TQBCPRecoNavigator" action="{!c.populateRecoReview}"/>
+   
+  <h3 class="slds-text-heading_small slds-m-bottom_medium">Candidate Package Rejection</h3>
+    
+  <div tabindex="0" aura:id="messages">
+    {!v.messages}
+  </div>
+    
+  <div class="slds-panel__section"  aura:id="rejectReasonView">
+
+    <h1 class="panel-title"><b>*Reject Reason</b></h1><br/>
+    <div class="slds-form-element slds-size--1-of-2" >
+      <div class="slds-form-element__control">
+
+        <ui:inputSelect class="dynamic" aura:id="rejectReasonSelect"/>
+        <!--<ui:inputSelect class="dynamic" aura:id="InputRejectReason" value="{!v.candPackage.Reject_Reason__c}"/>-->
+      </div>
+    </div>
+  </div>
+
+  <div class="slds-panel__section" aura:id="rejectCommentView">
+    <h1 class="panel-title"><b>*Comments</b></h1><br/>
+    <div class="slds-form-element slds-size--1-of-2" >
+      <div class="slds-form-element__control">
+        <!--<ui:inputText label="Answer" class="slds-input" disabled="true" labelClass="slds-form-element__label" value="{!v.question.Answer__c}" />-->
+        <ui:inputTextArea rows="5" class="slds-textarea slds-size-1-of-2" aura:id="comment" placeholder="Enter your comments here" value="{!v.newComment.Comment__c}"/>
+      </div>
+    </div>
+
+    <div>
+      <button type="button" class="slds-button slds-button--neutral" onclick="{!c.cancelRejectReview}">Cancel</button>
+      <button type="button" class="slds-button slds-button--neutral" onclick="{!c.submitRejectReview}">Submit Rejection</button>
+    </div>
+
+  </div>
+
+</aura:component>

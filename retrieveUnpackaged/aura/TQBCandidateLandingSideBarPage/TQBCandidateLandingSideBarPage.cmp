@@ -1,0 +1,12 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <div>
+        <div class="slds-box slds-theme--shade">
+            <c:TQBpoliciesAndProceduresList />
+        </div>
+        <br/>
+        <br/>
+        <div class="slds-box slds-theme--shade">
+            <c:TQBBulletinBoardList />
+        </div>               
+    </div>  
+</aura:component>

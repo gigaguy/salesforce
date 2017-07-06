@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Custom object that stores the Candidate&apos;s promotion package data and related fields.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Candidate_Name__c</fullName>
+        <description>Users first and last name for display on the Candidate Package</description>
+        <externalId>false</externalId>
+        <formula>CreatedBy.FirstName &amp;&apos; &apos;  &amp; CreatedBy.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Users first and last name for display on the Candidate Package</inlineHelpText>
+        <label>Candidate Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Candidates_1st_Line_Supervisor_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Candidate&apos;s 1st Line Supervisor name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Candidate&apos;s 1st Line Supervisor name.</inlineHelpText>
+        <label>Candidates 1st Line Supervisor Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.UserRole.DeveloperName</field>
+                <operation>equals</operation>
+                <value>X1st_Line_Supervisor_Role</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>TQB_Candidate_Packages</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Candidates_2nd_Line_Supervisor_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Candidates 2nd Line Supervisor Name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Candidates 2nd Line Supervisor Name.</inlineHelpText>
+        <label>Candidates 2nd Line Supervisor Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.UserRole.DeveloperName</field>
+                <operation>equals</operation>
+                <value>X2nd_Line_Supervisor_Role</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>TQB_Candidate_Packages1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>File_Type__c</fullName>
+        <defaultValue>&quot;Please choose a file type.&quot;</defaultValue>
+        <description>The types of candidate documents that may be uploaded.</description>
+        <externalId>false</externalId>
+        <label>File Type</label>
+        <required>true</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Curriculum Vitae</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Presentation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Recommendation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reference</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Research Paper</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>White Paper</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Work Product</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Position Description</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Recommendation Memo</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reject_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Reject Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>--None--</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Candidate does not meet length of employment requirement.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Candidate does not meet education requirement.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Candidate does not meet experience requirement.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Candidate does not meet promotion prerequisite.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Candidate received below average performance review.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Candidate received below average peer review.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status_Date__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <externalId>false</externalId>
+        <label>Status Date</label>
+        <required>true</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Candidate Package Statuses</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Candidate Package Statuses</inlineHelpText>
+        <label>Status</label>
+        <required>true</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Returned</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved By 1st Line Supervisor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved By 2nd Line Supervisor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TQB_Adhoc_Entry_Name_2__c</fullName>
+        <description>Name of the TQB Adhoc Entry name 2</description>
+        <externalId>false</externalId>
+        <label>TQB Adhoc Entry Name 2</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TQB_Adhoc_Entry_Name__c</fullName>
+        <description>Name of the Adhoc Entry selected</description>
+        <externalId>false</externalId>
+        <label>TQB Adhoc Entry Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TQB_Chair_Person_Name__c</fullName>
+        <description>Name of the TQB Chair person</description>
+        <externalId>false</externalId>
+        <label>TQB Chair Person Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TQB_Panel_Member_1_Name__c</fullName>
+        <description>Name of the Panel Member</description>
+        <externalId>false</externalId>
+        <label>TQB Panel Member 1 Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TQB_Panel_Member_2_Name__c</fullName>
+        <description>Name of Panel Member 2</description>
+        <externalId>false</externalId>
+        <label>TQB Panel Member 2 Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TQB_Panel_Member_3_Name__c</fullName>
+        <description>Name of the TQB Panel Member 3</description>
+        <externalId>false</externalId>
+        <label>TQB Panel Member 3 Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TQB_Panel_Member_4_Name__c</fullName>
+        <description>Name of Panel Member</description>
+        <externalId>false</externalId>
+        <label>TQB Panel Member 4 Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TQB_Panel_Member_5_Name__c</fullName>
+        <description>Name of Panel Member 5</description>
+        <externalId>false</externalId>
+        <label>TQB Panel Member 5 Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>isEmailReceivedByCoordinator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This fields gives an info whether coordinator received email or not from Selected TQB Chair person</description>
+        <externalId>false</externalId>
+        <label>isEmailReceivedByCoordinator</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>TQB Candidate Package</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Candidates_1st_Line_Supervisor_Name__c</columns>
+        <columns>Candidates_2nd_Line_Supervisor_Name__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Status_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CP-{000000000}</displayFormat>
+        <label>Candidate Package Name</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>TQB_Candidate_Packages</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Candidate_package_status_to_submit</fullName>
+        <active>false</active>
+        <description>Candidate package should be submitted only after LOI status is approved</description>
+        <errorConditionFormula>ISPICKVAL( Status__c , &quot;Submitted&quot;)&amp;&amp;  $ObjectType.TQB_Letter_of_Intent__c.Fields.Status__c  &lt;&gt; &quot;Approved&quot;</errorConditionFormula>
+        <errorMessage>Candidate Package should be submitted only after LOI is Approved</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TQB_Force_File_Type_Selection</fullName>
+        <active>true</active>
+        <description>TQB Force File Type Selection on attachment screen.</description>
+        <errorConditionFormula>ISPICKVAL( File_Type__c, &quot;None&quot;)</errorConditionFormula>
+        <errorDisplayField>File_Type__c</errorDisplayField>
+        <errorMessage>Please choose an attachment file content type.</errorMessage>
+    </validationRules>
+</CustomObject>

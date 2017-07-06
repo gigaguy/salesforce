@@ -1,0 +1,76 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+
+    <aura:attribute name="adHocEntry" type="TQB_Ad_Hoc_Entry__c"/>
+    <aura:attribute name="candPackage" type="TQB_Candidate_Package__c"/>
+    <aura:handler event="c:TQBCPEditAdHoc" action="{!c.gotoAdHocEditable}"/>
+    <aura:handler event="c:TQBCPNewAdHoc" action="{!c.gotoAdHocNew}"/>
+    <aura:attribute name="onRecoReviewScreen" type="String" default="false"/>
+    <aura:attribute name="listOfAdHocEntries" type="TQB_Ad_Hoc_Entry__c[]"/>
+
+    <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
+
+    <div aura:id="messages">
+      {!v.messages}
+    </div>
+
+    <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+      <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+        <div class="slds-panel__section">
+          <h3 class="slds-text-heading_small slds-m-bottom_medium">Ad Hoc Entry</h3>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputText required="true" aura:id="firstName" label="First Name" class="slds-input" labelClass="slds-form-element__label" value="{!v.adHocEntry.First_Name__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2">
+            <div class="slds-form-element__control">
+              <ui:inputText required="true" aura:id="lastName" label="Last Name" class="slds-input" labelClass="slds-form-element__label" value="{!v.adHocEntry.Last_Name__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputText required="true" aura:id="address" label="Mailing Address" class="slds-input" labelClass="slds-form-element__label" value="{!v.adHocEntry.Mailing_Address__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputText required="true" aura:id="city" label="City" class="slds-input" labelClass="slds-form-element__label" value="{!v.adHocEntry.City__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputSelect required="true" label="State" class="dynamic" aura:id="statePickId" value="{!v.adHocEntry.State__c}"/>
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputText required="true" aura:id="postalCode" label="Postal Code" class="slds-input" labelClass="slds-form-element__label" value="{!v.adHocEntry.Postal_Code__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputText required="true" aura:id="researchArea" label="Research Area" class="slds-input" labelClass="slds-form-element__label" value="{!v.adHocEntry.Research_Area__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputText required="true" aura:id="phone" label="Phone (format: xxx-xxx-xxxx)" class="slds-input" labelClass="slds-form-element__label" value="{!v.adHocEntry.Phone__c}" />
+            </div>
+          </div>
+          <div class="slds-form-element slds-size--1-of-2" >
+            <div class="slds-form-element__control">
+              <ui:inputText required="true" aura:id="email" label="Email" class="slds-input" labelClass="slds-form-element__label" value="{!v.adHocEntry.Email__c}" />
+            </div>
+          </div>
+        <br/>
+          <div>
+
+            <button type="button" class="slds-button slds-button--neutral" onclick="{!c.cancelAdHocSave}">Cancel</button>
+            <button type="button" class="slds-button slds-button--neutral" onclick="{!c.validateAndSaveAdHoc}">Save</button>
+          </div>
+      </div>
+    </div>
+  </div>
+      
+
+</aura:component>

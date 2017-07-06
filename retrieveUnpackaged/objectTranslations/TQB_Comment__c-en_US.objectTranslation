@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>TQB Comment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>TQB_Comments</value>
+    </caseValues>
+    <fields>
+        <help><!-- Comment Type Unique ID --></help>
+        <label><!-- Comment_Type_ID --></label>
+        <name>Comment_Type_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comment_Type --></label>
+        <name>Comment_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- A comment entered by a user and associated with a field in the CP. --></help>
+        <label><!-- Comment --></label>
+        <name>Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- A first line supervisors comment regarding an Ad Hoc Reference. --></help>
+        <label><!-- First Line Sup Ad Hoc Comment --></label>
+        <name>First_Line_Sup_Ad_Hoc_Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- A second line supervisors comment regarding an Ad Hoc Reference. --></help>
+        <label><!-- Second Line Supervisor Ad Hoc Comment --></label>
+        <name>Second_Line_Sup_Ad_Hoc_Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Links the CP with the comment fields for each field in the application that requires the ability for users to enter comments. (e.g. questions, attachments etc.) --></help>
+        <label><!-- TQB_Candidate_Package_ID --></label>
+        <name>TQB_Candidate_Package_ID__c</name>
+        <relationshipLabel><!-- TQB_Comments --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

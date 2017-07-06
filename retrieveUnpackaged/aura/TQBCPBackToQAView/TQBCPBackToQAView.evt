@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event template">
+  <aura:attribute name="candpkg" type="TQB_Candidate_Package__c"/>
+  <aura:attribute name="question" type="TQB_Candidate_Questionnaire__c"/>
+</aura:event>

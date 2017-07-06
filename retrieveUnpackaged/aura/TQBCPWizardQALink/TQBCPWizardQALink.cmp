@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+
+    <aura:attribute name="candPackage" type="TQB_Candidate_Package__c"/>
+    <aura:attribute name="question" type="TQB_Candidate_Questionnaire__c"/>
+
+    <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
+
+    <div aura:id="messages">
+      {!v.messages}
+    </div>
+
+    <tr>
+      <td class="slds-truncate" >
+        <aura:if isTrue="{!v.question.Answer__c}">
+          <a onclick="{!c.selectQuestion}">Question</a>
+        </aura:if>
+        <aura:if isTrue="{!v.question.Answer__c == null}">
+          <a style="color:red" onclick="{!c.selectQuestion}">Question</a>
+        </aura:if>
+      </td>
+      <!--<ui:inputTextArea class="slds-textarea slds-size-1-of-2" aura:id="answer" placeholder="Please enter response here" value="{!question.Answer__c}"/>-->
+    </tr>
+
+</aura:component>

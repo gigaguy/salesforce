@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>TQB Bulletin Board</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>TQB Bulletin Boards</value>
+    </caseValues>
+    <fields>
+        <label><!-- BulletinBoardPostText --></label>
+        <name>BulletinBoardPostText__c</name>
+    </fields>
+    <fields>
+        <help><!-- Users can optionally enter a URL that points to additional bulletin board content. --></help>
+        <label><!-- LinkToOtherContent --></label>
+        <name>LinkToOtherContent__c</name>
+    </fields>
+    <fields>
+        <label><!-- PostDate --></label>
+        <name>PostDate__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

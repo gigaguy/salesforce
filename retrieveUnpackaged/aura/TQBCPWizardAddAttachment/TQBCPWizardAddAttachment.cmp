@@ -1,0 +1,30 @@
+<!--
+// Developer: Chris Alley
+// Purpose: Component that allows a user to add an attachment
+// while remaining on the same page for navigation purposes.
+//
+-->
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="TQBCPWizardController">
+    
+    <aura:attribute name="loggedInUserRole" type="User" />   
+    <aura:attribute name="candPackage" type="TQB_Candidate_Package__c"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+   <aura:handler event="c:TQBCPNewAttachment" action="{!c.showHideAddAttachment}"/>
+    
+    <!-- Call client side controller function to populate attachments. -->
+    <!-- <aura:handler event="c:TQBCPAttachNavigator" action="{!c.populateAttachments}"/> -->
+    <!-- <aura:handler event="c:TQBCPHideSupComments" action="{!c.hideSupComments}"/> -->
+    
+    <div class="slds-form-element slds-size--1-of-2">
+        <div class="slds-form-element__control">
+            <ui:inputSelect label="Please select content type:" class="dynamic" aura:id="InputSelectDynamic"/>   
+        </div>
+    </div> 
+    
+    <div class="container">
+        <input type="file" name ="file" label="Attachment" accept="image/png" class="file" aura:id="file" />
+    </div>
+    <br/>
+    <button type="button" class="slds-button slds-button--neutral" onclick="{!c.save}">Upload File</button>
+    <button type="button" class="slds-button slds-button--neutral" onclick="{!c.goToAttach}">Cancel</button>
+</aura:component>

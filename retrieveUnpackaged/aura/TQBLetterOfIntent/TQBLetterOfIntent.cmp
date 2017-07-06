@@ -1,0 +1,28 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+<aura:attribute name="TQBLetterOfIntent" type="TQB_Letter_of_Intent__c"/>
+ <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+  <thead>
+    <tr class="slds-text-title--caps">
+      <th scope="col">
+        <div class="slds-truncate" title="Item">Item</div>
+      </th>
+      <th scope="col">
+        <div class="slds-truncate" title="ID Number">ID Number</div>
+      </th>
+      <th scope="col">
+        <div class="slds-truncate" title="Status">Status</div>
+      </th>
+      <th scope="col">
+      <div class="slds-truncate" title="Status Date">Status Date</div>
+      </th>
+      <th scope="col">
+        <div class="slds-truncate" title="Item History">Item History</div>
+      </th>
+     </tr>
+  </thead>
+ </table>
+    <p>TQB Letter of Intent</p>
+    <ui:outputNumber value="{!v.TQBLetterOfIntent.Name}"/>
+    <ui:outputText value="{!v.TQBLetterOfIntent.Status__c}"/>   
+    <ui:outputDate value="{!v.TQBLetterOfIntent.Status_Date__c}"/>
+ </aura:component>

@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">   
+   <div class="slds-box slds-box--x-small slds-theme--shade">
+            <p>Task List</p>
+  </div>
+  <br/>
+  <div class="slds-box slds-theme--shade">
+      <c:TQBCandidatePackage />
+      <c:TQBLetterOfIntent /> 
+  </div>    
+   <br/>
+  <div class="slds-border--bottom">
+  </div>
+   <br/>
+  <div>
+    <p> Details about the user</p>
+  </div>
+</aura:component>
