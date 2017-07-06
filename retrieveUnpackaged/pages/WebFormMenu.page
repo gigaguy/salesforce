@@ -1,0 +1,34 @@
+<apex:page controller="WebFormsMenuVFController" action="{!onLoad}" showHeader="false" sidebar="false"  cache="false">
+    
+    <h1>WebForms Navigation</h1>
+    <apex:form >
+        <ul>
+            <li>
+                <apex:commandlink action="{!navtoFormsPage}">Open Forms Page</apex:commandlink>
+            </li>
+            <li>
+                <apex:commandlink action="{!navToProfilePage}">Open Profile Page</apex:commandlink>
+            </li>
+        </ul>
+    </apex:form>
+    
+    <!--<apex:includelightning />
+    <div class="slds" style="margin-top:10px;margin-left:10px;">
+        <div id="lightning" />
+    </div>
+    <script>
+        var sID = "{!$CurrentPage.parameters.sID}";
+        var valid = {!valid};
+
+        $Lightning.use("c:WebFormsMenu", function() {
+          $Lightning.createComponent("c:Menu",
+                {"authenticated": valid,
+                "sessionID" : sID
+                 },
+                  "lightning",
+                  function(cmp) {
+                      
+               });
+        });
+    </script>-->
+</apex:page>

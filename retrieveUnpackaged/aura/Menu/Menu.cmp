@@ -1,0 +1,6 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="sessionID" type="string" />
+    <aura:attribute name="authenticated" type="boolean" default="false" />
+
+    <button class="slds-button slds-button--brand" id="FormPage" press="{!c.gotoFormsPage}">Open Forms Page</button>
+</aura:component>

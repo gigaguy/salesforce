@@ -1,0 +1,229 @@
+<aura:component controller="FormPageController" implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName">
+	<aura:attribute name="pageStatus" type="string" default="viewFormTypes"/>
+    <aura:attribute name="forms" type="RecordType[]"/>
+	<aura:attribute name="isOpen" type="boolean" default="false"/>
+    <aura:attribute name="modalName" type="string"/>
+    <aura:attribute name="authenticated" type="boolean" />
+    <aura:attribute name="selectedFormId" type="Id"/>
+    <aura:attribute name="viewFormID" type="Id"/>
+    <aura:attribute name="newForm" type="Forms__c"/>
+    <aura:attribute name="oldForm" type="Forms__c"/>
+    <aura:attribute name="oldForms" type="Forms__c[]"/>
+    <aura:attribute name="approvalSuccess" type="string"/>
+    <aura:attribute name="approved" type="boolean" default="false"/>
+    <aura:attribute name="message" type="string" />
+    <aura:attribute name="currentUser" type="Id"/>
+    <aura:attribute name="sessionID" type="string"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="change" value="{!v.newForm}" action="{!c.openModal2}" />
+    <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
+    <aura:handler name="recordSave" event="force:recordSave" action="{!c.handleSave}" />
+
+    <!-- Header-->
+    <p style="margin-bottom: 35px; font-size: 125%;">
+        <aura:if isTrue="{!v.pageStatus == 'viewFormTypes'}">
+            <a onclick="{!c.viewMyForms}" style="color: black; font-family: Arial,Helvetica,sans-serif; text-decoration-line: underline;">My Forms</a>
+            <a href="{!'/ProfilePage?sid='+v.sessionID}" style="margin-left: 30px; color: black; font-family: Arial,Helvetica,sans-serif; text-decoration-line: underline;">Edit My Approvers</a>
+        </aura:if>
+        <aura:if isTrue="{!v.pageStatus == 'viewMyForms'}">
+            <a onclick="{!c.viewFormTypes}" style="color: black; font-family: Arial,Helvetica,sans-serif; text-decoration-line: underline;">Back to Form Types</a>
+        </aura:if>
+    </p>
+    <!--End Header-->
+    
+    <!--Message-->
+    <aura:if isTrue="{!and(v.message != '', v.message != null)}">
+    	<div class="slds-page-header" role="banner" style="margin-left: 205px; margin-bottom: 20px; margin-top: -20px; width: 60%; text-align: center;">
+            <div class="slds-grid">
+                <div class="slds-col">
+                    <p class="slds-text-heading--label">{!v.message}</p>
+                </div>
+            </div>
+        </div>
+    </aura:if>    
+    <!--End Message-->
+
+    <!--View Form Types List-->
+    <aura:if isTrue="{!v.pageStatus == 'viewFormTypes'}">
+    <div style="margin-left: 205px; width: 60%;">
+    <table style="width=100%; border: 1px solid black;">
+    	<tr style="background-color: #0070d2; width: 100%; border: 1px solid black;">
+        	<td colspan="3" style="color: white; padding: 5px; width: 100%; border: 1px solid lightgray;">
+            	AVAILABLE FORMS BY NUMBER
+            </td>
+        </tr>
+        <tr style="background-color: white; width: 100%; border: 1px solid black;">
+        	<td colspan="3" style="color: white; padding: 1px; width: 100%; border: 1px solid lightgray;">
+            	&nbsp;
+            </td>
+        </tr>
+        <tr style="background-color: #0070d2; border: 1px solid black;">
+        	<td style="color: white; padding: 5px; width: 10%; border: 1px solid lightgray;">
+            	
+            </td>
+            <td style="color: white; padding: 5px; width: 30%; border: 1px solid lightgray;">
+            	FORM NUMBER
+            </td>
+            <td style="color: white; padding: 5px; width: 60%; border: 1px solid lightgray;">
+            	FORM NAME AND TYPE
+            </td>
+        </tr>
+        <aura:iteration var="form" items="{!v.forms}">
+            <tr style="background-color: white; width: 100%; border: 1px solid lightgray;">
+                <td style="color: black; padding: 5px; width: 10%; border: 1px solid lightgray; text-align: center;">
+                	<button id="{!form.Id}" onclick="{!c.openModal}">New Form</button>
+                </td>
+                <td style="color: black; padding: 5px; width: 30%; border: 1px solid lightgray;">
+                	{!form.Name}
+                </td>
+                <td style="color: black; padding: 5px; width: 60%; border: 1px solid lightgray;">
+                	{!form.Description}
+                </td>
+            </tr>
+        </aura:iteration>
+    </table>
+    </div>
+    </aura:if> 
+    <!--End Form List-->
+    
+    <!--View My Forms List-->
+    <aura:if isTrue="{!v.pageStatus == 'viewMyForms'}">
+        <div style="margin-left: 205px; width: 60%;">
+            <table style="width=100%; border: 1px solid lightgray;">
+                <tr style="background-color: #0070d2; width: 100%; border: 1px solid lightgray;">
+                    <td colspan="5" style="color: white; padding: 5px; width: 100%; border: 1px solid lightgray;">
+                        MY FORMS
+                    </td>
+                </tr>
+                <tr style="background-color: white; width: 100%; border: 1px solid lightgray;">
+                    <td colspan="5" style="color: white; padding: 1px; width: 100%; border: 1px solid lightgray;">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr style="background-color: #0070d2; border: 1px solid lightgray;">
+                    <td style="color: white; padding: 5px; width: 10%; border: 1px solid lightgray;">
+                        
+                    </td>
+                    <td style="color: white; padding: 5px; width: 20%; border: 1px solid lightgray;">
+                        FORM ID
+                    </td>
+                    <td style="color: white; padding: 5px; width: 20%; border: 1px solid lightgray;">
+                        FORM NUMBER
+                    </td>
+                    <td style="color: white; padding: 5px; width: 30%; border: 1px solid lightgray;">
+                        APPROVAL STEP
+                    </td>
+                    <td style="color: white; padding: 5px; width: 20%; border: 1px solid lightgray;">
+                        CREATED DATE
+                    </td>
+                </tr>
+                <aura:iteration var="form" items="{!v.oldForms}">
+                    <tr style="background-color: white; width: 100%; border: 1px solid lightgray;">
+                        <td style="color: black; padding: 5px; width: 10%; border: 1px solid lightgray; text-align: center;">
+                            <button id="{!form.Id}" onclick="{!c.viewFormJS}">Open Form</button>
+                        </td>
+                        <td style="color: black; padding: 5px; width: 20%; border: 1px solid lightgray;">
+                            {!form.Name}
+                        </td>
+                        <td style="color: black; padding: 5px; width: 20%; border: 1px solid lightgray;">
+                            {!form.Form_Type_Name__c}
+                        </td>
+                        <td style="color: black; padding: 5px; width: 30%; border: 1px solid lightgray;">
+                            <aura:if isTrue="{!form.Approval_Step__c == null}">
+                            	Not Submitted
+                            </aura:if>
+                            {!form.Approval_Step__c}
+                        </td>
+                        <td style="color: black; padding: 5px; width: 20%; border: 1px solid lightgray;">
+                            <ui:outputDate value="{!form.CreatedDate}"/>
+                        </td>
+                    </tr>
+                </aura:iteration>
+            </table>
+        </div>
+    </aura:if> 
+    <!--End View My Forms List-->
+    
+    <!--New Form Modal-->
+    <aura:if isTrue="{!and(v.isOpen, or(v.newForm.Approval_Step__c == null, v.newForm.Approval_Step__c == 'Rejected', v.newForm.Approval_Step__c == 'Recalled'))}">
+      <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+        <div class="slds-modal__container">
+          <!--BOX HEADER-->
+          <div class="slds-modal__header">
+            <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.cancelCreationModal}">
+            X
+            <span class="slds-assistive-text">Close</span>
+            </button>
+            <h2 id="header99" class="slds-text-heading--medium">
+                Status: Not Saved {!v.message}
+            </h2>
+            <div aura:id="div1"></div>
+          </div>
+          <!--BOX BODY-->
+          <div class="slds-modal__content slds-p-around--medium">
+              <force:recordedit aura:id="edit" recordId="{!v.newForm.Id}" />
+              <!--<force:recordData aura:id="recordHandler"
+                                mode="edit"
+                                targetRecord="{!v.newForm}"
+                                recordId="{!v.newForm.Id}"/>-->
+          </div>
+          <!--BOX FOOTER-->
+          <div class="slds-modal__footer">
+              <ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.cancelCreationModal}" />
+              <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveOnly}" />
+              <ui:button class="slds-button slds-button_success" label="Submit" press="{!c.saveAndSubmit}" />   
+          </div>
+        </div>
+      </div>
+      <div class="slds-backdrop slds-backdrop--open"></div>
+    </aura:if>
+    <!--End New Form Modal-->
+    
+    <!--Combined Modal-->
+    <aura:if isTrue="{!v.modalName == 'viewForm'}">   
+    	<div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+        <div class="slds-modal__container">
+          <!--BOX HEADER-->
+          <div class="slds-modal__header">
+            <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModal}">
+            X
+            <span class="slds-assistive-text">Close</span>
+            </button>
+            <h2 id="header99" class="slds-text-heading--medium">
+                Status:  
+                <aura:if isTrue="{!or(v.oldForm.Approval_Step__c == null,v.oldForm.Approval_Step__c == 'Rejected', v.oldForm.Approval_Step__c == 'Recalled', v.oldForm.Approval_Step__c == 'Approved')}">
+                	Not Submitted
+                    <aura:set attribute="else">
+                          Submitted &nbsp;&nbsp; | &nbsp;&nbsp; {!v.oldForm.Approval_Step__c}
+                    </aura:set>
+                </aura:if>
+                <a href="{!'/FormPrintableUnlicensed?fID='+v.viewFormID+'&amp;sid='+v.sessionID}" target="_blank" style="float: right;">
+                    <img src="{!$Resource.PDFLogo}"/>
+               	</a>
+            </h2>
+          </div>
+          <!--BOX BODY-->
+          <div class="slds-modal__content slds-p-around--medium">
+              <aura:if isTrue="{!or(v.oldForm.Approval_Step__c == null,v.oldForm.Approval_Step__c == 'Rejected', v.oldForm.Approval_Step__c == 'Recalled', v.oldForm.Approval_Step__c == 'Approved')}">
+                  <force:recordEdit aura:id="edit" recordId="{!v.viewFormID}" />
+                  <aura:set attribute="else">
+                      <force:recordview aura:id="view" recordId="{!v.viewFormID}" />
+                  </aura:set>
+              </aura:if>
+          </div>
+          <!--BOX FOOTER-->
+          <div class="slds-modal__footer">
+              <ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.closeModal}" />  
+              <aura:if isTrue="{!or(v.oldForm.Approval_Step__c == null, v.oldForm.Approval_Step__c == 'Rejected', v.oldForm.Approval_Step__c == 'Recalled', v.oldForm.Approval_Step__c == 'Approved')}">
+                  <ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.deleteFormJS}" />
+                  <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveOnly}" />
+                  <ui:button class="slds-button slds-button_success" label="Submit" press="{!c.saveAndSubmit}" />
+              </aura:if>
+          </div>
+        </div>
+      </div>
+      <div class="slds-backdrop slds-backdrop--open"></div>
+    </aura:if>
+    <!--End Combined Modal-->
+    
+</aura:component>

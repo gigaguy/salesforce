@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notification to requestor that the developer sandbox request has been approved.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Development Sandbox Request Form Approved Notification</name>
+    <style>none</style>
+    <subject>Your Development Sandbox Has Been Approved</subject>
+    <textOnly>Dear {!Forms__c.Submitted_on_Behalf_Of__c},
+
+Authority is granted by this email for the creation of an EPA Business Automation Platform development sandbox for use by your organization. The BAP Support Staff is instructed to create it in accordance with the pertinent Authorization Record in the BAP Management system.
+
+Note that this authority is temporary and provisional.  We want you to be able to get started learning and trying out the platform, but we are providing it subject to further administrative requirements to be communicated in the future.  In order to facilitate use of the BAP as quickly as possible, we are beginning use of the Business Automation Platform and making it available for use by Agency organizations immediately, even at the same time as we are formulating guidance and support structures and processes for the long term administration of the platform.  So, please understand that additional guidance and requirements for use of the platform will come into force as they are developed and issued in the future and they will be binding upon use of these resources being provisionally authorized now.
+
+Areas the additional guidance will address include the following:
+
+Requirements for coordination, reuse, &amp; non-duplication among applications in order for them to go into production
+Management and sharing of constrained resources, i.e., custom objects, full licenses and limited licenses, data storage, file storage, API call volumes, etc.
+Owner responsibility for application support, including user support
+Conformance with Agency security policy
+Management of Agency records
+Other topics that will come to light as we all learn together
+
+We ask for your patience as we develop guidance addressing promotion of applications from development sandboxes to production and other key processes and aspects of the platform operation.  One of the key principles of the guidance will be sharing, reuse, and collaboration.  We encourage your organization to look for ways to reuse existing resources like objects in the platform and to collaborate with other organizations in sharing resources so as to avoid duplication and waste.  We will have more specific guidance on that and similar topics in the future.
+
+We are working to identify the appropriate long-term representative of your organization for the purposes of BAP management.  When that official is delegated management authority and responsibility regarding the BAP, he or she may also issue guidance and requirements for use of the BAP by your organization.  These interim grants of authority are subject to change or revocation without notice until such time as permanent platform management guidance is issued by OEI or your organization’s BAP management representative or both.
+
+Please avail yourself of the many educational opportunities that come with the platform, most notably the training available at https://trailhead.salesforce.com.  starting with the Admin Beginner and Admin Intermediate “trails”.  We also provide information on the Business Automation Platform Community Site, which we invite you to visit often, since we add content to it often.
+
+We want you to be successful in your use of the Business Automation Platform, both under these interim authorizations and under any future long-term authorizations.  Hence, we hope that you will communicate your needs to us at BAP-Request@epa.gov as you experiment with the Business Automation Platform.  We look forward to working with you in support of the Agency’s mission through the productive use of this revolutionary platform.
+
+Please let me know if I can provide any other information or assistance.
+
+Thanks,
+{!ApprovalRequest.Process_Approver}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

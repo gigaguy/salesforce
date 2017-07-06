@@ -1,0 +1,52 @@
+<apex:page controller="FormPageVFController" showHeader="false" title="EPA - WebForms" cache="false" action="{!validateOrRedirect}">
+    <apex:includeLightning />
+    
+    <style>
+        body { background-color: #E0F1FF; }
+    </style>
+    
+    <script>
+        var sID = "{!$CurrentPage.parameters.sID}";
+        var valid = {!valid};
+
+        $Lightning.use("c:Forms", function() {
+          $Lightning.createComponent("c:Form",
+                {"authenticated": valid,
+                "sessionID" : sID
+                },
+                  "lightning",
+                  function(cmp) {
+                      
+                });
+        });
+    </script>
+    
+    <!-- Header-->
+    <apex:form rendered="{!valid == true}">
+    <div class="WebFormsNav" style="padding: 25px; width: 75%; height: 90px;">
+        <div style="width: 190px; float: left; position: relative;">
+            <img src="{!$Resource.EPALogo}"/>
+        </div>
+        <div style="float: left; position: relative;">
+            <h1 style="font-size: 300%; padding-bottom: 20px;">WebForms</h1>
+            <p style="margin-top: 30px; font-size: 125%;">
+                Welcome {!userName}!
+            </p>
+        </div>
+    </div>
+    </apex:form>
+    <!--End Header-->
+    
+    <!--Body Lightning Component-->
+    <div class="slds" style="margin-top:10px;margin-left:10px;"> 
+        <div id="lightning" />
+    </div>
+    <!--End Body Lightning Component-->
+    
+    <!--Not Authenticated-->
+    <apex:form rendered="{!valid == false}">
+        Not authenticated!
+    </apex:form>
+    <!--Not Authenticated-->
+    
+</apex:page>
