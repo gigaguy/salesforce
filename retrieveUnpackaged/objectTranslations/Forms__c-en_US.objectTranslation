@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Form</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Forms</value>
+    </caseValues>
+    <fields>
+        <label><!-- AWL Phone Number --></label>
+        <name>AWL_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Step --></label>
+        <name>Approval_Step__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approver 2 --></label>
+        <name>Approver_2__c</name>
+        <relationshipLabel><!-- Forms (Approver 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Current Approver --></label>
+        <name>Current_Approver__c</name>
+        <relationshipLabel><!-- Forms (Current Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date 1 A/L Hours --></label>
+        <name>Date_1_A_L_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 End Date/Time --></label>
+        <name>Date_1_End_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 S/L Hours --></label>
+        <name>Date_1_S_L_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 Start Date/Time --></label>
+        <name>Date_1_Start_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 Total Work Hours --></label>
+        <name>Date_1_Total_Work_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 A/L Hours --></label>
+        <name>Date_2_A_L_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 End Date/Time --></label>
+        <name>Date_2_End_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 S/L Hours --></label>
+        <name>Date_2_S_L_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 Start Date/Time --></label>
+        <name>Date_2_Start_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 Total Work Hours --></label>
+        <name>Date_2_Total_Work_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Clicking the &quot;Employee&apos;s Signature&quot; checkbox will sign this section upon saving the form. --></help>
+        <label><!-- Employee Digital Signature --></label>
+        <name>Employee_Digital_Signature__c</name>
+    </fields>
+    <fields>
+        <help><!-- Clicking this box digitally dates and signs this form. --></help>
+        <label><!-- Employee&apos;s Signature --></label>
+        <name>Employee_s_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expire Date --></label>
+        <name>Expire_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Status --></label>
+        <name>Form_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted for Approval</masterLabel>
+            <translation><!-- Submitted for Approval --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Form Type Name --></label>
+        <name>Form_Type_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Type --></label>
+        <name>Form_Type__c</name>
+        <picklistValues>
+            <masterLabel>Custom Object</masterLabel>
+            <translation><!-- Custom Object --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Developer Pro Sandbox</masterLabel>
+            <translation><!-- Developer Pro Sandbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Developer Sandbox</masterLabel>
+            <translation><!-- Developer Sandbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Sandbox</masterLabel>
+            <translation><!-- Full Sandbox --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- HR Org Code --></label>
+        <name>HR_Org_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Organization --></label>
+        <lookupFilter>
+            <errorMessage><!-- The HR Org doesn&apos;t exist. --></errorMessage>
+        </lookupFilter>
+        <name>HR_Organization__c</name>
+        <relationshipLabel><!-- Forms --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Immediate Supervisor&apos;s Digital Signature --></label>
+        <name>Immediate_Supervisor_s_Digital_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Immediate Supervisor&apos;s Signature --></label>
+        <name>Immediate_Supervisor_s_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submitted on Behalf Of --></label>
+        <name>Submitted_on_Behalf_Of__c</name>
+        <relationshipLabel><!-- Forms --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Timesheet Approver --></label>
+        <name>Timesheet_Approver__c</name>
+        <relationshipLabel><!-- Forms (Timesheet Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Work Description --></label>
+        <name>Work_Description__c</name>
+    </fields>
+    <layouts>
+        <layout>BAP Provisioning Layout</layout>
+        <sections>
+            <label><!-- Auditing --></label>
+            <section>Auditing</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- BAP Provisioning --></label>
+        <name>BAP_Provisioning</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- EPA-100 --></label>
+        <name>EPA_100</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SF-100 --></label>
+        <name>SF_100</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SF 182 --></label>
+        <name>SF_182</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SF-1900-8a --></label>
+        <name>SF_1900_8a</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Printable_View --></label>
+        <name>Printable_View</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- View_As_PDF --></label>
+        <name>View_As_PDF</name>
+    </webLinks>
+</CustomObjectTranslation>

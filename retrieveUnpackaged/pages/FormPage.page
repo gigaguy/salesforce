@@ -1,0 +1,21 @@
+<apex:page showHeader="false">
+	<apex:includeLightning />
+
+    <div class="slds" style="margin-top:10px;margin-left:10px;"> 
+        <div id="lightning" />
+    </div>
+    Hi Larry!
+<script>    
+        var conId = "{!$CurrentPage.parameters.id}";
+    	var token = "{!$CurrentPage.parameters.token}";
+        $Lightning.use("c:Forms", function() {
+          $Lightning.createComponent("c:Form",
+                { "token" : token },
+                  "lightning",
+                  function(cmp) {
+                      //alert("{!$CurrentPage.parameters.id}");
+                    // do some stuff
+               });
+        });
+    </script>
+</apex:page>

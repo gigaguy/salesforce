@@ -1,0 +1,33 @@
+<apex:page standardController="Contact" showHeader="false">
+  <!--<Apex:detail subject="{!Contact}"/>-->
+  <apex:includeLightning />
+  
+  <div class="slds" style="margin-top:10px;margin-left:10px;"> 
+        <div id="lightning" />
+    </div>
+<script>    
+        var conId = "{!$CurrentPage.parameters.id}";
+    	var token = "{!$CurrentPage.parameters.token}";
+    	var authenticated = "{!$CurrentPage.parameters.authenticated}";
+        $Lightning.use("c:contactDetail", function() {
+          $Lightning.createComponent("c:contact",
+                { "conId" : conId, "token" : token, "authenticated": authenticated },
+                  "lightning",
+                  function(cmp) {
+                      //alert("{!$CurrentPage.parameters.id}");
+                    // do some stuff
+               });
+        });
+    </script>
+	<script>
+    window.onload = function() {
+          var req = new XMLHttpRequest(); 
+        req.open('GET', document.location, false); 
+        req.send(null); 
+        var headers = req.getAllResponseHeaders().toLowerCase(); 
+        //console.log(headers);
+        //console.log(document.cookie);
+        };
+        
+    </script>
+</apex:page>
