@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Action</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Actions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action Requested --></label>
+        <name>Action_Requested__c</name>
+        <picklistValues>
+            <masterLabel>Accretion of Duties</masterLabel>
+            <translation><!-- Accretion of Duties --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Created On --></label>
+        <name>Created_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee Name --></label>
+        <name>Employee_Name__c</name>
+        <relationshipLabel><!-- Actions (Employee Name) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- FPL --></label>
+        <name>FPL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Grade --></label>
+        <name>Grade__c</name>
+    </fields>
+    <fields>
+        <label><!-- OAP --></label>
+        <name>OAP__c</name>
+    </fields>
+    <fields>
+        <label><!-- OTHER --></label>
+        <name>OTHER__c</name>
+    </fields>
+    <fields>
+        <label><!-- Office --></label>
+        <name>Office__c</name>
+        <picklistValues>
+            <masterLabel>AMD</masterLabel>
+            <translation><!-- AMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BD</masterLabel>
+            <translation><!-- BD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IO</masterLabel>
+            <translation><!-- IO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ITD</masterLabel>
+            <translation><!-- ITD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLCD</masterLabel>
+            <translation><!-- PLCD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SME Tel# --></label>
+        <name>SME_Tel__c</name>
+    </fields>
+    <fields>
+        <label><!-- SME --></label>
+        <name>SME__c</name>
+        <relationshipLabel><!-- Actions (SME) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Series --></label>
+        <name>Series__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <layouts>
+        <layout>Action Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
