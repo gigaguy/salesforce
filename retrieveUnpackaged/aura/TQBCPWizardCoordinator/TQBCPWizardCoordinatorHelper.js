@@ -93,7 +93,7 @@
 	   action.setCallback(this, function(response) {
 	      var state = response.getState();
 	      if (component.isValid() && state === "SUCCESS") {
-            console.log ("TQBCPWizardCoordinatorHelper : Email send  = " + response.getReturnValue());
+            console.log ("TQBCPWizardCoordinatorHelper : Email send and details  = " + response.getReturnValue());
             var result = response.getReturnValue();
 	              $A.createComponents([
 	                ["ui:message",{
@@ -178,6 +178,9 @@
 	    	var state = response.getState();
 	       if (component.isValid() && state === "SUCCESS") {
 				console.log("value of response from server in TQBCPWizardChairPersonHelper:deletePanelMemberHelper", response.getReturnValue());
+				var evt = $A.get("e.c:TQBCPMeetPrepNavigator");
+		        evt.setParams({ "candpkg": component.get("v.candPackage") });
+		        evt.fire();
 			} else if (state === "ERROR") {
 				console.log('Error from server');
 			}
@@ -193,16 +196,23 @@
 	    });
 	    action.setCallback(this, function(a) {
 	      console.log('TQBWizardMeetPrepHelper:getSelectedAdhocMember'+a.getReturnValue());
-	      var retrievedAdhocEntryId = a.getReturnValue();
-	      var getAllCheckboxes = component.find("checkBox");
-	       if(getAllCheckboxes) {
-              for (var i = 0; i < getAllCheckboxes.length; i++) {
-	             var newSelectedIdValue = getAllCheckboxes[i].get("v.text");
-	            if (newSelectedIdValue && newSelectedIdValue == retrievedAdhocEntryId) {
-	              getAllCheckboxes[i].set("v.value", true);
-	            }
-	         }
-	       }
+	      var result = a.getReturnValue();
+          if(result) {
+	          var retrievedAdhocEntriesId = result.split(';');
+	          console.log('values in getSelectedAdhocMember: = '+ retrievedAdhocEntriesId);
+		      var getAllCheckboxes = component.find("checkBox");
+		       if(getAllCheckboxes) {
+	              for (var i = 0; i < getAllCheckboxes.length; i++) {
+		             var newSelectedIdValue = getAllCheckboxes[i].get("v.text");
+		               for (var j = 0; j < retrievedAdhocEntriesId.length; j++) {
+			            if (newSelectedIdValue &&  retrievedAdhocEntriesId[j] == newSelectedIdValue) {
+			              getAllCheckboxes[i].set("v.value", true);
+			              break;
+			            }
+		             }
+		         }
+		       }
+            }
 	    });
 	 
 	 $A.enqueueAction(action);

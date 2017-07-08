@@ -1,4 +1,8 @@
 ({
+
+  scriptsLoaded : function(component, event, helper) {
+   
+  },
   
 	keyPressController : function(component, event, helper) {
       // get the search Input keyword   
