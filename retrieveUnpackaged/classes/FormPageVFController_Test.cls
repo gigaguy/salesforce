@@ -11,8 +11,8 @@ public class FormPageVFController_Test {
         System.currentPageReference().getParameters().put('sID', '123ABC');
         
         FormPageVFController controller = new FormPAgeVFController();
-        controller.onLoad();
-        controller.navToProfilePage();
-        system.assertEquals(u.ID, controller.UID);
+        //controller.onLoad();
+        controller.validateOrRedirect();
+        system.assertEquals(u.ID, controller.UID); 
     }
 }

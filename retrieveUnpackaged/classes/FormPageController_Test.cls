@@ -29,5 +29,11 @@ public class FormPageController_Test {
         form = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' limit 1].ID);
         
         FormPageController.submitForApproval(form.ID, '123ABC');
+        
+        FormPageController.findExistingForms('123ABC');
+        
+        FormPageController.viewForm(form.ID);
+        FormPageController.saveForm(form, '123ABC');
+        FormPageController.deleteForm(form.ID, '123ABC');
     }
 }

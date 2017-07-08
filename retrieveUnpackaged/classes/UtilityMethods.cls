@@ -76,9 +76,12 @@ public class UtilityMethods {
     public static boolean validateSession(String sessionID, string userID) {    
         User u = [select id, Session_Token__c, Session_IP__c, Session_Environment__c, Session_Timestamp__c from User where id = :userID AND Session_Token__c = :sessionID];
 		// Check that the IP address and user environment is the same as when the session was created, and that the session is less than 12 hours old
+        system.debug(u);
+        system.debug(ApexPages.currentPage().getHeaders());
         if (u.Session_IP__c == ApexPages.currentPage().getHeaders().get('X-Salesforce-SIP') &&
         		u.Session_Environment__c == ApexPages.currentPage().getHeaders().get('User-Agent') &&
-           		u.Session_Timestamp__c.addHours(12) > System.now()) {
+           		u.Session_Timestamp__c != null &&
+            	u.Session_Timestamp__c.addHours(12) > System.now()) {
             return true;
         }
         // Return false unless all elements validate
