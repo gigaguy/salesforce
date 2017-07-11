@@ -13,8 +13,10 @@ public class TQB1stLineSupervisorLPTest {
     
     @isTest static void testGetCPs() {
         
-        TestDataFactory.createCPRecords(1);
+        TestDataFactory.createLOIRecords(1);
         Test.startTest();
+         TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
+         TQBCPWizardController.getOrCreateCandidatePackage(newCP.Id);
          List<TQB_Candidate_Package__c> CPList1stLineSupervisor = TQB1stLineSupervisorLPController.getCPs();
          Test.stopTest();
          System.assertEquals(1, CPList1stLineSupervisor.size(), 'Incorrect No of CPs retrieved');

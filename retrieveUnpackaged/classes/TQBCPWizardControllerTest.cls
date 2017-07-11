@@ -5,21 +5,22 @@
 public class TQBCPWizardControllerTest {
     
     @isTest static void testGetCandidatePackage() {
-        
-        TestDataFactory.createCPRecords(1);
+        TestDataFactory.createLOIRecords(1);
         Test.startTest();               
-          TQB_Candidate_Package__c cp = TQBCPWizardController.getCandidatePackage();
+          TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
+          TQB_Candidate_Package__c cp = TQBCPWizardController.getOrCreateCandidatePackage(newCP.Id);
         Test.stopTest();
         System.assert(cp.Id!=null);
     }        
     
      @isTest static void testSaveCandidatePackage() {
-        
-        List<TQB_Candidate_Package__c> candidatePackage = TestDataFactory.createCPRecords(1);
-        Test.startTest();               
-          TQB_Candidate_Package__c cp = TQBCPWizardController.saveCandidatePackage(candidatePackage.get(0));
+        TestDataFactory.createLOIRecords(1);
+        Test.startTest();
+          TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
+          TQB_Candidate_Package__c cp = TQBCPWizardController.getOrCreateCandidatePackage(newCP.Id);
+          TQB_Candidate_Package__c cpSaved = TQBCPWizardController.saveCandidatePackage(cp);
         Test.stopTest();
-        System.assert(cp.Id!=null);
+        System.assert(cpSaved.Id!=null);
     }
     
     @isTest static void testCreateCandidatePackage() {
@@ -42,7 +43,7 @@ public class TQBCPWizardControllerTest {
           TQBCPWizardController.validateCandidateQuestionnaire(cp.Id);
         Test.stopTest();        
     }
-    
+    /*
     @isTest static void testvalidateCandidateQuestionnaireFalse() {
         String errorMessage;
         try{
@@ -60,7 +61,7 @@ public class TQBCPWizardControllerTest {
            errorMessage = e.getDmlMessage(0);
         }
         System.assertEquals(errorMessage,'null');
-    }
+    }*/
     
      @isTest static void testGetCandidateLOI() {
          TestDataFactory.createLOIRecords(1);
@@ -134,7 +135,7 @@ public class TQBCPWizardControllerTest {
           TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
           TQB_Candidate_Package__c cp = TQBCPWizardController.getOrCreateCandidatePackage(newCP.Id);
           List<TQB_Ad_Hoc_Entry__c> adhocList = TestDataFactoryCPWizard.createCPAdhocs(1,cp.Id);
-          TQB_Ad_Hoc_Entry__c adhocEntry = TQBCPWizardController.saveAdHocEntry(cp.Id, adhocList[0]);
+          TQB_Ad_Hoc_Entry__c adhocEntry = TQBCPWizardController.saveAdHocEntry(cp.Id, adhocList[0], 'insert');
          Test.stopTest();
          System.assert(adhocEntry.Id!=null);
     }
@@ -145,7 +146,7 @@ public class TQBCPWizardControllerTest {
           TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
           TQB_Candidate_Package__c cp = TQBCPWizardController.getOrCreateCandidatePackage(newCP.Id);
           List<TQB_Ad_Hoc_Entry__c> adhocList = TestDataFactoryCPWizard.createCPAdhocs(1,cp.Id);
-          TQB_Ad_Hoc_Entry__c adhocEntrySaved = TQBCPWizardController.saveAdHocEntry(cp.Id, adhocList[0]);
+          TQB_Ad_Hoc_Entry__c adhocEntrySaved = TQBCPWizardController.saveAdHocEntry(cp.Id, adhocList[0], 'insert');
           TQB_Ad_Hoc_Entry__c adhocEntryDeleted = TQBCPWizardController.deleteAdHoc(adhocList[0]);
          Test.stopTest();
          System.debug('saved Entry = ' + adhocEntrySaved.Id);
@@ -159,7 +160,7 @@ public class TQBCPWizardControllerTest {
           TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
           TQB_Candidate_Package__c cp = TQBCPWizardController.getOrCreateCandidatePackage(newCP.Id);
           List<TQB_Ad_Hoc_Entry__c> adhocList = TestDataFactoryCPWizard.createCPAdhocs(1,cp.Id);
-          TQB_Ad_Hoc_Entry__c adhocEntrySaved = TQBCPWizardController.saveAdHocEntry(cp.Id, adhocList[0]);
+          TQB_Ad_Hoc_Entry__c adhocEntrySaved = TQBCPWizardController.saveAdHocEntry(cp.Id, adhocList[0], 'insert');
           List<TQB_Ad_Hoc_Entry__c> getAdhocList = TQBCPWizardController.getCandidateAdHocEntries(cp.Id);
          Test.stopTest();
         System.assertEquals(adhocList.size(), getAdhocList.size());
@@ -197,15 +198,86 @@ public class TQBCPWizardControllerTest {
         TestDataFactory.createLOIRecords(1);
          String testValue = 'hello';
          Test.startTest();  
-          TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
-          TQB_Candidate_Package__c cp = TQBCPWizardController.getOrCreateCandidatePackage(newCP.Id);
-          List<TQB_Comment__c> commentList = TestDataFactoryCPWizard.createCPComments(1, cp.Id);
-          TQBCPWizardController.saveReviewCommentAndReject(cp.Id, commentList[0],'rejected');
-          List<TQB_Comment__c> commentListretrieved = TQBCPWizardController.getReviewComments(cp.Id);
+              TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
+              TQB_Candidate_Package__c cp = TQBCPWizardController.getOrCreateCandidatePackage(newCP.Id);
+              List<TQB_Comment__c> commentList = TestDataFactoryCPWizard.createCPComments(1, cp.Id);
+              TQBCPWizardController.saveReviewCommentAndReject(cp.Id, commentList[0],'rejected');
+              List<TQB_Comment__c> commentListretrieved = TQBCPWizardController.getReviewComments(cp.Id);
          Test.stopTest();
         System.debug('commentList size is ='+commentList.size());
         System.debug('commentListretrieved size is ='+ commentListretrieved.size());
         System.assertEquals(commentList.size(), commentListretrieved.size());
    }
+    
+    @isTest static void testGetReviewComments() { 
+         TestDataFactory.createLOIRecords(1);
+        Test.startTest(); 
+           TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
+           TQB_Candidate_Package__c cp = TQBCPWizardController.getOrCreateCandidatePackage(newCP.Id);
+           List<TQB_Comment__c> commentList = TestDataFactoryCPWizard.createCPReviewComments(1, cp.Id);
+            TQBCPWizardController.saveReviewCommentAndReject(cp.Id, commentList[0],'rejected');
+           List<TQB_Comment__c> commentListretrieved = TQBCPWizardController.getReviewComments(cp.Id);
+        Test.stopTest();
+        System.assertEquals(commentList.size(), commentListretrieved.size());
+    }
+    
+    @isTest static void testGetCPStatusPickListValues() { 
+         TestDataFactory.createLOIRecords(1);
+        Test.startTest(); 
+           TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
+           TQB_Candidate_Package__c cp = TQBCPWizardController.getOrCreateCandidatePackage(newCP.Id);
+           List<String> pickListValueStatuses = TQBCPWizardController.getCPStatusPickListValues();
+        Test.stopTest();
+        System.assertEquals(pickListValueStatuses.size(),9);
+    }
+    
+    @isTest static void testGetStatePickListValues() { 
+         TestDataFactory.createLOIRecords(1);
+        Test.startTest(); 
+           List<String> pickListValuesState = TQBCPWizardController.getStatePickListValues();
+        Test.stopTest();
+        System.assertEquals(pickListValuesState.size(),52);
+    }
+    
+    @isTest static void testGet1stLineSupCurrentValue() {
+         TestDataFactory.createLOIRecords(1);
+        Test.startTest(); 
+           TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
+           TQB_Candidate_Package__c cp = TQBCPWizardController.getOrCreateCandidatePackage(newCP.Id);
+           Id id =  TQBCPWizardController.get1stLineSupCurrentValue(cp.Id);
+        Test.stopTest();
+         System.assert(id != null);
+    }
+    
+    @isTest static void testGetCPAttachTypePickListValues() {
+        TestDataFactory.createLOIRecords(1);
+         Test.startTest(); 
+            TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
+            TQB_Candidate_Package__c cp = TQBCPWizardController.getOrCreateCandidatePackage(newCP.Id);
+            List<String> fileTypeCandidate = TQBCPWizardController.getCPAttachTypePickListValues('candidate');
+            List<String> fileTypeReviewer = TQBCPWizardController.getCPAttachTypePickListValues('reviewer');
+         Test.stopTest();
+        System.assertEquals(fileTypeCandidate.size(), 10);
+        System.assertEquals(fileTypeReviewer.size(), 2);
+    }
+    
+     @isTest static void testGetRejectReasonValues() {
+         TestDataFactory.createLOIRecords(1);
+          Test.startTest(); 
+            TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
+            TQB_Candidate_Package__c cp = TQBCPWizardController.getOrCreateCandidatePackage(newCP.Id);
+            List<String> rejectReasonValues = TQBCPWizardController.getRejectReasonValues();
+          Test.stopTest();
+         System.assertEquals(rejectReasonValues.size(), 8);
+     }
+    
+    @isTest static void testGetTQBChairPersonList() {
+        Test.startTest();
+          List<User> tqbChairUsersCreated = TestDataFactory.createTQBChairUser();
+          List<User> tqbChairUsers = TQBCPWizardController.getTQBChairPersonList();
+        Test.stopTest();
+        System.assertEquals(tqbChairUsersCreated.size(), tqbChairUsers.size());
+    }
+    
     
 }

@@ -1,4 +1,3 @@
-@isTest
 public class TestDataFactory {
     
     public static List<TQB_Letter_of_Intent__c> createLOIRecords(Integer LOICount) {
@@ -25,7 +24,7 @@ public class TestDataFactory {
         List<TQB_Candidate_Package__c> CPList = new List<TQB_Candidate_Package__c>();
         
             for(Integer i=0; i< CPCount; i++) {
-                 TQB_Candidate_Package__c  CP = new TQB_Candidate_Package__c(Status__c= 'Not Started',Candidates_1st_Line_Supervisor_Name__c= '005r0000001EozMAAS');
+                 TQB_Candidate_Package__c  CP = new TQB_Candidate_Package__c(Status__c= 'Not Started',Candidates_1st_Line_Supervisor_Name__c= '005r0000001EozMAAS', File_Type__c='Work Product');
                 CPList.add(CP);
             }
         insert CPList;
@@ -67,5 +66,18 @@ public class TestDataFactory {
         insert user;
         return user;
     }
+    
+    public static List<User> createTQBChairUser() {
+        List<User> userList = new List<User>();
+        Profile p = [SELECT Id FROM Profile WHERE Name='TQB Chair Profile']; 
+        User user = new User(Alias = 'standt', Email='TQBChair@testorg.com', 
+            EmailEncodingKey='UTF-8', LastName='Testing', LanguageLocaleKey='en_US', 
+            LocaleSidKey='en_US', ProfileId = p.Id, 
+            TimeZoneSidKey='America/Los_Angeles', UserName='tqbchairuser1707@testorg.com');
+        user.UserRole.Name = 'TQB Chair';
+        userList.add(user);                             
+        insert userList;
+        return userList;
+    }   
 
 }

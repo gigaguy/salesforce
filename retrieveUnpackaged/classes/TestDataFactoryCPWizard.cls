@@ -1,4 +1,3 @@
-@isTest
 public class TestDataFactoryCPWizard {
     
     public static List<TQB_Candidate_Questionnaire__c> createCPQuestions(Integer count, Id cpId) {
@@ -48,6 +47,18 @@ public class TestDataFactoryCPWizard {
        for(Integer i=0;i<count;i++) {
           TQB_Comment__c commentEntry = new TQB_Comment__c(Comment__c='John commented',
                                                            TQB_Candidate_Package_ID__c= cpId);       
+          commentList.add(commentEntry);
+        }
+      return commentList;  
+    }
+    
+    public static List<TQB_Comment__c> createCPReviewComments(Integer count, Id cpId) {
+
+       List<TQB_Comment__c> commentList = new List<TQB_Comment__c>();
+       for(Integer i=0;i<count;i++) {
+          TQB_Comment__c commentEntry = new TQB_Comment__c(Comment__c='John commented',
+                                                           TQB_Candidate_Package_ID__c= cpId,
+                                                           Comment_Type__c = 'Review');       
           commentList.add(commentEntry);
         }
       return commentList;  

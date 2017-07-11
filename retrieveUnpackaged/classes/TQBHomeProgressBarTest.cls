@@ -12,8 +12,10 @@ public class TQBHomeProgressBarTest {
     
     @isTest static void testGetPackagess() {
         
-        TestDataFactory.createCPRecords(1);
+        TestDataFactory.createLOIRecords(1);
         Test.startTest();
+             TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
+             TQBCPWizardController.getOrCreateCandidatePackage(newCP.Id);
             List<TQB_Candidate_Package__c> TQBCPList = TQBHomeProgressBarController.getPackages();
         Test.stopTest();
         System.assertEquals(1, TQBCPList.size(), 'Incorrect No of CPs retrieved');         
