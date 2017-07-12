@@ -26,7 +26,7 @@
             <type>owner</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>unfiled$public/WebForms_Final_Approval</template>
+        <template>unfiled$public/Forms_Final_Approval</template>
     </alerts>
     <alerts>
         <fullName>Final_Rejection_Email</fullName>
@@ -40,7 +40,7 @@
             <type>owner</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>unfiled$public/WebForms_Final_Rejection</template>
+        <template>unfiled$public/Forms_Final_Rejection</template>
     </alerts>
     <alerts>
         <fullName>Sandbox_Approved_Notification_Alert</fullName>
@@ -94,7 +94,7 @@
             <type>owner</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>unfiled$public/WebForms_Submission_Confirmation</template>
+        <template>unfiled$public/Forms_Submission_Confirmation</template>
     </alerts>
     <fieldUpdates>
         <fullName>Approval_Step_Approved</fullName>
