@@ -198,10 +198,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>TQBCPWizardControllerChrisDevCopy</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>TQBCPWizardControllerTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>

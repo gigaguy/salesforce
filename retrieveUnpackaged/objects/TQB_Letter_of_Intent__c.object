@@ -433,7 +433,6 @@
                 <value>
                     <fullName>Completed</fullName>
                     <default>false</default>
-                    <isActive>false</isActive>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -470,7 +469,7 @@
         <fullName>Conditional_status_approved</fullName>
         <active>false</active>
         <description>No reject reason should be selected when status is approved</description>
-        <errorConditionFormula>ISPICKVAL( Status__c , &quot;Rejected&quot;) = False  &amp;&amp;  ISBLANK( LOI_Reject_Reason__c ) = False</errorConditionFormula>
+        <errorConditionFormula>ISPICKVAL( Status__c , &quot;Rejected&quot;) = False  &amp;&amp;  ISBLANK(TEXT( LOI_Reject_Reason__c )) = False</errorConditionFormula>
         <errorMessage>Reject reason should not be selected when status is other than Rejected.</errorMessage>
     </validationRules>
     <validationRules>

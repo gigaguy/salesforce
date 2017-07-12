@@ -5,19 +5,19 @@
         <logo>epa_footer_logo</logo>
         <logoVersion>1</logoVersion>
     </brand>
+    <defaultLandingTab>standard-home</defaultLandingTab>
     <description>EPA ORD TQB Candidate Promotion Packages</description>
     <formFactors>Large</formFactors>
     <label>TQB</label>
     <navType>Standard</navType>
-    <tab>standard-home</tab>
     <tab>TQB_Letter_of_Intent__c</tab>
+    <tab>standard-home</tab>
     <tab>Candidate_Package_Wizard</tab>
     <tab>TQB_Candidate_Package__c</tab>
     <tab>TQB_Candidate_Questionnaire__c</tab>
     <tab>TQB_Ad_Hoc_Entry__c</tab>
     <tab>TQB_Bulletin_Board__c</tab>
     <tab>TQB_Policies_and_Procedures__c</tab>
-    <tab>standard-Feed</tab>
     <tab>standard-File</tab>
     <tab>TQB_Comment__c</tab>
     <uiType>Lightning</uiType>

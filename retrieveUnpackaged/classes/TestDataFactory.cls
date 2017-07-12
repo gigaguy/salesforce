@@ -67,6 +67,18 @@ public class TestDataFactory {
         return user;
     }
     
+    public static User createAnotherUser() {
+        
+        Profile p = [SELECT Id FROM Profile WHERE Name='Standard User']; 
+        User user = new User(Alias = 'standt1', Email='standarduser1@testorg.com', 
+            EmailEncodingKey='UTF-8', LastName='Testing1', LanguageLocaleKey='en_US', 
+            LocaleSidKey='en_US', ProfileId = p.Id, 
+            TimeZoneSidKey='America/Los_Angeles', UserName='standarduser17071@testorg.com');
+                                                   
+        insert user;
+        return user;
+    }
+    
     public static List<User> createTQBChairUser() {
         List<User> userList = new List<User>();
         Profile p = [SELECT Id FROM Profile WHERE Name='TQB Chair Profile']; 
@@ -74,7 +86,7 @@ public class TestDataFactory {
             EmailEncodingKey='UTF-8', LastName='Testing', LanguageLocaleKey='en_US', 
             LocaleSidKey='en_US', ProfileId = p.Id, 
             TimeZoneSidKey='America/Los_Angeles', UserName='tqbchairuser1707@testorg.com');
-        user.UserRole.Name = 'TQB Chair';
+        //user.UserRole.Name = 'TQB Chair';
         userList.add(user);                             
         insert userList;
         return userList;

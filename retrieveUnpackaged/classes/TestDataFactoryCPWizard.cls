@@ -52,6 +52,18 @@ public class TestDataFactoryCPWizard {
       return commentList;  
     }
     
+    public static List<TQB_Comment__c> createCPAdhocComments(Integer count, Id cpId) {
+
+       List<TQB_Comment__c> commentList = new List<TQB_Comment__c>();
+       for(Integer i=0;i<count;i++) {
+          TQB_Comment__c commentAdhocEntry = new TQB_Comment__c(Comment__c='John commented', First_Line_Sup_Ad_Hoc_Comment__c='first line commented', Second_Line_Sup_Ad_Hoc_Comment__c='second line commented',
+                                                           Comment_Type__c = 'adhoc',TQB_Candidate_Package_ID__c= cpId);       
+          commentList.add(commentAdhocEntry);
+        }
+        insert commentList;
+      return commentList;  
+    }
+    
     public static List<TQB_Comment__c> createCPReviewComments(Integer count, Id cpId) {
 
        List<TQB_Comment__c> commentList = new List<TQB_Comment__c>();
@@ -63,5 +75,15 @@ public class TestDataFactoryCPWizard {
         }
       return commentList;  
     }
-
+    
+    public static List<TQB_Ad_Hoc_Entry__c> createCPAdhocEntries(Integer count, Id cpId) {
+        List<TQB_Ad_Hoc_Entry__c> adhocList = new List<TQB_Ad_Hoc_Entry__c>();
+        for(Integer i=0;i<count;i++) {
+          TQB_Ad_Hoc_Entry__c adhocEntry = new TQB_Ad_Hoc_Entry__c(First_Name__c='John', Last_Name__c ='smith', Mailing_Address__c='235 Johnston Street', City__c='Lafayette', State__c='LA',
+                                                                   Postal_Code__c='508217',Phone__c='123-456-7845',Email__c='epaorgtech@cgi.com',TQB_Candidate_Package__c= cpId, Selected__c=true);       
+          adhocList.add(adhocEntry);
+        }
+        insert adhocList;
+        return adhocList;
+    }
 }
