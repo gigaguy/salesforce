@@ -13,6 +13,11 @@
         <name>Description__c</name>
     </fields>
     <fields>
+        <help><!-- Check box to certify that there is no PII and CBI data contained in the API data --></help>
+        <label><!-- Does Not Contain PII or CBI Data --></label>
+        <name>Does_Not_Contain_PII_or_CBI_Data__c</name>
+    </fields>
+    <fields>
         <label><!-- Expire Date --></label>
         <name>Expire_Date__c</name>
     </fields>
@@ -65,6 +70,14 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Functional/Business Sponsor Name --></label>
+        <lookupFilter>
+            <errorMessage><!-- Contact does not exist in EPA Person Records --></errorMessage>
+        </lookupFilter>
+        <name>Functional_Business_Sponsor_Name__c</name>
+        <relationshipLabel><!-- Forms (Functional/Business Sponsor Name) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- HR Org Code --></label>
         <name>HR_Org_Code__c</name>
     </fields>
@@ -81,6 +94,15 @@
         <name>Name__c</name>
     </fields>
     <fields>
+        <label><!-- Office IMO Email --></label>
+        <name>Office_IMO_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Office IMO Name --></label>
+        <name>Office_IMO_Name__c</name>
+        <relationshipLabel><!-- Forms (Office IMO Name) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Quantity --></label>
         <name>Quantity__c</name>
     </fields>
@@ -89,6 +111,21 @@
         <name>Submitted_on_Behalf_Of__c</name>
         <relationshipLabel><!-- Forms --></relationshipLabel>
     </fields>
+    <layouts>
+        <layout>API Request</layout>
+        <sections>
+            <label><!-- Approver Info --></label>
+            <section>Approver Info</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
     <layouts>
         <layout>BAP Provisioning Layout</layout>
         <sections>
@@ -100,6 +137,10 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
+    <recordTypes>
+        <label><!-- API Request --></label>
+        <name>API_Request</name>
+    </recordTypes>
     <recordTypes>
         <label><!-- BAP Provisioning --></label>
         <name>BAP_Provisioning</name>
