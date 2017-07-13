@@ -9,9 +9,52 @@
         <value>Data Attributes</value>
     </caseValues>
     <fields>
+        <label><!-- API Name --></label>
+        <name>API_Name__c</name>
+    </fields>
+    <fields>
         <label><!-- API Request --></label>
         <name>API_Request__c</name>
         <relationshipLabel><!-- Data Attributes --></relationshipLabel>
     </fields>
+    <fields>
+        <label><!-- Field Length --></label>
+        <name>Field_Length__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field Name --></label>
+        <name>Field_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field Type --></label>
+        <name>Field_Type__c</name>
+        <picklistValues>
+            <masterLabel>Date</masterLabel>
+            <translation><!-- Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Date/Time</masterLabel>
+            <translation><!-- Date/Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Number</masterLabel>
+            <translation><!-- Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Picklist</masterLabel>
+            <translation><!-- Picklist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text</masterLabel>
+            <translation><!-- Text --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Data Attribute Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

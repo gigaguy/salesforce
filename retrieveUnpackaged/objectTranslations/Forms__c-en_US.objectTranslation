@@ -9,6 +9,19 @@
         <value>Forms</value>
     </caseValues>
     <fields>
+        <help><!-- Identification of which API capabilities are required (post, get, update, delete etc.) If capabilities OTHER THAN get are required, we need to figure out authentication methods for accessing the API endpoint. --></help>
+        <label><!-- API Capabilities Required --></label>
+        <name>API_Capabilities_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- API Name --></label>
+        <name>API_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approximate initial row count --></label>
+        <name>Approximate_initial_row_count__c</name>
+    </fields>
+    <fields>
         <label><!-- Description --></label>
         <name>Description__c</name>
     </fields>
@@ -70,12 +83,17 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Functional/Business Sponsor Name --></label>
-        <lookupFilter>
-            <errorMessage><!-- Contact does not exist in EPA Person Records --></errorMessage>
-        </lookupFilter>
-        <name>Functional_Business_Sponsor_Name__c</name>
-        <relationshipLabel><!-- Forms (Functional/Business Sponsor Name) --></relationshipLabel>
+        <label><!-- Functional/Business Sponsor Email --></label>
+        <name>Functional_Business_Sponsor_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Functional/Business Sponsor Title --></label>
+        <name>Functional_Business_Sponsor_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Functional/Business Sponsor --></label>
+        <name>Functional_Business_Sponsor__c</name>
+        <relationshipLabel><!-- Forms (Functional/Business Sponsor) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- HR Org Code --></label>
@@ -103,6 +121,18 @@
         <relationshipLabel><!-- Forms (Office IMO Name) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Office IMO Title --></label>
+        <name>Office_IMO_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Point of Contact --></label>
+        <lookupFilter>
+            <errorMessage><!-- Point of Contact is not available in the EPA Person table --></errorMessage>
+        </lookupFilter>
+        <name>Point_of_Contact__c</name>
+        <relationshipLabel><!-- Forms (Point of Contact) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Quantity --></label>
         <name>Quantity__c</name>
     </fields>
@@ -110,6 +140,23 @@
         <label><!-- Submitted on Behalf Of --></label>
         <name>Submitted_on_Behalf_Of__c</name>
         <relationshipLabel><!-- Forms --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Swagger Specification File Description --></label>
+        <name>Swagger_Specification_File_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Table Description --></label>
+        <name>Table_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Table Name --></label>
+        <name>Table_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identification of which users should have access to updating the table --></help>
+        <label><!-- User Access for Updating Table --></label>
+        <name>User_Access_for_Updating_Table__c</name>
     </fields>
     <layouts>
         <layout>API Request</layout>
@@ -122,8 +169,16 @@
             <section>Custom Links</section>
         </sections>
         <sections>
+            <label><!-- Data Structure Information --></label>
+            <section>Data Structure Information</section>
+        </sections>
+        <sections>
             <label><!-- Fields --></label>
             <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
         </sections>
     </layouts>
     <layouts>

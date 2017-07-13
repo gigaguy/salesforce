@@ -52,6 +52,40 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <fullName>API_Capabilities_Required__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Identification of which API capabilities are required (post, get, update, delete etc.) If capabilities OTHER THAN get are required, we need to figure out authentication methods for accessing the API endpoint.</inlineHelpText>
+        <label>API Capabilities Required</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>API_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approximate_initial_row_count__c</fullName>
+        <externalId>false</externalId>
+        <label>Approximate initial row count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Description__c</fullName>
         <externalId>false</externalId>
         <label>Description</label>
@@ -171,23 +205,34 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>Functional_Business_Sponsor_Name__c</fullName>
+        <fullName>Functional_Business_Sponsor_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Functional_Business_Sponsor__r.Email</formula>
+        <label>Functional/Business Sponsor Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Functional_Business_Sponsor_Title__c</fullName>
+        <externalId>false</externalId>
+        <formula>Functional_Business_Sponsor__r.Title</formula>
+        <label>Functional/Business Sponsor Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Functional_Business_Sponsor__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <label>Functional/Business Sponsor Name</label>
-        <lookupFilter>
-            <active>true</active>
-            <errorMessage>Contact does not exist in EPA Person Records</errorMessage>
-            <filterItems>
-                <field>Contact.RecordTypeId</field>
-                <operation>equals</operation>
-                <value>EPA Person</value>
-            </filterItems>
-            <isOptional>false</isOptional>
-        </lookupFilter>
-        <referenceTo>Contact</referenceTo>
-        <relationshipLabel>Forms (Functional/Business Sponsor Name)</relationshipLabel>
-        <relationshipName>Forms1</relationshipName>
+        <label>Functional/Business Sponsor</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -261,9 +306,43 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
         <label>Office IMO Name</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Office_IMO_Title__c</fullName>
+        <externalId>false</externalId>
+        <formula>Office_IMO_Name__r.Title</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Office IMO Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Point_of_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Point of Contact</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Point of Contact is not available in the EPA Person table</errorMessage>
+            <filterItems>
+                <field>Contact.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>EPA Person</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
         <referenceTo>Contact</referenceTo>
-        <relationshipLabel>Forms (Office IMO Name)</relationshipLabel>
-        <relationshipName>Forms2</relationshipName>
+        <relationshipLabel>Forms (Point of Contact)</relationshipLabel>
+        <relationshipName>Forms3</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -304,6 +383,48 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Swagger_Specification_File_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Swagger Specification File Description</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Table_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Table Description</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Table_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Table Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Access_for_Updating_Table__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Identification of which users should have access to updating the table</inlineHelpText>
+        <label>User Access for Updating Table</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <label>Form</label>
     <listViews>
