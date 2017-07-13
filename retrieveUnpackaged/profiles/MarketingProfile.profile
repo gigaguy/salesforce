@@ -190,6 +190,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TQB2ndLineSupervisorLPControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TQBCPTriggerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
