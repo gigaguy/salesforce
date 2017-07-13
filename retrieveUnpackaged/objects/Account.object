@@ -317,6 +317,11 @@
             <operation>equals</operation>
             <value>Account.HR_Org</value>
         </filters>
+        <filters>
+            <field>ACCOUNT.NAME</field>
+            <operation>contains</operation>
+            <value>ODSTA</value>
+        </filters>
         <label>HR Orgs</label>
     </listViews>
     <listViews>
