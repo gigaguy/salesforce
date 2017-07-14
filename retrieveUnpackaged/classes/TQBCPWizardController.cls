@@ -724,7 +724,7 @@ public with sharing class TQBCPWizardController {
   }
 
   // Developer: Chris Alley
-  private static void appendToFile(Id fileId, String base64Data) {
+ public static void appendToFile(Id fileId, String base64Data) {
     base64Data = EncodingUtil.urlDecode(base64Data, 'UTF-8');
     System.debug('in TQBCPWizardController apex server parameters for appendToFile are:');
     Attachment a = [
@@ -829,7 +829,7 @@ public with sharing class TQBCPWizardController {
 
   @AuraEnabled
   public static TQB_Candidate_Package__c getCandidatePackage() {
-    List<TQB_Candidate_Package__c> candidatePackages = [select Id, Name, Status__c, Status_Date__c, Candidates_1st_Line_Supervisor_Name__c, Candidates_2nd_Line_Supervisor_Name__c, File_Type__c, Reject_Reason__c
+    List<TQB_Candidate_Package__c> candidatePackages = [select Id, Name, CreatedById, Status__c, Status_Date__c, Candidates_1st_Line_Supervisor_Name__c, Candidates_2nd_Line_Supervisor_Name__c, File_Type__c, Reject_Reason__c
     from TQB_Candidate_Package__c where CreatedById = :UserInfo.getUserId() LIMIT 1];
     if(candidatePackages.size() > 0) {
       return candidatePackages[0];
@@ -841,7 +841,7 @@ public with sharing class TQBCPWizardController {
   @AuraEnabled
   public static TQB_Candidate_Package__c getCPbyCandidateName(String candidateName) {
     TQB_Candidate_Package__c candidatePackage = [select Id, Name, Status__c, Status_Date__c, Candidates_1st_Line_Supervisor_Name__c, Candidates_2nd_Line_Supervisor_Name__c, File_Type__c, Reject_Reason__c
-    from TQB_Candidate_Package__c where CreatedById = :candidateName LIMIT 1];
+    from TQB_Candidate_Package__c where  CreatedById= :candidateName LIMIT 1];
     return candidatePackage;
   }
 

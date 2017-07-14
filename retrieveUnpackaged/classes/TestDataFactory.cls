@@ -57,7 +57,7 @@ public class TestDataFactory {
     
     public static User createUser() {
         
-        Profile p = [SELECT Id FROM Profile WHERE Name='Standard User']; 
+        Profile p = [SELECT Id FROM Profile WHERE Name='TQB Candidate User Profile']; 
         User user = new User(Alias = 'standt', Email='standarduser@testorg.com', 
             EmailEncodingKey='UTF-8', LastName='Testing', LanguageLocaleKey='en_US', 
             LocaleSidKey='en_US', ProfileId = p.Id, 
@@ -66,6 +66,117 @@ public class TestDataFactory {
         insert user;
         return user;
     }
+    
+    public static List<User> createPanelUser() {
+       Integer panelCount = 5;
+       List<User> panelUser = new List<User>();
+       
+        for(Integer i=0; i< panelCount; i++) {     
+            User u = new User(
+             ProfileId = [SELECT Id FROM Profile WHERE Name = 'TQB Panel Profile'].Id,
+             LastName = 'last'+ System.currentTimeMillis(),
+             Email = 'puser000@amamama.com',
+             Username = 'puser000@amamama.com' + System.currentTimeMillis(),
+             CompanyName = 'TEST',
+             Title = 'title',
+             Alias = 'alias',
+             TimeZoneSidKey = 'America/Los_Angeles',
+             EmailEncodingKey = 'UTF-8',
+             LanguageLocaleKey = 'en_US',
+             LocaleSidKey = 'en_US'
+           );
+           panelUser.add(u);
+        }
+       insert panelUser;
+       return panelUser;
+    }
+    
+    public static List<User> createCoordinatorUser(Integer panelCount) {
+       List<User> coordinatorUser = new List<User>();
+       
+        for(Integer i=0; i< panelCount; i++) {     
+            User u = new User(
+             ProfileId = [SELECT Id FROM Profile WHERE Name = 'TQB Coordinator Profile'].Id,
+             LastName = 'last'+ System.currentTimeMillis(),
+             Email = 'puser000@amamama.com',
+             Username = 'puser000@amamama.com' + System.currentTimeMillis(),
+             CompanyName = 'TEST',
+             Title = 'title',
+             Alias = 'alias',
+             TimeZoneSidKey = 'America/Los_Angeles',
+             EmailEncodingKey = 'UTF-8',
+             LanguageLocaleKey = 'en_US',
+             LocaleSidKey = 'en_US'
+           );
+           coordinatorUser.add(u);
+        }
+       insert coordinatorUser;
+       return coordinatorUser;
+    }
+    
+    public static List<User> create1stLineUser(Integer firstLineCount) {
+        List<User> firstLineUser = new List<User>();
+       
+        for(Integer i=0; i< firstLineCount; i++) {     
+            User u = new User(
+             ProfileId = [SELECT Id FROM Profile WHERE Name = 'TQB 1st Line Supervisor Profile'].Id,
+             LastName = 'last'+ System.currentTimeMillis(),
+             Email = 'puser000@amamama.com',
+             Username = 'puser000@amamama.com' + System.currentTimeMillis(),
+             CompanyName = 'TEST',
+             Title = 'title',
+             Alias = 'alias',
+             TimeZoneSidKey = 'America/Los_Angeles',
+             EmailEncodingKey = 'UTF-8',
+             LanguageLocaleKey = 'en_US',
+             LocaleSidKey = 'en_US'
+           );
+           firstLineUser.add(u);
+        }
+       insert firstLineUser;
+       return firstLineUser;        
+    }
+    
+    public static List<User> create2ndLineUser(Integer secondLineCount) {
+        List<User> secondLineUser = new List<User>();
+       
+        for(Integer i=0; i< secondLineCount; i++) {     
+            User u = new User(
+             ProfileId = [SELECT Id FROM Profile WHERE Name = 'TQB 2nd Line Supervisor Platform'].Id,
+             LastName = 'last'+ System.currentTimeMillis(),
+             Email = 'puser000@amamama.com',
+             Username = 'puser000@amamama.com' + System.currentTimeMillis(),
+             CompanyName = 'TEST',
+             Title = 'title',
+             Alias = 'alias',
+             TimeZoneSidKey = 'America/Los_Angeles',
+             EmailEncodingKey = 'UTF-8',
+             LanguageLocaleKey = 'en_US',
+             LocaleSidKey = 'en_US'
+           );
+           secondLineUser.add(u);
+        }
+       insert secondLineUser;
+       return secondLineUser;        
+    }
+    
+     public static User create2ndLineUserTest() {
+      
+        List<User> users = [Select Id, Name from User where Name='2nd Line Supervisor C122LS'];
+         return users[0];
+     }
+    
+    public static User createChairUserTest() {
+      
+        List<User> users = [Select Id, Name from User where Name='TQB Chair'];
+         return users[0];
+     }
+    
+     public static User createCoordinatorUserTest() {
+      
+        List<User> users = [Select Id, Name from User where Name='TQB Coordinator'];
+         return users[0];
+     }
     
     public static User createAnotherUser() {
         
