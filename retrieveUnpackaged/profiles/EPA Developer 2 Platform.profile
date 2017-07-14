@@ -928,6 +928,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Forms__c.API_URL_Link__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Forms__c.Approximate_initial_row_count__c</field>
         <readable>true</readable>
     </fieldPermissions>

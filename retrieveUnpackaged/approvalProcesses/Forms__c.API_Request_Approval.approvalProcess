@@ -55,6 +55,10 @@
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <initialSubmissionActions>
         <action>
+            <name>Send_API_Request_Confirmation</name>
+            <type>Alert</type>
+        </action>
+        <action>
             <name>Status_Update_to_Submitted_for_Approval</name>
             <type>FieldUpdate</type>
         </action>

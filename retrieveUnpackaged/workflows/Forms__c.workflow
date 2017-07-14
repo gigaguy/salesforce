@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
+        <fullName>API_Request_Completed</fullName>
+        <description>API Request Completed</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Point_of_Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/API_Request_Completed</template>
+    </alerts>
+    <alerts>
         <fullName>Dev_Sandbox_recalled</fullName>
         <description>Dev Sandbox recalled</description>
         <protected>false</protected>
@@ -66,6 +77,17 @@
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Dev_Sandbox_Request_Rejected_Template</template>
     </alerts>
+    <alerts>
+        <fullName>Send_API_Request_Confirmation</fullName>
+        <description>Send API Request Confirmation</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Point_of_Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/API_Request_Confirmation</template>
+    </alerts>
     <fieldUpdates>
         <fullName>Status_Update_to_Submitted_for_Approval</fullName>
         <description>Update to submitted for approval</description>
@@ -103,4 +125,23 @@
         <operation>Literal</operation>
         <protected>false</protected>
     </fieldUpdates>
+    <rules>
+        <fullName>API Request Completed</fullName>
+        <actions>
+            <name>API_Request_Completed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Forms__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>API Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Forms__c.Form_Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
 </Workflow>

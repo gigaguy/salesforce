@@ -74,6 +74,16 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>API_URL_Link__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The link to the API URL will be added here by the Data Services team with the API is created and ready for use</inlineHelpText>
+        <label>API URL Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
         <fullName>Approximate_initial_row_count__c</fullName>
         <externalId>false</externalId>
         <label>Approximate initial row count</label>
