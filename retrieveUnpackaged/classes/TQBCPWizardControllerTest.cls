@@ -200,8 +200,9 @@ public class TQBCPWizardControllerTest {
      @isTest static void testSaveAdHocCommentServerFirstLine() { 
           
          String testValue = 'hello';
-         Test.startTest();  
+         Test.startTest(); 
           Id candpkgId  =  TQBCPWizardControllerTest.createCandidatePackage();
+          List<TQB_Comment__c> comment = TestDataFactoryCPWizard.createCPAdhocComments(1, candpkgId);
           TQBCPWizardController.saveAdHocCommentServer(testValue,'firstLineSupComment', candpkgId);
           String commentValue = TQBCPWizardController.populateAdHocCommentsServer(candpkgId,'firstLineSupComment');
          Test.stopTest();
@@ -210,6 +211,31 @@ public class TQBCPWizardControllerTest {
      }
     
     @isTest static void testSaveAdHocCommentServerSecondLine() { 
+          
+         String testValue = 'hello';
+         Test.startTest();  
+          Id candpkgId  =  TQBCPWizardControllerTest.createCandidatePackage();
+          List<TQB_Comment__c> comment = TestDataFactoryCPWizard.createCPAdhocComments(1, candpkgId);
+          TQBCPWizardController.saveAdHocCommentServer(testValue,'secondLineSupComment', candpkgId);
+          String commentValue = TQBCPWizardController.populateAdHocCommentsServer(candpkgId,'secondLineSupComment');
+         Test.stopTest();
+         System.debug('commentvalue = '+ commentValue);
+         System.assertEquals(testValue, commentValue);
+     }
+    
+    @isTest static void testSaveAdHocCommentServerFirstLineElseCase() { 
+          
+         String testValue = 'hello';
+         Test.startTest(); 
+          Id candpkgId  =  TQBCPWizardControllerTest.createCandidatePackage();
+          TQBCPWizardController.saveAdHocCommentServer(testValue,'firstLineSupComment', candpkgId);
+          String commentValue = TQBCPWizardController.populateAdHocCommentsServer(candpkgId,'firstLineSupComment');
+         Test.stopTest();
+         System.debug('commentvalue = '+ commentValue);
+         System.assertEquals(testValue, commentValue);
+     }
+    
+    @isTest static void testSaveAdHocCommentServerSecondLineElseCase() { 
           
          String testValue = 'hello';
          Test.startTest();  
@@ -234,6 +260,22 @@ public class TQBCPWizardControllerTest {
         System.assertEquals(commentList.size(), commentListretrieved.size());
    }
     
+   @isTest static void testSaveReviewCommentAndReturnElseCase() { 
+         String errorMessage;
+         Test.startTest();  
+          Id candpkgId  =  TQBCPWizardControllerTest.createCandidatePackage();
+          List<TQB_Comment__c> commentList = TestDataFactoryCPWizard.createCPComments(1, candpkgId);
+          commentList[0].Comment__c = null;
+           try{
+              TQBCPWizardController.saveReviewCommentAndReturn(candpkgId, commentList[0]); 
+           }
+           catch(AuraHandledException e) {
+               errorMessage ='Script-thrown exception';
+           }
+         Test.stopTest();
+         System.assert(errorMessage != null);
+   }
+    
     @isTest static void testSaveReviewCommentAndReject() { 
          String testValue = 'hello';
          Test.startTest();  
@@ -245,6 +287,43 @@ public class TQBCPWizardControllerTest {
         System.debug('commentList size is ='+commentList.size());
         System.debug('commentListretrieved size is ='+ commentListretrieved.size());
         System.assertEquals(commentList.size(), commentListretrieved.size());
+   }
+    
+   @isTest static void testSaveReviewCommentAndRejectException1() { 
+       String errorMessage;
+         Test.startTest();  
+              Id candpkgId  =  TQBCPWizardControllerTest.createCandidatePackage();
+              List<TQB_Comment__c> commentList = TestDataFactoryCPWizard.createCPComments(1, candpkgId);
+               try{
+                   TQBCPWizardController.saveReviewCommentAndReject(candpkgId, commentList[0],'');
+                   List<TQB_Comment__c> commentListretrieved = TQBCPWizardController.getReviewComments(candpkgId);                   
+               }
+              catch(AuraHandledException e){
+                 System.debug(e);
+                 errorMessage = 'Script-thrown exception';
+               }
+         Test.stopTest();
+        System.debug('commentList size is ='+commentList.size());
+        System.assert(errorMessage != null);
+   }
+    
+   @isTest static void testSaveReviewCommentAndRejectElseCase() { 
+       String errorMessage;
+         Test.startTest();  
+              Id candpkgId  =  TQBCPWizardControllerTest.createCandidatePackage();
+              List<TQB_Comment__c> commentList = TestDataFactoryCPWizard.createCPComments(1, candpkgId);
+              commentList[0].Comment__c = null;
+               try{
+                   TQBCPWizardController.saveReviewCommentAndReject(candpkgId, commentList[0],'rejected');
+                   List<TQB_Comment__c> commentListretrieved = TQBCPWizardController.getReviewComments(candpkgId);                   
+               }
+              catch(AuraHandledException e){
+                 System.debug(e);
+                 errorMessage = 'Script-thrown exception';
+               }
+         Test.stopTest();
+        System.debug('commentList size is ='+commentList.size());
+        System.assert(errorMessage != null);
    }
     
     @isTest static void testGetReviewComments() { 
@@ -299,16 +378,7 @@ public class TQBCPWizardControllerTest {
           Test.stopTest();
          System.assertEquals(rejectReasonValues.size(), 8);
      }
-    /*
-    @isTest static void testGetTQBChairPersonList() {
-        Test.startTest();
-          List<User> createdUser = TestDataFactory.createTQBChairUser();
-          List<User> tqbChairUsers = TQBCPWizardController.getTQBChairPersonList();
-        Test.stopTest();
-        System.debug('tqbChairUsers Created'+ tqbChairUsers.size());
-        System.assertEquals(tqbChairUsers.size(), 1);
-    }
-    */    
+    
     @isTest static void testGetTQBCoordinatorEmailNotification() {
         Test.startTest(); 
            Id candpkgId  =  TQBCPWizardControllerTest.createCandidatePackage();
@@ -399,24 +469,15 @@ public class TQBCPWizardControllerTest {
         System.debug('Message for sending email is = ' + message);
         System.assertEquals(message, 'Email to Coordinator Sent Successfully');
     }
-      
-    /*
-    @isTest static void testGetCPbyCandidateName() {
-          
-       Test.startTest(); 
-         Id candpkgId  =  TQBCPWizardControllerTest.createCandidatePackage();
-         TQB_Candidate_Package__c candPkg = TQBCPWizardController.getCPbyCandidateName(candidateName);
-       Test.stopTest();
-        System.debug('value of candpackage candidate name' + candPkg.Candidate_Name__c);
-    }
-    */
-    
+         
     @isTest static void testGetCandidateQuestionForPagination() {
        TestDataFactory.createLOIRecords(1);  
       Test.startTest();
          TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
          TQB_Candidate_Package__c cp = TQBCPWizardController.getOrCreateCandidatePackage(newCP.Id);  
          List<TQB_Candidate_Questionnaire__c> questions = TQBCPWizardController.getCandidateQuestions(cp.Id);
+         List<TQB_Comment__c> questionCommentfirstLine = TestDataFactoryCPWizard.createCPQuestionfirstLineComments(1, questions[0].Id, cp.Id);
+         List<TQB_Comment__c> questionCommentSecondLine = TestDataFactoryCPWizard.createCPQuestionSecondLineComments(1, questions[0].Id, cp.Id);
          QuestionWrapper questionwrapper =  TQBCPWizardController.getCandidateQuestionForPagination(cp, cp.Id, false, true, 1);     
       Test.stopTest();   
          System.assert(questionwrapper.packageId != null ); 
@@ -466,13 +527,16 @@ public class TQBCPWizardControllerTest {
     /*
     @isTest static void testMarkAdhocReferenceSelected() {
         Boolean valueSelected = true;
-        Id candpkgId  =  TQBCPWizardControllerTest.createCandidatePackage();
-        List<TQB_Ad_Hoc_Entry__c> adhocUsers = TestDataFactoryCPWizard.createCPAdhocEntries(1, candpkgId);
-        System.debug('Name of the adhoc user =' + adhocUsers[0].Id);
-        Test.startTest();        
-          Boolean valueRetrieved = TQBCPWizardController.markAdhocReferenceSelected(candpkgId, adhocUsers[0].Name, valueSelected);
-        Test.stopTest();
-        System.assertEquals(valueRetrieved, valueSelected);
+         User CandidateUser = TestDataFactory.createCandidateUserTest();
+        System.runAs(CandidateUser) {
+                Id candpkgId  =  TQBCPWizardControllerTest.createCandidatePackage();
+                List<TQB_Ad_Hoc_Entry__c> adhocUsers = TestDataFactoryCPWizard.createCPAdhocEntries(1, candpkgId);
+                System.debug('Name of the adhoc user =' + adhocUsers[0].Name);
+                Test.startTest();        
+                  Boolean valueRetrieved = TQBCPWizardController.markAdhocReferenceSelected(candpkgId, adhocUsers[0].Name, valueSelected);
+                Test.stopTest();
+                System.assertEquals(valueRetrieved, valueSelected);
+        }
     }*/
     
     
@@ -666,11 +730,24 @@ public class TQBCPWizardControllerTest {
       System.assertEquals(attachments.size(), 1);
     }
     
-     @isTest static void testSaveRetrieveAttachCommentServer() { 
+     @isTest static void testSaveAttachCommentServer() { 
         String commentValue = 'testing', Comment_Type = 'firstLineSupComment';
         String fileName='test.txt', base64Data= 'testing purpose', contentType='Position Description', fileId='';
         Id candpkgId  =  TQBCPWizardControllerTest.createCandidatePackage();
         Id attachmentId = TQBCPWizardController.saveTheChunk(candpkgId, fileName, base64Data, contentType, fileId);
+         Test.startTest();
+            TQBCPWizardController.saveAttachCommentServer(commentValue, Comment_Type, candpkgId, attachmentId);
+            String commentValueRetrieved = TQBCPWizardController.populateAttachCommentsServer(candpkgId, Comment_Type, attachmentId);
+         Test.stopTest();
+         System.assertEquals(commentValueRetrieved, commentValue);
+     }
+    
+    @isTest static void testSaveAttachCommentServerIfCase() { 
+        String commentValue = 'testing', Comment_Type = 'firstLineSupComment';
+        String fileName='test.txt', base64Data= 'testing purpose', contentType='Position Description', fileId='';
+        Id candpkgId  =  TQBCPWizardControllerTest.createCandidatePackage();
+        Id attachmentId = TQBCPWizardController.saveTheChunk(candpkgId, fileName, base64Data, contentType, fileId);
+        List<TQB_Comment__c> comment = TestDataFactoryCPWizard.createCPAttachComments(1, attachmentId, candpkgId);
          Test.startTest();
             TQBCPWizardController.saveAttachCommentServer(commentValue, Comment_Type, candpkgId, attachmentId);
             String commentValueRetrieved = TQBCPWizardController.populateAttachCommentsServer(candpkgId, Comment_Type, attachmentId);
@@ -837,6 +914,17 @@ public class TQBCPWizardControllerTest {
         }
         Test.stopTest();
         System.assertEquals(errorMessage, 'Script-thrown exception');
+    }
+    
+    @isTest static void testGetTQBChairPersonList() { 
+        User chairUser = TestDataFactory.createChairUserTest();
+        System.runAs(chairUser) {        
+           Test.startTest();
+             List<User> chairUsers = TQBCPWizardController.getTQBChairPersonList();
+           Test.stopTest();
+           System.debug('value of chairUsers obtained'+ chairUsers.size());
+           System.assert(chairUsers.size() != 0);
+        }
     }
     
     

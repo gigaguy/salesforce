@@ -64,6 +64,39 @@ public class TestDataFactoryCPWizard {
       return commentList;  
     }
     
+    public static List<TQB_Comment__c> createCPAttachComments(Integer count, Id attachId, Id candPkgId) {
+
+       List<TQB_Comment__c> commentList = new List<TQB_Comment__c>();
+       for(Integer i=0;i<count;i++) {
+          TQB_Comment__c commentAdhocEntry = new TQB_Comment__c(Comment__c='John commented', Comment_Type__c = 'firstLineSupComment',Comment_Type_ID__c= attachId, TQB_Candidate_Package_ID__c= candPkgId);       
+          commentList.add(commentAdhocEntry);
+        }
+        insert commentList;
+      return commentList;  
+    }
+    
+     public static List<TQB_Comment__c> createCPQuestionfirstLineComments(Integer count, Id questionId, Id candPkgId) {
+
+       List<TQB_Comment__c> commentList = new List<TQB_Comment__c>();
+       for(Integer i=0;i<count;i++) {
+          TQB_Comment__c commentAdhocEntry = new TQB_Comment__c(Comment__c='John commented', Comment_Type__c = 'firstLineSupComment',Comment_Type_ID__c= questionId, TQB_Candidate_Package_ID__c= candPkgId);       
+          commentList.add(commentAdhocEntry);
+        }
+        insert commentList;
+      return commentList;  
+    }
+    
+    public static List<TQB_Comment__c> createCPQuestionSecondLineComments(Integer count, Id questionId, Id candPkgId) {
+
+       List<TQB_Comment__c> commentList = new List<TQB_Comment__c>();
+       for(Integer i=0;i<count;i++) {
+          TQB_Comment__c commentAdhocEntry = new TQB_Comment__c(Comment__c='John commented', Comment_Type__c = 'secondLineSupComment',Comment_Type_ID__c= questionId, TQB_Candidate_Package_ID__c= candPkgId);       
+          commentList.add(commentAdhocEntry);
+        }
+        insert commentList;
+      return commentList;  
+    }
+     
     public static List<TQB_Comment__c> createCPReviewComments(Integer count, Id cpId) {
 
        List<TQB_Comment__c> commentList = new List<TQB_Comment__c>();

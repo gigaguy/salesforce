@@ -139,9 +139,9 @@
       var state = response.getState();
       if (component.isValid() && state === "SUCCESS") {
         component.set("v.candPackage", response.getReturnValue());
-      console.log ("TQBFileControllerHelper : populateCandidatePackage response.getReturnValue() after server call = " + response.getReturnValue());
+      console.log ("SUCCESS - TQBFileControllerHelper : populateCandidatePackage response.getReturnValue() after server call = " + response.getReturnValue());
       } else if (state === "ERROR") {
-       alert('TQBFileControllerHelper : populateCandidatePackage : ERROR returnd from Apex server getCandidatePackage');
+       alert('TQBFileControllerHelper : populateCandidatePackage : ERROR returned from Apex server getCandidatePackage');
       console.log ("TQBFileControllerHelper : populateCandidatePackage response.getReturnValue() after server call = " + response.getReturnValue());
       }
     });

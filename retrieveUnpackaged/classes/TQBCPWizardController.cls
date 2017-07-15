@@ -1,5 +1,5 @@
 public with sharing class TQBCPWizardController {
-
+/*
 // Developer: Chris Alley
   //changes the selected value for the ad hoc reference to false if a supervisor unselects
   // the ad hoc reference on the review recommendation screen
@@ -26,7 +26,7 @@ public with sharing class TQBCPWizardController {
   System.debug('TQBCPWizardController markAdhocReferenceSelected apex server: Returning  anAdHocEntry.Selected__c =' +  anAdHocEntry.Selected__c);
   return anAdHocEntry.Selected__c;
    }//end unSelectAdhocReference
-
+*/
 
 
 // Developer: Chris Alley
