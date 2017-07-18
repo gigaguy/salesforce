@@ -7,4 +7,5 @@
     <tab>standard-Dashboard</tab>
     <tab>standard-Chatter</tab>
     <tab>standard-File</tab>
+    <tab>Object_Item__c</tab>
 </CustomApplication>

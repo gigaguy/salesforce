@@ -7,12 +7,11 @@
     <label>Lightning</label>
     <navType>Standard</navType>
     <tab>standard-home</tab>
-    <tab>standard-Opportunity</tab>
-    <tab>standard-Lead</tab>
     <tab>standard-Account</tab>
     <tab>standard-Contact</tab>
     <tab>standard-Campaign</tab>
     <tab>Forms__c</tab>
+    <tab>Object_Item__c</tab>
     <tab>standard-Task</tab>
     <tab>standard-ContentNote</tab>
     <tab>standard-Event</tab>
@@ -23,6 +22,5 @@
     <tab>standard-File</tab>
     <tab>standard-OtherUserProfile</tab>
     <tab>standard-Case</tab>
-    <tab>standard-Product2</tab>
     <uiType>Lightning</uiType>
 </CustomApplication>
