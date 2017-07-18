@@ -168,31 +168,34 @@ public class TestDataFactory {
        insert secondLineUser;
        return secondLineUser;        
     }
-        
-    public static User createChairUserTest() {
-      
-        List<User> users = [Select Id, Name from User where Name='TQB Chair'];
-         return users[0];
-     }
     
-    public static List<User> createTQBChairUser() {
-        List<User> userList = new List<User>();
-        Profile p = [SELECT Id FROM Profile WHERE Name='TQB Chair Profile']; 
-        User user = new User(Alias = 'standt', Email='TQBChair@testorg.com', 
-            EmailEncodingKey='UTF-8', LastName='Chair_Testing', LanguageLocaleKey='en_US', 
-            LocaleSidKey='en_US', ProfileId = p.Id, 
-            TimeZoneSidKey='America/Los_Angeles', UserName='tqbchairuser1707@testorg.com');
-        userList.add(user);                             
-        insert userList;
-        return userList;
+    
+    
+            
+    public static List<User> createTQBChairUser(Integer chairCount) {
+        List<User> chairUser = new List<User>();
+       
+        for(Integer i=0; i< chairCount; i++) {     
+            User u = new User(
+             ProfileId = [SELECT Id FROM Profile WHERE Name = 'TQB Chair Profile'].Id,
+             LastName = 'last'+ System.currentTimeMillis(),
+             Email = 'puser000@amamama.com',
+             Username = 'puser000@amamama.com' + System.currentTimeMillis(),
+             CompanyName = 'TEST',
+             Title = 'title',
+             Alias = 'alias',
+             TimeZoneSidKey = 'America/Los_Angeles',
+             EmailEncodingKey = 'UTF-8',
+             LanguageLocaleKey = 'en_US',
+             LocaleSidKey = 'en_US',
+             UserRoleId = [Select Id from UserRole where Name='TQB Chair'].Id
+           );
+           chairUser.add(u);
+        }
+       insert chairUser;
+       return chairUser;
     }
-    
-     public static User createCoordinatorUserTest() {
-      
-        List<User> users = [Select Id, Name from User where Name='TQB Coordinator'];
-         return users[0];
-     }
-    
+        
     public static User createAnotherUser() {
         
         Profile p = [SELECT Id FROM Profile WHERE Name='Standard User']; 

@@ -4,10 +4,9 @@ public class TQBCPTriggerTest {
     @isTest static void testErrorConditionTQBCandidatePackageTrigger() {
         String errorMessage;
         try{
-             User user = TestDataFactory.createUser();
              Test.startTest();
-              System.runAs(user) {
-                  TestDataFactory.createLOIRecords(1);
+              User candidateUser = TQBCPTriggerTest.createLOINCP(1);
+              System.runAs(candidateUser) {
                   TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
               }
               Test.stopTest();
@@ -22,10 +21,9 @@ public class TQBCPTriggerTest {
     @isTest static void testCPMoreThanOneTQBCandidatePackageTrigger() {
         String errorMessage;
         try{
-             User user = TestDataFactory.createUser();
              Test.startTest();
-              System.runAs(user) {
-                  TestDataFactory.createLOIRecords(1);
+             User candidateUser = TQBCPTriggerTest.createLOINCP(1);
+              System.runAs(candidateUser) {
                   TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
                   TQB_Candidate_Package__c newCP1 = TQBCPWizardController.createCandidatePackage();
               }
@@ -39,19 +37,10 @@ public class TQBCPTriggerTest {
     
     @isTest static void testCPSubmissionTQBCandidatePackageTrigger() {
         String errorMessage;
-        try{
-             User user = TestDataFactory.createUser();
-              
+        try{              
              Test.startTest();
-              System.runAs(user) {
-                  TQB_Letter_of_Intent__c LOI = new TQB_Letter_of_Intent__c(Current_Lab_Work_Location_Assignment__c='Office of Science Policy',
-                                                                               Current_GS_Level__c='GS 13',
-                                                                               CurrentRegion__c='Region 1',
-                                                                               IntendedTrack__c='Research',
-                                                                               Status__c='In Progress',
-                                                                               Candidates_1st_Line_Supervisor_Name__c= '005r0000001EozMAAS',
-                                                                               Candidates_2nd_Line_Supervisor_Name__c= '005r0000001EozCAAS');
-                  insert LOI;
+           User candidateUser = TQBCPTriggerTest.createLOINCP(1);
+              System.runAs(candidateUser) {
                   TQB_Candidate_Package__c newCP = TQBCPWizardController.createCandidatePackage();
                   newCP.Status__c ='Submitted';
                   upsert newCP;
@@ -67,15 +56,29 @@ public class TQBCPTriggerTest {
     @isTest static void testCountTQBCandidatePackageTrigger() {
         String errorMessage;
         try {
-          TestDataFactory.createLOIRecords(1);
-          Id candpkgId  =  TQBCPWizardControllerTest.createCandidatePackage();
-          Id candpkgId1 =  TQBCPWizardControllerTest.createCandidatePackage();
+          User candidateUser = TQBCPTriggerTest.createLOINCP(1);
+          System.runAs(candidateUser) {
+              Id candpkgId  =  TQBCPWizardControllerTest.createCandidatePackage();
+              Id candpkgId1 =  TQBCPWizardControllerTest.createCandidatePackage();
+          }
         }
         catch(DMLException e) {
             System.debug(e.getDmlMessage(0));
            errorMessage = e.getDmlMessage(0);
         }        
         System.assertEquals(errorMessage,'You cannot add more than one Candidate package');
+    }
+    
+    public static User createLOINCP(Integer count) {
+        List<User> firstLineUser = TestDataFactory.create1stLineUser(1);
+        List<User> secondLineUser = TestDataFactory.create2ndLineUser(1);
+        List<TQB_Letter_of_Intent__c> LOI;
+        User candidateUser = TestDataFactory.createUser();
+        TQB_Candidate_Package__c newCP;
+        System.runAs(candidateUser) {  
+         LOI = TestDataFactory.createLOIRecords(count, candidateUser, firstLineUser[0], secondLineUser[0]);
+        }   
+        return candidateUser;
     }
 
 }
