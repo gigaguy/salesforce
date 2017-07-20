@@ -405,11 +405,6 @@
         <columns>CORE.USERS.FIRST_NAME</columns>
         <columns>CORE.USERS.LAST_NAME</columns>
         <filterScope>Everything</filterScope>
-        <filters>
-            <field>FULL_NAME</field>
-            <operation>contains</operation>
-            <value>ward</value>
-        </filters>
         <label>All Contacts</label>
     </listViews>
     <listViews>
