@@ -38,7 +38,8 @@ public class initSession {
                 update u;
                 
                 // Redirect user to the form page with the new session ID set
-                PageReference newPR = new PageReference('https://oeiodsta-oeiodstadev.cs33.force.com/FormPage');
+                //PageReference newPR = new PageReference('https://oeiodsta-oeiodstadev.cs33.force.com/FormPage');
+                PageReference newPR = new PageReference(System.URL.getSalesforceBaseUrl().toExternalForm() + '/FormPage');
                 newPR.getParameters().put('sID', sID);
                 newPr.setRedirect(true);
                 return newPR;

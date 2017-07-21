@@ -39,7 +39,7 @@
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Default</content>
+        <content>EPA_100</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
@@ -653,10 +653,10 @@
         </picklistValues>
     </recordTypes>
     <recordTypes>
-        <fullName>EPA_1900_8a</fullName>
+        <fullName>EPA_100</fullName>
         <active>true</active>
-        <description>Procurement Request with Routing Slip (workflow)</description>
-        <label>EPA-1900-8a</label>
+        <description>Episodic Flexiplace  (workflow)</description>
+        <label>EPA-100</label>
         <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
@@ -705,10 +705,10 @@
         </picklistValues>
     </recordTypes>
     <recordTypes>
-        <fullName>SF_100</fullName>
+        <fullName>EPA_1900_8a</fullName>
         <active>true</active>
-        <description>Episodic Flexiplace  (workflow)</description>
-        <label>EPA-100</label>
+        <description>Procurement Request with Routing Slip (workflow)</description>
+        <label>EPA-1900-8a</label>
         <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>

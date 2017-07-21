@@ -2043,7 +2043,7 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Forms__c-EPA-100</layout>
-        <recordType>Forms__c.SF_100</recordType>
+        <recordType>Forms__c.EPA_100</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Forms__c-EPA-1900-8A</layout>
@@ -2327,14 +2327,14 @@
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Forms__c.EPA_1900_8a</recordType>
+        <default>true</default>
+        <personAccountDefault>true</personAccountDefault>
+        <recordType>Forms__c.EPA_100</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
-        <recordType>Forms__c.SF_100</recordType>
+        <default>false</default>
+        <recordType>Forms__c.EPA_1900_8a</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

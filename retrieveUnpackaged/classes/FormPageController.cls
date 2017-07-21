@@ -13,6 +13,8 @@ public class FormPageController {
         for (PermissionSet ps : [select id, Label from PermissionSet where id in :psIDs]){
             
             formNames.add(ps.label.removeStart('WebForm User - '));
+            //hardcoding EPA-100 for all users
+            formNames.add('EPA-100');
         }
         return [select id, Name, Description from RecordType where sObjectType = 'Forms__c' and IsActive = true and Name in :formNames];
     }
@@ -96,11 +98,12 @@ public class FormPageController {
         String message = 'Not Submitted - Please check that all your approvers are set and try again';
         try{
             system.debug(formId);
-            
+            User u = [select id from User where Name = 'Unlicensed User' limit 1];
             Approval.ProcessSubmitRequest req1 = new Approval.ProcessSubmitRequest();
             req1.setComments('Automatically Submitted');
             req1.setObjectId(formId);
-            req1.setSubmitterId('00535000000VAA9');
+            //req1.setSubmitterId('00535000000VAA9');
+            req1.setSubmitterID(u.ID);
             Approval.ProcessResult result = Approval.process(req1);
             if (result.IsSuccess()) message = 'Submitted';
             return message;
