@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>HeaderLog</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>HeaderLogs</value>
+    </caseValues>
+    <fields>
+        <label><!-- HeaderDump --></label>
+        <name>HeaderDump__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParamDump --></label>
+        <name>ParamDump__c</name>
+    </fields>
+    <layouts>
+        <layout>HeaderLog Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Header --></label>
+            <section>Header</section>
+        </sections>
+        <sections>
+            <label><!-- Parameters --></label>
+            <section>Parameters</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,67 @@
+<apex:page controller="ProfilePageController" showheader="false" sidebar="false" title="BAP Agency Forms - Edit Approvers" cache="false" action="{!validateOrRedirect}">
+    
+    <style>
+        body { background-color: #E0F1FF; }
+    </style>
+    
+    <!--Header-->
+    <apex:form rendered="{!valid == true}">    
+    <div class="WebFormsNav" style="padding: 25px; height: 150px;">
+        <div style="width: 190px; float: left; position: relative;">
+            <img src="{!$Resource.EPALogo}"/>
+        </div>
+        <div style="float: left; position: relative;">
+            <h1 style="font-size: 300%; padding-bottom: 20px;">BAP Agency Forms</h1>
+            <p style="margin-top: 30px; font-size: 125%;">
+                Editing Approvers for: {!userName}
+            </p>
+            <p style="margin-top: 35px; font-size: 16.25px">
+                <apex:commandlink action="{!cancel}">Back to Form Types</apex:commandlink>
+            </p>
+        </div>
+    </div>
+    </apex:form>
+    <!--End Header-->
+    
+    <!--Body-->
+    <div style="width: 75%; padding-left: 200px;">
+        <apex:form rendered="{!valid == true}">
+            <apex:pageblock >
+                <apex:pageBlockSection title="Approver Fields" columns="1">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Supervisor"/>
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!u.Supervisor__c}" syncManualEntry="false" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageblocksectionitem >
+                        <apex:outputlabel value="Time Keeper" />
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!u.Time_Keeper__c}" syncManualEntry="false" />
+                    </apex:pageblocksectionitem>
+                    <apex:pageblocksectionitem >
+                        <apex:outputlabel value="Supervisor 2" />
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!u.Supervisor_2__c}" syncManualEntry="false" />
+                    </apex:pageblocksectionitem>
+                    <apex:pageblocksectionitem >
+                        <apex:outputlabel value="Funding Official" />
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!u.Funding_Official__c}" syncManualEntry="false" />
+                    </apex:pageblocksectionitem>
+                    <apex:pageblocksectionitem >
+                        <apex:outputlabel value="Training Officer" />
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!u.Training_Officer__c}" syncManualEntry="false" />
+                    </apex:pageblocksectionitem>
+                </apex:pageBlockSection>
+                
+                <div style="text-align: center; padding-top: 20px;">
+                    <apex:commandbutton value="Cancel" action="{!cancel}" />
+                    &nbsp;
+                    <apex:commandbutton value="Save" action="{!save}" />
+                </div>
+                
+            </apex:pageblock>
+        </apex:form>   
+        <apex:form rendered="{!valid == false}">
+            Not authenticated!
+        </apex:form>
+    </div>
+    <!--End Body-->
+    
+</apex:page>
