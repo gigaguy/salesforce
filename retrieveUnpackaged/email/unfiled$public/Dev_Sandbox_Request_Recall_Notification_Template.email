@@ -1,0 +1,9 @@
+<div style='font-size:12pt;font-family:"Times New Roman",serif;color:#000000'>
+Dear {!ApprovalRequest.Process_Assignee},
+<br><br>
+A form, {!Forms__c.Form_Type__c}: &quot;<a href="{!Forms__c.Link}">{!Forms__c.Name__c}</a>&quot;, has been recalled. 
+<br><br>
+Thank you,
+<br><br>
+{!User.Name}
+</div>
