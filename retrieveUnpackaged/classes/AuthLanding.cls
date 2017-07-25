@@ -14,16 +14,16 @@ public class AuthLanding {
 
         // Check for user identification from WAM headers and confirm it is coming from WAM server
         if (headers.containsKey('uid') 
-            && headers.get('Shib-Identity-Provider') == 'https://idpstg.epa.gov/' 
-            && headers.get('X-Forwarded-Host') == 'oeiodstadev.epa.gov') 
+            && headers.get('Shib-Identity-Provider') == 'https://idpstg.epa.gov/')
+            //&& headers.get('X-Forwarded-Host') == 'oeiodstadev.epa.gov') 
         	{ UID = headers.get('uid'); }
         else if (headers.containsKey('AUTH_USER')
-            && headers.get('Shib-Identity-Provider') == 'https://idpstg.epa.gov/' 
-            && headers.get('X-Forwarded-Host') == 'oeiodstadev.epa.gov') 
+            && headers.get('Shib-Identity-Provider') == 'https://idpstg.epa.gov/')
+            //&& headers.get('X-Forwarded-Host') == 'oeiodstadev.epa.gov') 
             { UID = headers.get('AUTH_USER'); }    
         else if (headers.containsKey('REMOTE_USER')
-            && headers.get('Shib-Identity-Provider') == 'https://idpstg.epa.gov/' 
-            && headers.get('X-Forwarded-Host') == 'oeiodstadev.epa.gov') 
+            && headers.get('Shib-Identity-Provider') == 'https://idpstg.epa.gov/')
+            //&& headers.get('X-Forwarded-Host') == 'oeiodstadev.epa.gov') 
             { UID = headers.get('REMOTE_USER'); } 
 
         // Manual override URL parameter for testing, will be removed once deployed
@@ -59,7 +59,8 @@ public class AuthLanding {
     			
                 // Redirect user to the form page with the new session ID set
                 //PageReference newPR = new PageReference('https://oeiodsta-oeiodstadev.cs33.force.com/initSession');
-                PageReference newPR = new PageReference(System.URL.getSalesforceBaseUrl().toExternalForm() + '/initSession');
+                PageReference newPR = new PageReference('https://epafull-epafull-epafull.cs32.force.com/initSession');
+                //PageReference newPR = new PageReference(System.URL.getSalesforceBaseUrl().toExternalForm() + '/initSession');
                 newPR.getParameters().put('sID', sessionID);
                 //newPr.setRedirect(true);
                 return newPR;
