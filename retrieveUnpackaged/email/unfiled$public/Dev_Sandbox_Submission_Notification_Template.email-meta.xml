@@ -6,7 +6,7 @@
     <name>Development Sandbox Request Submission Notification Template</name>
     <style>none</style>
     <subject>{!Forms__c.Form_Type__c}: &quot;{!Forms__c.Name__c}&quot; Submitted For Your Approval</subject>
-    <textOnly>Dear {!ApprovalRequest.Process_Assignee},
+    <textOnly>Dear {!ApprovalRequest.Process_Assignee}, 
 
 A new request, {!Forms__c.Form_Type__c}: &quot;{!Forms__c.Name__c}&quot;, has been submitted for your approval.
 
