@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Application</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Applications</value>
+    </caseValues>
+    <fields>
+        <label><!-- FY 16 Usage Count --></label>
+        <name>FY_16_Usage__c</name>
+    </fields>
+    <fields>
+        <label><!-- FY 17 Usage Count --></label>
+        <name>FY_17_Usage_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Number --></label>
+        <name>Form_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Migration Priority --></label>
+        <name>Migration_Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Migration Status --></label>
+        <name>Migration_Status__c</name>
+        <picklistValues>
+            <masterLabel>Delete</masterLabel>
+            <translation><!-- Delete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deleted</masterLabel>
+            <translation><!-- Deleted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Do Not Migrate</masterLabel>
+            <translation><!-- Do Not Migrate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Known</masterLabel>
+            <translation><!-- Known --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orphan</masterLabel>
+            <translation><!-- Orphan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Responsible Org --></label>
+        <name>Responsible_Org__c</name>
+        <relationshipLabel><!-- Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Fill and Print</masterLabel>
+            <translation><!-- Fill and Print --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Workflow</masterLabel>
+            <translation><!-- Workflow --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Application Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Application Layout2</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

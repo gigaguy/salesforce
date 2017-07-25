@@ -9,18 +9,14 @@
     <tab>standard-home</tab>
     <tab>standard-Account</tab>
     <tab>standard-Contact</tab>
-    <tab>standard-Campaign</tab>
+    <tab>Application__c</tab>
     <tab>Forms__c</tab>
-    <tab>Object_Item__c</tab>
     <tab>standard-Task</tab>
     <tab>standard-ContentNote</tab>
     <tab>standard-Event</tab>
     <tab>standard-CollaborationGroup</tab>
     <tab>standard-Dashboard</tab>
     <tab>standard-report</tab>
-    <tab>standard-Feed</tab>
     <tab>standard-File</tab>
-    <tab>standard-OtherUserProfile</tab>
-    <tab>standard-Case</tab>
     <uiType>Lightning</uiType>
 </CustomApplication>
