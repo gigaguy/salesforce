@@ -24,8 +24,17 @@ private class InputLookupAuraControllerTest {
 
         ret = InputLookupAuraController.getCurrentValue('INVALID_OBJECT', '000000000000000');
         System.assert(String.isBlank(ret), 'Should return null string ['+ret+']');
-
+        
+        ret = InputLookupAuraController.getCurrentValue('Contact', null);
+        System.assert(String.isBlank(ret), 'Should return null string ['+ret+']');
+        
         ret = InputLookupAuraController.getCurrentValue('Contact', '000000000000000');
+        System.assert(String.isBlank(ret), 'Should return null string ['+ret+']');
+        
+        ret = InputLookupAuraController.getCurrentValue('Contact', '000000000000005');
+        System.assert(String.isBlank(ret), 'Should return null string ['+ret+']');
+        
+        ret = InputLookupAuraController.getCurrentValue('Salesforce', '000000000000005');
         System.assert(String.isBlank(ret), 'Should return null string ['+ret+']');
 
         ret = InputLookupAuraController.getCurrentValue('Contact', contacts[0].Id);

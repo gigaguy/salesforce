@@ -9,7 +9,7 @@ public class LOIRejectReasonMultiSelectApexController {
         for (Schema.PicklistEntry f: ple) {
             options.add(f.getLabel());
         }
-       return options;
-    } 
+       return options; 
+    }
 
 }

@@ -649,6 +649,8 @@ public class TQBCPWizardControllerTest {
           Test.stopTest();   
              System.assert(questionwrapper.packageId != null ); 
              System.assert(questionwrapper.questionNumber != null); 
+             System.assert(questionwrapper.firstLineComment == null); 
+             System.assert(questionwrapper.secondLineComment == null); 
              System.assert(questionwrapper.total != null); 
         }
     }
