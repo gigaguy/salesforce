@@ -16,7 +16,7 @@ public class AuthLanding {
         if (headers.containsKey('uid') 
             && headers.get('Shib-Identity-Provider') == 'https://idpstg.epa.gov/' 
             && headers.get('X-Forwarded-Host') == 'oeiodstadev.epa.gov') 
-        	{ UID = headers.get('uid'); }
+            { UID = headers.get('uid'); }
         else if (headers.containsKey('AUTH_USER')
             && headers.get('Shib-Identity-Provider') == 'https://idpstg.epa.gov/' 
             && headers.get('X-Forwarded-Host') == 'oeiodstadev.epa.gov') 
@@ -46,7 +46,7 @@ public class AuthLanding {
             // If a user is found with the matching federation id, generate session and store information about the users environment
             if (u != null) {
                 // Generate sessionID and store on user record
-           		sessionID = UtilityMethods.generateSessionID(20);
+                sessionID = UtilityMethods.generateSessionID(20);
                 u.Session_Token__c = sessionId;
                 
                 // Get and store information about the users IP address (if available), browser and current timestamp
@@ -54,10 +54,10 @@ public class AuthLanding {
                 else { u.Session_IP__c = 'not available'; }
                 u.Session_Environment__c = headers.get('User-Agent');
                 u.Session_Timestamp__c = System.now();
-            	
+                
                 update u;
-    			
-                // Redirect user to the form page with the new session ID set
+                
+                // Redirect user to the initSession page with the new session ID set
                 PageReference newPR = new PageReference('https://oeiodsta-oeiodstadev.cs33.force.com/initSession');
                 newPR.getParameters().put('sID', sessionID);
                 //newPr.setRedirect(true);
