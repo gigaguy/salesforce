@@ -52,6 +52,16 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <fullName>Award_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Award Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Award_Type__c</fullName>
         <externalId>false</externalId>
         <label>Award Type</label>
@@ -107,6 +117,9 @@
     <label>ORD Award</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>Award_Type__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

@@ -848,6 +848,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ORD_Award__c.Award_Amount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ORD_Award__c.Award_Type__c</field>
         <readable>false</readable>
     </fieldPermissions>
