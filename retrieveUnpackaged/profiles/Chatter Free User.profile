@@ -748,6 +748,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Fundraiser__c.Fundraiser_Website__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Idea.Attachment</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -848,12 +853,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Meeting_Registration__c.End_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Meeting_Registration__c.Send_Email__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ORD_Award__c.Award_Amount__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>ORD_Award__c.Award_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ORD_Award__c.Case__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1447,6 +1467,9 @@
         <layout>Macro-Macro Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Meeting_Registration__c-Meeting Registration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ORD_Award__c-ORD Award Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -1492,6 +1515,9 @@
         <layout>Registration__c-Registration Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Send_for_Approval__c-Send for Approval Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>SocialPersona-Social Persona Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -1520,6 +1546,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkThanks-Thanks Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>veravsip__c-veravsip Layout</layout>
     </layoutAssignments>
     <objectPermissions>
         <allowCreate>false</allowCreate>
@@ -1676,6 +1705,10 @@
     <tabVisibilities>
         <tab>Registration__c</tab>
         <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Vera_Vsip_Lightning</tab>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Account</tab>

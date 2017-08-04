@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is a test, not a lot of object choices.</description>
+    <flexiPageRegions>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>cacheAge</name>
+                <value>1440</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>reportName</name>
+                <value>Cases_by_Origin_and_Open_Status</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>showRefreshButton</name>
+                <value>false</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:reportChart</componentName>
+        </componentInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Meeting Registration 2</masterLabel>
+    <pageTemplate>flexipage:defaultAppHomeTemplate</pageTemplate>
+    <type>AppPage</type>
+</FlexiPage>

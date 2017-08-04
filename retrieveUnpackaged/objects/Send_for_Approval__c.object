@@ -43,61 +43,21 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <enableActivities>true</enableActivities>
+    <description>Try to use the workflow process.</description>
+    <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>true</enableFeeds>
+    <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <fieldSets>
-        <fullName>Donaiton_Amount</fullName>
-        <description>Charity App</description>
-        <label>Donaiton Amount</label>
-    </fieldSets>
-    <fieldSets>
-        <fullName>Name</fullName>
-        <description>Charity app</description>
-        <displayedFields>
-            <field>Id</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>Name</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>LastActivityDate</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <label>Name</label>
-    </fieldSets>
-    <fields>
-        <fullName>Fundraiser_Website__c</fullName>
-        <externalId>false</externalId>
-        <label>Fundraiser Website</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Url</type>
-    </fields>
-    <label>Fundraiser</label>
-    <listViews>
-        <fullName>Fundraisers_2</fullName>
-        <columns>NAME</columns>
-        <filterScope>Everything</filterScope>
-        <label>Fundraisers 2</label>
-    </listViews>
+    <label>Send for Approval</label>
     <nameField>
-        <label>Fundraiser Name</label>
-        <trackFeedHistory>true</trackFeedHistory>
+        <label>Send for Approval  Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Fundraisers</pluralLabel>
+    <pluralLabel>Send for Approvals</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

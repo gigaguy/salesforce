@@ -734,6 +734,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Fundraiser__c.Fundraiser_Website__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Idea.Attachment</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -834,12 +839,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Meeting_Registration__c.End_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Meeting_Registration__c.Send_Email__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ORD_Award__c.Award_Amount__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>ORD_Award__c.Award_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ORD_Award__c.Case__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1402,6 +1422,10 @@
     </tabSettings>
     <tabSettings>
         <tab>Registration__c</tab>
+        <visibility>None</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Vera_Vsip_Lightning</tab>
         <visibility>None</visibility>
     </tabSettings>
     <tabSettings>

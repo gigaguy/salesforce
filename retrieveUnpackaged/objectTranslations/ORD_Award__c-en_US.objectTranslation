@@ -25,6 +25,11 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- ORD Awards --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Nominator --></label>
         <name>Nominator__c</name>
         <relationshipLabel><!-- ORD Awards (Nominator) --></relationshipLabel>
@@ -35,4 +40,8 @@
         <relationshipLabel><!-- ORD Awards (User) --></relationshipLabel>
     </fields>
     <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- must be at least 300 for award value --></errorMessage>
+        <name>award_value</name>
+    </validationRules>
 </CustomObjectTranslation>

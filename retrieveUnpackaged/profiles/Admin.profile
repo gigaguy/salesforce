@@ -747,6 +747,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Fundraiser__c.Fundraiser_Website__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Idea.Attachment</field>
         <readable>false</readable>
@@ -848,12 +853,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Meeting_Registration__c.End_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Meeting_Registration__c.Send_Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ORD_Award__c.Award_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>ORD_Award__c.Award_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ORD_Award__c.Case__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1447,6 +1467,9 @@
         <layout>Macro-Macro Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Meeting_Registration__c-Meeting Registration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ORD_Award__c-ORD Award Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -1492,6 +1515,9 @@
         <layout>Registration__c-Registration Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Send_for_Approval__c-Send for Approval Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>SocialPersona-Social Persona Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -1520,6 +1546,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkThanks-Thanks Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>veravsip__c-veravsip Layout</layout>
     </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -1618,6 +1647,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Macro</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Meeting_Registration__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -1725,6 +1763,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>Send_for_Approval__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>SocialPersona</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -1746,6 +1793,15 @@
         <object>StreamingChannel</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>veravsip__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Idea.InternalIdeasIdeaRecordType</recordType>
@@ -1765,6 +1821,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Registration__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Vera_Vsip_Lightning</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>

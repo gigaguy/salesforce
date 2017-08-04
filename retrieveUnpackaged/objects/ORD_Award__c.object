@@ -84,6 +84,18 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>ORD Awards</relationshipLabel>
+        <relationshipName>ORD_Awards</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Nominator__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -123,12 +135,31 @@
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
+    <listViews>
+        <fullName>test_2</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Award_Amount__c</field>
+            <operation>greaterThan</operation>
+            <value>499</value>
+        </filters>
+        <label>test 2</label>
+    </listViews>
     <nameField>
         <label>ORD Award Name</label>
         <type>Text</type>
     </nameField>
     <pluralLabel>ORD Awards</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts>
+        <searchFilterFields>Award_Type__c</searchFilterFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>award_value</fullName>
+        <active>true</active>
+        <errorConditionFormula>Award_Amount__c &gt; 300</errorConditionFormula>
+        <errorMessage>must be at least 300 for award value</errorMessage>
+    </validationRules>
 </CustomObject>

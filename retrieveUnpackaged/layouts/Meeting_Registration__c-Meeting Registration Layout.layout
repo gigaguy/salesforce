@@ -11,24 +11,24 @@
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Award_Type__c</field>
+                <behavior>Required</behavior>
+                <field>Start_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Nominator__c</field>
+                <field>End_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Description__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>User__c</field>
+                <field>Send_Email__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Award_Amount__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Case__c</field>
+                <behavior>Required</behavior>
+                <field>Meeting_Title__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
