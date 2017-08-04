@@ -1415,6 +1415,12 @@
         <layout>QuoteLineItem-Quote Line Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>SABMeeting__c-SAB Meeting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SAB_Project__c-SAB Product Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>SocialPersona-Social Persona Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
