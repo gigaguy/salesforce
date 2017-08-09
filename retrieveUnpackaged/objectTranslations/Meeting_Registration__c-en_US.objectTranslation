@@ -17,10 +17,6 @@
         <name>End_Date__c</name>
     </fields>
     <fields>
-        <label><!-- Meeting Title --></label>
-        <name>Meeting_Title__c</name>
-    </fields>
-    <fields>
         <label><!-- Send Email --></label>
         <name>Send_Email__c</name>
     </fields>
@@ -28,5 +24,12 @@
         <label><!-- Start Date --></label>
         <name>Start_Date__c</name>
     </fields>
+    <layouts>
+        <layout>Meeting Registration Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

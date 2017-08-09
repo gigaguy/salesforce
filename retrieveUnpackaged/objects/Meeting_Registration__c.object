@@ -69,20 +69,9 @@
         <description>The date the events ends.</description>
         <externalId>false</externalId>
         <label>End Date</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Meeting_Title__c</fullName>
-        <description>Short title of the meeting.</description>
-        <externalId>false</externalId>
-        <label>Meeting Title</label>
-        <length>60</length>
         <required>true</required>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>DateTime</type>
     </fields>
     <fields>
         <fullName>Send_Email__c</fullName>
@@ -105,7 +94,7 @@
     </fields>
     <label>Meeting Registration</label>
     <nameField>
-        <label>Meeting Registration Name</label>
+        <label>Meeting Registration Title</label>
         <type>Text</type>
     </nameField>
     <pluralLabel>Meeting Registrations</pluralLabel>

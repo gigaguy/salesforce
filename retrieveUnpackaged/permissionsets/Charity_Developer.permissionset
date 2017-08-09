@@ -5,6 +5,10 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>Meeting_Registration</application>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>Recording</application>
         <visible>false</visible>
     </applicationVisibilities>
@@ -835,11 +839,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Lead.Website</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Meeting_Registration__c.End_Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
