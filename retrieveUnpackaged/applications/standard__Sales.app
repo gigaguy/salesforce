@@ -13,4 +13,7 @@
     <tab>standard-Forecasting3</tab>
     <tab>standard-Quote</tab>
     <tab>ORD_Award__c</tab>
+    <tab>Battle_Stations__c</tab>
+    <tab>Resource__c</tab>
+    <tab>Supply__c</tab>
 </CustomApplication>

@@ -11,4 +11,7 @@
     <tab>standard-Chatter</tab>
     <tab>standard-File</tab>
     <tab>ORD_Award__c</tab>
+    <tab>Battle_Stations__c</tab>
+    <tab>Resource__c</tab>
+    <tab>Supply__c</tab>
 </CustomApplication>

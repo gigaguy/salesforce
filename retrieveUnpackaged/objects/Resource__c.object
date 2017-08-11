@@ -43,73 +43,66 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>This is a test to deetermine if this is a good candidate for CF migration to this platform.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
-    <enableReports>false</enableReports>
+    <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>Description__c</fullName>
-        <caseSensitive>false</caseSensitive>
-        <description>Description and/or purpose of this event.</description>
+        <fullName>Battle_Station__c</fullName>
         <externalId>false</externalId>
-        <label>Description</label>
-        <length>250</length>
-        <required>true</required>
+        <label>Battle Station</label>
+        <referenceTo>Battle_Stations__c</referenceTo>
+        <relationshipLabel>Resources</relationshipLabel>
+        <relationshipName>Resources</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>true</unique>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
-        <fullName>End_Date__c</fullName>
-        <description>The date the events ends.</description>
+        <fullName>Quantity__c</fullName>
         <externalId>false</externalId>
-        <label>End Date</label>
+        <label>Quantity</label>
+        <precision>18</precision>
         <required>true</required>
+        <scale>0</scale>
         <trackTrending>false</trackTrending>
-        <type>DateTime</type>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Send_Email__c</fullName>
-        <description>Sends acknowledgement email to the meeting registrant.</description>
+        <fullName>Utilization__c</fullName>
         <externalId>false</externalId>
-        <label>Send Email</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Email</type>
-        <unique>true</unique>
-    </fields>
-    <fields>
-        <fullName>Start_Date__c</fullName>
-        <description>Date the meeting will start</description>
-        <externalId>false</externalId>
-        <label>Start Date</label>
+        <label>Utilization</label>
+        <precision>18</precision>
         <required>true</required>
+        <scale>0</scale>
         <trackTrending>false</trackTrending>
-        <type>DateTime</type>
+        <type>Percent</type>
     </fields>
-    <label>Meeting Registration</label>
+    <label>Resource</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
-        <label>Meeting Registration Title</label>
+        <label>Resource Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Meeting Registrations</pluralLabel>
-    <recordTypes>
-        <fullName>HQ_Regional</fullName>
-        <active>true</active>
-        <description>HQ/Regioanl use of the tool</description>
-        <label>HQ/Regional</label>
-    </recordTypes>
-    <recordTypes>
-        <fullName>Local</fullName>
-        <active>true</active>
-        <description>RTP Campus users</description>
-        <label>Local</label>
-    </recordTypes>
+    <pluralLabel>Resources</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Inspectors_Must_Work_Overtime</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(Name = &quot;Exhaust Port Inspector&quot;, Utilization__c &lt; 1.5)</errorConditionFormula>
+        <errorDisplayField>Utilization__c</errorDisplayField>
+        <errorMessage>Exhaust Port Inspectors must work at least 150%. No coffee breaks!</errorMessage>
+    </validationRules>
 </CustomObject>

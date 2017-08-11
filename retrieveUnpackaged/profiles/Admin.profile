@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
+        <application>Battle_Station_Constrution</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>Charity</application>
         <default>false</default>
         <visible>true</visible>
@@ -275,6 +280,21 @@
         <editable>false</editable>
         <field>AssetRelationship.RelationshipType</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Battle_Stations__c.Crew_Members__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Battle_Stations__c.Project_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Battle_Stations__c.Weapon_Status__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -1323,6 +1343,46 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>RTPForms_Repository__c.Contract_Forms__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTPForms_Repository__c.Facilities_Forms__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTPForms_Repository__c.Finance_Forms__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTPForms_Repository__c.Healt_Safety_Forms__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTPForms_Repository__c.Human_Resources_Forms__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTPForms_Repository__c.IT_Forms__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTPForms_Repository__c.Other_Forms__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RTPForms_Repository__c.RTP_Form_Repository__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>SocialPersona.SourceApp</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1339,6 +1399,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Solution.SolutionNote</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Supply__c.Total_Cost__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1413,6 +1478,9 @@
         <layout>Asset-Asset Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Battle_Stations__c-Battle Station Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Campaign-Campaign Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -1470,6 +1538,14 @@
         <layout>Meeting_Registration__c-Meeting Registration Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Meeting_Registration__c-Meeting Registration Layout</layout>
+        <recordType>Meeting_Registration__c.HQ_Regional</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Meeting_Registration__c-Meeting Registration Layout</layout>
+        <recordType>Meeting_Registration__c.Local</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ORD_Award__c-ORD Award Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -1509,10 +1585,16 @@
         <layout>QuoteLineItem-Quote Line Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>RTPForms_Repository__c-RTP Form Repository Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Record_Transportation_Service__c-Record Transportation Service Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Registration__c-Registration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Resource__c-Resource Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Send_for_Approval__c-Send for Approval Layout</layout>
@@ -1522,6 +1604,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Solution-Solution Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Supply__c-Supply Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Task-Task Layout</layout>
@@ -1566,6 +1651,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Asset</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Battle_Stations__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -1745,6 +1839,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>RTPForms_Repository__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Record_Transportation_Service__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -1755,6 +1858,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Registration__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Resource__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -1799,6 +1911,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>Supply__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>veravsip__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -1807,6 +1928,20 @@
         <recordType>Idea.InternalIdeasIdeaRecordType</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Meeting_Registration__c.HQ_Regional</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Meeting_Registration__c.Local</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <tabVisibilities>
+        <tab>Battle_Stations__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
     <tabVisibilities>
         <tab>Fundraiser__c</tab>
         <visibility>DefaultOn</visibility>
@@ -1821,6 +1956,18 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Registration__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Resource__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Supply__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Survey</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>

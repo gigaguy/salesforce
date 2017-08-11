@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Categories__c</fullName>
+        <externalId>false</externalId>
+        <label>Categories</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Contracts</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Facilities</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Finance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Health &amp; Safety</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Human Resources</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Information Telecommunications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Contract_Forms__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Forms</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Blanket Purchase Agreement (BPA)</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Contracting Officer&apos;s Evaluation of Contractor Performance Form</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Project Officer&apos;s Evaluation of Contractor Performance Form</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Facilities_Forms__c</fullName>
+        <externalId>false</externalId>
+        <label>Facilities Forms</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Administrative Adjustment Report (AAR)</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Employee Move Form</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Key Control Registry and Inventory</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Key Request Form</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Motor Vehicle Operator Responsibilities Form (MVOR)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Penetration Permit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Personal Equipment Form</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Property Action Request and Memo Receipt</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Finance_Forms__c</fullName>
+        <externalId>false</externalId>
+        <label>Finance Forms</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Notice of Contract Costs Suspended and/or Disallowed</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Healt_Safety_Forms__c</fullName>
+        <externalId>false</externalId>
+        <label>Healt &amp; Safety Forms</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Chemical Management - Chemical Procurement Form</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Chemical Management - Chemical Reconciliation Form</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Chemical Management - Procurement Approval Form</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Confined Space &amp; Permit-Required Confined Space Recognition</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Confined Space Entry Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hot Work Permit</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Human_Resources_Forms__c</fullName>
+        <externalId>false</externalId>
+        <label>Human Resources Forms</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Awards Checklist</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>CA-16 Authorization for Examinations and/or Treatment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Employee Separation Checklist</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Leave Bank Election Form</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PD Amendment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Request to Donate Leave to a Leave Recipient within EPA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Retirement Benefits Questionnaire</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IT_Forms__c</fullName>
+        <externalId>false</externalId>
+        <label>IT Forms</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>GPO-3868, Notification of Intent to Publish</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>GPO-952, Desktop Publishing/Disk Information</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Records Transmittal and Receipt (SF - 135)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Request for Information Resources Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Telephone Service Request</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Other_Forms__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Forms</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Miscellaneous Obligation Document</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Recreation Association Application</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Recreation Association Renewal Application</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Vanpool Driver Application</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RTP_Form_Repository__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>RTP Form Repository</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Categories__c</field>
+                <operation>equals</operation>
+                <value>Contracts</value>
+            </filterItems>
+            <infoMessage>BPA
+COE
+POE</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>RTPForms_Repository__c</referenceTo>
+        <relationshipLabel>RTP Forms Repository</relationshipLabel>
+        <relationshipName>RTP_Forms_Repository</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>RTP Form Repository</label>
+    <nameField>
+        <label>RTPForms Repository Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>RTP Forms Repository</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

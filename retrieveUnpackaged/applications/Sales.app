@@ -22,5 +22,8 @@
     <tab>standard-Case</tab>
     <tab>standard-Product2</tab>
     <tab>ORD_Award__c</tab>
+    <tab>Battle_Stations__c</tab>
+    <tab>Resource__c</tab>
+    <tab>Supply__c</tab>
     <uiType>Lightning</uiType>
 </CustomApplication>

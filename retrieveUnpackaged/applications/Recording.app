@@ -7,4 +7,7 @@
     <tab>Record_Transportation_Service__c</tab>
     <tab>standard-report</tab>
     <tab>standard-Dashboard</tab>
+    <tab>Battle_Stations__c</tab>
+    <tab>Resource__c</tab>
+    <tab>Supply__c</tab>
 </CustomApplication>

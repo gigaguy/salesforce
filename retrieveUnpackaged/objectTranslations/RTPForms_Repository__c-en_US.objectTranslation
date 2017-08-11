@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RTP Form Repository</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>RTP Forms Repository</value>
+    </caseValues>
+    <fields>
+        <label><!-- Categories --></label>
+        <name>Categories__c</name>
+        <picklistValues>
+            <masterLabel>Contracts</masterLabel>
+            <translation><!-- Contracts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facilities</masterLabel>
+            <translation><!-- Facilities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health &amp; Safety</masterLabel>
+            <translation><!-- Health &amp; Safety --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Human Resources</masterLabel>
+            <translation><!-- Human Resources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Information Telecommunications</masterLabel>
+            <translation><!-- Information Telecommunications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract Forms --></label>
+        <name>Contract_Forms__c</name>
+        <picklistValues>
+            <masterLabel>Blanket Purchase Agreement (BPA)</masterLabel>
+            <translation><!-- Blanket Purchase Agreement (BPA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contracting Officer&apos;s Evaluation of Contractor Performance Form</masterLabel>
+            <translation><!-- Contracting Officer&apos;s Evaluation of Contractor Performance Form --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Officer&apos;s Evaluation of Contractor Performance Form</masterLabel>
+            <translation><!-- Project Officer&apos;s Evaluation of Contractor Performance Form --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Facilities Forms --></label>
+        <name>Facilities_Forms__c</name>
+        <picklistValues>
+            <masterLabel>Administrative Adjustment Report (AAR)</masterLabel>
+            <translation><!-- Administrative Adjustment Report (AAR) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Move Form</masterLabel>
+            <translation><!-- Employee Move Form --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Key Control Registry and Inventory</masterLabel>
+            <translation><!-- Key Control Registry and Inventory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Key Request Form</masterLabel>
+            <translation><!-- Key Request Form --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motor Vehicle Operator Responsibilities Form (MVOR)</masterLabel>
+            <translation><!-- Motor Vehicle Operator Responsibilities Form (MVOR) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Penetration Permit</masterLabel>
+            <translation><!-- Penetration Permit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Equipment Form</masterLabel>
+            <translation><!-- Personal Equipment Form --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property Action Request and Memo Receipt</masterLabel>
+            <translation><!-- Property Action Request and Memo Receipt --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Finance Forms --></label>
+        <name>Finance_Forms__c</name>
+        <picklistValues>
+            <masterLabel>Notice of Contract Costs Suspended and/or Disallowed</masterLabel>
+            <translation><!-- Notice of Contract Costs Suspended and/or Disallowed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Healt &amp; Safety Forms --></label>
+        <name>Healt_Safety_Forms__c</name>
+        <picklistValues>
+            <masterLabel>Chemical Management - Chemical Procurement Form</masterLabel>
+            <translation><!-- Chemical Management - Chemical Procurement Form --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chemical Management - Chemical Reconciliation Form</masterLabel>
+            <translation><!-- Chemical Management - Chemical Reconciliation Form --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chemical Management - Procurement Approval Form</masterLabel>
+            <translation><!-- Chemical Management - Procurement Approval Form --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Confined Space &amp; Permit-Required Confined Space Recognition</masterLabel>
+            <translation><!-- Confined Space &amp; Permit-Required Confined Space Recognition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Confined Space Entry Program</masterLabel>
+            <translation><!-- Confined Space Entry Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hot Work Permit</masterLabel>
+            <translation><!-- Hot Work Permit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Human Resources Forms --></label>
+        <name>Human_Resources_Forms__c</name>
+        <picklistValues>
+            <masterLabel>Awards Checklist</masterLabel>
+            <translation><!-- Awards Checklist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA-16 Authorization for Examinations and/or Treatment</masterLabel>
+            <translation><!-- CA-16 Authorization for Examinations and/or Treatment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Separation Checklist</masterLabel>
+            <translation><!-- Employee Separation Checklist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leave Bank Election Form</masterLabel>
+            <translation><!-- Leave Bank Election Form --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PD Amendment</masterLabel>
+            <translation><!-- PD Amendment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request to Donate Leave to a Leave Recipient within EPA</masterLabel>
+            <translation><!-- Request to Donate Leave to a Leave Recipient within EPA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retirement Benefits Questionnaire</masterLabel>
+            <translation><!-- Retirement Benefits Questionnaire --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- IT Forms --></label>
+        <name>IT_Forms__c</name>
+        <picklistValues>
+            <masterLabel>GPO-3868, Notification of Intent to Publish</masterLabel>
+            <translation><!-- GPO-3868, Notification of Intent to Publish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GPO-952, Desktop Publishing/Disk Information</masterLabel>
+            <translation><!-- GPO-952, Desktop Publishing/Disk Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Records Transmittal and Receipt (SF - 135)</masterLabel>
+            <translation><!-- Records Transmittal and Receipt (SF - 135) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request for Information Resources Services</masterLabel>
+            <translation><!-- Request for Information Resources Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telephone Service Request</masterLabel>
+            <translation><!-- Telephone Service Request --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Other Forms --></label>
+        <name>Other_Forms__c</name>
+        <picklistValues>
+            <masterLabel>Miscellaneous Obligation Document</masterLabel>
+            <translation><!-- Miscellaneous Obligation Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recreation Association Application</masterLabel>
+            <translation><!-- Recreation Association Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recreation Association Renewal Application</masterLabel>
+            <translation><!-- Recreation Association Renewal Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vanpool Driver Application</masterLabel>
+            <translation><!-- Vanpool Driver Application --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RTP Form Repository --></label>
+        <name>RTP_Form_Repository__c</name>
+        <relationshipLabel><!-- RTP Forms Repository --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

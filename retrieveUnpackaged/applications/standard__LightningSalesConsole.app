@@ -17,6 +17,9 @@
     <tab>standard-CollaborationGroup</tab>
     <tab>standard-File</tab>
     <tab>ORD_Award__c</tab>
+    <tab>Battle_Stations__c</tab>
+    <tab>Resource__c</tab>
+    <tab>Supply__c</tab>
     <uiType>Lightning</uiType>
     <utilityBar>LightningSalesConsole_UtilityBar</utilityBar>
 </CustomApplication>

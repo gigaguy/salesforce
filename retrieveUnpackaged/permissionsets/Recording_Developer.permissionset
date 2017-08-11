@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
+        <application>Battle_Station_Constrution</application>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>Charity</application>
         <visible>false</visible>
     </applicationVisibilities>
@@ -259,6 +263,21 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>AssetRelationship.RelationshipType</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Battle_Stations__c.Crew_Members__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Battle_Stations__c.Project_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Battle_Stations__c.Weapon_Status__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1308,6 +1327,46 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>RTPForms_Repository__c.Contract_Forms__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTPForms_Repository__c.Facilities_Forms__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTPForms_Repository__c.Finance_Forms__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTPForms_Repository__c.Healt_Safety_Forms__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTPForms_Repository__c.Human_Resources_Forms__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTPForms_Repository__c.IT_Forms__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTPForms_Repository__c.Other_Forms__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTPForms_Repository__c.RTP_Form_Repository__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>SocialPersona.SourceApp</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1324,6 +1383,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Solution.SolutionNote</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Supply__c.Total_Cost__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1407,6 +1471,18 @@
         <recordType>Idea.InternalIdeasIdeaRecordType</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>Meeting_Registration__c.HQ_Regional</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>Meeting_Registration__c.Local</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <tabSettings>
+        <tab>Battle_Stations__c</tab>
+        <visibility>None</visibility>
+    </tabSettings>
     <tabSettings>
         <tab>Fundraiser__c</tab>
         <visibility>None</visibility>
@@ -1421,6 +1497,18 @@
     </tabSettings>
     <tabSettings>
         <tab>Registration__c</tab>
+        <visibility>None</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Resource__c</tab>
+        <visibility>None</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Supply__c</tab>
+        <visibility>None</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Survey</tab>
         <visibility>None</visibility>
     </tabSettings>
     <tabSettings>

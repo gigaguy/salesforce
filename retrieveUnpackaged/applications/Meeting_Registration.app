@@ -11,6 +11,9 @@
     <navType>Standard</navType>
     <tab>standard-Event</tab>
     <tab>standard-Dashboard</tab>
+    <tab>Battle_Stations__c</tab>
+    <tab>Resource__c</tab>
+    <tab>Supply__c</tab>
     <uiType>Lightning</uiType>
     <utilityBar>Meeting_Registration_UtilityBar</utilityBar>
 </CustomApplication>

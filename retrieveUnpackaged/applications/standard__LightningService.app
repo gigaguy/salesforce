@@ -10,6 +10,9 @@
     <tab>standard-Chatter</tab>
     <tab>standard-home</tab>
     <tab>ORD_Award__c</tab>
+    <tab>Battle_Stations__c</tab>
+    <tab>Resource__c</tab>
+    <tab>Supply__c</tab>
     <uiType>Lightning</uiType>
     <utilityBar>LightningService_UtilityBar</utilityBar>
 </CustomApplication>
