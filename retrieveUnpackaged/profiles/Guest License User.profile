@@ -16,6 +16,11 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>RTP_Forms_Repository</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>Recording</application>
         <default>false</default>
         <visible>false</visible>
@@ -1520,6 +1525,9 @@
         <layout>FeedItem-Feed Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Form__c-Form Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Fundraiser__c-Fundraiser Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -1661,6 +1669,10 @@
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Battle_Stations__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Form__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>

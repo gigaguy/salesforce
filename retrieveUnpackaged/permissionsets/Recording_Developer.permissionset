@@ -13,6 +13,10 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>RTP_Forms_Repository</application>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>Recording</application>
         <visible>false</visible>
     </applicationVisibilities>
@@ -1481,6 +1485,10 @@
     </recordTypeVisibilities>
     <tabSettings>
         <tab>Battle_Stations__c</tab>
+        <visibility>None</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Form__c</tab>
         <visibility>None</visibility>
     </tabSettings>
     <tabSettings>
