@@ -57,6 +57,11 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- RTP Form Repository --></label>
+        <name>Download_Forms__c</name>
+        <relationshipLabel><!-- RTP Forms Repository (RTP Form Repository) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Facilities Forms --></label>
         <name>Facilities_Forms__c</name>
         <picklistValues>
@@ -101,8 +106,8 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Healt &amp; Safety Forms --></label>
-        <name>Healt_Safety_Forms__c</name>
+        <label><!-- Health &amp; Safety Forms --></label>
+        <name>Health_Safety_Forms__c</name>
         <picklistValues>
             <masterLabel>Chemical Management - Chemical Procurement Form</masterLabel>
             <translation><!-- Chemical Management - Chemical Procurement Form --></translation>
@@ -209,5 +214,12 @@
         <name>RTP_Form_Repository__c</name>
         <relationshipLabel><!-- RTP Forms Repository --></relationshipLabel>
     </fields>
+    <layouts>
+        <layout>RTP Form Repository Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

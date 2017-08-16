@@ -1353,6 +1353,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>RTPForms_Repository__c.Download_Forms__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>RTPForms_Repository__c.Facilities_Forms__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1363,7 +1368,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>RTPForms_Repository__c.Healt_Safety_Forms__c</field>
+        <field>RTPForms_Repository__c.Health_Safety_Forms__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

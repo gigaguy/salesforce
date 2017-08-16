@@ -120,6 +120,19 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Download_Forms__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A pick list that displays the forms by category.</description>
+        <externalId>false</externalId>
+        <label>RTP Form Repository</label>
+        <referenceTo>RTPForms_Repository__c</referenceTo>
+        <relationshipLabel>RTP Forms Repository (RTP Form Repository)</relationshipLabel>
+        <relationshipName>RTP_Forms_Repository1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Facilities_Forms__c</fullName>
         <externalId>false</externalId>
         <label>Facilities Forms</label>
@@ -184,9 +197,9 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>Healt_Safety_Forms__c</fullName>
+        <fullName>Health_Safety_Forms__c</fullName>
         <externalId>false</externalId>
-        <label>Healt &amp; Safety Forms</label>
+        <label>Health &amp; Safety Forms</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
