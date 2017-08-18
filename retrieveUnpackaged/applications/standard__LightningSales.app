@@ -22,7 +22,7 @@
     <tab>standard-OtherUserProfile</tab>
     <tab>standard-Case</tab>
     <tab>standard-News</tab>
-    <tab>standard-ForecastingLightning</tab>
+    <tab>standard-Forecasting3</tab>
     <tab>standard-Quote</tab>
     <tab>ORD_Award__c</tab>
     <tab>Battle_Stations__c</tab>
