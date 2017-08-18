@@ -22,7 +22,7 @@
     <tab>standard-OtherUserProfile</tab>
     <tab>standard-Case</tab>
     <tab>standard-News</tab>
-    <tab>standard-ForecastingLightning</tab>
+    <tab>standard-Forecasting3</tab>
     <tab>standard-Quote</tab>
     <tab>TQB_Bulletin_Board__c</tab>
     <tab>TQB_Letter_of_Intent__c</tab>
