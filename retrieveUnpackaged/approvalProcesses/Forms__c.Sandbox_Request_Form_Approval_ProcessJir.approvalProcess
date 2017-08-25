@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
-    <active>false</active>
+    <active>true</active>
     <allowRecall>true</allowRecall>
     <allowedSubmitters>
         <type>owner</type>
@@ -30,17 +30,28 @@
         </assignedApprover>
         <label>Step 1</label>
         <name>Step_1</name>
-        <rejectionActions>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
             <action>
-                <name>Sandbox_Rejection_Notification_Alert</name>
+                <name>Sandbox_Complete_Email_Notification</name>
                 <type>Alert</type>
             </action>
-            <action>
-                <name>Status_Updated_to_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <type>adhoc</type>
+            </approver>
+        </assignedApprover>
+        <description>Signals that the sandbox has been built</description>
+        <label>Sandbox_Complete_Step</label>
+        <name>Sandbox_Complete_Step</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
     </approvalStep>
+    <description>Adds extra approval step to &apos;finalize&apos; the approval</description>
     <emailTemplate>unfiled$public/Dev_Sandbox_Submission_Notification_Template</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
@@ -57,7 +68,7 @@
     </entryCriteria>
     <finalApprovalActions>
         <action>
-            <name>Sandbox_Approved_Jira_Alert</name>
+            <name>Attach_Sandbox_Approval_to_Record</name>
             <type>Alert</type>
         </action>
         <action>
@@ -87,7 +98,7 @@
             <type>FieldUpdate</type>
         </action>
     </initialSubmissionActions>
-    <label>Development Sandbox Approval Process</label>
+    <label>Development Sandbox Approval ProcessJira</label>
     <recallActions>
         <action>
             <name>Dev_Sandbox_recalled</name>

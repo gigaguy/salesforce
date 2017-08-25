@@ -234,6 +234,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Application__c.Addition_of_Workflow_Requirement__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Application__c.Data_Availability_External_Requirement__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Application__c.Electronic_Signature_Requirement__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Application__c.FY_16_Usage__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -245,6 +260,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Application__c.Form_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Application__c.Highly_Formatted_Input_Requirement__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Application__c.Highly_Formatted_Output_Requirement__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -984,7 +1009,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Forms__c.API_URL_Link__c</field>
+        <field>Forms__c.Admin_Contact__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -999,7 +1024,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Forms__c.Direct_Supervisor__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Forms__c.Does_Not_Contain_PII_or_CBI_Data__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.Endpoint_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1015,21 +1050,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.Form_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.Functional_Business_Sponsor_Email__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.Functional_Business_Sponsor_Title__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Forms__c.Functional_Business_Sponsor__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1069,6 +1089,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Forms__c.SandboxURL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Forms__c.Submitted_on_Behalf_Of__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1089,7 +1114,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Forms__c.User_Access_for_Updating_Table__c</field>
+        <field>Forms__c.Technical_Contact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.Update_Data_Associated_with_the_API_AC__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.Update_Data_Associated_with_the_API_PoC__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.Update_Data_Associated_with_the_API_TC__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1787,6 +1827,14 @@
         <layout>Application__c-Application Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Application__c-Candidate Application Layout</layout>
+        <recordType>Application__c.Candidate_Application</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Application__c-Forms Inventory Layout</layout>
+        <recordType>Application__c.Forms_Inventory</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Asset-Asset Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -2215,6 +2263,16 @@
         <default>false</default>
         <recordType>Account.State</recordType>
         <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Application__c.Candidate_Application</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Application__c.Forms_Inventory</recordType>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>

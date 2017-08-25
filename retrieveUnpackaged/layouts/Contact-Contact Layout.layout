@@ -349,6 +349,8 @@
         <fields>Related_User__c</fields>
         <fields>Relationship_Type__c</fields>
         <relatedList>ContactUserRelation__c.Contact__c</relatedList>
+        <sortField>NAME</sortField>
+        <sortOrder>Asc</sortOrder>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

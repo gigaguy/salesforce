@@ -56,7 +56,16 @@
         <actionName>UserActivationAction</actionName>
         <type>Default</type>
     </actionOverrides>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>EPA_User</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>EPA_User</fullName>
+        <fields>Name</fields>
+        <fields>Title</fields>
+        <fields>HR_Org__c</fields>
+        <fields>Email</fields>
+        <fields>IsActive</fields>
+        <label>EPA User</label>
+    </compactLayouts>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>

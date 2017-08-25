@@ -20,7 +20,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>API_URL_Link__c</field>
+                <field>Technical_Contact__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Admin_Contact__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Endpoint_Name__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -31,6 +39,18 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Does_Not_Contain_PII_or_CBI_Data__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Update_Data_Associated_with_the_API_PoC__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Update_Data_Associated_with_the_API_TC__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Update_Data_Associated_with_the_API_AC__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -52,10 +72,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Approximate_initial_row_count__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>User_Access_for_Updating_Table__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -81,30 +97,14 @@
         <label>Approver Info</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Office_IMO_Name__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Office_IMO_Title__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Office_IMO_Email__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Functional_Business_Sponsor__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Functional_Business_Sponsor_Title__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Functional_Business_Sponsor_Email__c</field>
+                <behavior>Required</behavior>
+                <field>Direct_Supervisor__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -197,18 +197,6 @@
         <fields>Field_Type__c</fields>
         <fields>Field_Length__c</fields>
         <relatedList>Data_Attribute__c.API_Request__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <relatedList>RelatedFileList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>TASK.SUBJECT</fields>
-        <fields>TASK.WHO_NAME</fields>
-        <fields>ACTIVITY.TASK</fields>
-        <fields>TASK.DUE_DATE</fields>
-        <fields>CORE.USERS.FULL_NAME</fields>
-        <fields>TASK.LAST_UPDATE</fields>
-        <relatedList>RelatedHistoryList</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>CreatedDate</fields>

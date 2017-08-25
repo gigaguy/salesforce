@@ -18,9 +18,9 @@
         <name>API_Name__c</name>
     </fields>
     <fields>
-        <help><!-- The link to the API URL will be added here by the Data Services team with the API is created and ready for use --></help>
-        <label><!-- API URL Link --></label>
-        <name>API_URL_Link__c</name>
+        <label><!-- Admin Contact --></label>
+        <name>Admin_Contact__c</name>
+        <relationshipLabel><!-- Forms (Admin Contact) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Approximate initial row count --></label>
@@ -31,9 +31,19 @@
         <name>Description__c</name>
     </fields>
     <fields>
+        <label><!-- Direct Supervisor --></label>
+        <name>Direct_Supervisor__c</name>
+        <relationshipLabel><!-- Forms (Direct Supervisor) --></relationshipLabel>
+    </fields>
+    <fields>
         <help><!-- Check box to certify that there is no PII and CBI data contained in the API data --></help>
         <label><!-- Does Not Contain PII or CBI Data --></label>
         <name>Does_Not_Contain_PII_or_CBI_Data__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Endpoint Name will be used in the URL as follows: https://developer.epa.gov/api/[Endpoint Name] --></help>
+        <label><!-- Endpoint Name --></label>
+        <name>Endpoint_Name__c</name>
     </fields>
     <fields>
         <label><!-- Expire Date --></label>
@@ -88,19 +98,6 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Functional/Business Sponsor Email --></label>
-        <name>Functional_Business_Sponsor_Email__c</name>
-    </fields>
-    <fields>
-        <label><!-- Functional/Business Sponsor Title --></label>
-        <name>Functional_Business_Sponsor_Title__c</name>
-    </fields>
-    <fields>
-        <label><!-- Functional/Business Sponsor --></label>
-        <name>Functional_Business_Sponsor__c</name>
-        <relationshipLabel><!-- Forms (Functional/Business Sponsor) --></relationshipLabel>
-    </fields>
-    <fields>
         <label><!-- HR Org Code --></label>
         <name>HR_Org_Code__c</name>
     </fields>
@@ -142,6 +139,10 @@
         <name>Quantity__c</name>
     </fields>
     <fields>
+        <label><!-- SandboxURL --></label>
+        <name>SandboxURL__c</name>
+    </fields>
+    <fields>
         <label><!-- Submitted on Behalf Of --></label>
         <name>Submitted_on_Behalf_Of__c</name>
         <relationshipLabel><!-- Forms --></relationshipLabel>
@@ -159,9 +160,24 @@
         <name>Table_Name__c</name>
     </fields>
     <fields>
-        <help><!-- Identification of which users should have access to updating the table --></help>
-        <label><!-- User Access for Updating Table --></label>
-        <name>User_Access_for_Updating_Table__c</name>
+        <label><!-- Technical Contact --></label>
+        <name>Technical_Contact__c</name>
+        <relationshipLabel><!-- Forms (Technical Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Authorizes this contact to be able to update API information --></help>
+        <label><!-- Update Data Associated with the API --></label>
+        <name>Update_Data_Associated_with_the_API_AC__c</name>
+    </fields>
+    <fields>
+        <help><!-- Authorizes this contact to be able to update API information --></help>
+        <label><!-- Update Data Associated with the API --></label>
+        <name>Update_Data_Associated_with_the_API_PoC__c</name>
+    </fields>
+    <fields>
+        <help><!-- Authorizes this contact to be able to update API information --></help>
+        <label><!-- Update Data Associated with the API --></label>
+        <name>Update_Data_Associated_with_the_API_TC__c</name>
     </fields>
     <layouts>
         <layout>API Request</layout>

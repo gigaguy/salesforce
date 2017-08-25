@@ -52,6 +52,93 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <fullName>Addition_of_Workflow_Requirement__c</fullName>
+        <description>Additional workflow requirement, i.e., addition of workflow to a heretofore fill and print form.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Additional workflow requirement, i.e., addition of workflow to a heretofore fill and print form.</inlineHelpText>
+        <label>Addition of Workflow Requirement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0: Not Required</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1: Desired if no cost to owner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2: Required and owner willing to pay</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Data_Availability_External_Requirement__c</fullName>
+        <description>Does the data need to be exported or integrated into another system? Is searching, bulk upload, etc. required?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Does the data need to be exported or integrated into another system? Is searching, bulk upload, etc. required?</inlineHelpText>
+        <label>Data Availability External Requirement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0: Not Required</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1: Desired if no cost to owner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2: Required and owner willing to pay</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Electronic_Signature_Requirement__c</fullName>
+        <description>Electronic signature requirement.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Electronic signature requirement.</inlineHelpText>
+        <label>Electronic Signature Requirement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0: Not Required</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1: Desired if no cost to owner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2: Required and owner willing to pay</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>FY_16_Usage__c</fullName>
         <externalId>false</externalId>
         <label>FY 16 Usage Count</label>
@@ -87,15 +174,92 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Migration_Priority__c</fullName>
+        <fullName>Highly_Formatted_Input_Requirement__c</fullName>
+        <description>Highly formatted data entry requirement.</description>
         <externalId>false</externalId>
-        <label>Migration Priority</label>
-        <length>5</length>
+        <inlineHelpText>Highly formatted data entry requirement.</inlineHelpText>
+        <label>Highly Formatted Input Requirement</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0: Not required</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1: Desired if no cost to owner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2: Required and owner is willing to pay</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Highly_Formatted_Output_Requirement__c</fullName>
+        <description>Print to .pdf in exactly the same layout of the form?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Print to .pdf in exactly the same layout of the form?</inlineHelpText>
+        <label>Highly Formatted Output Requirement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0: Not Required</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1: Desired if no cost to owner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2: Required and owner willing to pay</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Migration_Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Migration Priority</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1: High Priority - Will Definitely Migrate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2: Medium Priority - Will Probably Migrate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3: Low Priority - Probably Will Not Migrate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>0: Not a Priority - Will Not Migrate</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Migration_Status__c</fullName>
@@ -193,6 +357,281 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Applications</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Candidate_Application</fullName>
+        <active>true</active>
+        <label>Candidate Application</label>
+        <picklistValues>
+            <picklist>Addition_of_Workflow_Requirement__c</picklist>
+            <values>
+                <fullName>0%3A Not Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1%3A Desired if no cost to owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%3A Required and owner willing to pay</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Data_Availability_External_Requirement__c</picklist>
+            <values>
+                <fullName>0%3A Not Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1%3A Desired if no cost to owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%3A Required and owner willing to pay</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Electronic_Signature_Requirement__c</picklist>
+            <values>
+                <fullName>0%3A Not Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1%3A Desired if no cost to owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%3A Required and owner willing to pay</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Highly_Formatted_Input_Requirement__c</picklist>
+            <values>
+                <fullName>0%3A Not required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1%3A Desired if no cost to owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%3A Required and owner is willing to pay</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Highly_Formatted_Output_Requirement__c</picklist>
+            <values>
+                <fullName>0%3A Not Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1%3A Desired if no cost to owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%3A Required and owner willing to pay</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Migration_Priority__c</picklist>
+            <values>
+                <fullName>0%3A Not a Priority - Will Not Migrate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1%3A High Priority - Will Definitely Migrate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%3A Medium Priority - Will Probably Migrate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%3A Low Priority - Probably Will Not Migrate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Migration_Status__c</picklist>
+            <values>
+                <fullName>Delete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deleted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Do Not Migrate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Known</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orphan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Fill and Print</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workflow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Forms_Inventory</fullName>
+        <active>true</active>
+        <label>Forms Inventory</label>
+        <picklistValues>
+            <picklist>Addition_of_Workflow_Requirement__c</picklist>
+            <values>
+                <fullName>0%3A Not Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1%3A Desired if no cost to owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%3A Required and owner willing to pay</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Data_Availability_External_Requirement__c</picklist>
+            <values>
+                <fullName>0%3A Not Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1%3A Desired if no cost to owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%3A Required and owner willing to pay</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Electronic_Signature_Requirement__c</picklist>
+            <values>
+                <fullName>0%3A Not Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1%3A Desired if no cost to owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%3A Required and owner willing to pay</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Highly_Formatted_Input_Requirement__c</picklist>
+            <values>
+                <fullName>0%3A Not required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1%3A Desired if no cost to owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%3A Required and owner is willing to pay</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Highly_Formatted_Output_Requirement__c</picklist>
+            <values>
+                <fullName>0%3A Not Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1%3A Desired if no cost to owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%3A Required and owner willing to pay</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Migration_Priority__c</picklist>
+            <values>
+                <fullName>0%3A Not a Priority - Will Not Migrate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1%3A High Priority - Will Definitely Migrate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%3A Medium Priority - Will Probably Migrate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%3A Low Priority - Probably Will Not Migrate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Migration_Status__c</picklist>
+            <values>
+                <fullName>Delete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deleted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Do Not Migrate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Known</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orphan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Fill and Print</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workflow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>Form_Number__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Responsible_Org__c</customTabListAdditionalFields>

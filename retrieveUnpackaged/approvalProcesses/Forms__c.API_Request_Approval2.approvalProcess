@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
-    <active>true</active>
+    <active>false</active>
     <allowRecall>false</allowRecall>
     <allowedSubmitters>
         <type>owner</type>
@@ -18,11 +18,57 @@
             </approver>
             <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
         </assignedApprover>
-        <label>Supervisor Approval</label>
-        <name>Supervisor_Approval</name>
+        <label>Business Approval</label>
+        <name>Business_Approval</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Office_IMO_Name__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>send to second Functional/Business Sponsor (if applicable)</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Forms__c.Office_IMO_Name__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Business Approval 2</label>
+        <name>Business_Approval_2</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
     </approvalStep>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Office_IMO_Name__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>sends to 3rd Functional/Business Sponsor (if applicable)</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Forms__c.Office_IMO_Name__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Business Approval 3</label>
+        <name>Business_Approval_3</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
         <assignedApprover>
             <approver>
                 <name>Office_IMO_Name__c</name>
@@ -74,7 +120,7 @@
             <type>FieldUpdate</type>
         </action>
     </initialSubmissionActions>
-    <label>API Request Approval</label>
+    <label>API Request Approval2</label>
     <recallActions>
         <action>
             <name>Status_Updated_to_Recalled</name>

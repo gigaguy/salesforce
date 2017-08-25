@@ -93,6 +93,15 @@
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>EPA_Person</fullName>
+        <fields>Name</fields>
+        <fields>Title</fields>
+        <fields>HR_Org__c</fields>
+        <fields>Phone</fields>
+        <fields>Email</fields>
+        <label>EPA Person</label>
+    </compactLayouts>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -422,6 +431,7 @@
     <recordTypes>
         <fullName>EPA_Person</fullName>
         <active>true</active>
+        <compactLayoutAssignment>EPA_Person</compactLayoutAssignment>
         <description>The contact represents an EPA employee or contractor, who might (not) be a BAP user</description>
         <label>EPA Person</label>
         <picklistValues>
@@ -599,8 +609,12 @@
         <customTabListAdditionalFields>CONTACT.PHONE1</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTACT.TITLE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTACT.EMAIL</lookupDialogsAdditionalFields>
         <lookupFilterFields>FULL_NAME</lookupFilterFields>
         <lookupFilterFields>ACCOUNT.NAME</lookupFilterFields>
+        <lookupFilterFields>CONTACT.TITLE</lookupFilterFields>
+        <lookupFilterFields>CONTACT.EMAIL</lookupFilterFields>
         <lookupPhoneDialogsAdditionalFields>FULL_NAME</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>CONTACT.PHONE1</lookupPhoneDialogsAdditionalFields>

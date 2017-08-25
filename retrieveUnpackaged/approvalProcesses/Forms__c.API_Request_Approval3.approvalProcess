@@ -1,69 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
     <active>false</active>
-    <allowRecall>true</allowRecall>
+    <allowRecall>false</allowRecall>
     <allowedSubmitters>
         <type>owner</type>
     </allowedSubmitters>
     <approvalPageFields>
         <field>Name</field>
         <field>Owner</field>
-        <field>CreatedBy</field>
-        <field>Description__c</field>
-        <field>Form_Type__c</field>
-        <field>LastModifiedBy</field>
-        <field>Name__c</field>
-        <field>Quantity__c</field>
     </approvalPageFields>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
-        <approvalActions>
-            <action>
-                <name>Sandbox_Approved_Jira_Alert</name>
-                <type>Alert</type>
-            </action>
-        </approvalActions>
         <assignedApprover>
             <approver>
-                <type>adhoc</type>
+                <name>Direct_Supervisor__c</name>
+                <type>relatedUserField</type>
             </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
         </assignedApprover>
-        <label>Step 1</label>
-        <name>Step_1</name>
-        <rejectionActions>
-            <action>
-                <name>Sandbox_Rejection_Notification_Alert</name>
-                <type>Alert</type>
-            </action>
-            <action>
-                <name>Status_Updated_to_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
+        <label>Business Approval</label>
+        <name>Business_Approval</name>
     </approvalStep>
-    <emailTemplate>unfiled$public/Dev_Sandbox_Submission_Notification_Template</emailTemplate>
+    <emailTemplate>unfiled$public/API_Request_Approver_Notification</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
         <criteriaItems>
             <field>Forms__c.RecordType</field>
             <operation>equals</operation>
-            <value>BAP Provisioning</value>
+            <value>API Request</value>
         </criteriaItems>
         <criteriaItems>
-            <field>Forms__c.Form_Type__c</field>
+            <field>Forms__c.Form_Status__c</field>
             <operation>equals</operation>
-            <value>Developer Sandbox</value>
+            <value>New,Rejected,Recalled</value>
         </criteriaItems>
     </entryCriteria>
     <finalApprovalActions>
-        <action>
-            <name>Sandbox_Approved_Jira_Alert</name>
-            <type>Alert</type>
-        </action>
-        <action>
-            <name>Sandbox_Approved_Notification_Alert</name>
-            <type>Alert</type>
-        </action>
         <action>
             <name>Status_Updated_to_Approved</name>
             <type>FieldUpdate</type>
@@ -72,10 +44,6 @@
     <finalApprovalRecordLock>true</finalApprovalRecordLock>
     <finalRejectionActions>
         <action>
-            <name>Sandbox_Rejection_Notification_Alert</name>
-            <type>Alert</type>
-        </action>
-        <action>
             <name>Status_Updated_to_Rejected</name>
             <type>FieldUpdate</type>
         </action>
@@ -83,21 +51,21 @@
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <initialSubmissionActions>
         <action>
+            <name>Send_API_Request_Confirmation</name>
+            <type>Alert</type>
+        </action>
+        <action>
             <name>Status_Update_to_Submitted_for_Approval</name>
             <type>FieldUpdate</type>
         </action>
     </initialSubmissionActions>
-    <label>Development Sandbox Approval Process</label>
+    <label>API Request Approval3</label>
     <recallActions>
-        <action>
-            <name>Dev_Sandbox_recalled</name>
-            <type>Alert</type>
-        </action>
         <action>
             <name>Status_Updated_to_Recalled</name>
             <type>FieldUpdate</type>
         </action>
     </recallActions>
-    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <recordEditability>AdminOnly</recordEditability>
     <showApprovalHistory>true</showApprovalHistory>
 </ApprovalProcess>

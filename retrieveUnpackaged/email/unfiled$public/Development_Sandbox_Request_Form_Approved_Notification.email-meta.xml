@@ -32,6 +32,10 @@ We want you to be successful in your use of the Business Automation Platform, bo
 Please let me know if I can provide any other information or assistance.
 
 Thanks,
-{!User.Name}</textOnly>
+{!User.Name}
+
+
+
+ref: {!Forms__c.Id}</textOnly>
     <type>custom</type>
 </EmailTemplate>

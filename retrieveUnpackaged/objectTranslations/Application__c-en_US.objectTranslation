@@ -9,6 +9,57 @@
         <value>Applications</value>
     </caseValues>
     <fields>
+        <help><!-- Additional workflow requirement, i.e., addition of workflow to a heretofore fill and print form. --></help>
+        <label><!-- Addition of Workflow Requirement --></label>
+        <name>Addition_of_Workflow_Requirement__c</name>
+        <picklistValues>
+            <masterLabel>0: Not Required</masterLabel>
+            <translation><!-- 0: Not Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1: Desired if no cost to owner</masterLabel>
+            <translation><!-- 1: Desired if no cost to owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2: Required and owner willing to pay</masterLabel>
+            <translation><!-- 2: Required and owner willing to pay --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Does the data need to be exported or integrated into another system? Is searching, bulk upload, etc. required? --></help>
+        <label><!-- Data Availability External Requirement --></label>
+        <name>Data_Availability_External_Requirement__c</name>
+        <picklistValues>
+            <masterLabel>0: Not Required</masterLabel>
+            <translation><!-- 0: Not Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1: Desired if no cost to owner</masterLabel>
+            <translation><!-- 1: Desired if no cost to owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2: Required and owner willing to pay</masterLabel>
+            <translation><!-- 2: Required and owner willing to pay --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Electronic signature requirement. --></help>
+        <label><!-- Electronic Signature Requirement --></label>
+        <name>Electronic_Signature_Requirement__c</name>
+        <picklistValues>
+            <masterLabel>0: Not Required</masterLabel>
+            <translation><!-- 0: Not Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1: Desired if no cost to owner</masterLabel>
+            <translation><!-- 1: Desired if no cost to owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2: Required and owner willing to pay</masterLabel>
+            <translation><!-- 2: Required and owner willing to pay --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- FY 16 Usage Count --></label>
         <name>FY_16_Usage__c</name>
     </fields>
@@ -21,8 +72,58 @@
         <name>Form_Number__c</name>
     </fields>
     <fields>
+        <help><!-- Highly formatted data entry requirement. --></help>
+        <label><!-- Highly Formatted Input Requirement --></label>
+        <name>Highly_Formatted_Input_Requirement__c</name>
+        <picklistValues>
+            <masterLabel>0: Not required</masterLabel>
+            <translation><!-- 0: Not required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1: Desired if no cost to owner</masterLabel>
+            <translation><!-- 1: Desired if no cost to owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2: Required and owner is willing to pay</masterLabel>
+            <translation><!-- 2: Required and owner is willing to pay --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Print to .pdf in exactly the same layout of the form? --></help>
+        <label><!-- Highly Formatted Output Requirement --></label>
+        <name>Highly_Formatted_Output_Requirement__c</name>
+        <picklistValues>
+            <masterLabel>0: Not Required</masterLabel>
+            <translation><!-- 0: Not Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1: Desired if no cost to owner</masterLabel>
+            <translation><!-- 1: Desired if no cost to owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2: Required and owner willing to pay</masterLabel>
+            <translation><!-- 2: Required and owner willing to pay --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Migration Priority --></label>
         <name>Migration_Priority__c</name>
+        <picklistValues>
+            <masterLabel>0: Not a Priority - Will Not Migrate</masterLabel>
+            <translation><!-- 0: Not a Priority - Will Not Migrate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1: High Priority - Will Definitely Migrate</masterLabel>
+            <translation><!-- 1: High Priority - Will Definitely Migrate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2: Medium Priority - Will Probably Migrate</masterLabel>
+            <translation><!-- 2: Medium Priority - Will Probably Migrate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3: Low Priority - Probably Will Not Migrate</masterLabel>
+            <translation><!-- 3: Low Priority - Probably Will Not Migrate --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Migration Status --></label>
@@ -81,7 +182,14 @@
         </sections>
     </layouts>
     <layouts>
-        <layout>Application Layout2</layout>
+        <layout>Candidate Application Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Forms Inventory Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
@@ -91,5 +199,13 @@
             <section>Fields</section>
         </sections>
     </layouts>
+    <recordTypes>
+        <label><!-- Candidate Application --></label>
+        <name>Candidate_Application</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Forms Inventory --></label>
+        <name>Forms_Inventory</name>
+    </recordTypes>
     <startsWith>Vowel</startsWith>
 </CustomObjectTranslation>

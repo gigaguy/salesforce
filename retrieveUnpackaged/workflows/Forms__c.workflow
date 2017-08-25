@@ -12,6 +12,14 @@
         <template>unfiled$public/API_Request_Completed</template>
     </alerts>
     <alerts>
+        <fullName>Attach_Sandbox_Approval_to_Record</fullName>
+        <ccEmails>emailtosalesforce@3dyselbjtkjypb8hxmpb4tqvl.r-sbleay.cs32.le.sandbox.salesforce.com</ccEmails>
+        <description>Attach Sandbox Approval to Record</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Development_Sandbox_Request_Form_Approved_Notification</template>
+    </alerts>
+    <alerts>
         <fullName>Dev_Sandbox_recalled</fullName>
         <description>Dev Sandbox recalled</description>
         <protected>false</protected>
@@ -38,7 +46,20 @@
         <template>unfiled$public/Dev_Sandbox_Request_Recall_Notification_Template</template>
     </alerts>
     <alerts>
+        <fullName>Sandbox_Approved_Jira_Alert</fullName>
+        <ccEmails>jira@epabiac.atlassian.net</ccEmails>
+        <description>Sandbox Approved Jira Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>king.roy@epa.gov</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Development_Sandbox_Request_Form_Approved_Jira</template>
+    </alerts>
+    <alerts>
         <fullName>Sandbox_Approved_Notification_Alert</fullName>
+        <ccEmails>BAP-Request@epa.gov</ccEmails>
         <description>Sandbox Approved Notification Alert</description>
         <protected>false</protected>
         <recipients>
@@ -48,20 +69,22 @@
         <recipients>
             <type>creator</type>
         </recipients>
-        <recipients>
-            <recipient>dutrow.paul2@epa.gov</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>misty.grooms2@csra.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>twinkle.malhotra2@csra.com</recipient>
-            <type>user</type>
-        </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Development_Sandbox_Request_Form_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Sandbox_Complete_Email_Notification</fullName>
+        <description>Sandbox Complete Email Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Submitted_on_Behalf_Of__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Development_Sandbox_Request_Form_Approved_Admin_Notification</template>
     </alerts>
     <alerts>
         <fullName>Sandbox_Rejection_Notification_Alert</fullName>
