@@ -3,7 +3,7 @@
     <networkAccess/>
     <passwordPolicies>
         <complexity>AlphaNumeric</complexity>
-        <expiration>SixtyDays</expiration>
+        <expiration>NinetyDays</expiration>
         <historyRestriction>15</historyRestriction>
         <lockoutInterval>FifteenMinutes</lockoutInterval>
         <maxLoginAttempts>ThreeAttempts</maxLoginAttempts>
@@ -30,6 +30,6 @@
         <lockSessionsToDomain>true</lockSessionsToDomain>
         <lockSessionsToIp>true</lockSessionsToIp>
         <securityCentralKillSession>true</securityCentralKillSession>
-        <sessionTimeout>FifteenMinutes</sessionTimeout>
+        <sessionTimeout>SixtyMinutes</sessionTimeout>
     </sessionSettings>
 </SecuritySettings>
