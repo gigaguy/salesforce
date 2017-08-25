@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Designation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Designation</value>
+    </caseValues>
+    <fields>
+        <label><!-- County --></label>
+        <name>County__c</name>
+        <picklistValues>
+            <masterLabel>Alameda</masterLabel>
+            <translation><!-- Alameda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alpine</masterLabel>
+            <translation><!-- Alpine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amador</masterLabel>
+            <translation><!-- Amador --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Butte</masterLabel>
+            <translation><!-- Butte --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Calaveras</masterLabel>
+            <translation><!-- Calaveras --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Channel Islands</masterLabel>
+            <translation><!-- Channel Islands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cochise</masterLabel>
+            <translation><!-- Cochise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colusa</masterLabel>
+            <translation><!-- Colusa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contra Costa</masterLabel>
+            <translation><!-- Contra Costa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Del Norte</masterLabel>
+            <translation><!-- Del Norte --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>El Dorado</masterLabel>
+            <translation><!-- El Dorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fresno</masterLabel>
+            <translation><!-- Fresno --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gila</masterLabel>
+            <translation><!-- Gila --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Glenn</masterLabel>
+            <translation><!-- Glenn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Humboldt</masterLabel>
+            <translation><!-- Humboldt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Imperial</masterLabel>
+            <translation><!-- Imperial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inyo</masterLabel>
+            <translation><!-- Inyo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kern</masterLabel>
+            <translation><!-- Kern --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kings</masterLabel>
+            <translation><!-- Kings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lake</masterLabel>
+            <translation><!-- Lake --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lassen</masterLabel>
+            <translation><!-- Lassen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Los Angeles</masterLabel>
+            <translation><!-- Los Angeles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Madera</masterLabel>
+            <translation><!-- Madera --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maricopa</masterLabel>
+            <translation><!-- Maricopa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marin, Napa</masterLabel>
+            <translation><!-- Marin, Napa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mariposa</masterLabel>
+            <translation><!-- Mariposa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mendocino</masterLabel>
+            <translation><!-- Mendocino --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Merced</masterLabel>
+            <translation><!-- Merced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Modoc</masterLabel>
+            <translation><!-- Modoc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mono</masterLabel>
+            <translation><!-- Mono --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monterey</masterLabel>
+            <translation><!-- Monterey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orange</masterLabel>
+            <translation><!-- Orange --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pima</masterLabel>
+            <translation><!-- Pima --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pinal</masterLabel>
+            <translation><!-- Pinal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Placer</masterLabel>
+            <translation><!-- Placer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plumas</masterLabel>
+            <translation><!-- Plumas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Riverside</masterLabel>
+            <translation><!-- Riverside --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sacramento</masterLabel>
+            <translation><!-- Sacramento --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Benito</masterLabel>
+            <translation><!-- San Benito --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Bernardino</masterLabel>
+            <translation><!-- San Bernardino --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Diego</masterLabel>
+            <translation><!-- San Diego --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Francisco</masterLabel>
+            <translation><!-- San Francisco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Joaquin</masterLabel>
+            <translation><!-- San Joaquin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Luis Obispo</masterLabel>
+            <translation><!-- San Luis Obispo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Luis Obispo County</masterLabel>
+            <translation><!-- San Luis Obispo County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Mateo</masterLabel>
+            <translation><!-- San Mateo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Santa Barbara</masterLabel>
+            <translation><!-- Santa Barbara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Santa Clara</masterLabel>
+            <translation><!-- Santa Clara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Santa Cruz</masterLabel>
+            <translation><!-- Santa Cruz --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shasta</masterLabel>
+            <translation><!-- Shasta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sierra</masterLabel>
+            <translation><!-- Sierra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Siskiyou</masterLabel>
+            <translation><!-- Siskiyou --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solano</masterLabel>
+            <translation><!-- Solano --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sonoma</masterLabel>
+            <translation><!-- Sonoma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stanislaus</masterLabel>
+            <translation><!-- Stanislaus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sutter</masterLabel>
+            <translation><!-- Sutter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sutter County part</masterLabel>
+            <translation><!-- Sutter County part --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tehama</masterLabel>
+            <translation><!-- Tehama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tehama County</masterLabel>
+            <translation><!-- Tehama County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trinity</masterLabel>
+            <translation><!-- Trinity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tulare</masterLabel>
+            <translation><!-- Tulare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tuolumne</masterLabel>
+            <translation><!-- Tuolumne --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ventura</masterLabel>
+            <translation><!-- Ventura --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yolo</masterLabel>
+            <translation><!-- Yolo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yuba</masterLabel>
+            <translation><!-- Yuba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yuma</masterLabel>
+            <translation><!-- Yuma --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ID --></label>
+        <name>ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <picklistValues>
+            <masterLabel>Ajo</masterLabel>
+            <translation><!-- Ajo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ak-Chin Indian Community</masterLabel>
+            <translation><!-- Ak-Chin Indian Community --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Calaveras</masterLabel>
+            <translation><!-- Calaveras --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chico</masterLabel>
+            <translation><!-- Chico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coachella Valley</masterLabel>
+            <translation><!-- Coachella Valley --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coso Junction planning area</masterLabel>
+            <translation><!-- Coso Junction planning area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Douglas</masterLabel>
+            <translation><!-- Douglas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gila River Indian Community</masterLabel>
+            <translation><!-- Gila River Indian Community --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Great Basin Valleys Air Basin</masterLabel>
+            <translation><!-- Great Basin Valleys Air Basin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hayden</masterLabel>
+            <translation><!-- Hayden --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Imperial</masterLabel>
+            <translation><!-- Imperial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indian Wells Valley planning area</masterLabel>
+            <translation><!-- Indian Wells Valley planning area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Joseph City</masterLabel>
+            <translation><!-- Joseph City --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kern (Eastern Kern)</masterLabel>
+            <translation><!-- Kern (Eastern Kern) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lake County Air Basin</masterLabel>
+            <translation><!-- Lake County Air Basin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lake Tahoe Air Basin</masterLabel>
+            <translation><!-- Lake Tahoe Air Basin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mammoth Lake planning area</masterLabel>
+            <translation><!-- Mammoth Lake planning area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miami</masterLabel>
+            <translation><!-- Miami --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Morenci</masterLabel>
+            <translation><!-- Morenci --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Morongo Band of Mission Indians</masterLabel>
+            <translation><!-- Morongo Band of Mission Indians --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mountain Counties Air Basin</masterLabel>
+            <translation><!-- Mountain Counties Air Basin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nogales</masterLabel>
+            <translation><!-- Nogales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Central Coast Air Basin</masterLabel>
+            <translation><!-- North Central Coast Air Basin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Coast Air Basin</masterLabel>
+            <translation><!-- North Coast Air Basin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Northeast PLateau Air Basin</masterLabel>
+            <translation><!-- Northeast PLateau Air Basin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Owens Valley planning area</masterLabel>
+            <translation><!-- Owens Valley planning area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Page</masterLabel>
+            <translation><!-- Page --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paul Spur</masterLabel>
+            <translation><!-- Paul Spur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paul Spur/Douglas</masterLabel>
+            <translation><!-- Paul Spur/Douglas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payson</masterLabel>
+            <translation><!-- Payson --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pechanga Band of Luiseno Mission Indians</masterLabel>
+            <translation><!-- Pechanga Band of Luiseno Mission Indians --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phoenix</masterLabel>
+            <translation><!-- Phoenix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phoenix-Mesa</masterLabel>
+            <translation><!-- Phoenix-Mesa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reno planning area</masterLabel>
+            <translation><!-- Reno planning area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rillito</masterLabel>
+            <translation><!-- Rillito --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sacramento Metro</masterLabel>
+            <translation><!-- Sacramento Metro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sacramento Valley Air Basin</masterLabel>
+            <translation><!-- Sacramento Valley Air Basin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salinas Valley-El Pomar Estrella Planning Area</masterLabel>
+            <translation><!-- Salinas Valley-El Pomar Estrella Planning Area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Diego Air Basin</masterLabel>
+            <translation><!-- San Diego Air Basin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Francisco Bay Area</masterLabel>
+            <translation><!-- San Francisco Bay Area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Joaquin Valley Air Basin</masterLabel>
+            <translation><!-- San Joaquin Valley Air Basin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Luis Obispo</masterLabel>
+            <translation><!-- San Luis Obispo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Manuel</masterLabel>
+            <translation><!-- San Manuel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Central Coast Air Basin</masterLabel>
+            <translation><!-- South Central Coast Air Basin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Coast Air Basin</masterLabel>
+            <translation><!-- South Coast Air Basin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Southeast Desert Air Basin</masterLabel>
+            <translation><!-- Southeast Desert Air Basin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sutter Buttes</masterLabel>
+            <translation><!-- Sutter Buttes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trona planning area</masterLabel>
+            <translation><!-- Trona planning area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tucson</masterLabel>
+            <translation><!-- Tucson --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tuscan Buttes</masterLabel>
+            <translation><!-- Tuscan Buttes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Mojave Desert</masterLabel>
+            <translation><!-- West Mojave Desert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Pinal</masterLabel>
+            <translation><!-- West Pinal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yuma County PM10 Nonattainment Area</masterLabel>
+            <translation><!-- Yuma County PM10 Nonattainment Area --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+        <picklistValues>
+            <masterLabel>Arizona</masterLabel>
+            <translation><!-- Arizona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation><!-- Hawaii --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pacific Islands</masterLabel>
+            <translation><!-- Pacific Islands --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

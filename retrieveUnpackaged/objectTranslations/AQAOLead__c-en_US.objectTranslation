@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>AQAOLead</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>AQAOLead</value>
+    </caseValues>
+    <fields>
+        <label><!-- ID --></label>
+        <name>ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pollutant --></label>
+        <name>Pollutant__c</name>
+        <picklistValues>
+            <masterLabel>CO</masterLabel>
+            <translation><!-- CO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NO2</masterLabel>
+            <translation><!-- NO2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ozone</masterLabel>
+            <translation><!-- Ozone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PM10</masterLabel>
+            <translation><!-- PM10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PM2.5</masterLabel>
+            <translation><!-- PM2.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pb</masterLabel>
+            <translation><!-- Pb --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SO2</masterLabel>
+            <translation><!-- SO2 --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

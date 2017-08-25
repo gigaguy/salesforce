@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>County__c</fullName>
+        <externalId>false</externalId>
+        <label>County</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Alameda</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Alpine</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Amador</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Butte</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Calaveras</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Channel Islands</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cochise</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Colusa</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contra Costa</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Del Norte</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>El Dorado</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fresno</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Gila</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Glenn</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Humboldt</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Imperial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inyo</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kern</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kings</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lake</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lassen</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Los Angeles</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Madera</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Maricopa</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Marin, Napa</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mariposa</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mendocino</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Merced</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Modoc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mono</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Monterey</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Nevada</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Orange</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pima</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pinal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Placer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Plumas</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Riverside</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sacramento</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>San Benito</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>San Bernardino</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>San Diego</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>San Francisco</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>San Joaquin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>San Luis Obispo</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>San Luis Obispo County</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>San Mateo</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Santa Barbara</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Santa Clara</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Santa Cruz</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Shasta</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sierra</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Siskiyou</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Solano</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sonoma</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Stanislaus</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sutter</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sutter County part</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tehama</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tehama County</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Trinity</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tulare</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tuolumne</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ventura</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Yolo</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Yuba</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Yuma</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ID__c</fullName>
+        <displayFormat>{0}</displayFormat>
+        <externalId>false</externalId>
+        <label>ID</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yuma County PM10 Nonattainment Area</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>West Pinal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>West Mojave Desert</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tuscan Buttes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tucson</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Trona planning area</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sutter Buttes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Southeast Desert Air Basin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>South Coast Air Basin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>South Central Coast Air Basin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>San Manuel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>San Luis Obispo</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>San Joaquin Valley Air Basin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>San Francisco Bay Area</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>San Diego Air Basin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Salinas Valley-El Pomar Estrella Planning Area</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sacramento Valley Air Basin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sacramento Metro</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rillito</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reno planning area</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Phoenix-Mesa</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Phoenix</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pechanga Band of Luiseno Mission Indians</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Payson</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Paul Spur/Douglas</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Paul Spur</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Page</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Owens Valley planning area</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Northeast PLateau Air Basin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>North Coast Air Basin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>North Central Coast Air Basin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Nogales</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mountain Counties Air Basin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Morongo Band of Mission Indians</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Morenci</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Miami</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mammoth Lake planning area</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lake Tahoe Air Basin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lake County Air Basin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kern (Eastern Kern)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Joseph City</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Indian Wells Valley planning area</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Imperial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hayden</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Great Basin Valleys Air Basin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Gila River Indian Community</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Douglas</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Coso Junction planning area</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Coachella Valley</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Chico</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Calaveras</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ak-Chin Indian Community</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ajo</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Arizona</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>California</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hawaii</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Nevada</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pacific Islands</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Designation</label>
+    <nameField>
+        <label>Designation Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Designation</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Agency</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Agencies</value>
+    </caseValues>
+    <fields>
+        <label><!-- AQAOLead --></label>
+        <name>AQAOLead__c</name>
+        <picklistValues>
+            <masterLabel>A_Mebust</masterLabel>
+            <translation><!-- A_Mebust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B_Ogundele</masterLabel>
+            <translation><!-- B_Ogundele --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D_Vallano</masterLabel>
+            <translation><!-- D_Vallano --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F_Clover</masterLabel>
+            <translation><!-- F_Clover --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G_Yoshimura</masterLabel>
+            <translation><!-- G_Yoshimura --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>J_Williams</masterLabel>
+            <translation><!-- J_Williams --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M_Flagg</masterLabel>
+            <translation><!-- M_Flagg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M_Kurpius</masterLabel>
+            <translation><!-- M_Kurpius --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R_Chang</masterLabel>
+            <translation><!-- R_Chang --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Abbreviation of Agency Name --></help>
+        <label><!-- Acronym --></label>
+        <name>Acronym__c</name>
+        <picklistValues>
+            <masterLabel>ADEQ</masterLabel>
+            <translation><!-- ADEQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ak-Chin</masterLabel>
+            <translation><!-- Ak-Chin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Am_Samoa</masterLabel>
+            <translation><!-- Am_Samoa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AmadorCo-APCD</masterLabel>
+            <translation><!-- AmadorCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AntelopeValley-AQMD</masterLabel>
+            <translation><!-- AntelopeValley-AQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arvin-Edison</masterLabel>
+            <translation><!-- Arvin-Edison --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAAQMD</masterLabel>
+            <translation><!-- BAAQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BishopPaiute</masterLabel>
+            <translation><!-- BishopPaiute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BlueLake</masterLabel>
+            <translation><!-- BlueLake --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bureau of Indian Affairs</masterLabel>
+            <translation><!-- Bureau of Indian Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ButteCo-AQMD</masterLabel>
+            <translation><!-- ButteCo-AQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CARB</masterLabel>
+            <translation><!-- CARB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CARB-MLD</masterLabel>
+            <translation><!-- CARB-MLD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CARB-PTSD</masterLabel>
+            <translation><!-- CARB-PTSD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CNMI</masterLabel>
+            <translation><!-- CNMI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CabazonBand</masterLabel>
+            <translation><!-- CabazonBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CalaverasCo-APCD</masterLabel>
+            <translation><!-- CalaverasCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caltrans</masterLabel>
+            <translation><!-- Caltrans --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CampoBand</masterLabel>
+            <translation><!-- CampoBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Citizens_for_Clean_Air</masterLabel>
+            <translation><!-- Citizens_for_Clean_Air --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ClarkCo-DAQEM</masterLabel>
+            <translation><!-- ClarkCo-DAQEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ColusaCo-AQMD</masterLabel>
+            <translation><!-- ColusaCo-AQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cortina</masterLabel>
+            <translation><!-- Cortina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DuckwaterShoshone</masterLabel>
+            <translation><!-- DuckwaterShoshone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPA/R4 PEP Weigh Lab</masterLabel>
+            <translation><!-- EPA/R4 PEP Weigh Lab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPA_CleanAirMktDiv</masterLabel>
+            <translation><!-- EPA_CleanAirMktDiv --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPA_OAQPS</masterLabel>
+            <translation><!-- EPA_OAQPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ESAT</masterLabel>
+            <translation><!-- ESAT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ElDoradoCo-APCD</masterLabel>
+            <translation><!-- ElDoradoCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FeatherRiver-AQMD</masterLabel>
+            <translation><!-- FeatherRiver-AQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fennemore Craig, P.C.</masterLabel>
+            <translation><!-- Fennemore Craig, P.C. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FtIndependence</masterLabel>
+            <translation><!-- FtIndependence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FtMcDowell</masterLabel>
+            <translation><!-- FtMcDowell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GilaRiver-IC</masterLabel>
+            <translation><!-- GilaRiver-IC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GlenCo-AQMD</masterLabel>
+            <translation><!-- GlenCo-AQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GreatBasin-UAPCD</masterLabel>
+            <translation><!-- GreatBasin-UAPCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guam_EPA</masterLabel>
+            <translation><!-- Guam_EPA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HDoH</masterLabel>
+            <translation><!-- HDoH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HoopaValley</masterLabel>
+            <translation><!-- HoopaValley --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hualapai</masterLabel>
+            <translation><!-- Hualapai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ImperialCo-APCD</masterLabel>
+            <translation><!-- ImperialCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Karuk</masterLabel>
+            <translation><!-- Karuk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KernCo-APCD</masterLabel>
+            <translation><!-- KernCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LADWP</masterLabel>
+            <translation><!-- LADWP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LaPostaBand</masterLabel>
+            <translation><!-- LaPostaBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LakeCo-AQMD</masterLabel>
+            <translation><!-- LakeCo-AQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LasVegasPaiute</masterLabel>
+            <translation><!-- LasVegasPaiute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lassen Volcano NP</masterLabel>
+            <translation><!-- Lassen Volcano NP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LassenCo-APCD</masterLabel>
+            <translation><!-- LassenCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LonePinePaiute-Shoshone</masterLabel>
+            <translation><!-- LonePinePaiute-Shoshone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ManzanitaBand</masterLabel>
+            <translation><!-- ManzanitaBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MaricopaCo-APCD</masterLabel>
+            <translation><!-- MaricopaCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MariposaCo-APCD</masterLabel>
+            <translation><!-- MariposaCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MendocinoCo-AQMD</masterLabel>
+            <translation><!-- MendocinoCo-AQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ModocCo-APCD</masterLabel>
+            <translation><!-- ModocCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MojaveDesert-AQMD</masterLabel>
+            <translation><!-- MojaveDesert-AQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MontereyBay-UAPCD</masterLabel>
+            <translation><!-- MontereyBay-UAPCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MorongoBand</masterLabel>
+            <translation><!-- MorongoBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NDEP</masterLabel>
+            <translation><!-- NDEP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NRDC</masterLabel>
+            <translation><!-- NRDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nat_Park_Svc</masterLabel>
+            <translation><!-- Nat_Park_Svc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Navajo</masterLabel>
+            <translation><!-- Navajo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NoCoast-UAQMD</masterLabel>
+            <translation><!-- NoCoast-UAQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NoSierra-AQMD</masterLabel>
+            <translation><!-- NoSierra-AQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NoSonomaCo-APCD</masterLabel>
+            <translation><!-- NoSonomaCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PalaBand</masterLabel>
+            <translation><!-- PalaBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PechangaBand</masterLabel>
+            <translation><!-- PechangaBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PimaCo-DEQ</masterLabel>
+            <translation><!-- PimaCo-DEQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PinalCo-AQCD</masterLabel>
+            <translation><!-- PinalCo-AQCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PlacerCo-AQMD</masterLabel>
+            <translation><!-- PlacerCo-AQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PyramidLakePaiute</masterLabel>
+            <translation><!-- PyramidLakePaiute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RenoSparks</masterLabel>
+            <translation><!-- RenoSparks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SCAQMD</masterLabel>
+            <translation><!-- SCAQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SJV-UAPCD</masterLabel>
+            <translation><!-- SJV-UAPCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SacMetro-AQMD</masterLabel>
+            <translation><!-- SacMetro-AQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SaltRiver-IC</masterLabel>
+            <translation><!-- SaltRiver-IC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SanDiego-APCD</masterLabel>
+            <translation><!-- SanDiego-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SanLuisObispoCo-APCD</masterLabel>
+            <translation><!-- SanLuisObispoCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SantaBarbaraCo-APCD</masterLabel>
+            <translation><!-- SantaBarbaraCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SantaRosa</masterLabel>
+            <translation><!-- SantaRosa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ShastaCo-APCD</masterLabel>
+            <translation><!-- ShastaCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SiskiyouCo-APCD</masterLabel>
+            <translation><!-- SiskiyouCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SobobaBand</masterLabel>
+            <translation><!-- SobobaBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State of Arizona</masterLabel>
+            <translation><!-- State of Arizona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TehamaCo-APCD</masterLabel>
+            <translation><!-- TehamaCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Torres-MartinezBand</masterLabel>
+            <translation><!-- Torres-MartinezBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TuolumneCo-APCD</masterLabel>
+            <translation><!-- TuolumneCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VenturaCo-APCD</masterLabel>
+            <translation><!-- VenturaCo-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WalkerRiverPaiute</masterLabel>
+            <translation><!-- WalkerRiverPaiute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WashoeCo-AQMD</masterLabel>
+            <translation><!-- WashoeCo-AQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WhiteMtn</masterLabel>
+            <translation><!-- WhiteMtn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YeringtonPaiute</masterLabel>
+            <translation><!-- YeringtonPaiute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YoloSolano-AQMD</masterLabel>
+            <translation><!-- YoloSolano-AQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yurok</masterLabel>
+            <translation><!-- Yurok --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ID --></label>
+        <name>ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PQAOID --></label>
+        <name>PQAOID__c</name>
+        <picklistValues>
+            <masterLabel>ADEQ</masterLabel>
+            <translation><!-- ADEQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ak-Chin</masterLabel>
+            <translation><!-- Ak-Chin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAAQMD</masterLabel>
+            <translation><!-- BAAQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BishopPaiute</masterLabel>
+            <translation><!-- BishopPaiute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BlueLake</masterLabel>
+            <translation><!-- BlueLake --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CARB</masterLabel>
+            <translation><!-- CARB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CabazonBand</masterLabel>
+            <translation><!-- CabazonBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CampoBand</masterLabel>
+            <translation><!-- CampoBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ClarkCo-DAQEM</masterLabel>
+            <translation><!-- ClarkCo-DAQEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cortina</masterLabel>
+            <translation><!-- Cortina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DuckwaterShoshone</masterLabel>
+            <translation><!-- DuckwaterShoshone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FtIndependence</masterLabel>
+            <translation><!-- FtIndependence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FtMcDowell</masterLabel>
+            <translation><!-- FtMcDowell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GilaRiver-IC</masterLabel>
+            <translation><!-- GilaRiver-IC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HDoH</masterLabel>
+            <translation><!-- HDoH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HoopaValley</masterLabel>
+            <translation><!-- HoopaValley --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hualapai</masterLabel>
+            <translation><!-- Hualapai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Karuk</masterLabel>
+            <translation><!-- Karuk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LaPostaBand</masterLabel>
+            <translation><!-- LaPostaBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LasVegasPaiute</masterLabel>
+            <translation><!-- LasVegasPaiute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LonePinePaiute-Shoshone</masterLabel>
+            <translation><!-- LonePinePaiute-Shoshone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ManzanitaBand</masterLabel>
+            <translation><!-- ManzanitaBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MaricopaCo_APCD</masterLabel>
+            <translation><!-- MaricopaCo_APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MorongoBand</masterLabel>
+            <translation><!-- MorongoBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NDEP</masterLabel>
+            <translation><!-- NDEP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Navajo</masterLabel>
+            <translation><!-- Navajo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PalaBand</masterLabel>
+            <translation><!-- PalaBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PechangaBand</masterLabel>
+            <translation><!-- PechangaBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PimaCo-DEQ</masterLabel>
+            <translation><!-- PimaCo-DEQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PyramidLakePaiute</masterLabel>
+            <translation><!-- PyramidLakePaiute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RenoSparks</masterLabel>
+            <translation><!-- RenoSparks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SCAQMD</masterLabel>
+            <translation><!-- SCAQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SaltRiver-IC</masterLabel>
+            <translation><!-- SaltRiver-IC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SanDiego-APCD</masterLabel>
+            <translation><!-- SanDiego-APCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SantaRosa</masterLabel>
+            <translation><!-- SantaRosa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SobobaBand</masterLabel>
+            <translation><!-- SobobaBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Torres-MartinezBand</masterLabel>
+            <translation><!-- Torres-MartinezBand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WalkerRiverPaiute</masterLabel>
+            <translation><!-- WalkerRiverPaiute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WashoeCo-AQMD</masterLabel>
+            <translation><!-- WashoeCo-AQMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WhiteMtn</masterLabel>
+            <translation><!-- WhiteMtn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YeringtonPaiute</masterLabel>
+            <translation><!-- YeringtonPaiute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yurok</masterLabel>
+            <translation><!-- Yurok --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+        <picklistValues>
+            <masterLabel>Arizona</masterLabel>
+            <translation><!-- Arizona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation><!-- Hawaii --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pacific Islands</masterLabel>
+            <translation><!-- Pacific Islands --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Federal</masterLabel>
+            <translation><!-- Federal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State</masterLabel>
+            <translation><!-- State --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tribal</masterLabel>
+            <translation><!-- Tribal --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
