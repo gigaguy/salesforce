@@ -27,6 +27,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *    Author : avidev9@gmail.com
 *    CreatedDate : 6-Oct-2013
 *    Class Name : AutoCompleteV2_Con
+*    This is an autocomplete lookup field component for VisualForce pages.
+
 **/
 public class AutoComplete {
 

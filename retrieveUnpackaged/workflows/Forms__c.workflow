@@ -43,6 +43,17 @@
         <template>unfiled$public/Forms_Final_Rejection</template>
     </alerts>
     <alerts>
+        <fullName>Form_Submission_Notification</fullName>
+        <description>Form Submission Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>User_Supervisor__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Form_Submission_Notification_Template</template>
+    </alerts>
+    <alerts>
         <fullName>Sandbox_Approved_Notification_Alert</fullName>
         <description>Sandbox Approved Notification Alert</description>
         <protected>false</protected>

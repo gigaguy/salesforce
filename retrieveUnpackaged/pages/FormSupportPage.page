@@ -1,0 +1,22 @@
+<apex:page showHeader="false" StandardController="Forms__c"
+            standardStylesheets="false" sidebar="false" applyHtmlTag="false" 
+            applyBodyTag="false" doctype="html-5.0" >
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+
+<head>
+  <!--<title>{!$Label.AF_Title}</title>
+  <apex:stylesheet value="{!URLFOR($Resource.SLDS0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+  <apex:includeScript value="{!URLFOR($Resource.jQuery, 'jQuery/js/jquery-1.11.3.min.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.AutoFields, 'AutoFields/js/AutoFields.js')}"/>-->
+</head>  
+
+<body>
+
+    <div class="slds" >
+... Test
+   </div>
+
+</body>
+</html>
+</apex:page>

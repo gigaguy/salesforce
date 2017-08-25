@@ -2,6 +2,9 @@
 Dear {!ApprovalRequest.Process_Assignee},
 <br><br>
 A form, {!Forms__c.Form_Type__c}: &quot;<a href="{!Forms__c.Link}">{!Forms__c.Name__c}</a>&quot;, has been recalled. 
+<p>
+Record ID: {!Forms__c.Form_Record_Name__c}
+</p>
 <br><br>
 Thank you,
 <br><br>

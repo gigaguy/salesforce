@@ -13,19 +13,22 @@
     </allowedSubmitters>
     <approvalPageFields>
         <field>Name</field>
+        <field>RecordType</field>
         <field>Owner</field>
+        <field>Form_Owner__c</field>
         <field>AWL_Phone_Number__c</field>
+        <field>Work_Description__c</field>
         <field>Date_1_Start_Date_Time__c</field>
         <field>Date_1_End_Date_Time__c</field>
         <field>Date_1_Total_Work_Hours__c</field>
         <field>Date_1_A_L_Hours__c</field>
         <field>Date_1_S_L_Hours__c</field>
+        <field>Employee_s_Signature__c</field>
         <field>Date_2_Start_Date_Time__c</field>
         <field>Date_2_End_Date_Time__c</field>
         <field>Date_2_Total_Work_Hours__c</field>
         <field>Date_2_A_L_Hours__c</field>
         <field>Date_2_S_L_Hours__c</field>
-        <field>Work_Description__c</field>
     </approvalPageFields>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
@@ -64,6 +67,7 @@
             <type>RejectRequest</type>
         </rejectBehavior>
     </approvalStep>
+    <emailTemplate>unfiled$public/Form_Submission_Notification_Template</emailTemplate>
     <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
     <entryCriteria>
         <criteriaItems>
@@ -111,6 +115,6 @@
             <type>FieldUpdate</type>
         </action>
     </recallActions>
-    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <recordEditability>AdminOnly</recordEditability>
     <showApprovalHistory>true</showApprovalHistory>
 </ApprovalProcess>

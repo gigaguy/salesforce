@@ -3,11 +3,12 @@ public class FormPageController_Test {
 
     @isTest
     static void testGetFormRTs(){
-        User u = [select id from User where isActive = true and PRofile.Name = 'System Administrator' limit 1];
+         insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
+         User u = [select id from User where isActive = true and PRofile.Name = 'System Administrator' limit 1];
         u.Session_Token__c = '123ABC';
         update u;
         
-        PermissionSetAssignment psa = new PermissionSetAssignment(PermissionSetId = [select id from PermissionSet where Label like '%WebForm User%' limit 1].ID, AssigneeID = u.Id);
+        PermissionSetAssignment psa = new PermissionSetAssignment(PermissionSetId = [select id from PermissionSet where Label like '%BAPForms User%' limit 1].ID, AssigneeID = u.Id);
         try{
             insert psa;
         }
@@ -20,7 +21,8 @@ public class FormPageController_Test {
     
     @isTest
     static void testInsertNewForms(){
-        User u = [select id from User where isActive = true limit 1];
+         insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
+         User u = [select id from User where isActive = true limit 1];
         u.Session_Token__c = '123ABC';
         update u;
         
@@ -31,7 +33,7 @@ public class FormPageController_Test {
         FormPageController.submitForApproval(form.ID, '123ABC');
         
         FormPageController.findExistingForms('123ABC');
-        
+        FormPageController.findExistingForms('123');
         FormPageController.viewForm(form.ID);
         FormPageController.saveForm(form, '123ABC');
         FormPageController.deleteForm(form.ID, '123ABC');

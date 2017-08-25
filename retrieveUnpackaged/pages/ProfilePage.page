@@ -1,5 +1,5 @@
 <apex:page controller="ProfilePageController" showheader="false" sidebar="false" title="BAP Agency Forms - Edit Approvers" cache="false" action="{!validateOrRedirect}">
-    
+
     <style>
         body { background-color: #E0F1FF; }
     </style>
@@ -16,7 +16,7 @@
                 Editing Approvers for: {!userName}
             </p>
             <p style="margin-top: 35px; font-size: 16.25px">
-                <apex:commandlink action="{!cancel}">Back to Form Types</apex:commandlink>
+                <apex:commandlink value="{!canMsg}" action="{!cancel}"></apex:commandlink>
             </p>
         </div>
     </div>
@@ -24,29 +24,60 @@
     <!--End Header-->
     
     <!--Body-->
+    <script>
+    if({!profSaved}){alert("Approvers saved successfully!");}
+    </script>
+    <apex:pageMessage rendered="{!lanError}" severity="error" escape="false" summary="Your User record does not have a valid 'Lan ID'.<br/>Please contact your administrator.<br/<br/>Changes on this page will not be saved." />
+    <apex:pageMessage rendered="{!noContact}" severity="error" escape="false" summary="You do not have a Contact record in the system with a valid 'Lan ID'.<br/>Please contact your administrator.<br/<br/>Changes on this page will not be saved." />
+    <apex:pageMessages />
+  
     <div style="width: 75%; padding-left: 200px;">
         <apex:form rendered="{!valid == true}">
             <apex:pageblock >
                 <apex:pageBlockSection title="Approver Fields" columns="1">
-                    <apex:pageBlockSectionItem >
+                    <apex:pageBlockSectionItem rendered="{!useContact != true}">
                         <apex:outputLabel value="Supervisor"/>
                         <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!u.Supervisor__c}" syncManualEntry="false" />
+                    </apex:pageBlockSectionItem>                    
+                    <apex:pageBlockSectionItem rendered="{!useContact == true}">
+                        <apex:outputLabel value="Supervisor"/>
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!supID}" syncManualEntry="false"/>
                     </apex:pageBlockSectionItem>
-                    <apex:pageblocksectionitem >
+                    
+                    <apex:pageblocksectionitem rendered="{!useContact != true}">
                         <apex:outputlabel value="Time Keeper" />
                         <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!u.Time_Keeper__c}" syncManualEntry="false" />
                     </apex:pageblocksectionitem>
-                    <apex:pageblocksectionitem >
+                    <apex:pageblocksectionitem rendered="{!useContact == true}">
+                        <apex:outputlabel value="Time Keeper" />
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!timekID}" syncManualEntry="false" />
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem rendered="{!useContact != true}">
                         <apex:outputlabel value="Supervisor 2" />
                         <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!u.Supervisor_2__c}" syncManualEntry="false" />
                     </apex:pageblocksectionitem>
-                    <apex:pageblocksectionitem >
+                    <apex:pageblocksectionitem rendered="{!useContact == true}">
+                        <apex:outputlabel value="Supervisor 2" />
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!sup2ID}" syncManualEntry="false" />
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem rendered="{!useContact != true}">
                         <apex:outputlabel value="Funding Official" />
                         <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!u.Funding_Official__c}" syncManualEntry="false" />
                     </apex:pageblocksectionitem>
-                    <apex:pageblocksectionitem >
+                    <apex:pageblocksectionitem rendered="{!useContact == true}">
+                        <apex:outputlabel value="Funding Official" />
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!fundID}" syncManualEntry="false" />
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem rendered="{!useContact != true}">
                         <apex:outputlabel value="Training Officer" />
                         <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!u.Training_Officer__c}" syncManualEntry="false" />
+                    </apex:pageblocksectionitem>
+                    <apex:pageblocksectionitem rendered="{!useContact == true}">
+                        <apex:outputlabel value="Training Officer" />
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!trainID}" syncManualEntry="false" />
                     </apex:pageblocksectionitem>
                 </apex:pageBlockSection>
                 

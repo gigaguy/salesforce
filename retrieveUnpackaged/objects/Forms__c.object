@@ -65,6 +65,17 @@
         <type>Phone</type>
     </fields>
     <fields>
+        <fullName>Applicant_Name_Last_First_MI__c</fullName>
+        <externalId>false</externalId>
+        <label>Applicant Name (Last, First, MI)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Approval_Step__c</fullName>
         <externalId>false</externalId>
         <label>Approval Step</label>
@@ -86,6 +97,85 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Instructions__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Billing Instructions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Books_Materials__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Books &amp; Materials</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Continued_Service_Agreement_Expiration__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Continued Service Agreement Expiration</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Continued_Service_Agreement__c</fullName>
+        <externalId>false</externalId>
+        <label>Continued Service Agreement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Course_Number_Code__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Course Number Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Course_Title__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Course Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Current_Approver__c</fullName>
@@ -217,6 +307,25 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Date_of_Birth__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Birth</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Describe_special_accommodation__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Describe special accommodation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>Description__c</fullName>
         <externalId>false</externalId>
         <label>Description</label>
@@ -225,6 +334,90 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Direct_Appropriation_Fund__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Direct Appropriation / Fund</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Direct_Cost_Total__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <formula>Books_Materials__c +  Tuition_and_Fees__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Direct Cost Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Doc_Purchase_Order_Requisition__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Doc / Purchase Order / Requisition #</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Does_applicant_need_special_accomodation__c</fullName>
+        <externalId>false</externalId>
+        <label>Does applicant need special accomodation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EHRI_Employee_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>EHRI Employee Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Education_Level__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Education Level</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Employee_Digital_Signature__c</fullName>
@@ -256,6 +449,30 @@
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Form_Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Unauthenticated_Owner__c != NULL, Unauthenticated_Owner__r.FirstName + &quot; &quot; + Unauthenticated_Owner__r.LastName, Owner:User.FirstName + &quot; &quot; + Owner:User.LastName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Form Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Form_Record_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Form Record Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Form_Status__c</fullName>
@@ -360,6 +577,49 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Furnish_Invoice_to__c</fullName>
+        <externalId>false</externalId>
+        <label>Furnish Invoice to</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>USEPA RTP Finance Center</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>USEPA Cincinnati Finance Center</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Purchase Card Transaction</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No Cost Training</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Grade__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Grade</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>HR_Org_Code__c</fullName>
         <externalId>false</externalId>
         <formula>HR_Organization__r.Code__c</formula>
@@ -400,6 +660,24 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Home_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Home Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Home_Telephone__c</fullName>
+        <externalId>false</externalId>
+        <label>Home Telephone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
         <fullName>Immediate_Supervisor_s_Digital_Signature__c</fullName>
         <externalId>false</externalId>
         <label>Immediate Supervisor&apos;s Digital Signature</label>
@@ -420,12 +698,156 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Indirect_Appropriation_Fund__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Indirect Appropriation / Fund</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Indirect_Total__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <formula>Per_diem__c + Travel__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Indirect Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Location_of_Training_Site__c</fullName>
+        <externalId>false</externalId>
+        <label>Location of Training Site</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>Name__c</fullName>
         <externalId>false</externalId>
         <label>Name</label>
         <length>100</length>
         <required>false</required>
         <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name_and_Address_of_Vendor__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Name and Address of Vendor</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Non_Government_Contribution_Cost__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Non-Government Contribution Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Office_Telephone__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Office Telephone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Organization_Mailing_Address__c</fullName>
+        <description>SF182</description>
+        <externalId>false</externalId>
+        <label>Organization Mailing Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Plan__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Pay Plan</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Per_diem__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Per diem</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Position_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Position Level</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Non-supervisory</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Supervisory</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Manager</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Executive</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Position_Title__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Position Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -441,6 +863,30 @@
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Series__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Series</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Step__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Step</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -467,6 +913,18 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Support_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;For help using EPA-100 please contact:  &quot;+HYPERLINK(&quot;mailto:lspackman@innovateteam.com?subject=Help%20request%3A%20%20EPA-100%20Form&quot;, &quot;lspackman@innovateteam.com&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Support Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Timesheet_Approver__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -479,10 +937,696 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Training_Accreditation_Indicator__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Training Accreditation Indicator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Training_Credit_Type_Code__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Training Credit Type Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>01 Semester Hours</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>02 Quarter Hours</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>03 Continuing Education Unit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>04 Not Applicable</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>05 CEP - OIG 24 HR Reg</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Training_Credit__c</fullName>
+        <externalId>false</externalId>
+        <label>Training Credit</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0 credit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1 credit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 credits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3 credits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4 credits</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Training_Delivery_Type_Code__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Training Delivery Type Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>01 Traditional Classroom</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>02 On the Job</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>03 Technology Based</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>04 Conference/Workshop</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>05 Blended</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>06 Correspondence</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Training_Designation_Type_Code__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Training Designation Type Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>01 Undergraduate Credit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>02 Graduate Credit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>03 Continuing Education Unit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>04 Post Graduate Credit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>05 Not Applicable</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Training_Duty_Hour__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Training Duty Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Training_End_Date__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Training End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Training_Non_Duty_Hours__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Training Non-Duty Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Training_Objective__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Training Objective</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Training_Purpose_Type__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Training Purpose Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>01 Program/Mission</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>02 New Work Assignment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>03 Improve Present Performance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>04 Future Staffing Needs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>05 Develop Unavailable Skill</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>06 Retention</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Training_Source_Type_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Training Source Type Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>01 Government Internal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>02 Government External</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>03 Non-government</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>04 Government State/Local</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>05 Foreign Governments and Orgs</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Training_Start_Date__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Training Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Training_Sub_Type_Code__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Training Sub Type Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Training_Type_Code__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>01-Legal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>02-Medical &amp; Health</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>03-Scientific</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>04-Engineering &amp; Architecture</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>05-Human Resources</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>06-Budget/Finance Business Admin.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>07-Planning &amp; Analysis</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>08-Information Technology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>09-Project Management</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10-Acquisition</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11-Logistic Specialty</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12-Security</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>13-Clerical (non-supervisory clerical/admin)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>14-Trade &amp; Craft</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>15-Foreign Affairs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>16-Leadership/Manager/Communications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>20-Pre-supervisory Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>21-Supervisory Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>22-Management Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>23-Leadership Development Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>24-SES Candidate Development Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>25-Executive Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>26-Mentoring Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>27-Coaching Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>32-Mandated Training</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>34-Leadership Skills</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>35-Internal Agency Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>36-Technical Skills</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>01 Training Program Area (Technical)</controllingFieldValue>
+                <valueName>01-Legal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>01 Training Program Area (Technical)</controllingFieldValue>
+                <valueName>02-Medical &amp; Health</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>01 Training Program Area (Technical)</controllingFieldValue>
+                <valueName>03-Scientific</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>01 Training Program Area (Technical)</controllingFieldValue>
+                <valueName>04-Engineering &amp; Architecture</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>01 Training Program Area (Technical)</controllingFieldValue>
+                <valueName>05-Human Resources</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>01 Training Program Area (Technical)</controllingFieldValue>
+                <valueName>06-Budget/Finance Business Admin.</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>01 Training Program Area (Technical)</controllingFieldValue>
+                <valueName>07-Planning &amp; Analysis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>01 Training Program Area (Technical)</controllingFieldValue>
+                <valueName>08-Information Technology</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>01 Training Program Area (Technical)</controllingFieldValue>
+                <valueName>09-Project Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>01 Training Program Area (Technical)</controllingFieldValue>
+                <valueName>10-Acquisition</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>01 Training Program Area (Technical)</controllingFieldValue>
+                <valueName>11-Logistic Specialty</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>01 Training Program Area (Technical)</controllingFieldValue>
+                <valueName>12-Security</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>01 Training Program Area (Technical)</controllingFieldValue>
+                <valueName>13-Clerical (non-supervisory clerical/admin)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>01 Training Program Area (Technical)</controllingFieldValue>
+                <valueName>14-Trade &amp; Craft</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>01 Training Program Area (Technical)</controllingFieldValue>
+                <valueName>15-Foreign Affairs</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>01 Training Program Area (Technical)</controllingFieldValue>
+                <valueName>16-Leadership/Manager/Communications</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>02 Development Training Area (Cross-functional)</controllingFieldValue>
+                <valueName>20-Pre-supervisory Program</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>02 Development Training Area (Cross-functional)</controllingFieldValue>
+                <valueName>21-Supervisory Program</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>02 Development Training Area (Cross-functional)</controllingFieldValue>
+                <valueName>22-Management Program</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>02 Development Training Area (Cross-functional)</controllingFieldValue>
+                <valueName>23-Leadership Development Program</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>02 Development Training Area (Cross-functional)</controllingFieldValue>
+                <valueName>24-SES Candidate Development Program</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>02 Development Training Area (Cross-functional)</controllingFieldValue>
+                <valueName>25-Executive Development</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>02 Development Training Area (Cross-functional)</controllingFieldValue>
+                <valueName>26-Mentoring Program</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>02 Development Training Area (Cross-functional)</controllingFieldValue>
+                <valueName>27-Coaching Program</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>03 Basic Training Area (Orientation etc)</controllingFieldValue>
+                <valueName>32-Mandated Training</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>03 Basic Training Area (Orientation etc)</controllingFieldValue>
+                <valueName>34-Leadership Skills</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>03 Basic Training Area (Orientation etc)</controllingFieldValue>
+                <valueName>35-Internal Agency Program</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>03 Basic Training Area (Orientation etc)</controllingFieldValue>
+                <valueName>36-Technical Skills</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Training_Type_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Training Type Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>01 Training Program Area (Technical)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>02 Development Training Area (Cross-functional)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>03 Basic Training Area (Orientation etc)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Travel__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Travel</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Tuition_and_Fees__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Tuition and Fees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Type_of_Appointment__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Type of Appointment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10 Career (Permanent)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>15 Career-Conditional (Permanent)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>20 Nonpermanent (Competitive Service)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>30 Schedule A (Permanent)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>32 Schedule B (Permanent)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>35 Schedule D (Permanent)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>36 Executive (Permanent)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>38 Other (Permanent)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>40 Schedule A (Nonpermanent)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>42 Schedule B (Nonpermanent)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>44 Schedule C (Nonpermanent</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>45 Schedule D (Nonpermanent)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>46 Executive (Nonpermanent)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>48 Other (Nonpermanent)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>50 Career (Senior Exec Permanent)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>55 Noncareer (Senior Exec Permanent)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>60 Limited Term (Nonpermanent)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>65 Limited Emergency (Nonpermanent)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Unauthenticated_Owner__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <label>Unlicensed Owner</label>
+        <label>Type-1 Owner</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Unauthenticated_Owner</relationshipName>
         <required>false</required>
@@ -493,7 +1637,7 @@
     <fields>
         <fullName>Unlicensed_Owner_Email__c</fullName>
         <externalId>false</externalId>
-        <label>Unlicensed Owner Email</label>
+        <label>Owner Email</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -561,6 +1705,27 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Vendor_Email_Address__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Vendor Email Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vendor_Telephone_Number__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Vendor Telephone Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
         <fullName>Work_Description__c</fullName>
         <externalId>false</externalId>
         <label>Work Description</label>
@@ -569,6 +1734,30 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Work_Email_Address__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Work Email Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X8_Digit_Station_Symbol__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Example: 12-34-5678</inlineHelpText>
+        <label>8 Digit Station Symbol</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>test__c</fullName>
@@ -587,8 +1776,9 @@
         <fullName>All</fullName>
         <columns>NAME</columns>
         <columns>RECORDTYPE</columns>
+        <columns>Form_Owner__c</columns>
+        <columns>LAST_UPDATE</columns>
         <columns>Approval_Step__c</columns>
-        <columns>Unauthenticated_Owner__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -606,6 +1796,28 @@
         <description>BAP Provisioning Forms</description>
         <label>BAP Provisioning</label>
         <picklistValues>
+            <picklist>Continued_Service_Agreement__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Does_applicant_need_special_accomodation__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -648,6 +1860,410 @@
             </values>
             <values>
                 <fullName>Full Sandbox</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Furnish_Invoice_to__c</picklist>
+            <values>
+                <fullName>No Cost Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Card Transaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Position_Level__c</picklist>
+            <values>
+                <fullName>Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-supervisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisory</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Accreditation_Indicator__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Credit_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Semester Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Quarter Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Continuing Education Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 CEP - OIG 24 HR Reg</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Credit__c</picklist>
+            <values>
+                <fullName>0 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 credits</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Delivery_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Traditional Classroom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 On the Job</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Technology Based</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Conference%2FWorkshop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Blended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06 Correspondence</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Designation_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Undergraduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Graduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Continuing Education Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Post Graduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Purpose_Type__c</picklist>
+            <values>
+                <fullName>01 Program%2FMission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 New Work Assignment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Improve Present Performance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Future Staffing Needs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Develop Unavailable Skill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06 Retention</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Source_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Government Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Government External</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Non-government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Government State%2FLocal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Foreign Governments and Orgs</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Sub_Type_Code__c</picklist>
+            <values>
+                <fullName>01-Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02-Medical %26 Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03-Scientific</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04-Engineering %26 Architecture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05-Human Resources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06-Budget%2FFinance Business Admin%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>07-Planning %26 Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08-Information Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09-Project Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10-Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11-Logistic Specialty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12-Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13-Clerical %28non-supervisory clerical%2Fadmin%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14-Trade %26 Craft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15-Foreign Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16-Leadership%2FManager%2FCommunications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20-Pre-supervisory Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21-Supervisory Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>22-Management Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23-Leadership Development Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24-SES Candidate Development Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25-Executive Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26-Mentoring Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27-Coaching Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32-Mandated Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>34-Leadership Skills</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35-Internal Agency Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36-Technical Skills</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Training Program Area %28Technical%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Development Training Area %28Cross-functional%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Basic Training Area %28Orientation etc%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Appointment__c</picklist>
+            <values>
+                <fullName>10 Career %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15 Career-Conditional %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20 Nonpermanent %28Competitive Service%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 Schedule A %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32 Schedule B %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35 Schedule D %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36 Executive %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>38 Other %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40 Schedule A %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>42 Schedule B %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>44 Schedule C %28Nonpermanent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45 Schedule D %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>46 Executive %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>48 Other %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 Career %28Senior Exec Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>55 Noncareer %28Senior Exec Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60 Limited Term %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>65 Limited Emergency %28Nonpermanent%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -658,6 +2274,28 @@
         <description>Episodic Flexiplace  (workflow)</description>
         <label>EPA-100</label>
         <picklistValues>
+            <picklist>Continued_Service_Agreement__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Does_applicant_need_special_accomodation__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -700,6 +2338,410 @@
             </values>
             <values>
                 <fullName>Full Sandbox</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Furnish_Invoice_to__c</picklist>
+            <values>
+                <fullName>No Cost Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Card Transaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Position_Level__c</picklist>
+            <values>
+                <fullName>Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-supervisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisory</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Accreditation_Indicator__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Credit_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Semester Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Quarter Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Continuing Education Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 CEP - OIG 24 HR Reg</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Credit__c</picklist>
+            <values>
+                <fullName>0 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 credits</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Delivery_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Traditional Classroom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 On the Job</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Technology Based</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Conference%2FWorkshop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Blended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06 Correspondence</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Designation_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Undergraduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Graduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Continuing Education Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Post Graduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Purpose_Type__c</picklist>
+            <values>
+                <fullName>01 Program%2FMission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 New Work Assignment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Improve Present Performance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Future Staffing Needs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Develop Unavailable Skill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06 Retention</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Source_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Government Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Government External</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Non-government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Government State%2FLocal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Foreign Governments and Orgs</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Sub_Type_Code__c</picklist>
+            <values>
+                <fullName>01-Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02-Medical %26 Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03-Scientific</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04-Engineering %26 Architecture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05-Human Resources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06-Budget%2FFinance Business Admin%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>07-Planning %26 Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08-Information Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09-Project Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10-Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11-Logistic Specialty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12-Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13-Clerical %28non-supervisory clerical%2Fadmin%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14-Trade %26 Craft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15-Foreign Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16-Leadership%2FManager%2FCommunications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20-Pre-supervisory Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21-Supervisory Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>22-Management Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23-Leadership Development Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24-SES Candidate Development Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25-Executive Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26-Mentoring Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27-Coaching Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32-Mandated Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>34-Leadership Skills</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35-Internal Agency Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36-Technical Skills</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Training Program Area %28Technical%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Development Training Area %28Cross-functional%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Basic Training Area %28Orientation etc%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Appointment__c</picklist>
+            <values>
+                <fullName>10 Career %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15 Career-Conditional %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20 Nonpermanent %28Competitive Service%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 Schedule A %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32 Schedule B %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35 Schedule D %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36 Executive %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>38 Other %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40 Schedule A %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>42 Schedule B %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>44 Schedule C %28Nonpermanent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45 Schedule D %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>46 Executive %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>48 Other %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 Career %28Senior Exec Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>55 Noncareer %28Senior Exec Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60 Limited Term %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>65 Limited Emergency %28Nonpermanent%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -710,6 +2752,28 @@
         <description>Procurement Request with Routing Slip (workflow)</description>
         <label>EPA-1900-8a</label>
         <picklistValues>
+            <picklist>Continued_Service_Agreement__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Does_applicant_need_special_accomodation__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -752,6 +2816,410 @@
             </values>
             <values>
                 <fullName>Full Sandbox</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Furnish_Invoice_to__c</picklist>
+            <values>
+                <fullName>No Cost Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Card Transaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Position_Level__c</picklist>
+            <values>
+                <fullName>Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-supervisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisory</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Accreditation_Indicator__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Credit_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Semester Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Quarter Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Continuing Education Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 CEP - OIG 24 HR Reg</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Credit__c</picklist>
+            <values>
+                <fullName>0 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 credits</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Delivery_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Traditional Classroom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 On the Job</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Technology Based</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Conference%2FWorkshop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Blended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06 Correspondence</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Designation_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Undergraduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Graduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Continuing Education Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Post Graduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Purpose_Type__c</picklist>
+            <values>
+                <fullName>01 Program%2FMission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 New Work Assignment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Improve Present Performance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Future Staffing Needs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Develop Unavailable Skill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06 Retention</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Source_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Government Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Government External</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Non-government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Government State%2FLocal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Foreign Governments and Orgs</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Sub_Type_Code__c</picklist>
+            <values>
+                <fullName>01-Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02-Medical %26 Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03-Scientific</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04-Engineering %26 Architecture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05-Human Resources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06-Budget%2FFinance Business Admin%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>07-Planning %26 Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08-Information Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09-Project Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10-Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11-Logistic Specialty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12-Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13-Clerical %28non-supervisory clerical%2Fadmin%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14-Trade %26 Craft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15-Foreign Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16-Leadership%2FManager%2FCommunications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20-Pre-supervisory Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21-Supervisory Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>22-Management Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23-Leadership Development Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24-SES Candidate Development Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25-Executive Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26-Mentoring Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27-Coaching Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32-Mandated Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>34-Leadership Skills</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35-Internal Agency Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36-Technical Skills</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Training Program Area %28Technical%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Development Training Area %28Cross-functional%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Basic Training Area %28Orientation etc%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Appointment__c</picklist>
+            <values>
+                <fullName>10 Career %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15 Career-Conditional %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20 Nonpermanent %28Competitive Service%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 Schedule A %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32 Schedule B %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35 Schedule D %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36 Executive %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>38 Other %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40 Schedule A %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>42 Schedule B %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>44 Schedule C %28Nonpermanent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45 Schedule D %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>46 Executive %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>48 Other %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 Career %28Senior Exec Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>55 Noncareer %28Senior Exec Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60 Limited Term %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>65 Limited Emergency %28Nonpermanent%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -759,8 +3227,30 @@
     <recordTypes>
         <fullName>SF_182</fullName>
         <active>true</active>
-        <description>SF 182 Form</description>
-        <label>SF 182</label>
+        <description>Authorization, Agreement and Certification of Training</description>
+        <label>SF-182</label>
+        <picklistValues>
+            <picklist>Continued_Service_Agreement__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Does_applicant_need_special_accomodation__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
@@ -804,6 +3294,410 @@
             </values>
             <values>
                 <fullName>Full Sandbox</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Furnish_Invoice_to__c</picklist>
+            <values>
+                <fullName>No Cost Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Card Transaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Position_Level__c</picklist>
+            <values>
+                <fullName>Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-supervisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisory</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Accreditation_Indicator__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Credit_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Semester Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Quarter Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Continuing Education Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 CEP - OIG 24 HR Reg</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Credit__c</picklist>
+            <values>
+                <fullName>0 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 credits</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Delivery_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Traditional Classroom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 On the Job</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Technology Based</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Conference%2FWorkshop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Blended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06 Correspondence</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Designation_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Undergraduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Graduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Continuing Education Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Post Graduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Purpose_Type__c</picklist>
+            <values>
+                <fullName>01 Program%2FMission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 New Work Assignment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Improve Present Performance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Future Staffing Needs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Develop Unavailable Skill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06 Retention</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Source_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Government Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Government External</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Non-government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Government State%2FLocal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Foreign Governments and Orgs</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Sub_Type_Code__c</picklist>
+            <values>
+                <fullName>01-Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02-Medical %26 Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03-Scientific</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04-Engineering %26 Architecture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05-Human Resources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06-Budget%2FFinance Business Admin%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>07-Planning %26 Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08-Information Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09-Project Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10-Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11-Logistic Specialty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12-Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13-Clerical %28non-supervisory clerical%2Fadmin%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14-Trade %26 Craft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15-Foreign Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16-Leadership%2FManager%2FCommunications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20-Pre-supervisory Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21-Supervisory Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>22-Management Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23-Leadership Development Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24-SES Candidate Development Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25-Executive Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26-Mentoring Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27-Coaching Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32-Mandated Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>34-Leadership Skills</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35-Internal Agency Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36-Technical Skills</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Training Program Area %28Technical%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Development Training Area %28Cross-functional%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Basic Training Area %28Orientation etc%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Appointment__c</picklist>
+            <values>
+                <fullName>10 Career %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15 Career-Conditional %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20 Nonpermanent %28Competitive Service%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 Schedule A %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32 Schedule B %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35 Schedule D %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36 Executive %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>38 Other %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40 Schedule A %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>42 Schedule B %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>44 Schedule C %28Nonpermanent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45 Schedule D %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>46 Executive %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>48 Other %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 Career %28Senior Exec Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>55 Noncareer %28Senior Exec Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60 Limited Term %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>65 Limited Emergency %28Nonpermanent%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -820,6 +3714,25 @@
         <errorConditionFormula>AWL_Phone_Number__c = &apos;123456&apos;</errorConditionFormula>
         <errorMessage>Phone Number can&apos;t be 123456</errorMessage>
     </validationRules>
+    <webLinks>
+        <fullName>Email_Support</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Email Support</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>www.google.com</url>
+    </webLinks>
     <webLinks>
         <fullName>Printable_View</fullName>
         <availability>online</availability>

@@ -1,5 +1,13 @@
 public class UtilityMethods { 
 
+    public static string getLicName(id uID) {
+    	string licName;
+    	if (uid != null) {
+    	licName = [select id, Profile.UserLicense.Name from user where ID = :uID limit 1].Profile.UserLicense.Name;
+    	}
+     return licName;
+    }
+    
     public static string getSessionID() {
         string sessionID;
         sessionID = ApexPages.currentPage().getParameters().get('sID');
@@ -39,15 +47,16 @@ public class UtilityMethods {
     }
     
     public static void logHeaders() {
+    // Collects header info sent from WAM
         // Log Header & Parameters
         map<string,string> headers = ApexPages.currentPage().getHeaders();
-   		map<string, string> params = ApexPages.currentPage().getParameters();
+        map<string, string> params = ApexPages.currentPage().getParameters();
         string headerString = '';
         string paramString = '';
         string pageURL = '';
         pageURL = ApexPages.currentPage().getURL();
         paramString = 'getURL=' + pageURL + '\n';
-       	paramString += 'externalForm=' + System.URL.getSalesforceBaseUrl().toExternalForm() + '\n';
+        paramString += 'externalForm=' + System.URL.getSalesforceBaseUrl().toExternalForm() + '\n';
         paramString += 'currentRequest=' + System.URL.getCurrentRequestUrl() + '\n';
         paramString += 'file=' + System.URL.getCurrentRequestUrl().getFile() + '\n';
         paramString += 'host=' + System.URL.getCurrentRequestUrl().getHost() + '\n';
@@ -75,13 +84,13 @@ public class UtilityMethods {
     
     public static boolean validateSession(String sessionID, string userID) {    
         User u = [select id, Session_Token__c, Session_IP__c, Session_Environment__c, Session_Timestamp__c from User where id = :userID AND Session_Token__c = :sessionID];
-		// Check that the IP address and user environment is the same as when the session was created, and that the session is less than 12 hours old
+        // Check that the IP address and user environment is the same as when the session was created, and that the session is less than 12 hours old
         system.debug(u);
         system.debug(ApexPages.currentPage().getHeaders());
         if (u.Session_IP__c == ApexPages.currentPage().getHeaders().get('X-Salesforce-SIP') &&
-        		u.Session_Environment__c == ApexPages.currentPage().getHeaders().get('User-Agent') &&
-           		u.Session_Timestamp__c != null &&
-            	u.Session_Timestamp__c.addHours(12) > System.now()) {
+                u.Session_Environment__c == ApexPages.currentPage().getHeaders().get('User-Agent') &&
+                u.Session_Timestamp__c != null &&
+                u.Session_Timestamp__c.addHours(12) > System.now()) {
             return true;
         }
         // Return false unless all elements validate

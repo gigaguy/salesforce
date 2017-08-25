@@ -8,6 +8,7 @@
     <navType>Standard</navType>
     <tab>standard-home</tab>
     <tab>Forms__c</tab>
+    <tab>Approvers</tab>
     <uiType>Lightning</uiType>
     <utilityBar>Webforms_UtilityBar</utilityBar>
 </CustomApplication>

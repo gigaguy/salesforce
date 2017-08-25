@@ -20,25 +20,32 @@
                 });
         });
     </script>
-    
-    <!-- Header-->
+    <!--Header-->
     <apex:form rendered="{!valid == true}">
-    <div class="WebFormsNav" style="padding: 25px; width: 75%; height: 90px;">
+    <div class="WebFormsNav" style="padding: 25px; width: 75%; height: 100px;">
         <div style="width: 190px; float: left; position: relative;">
             <img src="{!$Resource.EPALogo}"/>
         </div>
         <div style="float: left; position: relative;">
             <h1 style="font-size: 300%; padding-bottom: 20px;">BAP Agency Forms</h1>
             <p style="margin-top: 30px; font-size: 125%;">
-                Welcome {!userName}!
-            </p>
+                Welcome {!userName}!  
+            </p>     
+    <apex:pageMessage rendered="{!lanError}" severity="error" escape="false" summary="Your User record does not have a valid 'Lan ID'.<br/>Please contact your administrator before continuing." />
+    <apex:pageMessage rendered="{!noContact}" severity="error" escape="false" summary="You do not have a Contact record in the system with a valid 'Lan ID'.<br/>Please contact your administrator." /><apex:pageMessages />            
+            <apex:outputPanel rendered="{!IF((instructions==true && lanError!=true && noContact!=true),true,false)}" style="font-size: 125%; font-weight: bold;">
+                Please set your Supervisor and Time Keeper before creating or submitting any forms.<br/>Click the "Edit My Approvers" link to do this.
+            </apex:outputPanel>
+        </div>
+        <div style="position: fixed; top: 10px; right: 0; width: 100px;">
+        <apex:commandLink style="font-size: 150%;" action="{!logout}" value="Logout" />        
         </div>
     </div>
     </apex:form>
-    <!--End Header-->
+    <!-- End Header -->
     
     <!--Body Lightning Component-->
-    <div class="slds" style="margin-top:10px;margin-left:10px;"> 
+    <div class="slds" style="margin-top:20px;margin-left:10px;"> 
         <div id="lightning" />
     </div>
     <!--End Body Lightning Component-->

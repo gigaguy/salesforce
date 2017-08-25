@@ -8,6 +8,7 @@ public class FormPrintableUnlicensed {
 
     public FormPrintableUnlicensed () {
         valid = true;
+        // Get session ID from URL parameters, get user ID from the matching session
         sID = UtilityMethods.getSessionID();
         uID = UtilityMethods.getUserID(sID);
         

@@ -3,4 +3,5 @@
     <defaultLandingTab>standard-home</defaultLandingTab>
     <label>BAP Agency Forms</label>
     <tab>Forms__c</tab>
+    <tab>Approvers</tab>
 </CustomApplication>

@@ -1,5 +1,10 @@
 Dear {!Approval_Requesting_User.Name},<br>
 <br>
-The Form <a href="{!Forms__c.Link}">{!Forms__c.Form_Type__c} {!Forms__c.Name__c}</a> has been rejected. 
-<br><br><br>
+The Form {!Forms__c.Form_Type_Name__c} has been rejected. 
+<br>
+<p>
+Record ID: {!Forms__c.Form_Record_Name__c}<br>
+{!Forms__c.Link}
+</p>
+<br><br>
 Thank you.

@@ -12,7 +12,7 @@ public class FormPageController {
         Set<string> formNames = new Set<String>();
         for (PermissionSet ps : [select id, Label from PermissionSet where id in :psIDs]){
             
-            formNames.add(ps.label.removeStart('WebForm User - '));
+            formNames.add(ps.label.removeStart('BAPForms User - '));
             //hardcoding EPA-100 for all users
             formNames.add('EPA-100');
         }
@@ -59,7 +59,6 @@ public class FormPageController {
                 nf.put('User_Supervisor__c', u.Supervisor__c);
                 nf.put('RecordTypeId', rtID);
                 nf.put('Quantity__c', 1);
-                nf.put('Name__c', u.Name);
                 insert nf;
                 System.debug('newForms'+nf);
                 return nf;

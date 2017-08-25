@@ -8,9 +8,11 @@
     <subject>Sandbox Request Rejected</subject>
     <textOnly>Dear {!Approval_Requesting_User.Name},
 
-The Form {!Forms__c.Form_Type__c} {!Forms__c.Name__c} has been rejected.
+The Form {!Forms__c.Form_Type_Name__c} has been rejected.
 
+Record ID: {!Forms__c.Form_Record_Name__c}
 {!Forms__c.Link}
+
 
 
 Thank you.</textOnly>

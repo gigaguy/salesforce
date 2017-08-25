@@ -1,0 +1,21 @@
+<apex:page >
+
+<!--
+ <apex:iframe src="https://epaoei--oeiodsta.cs33.my.salesforce.com/servlet/servlet.ChartServer?rsid=0FL350000002Ruu&ruid=00535000000VxDv&did=01Z350000006SAa&s=7&fs=10&tfg=12&tfs=-16777216&explode=0&c=column&cs=0&title=accounts&eh=no&compo=yes&fg=-16777216&bg1=-1&bg2=-1&bgdir=2&dl1=Created+Date&dl2=&l=2&sax=yes&Yman=no&nc=0&actUrl=%2F00Ot0000000aQ4O&sd=1&scv=no&sct=no&spt=no&bd=yes&cu=USD&ab=X&u=0&vt=0&ab2=Y&u2=0&vt2=0&vl0=Record+Count&spoc=no&topn=no&gc0=-1&gc1=-1&gc2=-1&sona=0&refreshts=1502903560000" scrolling="true" id="theIframe"/>
+  <apex:iframe id="theframe" src="/01Z350000006SAa" scrolling="true" height="1000px" width="100%" />
+ -->
+
+<table>
+        <tbody>
+            <tr>
+                <td>
+ <apex:iframe src="https://epaoei--oeiodsta.cs33.my.salesforce.com/servlet/servlet.ChartServer?rsid=0FL350000002Rvh&ruid=00535000000VxDv&did=01Z350000006SAk&s=7&fs=10&tfg=12&tfs=-16777216&explode=0&c=column&cs=0&title=&eh=no&compo=yes&fg=-16777216&bg1=-1&bg2=-1&bgdir=2&dl1=Created+Date&dl2=&l=2&sax=yes&Yman=no&nc=0&actUrl=%2F00Ot0000000Vlpp&sd=4&scv=yes&sct=no&spt=no&bd=yes&cu=USD&ab=X&u=0&vt=0&ab2=Y&u2=0&vt2=0&vl0=Record+Count&spoc=no&topn=no&gc0=-1&gc1=-1&gc2=-1&sona=0&refreshts=1502997566000" />
+ </td>
+ <td>
+ <apex:iframe src="https://epaoei--oeiodsta.cs33.my.salesforce.com/servlet/servlet.ChartServer?rsid=0FL350000002Rvi&ruid=00535000000VxDv&did=01Z350000006SAk&s=7&fs=10&tfg=12&tfs=-16777216&explode=0&c=funnel&cs=0&title=&eh=no&compo=no&fg=-16777216&bg1=-1&bg2=-1&bgdir=2&dl1=Active&dl2=&l=1&sax=yes&Yman=no&nc=0&actUrl=%2F00Ot0000000Vlps&sd=4&scv=yes&sct=no&spt=no&bd=yes&cu=USD&ab=X&u=0&vt=0&ab2=Y&u2=0&vt2=0&vl0=Record+Count&spoc=no&topn=no&gc0=-1&gc1=-1&gc2=-1&sona=0&refreshts=1502997559000" />
+ </td>
+ </tr>
+ </tbody>
+ </table>
+
+</apex:page>

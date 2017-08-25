@@ -13,6 +13,10 @@
         <name>AWL_Phone_Number__c</name>
     </fields>
     <fields>
+        <label><!-- Applicant Name (Last, First, MI) --></label>
+        <name>Applicant_Name_Last_First_MI__c</name>
+    </fields>
+    <fields>
         <label><!-- Approval Step --></label>
         <name>Approval_Step__c</name>
     </fields>
@@ -20,6 +24,38 @@
         <label><!-- Approver 2 --></label>
         <name>Approver_2__c</name>
         <relationshipLabel><!-- Forms (Approver 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Billing Instructions --></label>
+        <name>Billing_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Books &amp; Materials --></label>
+        <name>Books_Materials__c</name>
+    </fields>
+    <fields>
+        <label><!-- Continued Service Agreement Expiration --></label>
+        <name>Continued_Service_Agreement_Expiration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Continued Service Agreement --></label>
+        <name>Continued_Service_Agreement__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Course Number Code --></label>
+        <name>Course_Number_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Course Title --></label>
+        <name>Course_Title__c</name>
     </fields>
     <fields>
         <label><!-- Current Approver --></label>
@@ -71,8 +107,48 @@
         <name>Date__c</name>
     </fields>
     <fields>
+        <label><!-- Date of Birth --></label>
+        <name>Date_of_Birth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Describe special accommodation --></label>
+        <name>Describe_special_accommodation__c</name>
+    </fields>
+    <fields>
         <label><!-- Description --></label>
         <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direct Appropriation / Fund --></label>
+        <name>Direct_Appropriation_Fund__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direct Cost Total --></label>
+        <name>Direct_Cost_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Doc / Purchase Order / Requisition # --></label>
+        <name>Doc_Purchase_Order_Requisition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Does applicant need special accomodation --></label>
+        <name>Does_applicant_need_special_accomodation__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- EHRI Employee Number --></label>
+        <name>EHRI_Employee_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Education Level --></label>
+        <name>Education_Level__c</name>
     </fields>
     <fields>
         <help><!-- Clicking the &quot;Employee&apos;s Signature&quot; checkbox will sign this section upon saving the form. --></help>
@@ -87,6 +163,14 @@
     <fields>
         <label><!-- Expire Date --></label>
         <name>Expire_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Owner --></label>
+        <name>Form_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Record Name --></label>
+        <name>Form_Record_Name__c</name>
     </fields>
     <fields>
         <label><!-- Form Status --></label>
@@ -141,6 +225,30 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Furnish Invoice to --></label>
+        <name>Furnish_Invoice_to__c</name>
+        <picklistValues>
+            <masterLabel>No Cost Training</masterLabel>
+            <translation><!-- No Cost Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchase Card Transaction</masterLabel>
+            <translation><!-- Purchase Card Transaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USEPA Cincinnati Finance Center</masterLabel>
+            <translation><!-- USEPA Cincinnati Finance Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USEPA RTP Finance Center</masterLabel>
+            <translation><!-- USEPA RTP Finance Center --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Grade --></label>
+        <name>Grade__c</name>
+    </fields>
+    <fields>
         <label><!-- HR Org Code --></label>
         <name>HR_Org_Code__c</name>
     </fields>
@@ -153,6 +261,14 @@
         <relationshipLabel><!-- Forms --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Home Address --></label>
+        <name>Home_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Home Telephone --></label>
+        <name>Home_Telephone__c</name>
+    </fields>
+    <fields>
         <label><!-- Immediate Supervisor&apos;s Digital Signature --></label>
         <name>Immediate_Supervisor_s_Digital_Signature__c</name>
     </fields>
@@ -161,12 +277,80 @@
         <name>Immediate_Supervisor_s_Signature__c</name>
     </fields>
     <fields>
+        <label><!-- Indirect Appropriation / Fund --></label>
+        <name>Indirect_Appropriation_Fund__c</name>
+    </fields>
+    <fields>
+        <label><!-- Indirect Total --></label>
+        <name>Indirect_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location of Training Site --></label>
+        <name>Location_of_Training_Site__c</name>
+    </fields>
+    <fields>
         <label><!-- Name --></label>
         <name>Name__c</name>
     </fields>
     <fields>
+        <label><!-- Name and Address of Vendor --></label>
+        <name>Name_and_Address_of_Vendor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-Government Contribution Cost --></label>
+        <name>Non_Government_Contribution_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Office Telephone --></label>
+        <name>Office_Telephone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization Mailing Address --></label>
+        <name>Organization_Mailing_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay Plan --></label>
+        <name>Pay_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Per diem --></label>
+        <name>Per_diem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Position Level --></label>
+        <name>Position_Level__c</name>
+        <picklistValues>
+            <masterLabel>Executive</masterLabel>
+            <translation><!-- Executive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manager</masterLabel>
+            <translation><!-- Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-supervisory</masterLabel>
+            <translation><!-- Non-supervisory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supervisory</masterLabel>
+            <translation><!-- Supervisory --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Position Title --></label>
+        <name>Position_Title__c</name>
+    </fields>
+    <fields>
         <label><!-- Quantity --></label>
         <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Series --></label>
+        <name>Series__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step --></label>
+        <name>Step__c</name>
     </fields>
     <fields>
         <label><!-- Submitted on Behalf Of --></label>
@@ -174,17 +358,425 @@
         <relationshipLabel><!-- Forms --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Support Email --></label>
+        <name>Support_Email__c</name>
+    </fields>
+    <fields>
         <label><!-- Timesheet Approver --></label>
         <name>Timesheet_Approver__c</name>
         <relationshipLabel><!-- Forms (Timesheet Approver) --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- Unlicensed Owner --></label>
-        <name>Unauthenticated_Owner__c</name>
-        <relationshipLabel><!-- Forms (Unlicensed Owner) --></relationshipLabel>
+        <label><!-- Training Accreditation Indicator --></label>
+        <name>Training_Accreditation_Indicator__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
     </fields>
     <fields>
-        <label><!-- Unlicensed Owner Email --></label>
+        <label><!-- Training Credit Type Code --></label>
+        <name>Training_Credit_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>01 Semester Hours</masterLabel>
+            <translation><!-- 01 Semester Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02 Quarter Hours</masterLabel>
+            <translation><!-- 02 Quarter Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03 Continuing Education Unit</masterLabel>
+            <translation><!-- 03 Continuing Education Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04 Not Applicable</masterLabel>
+            <translation><!-- 04 Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05 CEP - OIG 24 HR Reg</masterLabel>
+            <translation><!-- 05 CEP - OIG 24 HR Reg --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training Credit --></label>
+        <name>Training_Credit__c</name>
+        <picklistValues>
+            <masterLabel>0 credit</masterLabel>
+            <translation><!-- 0 credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 credit</masterLabel>
+            <translation><!-- 1 credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 credits</masterLabel>
+            <translation><!-- 2 credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 credits</masterLabel>
+            <translation><!-- 3 credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 credits</masterLabel>
+            <translation><!-- 4 credits --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training Delivery Type Code --></label>
+        <name>Training_Delivery_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>01 Traditional Classroom</masterLabel>
+            <translation><!-- 01 Traditional Classroom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02 On the Job</masterLabel>
+            <translation><!-- 02 On the Job --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03 Technology Based</masterLabel>
+            <translation><!-- 03 Technology Based --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04 Conference/Workshop</masterLabel>
+            <translation><!-- 04 Conference/Workshop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05 Blended</masterLabel>
+            <translation><!-- 05 Blended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06 Correspondence</masterLabel>
+            <translation><!-- 06 Correspondence --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training Designation Type Code --></label>
+        <name>Training_Designation_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>01 Undergraduate Credit</masterLabel>
+            <translation><!-- 01 Undergraduate Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02 Graduate Credit</masterLabel>
+            <translation><!-- 02 Graduate Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03 Continuing Education Unit</masterLabel>
+            <translation><!-- 03 Continuing Education Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04 Post Graduate Credit</masterLabel>
+            <translation><!-- 04 Post Graduate Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05 Not Applicable</masterLabel>
+            <translation><!-- 05 Not Applicable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training Duty Hours --></label>
+        <name>Training_Duty_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Training End Date --></label>
+        <name>Training_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Training Non-Duty Hours --></label>
+        <name>Training_Non_Duty_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Training Objective --></label>
+        <name>Training_Objective__c</name>
+    </fields>
+    <fields>
+        <label><!-- Training Purpose Type --></label>
+        <name>Training_Purpose_Type__c</name>
+        <picklistValues>
+            <masterLabel>01 Program/Mission</masterLabel>
+            <translation><!-- 01 Program/Mission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02 New Work Assignment</masterLabel>
+            <translation><!-- 02 New Work Assignment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03 Improve Present Performance</masterLabel>
+            <translation><!-- 03 Improve Present Performance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04 Future Staffing Needs</masterLabel>
+            <translation><!-- 04 Future Staffing Needs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05 Develop Unavailable Skill</masterLabel>
+            <translation><!-- 05 Develop Unavailable Skill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06 Retention</masterLabel>
+            <translation><!-- 06 Retention --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training Source Type Code --></label>
+        <name>Training_Source_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>01 Government Internal</masterLabel>
+            <translation><!-- 01 Government Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02 Government External</masterLabel>
+            <translation><!-- 02 Government External --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03 Non-government</masterLabel>
+            <translation><!-- 03 Non-government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04 Government State/Local</masterLabel>
+            <translation><!-- 04 Government State/Local --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05 Foreign Governments and Orgs</masterLabel>
+            <translation><!-- 05 Foreign Governments and Orgs --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training Start Date --></label>
+        <name>Training_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Training Sub Type Code --></label>
+        <name>Training_Sub_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>01-Legal</masterLabel>
+            <translation><!-- 01-Legal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02-Medical &amp; Health</masterLabel>
+            <translation><!-- 02-Medical &amp; Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03-Scientific</masterLabel>
+            <translation><!-- 03-Scientific --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04-Engineering &amp; Architecture</masterLabel>
+            <translation><!-- 04-Engineering &amp; Architecture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05-Human Resources</masterLabel>
+            <translation><!-- 05-Human Resources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06-Budget/Finance Business Admin.</masterLabel>
+            <translation><!-- 06-Budget/Finance Business Admin. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>07-Planning &amp; Analysis</masterLabel>
+            <translation><!-- 07-Planning &amp; Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>08-Information Technology</masterLabel>
+            <translation><!-- 08-Information Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>09-Project Management</masterLabel>
+            <translation><!-- 09-Project Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10-Acquisition</masterLabel>
+            <translation><!-- 10-Acquisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11-Logistic Specialty</masterLabel>
+            <translation><!-- 11-Logistic Specialty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12-Security</masterLabel>
+            <translation><!-- 12-Security --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13-Clerical (non-supervisory clerical/admin)</masterLabel>
+            <translation><!-- 13-Clerical (non-supervisory clerical/admin) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14-Trade &amp; Craft</masterLabel>
+            <translation><!-- 14-Trade &amp; Craft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15-Foreign Affairs</masterLabel>
+            <translation><!-- 15-Foreign Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16-Leadership/Manager/Communications</masterLabel>
+            <translation><!-- 16-Leadership/Manager/Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20-Pre-supervisory Program</masterLabel>
+            <translation><!-- 20-Pre-supervisory Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21-Supervisory Program</masterLabel>
+            <translation><!-- 21-Supervisory Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>22-Management Program</masterLabel>
+            <translation><!-- 22-Management Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>23-Leadership Development Program</masterLabel>
+            <translation><!-- 23-Leadership Development Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24-SES Candidate Development Program</masterLabel>
+            <translation><!-- 24-SES Candidate Development Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25-Executive Development</masterLabel>
+            <translation><!-- 25-Executive Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>26-Mentoring Program</masterLabel>
+            <translation><!-- 26-Mentoring Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>27-Coaching Program</masterLabel>
+            <translation><!-- 27-Coaching Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>32-Mandated Training</masterLabel>
+            <translation><!-- 32-Mandated Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>34-Leadership Skills</masterLabel>
+            <translation><!-- 34-Leadership Skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>35-Internal Agency Program</masterLabel>
+            <translation><!-- 35-Internal Agency Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>36-Technical Skills</masterLabel>
+            <translation><!-- 36-Technical Skills --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training Type Code --></label>
+        <name>Training_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>01 Training Program Area (Technical)</masterLabel>
+            <translation><!-- 01 Training Program Area (Technical) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02 Development Training Area (Cross-functional)</masterLabel>
+            <translation><!-- 02 Development Training Area (Cross-functional) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03 Basic Training Area (Orientation etc)</masterLabel>
+            <translation><!-- 03 Basic Training Area (Orientation etc) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Travel --></label>
+        <name>Travel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tuition and Fees --></label>
+        <name>Tuition_and_Fees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of Appointment --></label>
+        <name>Type_of_Appointment__c</name>
+        <picklistValues>
+            <masterLabel>10 Career (Permanent)</masterLabel>
+            <translation><!-- 10 Career (Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15 Career-Conditional (Permanent)</masterLabel>
+            <translation><!-- 15 Career-Conditional (Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20 Nonpermanent (Competitive Service)</masterLabel>
+            <translation><!-- 20 Nonpermanent (Competitive Service) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30 Schedule A (Permanent)</masterLabel>
+            <translation><!-- 30 Schedule A (Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>32 Schedule B (Permanent)</masterLabel>
+            <translation><!-- 32 Schedule B (Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>35 Schedule D (Permanent)</masterLabel>
+            <translation><!-- 35 Schedule D (Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>36 Executive (Permanent)</masterLabel>
+            <translation><!-- 36 Executive (Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>38 Other (Permanent)</masterLabel>
+            <translation><!-- 38 Other (Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>40 Schedule A (Nonpermanent)</masterLabel>
+            <translation><!-- 40 Schedule A (Nonpermanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>42 Schedule B (Nonpermanent)</masterLabel>
+            <translation><!-- 42 Schedule B (Nonpermanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>44 Schedule C (Nonpermanent</masterLabel>
+            <translation><!-- 44 Schedule C (Nonpermanent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>45 Schedule D (Nonpermanent)</masterLabel>
+            <translation><!-- 45 Schedule D (Nonpermanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>46 Executive (Nonpermanent)</masterLabel>
+            <translation><!-- 46 Executive (Nonpermanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>48 Other (Nonpermanent)</masterLabel>
+            <translation><!-- 48 Other (Nonpermanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 Career (Senior Exec Permanent)</masterLabel>
+            <translation><!-- 50 Career (Senior Exec Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>55 Noncareer (Senior Exec Permanent)</masterLabel>
+            <translation><!-- 55 Noncareer (Senior Exec Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60 Limited Term (Nonpermanent)</masterLabel>
+            <translation><!-- 60 Limited Term (Nonpermanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>65 Limited Emergency (Nonpermanent)</masterLabel>
+            <translation><!-- 65 Limited Emergency (Nonpermanent) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type-1 Owner --></label>
+        <name>Unauthenticated_Owner__c</name>
+        <relationshipLabel><!-- Forms (Type-1 Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Owner Email --></label>
         <name>Unlicensed_Owner_Email__c</name>
     </fields>
     <fields>
@@ -213,8 +805,25 @@
         <relationshipLabel><!-- Forms (User Training Officer) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Vendor Email Address --></label>
+        <name>Vendor_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Telephone Number --></label>
+        <name>Vendor_Telephone_Number__c</name>
+    </fields>
+    <fields>
         <label><!-- Work Description --></label>
         <name>Work_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Email Address --></label>
+        <name>Work_Email_Address__c</name>
+    </fields>
+    <fields>
+        <help><!-- Example: 12-34-5678 --></help>
+        <label><!-- 8 Digit Station Symbol --></label>
+        <name>X8_Digit_Station_Symbol__c</name>
     </fields>
     <fields>
         <label><!-- Test --></label>
@@ -296,6 +905,29 @@
             <section>Fields</section>
         </sections>
     </layouts>
+    <layouts>
+        <layout>SF-182</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Section A - TRAINEE INFORMATION --></label>
+            <section>Section A - TRAINEE INFORMATION</section>
+        </sections>
+        <sections>
+            <label><!-- Section B - TRAINEE COURSE DATE --></label>
+            <section>Section B - TRAINEE COURSE DATE</section>
+        </sections>
+        <sections>
+            <label><!-- Section C - COST AND BILLING INFORMATION --></label>
+            <section>Section C - COST AND BILLING INFORMATION</section>
+        </sections>
+    </layouts>
     <recordTypes>
         <label><!-- BAP Provisioning --></label>
         <name>BAP_Provisioning</name>
@@ -309,7 +941,7 @@
         <name>EPA_1900_8a</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- SF 182 --></label>
+        <label><!-- SF-182 --></label>
         <name>SF_182</name>
     </recordTypes>
     <startsWith>Consonant</startsWith>
@@ -317,6 +949,10 @@
         <errorMessage><!-- Phone Number can&apos;t be 123456 --></errorMessage>
         <name>Test</name>
     </validationRules>
+    <webLinks>
+        <label><!-- Email_Support --></label>
+        <name>Email_Support</name>
+    </webLinks>
     <webLinks>
         <label><!-- Printable_View --></label>
         <name>Printable_View</name>
