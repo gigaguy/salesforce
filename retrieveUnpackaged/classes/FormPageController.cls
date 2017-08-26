@@ -108,6 +108,7 @@ public class FormPageController {
             return message;
         }
         catch(exception ex){
+            message = string.valueof(ex);
             return message;
         }
     }

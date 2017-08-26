@@ -145,7 +145,6 @@
     },
 	saveAndSubmit : function(component, event, helper){
         component.find("edit").get("e.recordSave").fire();
-        component.set("v.isOpen2", false);
         
         // Temporary checking for modals to allow submitting from new form or view form
         var formID;
@@ -318,48 +317,43 @@
         component.set("v.message", null);
 		component.set("v.pageStatus", "viewFormTypes");
 	},
-    openModel: function(component, event, helper) {
-      // for Display Model,set the "isOpen" attribute to "true"
-      component.set("v.isOpen2", true);
-      component.set("v.isOpen", false);  
-   },
-   closeModel: function(component, event, helper) {
-      // for Hide/Close Model,set the "isOpen" attribute to "False"  
-      //component.find("edit").get("e.recordSave").fire();
-       
-       component.set("v.isOpen2", false);
-       component.set("v.isOpen", true);
-       
-       /* var formID;
+	confirmSubmit : function(component, event) {
+		var resp = confirm("Are you sure you want to submit the form?");
+        var action;
+        var formID;
         if (component.get("v.modalName") == 'viewForm') {
             formID = component.get("v.viewFormID");
         }
         else {
             formID = component.get("v.newForm.Id");
         }
-        component.set("v.viewFormID", formID);
-        component.set("v.modalName", "viewForm");
         
-        var action = component.get("c.viewForm");
-        action.setParams({
-			"sID" : component.get("v.sessionID"),
-            "formID" : formID
+        if(resp === true){
+            action = component.get("c.saveAndSubmit");
+            action.setParams({
+            "formID": formID,
         });
-        action.setCallback(this,function(resp){
-			console.log('in action');
-            var state = resp.getState();
-            console.log('state: ' +state);
-            if(state === 'SUCCESS'){
-                component.set("v.oldForm", resp.getReturnValue());
-            }
-            else if(state === 'ERROR'){
-                var errors = resp.getError();
-                for(var i = 0 ;i < errors.length;i++){
-                    console.log(errors[i].message);
-                }
-            }
+        	}
+        $A.enqueueAction(action);
+	},
+    confirmDelete : function(component, event) {
+		var resp = confirm("Are you sure you want to delete the form?");
+        var action;
+        var formID;
+        if (component.get("v.modalName") == 'viewForm') {
+            formID = component.get("v.viewFormID");
+        }
+        else {
+            formID = component.get("v.newForm.Id");
+        }
+        
+        if(resp === true){
+            action = component.get("c.deleteFormJS");
+            action.setParams({
+            "formID": formID,
         });
-        $A.enqueueAction(action); */
-   }
+        	}
+        $A.enqueueAction(action);
+	}
 	
 })
