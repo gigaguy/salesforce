@@ -13,6 +13,42 @@
         <name>AWL_Phone_Number__c</name>
     </fields>
     <fields>
+        <label><!-- Additional Data Required --></label>
+        <name>Additional_Data_Required__c</name>
+        <picklistValues>
+            <masterLabel>Acute Tox</masterLabel>
+            <translation><!-- Acute Tox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ecological</masterLabel>
+            <translation><!-- Ecological --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Efficacy</masterLabel>
+            <translation><!-- Efficacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental</masterLabel>
+            <translation><!-- Environmental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Chemistry</masterLabel>
+            <translation><!-- Product Chemistry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residue</masterLabel>
+            <translation><!-- Residue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Toxicology</masterLabel>
+            <translation><!-- Toxicology --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Applicant Name (Last, First, MI) --></label>
         <name>Applicant_Name_Last_First_MI__c</name>
     </fields>
@@ -32,6 +68,22 @@
     <fields>
         <label><!-- Books &amp; Materials --></label>
         <name>Books_Materials__c</name>
+    </fields>
+    <fields>
+        <label><!-- Branch --></label>
+        <name>Branch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Chemical Name --></label>
+        <name>Chemical_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comment(s) --></label>
+        <name>Comment_s__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company --></label>
+        <name>Company__c</name>
     </fields>
     <fields>
         <label><!-- Continued Service Agreement Expiration --></label>
@@ -61,6 +113,50 @@
         <label><!-- Current Approver --></label>
         <name>Current_Approver__c</name>
         <relationshipLabel><!-- Forms (Current Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Data Deficiencies --></label>
+        <name>Data_Deficiencies__c</name>
+        <picklistValues>
+            <masterLabel>Acute Tox</masterLabel>
+            <translation><!-- Acute Tox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ecological</masterLabel>
+            <translation><!-- Ecological --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Efficacy</masterLabel>
+            <translation><!-- Efficacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental</masterLabel>
+            <translation><!-- Environmental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labeling</masterLabel>
+            <translation><!-- Labeling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitted</masterLabel>
+            <translation><!-- Not Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Chemistry</masterLabel>
+            <translation><!-- Product Chemistry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residue</masterLabel>
+            <translation><!-- Residue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Toxicology</masterLabel>
+            <translation><!-- Toxicology --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Date 1 A/L Hours --></label>
@@ -103,12 +199,24 @@
         <name>Date_2_Total_Work_Hours__c</name>
     </fields>
     <fields>
+        <label><!-- Date &quot;75 Day&quot; Letter sent --></label>
+        <name>Date_75_Day_Letter_sent__c</name>
+    </fields>
+    <fields>
         <label><!-- Date --></label>
         <name>Date__c</name>
     </fields>
     <fields>
         <label><!-- Date of Birth --></label>
         <name>Date_of_Birth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Describe Interactions with Company --></label>
+        <name>Describe_Interactions_with_Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Describe (other) --></label>
+        <name>Describe_other__c</name>
     </fields>
     <fields>
         <label><!-- Describe special accommodation --></label>
@@ -163,6 +271,10 @@
     <fields>
         <label><!-- Expire Date --></label>
         <name>Expire_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fee Category --></label>
+        <name>Fee_Category__c</name>
     </fields>
     <fields>
         <label><!-- Form Owner --></label>
@@ -269,6 +381,10 @@
         <name>Home_Telephone__c</name>
     </fields>
     <fields>
+        <label><!-- If not, date &quot;Fix&quot; expected --></label>
+        <name>If_not_date_Fix_expected__c</name>
+    </fields>
+    <fields>
         <label><!-- Immediate Supervisor&apos;s Digital Signature --></label>
         <name>Immediate_Supervisor_s_Digital_Signature__c</name>
     </fields>
@@ -283,6 +399,50 @@
     <fields>
         <label><!-- Indirect Total --></label>
         <name>Indirect_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interim Consideration --></label>
+        <name>Interim_Consideration__c</name>
+        <picklistValues>
+            <masterLabel>Agency Initiated</masterLabel>
+            <translation><!-- Agency Initiated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registrant Initiated</masterLabel>
+            <translation><!-- Registrant Initiated --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is the &quot;Fix&quot; in-house? --></label>
+        <name>Is_the_Fix_in_house__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>n/a</masterLabel>
+            <translation><!-- n/a --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Issue(s) - Describe in detail --></label>
+        <name>Issue_s_Describe_in_detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Late Risk Assessment --></label>
+        <name>Late_Risk_Assessment__c</name>
+        <picklistValues>
+            <masterLabel>Ecological</masterLabel>
+            <translation><!-- Ecological --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Human Health</masterLabel>
+            <translation><!-- Human Health --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Location of Training Site --></label>
@@ -301,12 +461,32 @@
         <name>Non_Government_Contribution_Cost__c</name>
     </fields>
     <fields>
+        <label><!-- Notified this is the last negotiation? --></label>
+        <name>Notified_this_is_the_last_negotiation__c</name>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Office Telephone --></label>
         <name>Office_Telephone__c</name>
     </fields>
     <fields>
         <label><!-- Organization Mailing Address --></label>
         <name>Organization_Mailing_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original PRIA Due Date --></label>
+        <name>Original_PRIA_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- PRIA Decision Time Frame --></label>
+        <name>PRIA_Decision_Time_Frame__c</name>
     </fields>
     <fields>
         <label><!-- Pay Plan --></label>
@@ -341,8 +521,56 @@
         <name>Position_Title__c</name>
     </fields>
     <fields>
+        <label><!-- Previous Negotiated Due Date 1 --></label>
+        <name>Previous_Negotiated_Due_Date_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Previous Negotiated Due Date 2 --></label>
+        <name>Previous_Negotiated_Due_Date_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Previous Negotiated Due Date 3 --></label>
+        <name>Previous_Negotiated_Due_Date_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Previous Negotiated Due Date 4 --></label>
+        <name>Previous_Negotiated_Due_Date_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Chemistry --></label>
+        <name>Product_Chemistry__c</name>
+        <picklistValues>
+            <masterLabel>Acute Tox</masterLabel>
+            <translation><!-- Acute Tox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ecological Data</masterLabel>
+            <translation><!-- Ecological Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Efficacy</masterLabel>
+            <translation><!-- Efficacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labeling</masterLabel>
+            <translation><!-- Labeling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other (describe)</masterLabel>
+            <translation><!-- Other (describe) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Proposed New PRIA Due Date --></label>
+        <name>Proposed_New_PRIA_Due_Date__c</name>
+    </fields>
+    <fields>
         <label><!-- Quantity --></label>
         <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rationale for Proposed Due Date --></label>
+        <name>Rationale_for_Proposed_Due_Date__c</name>
     </fields>
     <fields>
         <label><!-- Series --></label>
@@ -356,6 +584,18 @@
         <label><!-- Submitted on Behalf Of --></label>
         <name>Submitted_on_Behalf_Of__c</name>
         <relationshipLabel><!-- Forms --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Summary of Deficiency Type(s) --></label>
+        <name>Summary_of_Deficiency_Type_s__c</name>
+        <picklistValues>
+            <masterLabel>Deficiencies (D)</masterLabel>
+            <translation><!-- Deficiencies (D) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitted (N)</masterLabel>
+            <translation><!-- Not Submitted (N) --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Support Email --></label>
@@ -695,6 +935,42 @@
         <name>Tuition_and_Fees__c</name>
     </fields>
     <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Administrative-FR Notice</masterLabel>
+            <translation><!-- Administrative-FR Notice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSF</masterLabel>
+            <translation><!-- CSF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Impurities Review</masterLabel>
+            <translation><!-- Impurities Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Label</masterLabel>
+            <translation><!-- Label --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other - Comment Field</masterLabel>
+            <translation><!-- Other - Comment Field --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Process</masterLabel>
+            <translation><!-- Public Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Risk Issues Environmental</masterLabel>
+            <translation><!-- Risk Issues Environmental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Risk Issues Human Health</masterLabel>
+            <translation><!-- Risk Issues Human Health --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Type of Appointment --></label>
         <name>Type_of_Appointment__c</name>
         <picklistValues>
@@ -821,6 +1097,18 @@
         <name>Work_Email_Address__c</name>
     </fields>
     <fields>
+        <label><!-- &quot;75 Day&quot; Letter sent? --></label>
+        <name>X75_Day_Letter_sent__c</name>
+        <picklistValues>
+            <masterLabel>No (add reason for none in comments below)</masterLabel>
+            <translation><!-- No (add reason for none in comments below) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes (add date sent below)</masterLabel>
+            <translation><!-- Yes (add date sent below) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <help><!-- Example: 12-34-5678 --></help>
         <label><!-- 8 Digit Station Symbol --></label>
         <name>X8_Digit_Station_Symbol__c</name>
@@ -906,6 +1194,21 @@
         </sections>
     </layouts>
     <layouts>
+        <layout>PRIAv5</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Negotiated Due Date Reason --></label>
+            <section>Negotiated Due Date Reason</section>
+        </sections>
+    </layouts>
+    <layouts>
         <layout>SF-182</layout>
         <sections>
             <label><!-- Custom Links --></label>
@@ -939,6 +1242,10 @@
     <recordTypes>
         <label><!-- EPA-1900-8a --></label>
         <name>EPA_1900_8a</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- PRIAv5 --></label>
+        <name>PRIAv5</name>
     </recordTypes>
     <recordTypes>
         <label><!-- SF-182 --></label>
