@@ -11,5 +11,4 @@
     <tab>standard-Chatter</tab>
     <tab>standard-File</tab>
     <tab>standard-Quote</tab>
-    <tab>Weekly__c</tab>
 </CustomApplication>

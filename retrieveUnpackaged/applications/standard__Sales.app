@@ -12,5 +12,4 @@
     <tab>standard-Product2</tab>
     <tab>standard-Forecasting3</tab>
     <tab>standard-Quote</tab>
-    <tab>Weekly__c</tab>
 </CustomApplication>

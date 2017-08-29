@@ -175,11 +175,7 @@
     <tab>standard-Lead</tab>
     <tab>standard-Knowledge</tab>
     <tab>standard-LiveAgent</tab>
-    <tab>Weekly__c</tab>
     <workspaceMappings>
-        <mapping>
-            <tab>Weekly__c</tab>
-        </mapping>
         <mapping>
             <tab>standard-Account</tab>
         </mapping>

@@ -10,5 +10,4 @@
     <tab>standard-Answers</tab>
     <tab>standard-report</tab>
     <tab>standard-Dashboard</tab>
-    <tab>Weekly__c</tab>
 </CustomApplication>

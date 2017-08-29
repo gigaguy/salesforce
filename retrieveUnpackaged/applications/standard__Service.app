@@ -10,5 +10,4 @@
     <tab>standard-Dashboard</tab>
     <tab>standard-Chatter</tab>
     <tab>standard-File</tab>
-    <tab>Weekly__c</tab>
 </CustomApplication>

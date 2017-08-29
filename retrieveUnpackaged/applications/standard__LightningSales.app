@@ -24,6 +24,5 @@
     <tab>standard-News</tab>
     <tab>standard-Forecasting3</tab>
     <tab>standard-Quote</tab>
-    <tab>Weekly__c</tab>
     <uiType>Lightning</uiType>
 </CustomApplication>
