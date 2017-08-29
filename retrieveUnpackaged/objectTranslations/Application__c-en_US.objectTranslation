@@ -26,6 +26,29 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Application Description --></label>
+        <name>Application_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Owner --></label>
+        <name>Application_Owner__c</name>
+        <relationshipLabel><!-- Applications (Application Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Application Technical POC --></label>
+        <name>Application_Technical_POC__c</name>
+        <relationshipLabel><!-- Applications (Application Technical POC) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Custom Fields Required --></label>
+        <name>Custom_Fields_Required__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please provide additional requirements for data availability --></help>
+        <label><!-- Data Availability Comments --></label>
+        <name>Data_Availability_Comments__c</name>
+    </fields>
+    <fields>
         <help><!-- Does the data need to be exported or integrated into another system? Is searching, bulk upload, etc. required? --></help>
         <label><!-- Data Availability External Requirement --></label>
         <name>Data_Availability_External_Requirement__c</name>
@@ -41,6 +64,27 @@
             <masterLabel>2: Required and owner willing to pay</masterLabel>
             <translation><!-- 2: Required and owner willing to pay --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Data Integration Requirements --></label>
+        <name>Data_Integration_Requirements__c</name>
+        <picklistValues>
+            <masterLabel>Employee</masterLabel>
+            <translation><!-- Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- External Access (Public/Extranet) or Internal (Intranet: Anonymous or Authenticated) --></help>
+        <label><!-- Describe End-User Access Requirements --></label>
+        <name>Describe_End_User_Access_Requirements__c</name>
+    </fields>
+    <fields>
+        <label><!-- Describe End-User Community --></label>
+        <name>Describe_End_User_Community__c</name>
     </fields>
     <fields>
         <help><!-- Electronic signature requirement. --></help>
@@ -158,9 +202,99 @@
         <name>Notes__c</name>
     </fields>
     <fields>
+        <label><!-- Office --></label>
+        <name>Office__c</name>
+        <relationshipLabel><!-- Applications (Office) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Other Data Integration Requirements --></label>
+        <name>Other_Data_Integration_Requirements__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other System Integration Requirements --></label>
+        <name>Other_System_Integration_Requirements__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter in primary contact. Additional contacts may be added in the application contacts related list --></help>
+        <label><!-- Primary Contact --></label>
+        <name>Primary_Contact__c</name>
+        <relationshipLabel><!-- Applications --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Responsible Org --></label>
         <name>Responsible_Org__c</name>
+        <relationshipLabel><!-- Applications (Responsible Org) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter in the name of the Sandbox that was granted for the prospect application --></help>
+        <label><!-- Sandbox Name --></label>
+        <name>Sandbox_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Roles, Permission Sets, Groups, Access Requirements, etc? --></help>
+        <label><!-- Security Requirements --></label>
+        <name>Security_Requirements__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Objects Required --></label>
+        <name>Standard_Objects_Required__c</name>
+        <picklistValues>
+            <masterLabel>Activities</masterLabel>
+            <translation><!-- Activities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact</masterLabel>
+            <translation><!-- Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dashboards</masterLabel>
+            <translation><!-- Dashboards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Files</masterLabel>
+            <translation><!-- Files --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Notes</masterLabel>
+            <translation><!-- Notes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization</masterLabel>
+            <translation><!-- Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reports</masterLabel>
+            <translation><!-- Reports --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status By --></label>
+        <name>Status_By__c</name>
         <relationshipLabel><!-- Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status Date --></label>
+        <name>Status_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Narrative --></label>
+        <name>Status_Narrative__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Integration Requirements --></label>
+        <name>System_Integration_Requirements__c</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PASTA</masterLabel>
+            <translation><!-- PASTA --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Type --></label>
@@ -182,14 +316,14 @@
         </sections>
     </layouts>
     <layouts>
-        <layout>Candidate Application Layout</layout>
+        <layout>BAP Application</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
     </layouts>
     <layouts>
-        <layout>Forms Inventory Layout</layout>
+        <layout>Forms</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
@@ -199,13 +333,28 @@
             <section>Fields</section>
         </sections>
     </layouts>
+    <layouts>
+        <layout>Prospect Application Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <recordTypes>
-        <label><!-- Candidate Application --></label>
-        <name>Candidate_Application</name>
+        <label><!-- BAP Application --></label>
+        <name>BAP_Application</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- Forms Inventory --></label>
-        <name>Forms_Inventory</name>
+        <label><!-- Form --></label>
+        <name>Forms</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Prospect Application --></label>
+        <name>Prospect_Application</name>
     </recordTypes>
     <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please provide additional requirements for data availability when selected as desired or required. --></errorMessage>
+        <name>Data_Availability_Comments_Required</name>
+    </validationRules>
 </CustomObjectTranslation>
