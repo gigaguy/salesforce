@@ -71,6 +71,16 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Grade__c</fullName>
+        <externalId>false</externalId>
+        <label>Grade</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>HR_Org__c</fullName>
         <externalId>false</externalId>
         <label>HR Org</label>
@@ -82,7 +92,6 @@
     </fields>
     <fields>
         <fullName>LAN_ID__c</fullName>
-        <description>primary key to AD file</description>
         <externalId>true</externalId>
         <label>LAN ID</label>
         <length>50</length>
@@ -107,10 +116,31 @@
         <type>Hierarchy</type>
     </fields>
     <fields>
+        <fullName>Occ_Series__c</fullName>
+        <externalId>false</externalId>
+        <label>Occupational Series</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>PASTA_Person_ID__c</fullName>
         <externalId>true</externalId>
         <label>PASTA Person ID</label>
-        <length>12</length>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pay_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>Pay Plan</label>
+        <length>8</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
@@ -143,10 +173,40 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Position_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Position Title</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Preferred_Name__c</fullName>
         <externalId>false</externalId>
         <label>Preferred Name</label>
         <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SUPV_CODE_DESCR__c</fullName>
+        <externalId>false</externalId>
+        <label>Supervisor Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Step__c</fullName>
+        <externalId>false</externalId>
+        <label>Step</label>
+        <length>2</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
