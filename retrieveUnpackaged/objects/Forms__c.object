@@ -225,6 +225,15 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>SandboxURL__c</fullName>
+        <externalId>false</externalId>
+        <label>SandboxURL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
         <fullName>Submitted_on_Behalf_Of__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
         <description>Submitted on Behalf Of</description>
@@ -242,6 +251,19 @@
         <referenceTo>Contact</referenceTo>
         <relationshipLabel>Forms</relationshipLabel>
         <relationshipName>Forms</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Technical_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Technical Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Technical Contact)</relationshipLabel>
+        <relationshipName>Forms1</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>

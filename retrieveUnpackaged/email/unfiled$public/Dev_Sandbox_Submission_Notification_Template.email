@@ -1,9 +1,9 @@
 <div style='font-size:12.0pt;font-family:"Times New Roman",serif;color:#000000'>
-Dear {!ApprovalRequest.Process_Assignee}, 
+
+A new request, {!Forms__c.Form_Type__c}: &quot;<a href="{!ApprovalRequest.External_URL}">{!Forms__c.Name__c}</a>&quot;, has been submitted for your approval.<br>
+<br>
+In Lightning View - Approve, Reject, and Reassign buttons are at the top right
 <br><br>
-A new request, {!Forms__c.Form_Type__c}: &quot;<a href="{!Forms__c.Link}">{!Forms__c.Name__c}</a>&quot;, has been submitted for your approval.
-<br><br>
-Thank you,
-<br><br>
+Thank you,<br>
 {!Approval_Requesting_User.Name}
 </div>

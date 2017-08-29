@@ -6,12 +6,11 @@
     <name>Development Sandbox Request Submission Notification Template</name>
     <style>none</style>
     <subject>{!Forms__c.Form_Type__c}: &quot;{!Forms__c.Name__c}&quot; Submitted For Your Approval</subject>
-    <textOnly>Dear {!ApprovalRequest.Process_Assignee}, 
+    <textOnly>A new request, {!Forms__c.Form_Type__c}: &quot;{!Forms__c.Name__c}&quot;, has been submitted for your approval.
 
-A new request, {!Forms__c.Form_Type__c}: &quot;{!Forms__c.Name__c}&quot;, has been submitted for your approval.
+In Lightning View - Approve, Reject, and Reassign buttons are at the top right
 
 Thank you,
-
 {!Approval_Requesting_User.Name}</textOnly>
     <type>custom</type>
 </EmailTemplate>

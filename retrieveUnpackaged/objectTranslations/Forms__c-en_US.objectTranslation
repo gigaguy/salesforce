@@ -85,9 +85,18 @@
         <name>Quantity__c</name>
     </fields>
     <fields>
+        <label><!-- SandboxURL --></label>
+        <name>SandboxURL__c</name>
+    </fields>
+    <fields>
         <label><!-- Submitted on Behalf Of --></label>
         <name>Submitted_on_Behalf_Of__c</name>
         <relationshipLabel><!-- Forms --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Technical Contact --></label>
+        <name>Technical_Contact__c</name>
+        <relationshipLabel><!-- Forms (Technical Contact) --></relationshipLabel>
     </fields>
     <layouts>
         <layout>BAP Provisioning Layout</layout>
