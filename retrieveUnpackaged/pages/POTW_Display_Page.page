@@ -1,0 +1,42 @@
+<apex:page standardController="POTW_Facility__c" extensions="POTWDisplayController">
+    <apex:form > 
+        <apex:pageBlock title="Facility Identification" id="entirePage"> 
+            <apex:pageMessages /> 
+            <apex:pageBlockButtons > 
+                <!--apex:commandButton value="Confirm Email Address" action="{!confirmEmail}" disabled="{!surveyAlreadySent}"/-->
+                <apex:commandButton value="Submit Questionnaire Request" action="{!submitRequest}" disabled="{!surveyAlreadySent}"/>
+                <apex:commandButton value="Return to Search Page" action="{!cancelRequest}"/>
+            </apex:pageBlockButtons> 
+            <apex:pageBlockSection columns="1">
+                <apex:outputLabel rendered="{!enableForm}">Please confirm that the following entry is your facility before entering your name, professional title, phone number, and email address. If this is not your facility, click Return to Search Page to try again.</apex:outputLabel>
+                <apex:outputLabel rendered="{!enableForm}">If this is your facility, after filling out the fields below, click Submit Questionnaire Request, and a link to the screener questionnaire will be emailed to you.</apex:outputLabel>
+                <apex:outputLabel rendered="{!surveyAlreadySent}">The screener questionnaire for this facility has already been registered:</apex:outputLabel>
+                <apex:outputField rendered="{!surveyAlreadySent}" value="{!POTW_Facility__c.Professional_Title__c}" style="width: 60%"/>
+                <apex:outputField rendered="{!surveyAlreadySent}" value="{!POTW_Facility__c.Date_Sent__c}" style="width: 80%"/>
+                <apex:outputLabel rendered="{!surveyAlreadySent}"><br />If you believe this facility was registered in error, please contact the EPA POTW Screener Questionnaire Help Line:<br /><br />
+                    <table frame="box" cellpadding="3">
+                        <tr><td>Eastern Research Group, Inc.</td></tr>
+                        <tr><td>Local: 703-633-XXXX</td></tr>
+                        <tr><td>Toll-free: 1-xxx-xxx-xxxx</td></tr>
+                        <tr><td>POTWhelp@erg.com</td></tr>
+                    </table>
+                </apex:outputLabel>
+                <apex:outputLabel />
+                <apex:outputField value="{!POTW_Facility__c.Name}" style="width: 60%"/>
+                <apex:outputField value="{!POTW_Facility__c.Address1__c}" style="width: 80%"/>
+                <apex:outputField value="{!POTW_Facility__c.Address2__c}" style="width: 80%"/>
+                <apex:outputField value="{!POTW_Facility__c.City__c}" style="width: 80%"/>
+                <apex:outputField value="{!POTW_Facility__c.State__c}" style="width: 40%"/> 
+                <apex:outputField value="{!POTW_Facility__c.ZIP__c}" style="width: 40%"/> 
+                <apex:outputField value="{!POTW_Facility__c.NPDES_ID__c}" style="width: 40%"/> 
+                <apex:outputLabel />
+                <apex:inputField value="{!POTW_Facility__c.First_Name__c}" rendered="{!enableForm}" style="width: 15%" />
+                <apex:inputField value="{!POTW_Facility__c.Last_Name__c}" rendered="{!enableForm}" style="width: 15%" />
+                <apex:inputField value="{!POTW_Facility__c.Professional_Title__c}" rendered="{!enableForm}" style="width: 15%" />
+                <apex:inputField value="{!POTW_Facility__c.Phone__c}" rendered="{!enableForm}" style="width: 15%" />
+                <apex:inputField value="{!POTW_Facility__c.Email_Address__c}" rendered="{!enableForm}" style="width: 15%" />
+                <apex:inputField value="{!POTW_Facility__c.Confirm_Email_Address__c}" rendered="{!enableForm}" style="width: 15%" />
+            </apex:pageBlockSection>
+        </apex:pageBlock> 
+    </apex:form>
+</apex:page>

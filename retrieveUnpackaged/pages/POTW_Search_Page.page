@@ -1,0 +1,156 @@
+<apex:page controller="POTWSearchController" sidebar="false">
+  <apex:form >
+  <apex:pageMessages id="errors" />
+    <h1>Welcome to the Registration Page for the National Study of Nutrient Removal and Secondary Technologies: 2016 POTW Screener Questionnaire</h1>
+    <p>EPA is conducting a national study focused on nutrient removal at municipal wastewater treatment plants, also called publicly owned treatment works (POTW). This page will allow you to identify your facility and register a questionnaire for your facility.</p>
+    <p>Use the ‘Facility Search’ boxes to identify your facility. Begin by selecting your state’s two letter code from the drop-down menu. Then type other search terms in any search box. As you type, possible matches for your entry are displayed under Search Results.</p>
+    <p>Once you have identifed your facility, click on its ‘Facility Name’  from the list of Search Results to proceed to register your facility for the screener questionnaire. If you are unable to locate your facility in the registration list, please contact the EPA POTW Screener Questionnaire Help Line:</p>
+    <table frame="box">
+        <tr><td>Eastern Research Group, Inc.</td></tr>
+        <tr><td>Local: 703-633-XXXX</td></tr>
+        <tr><td>Toll-free: 1-xxx-xxx-xxxx</td></tr>
+        <tr><td>POTWhelp@erg.com</td></tr>
+    </table><br />
+  <apex:pageBlock title="Screener Questionnaire Registration" mode="edit">
+
+  <table width="100%" border="0">
+  <tr>  
+    <td width="250" valign="top">
+
+      <apex:pageBlock title="Facility Search" mode="edit" id="criteria">
+
+      <script type="text/javascript">
+      function doSearch() {
+        searchServer(
+          document.getElementById("facName").value,
+          document.getElementById("city").value,
+          document.getElementById("state").options[document.getElementById("state").selectedIndex].value,
+          document.getElementById("zip").value,
+          document.getElementById("npdes").value
+          );
+      }
+      </script> 
+
+      <apex:actionFunction name="searchServer" action="{!runSearch}" rerender="results,debug,errors">
+          <apex:param name="facName" value="" />
+          <apex:param name="city" value="" />
+          <apex:param name="state" value="" />
+          <apex:param name="zip" value="" />
+          <apex:param name="npdes" value="" />
+      </apex:actionFunction>
+
+      <table cellpadding="2" cellspacing="2">
+      <tr>
+        <td style="font-weight:bold;">State<br/>
+          <select id="state" onchange="doSearch();">
+            <option value=""></option>
+            <apex:repeat value="{!states}" var="state">
+              <option value="{!state}">{!state}</option>
+            </apex:repeat>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="font-weight:bold;">Facility Name<br/>
+        <input type="text" id="facName" onkeyup="doSearch();"/>
+        </td>
+      </tr>
+      <tr>
+        <td style="font-weight:bold;">City<br/>
+        <input type="text" id="city" onkeyup="doSearch();"/>
+        </td>
+      </tr>
+      <tr>
+        <td style="font-weight:bold;">ZIP<br/>
+        <input type="text" id="zip" onkeyup="doSearch();"/>
+        </td>
+      </tr>
+      <tr>
+        <td style="font-weight:bold;">NPDES ID<br/>
+        <input type="text" id="npdes" onkeyup="doSearch();"/>
+        </td>
+      </tr>
+      </table>
+      </apex:pageBlock>
+    </td>
+    <td valign="top">
+
+    <apex:pageBlock title="Search Results ({!numFacs})"  mode="edit" id="results">
+        <apex:pageBlockTable value="{!facs}" var="fac">
+            <apex:column >
+                <apex:facet name="header">
+                    <apex:commandLink value="Facility Name --- Click link to select facility." action="{!toggleSort}" rerender="results,debug">
+                        <apex:param name="sortField" value="Name" assignTo="{!sortField}"/>
+                    </apex:commandLink>
+                </apex:facet>
+                <apex:outputLink value="/apex/POTW_Display_Page?id={!fac.id}">{!fac.Name}</apex:outputLink>
+            </apex:column>
+
+            <apex:column >
+                <apex:facet name="header">
+                    <apex:commandLink value="Address 1" action="{!toggleSort}" rerender="results,debug">
+                        <apex:param name="sortField" value="Address1__c" assignTo="{!sortField}"/>
+                    </apex:commandLink>
+                </apex:facet>
+                <apex:outputField value="{!fac.Address1__c}"/>
+            </apex:column>
+
+            <apex:column >
+                <apex:facet name="header">
+                    <apex:commandLink value="Address 2" action="{!toggleSort}" rerender="results,debug">
+                        <apex:param name="sortField" value="Address2__c" assignTo="{!sortField}"/>
+                    </apex:commandLink>
+                </apex:facet>
+                <apex:outputField value="{!fac.Address2__c}"/>
+            </apex:column>
+
+            <apex:column >
+                <apex:facet name="header">
+                    <apex:commandLink value="City" action="{!toggleSort}" rerender="results,debug">
+                        <apex:param name="sortField" value="City__c" assignTo="{!sortField}"/>
+                    </apex:commandLink>
+                </apex:facet>
+                <apex:outputField value="{!fac.City__c}"/>
+            </apex:column>
+
+            <apex:column >
+                <apex:facet name="header">
+                    <apex:commandLink value="State" action="{!toggleSort}" rerender="results,debug">
+                        <apex:param name="sortField" value="State__c" assignTo="{!sortField}"/>
+                    </apex:commandLink>
+                </apex:facet>
+                <apex:outputField value="{!fac.State__c}"/>
+            </apex:column>
+
+            <apex:column >
+                <apex:facet name="header">
+                    <apex:commandLink value="ZIP" action="{!toggleSort}" rerender="results,debug">
+                        <apex:param name="sortField" value="ZIP__c" assignTo="{!sortField}"/>
+                    </apex:commandLink>
+                </apex:facet>
+                <apex:outputField value="{!fac.ZIP__c}"/>
+            </apex:column>
+
+            <apex:column >
+                <apex:facet name="header">
+                    <apex:commandLink value="NPDES ID" action="{!toggleSort}" rerender="results,debug">
+                        <apex:param name="sortField" value="NPDES_ID__c" assignTo="{!sortField}"/>
+                    </apex:commandLink>
+                </apex:facet>
+                <apex:outputField value="{!fac.NPDES_ID__c}"/>
+            </apex:column>
+
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+
+    </td>
+  </tr>
+  </table>
+
+  <!--apex:pageBlock title="Debug - SOQL" id="debug">
+      <apex:outputText value="{!debugSoql}" />           
+  </apex:pageBlock-->    
+
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>
