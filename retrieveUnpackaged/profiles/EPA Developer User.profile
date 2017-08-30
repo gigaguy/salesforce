@@ -1075,7 +1075,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Forms__c.Additional_Data_Required__c</field>
+        <field>Forms__c.Additional_Data_Required_del__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1221,11 +1221,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.Describe_Interactions_with_Company__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Forms__c.Describe_other__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1426,6 +1421,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.Original_PRIA_Due_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.Other_Description__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

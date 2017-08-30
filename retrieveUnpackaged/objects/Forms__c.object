@@ -65,7 +65,7 @@
         <type>Phone</type>
     </fields>
     <fields>
-        <fullName>Additional_Data_Required__c</fullName>
+        <fullName>Additional_Data_Required_del__c</fullName>
         <externalId>false</externalId>
         <label>Additional Data Required</label>
         <required>false</required>
@@ -110,7 +110,7 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-        <visibleLines>8</visibleLines>
+        <visibleLines>4</visibleLines>
     </fields>
     <fields>
         <fullName>Applicant_Name_Last_First_MI__c</fullName>
@@ -334,7 +334,7 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-        <visibleLines>10</visibleLines>
+        <visibleLines>5</visibleLines>
     </fields>
     <fields>
         <fullName>Date_1_A_L_Hours__c</fullName>
@@ -480,17 +480,6 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
-    </fields>
-    <fields>
-        <fullName>Describe_other__c</fullName>
-        <externalId>false</externalId>
-        <label>Describe (other)</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Describe_special_accommodation__c</fullName>
@@ -987,7 +976,7 @@
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>MultiselectPicklist</type>
+        <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
             <valueSetDefinition>
@@ -1002,7 +991,6 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>Location_of_Training_Site__c</fullName>
@@ -1099,6 +1087,17 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Other_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>PRIA_Decision_Time_Frame__c</fullName>
         <externalId>false</externalId>
         <label>PRIA Decision Time Frame</label>
@@ -1179,7 +1178,7 @@
     <fields>
         <fullName>Previous_Negotiated_Due_Date_1__c</fullName>
         <externalId>false</externalId>
-        <label>Previous Negotiated Due Date 1</label>
+        <label>Previous Due Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -1188,7 +1187,7 @@
     <fields>
         <fullName>Previous_Negotiated_Due_Date_2__c</fullName>
         <externalId>false</externalId>
-        <label>Previous Negotiated Due Date 2</label>
+        <label>Previous Due Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -1197,7 +1196,7 @@
     <fields>
         <fullName>Previous_Negotiated_Due_Date_3__c</fullName>
         <externalId>false</externalId>
-        <label>Previous Negotiated Due Date 3</label>
+        <label>Previous Due Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -1206,7 +1205,7 @@
     <fields>
         <fullName>Previous_Negotiated_Due_Date_4__c</fullName>
         <externalId>false</externalId>
-        <label>Previous Negotiated Due Date 4</label>
+        <label>Previous Due Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -1246,7 +1245,7 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-        <visibleLines>5</visibleLines>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>Proposed_New_PRIA_Due_Date__c</fullName>
@@ -2019,7 +2018,7 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-        <visibleLines>8</visibleLines>
+        <visibleLines>4</visibleLines>
     </fields>
     <fields>
         <fullName>Type_of_Appointment__c</fullName>
@@ -2246,7 +2245,7 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Yes (add date sent below)</fullName>
+                    <fullName>Yes (provide date sent)</fullName>
                     <default>false</default>
                 </value>
                 <value>
@@ -2306,7 +2305,7 @@
         <description>BAP Provisioning Forms</description>
         <label>BAP Provisioning</label>
         <picklistValues>
-            <picklist>Additional_Data_Required__c</picklist>
+            <picklist>Additional_Data_Required_del__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
                 <default>false</default>
@@ -2556,7 +2555,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other %28describe%29</fullName>
+                <fullName>Other %28use Other Description field below%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2881,7 +2880,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other - Comment Field</fullName>
+                <fullName>Other - Use Comment Field below</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -2979,7 +2978,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Yes %28add date sent below%29</fullName>
+                <fullName>Yes %28provide date sent below%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2990,7 +2989,7 @@
         <description>Episodic Flexiplace  (workflow)</description>
         <label>EPA-100</label>
         <picklistValues>
-            <picklist>Additional_Data_Required__c</picklist>
+            <picklist>Additional_Data_Required_del__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
                 <default>false</default>
@@ -3240,7 +3239,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other %28describe%29</fullName>
+                <fullName>Other %28use Other Description field below%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3565,7 +3564,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other - Comment Field</fullName>
+                <fullName>Other - Use Comment Field below</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3663,7 +3662,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Yes %28add date sent below%29</fullName>
+                <fullName>Yes %28provide date sent below%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3674,7 +3673,7 @@
         <description>Procurement Request with Routing Slip (workflow)</description>
         <label>EPA-1900-8a</label>
         <picklistValues>
-            <picklist>Additional_Data_Required__c</picklist>
+            <picklist>Additional_Data_Required_del__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
                 <default>false</default>
@@ -3924,7 +3923,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other %28describe%29</fullName>
+                <fullName>Other %28use Other Description field below%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4249,7 +4248,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other - Comment Field</fullName>
+                <fullName>Other - Use Comment Field below</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4347,7 +4346,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Yes %28add date sent below%29</fullName>
+                <fullName>Yes %28provide date sent below%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4358,7 +4357,7 @@
         <description>Recommendation of Division Directors, Negotiated Due Dates</description>
         <label>PRIAv5</label>
         <picklistValues>
-            <picklist>Additional_Data_Required__c</picklist>
+            <picklist>Additional_Data_Required_del__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
                 <default>false</default>
@@ -4608,7 +4607,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other %28describe%29</fullName>
+                <fullName>Other %28use Other Description field below%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4933,7 +4932,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other - Comment Field</fullName>
+                <fullName>Other - Use Comment Field below</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5031,7 +5030,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Yes %28add date sent below%29</fullName>
+                <fullName>Yes %28provide date sent below%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5042,7 +5041,7 @@
         <description>Authorization, Agreement and Certification of Training</description>
         <label>SF-182</label>
         <picklistValues>
-            <picklist>Additional_Data_Required__c</picklist>
+            <picklist>Additional_Data_Required_del__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
                 <default>false</default>
@@ -5292,7 +5291,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other %28describe%29</fullName>
+                <fullName>Other %28use Other Description field below%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5617,7 +5616,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other - Comment Field</fullName>
+                <fullName>Other - Use Comment Field below</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5715,7 +5714,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Yes %28add date sent below%29</fullName>
+                <fullName>Yes %28provide date sent below%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
