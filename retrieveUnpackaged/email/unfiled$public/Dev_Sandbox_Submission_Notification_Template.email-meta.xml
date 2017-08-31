@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notification to Approver that a form has been submitted for them to approve/reject.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Development Sandbox Request Submission Notification Template</name>
+    <style>none</style>
+    <subject>{!Forms__c.Form_Type__c}: &quot;{!Forms__c.Name__c}&quot; Submitted For Your Approval</subject>
+    <textOnly>A new request, {!Forms__c.Form_Type__c}: &quot;{!Forms__c.Name__c}&quot;, has been submitted for your approval.
+
+In Lightning View - Approve, Reject, and Reassign buttons are at the top right
+
+Thank you,
+{!Approval_Requesting_User.Name}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Form</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Forms</value>
+    </caseValues>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expire Date --></label>
+        <name>Expire_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Status --></label>
+        <name>Form_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted for Approval</masterLabel>
+            <translation><!-- Submitted for Approval --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Form Type --></label>
+        <name>Form_Type__c</name>
+        <picklistValues>
+            <masterLabel>Custom Object</masterLabel>
+            <translation><!-- Custom Object --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Developer Pro Sandbox</masterLabel>
+            <translation><!-- Developer Pro Sandbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Developer Sandbox</masterLabel>
+            <translation><!-- Developer Sandbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Sandbox</masterLabel>
+            <translation><!-- Full Sandbox --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- HR Org Code --></label>
+        <name>HR_Org_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Organization --></label>
+        <lookupFilter>
+            <errorMessage><!-- The HR Org doesn&apos;t exist. --></errorMessage>
+        </lookupFilter>
+        <name>HR_Organization__c</name>
+        <relationshipLabel><!-- Forms --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- SandboxURL --></label>
+        <name>SandboxURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submitted on Behalf Of --></label>
+        <name>Submitted_on_Behalf_Of__c</name>
+        <relationshipLabel><!-- Forms --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Technical Contact --></label>
+        <name>Technical_Contact__c</name>
+        <relationshipLabel><!-- Forms (Technical Contact) --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>BAP Provisioning Layout</layout>
+        <sections>
+            <label><!-- Auditing --></label>
+            <section>Auditing</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- BAP Provisioning --></label>
+        <name>BAP_Provisioning</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- EPA-100 --></label>
+        <name>EPA_100</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SF 182 --></label>
+        <name>SF_182</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
