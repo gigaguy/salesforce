@@ -334,6 +334,9 @@
             "formID": formID,
         });
         	}
+        else {action = component.get("c.viewFormJS");
+            action.setParams({"formID": formID,});                       
+        }
         $A.enqueueAction(action);
 	},
     confirmDelete : function(component, event) {
@@ -353,6 +356,9 @@
             "formID": formID,
         });
         	}
+        else {action = component.get("c.viewFormJS");
+            action.setParams({"formID": formID,});                       
+        }
         $A.enqueueAction(action);
 	}
 	

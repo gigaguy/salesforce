@@ -472,6 +472,15 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Decision__c</fullName>
+        <externalId>false</externalId>
+        <label>Decision # (each on its own line)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>Describe_Interactions_with_Company__c</fullName>
         <externalId>false</externalId>
         <label>Describe Interactions with Company</label>
@@ -1133,6 +1142,15 @@
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>Petition__c</fullName>
+        <externalId>false</externalId>
+        <label>Petition # (each on its own line)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>Position_Level__c</fullName>
         <externalId>false</externalId>
         <label>Position Level</label>
@@ -1279,6 +1297,15 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Registration__c</fullName>
+        <externalId>false</externalId>
+        <label>Registration # (each on its own line)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Series__c</fullName>
@@ -2290,6 +2317,15 @@
         <columns>Approval_Step__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>testQ_Forms</fullName>
+        <filterScope>Queue</filterScope>
+        <label>testQ</label>
+        <queue>testQ</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <nameField>
         <displayFormat>{00000}</displayFormat>

@@ -24,13 +24,13 @@
     <!--End Header-->
     
     <!--Body-->
-    <script>
-    if({!profSaved}){alert("Approvers saved successfully!");}
-    </script>
+    <div style="width: 50%; padding-left: 200px;">
     <apex:pageMessage rendered="{!lanError}" severity="error" escape="false" summary="Your User record does not have a valid 'Lan ID'.<br/>Please contact your administrator.<br/<br/>Changes on this page will not be saved." />
     <apex:pageMessage rendered="{!noContact}" severity="error" escape="false" summary="You do not have a Contact record in the system with a valid 'Lan ID'.<br/>Please contact your administrator.<br/<br/>Changes on this page will not be saved." />
+    <apex:pageMessage rendered="{!profSaved}" severity="confirm" escape="false" summary="Approvers saved successfully!" />
     <apex:pageMessages />
-  
+    </div>  
+      
     <div style="width: 75%; padding-left: 200px;">
         <apex:form rendered="{!valid == true}">
             <apex:pageblock >

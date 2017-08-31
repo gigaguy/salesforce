@@ -211,6 +211,10 @@
         <name>Date_of_Birth__c</name>
     </fields>
     <fields>
+        <label><!-- Decision # (each on its own line) --></label>
+        <name>Decision__c</name>
+    </fields>
+    <fields>
         <label><!-- Describe Interactions with Company --></label>
         <name>Describe_Interactions_with_Company__c</name>
     </fields>
@@ -497,6 +501,10 @@
         <name>Per_diem__c</name>
     </fields>
     <fields>
+        <label><!-- Petition # (each on its own line) --></label>
+        <name>Petition__c</name>
+    </fields>
+    <fields>
         <label><!-- Position Level --></label>
         <name>Position_Level__c</name>
         <picklistValues>
@@ -571,6 +579,10 @@
     <fields>
         <label><!-- Rationale for Proposed Due Date --></label>
         <name>Rationale_for_Proposed_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registration # (each on its own line) --></label>
+        <name>Registration__c</name>
     </fields>
     <fields>
         <label><!-- Series --></label>
@@ -1222,6 +1234,10 @@
         <sections>
             <label><!-- Previous Negotiated Due Dates: --></label>
             <section>Previous Negotiated Due Dates:</section>
+        </sections>
+        <sections>
+            <label><!-- Top --></label>
+            <section>Top</section>
         </sections>
         <sections>
             <label><!-- company --></label>
