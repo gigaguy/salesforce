@@ -1402,6 +1402,17 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Training_Accreditation_Indicator__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -3708,6 +3719,689 @@
         <active>true</active>
         <description>Procurement Request with Routing Slip (workflow)</description>
         <label>EPA-1900-8a</label>
+        <picklistValues>
+            <picklist>Additional_Data_Required_del__c</picklist>
+            <values>
+                <fullName>Acute Tox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ecological</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Efficacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Chemistry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Toxicology</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Continued_Service_Agreement__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Data_Deficiencies__c</picklist>
+            <values>
+                <fullName>Acute Tox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ecological</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Efficacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labeling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Chemistry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Toxicology</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Does_applicant_need_special_accomodation__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Form_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted for Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Form_Type__c</picklist>
+            <values>
+                <fullName>Custom Object</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Developer Pro Sandbox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Developer Sandbox</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Full Sandbox</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Furnish_Invoice_to__c</picklist>
+            <values>
+                <fullName>No Cost Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Card Transaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Interim_Consideration__c</picklist>
+            <values>
+                <fullName>Agency Initiated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Registrant Initiated</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_Fix_in_house__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Late_Risk_Assessment__c</picklist>
+            <values>
+                <fullName>Ecological</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Notified_this_is_the_last_negotiation__c</picklist>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Position_Level__c</picklist>
+            <values>
+                <fullName>Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-supervisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisory</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Chemistry__c</picklist>
+            <values>
+                <fullName>Acute Tox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ecological Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Efficacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labeling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28use Other Description field below%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Summary_of_Deficiency_Type_s__c</picklist>
+            <values>
+                <fullName>Deficiencies %28D%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Submitted %28N%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Accreditation_Indicator__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Credit_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Semester Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Quarter Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Continuing Education Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 CEP - OIG 24 HR Reg</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Credit__c</picklist>
+            <values>
+                <fullName>0 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 credits</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Delivery_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Traditional Classroom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 On the Job</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Technology Based</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Conference%2FWorkshop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Blended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06 Correspondence</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Designation_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Undergraduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Graduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Continuing Education Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Post Graduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Purpose_Type__c</picklist>
+            <values>
+                <fullName>01 Program%2FMission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 New Work Assignment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Improve Present Performance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Future Staffing Needs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Develop Unavailable Skill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06 Retention</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Source_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Government Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Government External</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Non-government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Government State%2FLocal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Foreign Governments and Orgs</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Sub_Type_Code__c</picklist>
+            <values>
+                <fullName>01-Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02-Medical %26 Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03-Scientific</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04-Engineering %26 Architecture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05-Human Resources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06-Budget%2FFinance Business Admin%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>07-Planning %26 Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08-Information Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09-Project Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10-Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11-Logistic Specialty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12-Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13-Clerical %28non-supervisory clerical%2Fadmin%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14-Trade %26 Craft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15-Foreign Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16-Leadership%2FManager%2FCommunications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20-Pre-supervisory Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21-Supervisory Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>22-Management Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23-Leadership Development Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24-SES Candidate Development Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25-Executive Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26-Mentoring Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27-Coaching Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32-Mandated Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>34-Leadership Skills</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35-Internal Agency Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36-Technical Skills</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Training Program Area %28Technical%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Development Training Area %28Cross-functional%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Basic Training Area %28Orientation etc%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Administrative-FR Notice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CSF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Impurities Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Label</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other - Use Comment Field below</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Risk Issues Environmental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Appointment__c</picklist>
+            <values>
+                <fullName>10 Career %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15 Career-Conditional %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20 Nonpermanent %28Competitive Service%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 Schedule A %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32 Schedule B %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35 Schedule D %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36 Executive %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>38 Other %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40 Schedule A %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>42 Schedule B %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>44 Schedule C %28Nonpermanent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45 Schedule D %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>46 Executive %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>48 Other %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 Career %28Senior Exec Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>55 Noncareer %28Senior Exec Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60 Limited Term %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>65 Limited Emergency %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>X75_Day_Letter_sent__c</picklist>
+            <values>
+                <fullName>No %28add reason for none in comments below%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes %28provide date sent below%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ORD_111</fullName>
+        <active>true</active>
+        <label>ORD-111</label>
         <picklistValues>
             <picklist>Additional_Data_Required_del__c</picklist>
             <values>

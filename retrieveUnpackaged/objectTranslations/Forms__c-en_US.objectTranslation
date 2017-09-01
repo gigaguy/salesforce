@@ -619,6 +619,10 @@
         <relationshipLabel><!-- Forms (Timesheet Approver) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
         <label><!-- Training Accreditation Indicator --></label>
         <name>Training_Accreditation_Indicator__c</name>
         <picklistValues>
@@ -1206,6 +1210,17 @@
         </sections>
     </layouts>
     <layouts>
+        <layout>ORD-111</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Type of Action --></label>
+            <section>Type of Action</section>
+        </sections>
+    </layouts>
+    <layouts>
         <layout>PRIAv5</layout>
         <sections>
             <label><!-- 75 day letter --></label>
@@ -1286,6 +1301,10 @@
     <recordTypes>
         <label><!-- EPA-1900-8a --></label>
         <name>EPA_1900_8a</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- ORD-111 --></label>
+        <name>ORD_111</name>
     </recordTypes>
     <recordTypes>
         <label><!-- PRIAv5 --></label>

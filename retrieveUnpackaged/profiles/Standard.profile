@@ -1539,6 +1539,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Forms__c.Title__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Forms__c.Training_Accreditation_Indicator__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2514,6 +2519,10 @@
         <recordType>Forms__c.EPA_1900_8a</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Forms__c-ORD-111</layout>
+        <recordType>Forms__c.ORD_111</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Forms__c-PRIAv5</layout>
         <recordType>Forms__c.PRIAv5</recordType>
     </layoutAssignments>
@@ -2971,6 +2980,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Forms__c.EPA_1900_8a</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Forms__c.ORD_111</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

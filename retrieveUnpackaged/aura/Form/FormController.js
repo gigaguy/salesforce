@@ -14,7 +14,9 @@
     },
     openModal: function(component, event, helper) {
         var formID = event.currentTarget.id;
+        var formName = event.currentTarget.name;
         component.set("v.selectedFormId", formID);
+        component.set("v.selectedFormName", formName);
         
 		var action = component.get("c.insertNewForms");
         action.setParams({
@@ -41,7 +43,7 @@
         var formID = event.currentTarget.id;
         component.set("v.viewFormID", formID);
         component.set("v.modalName", "viewForm");
-        
+
         var action = component.get("c.viewForm");
         action.setParams({
 			"sID" : component.get("v.sessionID"),
@@ -49,6 +51,7 @@
         });
         action.setCallback(this,function(resp){
 			console.log('in action');
+
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
