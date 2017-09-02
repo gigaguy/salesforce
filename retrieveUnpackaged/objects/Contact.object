@@ -409,6 +409,16 @@
         <columns>CORE.USERS.FIRST_NAME</columns>
         <columns>CORE.USERS.LAST_NAME</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>SUPV_CODE_DESCR__c</field>
+            <operation>contains</operation>
+            <value>supervisor</value>
+        </filters>
+        <filters>
+            <field>ACCOUNT.NAME</field>
+            <operation>contains</operation>
+            <value>OCFO</value>
+        </filters>
         <label>All Contacts</label>
     </listViews>
     <listViews>
