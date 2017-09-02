@@ -7,6 +7,7 @@
     <aura:attribute name="authenticated" type="boolean" />
     <aura:attribute name="selectedFormId" type="Id"/>
     <aura:attribute name="selectedFormName" type="string"/>
+    <aura:attribute name="hrefInfo" type="string"/>
     <aura:attribute name="viewFormID" type="Id"/>
     <aura:attribute name="newForm" type="Forms__c"/>
     <aura:attribute name="oldForm" type="Forms__c"/>
@@ -122,7 +123,7 @@
                 <aura:iteration var="form" items="{!v.oldForms}">
                     <tr style="background-color: white; width: 100%; border: 1px solid lightgray;">
                         <td style="color: black; padding: 5px; width: 10%; border: 1px solid lightgray; text-align: center;">
-                            <button id="{!form.Id}" onclick="{!c.viewFormJS}">Open Form</button>
+                            <button id="{!form.Id}" name="{!form.Form_Type_Name__c}" onclick="{!c.viewFormJS}">Open Form</button>
                         </td>
                         <td style="color: black; padding: 5px; width: 20%; border: 1px solid lightgray;">
                             {!form.Name}
@@ -160,11 +161,10 @@
                 Status: Not Saved {!v.message}
             </h2>
               
-             <aura:if isTrue="{!v.selectedFormName == 'EPA-100'}">
-                 <h3>
-                  <br/>For help using EPA-100 please contact: <a href="mailto:lspackman@innovateteam.com?subject=Help%20request%3A%20%20EPA-100%20Form" target="_blank">lspackman@innovateteam.com</a>
-              	 </h3>  
-             </aura:if>   
+              <h3>                    
+                  <br/>For help using {!v.selectedFormName} please contact: <a href="{!v.hrefInfo}" target="_blank">lspackman@innovateteam.com</a>
+              </h3>  
+            
             <div aura:id="div1"></div>
           </div>
           <!--BOX BODY-->
@@ -209,7 +209,12 @@
                 <a href="{!'/FormPrintableUnlicensed?fID='+v.viewFormID+'&amp;sid='+v.sessionID}" target="_blank" style="float: right;">
                     <img src="{!$Resource.PDFLogo}"/>
                	</a>
-            </h2>
+            </h2>   
+              
+              <h3>                    
+                  <br/>For help using {!v.selectedFormName} please contact: <a href="{!v.hrefInfo}" target="_blank">lspackman@innovateteam.com</a>
+              </h3>
+              
           </div>
           <!--BOX BODY-->
           <div class="slds-modal__content slds-p-around--medium">

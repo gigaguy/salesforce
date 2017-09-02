@@ -13,8 +13,20 @@
         <name>AWL_Phone_Number__c</name>
     </fields>
     <fields>
+        <label><!-- Action --></label>
+        <name>Action__c</name>
+        <picklistValues>
+            <masterLabel>Existing with Significant Modification to Work</masterLabel>
+            <translation><!-- Existing with Significant Modification to Work --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Additional Data Required --></label>
-        <name>Additional_Data_Required_del__c</name>
+        <name>Additional_Data_Required__c</name>
         <picklistValues>
             <masterLabel>Acute Tox</masterLabel>
             <translation><!-- Acute Tox --></translation>
@@ -78,6 +90,12 @@
         <name>Chemical_Name__c</name>
     </fields>
     <fields>
+        <help><!-- Combined documentation of an organization’s Quality System and application of QA and QC to the single project
+covered by the contract. --></help>
+        <label><!-- Combined doc of org&apos;s Quality System --></label>
+        <name>Combined_doc_of_org_s_Quality_System__c</name>
+    </fields>
+    <fields>
         <label><!-- Comment(s) --></label>
         <name>Comment_s__c</name>
     </fields>
@@ -100,6 +118,34 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract Actions --></label>
+        <name>Contract_Actions__c</name>
+        <picklistValues>
+            <masterLabel>Contract</masterLabel>
+            <translation><!-- Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delivery Order</masterLabel>
+            <translation><!-- Delivery Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Simplified Acquisition</masterLabel>
+            <translation><!-- Simplified Acquisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Task Order</masterLabel>
+            <translation><!-- Task Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work Assignment</masterLabel>
+            <translation><!-- Work Assignment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contractor --></label>
+        <name>Contractor__c</name>
     </fields>
     <fields>
         <label><!-- Course Number Code --></label>
@@ -239,6 +285,10 @@
         <name>Doc_Purchase_Order_Requisition__c</name>
     </fields>
     <fields>
+        <label><!-- Documentation of org’s Quality System --></label>
+        <name>Documentation_of_org_s_Quality_System__c</name>
+    </fields>
+    <fields>
         <label><!-- Does applicant need special accomodation --></label>
         <name>Does_applicant_need_special_accomodation__c</name>
         <picklistValues>
@@ -267,6 +317,39 @@
         <help><!-- Clicking this box digitally dates and signs this form. --></help>
         <label><!-- Employee&apos;s Signature --></label>
         <name>Employee_s_Signature__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does this action involve the collection, generation, use, and/or reporting of environmental data; the design, construction, and operation of environmental technologies; or development of software, models, or methods? --></help>
+        <label><!-- Environmental data or technology? --></label>
+        <name>Environmental_data_or_technology__c</name>
+        <picklistValues>
+            <masterLabel>No (If no, may go directly to &quot;Signatures&quot; Section.)</masterLabel>
+            <translation><!-- No (If no, may go directly to &quot;Signatures&quot; Section.) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Estimated Award $ --></label>
+        <name>Estimated_Award__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated End Date --></label>
+        <name>Estimated_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Start Date --></label>
+        <name>Estimated_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exists --></label>
+        <name>Exists__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Submission Date --></label>
+        <name>Expected_Submission_Date__c</name>
     </fields>
     <fields>
         <label><!-- Expire Date --></label>
@@ -381,6 +464,10 @@
         <name>Home_Telephone__c</name>
     </fields>
     <fields>
+        <label><!-- ID Number --></label>
+        <name>ID_Number__c</name>
+    </fields>
+    <fields>
         <label><!-- If not, date &quot;Fix&quot; expected --></label>
         <name>If_not_date_Fix_expected__c</name>
     </fields>
@@ -445,6 +532,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Lead QA Organization --></label>
+        <name>Lead_QA_Organization__c</name>
+    </fields>
+    <fields>
         <label><!-- Location of Training Site --></label>
         <name>Location_of_Training_Site__c</name>
     </fields>
@@ -457,8 +548,44 @@
         <name>Name_and_Address_of_Vendor__c</name>
     </fields>
     <fields>
+        <label><!-- National Program --></label>
+        <name>National_Program__c</name>
+    </fields>
+    <fields>
         <label><!-- Non-Government Contribution Cost --></label>
         <name>Non_Government_Contribution_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-contract Actions --></label>
+        <name>Non_contract_Actions__c</name>
+        <picklistValues>
+            <masterLabel>CRADA/MTA</masterLabel>
+            <translation><!-- CRADA/MTA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cooperative Agreement</masterLabel>
+            <translation><!-- Cooperative Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Funds In</masterLabel>
+            <translation><!-- Funds In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Funds Out</masterLabel>
+            <translation><!-- Funds Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grant</masterLabel>
+            <translation><!-- Grant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interagency Agreement</masterLabel>
+            <translation><!-- Interagency Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intramural</masterLabel>
+            <translation><!-- Intramural --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Notified this is the last negotiation? --></label>
@@ -489,8 +616,20 @@
         <name>Other_Description__c</name>
     </fields>
     <fields>
+        <label><!-- Other --></label>
+        <name>Other_R2_R5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other --></label>
+        <name>Other_R2__c</name>
+    </fields>
+    <fields>
         <label><!-- PRIA Decision Time Frame --></label>
         <name>PRIA_Decision_Time_Frame__c</name>
+    </fields>
+    <fields>
+        <label><!-- Participating Organization(s) --></label>
+        <name>Participating_Organization_s__c</name>
     </fields>
     <fields>
         <label><!-- Pay Plan --></label>
@@ -569,12 +708,92 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Project Type(s) --></label>
+        <name>Project_Type_s__c</name>
+        <picklistValues>
+            <masterLabel>Decision Support Tools</masterLabel>
+            <translation><!-- Decision Support Tools --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental Measurements</masterLabel>
+            <translation><!-- Environmental Measurements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental Technology</masterLabel>
+            <translation><!-- Environmental Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Informatics</masterLabel>
+            <translation><!-- Informatics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Models\Applications</masterLabel>
+            <translation><!-- Models\Applications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other (use &quot;Other Description&quot; field)</masterLabel>
+            <translation><!-- Other (use &quot;Other Description&quot; field) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Use of Existing Data</masterLabel>
+            <translation><!-- Use of Existing Data --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Proposed New PRIA Due Date --></label>
         <name>Proposed_New_PRIA_Due_Date__c</name>
     </fields>
     <fields>
+        <label><!-- QA Approval Date --></label>
+        <name>QA_Approval_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- QA Category --></label>
+        <name>QA_Category__c</name>
+        <picklistValues>
+            <masterLabel>A</masterLabel>
+            <translation><!-- A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B</masterLabel>
+            <translation><!-- B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>To Be Specified in Individual Actions</masterLabel>
+            <translation><!-- To Be Specified in Individual Actions --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- QA Documentation Options: --></label>
+        <name>QA_Documentation_Options__c</name>
+    </fields>
+    <fields>
+        <label><!-- QA Documentation: --></label>
+        <name>QA_Documentation__c</name>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revision of Existing</masterLabel>
+            <translation><!-- Revision of Existing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- QA Tracking Number --></label>
+        <name>QA_Tracking_Number__c</name>
+    </fields>
+    <fields>
         <label><!-- Quantity --></label>
         <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- R-2 --></label>
+        <name>R_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- R-2 and R-5 --></label>
+        <name>R_2_and_R_5__c</name>
     </fields>
     <fields>
         <label><!-- Rationale for Proposed Due Date --></label>
@@ -620,7 +839,15 @@
     </fields>
     <fields>
         <label><!-- Title --></label>
+        <name>Title_QA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
         <name>Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- To Be Prepared --></label>
+        <name>To_Be_Prepared__c</name>
     </fields>
     <fields>
         <label><!-- Training Accreditation Indicator --></label>
@@ -1097,6 +1324,10 @@
         <relationshipLabel><!-- Forms (User Training Officer) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Vehicle # --></label>
+        <name>Vehicle__c</name>
+    </fields>
+    <fields>
         <label><!-- Vendor Email Address --></label>
         <name>Vendor_Email_Address__c</name>
     </fields>
@@ -1212,12 +1443,40 @@
     <layouts>
         <layout>ORD-111</layout>
         <sections>
+            <label><!-- Before Award Documentation (Competitive Vehicles Only) --></label>
+            <section>Before Award Documentation (Competitive Vehicles Only)</section>
+        </sections>
+        <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
         <sections>
+            <label><!-- General Information --></label>
+            <section>General Information</section>
+        </sections>
+        <sections>
+            <label><!-- QA Documentation --></label>
+            <section>QA Documentation</section>
+        </sections>
+        <sections>
+            <label><!-- Status of QA Documentation --></label>
+            <section>Status of QA Documentation</section>
+        </sections>
+        <sections>
+            <label><!-- Top --></label>
+            <section>Top</section>
+        </sections>
+        <sections>
             <label><!-- Type of Action --></label>
             <section>Type of Action</section>
+        </sections>
+        <sections>
+            <label><!-- spacer1 --></label>
+            <section>spacer1</section>
+        </sections>
+        <sections>
+            <label><!-- spacer2 --></label>
+            <section>spacer2</section>
         </sections>
     </layouts>
     <layouts>

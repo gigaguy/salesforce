@@ -65,7 +65,30 @@
         <type>Phone</type>
     </fields>
     <fields>
-        <fullName>Additional_Data_Required_del__c</fullName>
+        <fullName>Action__c</fullName>
+        <externalId>false</externalId>
+        <label>Action</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Existing with Significant Modification to Work</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Additional_Data_Required__c</fullName>
         <externalId>false</externalId>
         <label>Additional Data Required</label>
         <required>false</required>
@@ -191,6 +214,17 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Combined_doc_of_org_s_Quality_System__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Combined documentation of an organization’s Quality System and application of QA and QC to the single project
+covered by the contract.</inlineHelpText>
+        <label>Combined doc of org&apos;s Quality System</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Comment_s__c</fullName>
         <externalId>false</externalId>
         <label>Comment(s)</label>
@@ -243,6 +277,53 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Contract_Actions__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Actions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Contract</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Delivery Order</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Simplified Acquisition</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Task Order</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Work Assignment</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contractor__c</fullName>
+        <externalId>false</externalId>
+        <label>Contractor</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Course_Number_Code__c</fullName>
@@ -549,6 +630,15 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Documentation_of_org_s_Quality_System__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Documentation of org’s Quality System</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Does_applicant_need_special_accomodation__c</fullName>
         <externalId>false</externalId>
         <label>Does applicant need special accomodation</label>
@@ -615,6 +705,77 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Environmental_data_or_technology__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Does this action involve the collection, generation, use, and/or reporting of environmental data; the design, construction, and operation of environmental technologies; or development of software, models, or methods?</inlineHelpText>
+        <label>Environmental data or technology?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No (If no, may go directly to &quot;Signatures&quot; Section.)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Estimated_Award__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Award $</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Exists__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Exists</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Submission_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected Submission Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Expire_Date__c</fullName>
@@ -864,6 +1025,17 @@
         <type>Phone</type>
     </fields>
     <fields>
+        <fullName>ID_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>ID Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>If_not_date_Fix_expected__c</fullName>
         <externalId>false</externalId>
         <label>If not, date &quot;Fix&quot; expected</label>
@@ -1002,6 +1174,17 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Lead_QA_Organization__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead QA Organization</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Location_of_Training_Site__c</fullName>
         <externalId>false</externalId>
         <label>Location of Training Site</label>
@@ -1032,6 +1215,17 @@
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>National_Program__c</fullName>
+        <externalId>false</externalId>
+        <label>National Program</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Non_Government_Contribution_Cost__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -1042,6 +1236,50 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Non_contract_Actions__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-contract Actions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cooperative Agreement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CRADA/MTA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Interagency Agreement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Funds In</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Funds Out</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Grant</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Intramural</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
     </fields>
     <fields>
         <fullName>Notified_this_is_the_last_negotiation__c</fullName>
@@ -1107,6 +1345,26 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Other_R2_R5__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Other</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Other_R2__c</fullName>
+        <externalId>false</externalId>
+        <label>Other</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>PRIA_Decision_Time_Frame__c</fullName>
         <externalId>false</externalId>
         <label>PRIA Decision Time Frame</label>
@@ -1116,6 +1374,15 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Participating_Organization_s__c</fullName>
+        <externalId>false</externalId>
+        <label>Participating Organization(s)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Pay_Plan__c</fullName>
@@ -1266,6 +1533,50 @@
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>Project_Type_s__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Type(s)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Environmental Measurements</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Use of Existing Data</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Models\Applications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Informatics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Decision Support Tools</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Environmental Technology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other (use &quot;Describe Other&quot; field)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>Proposed_New_PRIA_Due_Date__c</fullName>
         <externalId>false</externalId>
         <label>Proposed New PRIA Due Date</label>
@@ -1273,6 +1584,87 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>QA_Approval_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>QA Approval Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>QA_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>QA Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>A</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>B</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>To Be Specified in Individual Actions</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>QA_Documentation_Options__c</fullName>
+        <defaultValue>&quot;For solicitations, complete items 1-4; for all actions other than solicitations, complete items 3-4. All documentation specified under “Other” must be defined in the organizational Quality Management Plan and be consistent with requirements defined in EPA Manual 5360 A1 (CIO 2105-P-01-0). For all items checked below, there must be adequate information in the SOW (or its appendices) for the submitter to develop this documentation. Where applicable, reference a specific section of the SOW. (R-2 refers to EPA Requirements for Quality Management Plans (QA/R-2) (EPA/240/B-01/002) and R-5 refers to EPA Requirements for Quality Assurance Project Plans (QA/R-5) (EPA/240/B-01/003). Copies of these documents are available at http://www.epa.gov/quality/qa_docs.html)&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>QA Documentation Options:</label>
+        <length>760</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>QA_Documentation__c</fullName>
+        <externalId>false</externalId>
+        <label>QA Documentation:</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Revision of Existing</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>QA_Tracking_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>QA Tracking Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Quantity__c</fullName>
@@ -1286,6 +1678,24 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R_2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>R-2</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>R_2_and_R_5__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>R-2 and R-5</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Rationale_for_Proposed_Due_Date__c</fullName>
@@ -1402,6 +1812,17 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Title_QA__c</fullName>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Title__c</fullName>
         <externalId>false</externalId>
         <label>Title</label>
@@ -1411,6 +1832,15 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>To_Be_Prepared__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>To Be Prepared</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Training_Accreditation_Indicator__c</fullName>
@@ -2229,6 +2659,17 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Vehicle__c</fullName>
+        <externalId>false</externalId>
+        <label>Vehicle #</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Vendor_Email_Address__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -2352,7 +2793,18 @@
         <description>BAP Provisioning Forms</description>
         <label>BAP Provisioning</label>
         <picklistValues>
-            <picklist>Additional_Data_Required_del__c</picklist>
+            <picklist>Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Data_Required__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
                 <default>false</default>
@@ -2394,6 +2846,29 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Actions__c</picklist>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Simplified Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Task Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work Assignment</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2444,6 +2919,17 @@
             <picklist>Does_applicant_need_special_accomodation__c</picklist>
             <values>
                 <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Environmental_data_or_technology__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -2554,6 +3040,37 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Non_contract_Actions__c</picklist>
+            <values>
+                <fullName>CRADA%2FMTA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cooperative Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interagency Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intramural</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Notified_this_is_the_last_negotiation__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -2603,6 +3120,63 @@
             </values>
             <values>
                 <fullName>Other %28use Other Description field below%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type_s__c</picklist>
+            <values>
+                <fullName>Decision Support Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Measurements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Informatics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Models%5CApplications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28use %22Other Description%22 field%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Use of Existing Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_Category__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>To Be Specified in Individual Actions</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_Documentation__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revision of Existing</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3036,7 +3610,18 @@
         <description>Episodic Flexiplace  (workflow)</description>
         <label>EPA-100</label>
         <picklistValues>
-            <picklist>Additional_Data_Required_del__c</picklist>
+            <picklist>Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Data_Required__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
                 <default>false</default>
@@ -3078,6 +3663,29 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Actions__c</picklist>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Simplified Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Task Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work Assignment</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3128,6 +3736,17 @@
             <picklist>Does_applicant_need_special_accomodation__c</picklist>
             <values>
                 <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Environmental_data_or_technology__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3238,6 +3857,37 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Non_contract_Actions__c</picklist>
+            <values>
+                <fullName>CRADA%2FMTA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cooperative Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interagency Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intramural</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Notified_this_is_the_last_negotiation__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -3287,6 +3937,63 @@
             </values>
             <values>
                 <fullName>Other %28use Other Description field below%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type_s__c</picklist>
+            <values>
+                <fullName>Decision Support Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Measurements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Informatics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Models%5CApplications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28use %22Other Description%22 field%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Use of Existing Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_Category__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>To Be Specified in Individual Actions</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_Documentation__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revision of Existing</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3720,7 +4427,18 @@
         <description>Procurement Request with Routing Slip (workflow)</description>
         <label>EPA-1900-8a</label>
         <picklistValues>
-            <picklist>Additional_Data_Required_del__c</picklist>
+            <picklist>Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Data_Required__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
                 <default>false</default>
@@ -3762,6 +4480,29 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Actions__c</picklist>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Simplified Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Task Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work Assignment</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3812,6 +4553,17 @@
             <picklist>Does_applicant_need_special_accomodation__c</picklist>
             <values>
                 <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Environmental_data_or_technology__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3922,6 +4674,37 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Non_contract_Actions__c</picklist>
+            <values>
+                <fullName>CRADA%2FMTA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cooperative Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interagency Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intramural</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Notified_this_is_the_last_negotiation__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -3971,6 +4754,63 @@
             </values>
             <values>
                 <fullName>Other %28use Other Description field below%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type_s__c</picklist>
+            <values>
+                <fullName>Decision Support Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Measurements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Informatics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Models%5CApplications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28use %22Other Description%22 field%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Use of Existing Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_Category__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>To Be Specified in Individual Actions</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_Documentation__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revision of Existing</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4403,7 +5243,18 @@
         <active>true</active>
         <label>ORD-111</label>
         <picklistValues>
-            <picklist>Additional_Data_Required_del__c</picklist>
+            <picklist>Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Data_Required__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
                 <default>false</default>
@@ -4445,6 +5296,29 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Actions__c</picklist>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Simplified Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Task Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work Assignment</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4495,6 +5369,17 @@
             <picklist>Does_applicant_need_special_accomodation__c</picklist>
             <values>
                 <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Environmental_data_or_technology__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4605,6 +5490,37 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Non_contract_Actions__c</picklist>
+            <values>
+                <fullName>CRADA%2FMTA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cooperative Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interagency Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intramural</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Notified_this_is_the_last_negotiation__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -4654,6 +5570,63 @@
             </values>
             <values>
                 <fullName>Other %28use Other Description field below%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type_s__c</picklist>
+            <values>
+                <fullName>Decision Support Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Measurements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Informatics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Models%5CApplications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28use %22Other Description%22 field%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Use of Existing Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_Category__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>To Be Specified in Individual Actions</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_Documentation__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revision of Existing</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5087,7 +6060,18 @@
         <description>Recommendation of Division Directors, Negotiated Due Dates</description>
         <label>PRIAv5</label>
         <picklistValues>
-            <picklist>Additional_Data_Required_del__c</picklist>
+            <picklist>Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Data_Required__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
                 <default>false</default>
@@ -5129,6 +6113,29 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Actions__c</picklist>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Simplified Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Task Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work Assignment</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5179,6 +6186,17 @@
             <picklist>Does_applicant_need_special_accomodation__c</picklist>
             <values>
                 <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Environmental_data_or_technology__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5289,6 +6307,37 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Non_contract_Actions__c</picklist>
+            <values>
+                <fullName>CRADA%2FMTA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cooperative Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interagency Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intramural</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Notified_this_is_the_last_negotiation__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -5338,6 +6387,63 @@
             </values>
             <values>
                 <fullName>Other %28use Other Description field below%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type_s__c</picklist>
+            <values>
+                <fullName>Decision Support Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Measurements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Informatics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Models%5CApplications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28use %22Other Description%22 field%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Use of Existing Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_Category__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>To Be Specified in Individual Actions</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_Documentation__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revision of Existing</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5771,7 +6877,18 @@
         <description>Authorization, Agreement and Certification of Training</description>
         <label>SF-182</label>
         <picklistValues>
-            <picklist>Additional_Data_Required_del__c</picklist>
+            <picklist>Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Data_Required__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
                 <default>false</default>
@@ -5813,6 +6930,29 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Actions__c</picklist>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Simplified Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Task Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work Assignment</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5863,6 +7003,17 @@
             <picklist>Does_applicant_need_special_accomodation__c</picklist>
             <values>
                 <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Environmental_data_or_technology__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5973,6 +7124,37 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Non_contract_Actions__c</picklist>
+            <values>
+                <fullName>CRADA%2FMTA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cooperative Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interagency Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intramural</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Notified_this_is_the_last_negotiation__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
@@ -6022,6 +7204,63 @@
             </values>
             <values>
                 <fullName>Other %28use Other Description field below%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type_s__c</picklist>
+            <values>
+                <fullName>Decision Support Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Measurements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Informatics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Models%5CApplications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28use %22Other Description%22 field%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Use of Existing Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_Category__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>To Be Specified in Individual Actions</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_Documentation__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revision of Existing</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

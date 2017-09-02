@@ -15,9 +15,11 @@
     openModal: function(component, event, helper) {
         var formID = event.currentTarget.id;
         var formName = event.currentTarget.name;
+        var hrefInfo = "mailto:lspackman@innovateteam.com?subject=Help%20request%3A%20%20"+formName+"%20Form"
         component.set("v.selectedFormId", formID);
         component.set("v.selectedFormName", formName);
-        
+        component.set("v.hrefInfo", hrefInfo);
+         
 		var action = component.get("c.insertNewForms");
         action.setParams({
 			"sID" : component.get("v.sessionID"),
@@ -41,8 +43,12 @@
     },
     viewFormJS : function(component, event, helper){
         var formID = event.currentTarget.id;
+        var formName = event.currentTarget.name;
+        var hrefInfo = "mailto:lspackman@innovateteam.com?subject=Help%20request%3A%20%20"+formName+"%20Form"
         component.set("v.viewFormID", formID);
         component.set("v.modalName", "viewForm");
+        component.set("v.selectedFormName", formName);
+        component.set("v.hrefInfo", hrefInfo);
 
         var action = component.get("c.viewForm");
         action.setParams({
