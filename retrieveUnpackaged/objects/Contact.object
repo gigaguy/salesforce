@@ -410,14 +410,14 @@
         <columns>CORE.USERS.LAST_NAME</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>SUPV_CODE_DESCR__c</field>
+            <field>CONTACT.TITLE</field>
             <operation>contains</operation>
-            <value>supervisor</value>
+            <value>information</value>
         </filters>
         <filters>
             <field>ACCOUNT.NAME</field>
             <operation>contains</operation>
-            <value>OCFO</value>
+            <value>OGD-</value>
         </filters>
         <label>All Contacts</label>
     </listViews>
