@@ -22,5 +22,6 @@
     <tab>standard-Case</tab>
     <tab>standard-Product2</tab>
     <tab>Session_Holder__c</tab>
+    <tab>Fill_Print</tab>
     <uiType>Lightning</uiType>
 </CustomApplication>

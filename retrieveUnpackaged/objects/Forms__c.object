@@ -147,6 +147,45 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Approval_Routing_Options__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Routing Options</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>SF 182 AA Training Workflow</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SF 182 CI Training Workflow</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SF 182 HQ Training Workflow</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SF 182 Leadership Development Institute Training</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SF 182 Regions Training Form</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SF 182 RTP Training Workflow</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Approval_Step__c</fullName>
         <externalId>false</externalId>
         <label>Approval Step</label>
@@ -168,6 +207,29 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Award_Documentation_before_or_after__c</fullName>
+        <externalId>false</externalId>
+        <label>Before or After Award Documentation?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Before</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>After</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Billing_Instructions__c</fullName>
@@ -212,17 +274,6 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Combined_doc_of_org_s_Quality_System__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <inlineHelpText>Combined documentation of an organization’s Quality System and application of QA and QC to the single project
-covered by the contract.</inlineHelpText>
-        <label>Combined doc of org&apos;s Quality System</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Comment_s__c</fullName>
@@ -592,6 +643,93 @@ covered by the contract.</inlineHelpText>
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>Developed_in_accordance_with__c</fullName>
+        <externalId>false</externalId>
+        <label>Developed in accordance with:</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Select_Documentation_Type__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>R-2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R-5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R-2 and R-5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other (provide details in &quot;Other Details&quot;)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Supplement to Programmatic QA Project Plan (provide name in &quot;Other Details&quot;)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Developed pre-award</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Will be identified in individual Statements of Work/Performance Work Statement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>In Section of Work/Performance Work Statement (give section in &quot;Other Details&quot;)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Documentation of an organization’s Quality System</controllingFieldValue>
+                <valueName>R-2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Documentation of an organization’s Quality System</controllingFieldValue>
+                <controllingFieldValue>Programmatic QA Project Plan with supplements for each specific project</controllingFieldValue>
+                <controllingFieldValue>Combined documentation &amp; application (QA/QC) to contract&apos;s single project</controllingFieldValue>
+                <controllingFieldValue>Programmatic QA Project Plan</controllingFieldValue>
+                <controllingFieldValue>Application of QA and QC activities to the single project covered by the contract</controllingFieldValue>
+                <controllingFieldValue>Documentation of the application of QA and QC activities to applicable project(s)</controllingFieldValue>
+                <valueName>Other (provide details in &quot;Other Details&quot;)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combined documentation &amp; application (QA/QC) to contract&apos;s single project</controllingFieldValue>
+                <valueName>R-2 and R-5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Programmatic QA Project Plan</controllingFieldValue>
+                <controllingFieldValue>Application of QA and QC activities to the single project covered by the contract</controllingFieldValue>
+                <controllingFieldValue>Documentation of the application of QA and QC activities to applicable project(s)</controllingFieldValue>
+                <valueName>R-5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Documentation of the application of QA and QC activities to applicable project(s)</controllingFieldValue>
+                <valueName>Supplement to Programmatic QA Project Plan (provide name in &quot;Other Details&quot;)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Existing documentation of the application of QA and QC activities will be used</controllingFieldValue>
+                <valueName>Developed pre-award</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Existing documentation of the application of QA and QC activities will be used</controllingFieldValue>
+                <valueName>Will be identified in individual Statements of Work/Performance Work Statement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Existing documentation of the application of QA and QC activities will be used</controllingFieldValue>
+                <valueName>In Section of Work/Performance Work Statement (give section in &quot;Other Details&quot;)</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Direct_Appropriation_Fund__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -628,15 +766,6 @@ covered by the contract.</inlineHelpText>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Documentation_of_org_s_Quality_System__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>Documentation of org’s Quality System</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Does_applicant_need_special_accomodation__c</fullName>
@@ -1345,18 +1474,9 @@ covered by the contract.</inlineHelpText>
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Other_R2_R5__c</fullName>
-        <defaultValue>false</defaultValue>
+        <fullName>Other_Details__c</fullName>
         <externalId>false</externalId>
-        <label>Other</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Other_R2__c</fullName>
-        <externalId>false</externalId>
-        <label>Other</label>
+        <label>Other Details</label>
         <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1626,7 +1746,7 @@ covered by the contract.</inlineHelpText>
         <defaultValue>&quot;For solicitations, complete items 1-4; for all actions other than solicitations, complete items 3-4. All documentation specified under “Other” must be defined in the organizational Quality Management Plan and be consistent with requirements defined in EPA Manual 5360 A1 (CIO 2105-P-01-0). For all items checked below, there must be adequate information in the SOW (or its appendices) for the submitter to develop this documentation. Where applicable, reference a specific section of the SOW. (R-2 refers to EPA Requirements for Quality Management Plans (QA/R-2) (EPA/240/B-01/002) and R-5 refers to EPA Requirements for Quality Assurance Project Plans (QA/R-5) (EPA/240/B-01/003). Copies of these documents are available at http://www.epa.gov/quality/qa_docs.html)&quot;</defaultValue>
         <externalId>false</externalId>
         <label>QA Documentation Options:</label>
-        <length>760</length>
+        <length>766</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -1680,24 +1800,6 @@ covered by the contract.</inlineHelpText>
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>R_2__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>R-2</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>R_2_and_R_5__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>R-2 and R-5</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>Rationale_for_Proposed_Due_Date__c</fullName>
         <externalId>false</externalId>
         <label>Rationale for Proposed Due Date</label>
@@ -1716,6 +1818,89 @@ covered by the contract.</inlineHelpText>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Select_Documentation_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Select Documentation Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Award_Documentation_before_or_after__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Documentation of an organization’s Quality System</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Combined documentation &amp; application (QA/QC) to contract&apos;s single project</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Programmatic QA Project Plan</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Application of QA and QC activities to the single project covered by the contract</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Applicable</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Documentation of the application of QA and QC activities to applicable project(s)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Programmatic QA Project Plan with supplements for each specific project</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Existing documentation of the application of QA and QC activities will be used</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Before</controllingFieldValue>
+                <controllingFieldValue>After</controllingFieldValue>
+                <valueName>Documentation of an organization’s Quality System</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Before</controllingFieldValue>
+                <controllingFieldValue>After</controllingFieldValue>
+                <valueName>Combined documentation &amp; application (QA/QC) to contract&apos;s single project</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Before</controllingFieldValue>
+                <valueName>Programmatic QA Project Plan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Before</controllingFieldValue>
+                <valueName>Application of QA and QC activities to the single project covered by the contract</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Before</controllingFieldValue>
+                <controllingFieldValue>After</controllingFieldValue>
+                <valueName>Not Applicable</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>After</controllingFieldValue>
+                <valueName>Documentation of the application of QA and QC activities to applicable project(s)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>After</controllingFieldValue>
+                <valueName>Programmatic QA Project Plan with supplements for each specific project</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>After</controllingFieldValue>
+                <valueName>Existing documentation of the application of QA and QC activities will be used</valueName>
+            </valueSettings>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Series__c</fullName>
@@ -2748,6 +2933,29 @@ covered by the contract.</inlineHelpText>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>of_Approval_Supervisors__c</fullName>
+        <externalId>false</externalId>
+        <label># of Approval Supervisors</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>test__c</fullName>
         <externalId>false</externalId>
         <label>Test</label>
@@ -2839,6 +3047,44 @@ covered by the contract.</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Routing_Options__c</picklist>
+            <values>
+                <fullName>SF 182 AA Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 CI Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 HQ Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 Leadership Development Institute Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 RTP Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 Regions Training Form</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Award_Documentation_before_or_after__c</picklist>
+            <values>
+                <fullName>After</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Before</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -2912,6 +3158,41 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Toxicology</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Developed_in_accordance_with__c</picklist>
+            <values>
+                <fullName>Developed pre-award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation will be identified in individual Statements of Work or Performance Work Statement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Section of Work%2FPerformance Work Statement %28give section in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28provide details in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2 and R-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplement to Programmatic QA Project Plan %28provide name in %22Other Details%22%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3177,6 +3458,29 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Select_Documentation_Type__c</picklist>
+            <values>
+                <fullName>Application of QA and QC activities to the single project covered by the contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Combined documentation %26 application %28QA%2FQC%29 to contract%27s single project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation of an organization%E2%80%99s Quality System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programmatic QA Project Plan</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3600,6 +3904,17 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Yes %28provide date sent below%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>of_Approval_Supervisors__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3656,6 +3971,44 @@ covered by the contract.</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Routing_Options__c</picklist>
+            <values>
+                <fullName>SF 182 AA Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 CI Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 HQ Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 Leadership Development Institute Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 RTP Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 Regions Training Form</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Award_Documentation_before_or_after__c</picklist>
+            <values>
+                <fullName>After</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Before</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -3729,6 +4082,41 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Toxicology</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Developed_in_accordance_with__c</picklist>
+            <values>
+                <fullName>Developed pre-award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation will be identified in individual Statements of Work or Performance Work Statement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Section of Work%2FPerformance Work Statement %28give section in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28provide details in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2 and R-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplement to Programmatic QA Project Plan %28provide name in %22Other Details%22%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3994,6 +4382,29 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Select_Documentation_Type__c</picklist>
+            <values>
+                <fullName>Application of QA and QC activities to the single project covered by the contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Combined documentation %26 application %28QA%2FQC%29 to contract%27s single project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation of an organization%E2%80%99s Quality System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programmatic QA Project Plan</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4417,6 +4828,17 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Yes %28provide date sent below%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>of_Approval_Supervisors__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4473,6 +4895,44 @@ covered by the contract.</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Routing_Options__c</picklist>
+            <values>
+                <fullName>SF 182 AA Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 CI Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 HQ Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 Leadership Development Institute Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 RTP Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 Regions Training Form</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Award_Documentation_before_or_after__c</picklist>
+            <values>
+                <fullName>After</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Before</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -4546,6 +5006,41 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Toxicology</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Developed_in_accordance_with__c</picklist>
+            <values>
+                <fullName>Developed pre-award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation will be identified in individual Statements of Work or Performance Work Statement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Section of Work%2FPerformance Work Statement %28give section in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28provide details in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2 and R-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplement to Programmatic QA Project Plan %28provide name in %22Other Details%22%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4811,6 +5306,29 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Select_Documentation_Type__c</picklist>
+            <values>
+                <fullName>Application of QA and QC activities to the single project covered by the contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Combined documentation %26 application %28QA%2FQC%29 to contract%27s single project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation of an organization%E2%80%99s Quality System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programmatic QA Project Plan</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5237,10 +5755,22 @@ covered by the contract.</inlineHelpText>
                 <default>false</default>
             </values>
         </picklistValues>
+        <picklistValues>
+            <picklist>of_Approval_Supervisors__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
     </recordTypes>
     <recordTypes>
         <fullName>ORD_111</fullName>
         <active>true</active>
+        <description>ORD Quality Assurance Review Form (QARF)</description>
         <label>ORD-111</label>
         <picklistValues>
             <picklist>Action__c</picklist>
@@ -5289,6 +5819,44 @@ covered by the contract.</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Routing_Options__c</picklist>
+            <values>
+                <fullName>SF 182 AA Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 CI Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 HQ Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 Leadership Development Institute Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 RTP Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 Regions Training Form</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Award_Documentation_before_or_after__c</picklist>
+            <values>
+                <fullName>After</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Before</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -5362,6 +5930,41 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Toxicology</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Developed_in_accordance_with__c</picklist>
+            <values>
+                <fullName>Developed pre-award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation will be identified in individual Statements of Work or Performance Work Statement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Section of Work%2FPerformance Work Statement %28give section in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28provide details in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2 and R-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplement to Programmatic QA Project Plan %28provide name in %22Other Details%22%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5627,6 +6230,41 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Select_Documentation_Type__c</picklist>
+            <values>
+                <fullName>Application of QA and QC activities to the single project covered by the contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Combined documentation %26 application %28QA%2FQC%29 to contract%27s single project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation of an organization%E2%80%99s Quality System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation of the application of QA and QC activities to applicable project%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Existing documentation of the application of QA and QC activities will be used</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programmatic QA Project Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programmatic QA Project Plan with supplements for each specific project</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6050,6 +6688,17 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Yes %28provide date sent below%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>of_Approval_Supervisors__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6106,6 +6755,44 @@ covered by the contract.</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Routing_Options__c</picklist>
+            <values>
+                <fullName>SF 182 AA Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 CI Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 HQ Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 Leadership Development Institute Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 RTP Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 Regions Training Form</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Award_Documentation_before_or_after__c</picklist>
+            <values>
+                <fullName>After</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Before</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -6179,6 +6866,41 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Toxicology</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Developed_in_accordance_with__c</picklist>
+            <values>
+                <fullName>Developed pre-award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation will be identified in individual Statements of Work or Performance Work Statement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Section of Work%2FPerformance Work Statement %28give section in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28provide details in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2 and R-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplement to Programmatic QA Project Plan %28provide name in %22Other Details%22%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6444,6 +7166,29 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Select_Documentation_Type__c</picklist>
+            <values>
+                <fullName>Application of QA and QC activities to the single project covered by the contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Combined documentation %26 application %28QA%2FQC%29 to contract%27s single project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation of an organization%E2%80%99s Quality System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programmatic QA Project Plan</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6867,6 +7612,17 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Yes %28provide date sent below%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>of_Approval_Supervisors__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6923,6 +7679,44 @@ covered by the contract.</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Approval_Routing_Options__c</picklist>
+            <values>
+                <fullName>SF 182 AA Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 CI Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 HQ Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 Leadership Development Institute Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 RTP Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SF 182 Regions Training Form</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Award_Documentation_before_or_after__c</picklist>
+            <values>
+                <fullName>After</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Before</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -6996,6 +7790,41 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Toxicology</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Developed_in_accordance_with__c</picklist>
+            <values>
+                <fullName>Developed pre-award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation will be identified in individual Statements of Work or Performance Work Statement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Section of Work%2FPerformance Work Statement %28give section in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28provide details in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2 and R-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplement to Programmatic QA Project Plan %28provide name in %22Other Details%22%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7261,6 +8090,29 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Select_Documentation_Type__c</picklist>
+            <values>
+                <fullName>Application of QA and QC activities to the single project covered by the contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Combined documentation %26 application %28QA%2FQC%29 to contract%27s single project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation of an organization%E2%80%99s Quality System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programmatic QA Project Plan</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7684,6 +8536,17 @@ covered by the contract.</inlineHelpText>
             </values>
             <values>
                 <fullName>Yes %28provide date sent below%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>of_Approval_Supervisors__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

@@ -10,6 +10,7 @@
     <tab>standard-Chatter</tab>
     <tab>standard-home</tab>
     <tab>Session_Holder__c</tab>
+    <tab>Fill_Print</tab>
     <uiType>Lightning</uiType>
     <utilityBar>LightningService_UtilityBar</utilityBar>
 </CustomApplication>

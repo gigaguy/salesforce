@@ -65,6 +65,34 @@
         <name>Applicant_Name_Last_First_MI__c</name>
     </fields>
     <fields>
+        <label><!-- Approval Routing Options --></label>
+        <name>Approval_Routing_Options__c</name>
+        <picklistValues>
+            <masterLabel>SF 182 AA Training Workflow</masterLabel>
+            <translation><!-- SF 182 AA Training Workflow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SF 182 CI Training Workflow</masterLabel>
+            <translation><!-- SF 182 CI Training Workflow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SF 182 HQ Training Workflow</masterLabel>
+            <translation><!-- SF 182 HQ Training Workflow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SF 182 Leadership Development Institute Training</masterLabel>
+            <translation><!-- SF 182 Leadership Development Institute Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SF 182 RTP Training Workflow</masterLabel>
+            <translation><!-- SF 182 RTP Training Workflow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SF 182 Regions Training Form</masterLabel>
+            <translation><!-- SF 182 Regions Training Form --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Approval Step --></label>
         <name>Approval_Step__c</name>
     </fields>
@@ -72,6 +100,18 @@
         <label><!-- Approver 2 --></label>
         <name>Approver_2__c</name>
         <relationshipLabel><!-- Forms (Approver 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Before or After Award Documentation? --></label>
+        <name>Award_Documentation_before_or_after__c</name>
+        <picklistValues>
+            <masterLabel>After</masterLabel>
+            <translation><!-- After --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Before</masterLabel>
+            <translation><!-- Before --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Billing Instructions --></label>
@@ -88,12 +128,6 @@
     <fields>
         <label><!-- Chemical Name --></label>
         <name>Chemical_Name__c</name>
-    </fields>
-    <fields>
-        <help><!-- Combined documentation of an organization’s Quality System and application of QA and QC to the single project
-covered by the contract. --></help>
-        <label><!-- Combined doc of org&apos;s Quality System --></label>
-        <name>Combined_doc_of_org_s_Quality_System__c</name>
     </fields>
     <fields>
         <label><!-- Comment(s) --></label>
@@ -273,6 +307,42 @@ covered by the contract. --></help>
         <name>Description__c</name>
     </fields>
     <fields>
+        <label><!-- Developed in accordance with: --></label>
+        <name>Developed_in_accordance_with__c</name>
+        <picklistValues>
+            <masterLabel>Developed pre-award</masterLabel>
+            <translation><!-- Developed pre-award --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Documentation will be identified in individual Statements of Work or Performance Work Statement</masterLabel>
+            <translation><!-- Documentation will be identified in individual Statements of Work or Performance Work Statement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Section of Work/Performance Work Statement (give section in &quot;Other Details&quot;)</masterLabel>
+            <translation><!-- In Section of Work/Performance Work Statement (give section in &quot;Other Details&quot;) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other (provide details in &quot;Other Details&quot;)</masterLabel>
+            <translation><!-- Other (provide details in &quot;Other Details&quot;) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R-2</masterLabel>
+            <translation><!-- R-2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R-2 and R-5</masterLabel>
+            <translation><!-- R-2 and R-5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R-5</masterLabel>
+            <translation><!-- R-5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supplement to Programmatic QA Project Plan (provide name in &quot;Other Details&quot;)</masterLabel>
+            <translation><!-- Supplement to Programmatic QA Project Plan (provide name in &quot;Other Details&quot;) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Direct Appropriation / Fund --></label>
         <name>Direct_Appropriation_Fund__c</name>
     </fields>
@@ -283,10 +353,6 @@ covered by the contract. --></help>
     <fields>
         <label><!-- Doc / Purchase Order / Requisition # --></label>
         <name>Doc_Purchase_Order_Requisition__c</name>
-    </fields>
-    <fields>
-        <label><!-- Documentation of org’s Quality System --></label>
-        <name>Documentation_of_org_s_Quality_System__c</name>
     </fields>
     <fields>
         <label><!-- Does applicant need special accomodation --></label>
@@ -616,12 +682,8 @@ covered by the contract. --></help>
         <name>Other_Description__c</name>
     </fields>
     <fields>
-        <label><!-- Other --></label>
-        <name>Other_R2_R5__c</name>
-    </fields>
-    <fields>
-        <label><!-- Other --></label>
-        <name>Other_R2__c</name>
+        <label><!-- Other Details --></label>
+        <name>Other_Details__c</name>
     </fields>
     <fields>
         <label><!-- PRIA Decision Time Frame --></label>
@@ -788,20 +850,48 @@ covered by the contract. --></help>
         <name>Quantity__c</name>
     </fields>
     <fields>
-        <label><!-- R-2 --></label>
-        <name>R_2__c</name>
-    </fields>
-    <fields>
-        <label><!-- R-2 and R-5 --></label>
-        <name>R_2_and_R_5__c</name>
-    </fields>
-    <fields>
         <label><!-- Rationale for Proposed Due Date --></label>
         <name>Rationale_for_Proposed_Due_Date__c</name>
     </fields>
     <fields>
         <label><!-- Registration # (each on its own line) --></label>
         <name>Registration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Select Documentation Type --></label>
+        <name>Select_Documentation_Type__c</name>
+        <picklistValues>
+            <masterLabel>Application of QA and QC activities to the single project covered by the contract</masterLabel>
+            <translation><!-- Application of QA and QC activities to the single project covered by the contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Combined documentation &amp; application (QA/QC) to contract&apos;s single project</masterLabel>
+            <translation><!-- Combined documentation &amp; application (QA/QC) to contract&apos;s single project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Documentation of an organization’s Quality System</masterLabel>
+            <translation><!-- Documentation of an organization’s Quality System --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Documentation of the application of QA and QC activities to applicable project(s)</masterLabel>
+            <translation><!-- Documentation of the application of QA and QC activities to applicable project(s) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Existing documentation of the application of QA and QC activities will be used</masterLabel>
+            <translation><!-- Existing documentation of the application of QA and QC activities will be used --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Programmatic QA Project Plan</masterLabel>
+            <translation><!-- Programmatic QA Project Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Programmatic QA Project Plan with supplements for each specific project</masterLabel>
+            <translation><!-- Programmatic QA Project Plan with supplements for each specific project --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Series --></label>
@@ -1361,6 +1451,18 @@ covered by the contract. --></help>
         <name>X8_Digit_Station_Symbol__c</name>
     </fields>
     <fields>
+        <label><!-- # of Approval Supervisors --></label>
+        <name>of_Approval_Supervisors__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Test --></label>
         <name>test__c</name>
     </fields>
@@ -1442,10 +1544,6 @@ covered by the contract. --></help>
     </layouts>
     <layouts>
         <layout>ORD-111</layout>
-        <sections>
-            <label><!-- Before Award Documentation (Competitive Vehicles Only) --></label>
-            <section>Before Award Documentation (Competitive Vehicles Only)</section>
-        </sections>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>

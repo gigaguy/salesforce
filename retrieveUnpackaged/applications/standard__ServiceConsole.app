@@ -176,7 +176,11 @@
     <tab>standard-Knowledge</tab>
     <tab>standard-LiveAgent</tab>
     <tab>Session_Holder__c</tab>
+    <tab>Fill_Print</tab>
     <workspaceMappings>
+        <mapping>
+            <tab>Fill_Print</tab>
+        </mapping>
         <mapping>
             <tab>Session_Holder__c</tab>
         </mapping>

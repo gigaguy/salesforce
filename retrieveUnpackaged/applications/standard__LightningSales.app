@@ -25,5 +25,6 @@
     <tab>standard-News</tab>
     <tab>standard-ForecastingLightning</tab>
     <tab>standard-Quote</tab>
+    <tab>Fill_Print</tab>
     <uiType>Lightning</uiType>
 </CustomApplication>

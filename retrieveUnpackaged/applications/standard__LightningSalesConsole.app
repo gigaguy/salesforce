@@ -17,6 +17,7 @@
     <tab>standard-CollaborationGroup</tab>
     <tab>standard-File</tab>
     <tab>Session_Holder__c</tab>
+    <tab>Fill_Print</tab>
     <uiType>Lightning</uiType>
     <utilityBar>LightningSalesConsole_UtilityBar</utilityBar>
 </CustomApplication>

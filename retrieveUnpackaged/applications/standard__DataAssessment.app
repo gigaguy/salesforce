@@ -4,4 +4,5 @@
     <formFactors>Large</formFactors>
     <tab>standard-DataAssessmentLightning</tab>
     <tab>Session_Holder__c</tab>
+    <tab>Fill_Print</tab>
 </CustomApplication>

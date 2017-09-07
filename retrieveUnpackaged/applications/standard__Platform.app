@@ -8,4 +8,5 @@
     <tab>standard-Chatter</tab>
     <tab>standard-File</tab>
     <tab>Session_Holder__c</tab>
+    <tab>Fill_Print</tab>
 </CustomApplication>
