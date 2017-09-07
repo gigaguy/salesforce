@@ -48,6 +48,10 @@
         <application>standard__ServiceConsole</application>
         <visible>false</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>OEISandboxPostCopy</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <description>Users with access to BAP Provisioning Form</description>
     <fieldPermissions>
         <editable>true</editable>

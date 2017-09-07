@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
+        <fullName>API_Request_Approved_by_Supervisor_Notification</fullName>
+        <description>API Request Approved by Supervisor Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Point_of_Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/API_Request_Approved_by_Supervisor</template>
+    </alerts>
+    <alerts>
         <fullName>API_Request_Completed</fullName>
         <description>API Request Completed</description>
         <protected>false</protected>
@@ -107,6 +121,9 @@
         <recipients>
             <field>Point_of_Contact__c</field>
             <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/API_Request_Confirmation</template>

@@ -48,6 +48,10 @@
         <application>standard__ServiceConsole</application>
         <visible>false</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>OEISandboxPostCopy</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <description>The Purpose of this is to give the ETL user permissions to add/etid/delete/update objects</description>
     <fieldPermissions>
         <editable>false</editable>

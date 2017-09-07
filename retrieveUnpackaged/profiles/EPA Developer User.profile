@@ -60,6 +60,10 @@
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>OEISandboxPostCopy</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>true</custom>
     <description>The Custom Profile for additional users</description>
     <fieldPermissions>
