@@ -40,7 +40,7 @@
     </alerts>
     <alerts>
         <fullName>Sandbox_Approved_Notification_Alert</fullName>
-        <ccEmails>BAP-Request@epa.gov</ccEmails>
+        <ccEmails>BAP_Admins@epa.gov</ccEmails>
         <description>Sandbox Approved Notification Alert</description>
         <protected>false</protected>
         <recipients>
@@ -55,6 +55,7 @@
     </alerts>
     <alerts>
         <fullName>Sandbox_Complete_Email_Notification</fullName>
+        <ccEmails>BAP_Admins@epa.gov</ccEmails>
         <description>Sandbox Complete Email Notification</description>
         <protected>false</protected>
         <recipients>
