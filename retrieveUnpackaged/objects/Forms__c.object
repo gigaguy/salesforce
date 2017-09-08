@@ -159,27 +159,27 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>SF 182 AA Training Workflow</fullName>
+                    <fullName>AA Training Workflow</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>SF 182 CI Training Workflow</fullName>
+                    <fullName>CI Training Workflow</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>SF 182 HQ Training Workflow</fullName>
+                    <fullName>HQ Training Workflow</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>SF 182 Leadership Development Institute Training</fullName>
+                    <fullName>Leadership Development Institute Training</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>SF 182 Regions Training Form</fullName>
+                    <fullName>Regions Training Form</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>SF 182 RTP Training Workflow</fullName>
+                    <fullName>RTP Training Workflow</fullName>
                     <default>false</default>
                 </value>
             </valueSetDefinition>
@@ -191,7 +191,7 @@
         <label>Approval Step</label>
         <length>255</length>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -2979,10 +2979,55 @@
         <label>All</label>
     </listViews>
     <listViews>
+        <fullName>SF182_CI_Training_Forms</fullName>
+        <filterScope>Queue</filterScope>
+        <label>SF182-CI Training</label>
+        <queue>SF182_CI_Training</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SF182_HQ_Training_Forms</fullName>
+        <filterScope>Queue</filterScope>
+        <label>SF182-HQ Training</label>
+        <queue>SF182_HQ_Training</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SF182_Leadership_Dev_Institute_Training_Forms</fullName>
+        <filterScope>Queue</filterScope>
+        <label>SF182-Leadership Dev. Institute Training</label>
+        <queue>SF182_Leadership_Dev_Institute_Training</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SF182_RTP_Training_Forms</fullName>
+        <filterScope>Queue</filterScope>
+        <label>SF182-RTP Training</label>
+        <queue>SF182_RTP_Training</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SF182_Regions_Training_Forms</fullName>
+        <filterScope>Queue</filterScope>
+        <label>SF182-Regions Training</label>
+        <queue>SF182_Regions_Training</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>testQ_Forms</fullName>
         <filterScope>Queue</filterScope>
-        <label>testQ</label>
-        <queue>testQ</queue>
+        <label>SF182-AA Training</label>
+        <queue>SF182_AA_Training</queue>
         <sharedTo>
             <allInternalUsers></allInternalUsers>
         </sharedTo>
@@ -3049,27 +3094,27 @@
         <picklistValues>
             <picklist>Approval_Routing_Options__c</picklist>
             <values>
-                <fullName>SF 182 AA Training Workflow</fullName>
+                <fullName>AA Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 CI Training Workflow</fullName>
+                <fullName>CI Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 HQ Training Workflow</fullName>
+                <fullName>HQ Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 Leadership Development Institute Training</fullName>
+                <fullName>Leadership Development Institute Training</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 RTP Training Workflow</fullName>
+                <fullName>RTP Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 Regions Training Form</fullName>
+                <fullName>Regions Training Form</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3973,27 +4018,27 @@
         <picklistValues>
             <picklist>Approval_Routing_Options__c</picklist>
             <values>
-                <fullName>SF 182 AA Training Workflow</fullName>
+                <fullName>AA Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 CI Training Workflow</fullName>
+                <fullName>CI Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 HQ Training Workflow</fullName>
+                <fullName>HQ Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 Leadership Development Institute Training</fullName>
+                <fullName>Leadership Development Institute Training</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 RTP Training Workflow</fullName>
+                <fullName>RTP Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 Regions Training Form</fullName>
+                <fullName>Regions Training Form</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4897,27 +4942,27 @@
         <picklistValues>
             <picklist>Approval_Routing_Options__c</picklist>
             <values>
-                <fullName>SF 182 AA Training Workflow</fullName>
+                <fullName>AA Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 CI Training Workflow</fullName>
+                <fullName>CI Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 HQ Training Workflow</fullName>
+                <fullName>HQ Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 Leadership Development Institute Training</fullName>
+                <fullName>Leadership Development Institute Training</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 RTP Training Workflow</fullName>
+                <fullName>RTP Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 Regions Training Form</fullName>
+                <fullName>Regions Training Form</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5821,27 +5866,27 @@
         <picklistValues>
             <picklist>Approval_Routing_Options__c</picklist>
             <values>
-                <fullName>SF 182 AA Training Workflow</fullName>
+                <fullName>AA Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 CI Training Workflow</fullName>
+                <fullName>CI Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 HQ Training Workflow</fullName>
+                <fullName>HQ Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 Leadership Development Institute Training</fullName>
+                <fullName>Leadership Development Institute Training</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 RTP Training Workflow</fullName>
+                <fullName>RTP Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 Regions Training Form</fullName>
+                <fullName>Regions Training Form</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6757,27 +6802,27 @@
         <picklistValues>
             <picklist>Approval_Routing_Options__c</picklist>
             <values>
-                <fullName>SF 182 AA Training Workflow</fullName>
+                <fullName>AA Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 CI Training Workflow</fullName>
+                <fullName>CI Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 HQ Training Workflow</fullName>
+                <fullName>HQ Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 Leadership Development Institute Training</fullName>
+                <fullName>Leadership Development Institute Training</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 RTP Training Workflow</fullName>
+                <fullName>RTP Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 Regions Training Form</fullName>
+                <fullName>Regions Training Form</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7681,27 +7726,27 @@
         <picklistValues>
             <picklist>Approval_Routing_Options__c</picklist>
             <values>
-                <fullName>SF 182 AA Training Workflow</fullName>
+                <fullName>AA Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 CI Training Workflow</fullName>
+                <fullName>CI Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 HQ Training Workflow</fullName>
+                <fullName>HQ Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 Leadership Development Institute Training</fullName>
+                <fullName>Leadership Development Institute Training</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 RTP Training Workflow</fullName>
+                <fullName>RTP Training Workflow</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>SF 182 Regions Training Form</fullName>
+                <fullName>Regions Training Form</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

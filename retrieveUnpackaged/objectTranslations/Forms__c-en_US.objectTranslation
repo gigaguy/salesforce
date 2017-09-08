@@ -68,28 +68,28 @@
         <label><!-- Approval Routing Options --></label>
         <name>Approval_Routing_Options__c</name>
         <picklistValues>
-            <masterLabel>SF 182 AA Training Workflow</masterLabel>
-            <translation><!-- SF 182 AA Training Workflow --></translation>
+            <masterLabel>AA Training Workflow</masterLabel>
+            <translation><!-- AA Training Workflow --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>SF 182 CI Training Workflow</masterLabel>
-            <translation><!-- SF 182 CI Training Workflow --></translation>
+            <masterLabel>CI Training Workflow</masterLabel>
+            <translation><!-- CI Training Workflow --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>SF 182 HQ Training Workflow</masterLabel>
-            <translation><!-- SF 182 HQ Training Workflow --></translation>
+            <masterLabel>HQ Training Workflow</masterLabel>
+            <translation><!-- HQ Training Workflow --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>SF 182 Leadership Development Institute Training</masterLabel>
-            <translation><!-- SF 182 Leadership Development Institute Training --></translation>
+            <masterLabel>Leadership Development Institute Training</masterLabel>
+            <translation><!-- Leadership Development Institute Training --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>SF 182 RTP Training Workflow</masterLabel>
-            <translation><!-- SF 182 RTP Training Workflow --></translation>
+            <masterLabel>RTP Training Workflow</masterLabel>
+            <translation><!-- RTP Training Workflow --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>SF 182 Regions Training Form</masterLabel>
-            <translation><!-- SF 182 Regions Training Form --></translation>
+            <masterLabel>Regions Training Form</masterLabel>
+            <translation><!-- Regions Training Form --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -1626,6 +1626,10 @@
     </layouts>
     <layouts>
         <layout>SF-182</layout>
+        <sections>
+            <label><!-- Approval Options --></label>
+            <section>Approval Options</section>
+        </sections>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>

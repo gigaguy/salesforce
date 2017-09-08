@@ -148,6 +148,18 @@
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_Next_Approver</fullName>
+        <field>Approval_Step__c</field>
+        <formula>IF( 
+ispickval(of_Approval_Supervisors__c, &quot;2&quot;), 
+&quot;Awaiting Supervisor 2 Approval&quot;, 
+&quot;Awaiting &quot;+ text(Approval_Routing_Options__c) +&quot; Queue Approval&quot;)</formula>
+        <name>Approval Step - Sent to Next Approver</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Supervisor</fullName>
         <field>Approval_Step__c</field>
         <formula>&quot;Awaiting Supervisor Approval&quot;</formula>
