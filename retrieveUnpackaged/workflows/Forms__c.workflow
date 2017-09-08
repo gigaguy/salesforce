@@ -12,7 +12,7 @@
             <type>creator</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>unfiled$public/API_Request_Approved_by_Supervisor</template>
+        <template>API_Request_Notificaitons/API_Request_Approved_by_Supervisor</template>
     </alerts>
     <alerts>
         <fullName>API_Request_Completed</fullName>
@@ -23,7 +23,21 @@
             <type>contactLookup</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>unfiled$public/API_Request_Completed</template>
+        <template>API_Request_Notificaitons/API_Request_Completed</template>
+    </alerts>
+    <alerts>
+        <fullName>API_Request_Rejected_by_Office_IMO</fullName>
+        <description>API Request Rejected by Office IMO</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Point_of_Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>API_Request_Notificaitons/API_Request_Reject_by_IMO</template>
     </alerts>
     <alerts>
         <fullName>Attach_Sandbox_Approval_to_Record</fullName>
@@ -126,7 +140,7 @@
             <type>creator</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>unfiled$public/API_Request_Confirmation</template>
+        <template>API_Request_Notificaitons/API_Request_Confirmation</template>
     </alerts>
     <fieldUpdates>
         <fullName>Status_Update_to_Submitted_for_Approval</fullName>

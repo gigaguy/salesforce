@@ -41,8 +41,14 @@
         <rejectBehavior>
             <type>RejectRequest</type>
         </rejectBehavior>
+        <rejectionActions>
+            <action>
+                <name>API_Request_Rejected_by_Office_IMO</name>
+                <type>Alert</type>
+            </action>
+        </rejectionActions>
     </approvalStep>
-    <emailTemplate>unfiled$public/API_Request_Approver_Notification</emailTemplate>
+    <emailTemplate>API_Request_Notificaitons/API_Request_Approver_Notification</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
         <criteriaItems>
