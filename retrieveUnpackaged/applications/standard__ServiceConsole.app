@@ -173,8 +173,6 @@
     <tab>standard-Case</tab>
     <tab>standard-Opportunity</tab>
     <tab>standard-Lead</tab>
-    <tab>standard-Knowledge</tab>
-    <tab>standard-LiveAgent</tab>
     <tab>ORD_Award__c</tab>
     <tab>Battle_Stations__c</tab>
     <tab>Resource__c</tab>
@@ -204,13 +202,7 @@
             <tab>standard-Contact</tab>
         </mapping>
         <mapping>
-            <tab>standard-Knowledge</tab>
-        </mapping>
-        <mapping>
             <tab>standard-Lead</tab>
-        </mapping>
-        <mapping>
-            <tab>standard-LiveAgent</tab>
         </mapping>
         <mapping>
             <fieldName>AccountId</fieldName>

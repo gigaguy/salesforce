@@ -7,7 +7,7 @@
     <tab>standard-Account</tab>
     <tab>standard-report</tab>
     <tab>standard-Dashboard</tab>
-    <tab>standard-Chatter</tab>
+    <tab>standard-Feed</tab>
     <tab>standard-home</tab>
     <tab>ORD_Award__c</tab>
     <tab>Battle_Stations__c</tab>
