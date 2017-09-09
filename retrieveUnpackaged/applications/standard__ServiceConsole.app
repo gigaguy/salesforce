@@ -173,8 +173,6 @@
     <tab>standard-Case</tab>
     <tab>standard-Opportunity</tab>
     <tab>standard-Lead</tab>
-    <tab>standard-Knowledge</tab>
-    <tab>standard-LiveAgent</tab>
     <tab>TQB_Bulletin_Board__c</tab>
     <tab>TQB_Letter_of_Intent__c</tab>
     <tab>TQB_Policies_and_Procedures__c</tab>
@@ -212,13 +210,7 @@
             <tab>standard-Contact</tab>
         </mapping>
         <mapping>
-            <tab>standard-Knowledge</tab>
-        </mapping>
-        <mapping>
             <tab>standard-Lead</tab>
-        </mapping>
-        <mapping>
-            <tab>standard-LiveAgent</tab>
         </mapping>
         <mapping>
             <fieldName>AccountId</fieldName>
