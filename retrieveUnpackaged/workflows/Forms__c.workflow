@@ -138,6 +138,15 @@
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_Approval_Queue</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting &quot;+ text(Approval_Routing_Options__c) +&quot; Queue Approval&quot;</formula>
+        <name>Approval Step - Sent to Approval Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Funding_Official</fullName>
         <field>Approval_Step__c</field>
         <formula>&quot;Sent to Funding Official&quot;</formula>

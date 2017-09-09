@@ -209,6 +209,34 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Are_the_QA_documentation_requirements_sp__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Are the QA documentation requirements specified on this form incorporated into the extramural documentation (RFA, RFP, SOW, PWS, etc.)?</inlineHelpText>
+        <label>Are QA doc requirements incorporated?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Applicable</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Award_Documentation_before_or_after__c</fullName>
         <externalId>false</externalId>
         <label>Before or After Award Documentation?</label>
@@ -1787,6 +1815,34 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>QA_doc_included_as_an_evaluation_factor__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For new actions, has the QA documentation required in Section IV of this form been included in the RFA, RFP, SOW or PWS as an evaluation factor?</inlineHelpText>
+        <label>QA doc included as an evaluation factor?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Applicable</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Quantity__c</fullName>
         <defaultValue>1</defaultValue>
         <externalId>false</externalId>
@@ -3119,6 +3175,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Are_the_QA_documentation_requirements_sp__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Award_Documentation_before_or_after__c</picklist>
             <values>
                 <fullName>After</fullName>
@@ -3503,6 +3574,21 @@
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_doc_included_as_an_evaluation_factor__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4043,6 +4129,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Are_the_QA_documentation_requirements_sp__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Award_Documentation_before_or_after__c</picklist>
             <values>
                 <fullName>After</fullName>
@@ -4427,6 +4528,21 @@
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_doc_included_as_an_evaluation_factor__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4967,6 +5083,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Are_the_QA_documentation_requirements_sp__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Award_Documentation_before_or_after__c</picklist>
             <values>
                 <fullName>After</fullName>
@@ -5351,6 +5482,21 @@
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_doc_included_as_an_evaluation_factor__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5891,6 +6037,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Are_the_QA_documentation_requirements_sp__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Award_Documentation_before_or_after__c</picklist>
             <values>
                 <fullName>After</fullName>
@@ -6275,6 +6436,21 @@
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_doc_included_as_an_evaluation_factor__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6827,6 +7003,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Are_the_QA_documentation_requirements_sp__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Award_Documentation_before_or_after__c</picklist>
             <values>
                 <fullName>After</fullName>
@@ -7211,6 +7402,21 @@
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_doc_included_as_an_evaluation_factor__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7751,6 +7957,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Are_the_QA_documentation_requirements_sp__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Award_Documentation_before_or_after__c</picklist>
             <values>
                 <fullName>After</fullName>
@@ -8135,6 +8356,21 @@
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_doc_included_as_an_evaluation_factor__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
