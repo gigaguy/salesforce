@@ -376,6 +376,16 @@
         <type>Url</type>
     </fields>
     <fields>
+        <fullName>Submission_Date__c</fullName>
+        <description>Field to capture date the form was submitted for approval.</description>
+        <externalId>false</externalId>
+        <label>Submission Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Submitted_on_Behalf_Of__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
         <description>Submitted on Behalf Of</description>

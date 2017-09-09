@@ -26,9 +26,21 @@
         </assignedApprover>
         <label>Supervisor Approval</label>
         <name>Supervisor_Approval</name>
+        <rejectionActions>
+            <action>
+                <name>API_Request_Rejected_by_Supervisor_Notification</name>
+                <type>Alert</type>
+            </action>
+        </rejectionActions>
     </approvalStep>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>API_Request_Approved_by_IMO_Notification</name>
+                <type>Alert</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>Office_IMO_Name__c</name>
@@ -77,6 +89,10 @@
     </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <initialSubmissionActions>
+        <action>
+            <name>Log_Submission_Date</name>
+            <type>FieldUpdate</type>
+        </action>
         <action>
             <name>Send_API_Request_Confirmation</name>
             <type>Alert</type>

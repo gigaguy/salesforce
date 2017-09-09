@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
+        <fullName>API_Request_Approved_by_IMO_Notification</fullName>
+        <description>API Request Approved by IMO Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>API_Request_Notificaitons/API_Request_Approved_by_Office_IMO</template>
+    </alerts>
+    <alerts>
         <fullName>API_Request_Approved_by_Supervisor_Notification</fullName>
         <description>API Request Approved by Supervisor Notification</description>
         <protected>false</protected>
@@ -38,6 +48,16 @@
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>API_Request_Notificaitons/API_Request_Reject_by_IMO</template>
+    </alerts>
+    <alerts>
+        <fullName>API_Request_Rejected_by_Supervisor_Notification</fullName>
+        <description>API Request Rejected by Supervisor Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>API_Request_Notificaitons/API_Request_Rejected_by_Supervisor</template>
     </alerts>
     <alerts>
         <fullName>Attach_Sandbox_Approval_to_Record</fullName>
@@ -142,6 +162,15 @@
         <senderType>CurrentUser</senderType>
         <template>API_Request_Notificaitons/API_Request_Confirmation</template>
     </alerts>
+    <fieldUpdates>
+        <fullName>Log_Submission_Date</fullName>
+        <field>Submission_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Log Submission Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
     <fieldUpdates>
         <fullName>Status_Update_to_Submitted_for_Approval</fullName>
         <description>Update to submitted for approval</description>
