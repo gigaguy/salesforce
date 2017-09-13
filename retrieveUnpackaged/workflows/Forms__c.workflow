@@ -15,10 +15,6 @@
         <description>API Request Approved by Supervisor Notification</description>
         <protected>false</protected>
         <recipients>
-            <field>Point_of_Contact__c</field>
-            <type>contactLookup</type>
-        </recipients>
-        <recipients>
             <type>creator</type>
         </recipients>
         <senderType>CurrentUser</senderType>
@@ -39,10 +35,6 @@
         <fullName>API_Request_Rejected_by_Office_IMO</fullName>
         <description>API Request Rejected by Office IMO</description>
         <protected>false</protected>
-        <recipients>
-            <field>Point_of_Contact__c</field>
-            <type>contactLookup</type>
-        </recipients>
         <recipients>
             <type>creator</type>
         </recipients>
@@ -152,10 +144,6 @@
         <fullName>Send_API_Request_Confirmation</fullName>
         <description>Send API Request Confirmation</description>
         <protected>false</protected>
-        <recipients>
-            <field>Point_of_Contact__c</field>
-            <type>contactLookup</type>
-        </recipients>
         <recipients>
             <type>creator</type>
         </recipients>

@@ -268,7 +268,7 @@
         <fullName>Form_Number__c</fullName>
         <externalId>false</externalId>
         <label>Form Number</label>
-        <length>10</length>
+        <length>12</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -406,11 +406,11 @@
         <fullName>Notes__c</fullName>
         <externalId>false</externalId>
         <label>Notes</label>
-        <length>500</length>
+        <length>50000</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>LongTextArea</type>
-        <visibleLines>5</visibleLines>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
     </fields>
     <fields>
         <fullName>Office__c</fullName>
