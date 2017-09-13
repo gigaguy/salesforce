@@ -2667,6 +2667,58 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Forms__c-BAP Provisioning Layout</layout>
+        <recordType>Forms__c.EPA_102</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-BAP Provisioning Layout</layout>
+        <recordType>Forms__c.EPA_107</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-BAP Provisioning Layout</layout>
+        <recordType>Forms__c.EPA_112</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-BAP Provisioning Layout</layout>
+        <recordType>Forms__c.EPA_1700_9</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-BAP Provisioning Layout</layout>
+        <recordType>Forms__c.EPA_2550_10</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-BAP Provisioning Layout</layout>
+        <recordType>Forms__c.EPA_2560_34</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-BAP Provisioning Layout</layout>
+        <recordType>Forms__c.EPA_3130_1a</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-BAP Provisioning Layout</layout>
+        <recordType>Forms__c.EPA_3130_QSI</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-BAP Provisioning Layout</layout>
+        <recordType>Forms__c.EPA_3150_1</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-BAP Provisioning Layout</layout>
+        <recordType>Forms__c.EPA_5100_8</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-BAP Provisioning Layout</layout>
+        <recordType>Forms__c.EPA_Form_1900_65a</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-BAP Provisioning Layout</layout>
+        <recordType>Forms__c.EPA_Form_1900_65b</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-BAP Provisioning Layout</layout>
+        <recordType>Forms__c.FMS_2231</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-BAP Provisioning Layout</layout>
         <recordType>Forms__c.ORD_111</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -2676,6 +2728,14 @@
     <layoutAssignments>
         <layout>Forms__c-BAP Provisioning Layout</layout>
         <recordType>Forms__c.SF_182</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-BAP Provisioning Layout</layout>
+        <recordType>Forms__c.SF_2810</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-BAP Provisioning Layout</layout>
+        <recordType>Forms__c.SF_52</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Forms__c-EPA-100</layout>
@@ -2826,6 +2886,10 @@
     <pageAccesses>
         <apexPage>FileNotFound</apexPage>
         <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Fill_and_Print</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
         <apexPage>ForgotPassword</apexPage>
@@ -2982,8 +3046,68 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
+        <recordType>Forms__c.EPA_102</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Forms__c.EPA_112</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Forms__c.EPA_1700_9</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
         <recordType>Forms__c.EPA_1900_8a</recordType>
         <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Forms__c.EPA_2550_10</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Forms__c.EPA_2560_34</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Forms__c.EPA_3130_1a</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Forms__c.EPA_3130_QSI</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Forms__c.EPA_3150_1</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Forms__c.EPA_5100_8</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Forms__c.EPA_Form_1900_65a</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Forms__c.EPA_Form_1900_65b</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Forms__c.FMS_2231</recordType>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
@@ -2998,6 +3122,16 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Forms__c.SF_182</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Forms__c.SF_2810</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Forms__c.SF_52</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

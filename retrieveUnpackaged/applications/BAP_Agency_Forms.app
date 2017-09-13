@@ -8,8 +8,8 @@
     <navType>Standard</navType>
     <tab>standard-home</tab>
     <tab>Forms__c</tab>
-    <tab>Fill_Print</tab>
     <tab>Edit_My_Approvers</tab>
+    <tab>Fill_Print</tab>
     <uiType>Lightning</uiType>
     <utilityBar>Webforms_UtilityBar</utilityBar>
 </CustomApplication>

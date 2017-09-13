@@ -1,6 +1,6 @@
 ({
-    doInit : function(component, event, helper) {        
-        var action = component.get("c.getFormRTs");
+    doInit : function(component, event, helper) {             
+              var action = component.get("c.getFormRTs");
         action.setParams({
 			"sID" : component.get("v.sessionID"),
         });
@@ -11,6 +11,7 @@
             }
         });
      $A.enqueueAction(action);
+        helper.getFandP_Forms(component);
     },
     openModal: function(component, event, helper) {
         var formID = event.currentTarget.id;

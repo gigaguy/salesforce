@@ -1,5 +1,6 @@
 ({
-    getFandP_Forms : function(component){
+    doInit : function(component, event, helper) {             
+    
     	var action = component.get("c.getFandP_FormRTs");
        
         action.setCallback(this, function(response){
@@ -9,5 +10,7 @@
             }
         });
      $A.enqueueAction(action);
-	} 
+	
+    }
+	
 })
