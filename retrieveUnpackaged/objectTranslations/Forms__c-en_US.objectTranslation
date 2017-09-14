@@ -13,16 +13,8 @@
         <name>AWL_Phone_Number__c</name>
     </fields>
     <fields>
-        <label><!-- Action --></label>
-        <name>Action__c</name>
-        <picklistValues>
-            <masterLabel>Existing with Significant Modification to Work</masterLabel>
-            <translation><!-- Existing with Significant Modification to Work --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>New</masterLabel>
-            <translation><!-- New --></translation>
-        </picklistValues>
+        <label><!-- Action Information --></label>
+        <name>Action_Information__c</name>
     </fields>
     <fields>
         <label><!-- Additional Data Required --></label>
@@ -402,19 +394,6 @@
         <name>Employee_s_Signature__c</name>
     </fields>
     <fields>
-        <help><!-- Does this action involve the collection, generation, use, and/or reporting of environmental data; the design, construction, and operation of environmental technologies; or development of software, models, or methods? --></help>
-        <label><!-- Environmental data or technology? --></label>
-        <name>Environmental_data_or_technology__c</name>
-        <picklistValues>
-            <masterLabel>No (If no, may go directly to &quot;Signatures&quot; Section.)</masterLabel>
-            <translation><!-- No (If no, may go directly to &quot;Signatures&quot; Section.) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Yes</masterLabel>
-            <translation><!-- Yes --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
         <label><!-- Estimated Award $ --></label>
         <name>Estimated_Award__c</name>
     </fields>
@@ -596,6 +575,18 @@
         <picklistValues>
             <masterLabel>n/a</masterLabel>
             <translation><!-- n/a --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is the above statement true? --></label>
+        <name>Is_the_above_statement_true__c</name>
+        <picklistValues>
+            <masterLabel>No (If no, may go directly to &quot;Signatures&quot; Section.)</masterLabel>
+            <translation><!-- No (If no, may go directly to &quot;Signatures&quot; Section.) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -1338,6 +1329,18 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Type of Action --></label>
+        <name>Type_of_Action__c</name>
+        <picklistValues>
+            <masterLabel>Existing with Significant Modification to Work</masterLabel>
+            <translation><!-- Existing with Significant Modification to Work --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Type of Appointment --></label>
         <name>Type_of_Appointment__c</name>
         <picklistValues>
@@ -1609,6 +1612,10 @@
         <sections>
             <label><!-- Type of Action --></label>
             <section>Type of Action</section>
+        </sections>
+        <sections>
+            <label><!-- spacer --></label>
+            <section>spacer</section>
         </sections>
         <sections>
             <label><!-- spacer1 --></label>

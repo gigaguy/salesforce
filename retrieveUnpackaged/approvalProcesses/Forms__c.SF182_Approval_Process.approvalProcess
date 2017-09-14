@@ -16,6 +16,10 @@
                 <name>Approval_Step_Sent_to_Next_Approver</name>
                 <type>FieldUpdate</type>
             </action>
+            <action>
+                <name>Manager_Signature</name>
+                <type>FieldUpdate</type>
+            </action>
         </approvalActions>
         <assignedApprover>
             <approver>

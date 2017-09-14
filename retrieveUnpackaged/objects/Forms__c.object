@@ -65,27 +65,15 @@
         <type>Phone</type>
     </fields>
     <fields>
-        <fullName>Action__c</fullName>
+        <fullName>Action_Information__c</fullName>
+        <defaultValue>&quot;This action involves the collection, generation, use, and/or reporting of environmental data; the design, construction, and operation of environmental technologies; or development of software, models, or methods.&quot;</defaultValue>
         <externalId>false</externalId>
-        <label>Action</label>
-        <required>false</required>
+        <label>Action Information</label>
+        <length>256</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>New</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>Existing with Significant Modification to Work</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
     </fields>
     <fields>
         <fullName>Additional_Data_Required__c</fullName>
@@ -864,30 +852,6 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Environmental_data_or_technology__c</fullName>
-        <externalId>false</externalId>
-        <inlineHelpText>Does this action involve the collection, generation, use, and/or reporting of environmental data; the design, construction, and operation of environmental technologies; or development of software, models, or methods?</inlineHelpText>
-        <label>Environmental data or technology?</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Yes</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>No (If no, may go directly to &quot;Signatures&quot; Section.)</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Estimated_Award__c</fullName>
         <externalId>false</externalId>
         <label>Estimated Award $</label>
@@ -1298,6 +1262,29 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Is_the_above_statement_true__c</fullName>
+        <externalId>false</externalId>
+        <label>Is the above statement true?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No (If no, may go directly to &quot;Signatures&quot; Section.)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Issue_s_Describe_in_detail__c</fullName>
         <externalId>false</externalId>
         <label>Issue(s) - Describe in detail</label>
@@ -1436,7 +1423,7 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-        <visibleLines>4</visibleLines>
+        <visibleLines>7</visibleLines>
     </fields>
     <fields>
         <fullName>Notified_this_is_the_last_negotiation__c</fullName>
@@ -2730,6 +2717,29 @@
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>Type_of_Action__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of Action</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Existing with Significant Modification to Work</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Type_of_Appointment__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -3102,17 +3112,6 @@
         <description>BAP Provisioning Forms</description>
         <label>BAP Provisioning</label>
         <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
@@ -3324,17 +3323,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -3422,6 +3410,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3949,6 +3948,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4056,17 +4066,6 @@
         <description>Episodic Flexiplace  (workflow)</description>
         <label>EPA-100</label>
         <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
@@ -4278,17 +4277,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -4376,6 +4364,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4907,6 +4906,17 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Type_of_Appointment__c</picklist>
             <values>
                 <fullName>10 Career %28Permanent%29</fullName>
@@ -5006,20 +5016,9 @@
     </recordTypes>
     <recordTypes>
         <fullName>EPA_102</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Task Order/ Work Assignment Review Checklist</description>
         <label>EPA 102</label>
-        <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
         <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
@@ -5232,17 +5231,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -5330,6 +5318,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5869,6 +5868,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5976,17 +5986,6 @@
         <description>AFGE/EPA FlexiPlace Application</description>
         <label>EPA-107</label>
         <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
@@ -6198,17 +6197,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -6296,6 +6284,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6835,6 +6834,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6938,20 +6948,9 @@
     </recordTypes>
     <recordTypes>
         <fullName>EPA_112</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>NTEU Flexiplace Application</description>
         <label>EPA-112</label>
-        <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
         <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
@@ -7164,17 +7163,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -7262,6 +7250,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7801,6 +7800,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7904,20 +7914,9 @@
     </recordTypes>
     <recordTypes>
         <fullName>EPA_1700_9</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Property Pass</description>
         <label>EPA-1700-9</label>
-        <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
         <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
@@ -8130,17 +8129,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -8228,6 +8216,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -8767,6 +8766,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -8874,17 +8884,6 @@
         <description>Procurement Request with Routing Slip (workflow)</description>
         <label>EPA-1900-8a</label>
         <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
@@ -9096,17 +9095,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -9194,6 +9182,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -9721,6 +9720,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -9824,20 +9834,9 @@
     </recordTypes>
     <recordTypes>
         <fullName>EPA_2550_10</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Miscellaneous Obligation Document</description>
         <label>EPA - 2550-10</label>
-        <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
         <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
@@ -10050,17 +10049,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -10148,6 +10136,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10687,6 +10686,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10790,20 +10800,9 @@
     </recordTypes>
     <recordTypes>
         <fullName>EPA_2560_34</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Direct Deposit Enrollment or Exemption Application</description>
         <label>EPA-2560-34</label>
-        <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
         <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
@@ -11016,17 +11015,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -11114,6 +11102,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11653,6 +11652,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11756,20 +11766,9 @@
     </recordTypes>
     <recordTypes>
         <fullName>EPA_3130_1a</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Recommendation for Incentive Recognition (Jackie Shepherd)</description>
         <label>EPA-3130-1a</label>
-        <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
         <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
@@ -11982,17 +11981,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -12080,6 +12068,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12619,6 +12618,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12722,20 +12732,9 @@
     </recordTypes>
     <recordTypes>
         <fullName>EPA_3130_QSI</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Quality Step Increase (QSI) Justification</description>
         <label>EPA-3130-QSI</label>
-        <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
         <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
@@ -12948,17 +12947,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -13046,6 +13034,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13585,6 +13584,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13688,20 +13698,9 @@
     </recordTypes>
     <recordTypes>
         <fullName>EPA_3150_1</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Position Description Coversheet</description>
         <label>EPA-3150-1</label>
-        <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
         <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
@@ -13914,17 +13913,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -14012,6 +14000,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14551,6 +14550,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14654,20 +14664,9 @@
     </recordTypes>
     <recordTypes>
         <fullName>EPA_5100_8</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Facilities Services Request</description>
         <label>EPA-5100-8</label>
-        <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
         <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
@@ -14880,17 +14879,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -14978,6 +14966,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -15517,6 +15516,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -15620,20 +15630,9 @@
     </recordTypes>
     <recordTypes>
         <fullName>EPA_Form_1900_65a</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>COR Certification Form</description>
         <label>EPA Form 1900-65a</label>
-        <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
         <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
@@ -15846,17 +15845,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -15944,6 +15932,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -16483,6 +16482,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -16586,20 +16596,9 @@
     </recordTypes>
     <recordTypes>
         <fullName>EPA_Form_1900_65b</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>COR Certification Form</description>
         <label>EPA Form 1900-65b</label>
-        <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
         <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
@@ -16812,17 +16811,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -16910,6 +16898,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -17449,6 +17448,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -17552,20 +17562,9 @@
     </recordTypes>
     <recordTypes>
         <fullName>FMS_2231</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Direct Deposit (FastStart) SSC</description>
         <label>FMS-2231</label>
-        <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
         <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
@@ -17778,17 +17777,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -17876,6 +17864,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -18415,6 +18414,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -18522,17 +18532,6 @@
         <description>ORD Quality Assurance Review Form (QARF)</description>
         <label>ORD-111</label>
         <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
@@ -18744,17 +18743,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -18842,6 +18830,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -19381,6 +19380,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -19488,17 +19498,6 @@
         <description>Recommendation of Division Directors, Negotiated Due Dates</description>
         <label>PRIAv5</label>
         <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
@@ -19710,17 +19709,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -19808,6 +19796,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -20335,6 +20334,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -20442,17 +20452,6 @@
         <description>Authorization, Agreement and Certification of Training</description>
         <label>SF-182</label>
         <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
                 <fullName>Acute Tox</fullName>
@@ -20664,17 +20663,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -20762,6 +20750,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -21289,6 +21288,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -21392,20 +21402,9 @@
     </recordTypes>
     <recordTypes>
         <fullName>SF_2810</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Notice of Change in Health Benefits Enrollment</description>
         <label>SF-2810</label>
-        <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
         <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
@@ -21618,17 +21617,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -21716,6 +21704,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -22255,6 +22254,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -22358,20 +22368,9 @@
     </recordTypes>
     <recordTypes>
         <fullName>SF_52</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Request for Personnel Action</description>
         <label>SF-52</label>
-        <picklistValues>
-            <picklist>Action__c</picklist>
-            <values>
-                <fullName>Existing with Significant Modification to Work</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
         <picklistValues>
             <picklist>Additional_Data_Required__c</picklist>
             <values>
@@ -22584,17 +22583,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Environmental_data_or_technology__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -22682,6 +22670,17 @@
             </values>
             <values>
                 <fullName>n%2Fa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_above_statement_true__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -23221,6 +23220,17 @@
             </values>
             <values>
                 <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

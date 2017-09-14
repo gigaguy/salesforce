@@ -3,6 +3,6 @@
     <defaultLandingTab>standard-home</defaultLandingTab>
     <label>BAP Agency Forms</label>
     <tab>Forms__c</tab>
-    <tab>Edit_My_Approvers</tab>
     <tab>Fill_Print</tab>
+    <tab>Edit_My_Approvers</tab>
 </CustomApplication>
