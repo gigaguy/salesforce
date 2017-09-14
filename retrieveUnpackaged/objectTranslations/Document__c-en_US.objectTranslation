@@ -33,14 +33,6 @@
             <translation><!-- 56E --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>56E14</masterLabel>
-            <translation><!-- 56E14 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>56EAG</masterLabel>
-            <translation><!-- 56EAG --></translation>
-        </picklistValues>
-        <picklistValues>
             <masterLabel>56F</masterLabel>
             <translation><!-- 56F --></translation>
         </picklistValues>
@@ -329,18 +321,6 @@
         <picklistValues>
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
-        <label><!-- Carryover/New Obligation Authority --></label>
-        <name>Carryover_NOA__c</name>
-        <picklistValues>
-            <masterLabel>Carryover</masterLabel>
-            <translation><!-- Carryover --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>NOA</masterLabel>
-            <translation><!-- NOA --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -6886,13 +6866,29 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Inter-Agency Agreement Number --></help>
-        <label><!-- IAA Number --></label>
-        <name>IAA_Number__c</name>
+        <help><!-- Interagency Agreement Number --></help>
+        <label><!-- IA Number --></label>
+        <name>IA_Number__c</name>
     </fields>
     <fields>
         <label><!-- Op Plan --></label>
         <name>Op_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operating Plan Year --></label>
+        <name>Operating_Plan_Year__c</name>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2017</masterLabel>
+            <translation><!-- 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2018</masterLabel>
+            <translation><!-- 2018 --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Organization --></label>
@@ -6963,23 +6959,6 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Procurement Operation Division --></help>
-        <label><!-- POD --></label>
-        <name>POD__c</name>
-        <picklistValues>
-            <masterLabel>CPOD - Cincinnati Procurement Operations Division</masterLabel>
-            <translation><!-- CPOD - Cincinnati Procurement Operations Division --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>HPOD - Headquarters</masterLabel>
-            <translation><!-- HPOD - Headquarters --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>RTPPOD - Research Triangle Park</masterLabel>
-            <translation><!-- RTPPOD - Research Triangle Park --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
         <help><!-- Procurement Request System --></help>
         <label><!-- PRC --></label>
         <name>PRC__c</name>
@@ -7000,12 +6979,25 @@
             <translation><!-- 102AH4 --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>102AL2</masterLabel>
-            <translation><!-- 102AL2 --></translation>
-        </picklistValues>
-        <picklistValues>
             <masterLabel>ZZZA73</masterLabel>
             <translation><!-- ZZZA73 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Procurement Office --></help>
+        <label><!-- Procurement Office --></label>
+        <name>Procurement_Office__c</name>
+        <picklistValues>
+            <masterLabel>CPOD - Cincinnati Procurement Operations Division</masterLabel>
+            <translation><!-- CPOD - Cincinnati Procurement Operations Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HPOD - Headquarters</masterLabel>
+            <translation><!-- HPOD - Headquarters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTPPOD - Research Triangle Park</masterLabel>
+            <translation><!-- RTPPOD - Research Triangle Park --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -7758,6 +7750,7 @@
         <relationshipLabel><!-- Documents (Project Officer) --></relationshipLabel>
     </fields>
     <fields>
+        <help><!-- Project &amp; Task search results are dependent on which AHRC is chosen. Consult the &apos;Project&apos; tab for a comprehensive list --></help>
         <label><!-- Project &amp; Task --></label>
         <name>Project__c</name>
         <relationshipLabel><!-- Documents --></relationshipLabel>
@@ -8168,28 +8161,8 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Sub-Task --></label>
-        <name>Sub_Task__c</name>
-        <picklistValues>
-            <masterLabel>1</masterLabel>
-            <translation><!-- 1 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>2</masterLabel>
-            <translation><!-- 2 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>3</masterLabel>
-            <translation><!-- 3 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>4</masterLabel>
-            <translation><!-- 4 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>5</masterLabel>
-            <translation><!-- 5 --></translation>
-        </picklistValues>
+        <label><!-- Sub-Task Name --></label>
+        <name>Sub_Task_Name__c</name>
     </fields>
     <fields>
         <label><!-- TA Number --></label>
@@ -9574,11 +9547,6 @@
             <masterLabel>h - Worklife Survey</masterLabel>
             <translation><!-- h - Worklife Survey --></translation>
         </picklistValues>
-    </fields>
-    <fields>
-        <label><!-- Test Document Self Lookup --></label>
-        <name>Test_Document__c</name>
-        <relationshipLabel><!-- Documents --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Total Dollar Amont --></label>

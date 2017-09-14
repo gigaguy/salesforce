@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>ChangeOwnerOne</excludeButtons>
+    <excludeButtons>ChangeRecordType</excludeButtons>
+    <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -16,8 +19,8 @@
                 <field>FY__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Carryover_NOA__c</field>
+                <behavior>Required</behavior>
+                <field>Operating_Plan_Year__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -69,7 +72,7 @@
                 <field>FTE_Op_Plan__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Comments__c</field>
             </layoutItems>
         </layoutColumns>

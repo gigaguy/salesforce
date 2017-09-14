@@ -84,14 +84,6 @@
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>56E14</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>56EAG</fullName>
-                    <default>false</default>
-                </value>
-                <value>
                     <fullName>56F</fullName>
                     <default>false</default>
                 </value>
@@ -101,6 +93,28 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Code</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project_Code__c &amp; &quot; - &quot; &amp;  Project__c</formula>
+        <label>Project Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Project__c</fullName>
@@ -114,10 +128,10 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Task_Name__c</fullName>
+        <fullName>Sub_Task_Name__c</fullName>
         <externalId>false</externalId>
-        <formula>TEXT(Task_code__c) &amp; &quot; - &quot; &amp;   Name</formula>
-        <label>Task Name</label>
+        <formula>TEXT(Sub_Task_code__c) &amp; &quot; - &quot; &amp;  Sub_Task__c</formula>
+        <label>Sub-Task Name</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -125,9 +139,20 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Task_code__c</fullName>
+        <fullName>Sub_Task__c</fullName>
         <externalId>false</externalId>
-        <label>Task code</label>
+        <label>Sub-Task</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sub_Task_code__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub-Task Code</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -136,34 +161,6 @@
             <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
-                <value>
-                    <fullName>A</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>B</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>C</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>D</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>E</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>F</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>G</fullName>
-                    <default>false</default>
-                </value>
                 <value>
                     <fullName>1</fullName>
                     <default>false</default>
@@ -192,6 +189,184 @@
                     <fullName>7</fullName>
                     <default>false</default>
                 </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Task_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Task_code__c) &amp; &quot; - &quot; &amp;   Name</formula>
+        <label>Task Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Task_code__c</fullName>
+        <externalId>false</externalId>
+        <label>Task code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>13</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>14</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>15</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>a</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>b</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>c</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>d</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>e</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>f</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>g</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>h</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>i</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>j</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>k</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>l</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>m</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>n</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>o</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>p</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>q</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>r</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>s</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>t</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>u</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>v</fullName>
+                    <default>false</default>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -199,8 +374,9 @@
     <listViews>
         <fullName>All</fullName>
         <columns>AHRC__c</columns>
-        <columns>Project__c</columns>
+        <columns>Project_Name__c</columns>
         <columns>Task_Name__c</columns>
+        <columns>Sub_Task_Name__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>AHRC__c</field>
@@ -217,14 +393,18 @@
     <pluralLabel>Projects</pluralLabel>
     <searchLayouts>
         <lookupDialogsAdditionalFields>Task_code__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Project__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Project_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Sub_Task_Name__c</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Task_code__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Project__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Project_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Sub_Task_Name__c</lookupPhoneDialogsAdditionalFields>
         <searchFilterFields>NAME</searchFilterFields>
         <searchFilterFields>Task_code__c</searchFilterFields>
-        <searchFilterFields>Project__c</searchFilterFields>
+        <searchFilterFields>Project_Name__c</searchFilterFields>
+        <searchFilterFields>Sub_Task_Name__c</searchFilterFields>
         <searchResultsAdditionalFields>Task_code__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Project__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Project_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Sub_Task_Name__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

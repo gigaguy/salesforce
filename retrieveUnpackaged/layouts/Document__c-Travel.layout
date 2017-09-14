@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>ChangeOwnerOne</excludeButtons>
+    <excludeButtons>ChangeRecordType</excludeButtons>
+    <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -16,8 +19,8 @@
                 <field>BBFY_EBFY__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Carryover_NOA__c</field>
+                <behavior>Required</behavior>
+                <field>Operating_Plan_Year__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -46,7 +49,7 @@
                 <field>Project_Name__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Comments__c</field>
             </layoutItems>
         </layoutColumns>
@@ -68,11 +71,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Bankcard_Holder__c</field>
+                <field>Bankcard_Purchase__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Bankcard_Purchase__c</field>
+                <field>Bankcard_Holder__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -85,8 +88,8 @@
                 <field>Task_Name__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Sub_Task__c</field>
+                <behavior>Readonly</behavior>
+                <field>Sub_Task_Name__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -168,11 +171,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>IAA_Number__c</field>
+                <field>IA_Number__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>POD__c</field>
+                <field>Procurement_Office__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

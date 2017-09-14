@@ -92,14 +92,6 @@
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>56E14</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>56EAG</fullName>
-                    <default>false</default>
-                </value>
-                <value>
                     <fullName>56F</fullName>
                     <default>false</default>
                 </value>
@@ -491,45 +483,10 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>Carryover_NOA__c</fullName>
-        <externalId>false</externalId>
-        <label>Carryover/New Obligation Authority</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <controllingField>BBFY_EBFY__c</controllingField>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Carryover</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>NOA</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-            <valueSettings>
-                <controllingFieldValue>2016</controllingFieldValue>
-                <controllingFieldValue>2016/2017</controllingFieldValue>
-                <valueName>Carryover</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>2017</controllingFieldValue>
-                <controllingFieldValue>2017/2018</controllingFieldValue>
-                <controllingFieldValue>2018</controllingFieldValue>
-                <controllingFieldValue>2018/2019</controllingFieldValue>
-                <valueName>NOA</valueName>
-            </valueSettings>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Comments__c</fullName>
         <externalId>false</externalId>
         <label>Comments</label>
-        <required>false</required>
+        <required>true</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
@@ -13615,10 +13572,10 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>IAA_Number__c</fullName>
+        <fullName>IA_Number__c</fullName>
         <externalId>false</externalId>
-        <inlineHelpText>Inter-Agency Agreement Number</inlineHelpText>
-        <label>IAA Number</label>
+        <inlineHelpText>Interagency Agreement Number</inlineHelpText>
+        <label>IA Number</label>
         <length>20</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -13636,6 +13593,32 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Operating_Plan_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Operating Plan Year</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2016</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2017</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2018</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Organization__c</fullName>
@@ -13716,34 +13699,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>POD__c</fullName>
-        <externalId>false</externalId>
-        <inlineHelpText>Procurement Operation Division</inlineHelpText>
-        <label>POD</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>CPOD - Cincinnati Procurement Operations Division</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>HPOD - Headquarters</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>RTPPOD - Research Triangle Park</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>PRC__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Procurement Request System</inlineHelpText>
@@ -13772,11 +13727,35 @@
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>102AL2</fullName>
+                    <fullName>ZZZA73</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Procurement_Office__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Procurement Office</inlineHelpText>
+        <label>Procurement Office</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CPOD - Cincinnati Procurement Operations Division</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>ZZZA73</fullName>
+                    <fullName>HPOD - Headquarters</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RTPPOD - Research Triangle Park</fullName>
                     <default>false</default>
                 </value>
             </valueSetDefinition>
@@ -15019,254 +14998,6 @@
                 <controllingFieldValue>56E</controllingFieldValue>
                 <valueName>3121 - Vehicle Testing</valueName>
             </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3000 - Compliance Programs</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3003 - Facility Modifications for Safety</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3004 - Training/Equipment/Supplies</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3200 - Operations &amp; Maintenance</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3202 - Physical Security</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3203 - OTAQ Working Capital Fund Services</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3204 - Utilities</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3213 - Physical Security</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3214 - Utilities</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3300 - Office Support/Services</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3400 - NVFEL Testing Support</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3402 - Human Resource Development</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3405 - NVFEL Testing Support</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3500 - Information Services</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3600 - Quality And Environmental Mgmt Systems</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3700 - Immediate Office</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3701 - Special Emphasis Programs</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E14</controllingFieldValue>
-                <valueName>3800 - CSG Administrative Management</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4003 - Clerical/Administrative  Support</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4004 - Division Management and Administration</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4014 - (DEFERRED) Diesel PM Size Measurement</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4017 - Small Engines Technology Review</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4018 - Nonroad Diesel Tier 3</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4020 - Tier II Implementation</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4021 - Highway motorcycles</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4023 - Aircraft</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4024 - Marine CI Rule:  Category 3 Engines</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4025 - Mobile Source Toxics 202(l) Rule Implementation</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4026 - Air Toxics - New Rule</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4028 - Large SI Nonroad Engines Rule</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4033 - Recreational Marine Rule</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4037 - Portable Emission Measurement System (PEMS)</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4038 - Recreational Vehicles Rule</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4042 - Diesel Test Program</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4102 - Training</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4103 - CFR Printing</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4104 - Hiring/PCS Moves (Deferred)</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4105 - Congressional Add</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4201 - MOBILE Model</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4202 - NONROAD Model</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4401 - NCP rule</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4402 - (DEFERRED) Follow-up Rule (Offcycle HD Gas and OBD for all HD engines)</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4403 - 2007 HD Standards Implementation</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4404 - (CANCELLED - INACTIVE) Smart EGR</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4702 - Air Toxics Research - Exposure Assessment</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4705 - MOBILE - Greenhouse gases</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4706 - New Generation Model</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4707 - Emissions Research</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4708 - MOBILE Website</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4709 - Inventory Development &amp; Improvement</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4710 - Fuel-related support and actions</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4711 - Boutique Fuels</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4712 - Fuel Cells</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4713 - Fuel Economy Team</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4718 - Fuel Economy</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4719 - Fuel Effect Modeling</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4720 - FEES - Round Robin Testing for Fuels</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4721 - Rule Implementation</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4722 - 2007-2010 Standards Progress Reviews</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4723 - 2007 NCP</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4724 - SECA</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56EAG</controllingFieldValue>
-                <valueName>4801 - Data Management</valueName>
-            </valueSettings>
         </valueSet>
     </fields>
     <fields>
@@ -15296,7 +15027,9 @@
     <fields>
         <fullName>Project__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
+        <description>Dependent on AHRC</description>
         <externalId>false</externalId>
+        <inlineHelpText>Project &amp; Task search results are dependent on which AHRC is chosen. Consult the &apos;Project&apos; tab for a comprehensive list</inlineHelpText>
         <label>Project &amp; Task</label>
         <lookupFilter>
             <active>true</active>
@@ -15751,38 +15484,16 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>Sub_Task__c</fullName>
+        <fullName>Sub_Task_Name__c</fullName>
         <externalId>false</externalId>
-        <label>Sub-Task</label>
+        <formula>Project__r.Sub_Task_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sub-Task Name</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>1</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>2</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>3</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>4</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>5</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>TA_Number__c</fullName>
@@ -17191,19 +16902,6 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Test_Document__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>Test Document Self Lookup</label>
-        <referenceTo>Document__c</referenceTo>
-        <relationshipLabel>Documents</relationshipLabel>
-        <relationshipName>Documents</relationshipName>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Total_Dollar_Amont__c</fullName>
@@ -19203,14 +18901,6 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>56E14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>56EAG</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>56F</fullName>
                 <default>false</default>
             </values>
@@ -19475,17 +19165,6 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Carryover_NOA__c</picklist>
-            <values>
-                <fullName>Carryover</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>NOA</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -25958,6 +25637,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Operating_Plan_Year__c</picklist>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2018</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Organization__c</picklist>
             <values>
                 <fullName>5600EEN</fullName>
@@ -26025,21 +25719,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>POD__c</picklist>
-            <values>
-                <fullName>CPOD - Cincinnati Procurement Operations Division</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>HPOD - Headquarters</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>RTPPOD - Research Triangle Park</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>PRC__c</picklist>
             <values>
                 <fullName>101A46</fullName>
@@ -26058,11 +25737,22 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>102AL2</fullName>
+                <fullName>ZZZA73</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Procurement_Office__c</picklist>
+            <values>
+                <fullName>CPOD - Cincinnati Procurement Operations Division</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>ZZZA73</fullName>
+                <fullName>HPOD - Headquarters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RTPPOD - Research Triangle Park</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -27430,29 +27120,6 @@
             </values>
             <values>
                 <fullName>3</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Sub_Task__c</picklist>
-            <values>
-                <fullName>1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>5</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -30171,14 +29838,6 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>56E14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>56EAG</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>56F</fullName>
                 <default>false</default>
             </values>
@@ -30244,31 +29903,7 @@
         <picklistValues>
             <picklist>BOC_1__c</picklist>
             <values>
-                <fullName>10 - Personnel Comp %26 Benefits</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>21 - Travel Subject To Ceiling</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>28 - Site Specific Travel</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>36 - Expenses</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>37 - Contracts</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>38 - Working Capital Fund</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>41 - Grants%2FLoans</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -30443,17 +30078,6 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Carryover_NOA__c</picklist>
-            <values>
-                <fullName>Carryover</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>NOA</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -36858,6 +36482,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Operating_Plan_Year__c</picklist>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2018</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Organization__c</picklist>
             <values>
                 <fullName>5600EEN</fullName>
@@ -36925,21 +36564,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>POD__c</picklist>
-            <values>
-                <fullName>CPOD - Cincinnati Procurement Operations Division</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>HPOD - Headquarters</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>RTPPOD - Research Triangle Park</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>PRC__c</picklist>
             <values>
                 <fullName>101A46</fullName>
@@ -36958,11 +36582,22 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>102AL2</fullName>
+                <fullName>ZZZA73</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Procurement_Office__c</picklist>
+            <values>
+                <fullName>CPOD - Cincinnati Procurement Operations Division</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>ZZZA73</fullName>
+                <fullName>HPOD - Headquarters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RTPPOD - Research Triangle Park</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -38330,29 +37965,6 @@
             </values>
             <values>
                 <fullName>3</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Sub_Task__c</picklist>
-            <values>
-                <fullName>1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>5</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -41071,14 +40683,6 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>56E14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>56EAG</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>56F</fullName>
                 <default>false</default>
             </values>
@@ -41343,17 +40947,6 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Carryover_NOA__c</picklist>
-            <values>
-                <fullName>Carryover</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>NOA</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -47695,7 +47288,7 @@
             </values>
             <values>
                 <fullName>2017</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
             <values>
                 <fullName>2018</fullName>
@@ -47838,6 +47431,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Operating_Plan_Year__c</picklist>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2018</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Organization__c</picklist>
             <values>
                 <fullName>5600EEN</fullName>
@@ -47905,21 +47513,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>POD__c</picklist>
-            <values>
-                <fullName>CPOD - Cincinnati Procurement Operations Division</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>HPOD - Headquarters</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>RTPPOD - Research Triangle Park</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>PRC__c</picklist>
             <values>
                 <fullName>101A46</fullName>
@@ -47938,11 +47531,22 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>102AL2</fullName>
+                <fullName>ZZZA73</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Procurement_Office__c</picklist>
+            <values>
+                <fullName>CPOD - Cincinnati Procurement Operations Division</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>ZZZA73</fullName>
+                <fullName>HPOD - Headquarters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RTPPOD - Research Triangle Park</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -49310,29 +48914,6 @@
             </values>
             <values>
                 <fullName>3</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Sub_Task__c</picklist>
-            <values>
-                <fullName>1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>5</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -52051,14 +51632,6 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>56E14</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>56EAG</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>56F</fullName>
                 <default>false</default>
             </values>
@@ -52323,17 +51896,6 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Carryover_NOA__c</picklist>
-            <values>
-                <fullName>Carryover</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>NOA</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -58675,7 +58237,7 @@
             </values>
             <values>
                 <fullName>2017</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
             <values>
                 <fullName>2018</fullName>
@@ -58818,6 +58380,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Operating_Plan_Year__c</picklist>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2018</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Organization__c</picklist>
             <values>
                 <fullName>5600EEN</fullName>
@@ -58885,21 +58462,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>POD__c</picklist>
-            <values>
-                <fullName>CPOD - Cincinnati Procurement Operations Division</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>HPOD - Headquarters</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>RTPPOD - Research Triangle Park</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>PRC__c</picklist>
             <values>
                 <fullName>101A46</fullName>
@@ -58918,11 +58480,22 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>102AL2</fullName>
+                <fullName>ZZZA73</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Procurement_Office__c</picklist>
+            <values>
+                <fullName>CPOD - Cincinnati Procurement Operations Division</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>ZZZA73</fullName>
+                <fullName>HPOD - Headquarters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RTPPOD - Research Triangle Park</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -60290,29 +59863,6 @@
             </values>
             <values>
                 <fullName>3</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Sub_Task__c</picklist>
-            <values>
-                <fullName>1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>5</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
