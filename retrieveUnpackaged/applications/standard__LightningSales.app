@@ -23,7 +23,7 @@
     <tab>standard-OtherUserProfile</tab>
     <tab>standard-Case</tab>
     <tab>standard-News</tab>
-    <tab>standard-ForecastingLightning</tab>
+    <tab>standard-Forecasting3</tab>
     <tab>standard-Quote</tab>
     <tab>Fill_Print</tab>
     <uiType>Lightning</uiType>

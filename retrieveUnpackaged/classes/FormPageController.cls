@@ -109,34 +109,37 @@ public class FormPageController {
         }
         catch(exception ex){
             message = string.valueof(ex);
-            system.debug('john: '+message);
             return message;
         }
     }
 
     @AuraEnabled
-    public static List<RecordType> getFandP_FormRTs(){
+    public static List<BAP_Fill_and_Print_List__mdt> getFandP_FormRTs(){
         
         Set<string> formNames = new Set<String>();
             
             //hardcoding Fill and Print form names
             formNames.add('EPA-107');
-            formNames.add('EPA-3150-1');
-            formNames.add('EPA-1700-9');
-            formNames.add('EPA-5100-8');
-            formNames.add('EPA-112');
-            formNames.add('EPA - 2550-10');
-            formNames.add('EPA 102');
-            formNames.add('EPA-3130-1a');
-            formNames.add('EPA-3130-QSI');
-            formNames.add('SF-52');
-            formNames.add('SF-2810');
-            formNames.add('EPA-2560-34');
-            formNames.add('FMS-2231');
+            formNames.add('EPA-2550-10');
+            formNames.add('EPA-102');      
             formNames.add('EPA Form 1900-65a');
             formNames.add('EPA Form 1900-65b');
+            formNames.add('EPA-112');
+            formNames.add('EPA-1700-9');
+            formNames.add('EPA-2560-34');
+            formNames.add('EPA-3130-1a');
+            formNames.add('EPA-3130-QSI');
+            formNames.add('EPA-3150-1');
+            formNames.add('EPA-5100-8');
+            formNames.add('FMS-2231');
+            formNames.add('SF-2810');
+            formNames.add('SF-52');
             
-        return [select id, Name, Description from RecordType where sObjectType = 'Forms__c' and Name in :formNames];
+            
+      //  return [select id, Name, Description from RecordType where sObjectType = 'Forms__c' and Name in :formNames];
+          
+          return [select Label, Description__c, File_Url__c from BAP_Fill_and_Print_List__mdt where Label in :formNames];
+          
     }
     
 }

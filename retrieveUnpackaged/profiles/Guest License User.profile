@@ -463,6 +463,16 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>BAP_Fill_and_Print_List__mdt.Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>BAP_Fill_and_Print_List__mdt.File_Url__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Campaign.ActualCost</field>
         <readable>true</readable>
@@ -2614,6 +2624,9 @@
         <layout>Asset-Asset Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>BAP_Fill_and_Print_List__mdt-BAP Fill and Print List Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Campaign-Campaign Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -2676,59 +2689,7 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.EPA_102</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.EPA_107</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.EPA_112</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.EPA_1700_9</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
         <recordType>Forms__c.EPA_1900_8a</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.EPA_2550_10</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.EPA_2560_34</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.EPA_3130_1a</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.EPA_3130_QSI</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.EPA_3150_1</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.EPA_5100_8</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.EPA_Form_1900_65a</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.EPA_Form_1900_65b</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.FMS_2231</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Forms__c-BAP Provisioning Layout</layout>
@@ -2741,14 +2702,6 @@
     <layoutAssignments>
         <layout>Forms__c-BAP Provisioning Layout</layout>
         <recordType>Forms__c.SF_182</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.SF_2810</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.SF_52</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Global-Global Layout</layout>

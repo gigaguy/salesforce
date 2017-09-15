@@ -149,7 +149,7 @@
     <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Funding_Official</fullName>
         <field>Approval_Step__c</field>
-        <formula>&quot;Sent to Funding Official&quot;</formula>
+        <formula>&quot;Awaiting Funding Official Approval&quot;</formula>
         <name>Approval Step - Sent to Funding Official</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
@@ -157,13 +157,25 @@
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>Approval_Step_Sent_to_Next_Approver</fullName>
+        <fullName>Approval_Step_Sent_to_Next_Approver_1</fullName>
         <field>Approval_Step__c</field>
         <formula>IF( 
 ispickval(of_Approval_Supervisors__c, &quot;2&quot;), 
 &quot;Awaiting Supervisor 2 Approval&quot;, 
-&quot;Awaiting &quot;+ text(Approval_Routing_Options__c) +&quot; Queue Approval&quot;)</formula>
-        <name>Approval Step - Sent to Next Approver</name>
+&quot;Awaiting Funding Official Approval&quot;)</formula>
+        <name>Approval Step - Sent to Next Approver1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_Next_Approver_2</fullName>
+        <field>Approval_Step__c</field>
+        <formula>IF( 
+ispickval( Approval_Routing_Options__c, &quot;Leadership Development Institute Training&quot;), 
+&quot;Awaiting Leadership Development Institute Training Queue Approval&quot;, 
+&quot;Awaiting Training Officer Approval&quot;)</formula>
+        <name>Approval Step - Sent to Next Approver2</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
         <protected>false</protected>

@@ -1,7 +1,7 @@
 <aura:component controller="FormPageController" implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName">
 	<aura:attribute name="pageStatus" type="string" default="viewFormTypes"/>
     <aura:attribute name="forms" type="RecordType[]"/>
-    <aura:attribute name="FandP_forms" type="RecordType[]"/>
+    <aura:attribute name="FandP_forms" type="List"/>
     <aura:attribute name="isOpen" type="boolean" default="false"/>
 	<aura:attribute name="confirmIsOpen" type="boolean" default="false"/>
     <aura:attribute name="modalName" type="string"/>
@@ -69,7 +69,7 @@
             	FORM NUMBER
             </td>
             <td style="color: white; padding: 5px; width: 60%; border: 1px solid lightgray;">
-            	FORM NAME AND TYPE
+            	FORM NAME
             </td>
         </tr>
         <aura:iteration var="form" items="{!v.forms}">
@@ -92,7 +92,7 @@
     
     <br/>
     
-    <!--View Fill & Print Forms List-->
+        <!--View Fill & Print Forms List-->
     <aura:if isTrue="{!v.pageStatus == 'viewFormTypes'}">
     <div style="margin-left: 205px; width: 60%;">
     <table style="width=100%; border: 1px solid black;">
@@ -114,33 +114,29 @@
             	FORM NUMBER
             </td>
             <td style="color: white; padding: 5px; width: 60%; border: 1px solid lightgray;">
-            	FORM NAME AND TYPE
+            	FORM NAME
             </td>
         </tr>
         <aura:iteration var="FPforms" items="{!v.FandP_forms}">  
-   <!--     	<aura:iteration var="form" items="{!v.forms}">  -->
             <tr style="background-color: white; width: 100%; border: 1px solid lightgray;">
                 <td style="color: black; padding: 5px; width: 10%; border: 1px solid lightgray; text-align: center;">
-            <!--    <a href="https://epaoei- -oeiodsta- -c.cs33.content.force.com/servlet/servlet.FileDownload?file=015350000009Jwo" target="_blank">  -->
-                    <a href="https://oeiodsta-oeiodstadev.cs33.force.com/?uid=t1-user">
+                <a href="{!FPforms.File_Url__c}" download="form.pdf">
                     <button style="color: black;">Download</button>
-               	</a>
+               	</a>  
                 </td>
                 <td style="color: black; padding: 5px; width: 30%; border: 1px solid lightgray;">
-                	{!FPforms.Name}
-                    <!-- {!form.Name}  -->
+                	{!FPforms.Label}
                 </td>
                 <td style="color: black; padding: 5px; width: 60%; border: 1px solid lightgray;">
-                	{!FPforms.Description}
-                    <!-- {!form.Description} -->
+                	{!FPforms.Description__c}
                 </td>
             </tr>
         </aura:iteration>
     </table>
-        <br/>
+        <br/><br/>
     </div>
     </aura:if> 
-    <!--End Form List-->
+    <!--End Fill and Print Forms List-->
     
     <!--View My Forms List-->
     <aura:if isTrue="{!v.pageStatus == 'viewMyForms'}">
