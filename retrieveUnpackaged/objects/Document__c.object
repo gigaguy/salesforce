@@ -516,6 +516,33 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Document_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Document Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>MOD - Miscellaneous Obligation Authority</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SWA - Secure Work Authorization</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Dollar_Amount_1__c</fullName>
         <externalId>false</externalId>
         <label>Dollar Amount 1</label>
@@ -13758,6 +13785,10 @@
                     <fullName>RTPPOD - Research Triangle Park</fullName>
                     <default>false</default>
                 </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -15049,53 +15080,6 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>SFO__c</fullName>
-        <externalId>false</externalId>
-        <inlineHelpText>Service Finance Office</inlineHelpText>
-        <label>SFO</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>RTPFC</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>CFC</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>LVFC</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>27</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>WFC</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>PYRL</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>17</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>EPA</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Site_Code__c</fullName>
         <externalId>false</externalId>
         <label>Site Code</label>
@@ -15452,32 +15436,6 @@
                 </value>
                 <value>
                     <fullName>LSMMSC00 - Best Workplaces for Commuters Database -Security</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Sub_Code__c</fullName>
-        <externalId>false</externalId>
-        <label>Sub-Code</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>1</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>2</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>3</fullName>
                     <default>false</default>
                 </value>
             </valueSetDefinition>
@@ -19169,6 +19127,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Document_Type__c</picklist>
+            <values>
+                <fullName>MOD - Miscellaneous Obligation Authority</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SWA - Secure Work Authorization</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Expenditure_Type__c</picklist>
             <values>
                 <fullName>Cellular Phone</fullName>
@@ -25752,6 +25725,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>RTPPOD - Research Triangle Park</fullName>
                 <default>false</default>
             </values>
@@ -26496,41 +26473,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>SFO__c</picklist>
-            <values>
-                <fullName>17</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>27</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>CFC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EPA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LVFC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PYRL</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>RTPFC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>WFC</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Site_Code__c</picklist>
             <values>
                 <fullName>LAKM0000 - WCF - Web Forms</fullName>
@@ -27105,21 +27047,6 @@
             </values>
             <values>
                 <fullName>WY</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Sub_Code__c</picklist>
-            <values>
-                <fullName>1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -30078,6 +30005,21 @@
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Document_Type__c</picklist>
+            <values>
+                <fullName>MOD - Miscellaneous Obligation Authority</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SWA - Secure Work Authorization</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -36597,6 +36539,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>RTPPOD - Research Triangle Park</fullName>
                 <default>false</default>
             </values>
@@ -37341,41 +37287,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>SFO__c</picklist>
-            <values>
-                <fullName>17</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>27</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>CFC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EPA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LVFC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PYRL</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>RTPFC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>WFC</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Site_Code__c</picklist>
             <values>
                 <fullName>LAKM0000 - WCF - Web Forms</fullName>
@@ -37950,21 +37861,6 @@
             </values>
             <values>
                 <fullName>WY</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Sub_Code__c</picklist>
-            <values>
-                <fullName>1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -40951,6 +40847,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Document_Type__c</picklist>
+            <values>
+                <fullName>MOD - Miscellaneous Obligation Authority</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SWA - Secure Work Authorization</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Expenditure_Type__c</picklist>
             <values>
                 <fullName>Cellular Phone</fullName>
@@ -47546,6 +47457,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>RTPPOD - Research Triangle Park</fullName>
                 <default>false</default>
             </values>
@@ -48290,41 +48205,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>SFO__c</picklist>
-            <values>
-                <fullName>17</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>27</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>CFC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EPA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LVFC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PYRL</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>RTPFC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>WFC</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Site_Code__c</picklist>
             <values>
                 <fullName>LAKM0000 - WCF - Web Forms</fullName>
@@ -48899,21 +48779,6 @@
             </values>
             <values>
                 <fullName>WY</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Sub_Code__c</picklist>
-            <values>
-                <fullName>1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -51900,6 +51765,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Document_Type__c</picklist>
+            <values>
+                <fullName>MOD - Miscellaneous Obligation Authority</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SWA - Secure Work Authorization</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Expenditure_Type__c</picklist>
             <values>
                 <fullName>Cellular Phone</fullName>
@@ -58495,6 +58375,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>RTPPOD - Research Triangle Park</fullName>
                 <default>false</default>
             </values>
@@ -59239,41 +59123,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>SFO__c</picklist>
-            <values>
-                <fullName>17</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>27</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>CFC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>EPA</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>LVFC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PYRL</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>RTPFC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>WFC</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Site_Code__c</picklist>
             <values>
                 <fullName>LAKM0000 - WCF - Web Forms</fullName>
@@ -59848,21 +59697,6 @@
             </values>
             <values>
                 <fullName>WY</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Sub_Code__c</picklist>
-            <values>
-                <fullName>1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

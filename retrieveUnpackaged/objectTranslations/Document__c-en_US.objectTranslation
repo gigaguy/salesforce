@@ -337,6 +337,22 @@
         <name>DCN__c</name>
     </fields>
     <fields>
+        <label><!-- Document Type --></label>
+        <name>Document_Type__c</name>
+        <picklistValues>
+            <masterLabel>MOD - Miscellaneous Obligation Authority</masterLabel>
+            <translation><!-- MOD - Miscellaneous Obligation Authority --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PR</masterLabel>
+            <translation><!-- PR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWA - Secure Work Authorization</masterLabel>
+            <translation><!-- SWA - Secure Work Authorization --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Dollar Amount 1 --></label>
         <name>Dollar_Amount_1__c</name>
     </fields>
@@ -6996,6 +7012,10 @@
             <translation><!-- HPOD - Headquarters --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>RTPPOD - Research Triangle Park</masterLabel>
             <translation><!-- RTPPOD - Research Triangle Park --></translation>
         </picklistValues>
@@ -7756,43 +7776,6 @@
         <relationshipLabel><!-- Documents --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Service Finance Office --></help>
-        <label><!-- SFO --></label>
-        <name>SFO__c</name>
-        <picklistValues>
-            <masterLabel>17</masterLabel>
-            <translation><!-- 17 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>27</masterLabel>
-            <translation><!-- 27 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>CFC</masterLabel>
-            <translation><!-- CFC --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>EPA</masterLabel>
-            <translation><!-- EPA --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LVFC</masterLabel>
-            <translation><!-- LVFC --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>PYRL</masterLabel>
-            <translation><!-- PYRL --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>RTPFC</masterLabel>
-            <translation><!-- RTPFC --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>WFC</masterLabel>
-            <translation><!-- WFC --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
         <label><!-- Site Code --></label>
         <name>Site_Code__c</name>
         <picklistValues>
@@ -8142,22 +8125,6 @@
         <picklistValues>
             <masterLabel>MN275600</masterLabel>
             <translation><!-- MN275600 --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
-        <label><!-- Sub-Code --></label>
-        <name>Sub_Code__c</name>
-        <picklistValues>
-            <masterLabel>1</masterLabel>
-            <translation><!-- 1 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>2</masterLabel>
-            <translation><!-- 2 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>3</masterLabel>
-            <translation><!-- 3 --></translation>
         </picklistValues>
     </fields>
     <fields>
