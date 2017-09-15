@@ -111,6 +111,14 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Is_FCO__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is FCO</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>LAN_ID__c</fullName>
         <externalId>true</externalId>
         <label>LAN ID</label>
