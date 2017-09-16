@@ -594,6 +594,42 @@
         <name>Issue_s_Describe_in_detail__c</name>
     </fields>
     <fields>
+        <label><!-- Item Description --></label>
+        <name>Item_Description_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Description --></label>
+        <name>Item_Description_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Number --></label>
+        <name>Item_Number_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Number --></label>
+        <name>Item_Number_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Number --></label>
+        <name>Item_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Price --></label>
+        <name>Item_Price_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Price --></label>
+        <name>Item_Price_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Quantity --></label>
+        <name>Item_Quantity_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Quantity --></label>
+        <name>Item_Quantity_2__c</name>
+    </fields>
+    <fields>
         <label><!-- Late Risk Assessment --></label>
         <name>Late_Risk_Assessment__c</name>
         <picklistValues>
@@ -608,6 +644,18 @@
     <fields>
         <label><!-- Lead QA Organization --></label>
         <name>Lead_QA_Organization__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Total Price --></label>
+        <name>Line_Total_Price_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Total Price --></label>
+        <name>Line_Total_Price_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Reference Identifier --></label>
+        <name>Local_Reference_Identifier__c</name>
     </fields>
     <fields>
         <label><!-- Location of Training Site --></label>
@@ -696,6 +744,14 @@
     <fields>
         <label><!-- PRIA Decision Time Frame --></label>
         <name>PRIA_Decision_Time_Frame__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part Number --></label>
+        <name>Part_Number_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part Number --></label>
+        <name>Part_Number_2__c</name>
     </fields>
     <fields>
         <label><!-- Participating Organization(s) --></label>
@@ -883,6 +939,35 @@
         <name>Registration__c</name>
     </fields>
     <fields>
+        <label><!-- Request Type --></label>
+        <name>Request_Type__c</name>
+        <picklistValues>
+            <masterLabel>Event Purchase</masterLabel>
+            <translation><!-- Event Purchase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Purchase</masterLabel>
+            <translation><!-- General Purchase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT Purchase</masterLabel>
+            <translation><!-- IT Purchase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requested Delivery Date --></label>
+        <name>Requested_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requested Recipient --></label>
+        <name>Requested_Recipient__c</name>
+        <relationshipLabel><!-- Forms (Requested Recipient) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Select Documentation Type --></label>
         <name>Select_Documentation_Type__c</name>
         <picklistValues>
@@ -963,6 +1048,10 @@
     <fields>
         <label><!-- To Be Prepared --></label>
         <name>To_Be_Prepared__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Request Amount --></label>
+        <name>Total_Request_Amount__c</name>
     </fields>
     <fields>
         <label><!-- Training Accreditation Indicator --></label>
@@ -1455,12 +1544,20 @@
         <name>Vehicle__c</name>
     </fields>
     <fields>
+        <label><!-- Vendor Contact --></label>
+        <name>Vendor_Contact__c</name>
+    </fields>
+    <fields>
         <label><!-- Vendor Email Address --></label>
         <name>Vendor_Email_Address__c</name>
     </fields>
     <fields>
         <label><!-- Vendor Telephone Number --></label>
         <name>Vendor_Telephone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor URL --></label>
+        <name>Vendor_URL__c</name>
     </fields>
     <fields>
         <label><!-- Work Description --></label>
@@ -1570,6 +1667,25 @@
     </layouts>
     <layouts>
         <layout>EPA-1900-8A</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Line Items --></label>
+            <section>Line Items</section>
+        </sections>
+        <sections>
+            <label><!-- Vendor Information --></label>
+            <section>Vendor Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>EPA-1900-8A_old</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
@@ -1711,6 +1827,10 @@
     <recordTypes>
         <label><!-- EPA-1900-8a --></label>
         <name>EPA_1900_8a</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- EPA-1900-8a (old) --></label>
+        <name>EPA_1900_8a_old</name>
     </recordTypes>
     <recordTypes>
         <label><!-- ORD-111 --></label>
