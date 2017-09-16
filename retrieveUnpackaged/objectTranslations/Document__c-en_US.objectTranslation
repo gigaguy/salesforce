@@ -42,6 +42,16 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Alternate Project Officer --></label>
+        <name>Alternate_Project_Officer__c</name>
+        <relationshipLabel><!-- Documents (Alternate Project Officer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Alternate Work Assignment Manager --></label>
+        <name>Alternate_Work_Assignment_Manager__c</name>
+        <relationshipLabel><!-- Documents (Alternate Work Assignment Manager) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Appropriation --></label>
         <name>Appropriation__c</name>
         <picklistValues>
@@ -324,6 +334,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Comment --></label>
+        <name>Comment__c</name>
+    </fields>
+    <fields>
         <label><!-- Comments --></label>
         <name>Comments__c</name>
     </fields>
@@ -337,15 +351,23 @@
         <name>DCN__c</name>
     </fields>
     <fields>
+        <label><!-- Document Type Number --></label>
+        <name>Document_Type_Number__c</name>
+    </fields>
+    <fields>
         <label><!-- Document Type --></label>
         <name>Document_Type__c</name>
         <picklistValues>
-            <masterLabel>MOD - Miscellaneous Obligation Authority</masterLabel>
-            <translation><!-- MOD - Miscellaneous Obligation Authority --></translation>
+            <masterLabel>CN - Commitment Notice</masterLabel>
+            <translation><!-- CN - Commitment Notice --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>PR</masterLabel>
-            <translation><!-- PR --></translation>
+            <masterLabel>MOD - Miscellaneous Document</masterLabel>
+            <translation><!-- MOD - Miscellaneous Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PR - Procurement Request</masterLabel>
+            <translation><!-- PR - Procurement Request --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>SWA - Secure Work Authorization</masterLabel>
@@ -6722,30 +6744,6 @@
         <name>FTE_Op_Plan__c</name>
     </fields>
     <fields>
-        <label><!-- FY --></label>
-        <name>FY__c</name>
-        <picklistValues>
-            <masterLabel>2016</masterLabel>
-            <translation><!-- 2016 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>2017</masterLabel>
-            <translation><!-- 2017 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>2018</masterLabel>
-            <translation><!-- 2018 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>2019</masterLabel>
-            <translation><!-- 2019 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>2020</masterLabel>
-            <translation><!-- 2020 --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
         <label><!-- File Name --></label>
         <name>File_Name__c</name>
     </fields>
@@ -7018,6 +7016,10 @@
         <picklistValues>
             <masterLabel>RTPPOD - Research Triangle Park</masterLabel>
             <translation><!-- RTPPOD - Research Triangle Park --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SACO - Ann Arbor</masterLabel>
+            <translation><!-- SACO - Ann Arbor --></translation>
         </picklistValues>
     </fields>
     <fields>
