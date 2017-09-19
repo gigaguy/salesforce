@@ -125,6 +125,22 @@
     <fields>
         <label><!-- Billing Instructions --></label>
         <name>Billing_Instructions__c</name>
+        <picklistValues>
+            <masterLabel>No Cost Training</masterLabel>
+            <translation><!-- No Cost Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchase Card Transaction</masterLabel>
+            <translation><!-- Purchase Card Transaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USEPA Cincinnati Finance Center</masterLabel>
+            <translation><!-- USEPA Cincinnati Finance Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USEPA RTP Finance Center</masterLabel>
+            <translation><!-- USEPA RTP Finance Center --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Books &amp; Materials --></label>
@@ -602,6 +618,18 @@
         <name>Item_Description_2__c</name>
     </fields>
     <fields>
+        <label><!-- Item Description --></label>
+        <name>Item_Description_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Description --></label>
+        <name>Item_Description_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Description --></label>
+        <name>Item_Description_5__c</name>
+    </fields>
+    <fields>
         <label><!-- Item Number --></label>
         <name>Item_Number_1__c</name>
     </fields>
@@ -611,7 +639,15 @@
     </fields>
     <fields>
         <label><!-- Item Number --></label>
-        <name>Item_Number__c</name>
+        <name>Item_Number_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Number --></label>
+        <name>Item_Number_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Number --></label>
+        <name>Item_Number_5__c</name>
     </fields>
     <fields>
         <label><!-- Item Price --></label>
@@ -622,12 +658,36 @@
         <name>Item_Price_2__c</name>
     </fields>
     <fields>
+        <label><!-- Item Price --></label>
+        <name>Item_Price_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Price --></label>
+        <name>Item_Price_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Price --></label>
+        <name>Item_Price_5__c</name>
+    </fields>
+    <fields>
         <label><!-- Item Quantity --></label>
         <name>Item_Quantity_1__c</name>
     </fields>
     <fields>
         <label><!-- Item Quantity --></label>
         <name>Item_Quantity_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Quantity --></label>
+        <name>Item_Quantity_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Quantity --></label>
+        <name>Item_Quantity_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Quantity --></label>
+        <name>Item_Quantity_5__c</name>
     </fields>
     <fields>
         <label><!-- Late Risk Assessment --></label>
@@ -652,6 +712,18 @@
     <fields>
         <label><!-- Line Total Price --></label>
         <name>Line_Total_Price_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Total Price --></label>
+        <name>Line_Total_Price_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Total Price --></label>
+        <name>Line_Total_Price_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Total Price --></label>
+        <name>Line_Total_Price_5__c</name>
     </fields>
     <fields>
         <label><!-- Local Reference Identifier --></label>
@@ -752,6 +824,18 @@
     <fields>
         <label><!-- Part Number --></label>
         <name>Part_Number_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part Number --></label>
+        <name>Part_Number_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part Number --></label>
+        <name>Part_Number_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part Number --></label>
+        <name>Part_Number_5__c</name>
     </fields>
     <fields>
         <label><!-- Participating Organization(s) --></label>
@@ -1678,6 +1762,22 @@
         <sections>
             <label><!-- Line Items --></label>
             <section>Line Items</section>
+        </sections>
+        <sections>
+            <label><!-- LineItemSpacer1 --></label>
+            <section>LineItemSpacer1</section>
+        </sections>
+        <sections>
+            <label><!-- LineItemSpacer2 --></label>
+            <section>LineItemSpacer2</section>
+        </sections>
+        <sections>
+            <label><!-- LineItemSpacer3 --></label>
+            <section>LineItemSpacer3</section>
+        </sections>
+        <sections>
+            <label><!-- LineItemSpacer4 --></label>
+            <section>LineItemSpacer4</section>
         </sections>
         <sections>
             <label><!-- Vendor Information --></label>

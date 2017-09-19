@@ -67,6 +67,7 @@
     <fields>
         <fullName>Action_Information__c</fullName>
         <defaultValue>&quot;This action involves the collection, generation, use, and/or reporting of environmental data; the design, construction, and operation of environmental technologies; or development of software, models, or methods.&quot;</defaultValue>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Action Information</label>
         <length>256</length>
@@ -77,6 +78,7 @@
     </fields>
     <fields>
         <fullName>Additional_Data_Required__c</fullName>
+        <description>PRIAv5</description>
         <externalId>false</externalId>
         <label>Additional Data Required</label>
         <required>false</required>
@@ -125,6 +127,7 @@
     </fields>
     <fields>
         <fullName>Applicant_Name_Last_First_MI__c</fullName>
+        <description>SF-182</description>
         <externalId>false</externalId>
         <label>Applicant Name (Last, First, MI)</label>
         <length>255</length>
@@ -136,6 +139,7 @@
     </fields>
     <fields>
         <fullName>Approval_Routing_Options__c</fullName>
+        <description>SF-182</description>
         <externalId>false</externalId>
         <label>Approval Routing Options</label>
         <required>false</required>
@@ -198,6 +202,7 @@
     </fields>
     <fields>
         <fullName>Are_the_QA_documentation_requirements_sp__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <inlineHelpText>Are the QA documentation requirements specified on this form incorporated into the extramural documentation (RFA, RFP, SOW, PWS, etc.)?</inlineHelpText>
         <label>Are QA doc requirements incorporated?</label>
@@ -226,6 +231,7 @@
     </fields>
     <fields>
         <fullName>Award_Documentation_before_or_after__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Before or After Award Documentation?</label>
         <required>false</required>
@@ -255,7 +261,28 @@
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>TextArea</type>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>USEPA RTP Finance Center</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>USEPA Cincinnati Finance Center</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Purchase Card Transaction</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No Cost Training</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Books_Materials__c</fullName>
@@ -347,6 +374,7 @@
     </fields>
     <fields>
         <fullName>Contract_Actions__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Contract Actions</label>
         <required>false</required>
@@ -383,6 +411,7 @@
     </fields>
     <fields>
         <fullName>Contractor__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Contractor</label>
         <length>255</length>
@@ -621,6 +650,7 @@
     </fields>
     <fields>
         <fullName>Decision__c</fullName>
+        <description>PRIAv5</description>
         <externalId>false</externalId>
         <label>Decision # (each on its own line)</label>
         <required>false</required>
@@ -660,6 +690,7 @@
     </fields>
     <fields>
         <fullName>Developed_in_accordance_with__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Developed in accordance with:</label>
         <required>false</required>
@@ -853,6 +884,7 @@
     </fields>
     <fields>
         <fullName>Estimated_Award__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Estimated Award $</label>
         <precision>10</precision>
@@ -864,6 +896,7 @@
     </fields>
     <fields>
         <fullName>Estimated_End_Date__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Estimated End Date</label>
         <required>false</required>
@@ -873,6 +906,7 @@
     </fields>
     <fields>
         <fullName>Estimated_Start_Date__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Estimated Start Date</label>
         <required>false</required>
@@ -883,6 +917,7 @@
     <fields>
         <fullName>Exists__c</fullName>
         <defaultValue>false</defaultValue>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Exists</label>
         <trackHistory>false</trackHistory>
@@ -891,6 +926,7 @@
     </fields>
     <fields>
         <fullName>Expected_Submission_Date__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Expected Submission Date</label>
         <required>false</required>
@@ -1147,6 +1183,7 @@
     </fields>
     <fields>
         <fullName>ID_Number__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>ID Number</label>
         <length>50</length>
@@ -1263,6 +1300,7 @@
     </fields>
     <fields>
         <fullName>Is_the_above_statement_true__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Is the above statement true?</label>
         <required>false</required>
@@ -1317,12 +1355,44 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Item_Number_1__c</fullName>
+        <fullName>Item_Description_3__c</fullName>
         <externalId>false</externalId>
-        <formula>IF( ISBLANK(Part_Number_1__c), null, 1)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Item Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Description_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Item Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Description_5__c</fullName>
+        <externalId>false</externalId>
+        <label>Item Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Number_1__c</fullName>
+        <defaultValue>1</defaultValue>
+        <externalId>false</externalId>
         <label>Item Number</label>
-        <precision>18</precision>
+        <precision>1</precision>
         <required>false</required>
         <scale>0</scale>
         <trackHistory>false</trackHistory>
@@ -1332,11 +1402,10 @@
     </fields>
     <fields>
         <fullName>Item_Number_2__c</fullName>
+        <defaultValue>2</defaultValue>
         <externalId>false</externalId>
-        <formula>IF( ISBLANK(Part_Number_2__c), null, 2)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Item Number</label>
-        <precision>18</precision>
+        <precision>1</precision>
         <required>false</required>
         <scale>0</scale>
         <trackHistory>false</trackHistory>
@@ -1345,8 +1414,34 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Item_Number__c</fullName>
-        <defaultValue>1</defaultValue>
+        <fullName>Item_Number_3__c</fullName>
+        <defaultValue>3</defaultValue>
+        <externalId>false</externalId>
+        <label>Item Number</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Number_4__c</fullName>
+        <defaultValue>4</defaultValue>
+        <externalId>false</externalId>
+        <label>Item Number</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Number_5__c</fullName>
+        <defaultValue>5</defaultValue>
         <externalId>false</externalId>
         <label>Item Number</label>
         <precision>1</precision>
@@ -1380,6 +1475,39 @@
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>Item_Price_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Item Price</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Item_Price_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Item Price</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Item_Price_5__c</fullName>
+        <externalId>false</externalId>
+        <label>Item Price</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Item_Quantity_1__c</fullName>
         <externalId>false</externalId>
         <label>Item Quantity</label>
@@ -1393,6 +1521,42 @@
     </fields>
     <fields>
         <fullName>Item_Quantity_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Item Quantity</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Quantity_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Item Quantity</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Quantity_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Item Quantity</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Quantity_5__c</fullName>
         <externalId>false</externalId>
         <label>Item Quantity</label>
         <precision>5</precision>
@@ -1428,6 +1592,7 @@
     </fields>
     <fields>
         <fullName>Lead_QA_Organization__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Lead QA Organization</label>
         <length>255</length>
@@ -1454,6 +1619,45 @@
         <fullName>Line_Total_Price_2__c</fullName>
         <externalId>false</externalId>
         <formula>Item_Quantity_2__c * Item_Price_2__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Line Total Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Line_Total_Price_3__c</fullName>
+        <externalId>false</externalId>
+        <formula>Item_Quantity_3__c * Item_Price_3__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Line Total Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Line_Total_Price_4__c</fullName>
+        <externalId>false</externalId>
+        <formula>Item_Quantity_4__c * Item_Price_4__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Line Total Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Line_Total_Price_5__c</fullName>
+        <externalId>false</externalId>
+        <formula>Item_Quantity_5__c * Item_Price_5__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Line Total Price</label>
         <precision>18</precision>
@@ -1506,6 +1710,7 @@
     </fields>
     <fields>
         <fullName>National_Program__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>National Program</label>
         <length>255</length>
@@ -1529,6 +1734,7 @@
     </fields>
     <fields>
         <fullName>Non_contract_Actions__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Non-contract Actions</label>
         <required>false</required>
@@ -1625,6 +1831,7 @@
     </fields>
     <fields>
         <fullName>Other_Description__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Other Description</label>
         <length>255</length>
@@ -1636,6 +1843,7 @@
     </fields>
     <fields>
         <fullName>Other_Details__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Other Details</label>
         <length>255</length>
@@ -1679,7 +1887,41 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Part_Number_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Part Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Part_Number_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Part Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Part_Number_5__c</fullName>
+        <externalId>false</externalId>
+        <label>Part Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Participating_Organization_s__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Participating Organization(s)</label>
         <required>false</required>
@@ -1837,6 +2079,7 @@
     </fields>
     <fields>
         <fullName>Project_Type_s__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Project Type(s)</label>
         <required>false</required>
@@ -1890,6 +2133,7 @@
     </fields>
     <fields>
         <fullName>QA_Approval_Date__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>QA Approval Date</label>
         <required>false</required>
@@ -1899,6 +2143,7 @@
     </fields>
     <fields>
         <fullName>QA_Category__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>QA Category</label>
         <required>false</required>
@@ -1927,6 +2172,7 @@
     <fields>
         <fullName>QA_Documentation_Options__c</fullName>
         <defaultValue>&quot;For solicitations, complete items 1-4; for all actions other than solicitations, complete items 3-4. All documentation specified under “Other” must be defined in the organizational Quality Management Plan and be consistent with requirements defined in EPA Manual 5360 A1 (CIO 2105-P-01-0). For all items checked below, there must be adequate information in the SOW (or its appendices) for the submitter to develop this documentation. Where applicable, reference a specific section of the SOW. (R-2 refers to EPA Requirements for Quality Management Plans (QA/R-2) (EPA/240/B-01/002) and R-5 refers to EPA Requirements for Quality Assurance Project Plans (QA/R-5) (EPA/240/B-01/003). Copies of these documents are available at http://www.epa.gov/quality/qa_docs.html)&quot;</defaultValue>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>QA Documentation Options:</label>
         <length>766</length>
@@ -1937,6 +2183,7 @@
     </fields>
     <fields>
         <fullName>QA_Documentation__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>QA Documentation:</label>
         <required>false</required>
@@ -1960,6 +2207,7 @@
     </fields>
     <fields>
         <fullName>QA_Tracking_Number__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>QA Tracking Number</label>
         <length>255</length>
@@ -1971,6 +2219,7 @@
     </fields>
     <fields>
         <fullName>QA_doc_included_as_an_evaluation_factor__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <inlineHelpText>For new actions, has the QA documentation required in Section IV of this form been included in the RFA, RFP, SOW or PWS as an evaluation factor?</inlineHelpText>
         <label>QA doc included as an evaluation factor?</label>
@@ -2084,6 +2333,7 @@
     </fields>
     <fields>
         <fullName>Select_Documentation_Type__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Select Documentation Type</label>
         <required>false</required>
@@ -2261,6 +2511,7 @@
     </fields>
     <fields>
         <fullName>Title_QA__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Title</label>
         <length>255</length>
@@ -2284,6 +2535,7 @@
     <fields>
         <fullName>To_Be_Prepared__c</fullName>
         <defaultValue>false</defaultValue>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>To Be Prepared</label>
         <trackHistory>false</trackHistory>
@@ -2294,7 +2546,10 @@
         <fullName>Total_Request_Amount__c</fullName>
         <externalId>false</externalId>
         <formula>Line_Total_Price_1__c  + 
-Line_Total_Price_2__c</formula>
+Line_Total_Price_2__c  +
+Line_Total_Price_3__c  +
+Line_Total_Price_4__c  +
+Line_Total_Price_5__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Total Request Amount</label>
         <precision>18</precision>
@@ -2952,6 +3207,7 @@ Line_Total_Price_2__c</formula>
     </fields>
     <fields>
         <fullName>Type_of_Action__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Type of Action</label>
         <required>false</required>
@@ -3145,6 +3401,7 @@ Line_Total_Price_2__c</formula>
     </fields>
     <fields>
         <fullName>Vehicle__c</fullName>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Vehicle #</label>
         <length>255</length>
@@ -3218,6 +3475,7 @@ Line_Total_Price_2__c</formula>
     </fields>
     <fields>
         <fullName>X75_Day_Letter_sent__c</fullName>
+        <description>PRIAv5</description>
         <externalId>false</externalId>
         <label>&quot;75 Day&quot; Letter sent?</label>
         <required>false</required>
@@ -3254,6 +3512,7 @@ Line_Total_Price_2__c</formula>
     </fields>
     <fields>
         <fullName>of_Approval_Supervisors__c</fullName>
+        <description>SF-182</description>
         <externalId>false</externalId>
         <label># of Approval Supervisors</label>
         <required>false</required>
@@ -3450,6 +3709,25 @@ Line_Total_Price_2__c</formula>
             </values>
             <values>
                 <fullName>Before</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billing_Instructions__c</picklist>
+            <values>
+                <fullName>No Cost Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Card Transaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4427,6 +4705,25 @@ Line_Total_Price_2__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Billing_Instructions__c</picklist>
+            <values>
+                <fullName>No Cost Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Card Transaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -5396,6 +5693,25 @@ Line_Total_Price_2__c</formula>
             </values>
             <values>
                 <fullName>Before</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billing_Instructions__c</picklist>
+            <values>
+                <fullName>No Cost Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Card Transaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6385,6 +6701,25 @@ Line_Total_Price_2__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Billing_Instructions__c</picklist>
+            <values>
+                <fullName>No Cost Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Card Transaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -7354,6 +7689,25 @@ Line_Total_Price_2__c</formula>
             </values>
             <values>
                 <fullName>Before</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billing_Instructions__c</picklist>
+            <values>
+                <fullName>No Cost Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Card Transaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -8343,6 +8697,25 @@ Line_Total_Price_2__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Billing_Instructions__c</picklist>
+            <values>
+                <fullName>No Cost Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Card Transaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -9312,6 +9685,25 @@ Line_Total_Price_2__c</formula>
             </values>
             <values>
                 <fullName>Before</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billing_Instructions__c</picklist>
+            <values>
+                <fullName>No Cost Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Card Transaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
