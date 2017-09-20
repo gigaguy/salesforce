@@ -13,6 +13,10 @@
         <name>AWL_Phone_Number__c</name>
     </fields>
     <fields>
+        <label><!-- A. Description --></label>
+        <name>A_Description__c</name>
+    </fields>
+    <fields>
         <label><!-- Action Information --></label>
         <name>Action_Information__c</name>
     </fields>
@@ -53,8 +57,24 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Annual Leave Amount --></label>
+        <name>Annual_Leave_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annual Leave Description --></label>
+        <name>Annual_Leave_Description__c</name>
+    </fields>
+    <fields>
         <label><!-- Applicant Name (Last, First, MI) --></label>
         <name>Applicant_Name_Last_First_MI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Description --></label>
+        <name>Application_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Apply --></label>
+        <name>Apply__c</name>
     </fields>
     <fields>
         <label><!-- Approval Routing Options --></label>
@@ -123,6 +143,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Billing Address --></label>
+        <name>Billing_Address__c</name>
+    </fields>
+    <fields>
         <label><!-- Billing Instructions --></label>
         <name>Billing_Instructions__c</name>
         <picklistValues>
@@ -149,6 +173,10 @@
     <fields>
         <label><!-- Branch --></label>
         <name>Branch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Certification --></label>
+        <name>Certification__c</name>
     </fields>
     <fields>
         <label><!-- Chemical Name --></label>
@@ -332,6 +360,15 @@
         <name>Description__c</name>
     </fields>
     <fields>
+        <label><!-- Designate Hours --></label>
+        <name>Designate_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Of the total hours shown in Box B above, I wish to designate hours of annual leave to the qualified recipient named below. I certify that this employee is not my immediate supervisor --></help>
+        <label><!-- Hours to Qualified Recipient --></label>
+        <name>Designated__c</name>
+    </fields>
+    <fields>
         <label><!-- Developed in accordance with: --></label>
         <name>Developed_in_accordance_with__c</name>
         <picklistValues>
@@ -392,8 +429,24 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Donate --></label>
+        <name>Donate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Donation Amout --></label>
+        <name>Donation_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Donation Description --></label>
+        <name>Donation_Description__c</name>
+    </fields>
+    <fields>
         <label><!-- EHRI Employee Number --></label>
         <name>EHRI_Employee_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- I hereby apply for membership in the EPA --></label>
+        <name>EPA_LEAVE_BANK_APPLICATION__c</name>
     </fields>
     <fields>
         <label><!-- Education Level --></label>
@@ -403,6 +456,10 @@
         <help><!-- Clicking the &quot;Employee&apos;s Signature&quot; checkbox will sign this section upon saving the form. --></help>
         <label><!-- Employee Digital Signature --></label>
         <name>Employee_Digital_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee ID No --></label>
+        <name>Employee_ID_No__c</name>
     </fields>
     <fields>
         <help><!-- Clicking this box digitally dates and signs this form. --></help>
@@ -434,16 +491,16 @@
         <name>Expire_Date__c</name>
     </fields>
     <fields>
+        <label><!-- Extra Hours of Annual Leave to Donate --></label>
+        <name>Extra_Hours_of_annual_leave__c</name>
+    </fields>
+    <fields>
         <label><!-- Fee Category --></label>
         <name>Fee_Category__c</name>
     </fields>
     <fields>
         <label><!-- Form Owner --></label>
         <name>Form_Owner__c</name>
-    </fields>
-    <fields>
-        <label><!-- Form Record Name --></label>
-        <name>Form_Record_Name__c</name>
     </fields>
     <fields>
         <label><!-- Form Status --></label>
@@ -544,6 +601,10 @@
     <fields>
         <label><!-- ID Number --></label>
         <name>ID_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- I hereby wish to contribute annual leave --></label>
+        <name>I_hereby_wish_to_contribute_annual_leave__c</name>
     </fields>
     <fields>
         <label><!-- If not, date &quot;Fix&quot; expected --></label>
@@ -800,6 +861,10 @@
     <fields>
         <label><!-- Organization Mailing Address --></label>
         <name>Organization_Mailing_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization and Address --></label>
+        <name>Organization_and_Address__c</name>
     </fields>
     <fields>
         <label><!-- Original PRIA Due Date --></label>
@@ -1644,12 +1709,24 @@
         <name>Vendor_URL__c</name>
     </fields>
     <fields>
+        <label><!-- Withdrawl Penalty --></label>
+        <name>Withdrawl_Penalty__c</name>
+    </fields>
+    <fields>
+        <label><!-- Withdrawl --></label>
+        <name>Withdrawl__c</name>
+    </fields>
+    <fields>
         <label><!-- Work Description --></label>
         <name>Work_Description__c</name>
     </fields>
     <fields>
         <label><!-- Work Email Address --></label>
         <name>Work_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Phone --></label>
+        <name>Work_Phone__c</name>
     </fields>
     <fields>
         <label><!-- &quot;75 Day&quot; Letter sent? --></label>
@@ -1796,6 +1873,33 @@
         </sections>
     </layouts>
     <layouts>
+        <layout>EPA3160-6v5</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Employee&apos;s Signature --></label>
+            <section>Employee&apos;s Signature</section>
+        </sections>
+        <sections>
+            <label><!-- Information About You --></label>
+            <section>Information About You</section>
+        </sections>
+        <sections>
+            <label><!-- Instructions --></label>
+            <section>Instructions</section>
+        </sections>
+        <sections>
+            <label><!-- Type of Contribution --></label>
+            <section>Type of Contribution</section>
+        </sections>
+    </layouts>
+    <layouts>
         <layout>ORD-111</layout>
         <sections>
             <label><!-- Custom Links --></label>
@@ -1919,6 +2023,10 @@
     <recordTypes>
         <label><!-- BAP Provisioning --></label>
         <name>BAP_Provisioning</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- EPA3160-6v5 --></label>
+        <name>EPA3160_6v5</name>
     </recordTypes>
     <recordTypes>
         <label><!-- EPA-100 --></label>

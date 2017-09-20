@@ -14,6 +14,10 @@
                 <behavior>Edit</behavior>
                 <field>of_Approval_Supervisors__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Donation_Description__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -270,6 +274,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Billing_Instructions__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Billing_Address__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
