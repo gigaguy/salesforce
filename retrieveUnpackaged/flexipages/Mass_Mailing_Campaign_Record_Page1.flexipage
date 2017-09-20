@@ -68,6 +68,17 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>parentFieldApiName</name>
+                <value>Mass_Mailing_Campaign__c.Id</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>relatedListApiName</name>
+                <value>Submissions__r</value>
+            </componentInstanceProperties>
+            <componentName>force:relatedListSingleContainer</componentName>
+        </componentInstances>
         <mode>Replace</mode>
         <name>sidebar</name>
         <type>Region</type>

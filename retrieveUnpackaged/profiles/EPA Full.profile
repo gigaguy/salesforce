@@ -2297,7 +2297,7 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-DuplicateRecordSet</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Idea</tab>
@@ -2366,10 +2366,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ChatterFileLink</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ChatterInternalUser</name>
     </userPermissions>
     <userPermissions>
@@ -2379,6 +2375,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ContentWorkspaces</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>CreateCustomizeDashboards</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2402,6 +2402,14 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>EditMyDashboards</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>EditMyReports</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>EditTask</name>
     </userPermissions>
     <userPermissions>
@@ -2414,15 +2422,19 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>EnableNotifications</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>LightningExperienceUser</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>MassInlineEdit</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>NewReportBuilder</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>RunFlow</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

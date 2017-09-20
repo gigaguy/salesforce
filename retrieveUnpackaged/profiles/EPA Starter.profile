@@ -2093,46 +2093,19 @@
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
+        <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>Idea</object>
+        <object>ContactUserRelation__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
+        <allowDelete>false</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>ProfileSkill</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>ProfileSkillEndorsement</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>ProfileSkillUser</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>StreamingChannel</object>
+        <object>Forms__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <pageAccesses>
@@ -2276,7 +2249,7 @@
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Forms__c</tab>
-        <visibility>Hidden</visibility>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Mass_Mailing_Campaign__c</tab>
@@ -2324,7 +2297,7 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-DuplicateRecordSet</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Idea</tab>
@@ -2356,7 +2329,7 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-ProfileSkill</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Quote</tab>
@@ -2381,14 +2354,6 @@
     <userLicense>Salesforce Platform</userLicense>
     <userPermissions>
         <enabled>true</enabled>
-        <name>AllowUniversalSearch</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>AllowViewKnowledge</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ApiEnabled</name>
     </userPermissions>
     <userPermissions>
@@ -2406,10 +2371,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ChatterEditOwnRecordPost</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ChatterFileLink</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2457,10 +2418,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>CustomMobileAppsAccess</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>DistributeFromPersWksp</name>
     </userPermissions>
     <userPermissions>
@@ -2477,14 +2434,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>EditPublicFilters</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>EditPublicTemplates</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>EditTask</name>
     </userPermissions>
     <userPermissions>
@@ -2493,35 +2442,11 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>EmailMass</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>EmailSingle</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>EnableCommunityAppLauncher</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>EnableNotifications</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ExportReport</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ImportPersonal</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>LightningExperienceUser</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageReportsInPubFolders</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2558,9 +2483,5 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewPublicReports</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewSetup</name>
     </userPermissions>
 </Profile>
