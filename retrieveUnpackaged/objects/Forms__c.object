@@ -67,17 +67,29 @@
     </fields>
     <fields>
         <fullName>A_Description__c</fullName>
+        <defaultValue>&quot;I hereby apply for membership in the EPA Leave Bank. I authorize EPA to deduct one pay period accrual of annual leave (or such other amount as the Agency’s Leave Bank Board has established for this enrollment period) each leave year for deposit into the EPA Leave Bank until I terminate my membership.&quot;</defaultValue>
+        <description>EPA3160-6v5</description>
         <externalId>false</externalId>
         <label>A. Description</label>
-        <length>32768</length>
+        <length>1000</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Html</type>
+        <type>LongTextArea</type>
         <visibleLines>25</visibleLines>
     </fields>
     <fields>
+        <fullName>A__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>A</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Action_Information__c</fullName>
-        <defaultValue>&quot;This action involves the collection, generation, use, and/or reporting of environmental data; the design, construction, and operation of environmental technologies; or development of software, models, or methods.&quot;</defaultValue>
+        <defaultValue>&quot;Does this action involve the collection, generation, use, and/or reporting of environmental data; the design, construction, and operation of environmental technologies; or development of software, models, or methods?&quot;</defaultValue>
         <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Action Information</label>
@@ -137,30 +149,6 @@
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
-        <fullName>Annual_Leave_Amount__c</fullName>
-        <externalId>false</externalId>
-        <label>Annual Leave Amount</label>
-        <precision>7</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Annual_Leave_Description__c</fullName>
-        <defaultValue>&quot;that would otherwise be forfeited at the end of the current leave year to the EPA Leave Bank. By signing the statement below, I certify that I want EPA to deposit, at the conclusion of the current leave year, all leave that I would otherwise forfeit, directly into the Agency Leave Bank. This leave may not be restored. (NOTE: To facilitate and encourage extra donations, the normal limitation for contributing use-or-lose hours is waived during the open season. This waiver is in accordance with the Leave Bank regulations under 5 CFR, Section 630.1005)&quot;</defaultValue>
-        <externalId>false</externalId>
-        <label>Annual Leave Description</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Applicant_Name_Last_First_MI__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -171,27 +159,6 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Application_Description__c</fullName>
-        <defaultValue>&quot;I hereby wish to contribute annual leave that would otherwise be forfeited at the end of the current leave year to the EPA Leave Bank. By signing the statement below, I certify that I want EPA to deposit, at the conclusion of the current leave year, all leave that I would otherwise forfeit, directly into the Agency Leave Bank. This leave may not be restored. (NOTE: To facilitate and encourage extra donations, the normal limitation for contributing use-or-lose hours is waived during the open season. This waiver is in accordance with the Leave Bank regulations under 5 CFR, Section 630.1005)&quot;</defaultValue>
-        <externalId>false</externalId>
-        <label>Application Description</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Apply__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>Apply</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Approval_Routing_Options__c</fullName>
@@ -259,35 +226,6 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Are_the_QA_documentation_requirements_sp__c</fullName>
-        <description>ORD-111</description>
-        <externalId>false</externalId>
-        <inlineHelpText>Are the QA documentation requirements specified on this form incorporated into the extramural documentation (RFA, RFP, SOW, PWS, etc.)?</inlineHelpText>
-        <label>Are QA doc requirements incorporated?</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Yes</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>No</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>Not Applicable</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Award_Documentation_before_or_after__c</fullName>
         <description>ORD-111</description>
         <externalId>false</externalId>
@@ -310,6 +248,28 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>B_Description__c</fullName>
+        <defaultValue>&quot;In addition to any amount contributed in Box A above, I wish to donate extra hours of annual leave to the EPA Leave Bank. A waiver may be required to do this, see instructions at the top of this form.&quot;</defaultValue>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>B Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>B__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>B</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Billing_Address__c</fullName>
@@ -377,15 +337,25 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Certification__c</fullName>
-        <defaultValue>&quot;By signing the statement below, I certify that I want EPA to deposit, at the conclusion of my leave year, all leave that I would otherwise forfeit, directly into the Agency Leave Bank.  This leave may not be restored. NOTE: To facilitate and encourage extra donations, the normal limitation for contributing use-or-lose hours is waived during the open season. This waiver is in accordance with the Leave Bank regulations under 5 CFR, Section 630.1005&quot;</defaultValue>
+        <fullName>C_Description__c</fullName>
+        <defaultValue>&quot;Of the total hours shown in box B above, I wish to designate hours of annual leave to the qualified recipient named below.  I certify that this employee is not my immediate supervisor.&quot;</defaultValue>
+        <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>Certification</label>
-        <length>130000</length>
+        <label>C Description</label>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>LongTextArea</type>
-        <visibleLines>6</visibleLines>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>C__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>C</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Chemical_Name__c</fullName>
@@ -506,6 +476,16 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Coordinator_Date__c</fullName>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Course_Number_Code__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -541,6 +521,28 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>D_Description__c</fullName>
+        <defaultValue>&quot;I hereby wish to contribute annual leave that would otherwise be forfeited at the end of the current leave year to the EPA Leave Bank.  By signing the below, I certify that I want EPA to deposit, at the conclusion of the current leave year, all the leave that would otherwise forfeit, directly into the Agency Leave Bank.  This leave may not be restored, to facilitate and encourage extra donations, the normal limitation for contributing use or lose hours is waived during the open season.  This waiver is in accordance with the Leave Bank regulations under 5 CFR, Section 630.1005.&quot;</defaultValue>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>D Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>D__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>D</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Data_Deficiencies__c</fullName>
@@ -790,28 +792,6 @@
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
-        <fullName>Designate_Hours__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>Designate Hours</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Designated__c</fullName>
-        <externalId>false</externalId>
-        <inlineHelpText>Of the total hours shown in Box B above, I wish to designate hours of annual leave to the qualified recipient named below. I certify that this employee is not my immediate supervisor</inlineHelpText>
-        <label>Hours to Qualified Recipient</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Developed_in_accordance_with__c</fullName>
         <description>ORD-111</description>
         <externalId>false</externalId>
@@ -938,6 +918,19 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Documentation_Requirements__c</fullName>
+        <defaultValue>&quot;Are the QA documentation requirements specified on this form incorporated into the extramural documentation (RFA, RFP, SOW, PWS, etc.)?&quot;</defaultValue>
+        <description>ORD-111</description>
+        <externalId>false</externalId>
+        <label>Documentation Requirements</label>
+        <length>137</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Does_applicant_need_special_accomodation__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -962,40 +955,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>Donate__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>EPA3160-6v5</description>
-        <externalId>false</externalId>
-        <label>Donate</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Donation_Amount__c</fullName>
-        <description>EPA3160-6v5</description>
-        <externalId>false</externalId>
-        <label>Donation Amout</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>Donation_Description__c</fullName>
-        <defaultValue>&quot;In addition to any amount contributed in A above, I wish to donate extra hours of annual leave to the EPA Leave Bank. (Note: A waiver may be required to do this.)&quot;</defaultValue>
-        <externalId>false</externalId>
-        <label>Donation Description</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>EHRI_Employee_Number__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -1008,11 +967,34 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>EPA_LEAVE_BANK_APPLICATION__c</fullName>
+        <fullName>EPA_Form_3110_1_Instructions__c</fullName>
+        <defaultValue>&quot;EPA personnel are required to account for all Government property in you possession or custody, outstanding cash or leave advances, financial indebtedness to the Agency and unexpired terms and conditions of outstanding employment and/or training agreements. You are responsible for arranging, through appropriate administrative channels, settlement of outstanding debts and obligations, and clearance for proprietary or sensitive information. Failure to complete this clearance process may result in the delay of final salary payments. CORs and SEE Monitor/Coordinators are required to account for all Government property on behalf of the contractor, SEE, grantee, etc. in their possession or custody including Agency records, hard copy and electronic and Library materials. By signing Part F, you acknowledge that you have completed your responsibilities to the best of you knowledge and that knowingly providing false or misleading statements in the completion of this form may be punishable by fine or imprisonment or both under applicable laws.&quot;</defaultValue>
+        <description>EPA3110-1</description>
+        <externalId>false</externalId>
+        <label>EPA Form 3110-1 Instructions</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>E_Description__c</fullName>
+        <defaultValue>&quot;I hereby withdraw from EPA’s Leave Bank. I understand that I may not re-enroll until the next open enrollment period or by another qualifying event.&quot;</defaultValue>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>E Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>E__c</fullName>
         <defaultValue>false</defaultValue>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>I hereby apply for membership in the EPA</label>
+        <label>E</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -1028,6 +1010,16 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Effective_Date_of_This_Action__c</fullName>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Effective Date of This Action</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Employee_Digital_Signature__c</fullName>
@@ -1098,6 +1090,18 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Evaluation_Factor__c</fullName>
+        <defaultValue>&quot;For new actions, has the QA documentation required in Section IV of this form been included in the RFA, RFP, SOW or PWS as an evaluation factor?&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Evaluation Factor</label>
+        <length>144</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Exists__c</fullName>
         <defaultValue>false</defaultValue>
         <description>ORD-111</description>
@@ -1128,9 +1132,10 @@
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Extra_Hours_of_annual_leave__c</fullName>
+        <fullName>Extra_Hour_Donation__c</fullName>
+        <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>Extra Hours of Annual Leave to Donate</label>
+        <label>Extra Hour Donation</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -1354,6 +1359,18 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>HR_Signature__c</fullName>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Signature</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Home_Address__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -1374,6 +1391,18 @@
         <type>Phone</type>
     </fields>
     <fields>
+        <fullName>Hours_Designated__c</fullName>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Hours Designated</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>ID_Number__c</fullName>
         <description>ORD-111</description>
         <externalId>false</externalId>
@@ -1386,13 +1415,28 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>I_hereby_wish_to_contribute_annual_leave__c</fullName>
-        <defaultValue>false</defaultValue>
+        <fullName>II_A__c</fullName>
+        <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>I hereby wish to contribute annual leave</label>
+        <label>II-A</label>
+        <length>25</length>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>II_B__c</fullName>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>II-B</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>If_not_date_Fix_expected__c</fullName>
@@ -1453,6 +1497,18 @@
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>Instructions__c</fullName>
+        <defaultValue>&quot;This form is used to apply for membership in the EPA Leave Bank. Contribute extra hours beyond your basic membership fee to the Leave Bank.  Designate all or a portion of the extra contribution in the above to a specific individual who is a qualified leave recipient.  Donate use-or-lose leave to EPA’s Leave Bank. Withdraw from EPA’s Leave Bank. Complete sections I and II, and return the form to your Human Resources Office.  You may check Box IIA and join the EPA Leave Bank only during an open enrollment period for all Agency employees or during an individual enrollment period if your are a new EPA employee or one returning to EPA from an absence covering an entire open enrollment period.  You may check Boxes IIB and/or IIC and submit this form to the Human Resources Office at any time during the year, including an open enrollment period. All contributions of leave are deposited in the Bank. They are not returned to you if you leave EPA. Also, if the person to whom you designate leave no longer has the medical emergency, any unused leave is returned to the Bank, not to you. There are limitations on the total amount of leave you may donate to the Agency Leave Bank in any one year. These limitations are: 1-You may not donate more than one half of the amount of annual leave you are projected to earn in a leave year. 2- If you are projected to forfeit leave, you may donate no more than the number of hours you are scheduled to work and receive pay from the date of the contribution. EXAMPLE: If you had 80 hours use-or-lose leave and only 5 work days remaining in the leave year, the maximum number of hours you could donate would be 40. The other 40 hours will be forfeited. Under certain conditions, these two limitations may be waived. If you need to request a waiver to donate leave beyond these limitations, see your Human Resources Officer.  The Human Resources Official whose signature appears in this section certifies the following:  1- That if the applicant has checked Box A under Section II, he or she has submitted this form to the Human Resources Office within the established time limits of either an Agency open enrollment period or an individual enrollment period.  2. That if the applicant has checked Box B under Section II, the number of hours contributed either does not exceed the regulatory limitations, or if it does exceed the limitations a waiver has been obtained.  3. That if the applicant has checked Box C under Section II, the employee designated to receive the leave is a currently qualified leave recipient under the EPA Leave Bank Program.&quot;</defaultValue>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Instructions</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
         <fullName>Interim_Consideration__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
@@ -1499,30 +1555,6 @@
                 </value>
                 <value>
                     <fullName>n/a</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Is_the_above_statement_true__c</fullName>
-        <description>ORD-111</description>
-        <externalId>false</externalId>
-        <label>Is the above statement true?</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Yes</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>No (If no, may go directly to &quot;Signatures&quot; Section.)</fullName>
                     <default>false</default>
                 </value>
             </valueSetDefinition>
@@ -1923,6 +1955,17 @@
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>NOTICE_TO_EMPLOYEE__c</fullName>
+        <defaultValue>&quot;Before completing this form, please read the instructions for Sections I and II below. A signed copy of this form will be returned via email form New Membership Enrollment only.&quot;</defaultValue>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>NOTICE TO EMPLOYEE</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>Name__c</fullName>
         <description>BAP Provisioning</description>
         <externalId>false</externalId>
@@ -2062,7 +2105,7 @@
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
         <label>Organization and Address</label>
-        <length>255</length>
+        <length>250</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -2482,35 +2525,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>QA_doc_included_as_an_evaluation_factor__c</fullName>
-        <description>ORD-111</description>
-        <externalId>false</externalId>
-        <inlineHelpText>For new actions, has the QA documentation required in Section IV of this form been included in the RFA, RFP, SOW or PWS as an evaluation factor?</inlineHelpText>
-        <label>QA doc included as an evaluation factor?</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Yes</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>No</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>Not Applicable</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Quantity__c</fullName>
         <defaultValue>1</defaultValue>
         <description>BAP Provisioning</description>
@@ -2535,6 +2549,52 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Recipient_Employee_ID_No__c</fullName>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Employee ID No.</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Recipient_Name__c</fullName>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Recipient_Organization_and_Address__c</fullName>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Organization and Address</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Recipient_Work_Phone_No__c</fullName>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Work Phone No.</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
     </fields>
     <fields>
         <fullName>Registration__c</fullName>
@@ -2600,6 +2660,98 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Response_1__c</fullName>
+        <description>ORD-111</description>
+        <externalId>false</externalId>
+        <label>Response:</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No (If no, may go directly to &quot;Signatures&quot; Section.)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Response_2__c</fullName>
+        <description>ORD-111</description>
+        <externalId>false</externalId>
+        <label>Response:</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Applicable</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Response_3__c</fullName>
+        <description>ORD-111</description>
+        <externalId>false</externalId>
+        <label>Response:</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Applicable</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SON__c</fullName>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>SON</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Select_Documentation_Type__c</fullName>
@@ -2691,6 +2843,30 @@
         <externalId>false</externalId>
         <label>Series</label>
         <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature__c</fullName>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Signature</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_of_Local_LeaveBank_Coordinator__c</fullName>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Signature of Local LeaveBank Coordinator</label>
+        <length>30</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -3597,6 +3773,16 @@ Line_Total_Price_5__c</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Typed_Name_Title_of_Authorizing_Official__c</fullName>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Typed Name/Title of Authorizing Official</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>Unauthenticated_Owner__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>EPA-100 Admin View</description>
@@ -3741,25 +3927,26 @@ Line_Total_Price_5__c</formula>
         <type>Url</type>
     </fields>
     <fields>
-        <fullName>Withdrawl_Penalty__c</fullName>
-        <defaultValue>&quot;I understand that I may not re-enroll until the next open enrollment period or by another qualifying event.&quot;</defaultValue>
+        <fullName>Waiver_Date__c</fullName>
+        <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>Withdrawl Penalty</label>
-        <length>50</length>
+        <label>Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Waiver_Signature__c</fullName>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Signature</label>
+        <length>30</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Withdrawl__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>Withdrawl</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Work_Description__c</fullName>
@@ -3784,10 +3971,10 @@ Line_Total_Price_5__c</formula>
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Work_Phone__c</fullName>
+        <fullName>Work_Phone_No__c</fullName>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>Work Phone</label>
+        <label>Work Phone No</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -3819,7 +4006,7 @@ Line_Total_Price_5__c</formula>
     </fields>
     <fields>
         <fullName>X8_Digit_Station_Symbol__c</fullName>
-        <description>SF-182</description>
+        <description>SF-182 (no longer used)</description>
         <externalId>false</externalId>
         <inlineHelpText>Example: 12-34-5678</inlineHelpText>
         <label>8 Digit Station Symbol</label>
@@ -4003,21 +4190,6 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Regions Training Form</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Are_the_QA_documentation_requirements_sp__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4266,13 +4438,994 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Is_the_above_statement_true__c</picklist>
+            <picklist>Late_Risk_Assessment__c</picklist>
+            <values>
+                <fullName>Ecological</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Non_contract_Actions__c</picklist>
+            <values>
+                <fullName>CRADA%2FMTA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cooperative Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interagency Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intramural</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Notified_this_is_the_last_negotiation__c</picklist>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Position_Level__c</picklist>
+            <values>
+                <fullName>Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-supervisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisory</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Chemistry__c</picklist>
+            <values>
+                <fullName>Acute Tox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ecological Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Efficacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labeling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28use Other Description field below%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type_s__c</picklist>
+            <values>
+                <fullName>Decision Support Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Measurements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Informatics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Models%5CApplications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28use %22Other Description%22 field%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Use of Existing Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_Category__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>To Be Specified in Individual Actions</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_Documentation__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Type__c</picklist>
+            <values>
+                <fullName>Event Purchase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Purchase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Purchase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_1__c</picklist>
             <values>
                 <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_2__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_3__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Select_Documentation_Type__c</picklist>
+            <values>
+                <fullName>Application of QA and QC activities to the single project covered by the contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Combined documentation %26 application %28QA%2FQC%29 to contract%27s single project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation of an organization%E2%80%99s Quality System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programmatic QA Project Plan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Summary_of_Deficiency_Type_s__c</picklist>
+            <values>
+                <fullName>Deficiencies %28D%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Submitted %28N%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Accreditation_Indicator__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Credit_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Semester Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Quarter Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Continuing Education Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 CEP - OIG 24 HR Reg</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Credit__c</picklist>
+            <values>
+                <fullName>0 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 credits</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Delivery_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Traditional Classroom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 On the Job</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Technology Based</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Conference%2FWorkshop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Blended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06 Correspondence</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Designation_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Undergraduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Graduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Continuing Education Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Post Graduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Purpose_Type__c</picklist>
+            <values>
+                <fullName>01 Program%2FMission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 New Work Assignment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Improve Present Performance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Future Staffing Needs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Develop Unavailable Skill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06 Retention</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Source_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Government Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Government External</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Non-government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Government State%2FLocal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Foreign Governments and Orgs</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Sub_Type_Code__c</picklist>
+            <values>
+                <fullName>01-Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02-Medical %26 Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03-Scientific</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04-Engineering %26 Architecture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05-Human Resources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06-Budget%2FFinance Business Admin%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>07-Planning %26 Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08-Information Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09-Project Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10-Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11-Logistic Specialty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12-Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13-Clerical %28non-supervisory clerical%2Fadmin%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14-Trade %26 Craft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15-Foreign Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16-Leadership%2FManager%2FCommunications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20-Pre-supervisory Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21-Supervisory Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>22-Management Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23-Leadership Development Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24-SES Candidate Development Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25-Executive Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26-Mentoring Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27-Coaching Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32-Mandated Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>34-Leadership Skills</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35-Internal Agency Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36-Technical Skills</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Training Program Area %28Technical%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Development Training Area %28Cross-functional%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Basic Training Area %28Orientation etc%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Administrative-FR Notice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CSF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Impurities Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Label</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other - Use Comment Field below</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Risk Issues Environmental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Risk Issues Human Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Appointment__c</picklist>
+            <values>
+                <fullName>10 Career %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15 Career-Conditional %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20 Nonpermanent %28Competitive Service%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 Schedule A %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32 Schedule B %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35 Schedule D %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36 Executive %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>38 Other %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40 Schedule A %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>42 Schedule B %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>44 Schedule C %28Nonpermanent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45 Schedule D %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>46 Executive %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>48 Other %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 Career %28Senior Exec Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>55 Noncareer %28Senior Exec Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60 Limited Term %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>65 Limited Emergency %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>X75_Day_Letter_sent__c</picklist>
+            <values>
+                <fullName>No %28add reason for none in comments below%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes %28provide date sent below%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>of_Approval_Supervisors__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>EPA3110_1</fullName>
+        <active>true</active>
+        <description>Personnel Separation or Transfer Checklist</description>
+        <label>EPA3110-1</label>
+        <picklistValues>
+            <picklist>Additional_Data_Required__c</picklist>
+            <values>
+                <fullName>Acute Tox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ecological</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Efficacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Chemistry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Toxicology</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Routing_Options__c</picklist>
+            <values>
+                <fullName>AA Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CI Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HQ Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leadership Development Institute Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RTP Training Workflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regions Training Form</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Award_Documentation_before_or_after__c</picklist>
+            <values>
+                <fullName>After</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Before</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billing_Instructions__c</picklist>
+            <values>
+                <fullName>No Cost Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Card Transaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Continued_Service_Agreement__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Actions__c</picklist>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Simplified Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Task Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work Assignment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Data_Deficiencies__c</picklist>
+            <values>
+                <fullName>Acute Tox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ecological</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Efficacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labeling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Chemistry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Residue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Toxicology</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Developed_in_accordance_with__c</picklist>
+            <values>
+                <fullName>Developed pre-award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation will be identified in individual Statements of Work or Performance Work Statement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Section of Work%2FPerformance Work Statement %28give section in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28provide details in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2 and R-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplement to Programmatic QA Project Plan %28provide name in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Does_applicant_need_special_accomodation__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Form_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted for Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Form_Type__c</picklist>
+            <values>
+                <fullName>Custom Object</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Developer Pro Sandbox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Developer Sandbox</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Full Sandbox</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Furnish_Invoice_to__c</picklist>
+            <values>
+                <fullName>No Cost Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Card Transaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Interim_Consideration__c</picklist>
+            <values>
+                <fullName>Agency Initiated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Registrant Initiated</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_Fix_in_house__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>n%2Fa</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4429,21 +5582,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>QA_doc_included_as_an_evaluation_factor__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Request_Type__c</picklist>
             <values>
                 <fullName>Event Purchase</fullName>
@@ -4463,6 +5601,47 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Response_1__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_2__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_3__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Select_Documentation_Type__c</picklist>
             <values>
                 <fullName>Application of QA and QC activities to the single project covered by the contract</fullName>
@@ -4477,11 +5656,23 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Documentation of the application of QA and QC activities to applicable project%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Existing documentation of the application of QA and QC activities will be used</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Not Applicable</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Programmatic QA Project Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programmatic QA Project Plan with supplements for each specific project</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4999,21 +6190,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Are_the_QA_documentation_requirements_sp__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Award_Documentation_before_or_after__c</picklist>
             <values>
                 <fullName>After</fullName>
@@ -5258,17 +6434,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Is_the_above_statement_true__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Late_Risk_Assessment__c</picklist>
             <values>
                 <fullName>Ecological</fullName>
@@ -5421,21 +6586,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>QA_doc_included_as_an_evaluation_factor__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Request_Type__c</picklist>
             <values>
                 <fullName>Event Purchase</fullName>
@@ -5451,6 +6601,47 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_1__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_2__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_3__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6003,21 +7194,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Are_the_QA_documentation_requirements_sp__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Award_Documentation_before_or_after__c</picklist>
             <values>
                 <fullName>After</fullName>
@@ -6262,17 +7438,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Is_the_above_statement_true__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Late_Risk_Assessment__c</picklist>
             <values>
                 <fullName>Ecological</fullName>
@@ -6425,21 +7590,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>QA_doc_included_as_an_evaluation_factor__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Request_Type__c</picklist>
             <values>
                 <fullName>Event Purchase</fullName>
@@ -6455,6 +7605,47 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_1__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_2__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_3__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6995,21 +8186,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Are_the_QA_documentation_requirements_sp__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Award_Documentation_before_or_after__c</picklist>
             <values>
                 <fullName>After</fullName>
@@ -7254,17 +8430,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Is_the_above_statement_true__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Late_Risk_Assessment__c</picklist>
             <values>
                 <fullName>Ecological</fullName>
@@ -7417,21 +8582,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>QA_doc_included_as_an_evaluation_factor__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Request_Type__c</picklist>
             <values>
                 <fullName>Event Purchase</fullName>
@@ -7447,6 +8597,47 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_1__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_2__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_3__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7999,21 +9190,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Are_the_QA_documentation_requirements_sp__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Award_Documentation_before_or_after__c</picklist>
             <values>
                 <fullName>After</fullName>
@@ -8258,17 +9434,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Is_the_above_statement_true__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Late_Risk_Assessment__c</picklist>
             <values>
                 <fullName>Ecological</fullName>
@@ -8421,21 +9586,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>QA_doc_included_as_an_evaluation_factor__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Request_Type__c</picklist>
             <values>
                 <fullName>Event Purchase</fullName>
@@ -8451,6 +9601,47 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_1__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_2__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_3__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -8991,21 +10182,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Are_the_QA_documentation_requirements_sp__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Award_Documentation_before_or_after__c</picklist>
             <values>
                 <fullName>After</fullName>
@@ -9250,17 +10426,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Is_the_above_statement_true__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Late_Risk_Assessment__c</picklist>
             <values>
                 <fullName>Ecological</fullName>
@@ -9413,21 +10578,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>QA_doc_included_as_an_evaluation_factor__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Request_Type__c</picklist>
             <values>
                 <fullName>Event Purchase</fullName>
@@ -9443,6 +10593,47 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_1__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_2__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_3__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -9995,21 +11186,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Are_the_QA_documentation_requirements_sp__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Award_Documentation_before_or_after__c</picklist>
             <values>
                 <fullName>After</fullName>
@@ -10254,17 +11430,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Is_the_above_statement_true__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Late_Risk_Assessment__c</picklist>
             <values>
                 <fullName>Ecological</fullName>
@@ -10417,21 +11582,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>QA_doc_included_as_an_evaluation_factor__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Request_Type__c</picklist>
             <values>
                 <fullName>Event Purchase</fullName>
@@ -10447,6 +11597,47 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_1__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_2__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_3__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10987,21 +12178,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Are_the_QA_documentation_requirements_sp__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Award_Documentation_before_or_after__c</picklist>
             <values>
                 <fullName>After</fullName>
@@ -11246,17 +12422,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Is_the_above_statement_true__c</picklist>
-            <values>
-                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Late_Risk_Assessment__c</picklist>
             <values>
                 <fullName>Ecological</fullName>
@@ -11409,21 +12574,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>QA_doc_included_as_an_evaluation_factor__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Applicable</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Request_Type__c</picklist>
             <values>
                 <fullName>Event Purchase</fullName>
@@ -11439,6 +12589,47 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_1__c</picklist>
+            <values>
+                <fullName>No %28If no%2C may go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_2__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_3__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

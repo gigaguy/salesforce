@@ -17,6 +17,10 @@
         <name>A_Description__c</name>
     </fields>
     <fields>
+        <label><!-- A --></label>
+        <name>A__c</name>
+    </fields>
+    <fields>
         <label><!-- Action Information --></label>
         <name>Action_Information__c</name>
     </fields>
@@ -57,24 +61,8 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Annual Leave Amount --></label>
-        <name>Annual_Leave_Amount__c</name>
-    </fields>
-    <fields>
-        <label><!-- Annual Leave Description --></label>
-        <name>Annual_Leave_Description__c</name>
-    </fields>
-    <fields>
         <label><!-- Applicant Name (Last, First, MI) --></label>
         <name>Applicant_Name_Last_First_MI__c</name>
-    </fields>
-    <fields>
-        <label><!-- Application Description --></label>
-        <name>Application_Description__c</name>
-    </fields>
-    <fields>
-        <label><!-- Apply --></label>
-        <name>Apply__c</name>
     </fields>
     <fields>
         <label><!-- Approval Routing Options --></label>
@@ -114,23 +102,6 @@
         <relationshipLabel><!-- Forms (Approver 2) --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Are the QA documentation requirements specified on this form incorporated into the extramural documentation (RFA, RFP, SOW, PWS, etc.)? --></help>
-        <label><!-- Are QA doc requirements incorporated? --></label>
-        <name>Are_the_QA_documentation_requirements_sp__c</name>
-        <picklistValues>
-            <masterLabel>No</masterLabel>
-            <translation><!-- No --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Not Applicable</masterLabel>
-            <translation><!-- Not Applicable --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Yes</masterLabel>
-            <translation><!-- Yes --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
         <label><!-- Before or After Award Documentation? --></label>
         <name>Award_Documentation_before_or_after__c</name>
         <picklistValues>
@@ -141,6 +112,14 @@
             <masterLabel>Before</masterLabel>
             <translation><!-- Before --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- B Description --></label>
+        <name>B_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- B --></label>
+        <name>B__c</name>
     </fields>
     <fields>
         <label><!-- Billing Address --></label>
@@ -175,8 +154,12 @@
         <name>Branch__c</name>
     </fields>
     <fields>
-        <label><!-- Certification --></label>
-        <name>Certification__c</name>
+        <label><!-- C Description --></label>
+        <name>C_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- C --></label>
+        <name>C__c</name>
     </fields>
     <fields>
         <label><!-- Chemical Name --></label>
@@ -235,6 +218,10 @@
         <name>Contractor__c</name>
     </fields>
     <fields>
+        <label><!-- Date --></label>
+        <name>Coordinator_Date__c</name>
+    </fields>
+    <fields>
         <label><!-- Course Number Code --></label>
         <name>Course_Number_Code__c</name>
     </fields>
@@ -246,6 +233,14 @@
         <label><!-- Current Approver --></label>
         <name>Current_Approver__c</name>
         <relationshipLabel><!-- Forms (Current Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- D Description --></label>
+        <name>D_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- D --></label>
+        <name>D__c</name>
     </fields>
     <fields>
         <label><!-- Data Deficiencies --></label>
@@ -360,15 +355,6 @@
         <name>Description__c</name>
     </fields>
     <fields>
-        <label><!-- Designate Hours --></label>
-        <name>Designate_Hours__c</name>
-    </fields>
-    <fields>
-        <help><!-- Of the total hours shown in Box B above, I wish to designate hours of annual leave to the qualified recipient named below. I certify that this employee is not my immediate supervisor --></help>
-        <label><!-- Hours to Qualified Recipient --></label>
-        <name>Designated__c</name>
-    </fields>
-    <fields>
         <label><!-- Developed in accordance with: --></label>
         <name>Developed_in_accordance_with__c</name>
         <picklistValues>
@@ -417,6 +403,10 @@
         <name>Doc_Purchase_Order_Requisition__c</name>
     </fields>
     <fields>
+        <label><!-- Documentation Requirements --></label>
+        <name>Documentation_Requirements__c</name>
+    </fields>
+    <fields>
         <label><!-- Does applicant need special accomodation --></label>
         <name>Does_applicant_need_special_accomodation__c</name>
         <picklistValues>
@@ -429,28 +419,28 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Donate --></label>
-        <name>Donate__c</name>
-    </fields>
-    <fields>
-        <label><!-- Donation Amout --></label>
-        <name>Donation_Amount__c</name>
-    </fields>
-    <fields>
-        <label><!-- Donation Description --></label>
-        <name>Donation_Description__c</name>
-    </fields>
-    <fields>
         <label><!-- EHRI Employee Number --></label>
         <name>EHRI_Employee_Number__c</name>
     </fields>
     <fields>
-        <label><!-- I hereby apply for membership in the EPA --></label>
-        <name>EPA_LEAVE_BANK_APPLICATION__c</name>
+        <label><!-- EPA Form 3110-1 Instructions --></label>
+        <name>EPA_Form_3110_1_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- E Description --></label>
+        <name>E_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- E --></label>
+        <name>E__c</name>
     </fields>
     <fields>
         <label><!-- Education Level --></label>
         <name>Education_Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Date of This Action --></label>
+        <name>Effective_Date_of_This_Action__c</name>
     </fields>
     <fields>
         <help><!-- Clicking the &quot;Employee&apos;s Signature&quot; checkbox will sign this section upon saving the form. --></help>
@@ -479,6 +469,10 @@
         <name>Estimated_Start_Date__c</name>
     </fields>
     <fields>
+        <label><!-- Evaluation Factor --></label>
+        <name>Evaluation_Factor__c</name>
+    </fields>
+    <fields>
         <label><!-- Exists --></label>
         <name>Exists__c</name>
     </fields>
@@ -491,8 +485,8 @@
         <name>Expire_Date__c</name>
     </fields>
     <fields>
-        <label><!-- Extra Hours of Annual Leave to Donate --></label>
-        <name>Extra_Hours_of_annual_leave__c</name>
+        <label><!-- Extra Hour Donation --></label>
+        <name>Extra_Hour_Donation__c</name>
     </fields>
     <fields>
         <label><!-- Fee Category --></label>
@@ -591,6 +585,10 @@
         <relationshipLabel><!-- Forms --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Signature --></label>
+        <name>HR_Signature__c</name>
+    </fields>
+    <fields>
         <label><!-- Home Address --></label>
         <name>Home_Address__c</name>
     </fields>
@@ -599,12 +597,20 @@
         <name>Home_Telephone__c</name>
     </fields>
     <fields>
+        <label><!-- Hours Designated --></label>
+        <name>Hours_Designated__c</name>
+    </fields>
+    <fields>
         <label><!-- ID Number --></label>
         <name>ID_Number__c</name>
     </fields>
     <fields>
-        <label><!-- I hereby wish to contribute annual leave --></label>
-        <name>I_hereby_wish_to_contribute_annual_leave__c</name>
+        <label><!-- II-A --></label>
+        <name>II_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- II-B --></label>
+        <name>II_B__c</name>
     </fields>
     <fields>
         <label><!-- If not, date &quot;Fix&quot; expected --></label>
@@ -625,6 +631,10 @@
     <fields>
         <label><!-- Indirect Total --></label>
         <name>Indirect_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instructions --></label>
+        <name>Instructions__c</name>
     </fields>
     <fields>
         <label><!-- Interim Consideration --></label>
@@ -652,18 +662,6 @@
         <picklistValues>
             <masterLabel>n/a</masterLabel>
             <translation><!-- n/a --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
-        <label><!-- Is the above statement true? --></label>
-        <name>Is_the_above_statement_true__c</name>
-        <picklistValues>
-            <masterLabel>No (If no, may go directly to &quot;Signatures&quot; Section.)</masterLabel>
-            <translation><!-- No (If no, may go directly to &quot;Signatures&quot; Section.) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Yes</masterLabel>
-            <translation><!-- Yes --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -793,6 +791,10 @@
     <fields>
         <label><!-- Location of Training Site --></label>
         <name>Location_of_Training_Site__c</name>
+    </fields>
+    <fields>
+        <label><!-- NOTICE TO EMPLOYEE --></label>
+        <name>NOTICE_TO_EMPLOYEE__c</name>
     </fields>
     <fields>
         <label><!-- Name --></label>
@@ -1059,29 +1061,28 @@
         <name>QA_Tracking_Number__c</name>
     </fields>
     <fields>
-        <help><!-- For new actions, has the QA documentation required in Section IV of this form been included in the RFA, RFP, SOW or PWS as an evaluation factor? --></help>
-        <label><!-- QA doc included as an evaluation factor? --></label>
-        <name>QA_doc_included_as_an_evaluation_factor__c</name>
-        <picklistValues>
-            <masterLabel>No</masterLabel>
-            <translation><!-- No --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Not Applicable</masterLabel>
-            <translation><!-- Not Applicable --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Yes</masterLabel>
-            <translation><!-- Yes --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
         <label><!-- Quantity --></label>
         <name>Quantity__c</name>
     </fields>
     <fields>
         <label><!-- Rationale for Proposed Due Date --></label>
         <name>Rationale_for_Proposed_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee ID No. --></label>
+        <name>Recipient_Employee_ID_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Recipient_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization and Address --></label>
+        <name>Recipient_Organization_and_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Phone No. --></label>
+        <name>Recipient_Work_Phone_No__c</name>
     </fields>
     <fields>
         <label><!-- Registration # (each on its own line) --></label>
@@ -1115,6 +1116,54 @@
         <label><!-- Requested Recipient --></label>
         <name>Requested_Recipient__c</name>
         <relationshipLabel><!-- Forms (Requested Recipient) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Response: --></label>
+        <name>Response_1__c</name>
+        <picklistValues>
+            <masterLabel>No (If no, may go directly to &quot;Signatures&quot; Section.)</masterLabel>
+            <translation><!-- No (If no, may go directly to &quot;Signatures&quot; Section.) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Response: --></label>
+        <name>Response_2__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Response: --></label>
+        <name>Response_3__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SON --></label>
+        <name>SON__c</name>
     </fields>
     <fields>
         <label><!-- Select Documentation Type --></label>
@@ -1155,6 +1204,14 @@
     <fields>
         <label><!-- Series --></label>
         <name>Series__c</name>
+    </fields>
+    <fields>
+        <label><!-- Signature --></label>
+        <name>Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Signature of Local LeaveBank Coordinator --></label>
+        <name>Signature_of_Local_LeaveBank_Coordinator__c</name>
     </fields>
     <fields>
         <label><!-- Step --></label>
@@ -1655,6 +1712,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Typed Name/Title of Authorizing Official --></label>
+        <name>Typed_Name_Title_of_Authorizing_Official__c</name>
+    </fields>
+    <fields>
         <label><!-- Type-1 Owner --></label>
         <name>Unauthenticated_Owner__c</name>
         <relationshipLabel><!-- Forms (Type-1 Owner) --></relationshipLabel>
@@ -1709,12 +1770,12 @@
         <name>Vendor_URL__c</name>
     </fields>
     <fields>
-        <label><!-- Withdrawl Penalty --></label>
-        <name>Withdrawl_Penalty__c</name>
+        <label><!-- Date --></label>
+        <name>Waiver_Date__c</name>
     </fields>
     <fields>
-        <label><!-- Withdrawl --></label>
-        <name>Withdrawl__c</name>
+        <label><!-- Signature --></label>
+        <name>Waiver_Signature__c</name>
     </fields>
     <fields>
         <label><!-- Work Description --></label>
@@ -1725,8 +1786,8 @@
         <name>Work_Email_Address__c</name>
     </fields>
     <fields>
-        <label><!-- Work Phone --></label>
-        <name>Work_Phone__c</name>
+        <label><!-- Work Phone No --></label>
+        <name>Work_Phone_No__c</name>
     </fields>
     <fields>
         <label><!-- &quot;75 Day&quot; Letter sent? --></label>
@@ -1873,30 +1934,45 @@
         </sections>
     </layouts>
     <layouts>
-        <layout>EPA3160-6v5</layout>
+        <layout>EPA-3110-1</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Description --></label>
-            <section>Description</section>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>EPA-3160-6v5</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Employee&apos;s Signature --></label>
-            <section>Employee&apos;s Signature</section>
+            <label><!-- GENERAL INSTRUCTIONS AND INFORMATON ABOUT THE LEAVE BANK PROGRAM --></label>
+            <section>GENERAL INSTRUCTIONS AND INFORMATON ABOUT THE LEAVE BANK PROGRAM</section>
         </sections>
         <sections>
-            <label><!-- Information About You --></label>
-            <section>Information About You</section>
+            <label><!-- I. Information About You --></label>
+            <section>I. Information About You</section>
         </sections>
         <sections>
-            <label><!-- Instructions --></label>
-            <section>Instructions</section>
+            <label><!-- II. Type of Contribution .           Check all the boxes that apply with an “X” --></label>
+            <section>II. Type of Contribution .           Check all the boxes that apply with an “X”</section>
         </sections>
         <sections>
-            <label><!-- Type of Contribution --></label>
-            <section>Type of Contribution</section>
+            <label><!-- III. Human Resources Office Certification --></label>
+            <section>III. Human Resources Office Certification</section>
+        </sections>
+        <sections>
+            <label><!-- Leave Recipient Information --></label>
+            <section>Leave Recipient Information</section>
+        </sections>
+        <sections>
+            <label><!-- Waiver If applicable, waiver for II-B above is authorized --></label>
+            <section>Waiver If applicable, waiver for II-B above is authorized</section>
         </sections>
     </layouts>
     <layouts>
@@ -1922,6 +1998,18 @@
             <section>Signatures</section>
         </sections>
         <sections>
+            <label><!-- Spacer3 --></label>
+            <section>Spacer3</section>
+        </sections>
+        <sections>
+            <label><!-- Spacer5 --></label>
+            <section>Spacer5</section>
+        </sections>
+        <sections>
+            <label><!-- Spacer6 --></label>
+            <section>Spacer6</section>
+        </sections>
+        <sections>
             <label><!-- Status of QA Documentation --></label>
             <section>Status of QA Documentation</section>
         </sections>
@@ -1932,6 +2020,10 @@
         <sections>
             <label><!-- Type of Action --></label>
             <section>Type of Action</section>
+        </sections>
+        <sections>
+            <label><!-- response --></label>
+            <section>response</section>
         </sections>
         <sections>
             <label><!-- spacer --></label>
@@ -2023,6 +2115,10 @@
     <recordTypes>
         <label><!-- BAP Provisioning --></label>
         <name>BAP_Provisioning</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- EPA3110-1 --></label>
+        <name>EPA3110_1</name>
     </recordTypes>
     <recordTypes>
         <label><!-- EPA3160-6v5 --></label>

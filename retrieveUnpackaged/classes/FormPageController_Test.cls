@@ -30,7 +30,7 @@ public class FormPageController_Test {
         update u;
         
         
-        Forms__c form = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' limit 1].ID);
+        Forms__c form = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' ORDER BY createddate limit 1].ID);
         form = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' limit 1].ID);
         
         Forms__c xform;
@@ -68,7 +68,7 @@ public class FormPageController_Test {
         update u;  
     
         try{
-            Forms__c zform = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Account' limit 1].ID);
+          Forms__c zform = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Account' limit 1].ID);
           }
         catch(exception ex){
             system.debug(ex.getMessage());  

@@ -40,9 +40,11 @@
             <p style="margin-top: 30px; font-size: 125%;">
                 Editing Approvers for: {!userName}
             </p>
+            <apex:outputpanel rendered="{!t1User == true}">
             <p style="margin-top: 35px; font-size: 16.25px">
                 <apex:commandlink value="{!canMsg}" action="{!cancel}"></apex:commandlink>
             </p>
+            </apex:outputpanel>
         </div>
     </div>
     </apex:form>
