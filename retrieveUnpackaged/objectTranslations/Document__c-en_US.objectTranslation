@@ -6905,6 +6905,11 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Organization Tets --></label>
+        <name>Organization_Test__c</name>
+        <relationshipLabel><!-- Documents --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Organization --></label>
         <name>Organization__c</name>
         <picklistValues>
@@ -6973,9 +6978,21 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Procurement Request System --></help>
+        <help><!-- Program Results Code --></help>
         <label><!-- PRC --></label>
         <name>PRC__c</name>
+        <picklistValues>
+            <masterLabel>000A46</masterLabel>
+            <translation><!-- 000A46 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>000A61</masterLabel>
+            <translation><!-- 000A61 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>000A73</masterLabel>
+            <translation><!-- 000A73 --></translation>
+        </picklistValues>
         <picklistValues>
             <masterLabel>101A46</masterLabel>
             <translation><!-- 101A46 --></translation>

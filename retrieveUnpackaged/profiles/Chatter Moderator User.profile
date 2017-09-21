@@ -982,6 +982,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Document__c.Comments__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Document__c.Contract_Number__c</field>
         <readable>false</readable>
@@ -1094,6 +1099,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Document__c.Op_Plan__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Document__c.Organization_Test__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
