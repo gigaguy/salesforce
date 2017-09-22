@@ -902,6 +902,11 @@ Manage Document entries (delete rights)</description>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Document__c.AHRC_Code__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Document__c.AHRC__c</field>
         <readable>false</readable>
     </fieldPermissions>

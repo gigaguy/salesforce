@@ -60,6 +60,18 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <fullName>AHRC_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT(TEXT(AHRC__c), 3)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AHRC Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>AHRC__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Allowance Holder Responsibility Center</inlineHelpText>
@@ -12021,6 +12033,10 @@
                     <fullName>000A73</fullName>
                     <default>false</default>
                 </value>
+                <value>
+                    <fullName>000AH4</fullName>
+                    <default>false</default>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>2016</controllingFieldValue>
@@ -12071,6 +12087,11 @@
                 <controllingFieldValue>2018</controllingFieldValue>
                 <controllingFieldValue>2018/2019</controllingFieldValue>
                 <valueName>000A73</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>2018</controllingFieldValue>
+                <controllingFieldValue>2018/2019</controllingFieldValue>
+                <valueName>000AH4</valueName>
             </valueSettings>
         </valueSet>
     </fields>
@@ -17161,27 +17182,27 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>56A</fullName>
+                <fullName>56A - IO-DC</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56C</fullName>
+                <fullName>56C - CD</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56D</fullName>
+                <fullName>56D - TATD</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56E</fullName>
+                <fullName>56E - IO-AA</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56F</fullName>
+                <fullName>56F - TCD</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56H</fullName>
+                <fullName>56H - ASD</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -17197,7 +17218,7 @@
             </values>
             <values>
                 <fullName>C</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
             <values>
                 <fullName>CR1</fullName>
@@ -23958,6 +23979,10 @@
             </values>
             <values>
                 <fullName>000A73</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>000AH4</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -28020,27 +28045,27 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>56A</fullName>
+                <fullName>56A - IO-DC</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56C</fullName>
+                <fullName>56C - CD</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56D</fullName>
+                <fullName>56D - TATD</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56E</fullName>
+                <fullName>56E - IO-AA</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56F</fullName>
+                <fullName>56F - TCD</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56H</fullName>
+                <fullName>56H - ASD</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -28056,7 +28081,7 @@
             </values>
             <values>
                 <fullName>C</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
             <values>
                 <fullName>CR1</fullName>
@@ -34724,6 +34749,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>000AH4</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>101A46</fullName>
                 <default>false</default>
             </values>
@@ -38783,27 +38812,27 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>56A</fullName>
+                <fullName>56A - IO-DC</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56C</fullName>
+                <fullName>56C - CD</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56D</fullName>
+                <fullName>56D - TATD</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56E</fullName>
+                <fullName>56E - IO-AA</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56F</fullName>
+                <fullName>56F - TCD</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56H</fullName>
+                <fullName>56H - ASD</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -45616,6 +45645,10 @@
             </values>
             <values>
                 <fullName>000A73</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>000AH4</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -49678,27 +49711,27 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>56A</fullName>
+                <fullName>56A - IO-DC</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56C</fullName>
+                <fullName>56C - CD</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56D</fullName>
+                <fullName>56D - TATD</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56E</fullName>
+                <fullName>56E - IO-AA</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56F</fullName>
+                <fullName>56F - TCD</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>56H</fullName>
+                <fullName>56H - ASD</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -56511,6 +56544,10 @@
             </values>
             <values>
                 <fullName>000A73</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>000AH4</fullName>
                 <default>false</default>
             </values>
             <values>
