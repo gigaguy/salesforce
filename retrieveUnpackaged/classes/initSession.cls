@@ -18,9 +18,13 @@ public class initSession {
         // Get headers and parameters from the page
         headers = ApexPages.currentPage().getHeaders();
         params = ApexPages.currentPage().getParameters();
+        
+        // 9/21/2017 - Larry Spackman - Disabled for deployment to Production because HeaderLogs custom object not being deployed
+        /*
         // Log Header & Parameters
         UtilityMethods.logHeaders();
         // End Log Header & Parameters
+        */
         
         // If matching user found for the session ID
         if (uID != null) {

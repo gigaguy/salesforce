@@ -126,18 +126,14 @@
             <type>RejectRequest</type>
         </rejectBehavior>
     </approvalStep>
-    <emailTemplate>unfiled$public/Form_Submission_Notification_Template</emailTemplate>
+    <emailTemplate>unfiled$public/Form_Approval_Request_Notification_Template</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
-        <criteriaItems>
-            <field>Forms__c.RecordType</field>
-            <operation>equals</operation>
-            <value>SF-182</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Forms__c.Approval_Routing_Options__c</field>
-            <operation>notEqual</operation>
-        </criteriaItems>
+        <formula>AND(
+ RecordType.DeveloperName  = &apos;SF-182&apos;,
+ NOT( ISPICKVAL(Approval_Routing_Options__c, &apos;&apos;) ),
+ ISNULL( Prepare_Form_for__c )   
+)</formula>
     </entryCriteria>
     <finalApprovalActions>
         <action>
@@ -167,7 +163,7 @@
             <type>FieldUpdate</type>
         </action>
         <action>
-            <name>Submission_Confirmation</name>
+            <name>EPA_100_Submission_Confirmation</name>
             <type>Alert</type>
         </action>
     </initialSubmissionActions>

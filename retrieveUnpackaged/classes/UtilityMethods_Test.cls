@@ -14,7 +14,10 @@ public class UtilityMethods_Test {
         system.assertEquals(u.ID, utilityMethods.getUserID('12345'));
         system.assertEquals(u.FirstName + ' ' + u.LastName, UtilityMethods.getUserName(u.id));
        	UtilityMethods.generateSessionID(15);
-        UtilityMethods.logHeaders();
+        // 9/21/2017 - Larry Spackman - Disabled for deployment to Production because HeaderLogs custom object not being deployed
+        /*
+        //UtilityMethods.logHeaders();
+        */
         utilityMethods.validateSession('12345', u.id);
     }
 }

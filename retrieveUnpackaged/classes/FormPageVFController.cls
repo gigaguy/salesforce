@@ -46,9 +46,12 @@ public class FormPageVFController {
     }
     
     public PageReference validateOrRedirect() {
+        // 9/21/2017 - Larry Spackman - Disabled for deployment to Production because HeaderLogs custom object not being deployed
+        /*
         // Log Header & Parameters
         UtilityMethods.logHeaders();
         // End Log Header & Parameters
+		*/ 
         
         //value for "valid" set in Validate Session call above
         if (!valid) {

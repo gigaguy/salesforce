@@ -40,9 +40,12 @@ public class AuthLanding {
     }
 
     public PageReference onLoad() {
+        // 9/21/2017 - Larry Spackman - Disabled for deployment to Production because HeaderLogs custom object not being deployed
+        /*
         // Log Header & Parameters
         UtilityMethods.logHeaders();
         // End Log Header & Parameters
+		*/   
         
         // If user identification is present
         if (UID != '') {

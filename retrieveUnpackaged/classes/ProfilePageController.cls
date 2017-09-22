@@ -60,17 +60,18 @@ public class ProfilePageController {
                   timekID = c.Time_Keeper__c;
                   sup2ID = c.Supervisor_2__c;
                   fundID = c.Funding_official__c;
-                  trainID = c.Training_Officer__c;
-               }
-           catch (Exception e) {noContact=true;}
+                  trainID = c.Training_Officer__c; } catch (Exception e) {noContact=true;}
         }
         return;
     }
     
     public PageReference validateOrRedirect() {
+        // 9/21/2017 - Larry Spackman - Disabled for deployment to Production because HeaderLogs custom object not being deployed
+        /*
         // Log Header & Parameters
         UtilityMethods.logHeaders();
         // End Log Header & Parameters
+        */
        
         // Valid value from Verify Session call above
         if (!valid) {

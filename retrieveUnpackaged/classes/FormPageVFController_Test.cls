@@ -17,7 +17,7 @@ public class FormPageVFController_Test {
         system.assertEquals(u.ID, controller.UID); 
         controller.logout();
     }
-  
+ 
     @isTest
     static void testMissingContact(){    
      insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = true); // checkbox from "Contact Approvers" Custom Setting
@@ -89,6 +89,7 @@ public class FormPageVFController_Test {
         ApexPages.currentPage().getHeaders().put('User-Agent', 'chrome'); 
         
         FormPageVFController controller = new FormPAgeVFController();
-    }    
+        controller.validateOrRedirect();
+    }  
 
 }

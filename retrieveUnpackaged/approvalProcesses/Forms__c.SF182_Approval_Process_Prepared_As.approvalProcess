@@ -3,9 +3,6 @@
     <active>false</active>
     <allowRecall>false</allowRecall>
     <allowedSubmitters>
-        <type>allInternalUsers</type>
-    </allowedSubmitters>
-    <allowedSubmitters>
         <type>owner</type>
     </allowedSubmitters>
     <approvalPageFields>
@@ -16,7 +13,7 @@
         <allowDelegate>false</allowDelegate>
         <approvalActions>
             <action>
-                <name>Approval_Step_Sent_to_Timekeeper</name>
+                <name>Approval_Step_Sent_to_Next_Approver_1</name>
                 <type>FieldUpdate</type>
             </action>
             <action>
@@ -34,29 +31,14 @@
         <label>Send to Supervisor</label>
         <name>Send_to_Supervisor</name>
     </approvalStep>
-    <approvalStep>
-        <allowDelegate>false</allowDelegate>
-        <assignedApprover>
-            <approver>
-                <name>User_Time_Keeper__c</name>
-                <type>relatedUserField</type>
-            </approver>
-            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
-        </assignedApprover>
-        <label>Send to Timekeeper</label>
-        <name>Send_to_Timekeeper</name>
-        <rejectBehavior>
-            <type>RejectRequest</type>
-        </rejectBehavior>
-    </approvalStep>
     <emailTemplate>unfiled$public/Form_Approval_Request_Notification_Template</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
-        <criteriaItems>
-            <field>Forms__c.RecordType</field>
-            <operation>equals</operation>
-            <value>EPA 182</value>
-        </criteriaItems>
+        <formula>AND(
+ RecordType.DeveloperName  = &apos;SF-182&apos;,
+ NOT( ISPICKVAL(Approval_Routing_Options__c, &apos;&apos;) ),
+ NOT( ISNULL( Prepare_Form_for__c ) )  
+)</formula>
     </entryCriteria>
     <finalApprovalActions>
         <action>
@@ -82,15 +64,15 @@
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <initialSubmissionActions>
         <action>
-            <name>Approval_Step_Sent_to_Supervisor</name>
+            <name>Approval_Step_SF_182_Prepared_As</name>
             <type>FieldUpdate</type>
         </action>
         <action>
-            <name>EPA_100_Submission_Confirmation</name>
+            <name>SF_182_Submission_Confirmation</name>
             <type>Alert</type>
         </action>
     </initialSubmissionActions>
-    <label>SF-182</label>
+    <label>SF182 Approval Process - Prepared As</label>
     <recallActions>
         <action>
             <name>Approval_Step_Recalled</name>
@@ -98,5 +80,5 @@
         </action>
     </recallActions>
     <recordEditability>AdminOnly</recordEditability>
-    <showApprovalHistory>false</showApprovalHistory>
+    <showApprovalHistory>true</showApprovalHistory>
 </ApprovalProcess>

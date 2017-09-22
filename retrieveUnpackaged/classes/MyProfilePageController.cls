@@ -16,6 +16,7 @@ public with sharing class MyProfilePageController {
                 street, city, country, postalcode, state, localesidkey, mobilephone, extension, fax, contact.email
                 FROM User
                 WHERE id = :UserInfo.getUserId()];
+            
         // guest users should never be able to access this page
         if (user.usertype == 'GUEST') {
             throw new NoAccessException();
@@ -32,11 +33,8 @@ public with sharing class MyProfilePageController {
 
     public void save() {
         try {
-            update user;
-            isEdit=false;
-        } catch(DmlException e) {
-            ApexPages.addMessages(e);
-        }
+            update user; 
+             isEdit=false;} catch(DmlException e) {ApexPages.addMessages(e);}
     }
 
     public PageReference changePassword() {

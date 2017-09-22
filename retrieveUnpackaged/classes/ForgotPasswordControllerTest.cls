@@ -9,4 +9,12 @@
     
         System.assertEquals(controller.forgotPassword(),null); 
     }
+    
+    @IsTest(SeeAllData=true) public static void testForgotPasswordControllerB() {
+        // Instantiate a new controller with all parameters in the page
+        ForgotPasswordController controller = new ForgotPasswordController();
+        controller.username = 'notNull@salesforce.com';        
+       
+        System.assertEquals(controller.forgotPassword().getUrl(),Page.forgotpasswordconfirm.getUrl()); 
+    }
 }

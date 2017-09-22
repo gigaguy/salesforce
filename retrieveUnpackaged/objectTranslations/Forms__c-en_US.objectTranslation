@@ -423,10 +423,6 @@
         <name>EHRI_Employee_Number__c</name>
     </fields>
     <fields>
-        <label><!-- EPA Form 3110-1 Instructions --></label>
-        <name>EPA_Form_3110_1_Instructions__c</name>
-    </fields>
-    <fields>
         <label><!-- E Description --></label>
         <name>E_Description__c</name>
     </fields>
@@ -885,6 +881,62 @@
         <name>PRIA_Decision_Time_Frame__c</name>
     </fields>
     <fields>
+        <label><!-- Part A --></label>
+        <name>Part_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part B (1) --></label>
+        <name>Part_B_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part B (2) --></label>
+        <name>Part_B_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part B (3) --></label>
+        <name>Part_B_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part B (4) --></label>
+        <name>Part_B_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part B (5) --></label>
+        <name>Part_B_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part B (6) --></label>
+        <name>Part_B_6__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part B (7) --></label>
+        <name>Part_B_7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part B (8) --></label>
+        <name>Part_B_8__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part B --></label>
+        <name>Part_B__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part C --></label>
+        <name>Part_C__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part D --></label>
+        <name>Part_D__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part E --></label>
+        <name>Part_E__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part F --></label>
+        <name>Part_F__c</name>
+    </fields>
+    <fields>
         <label><!-- Part Number --></label>
         <name>Part_Number_1__c</name>
     </fields>
@@ -943,6 +995,11 @@
     <fields>
         <label><!-- Position Title --></label>
         <name>Position_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prepare Form for: --></label>
+        <name>Prepare_Form_for__c</name>
+        <relationshipLabel><!-- Forms (Prepare Form for:) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Previous Due Date --></label>
@@ -1942,6 +1999,10 @@
         <sections>
             <label><!-- Fields --></label>
             <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Procedures for Completing EPA Form 3110-1 --></label>
+            <section>Procedures for Completing EPA Form 3110-1</section>
         </sections>
     </layouts>
     <layouts>

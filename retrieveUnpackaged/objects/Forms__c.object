@@ -967,18 +967,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>EPA_Form_3110_1_Instructions__c</fullName>
-        <defaultValue>&quot;EPA personnel are required to account for all Government property in you possession or custody, outstanding cash or leave advances, financial indebtedness to the Agency and unexpired terms and conditions of outstanding employment and/or training agreements. You are responsible for arranging, through appropriate administrative channels, settlement of outstanding debts and obligations, and clearance for proprietary or sensitive information. Failure to complete this clearance process may result in the delay of final salary payments. CORs and SEE Monitor/Coordinators are required to account for all Government property on behalf of the contractor, SEE, grantee, etc. in their possession or custody including Agency records, hard copy and electronic and Library materials. By signing Part F, you acknowledge that you have completed your responsibilities to the best of you knowledge and that knowingly providing false or misleading statements in the completion of this form may be punishable by fine or imprisonment or both under applicable laws.&quot;</defaultValue>
-        <description>EPA3110-1</description>
-        <externalId>false</externalId>
-        <label>EPA Form 3110-1 Instructions</label>
-        <length>2000</length>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>LongTextArea</type>
-        <visibleLines>3</visibleLines>
-    </fields>
-    <fields>
         <fullName>E_Description__c</fullName>
         <defaultValue>&quot;I hereby withdraw from EPA’s Leave Bank. I understand that I may not re-enroll until the next open enrollment period or by another qualifying event.&quot;</defaultValue>
         <description>EPA3160-6v5</description>
@@ -2159,6 +2147,174 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Part_A__c</fullName>
+        <defaultValue>&quot;All Personnel - Employees, Students, Contracting Officer Representatives(COR)(on behalf of contractors and grantees), and Senior Environmental Employment Monitor/Coordinators(on behalf of SEES), Volunteers, Supervisors, or Appropriate Designee.  All personnel must place their Program Office Contact&apos;s name and telephone number in Part A of this form.  Failure to do so will result in the delay in processing of your clearance.  Print out EPA Form 3110-1.  After you have filled in items in this part, start the routing process by hand carrying to each designated official in each appropriate office.  When you have obtained all the clearance procedures and signatures, then you are to sign the personnel certification in Part F of the EPA Form 3110-1 and return the form to your Program Contact and/or Supervisor.  Once an EPA employee&apos;s form has been approved, it will be routed to the Shared Services Center&apos;s Human Resources Office along with the SF-52 Request for Personnel Action to complete the separation action.  Once a contractor or grantee&apos;s form has been approved, it should be filed by their COR/SEE Monitor/Coordinator or Designee with the appropriate program file and retained in accordance with the appropriate Agency records schedule.  Exit Survey: EPA is sincerely interested in learning about your experience while working at EPA.  Learning from your experience will help us find better ways to keep talented people like you from leaving our organization.  Please take a moment to share your views.  The survey will take 10 to 15 minutes to complete and your responses are strictly anonymous.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Part A</label>
+        <length>1615</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Part_B_1__c</fullName>
+        <defaultValue>&quot;Computers, Lotus Notes, LAN, Outlook, Domino Directory, Laptops, and Telecommunications:You must coordinate with the Information Technology Office and have them configure all of your IT accounts to remove all logical access to Agency systems and closure on telecommunications systems as of your separation date.  The IT Office should initial Part B and provide their signature as certification in Part F of the EPA Form 3110-1 to certify they have configured the separating, transferring and separated personnel&apos;s accounts to remove all logical access and to deactivate all telecommunication access as of the separation date.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Part B (1)</label>
+        <length>626</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Part_B_2__c</fullName>
+        <defaultValue>&quot;Return of STE Cards or STU Keys(EPA Employees Only):If you are in possession of a secure/classified telephone and equipment, you must call 202-564-3857 to obtain a signed confirmation before initialing &apos;cleared&apos;.  If you are not in possession of this equipment, initial as N/A.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Part B (2)</label>
+        <length>279</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Part_B_3__c</fullName>
+        <defaultValue>&quot;Long Term Training Agreement (EPA Employees Only) covers Government–sponsored training when there is a signed obligated services agreement or Form SF-182. If the agreement is outstanding at the time of separation, you must reimburse the agency for tuition and related fees, travel and other expenses paid by the government in connection with your training. If you are going to another Federal Agency, you must give your organization written notice of at least 10 work days, during which a determination concerning reimbursement will be made, 5 U.S.C 4109(a)(2).&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Part B (3)</label>
+        <length>563</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Part_B_4__c</fullName>
+        <defaultValue>&quot;Employee Service Agreement(EPA Employees Only) covers agreements such as Student Loans, and Recruitment or Relocation Bonuses, training etc.  If you have any of the above, do not initial as cleared; see your Program Manager or Supervisor.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Part B (4)</label>
+        <length>300</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Part_B_5__c</fullName>
+        <defaultValue>&quot;Public Financial Disclosure (EPA Employees Only): If you are PAS, SES, SL/ST, ALJ, Schedule C, AD, or Title 42, you must file the public financial disclosure report (SF-278). You are required by law to complete a termination SF-278 within 30 days following your separation. You must schedule an appointment with OGC/Ethics to finalize your termination report and to review your post-employment ethics restrictions. To schedule an appointment, send an email to ethics@epa.gov.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Part B (5)</label>
+        <length>477</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Part_B_6__c</fullName>
+        <defaultValue>&quot;Agency-Issued Passport (EPA Employees Only): If you were issued a passport for official government travel, you must return it to the Office of International Affairs, RRB, Room 31214. After you have returned your government issued passport, initial &apos;yes&apos; under the clearance section.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Part B (6)</label>
+        <length>284</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Part_B_7__c</fullName>
+        <defaultValue>&quot;Post Employment Ethics Training (EPA Employees Only): The Post Employment Ethics Training link is provided. In addition, you may have criminal post-employment restrictions pursuant to 18 USC 207. Please consult your Deputy Ethics Official at http://intranet.epa.gov/ogc/ethics/deos.htm  to receive post-employment counseling or review the OGC/Ethics website at http://intranet.epa.gov/ogc/ethics/resource.htm#postemployment.  NOTE: If you are PAS, SES, SL/ST, ALJ, Schedule C, AD, or Title 42, then you must contact OGC/Ethics at ethics@epa.gov  to schedule an appointment to review your post-employment restrictions.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Part B (7)</label>
+        <length>700</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Part_B_8__c</fullName>
+        <defaultValue>&quot;(8) Identify and Transfer Agency Records: You must identify all Agency records (hardcopy and electronic) in your possession and, in coordination with your supervisor/SEE Monitor/Coordinators/COR/Designee, transfer them to a new custodian before the supervisor/SEE Monitor/Coordinators/COR/Designee initials Part 2 and provides their signature as certification in Part F of the EPA Form 3110-1.  For more information contact your Records Liaison Officer by selections your location Agency|Headquarters|Regional|Lab, Center &amp; Field Office.  Action taken regarding the identification and transfer of hardcopy and electronic records must be documented on the Form 3110-49, EPA Records Management Checklist for Separating/Transferring or Separated Personnel and submitted to the RLO.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Part B (8)</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Part_B__c</fullName>
+        <defaultValue>&quot;Completed By:Program Office - Program Contact, Administrative Officer, Custodial Property Officer, Supervisor, SEE Monitor/Coordinator, Contracting Officer&apos;s Representative, Information Technology Officer(ITO), Information Management Officer(IMO), Telecommunication, Records Liaison Officer, or Appropriate Designee.  Each Program should establish internal checklists and procedures to address transition of work products. A primary and alternate person/contact should be appointed to be responsible for verifying that the separating or transferring personnel has satisfied their program requirements. The designated program person/contact should initial the appropriate item/s in Part B and provide their certification on Part F of the EPA Form 3110-1.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Part B</label>
+        <length>755</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Part_C__c</fullName>
+        <defaultValue>&quot;Security Management Division (SMD) National Security Information, Personnel Security Branch, Badging Office, Facilities Management Office, Transit Subsidy, Safety, Health and Environmental Management Program Office, Financial Management Office and/or Appropriate Designee SMD staff (HQ or Region) should complete the appropriate box(es) and sign in Part C of the EPA Form 3110-1 once they have collected the separating personnel’s identification badges and inspector credentials, office keys and ensured separating EPA personnel who have been granted a security clearance receive a clear Security Clearance Termination debriefing and transfer all classified NSI material. By completing the appropriate box(es) and signing Part C of this form, the SMD staff are certifying that the listed items in Part C of this form have been returned and/or accounted for. Facilities Management staff should complete the appropriate box(es) and sign in Part C of the EPA Form 3110-1 once they have collected the separating personnel’s Government-owned property, transportation, i.e. (transit subsidy, car pool, parking permits, parking subsidy, parking passes, bicycle subsidy, etc.) and de-enrolled the recipient of unused transit subsidies. By completing the appropriate box(es) and signing Part C of this form, the Facilities Management staff are certifying that the listed items in Part C of this form have been returned and/or accounted for. The Librarian/Designee is responsible for verifying that EPA Library publications, books and other materials have been returned. The Librarian/Designee should complete the appropriate box(es) and sign Part C of the EPA Form 3110-1 to indicate that all items have been returned and/or accounted for. Safety, Health and Environmental Management Program staff should complete the appropriate box(es) and sign in Part C of the EPA Form 3110-1 once they have collected the separating personnel’s Government-owned PPE and SHEM equipment, 3 as well as validated that if the departing person is in the EPA’s Occupational Medical Surveillance Program, the individual completed an exit exam that has been verified by the Federal Occupational Health physician. Additionally, the Safety, Health and Environmental Management Program staff has determined that the separating person has stopped their fitness center membership and direct deposit allocation. By completing the appropriate box(es) and signing Part C of this form, the Safety, Health and Environmental Management Program staff are certifying that the listed items in Part C of this form have been returned, accounted for or validated.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Part C</label>
+        <length>2617</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Part_D__c</fullName>
+        <defaultValue>&quot;Local Financial Management Office, Office of the Comptroller/Budget Office, and when applicable, the Cincinnati Finance Center The Financial Management Office representative must ensure that all financial obligation documents have been executed by the Environmental Protection Agency personnel before initialing Part D and signing Part F of EPA Form 3110-1. All bankcard holders are to submit the Purchase Card Maintenance Form located on the following link http://purchasecard.epa.gov/node/111  to the Purchase Card Team (PCT). The PCT representative is responsible for destroying the bankcard and immediately contacting the Bank to request the bankcard be canceled. The PCT representative will inform the Bank that the holder no longer works at the Agency. The representative shall make known to the Bank that neither the United States Federal Government nor the Environmental Protection Agency be liable for any unauthorized usage of the bankcard if reissued to the cardholder. By initialing the appropriate box(es) and signing Part F of the EPA Form 3110-1, the Financial Management Office representative is certifying that items listed in Part D of the form have been returned and/or are accounted for. The PCT representative has or will contact the bank immediately to request the cardholder account be closed and no further issuance of a card will be issued under the cardholder account.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Part D</label>
+        <length>1395</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Part_E__c</fullName>
+        <defaultValue>&quot;Shared Service Centers(SSC)Human Resources Office(HRO), Regional Human Resources Officers(RHRO), or Appropriate Designee, The SSC, HRO, RHRO, or designee is responsible for obtaining both the completed Standard Form 52, Request Personnel Action, and EPA form 3110-1 for separating or transferring EPA personnel, before executing the SF-52.  The completed EPA Form 3110-1 and SF 52 are submitted to the Shared Service Center(SSC) for final clearance processing.  By initialing Part E and signing Part F of the EPA Form 3110-1, the SSC, HRO, RHRO or designee is certifying that all items listed in Parts 1 through 5 of the form have been accounted for and/or completed by all the appropriate offices.  A copy of the form will be retained in the EPA employee&apos;s electronic Official Personnel File(eOPF) file in accordance with retention policies required by EPA records Schedule 0553(or other appropriate records schedules if this is revised in the future).&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Part E</label>
+        <length>963</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Part_F__c</fullName>
+        <defaultValue>&quot;Employees, CORs(on behalf of Contractors), and SEE Monitor/Coordinators(on behalf of SEES, Grantees, Students, Volunteers, etc.), Supervisors, or Appropriate Designee and Responsible Reviewers.  By signing Part F of this form, you , your supervisor/COR/SEE Monitor/Coordinator or designee and all responsible reviewers are each certifying that all U.S. Government property has been returned.  The EPA supervisor also ensures that the timekeeper of the separating, transferring or separated EPA personnel has verified and submitted any hours worked prior to departure.  In addition, the supervisor/COR/SEE Monitor/Coordinator or designee and the RLO must certify that by using Form 3110-49, EPA Records Management Checklist for Separating/Transferring or Separated Personnel, all documentary materials, records(including documents that are responsive to a Freedom of Information Act(FOIA) request, litigation hold, or other legal hold) have been properly identified and transferred.  You and your supervisor/COR/SEE Monitor/Coordinator designee are each also certifying that the statements made on this form and all attachments thereto are true, accurate, and complete.  You and your supervisor, COR/SEE Monitor/Coordinator/Designee are each also certifying that you each acknowledge that any knowingly false or misleading statement may be punishable by fine or imprisonment or both under applicable law.  Disposition of EPA Form 3110-1.  EPA Form 3110-1, Personnel Separation or Transfer Checklist, becomes part of the EPA employee&apos;s Electronic Official Personnel File(eOPF) and retention requirements are governed by the EPA Record Control Schedule.  For contractors and grantees, the completed EPA Form 3110-1 will remain in the possession of their COR/SEE Monitor/Coordinator or designee for record keeping purposes, filed with the appropriate program file and retained in accordance with the appropriate Agency records schedule.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Part F</label>
+        <length>1933</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Part_Number_1__c</fullName>
         <description>EPA-1900-8a</description>
         <externalId>false</externalId>
@@ -2305,6 +2461,19 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prepare_Form_for__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Prepare Form for:</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Prepare Form for:)</relationshipLabel>
+        <relationshipName>Forms1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Previous_Negotiated_Due_Date_1__c</fullName>

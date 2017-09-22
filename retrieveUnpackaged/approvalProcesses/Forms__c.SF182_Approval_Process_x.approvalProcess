@@ -197,7 +197,7 @@
             <type>RejectRequest</type>
         </rejectBehavior>
     </approvalStep>
-    <emailTemplate>unfiled$public/Form_Submission_Notification_Template</emailTemplate>
+    <emailTemplate>unfiled$public/Form_Approval_Request_Notification_Template</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
         <criteriaItems>
@@ -238,7 +238,7 @@
             <type>FieldUpdate</type>
         </action>
         <action>
-            <name>Submission_Confirmation</name>
+            <name>EPA_100_Submission_Confirmation</name>
             <type>Alert</type>
         </action>
     </initialSubmissionActions>

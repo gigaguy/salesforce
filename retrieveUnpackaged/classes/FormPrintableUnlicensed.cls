@@ -2,7 +2,6 @@ public class FormPrintableUnlicensed {
     public string sID {get;set;}
     public boolean valid {get;set;}
     public id uID {get;set;}
-    public string userName {get;set;}
 
     public string fID {get;set;}
 
@@ -15,6 +14,9 @@ public class FormPrintableUnlicensed {
         // Validate Session, temporarily disabled until more user data from proxy
         //valid = UtilityMethods.validateSession(sID, uID);
         
+        system.debug('sID: '+sID);
+        system.debug('uID: '+uID);
+        system.debug('valid: '+valid);
         if (uID != null && valid) {
             fID = '';
             // Get form ID from URL parameters

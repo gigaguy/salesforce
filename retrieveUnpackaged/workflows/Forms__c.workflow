@@ -15,6 +15,20 @@
         <template>unfiled$public/Dev_Sandbox_Request_Recall_Notification_Template</template>
     </alerts>
     <alerts>
+        <fullName>EPA_100_Submission_Confirmation</fullName>
+        <description>EPA-100 Submission Confirmation</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Unlicensed_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/EPA_100_Forms_Submission_Confirmation</template>
+    </alerts>
+    <alerts>
         <fullName>Final_Approval_Email</fullName>
         <description>Final Approval Email</description>
         <protected>false</protected>
@@ -51,7 +65,18 @@
             <type>userLookup</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Form_Submission_Notification_Template</template>
+        <template>unfiled$public/Form_Approval_Request_Notification_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>SF_182_Submission_Confirmation</fullName>
+        <description>SF-182 Submission Confirmation</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Prepare_Form_for__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/SF_182_Forms_Submission_Confirm_submitted_by_other_person</template>
     </alerts>
     <alerts>
         <fullName>Sandbox_Approved_Notification_Alert</fullName>
@@ -93,20 +118,6 @@
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Dev_Sandbox_Request_Rejected_Template</template>
     </alerts>
-    <alerts>
-        <fullName>Submission_Confirmation</fullName>
-        <description>Submission Confirmation</description>
-        <protected>false</protected>
-        <recipients>
-            <field>Unlicensed_Owner_Email__c</field>
-            <type>email</type>
-        </recipients>
-        <recipients>
-            <type>owner</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Forms_Submission_Confirmation</template>
-    </alerts>
     <fieldUpdates>
         <fullName>Approval_Step_Approved</fullName>
         <field>Approval_Step__c</field>
@@ -136,6 +147,15 @@
         <operation>Formula</operation>
         <protected>false</protected>
         <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Step_SF_182_Prepared_As</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Form Prepared for you by &quot; &amp; Owner:User.FirstName &amp;&quot; &quot;&amp; Owner:User.LastName &amp;&quot; - Not Submitted&quot;</formula>
+        <name>Approval Step - SF-182 Prepared As</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Approval_Queue</fullName>
