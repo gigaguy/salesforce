@@ -393,6 +393,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Completed_By__c</fullName>
+        <defaultValue>&quot;Program Office - Program Contact, Administrative Officer, Custodial Property Officer, Supervisor, Senior Environmental Employment Monitor/Coordinators, Contracting Officer&apos;s Representative(COR), Information Technology Officer(ITO), Information Management Officer(IMO), Telecommunications, Records Liaison Officer(RLO), or Appropriate Designee.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Completed By</label>
+        <length>346</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Continued_Service_Agreement_Expiration__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -462,6 +474,16 @@
             </valueSetDefinition>
         </valueSet>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contractor_3110_1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Contractor</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Contractor__c</fullName>
@@ -967,6 +989,28 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>EPA_Employee_3110_1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>EPA Employee</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EPA_Form_3110_1__c</fullName>
+        <defaultValue>&quot;EPA personnel are required to account for all Government property in you possession or custody, outstanding cash or leave advances, financial indebtedness to the Agency and unexpired terms and conditions of outstanding employment and/or training agreements. You are responsible for arranging, through appropriate administrative channels, settlement of outstanding debts and obligations, and clearance for proprietary or sensitive information. Failure to complete this clearance process may result in the delay of final salary payments. CORs and SEE Monitor/Coordinators are required to account for all Government property on behalf of the contractor, SEE, grantee, etc. in their possession or custody including Agency records, hard copy and electronic and Library materials. By signing Part F, you acknowledge that you have completed your responsibilities to the best of you knowledge and that knowingly providing false or misleading statements in the completion of this form may be punishable by fine or imprisonment or both under applicable laws.&quot;</defaultValue>
+        <description>EPA3110-1</description>
+        <externalId>false</externalId>
+        <label>EPA Form 3110-1</label>
+        <length>1050</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
         <fullName>E_Description__c</fullName>
         <defaultValue>&quot;I hereby withdraw from EPA’s Leave Bank. I understand that I may not re-enroll until the next open enrollment period or by another qualifying event.&quot;</defaultValue>
         <description>EPA3160-6v5</description>
@@ -1100,6 +1144,17 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Exit_Survey_Link__c</fullName>
+        <defaultValue>&quot;https://www.surveymonkey.com/r/epaexitsurvey&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Exit Survey Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
         <fullName>Expected_Submission_Date__c</fullName>
         <description>ORD-111</description>
         <externalId>false</externalId>
@@ -1138,6 +1193,18 @@
         <externalId>false</externalId>
         <label>Fee Category</label>
         <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>25</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -1305,6 +1372,16 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grantee_3110_1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Grantee</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>HR_Org_Code__c</fullName>
@@ -1558,6 +1635,95 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Item_1_Part_B__c</fullName>
+        <defaultValue>&quot;Computer, Lotus Notes, Local Area Network(LAN), Outlook, Domino Directory, laptop, AAA Tokens, and Telecommunication(i.e. Telephone Calling and Conferencing Cards, Cell Phone, Blackberry, etc.) Removed ALL logical access to Agency systems.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Item 1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Item_1_Part_C__c</fullName>
+        <defaultValue>&quot;Security Clearance Termination Debriefing(SCI and/or Collateral.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Item 1</label>
+        <length>66</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_2_Part_C__c</fullName>
+        <defaultValue>&quot;Transfer of Classified Materials(NSI)&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Item 2</label>
+        <length>39</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_3_Part_C__c</fullName>
+        <defaultValue>&quot;EPASS(All EPA Identification Badges)&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Item 3</label>
+        <length>38</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_4_Part_C__c</fullName>
+        <defaultValue>&quot;Transit Subsidy/Parking Subsidy/Parking Passes&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Item 4</label>
+        <length>48</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_5_Part_C__c</fullName>
+        <defaultValue>&quot;Government-Owned Personal Property, vehicles, Personal Protective Equipment, i.e. uniforms, safety glasses, lab coats, etc) Property pass(es)&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Item 5</label>
+        <length>144</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_6_Part_C__c</fullName>
+        <defaultValue>&quot;Returned Safety, Health and Environmental Management Equipment.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Item 6</label>
+        <length>65</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Item_Description_1__c</fullName>
@@ -1815,6 +1981,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Last_Name__c</fullName>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Late_Risk_Assessment__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
@@ -1941,6 +2119,28 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>MI__c</fullName>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>MI</label>
+        <length>1</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Move_Within_EPA_HQ_Region_Lab_3110_1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Move Within EPA(HQ, Region, Lab)</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>NOTICE_TO_EMPLOYEE__c</fullName>
@@ -2111,6 +2311,16 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Other_3110_1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Other</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Other_Description__c</fullName>
         <description>ORD-111</description>
         <externalId>false</externalId>
@@ -2135,6 +2345,16 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Other_Student_Volunteer_etc_3110_1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Other (Student, Volunteer, etc)</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>PRIA_Decision_Time_Frame__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
@@ -2145,6 +2365,17 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Part_A_Completed_By__c</fullName>
+        <defaultValue>&quot;All Personnel - Employees, Students, Contracting Officer&apos;s Representatives(COR)(on behalf of contractors), and Senior Environmental Employment(SEE) Monitor/Coordinators(on behalf of SEEs or grantees), Volunteers, Supervisors, or Appropriate Designee.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Part A Completed By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Part_A__c</fullName>
@@ -2265,6 +2496,17 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Part_C_Completed_By__c</fullName>
+        <defaultValue>&quot;Security Management Division(SMD)Local Security Office, Personnel Security Office, Badging Office, Facilities Management Office, Transit Subsidy, Safety, Health and Environmental Management Program Office, Financial Management Office and/or Designee, Library.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Part C Completed By:</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Part_C__c</fullName>
@@ -2419,6 +2661,28 @@
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Phone__c</fullName>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Point_of_Contact__c</fullName>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Point of Contact</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Position_Level__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -2471,7 +2735,7 @@
         <relationshipLabel>Forms (Prepare Form for:)</relationshipLabel>
         <relationshipName>Forms1</relationshipName>
         <required>false</required>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
@@ -2551,6 +2815,18 @@
             </valueSetDefinition>
         </valueSet>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Program_Office__c</fullName>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Program Office</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Project_Type_s__c</fullName>
@@ -2766,6 +3042,17 @@
         <type>Phone</type>
     </fields>
     <fields>
+        <fullName>Records_Management_Part_B__c</fullName>
+        <defaultValue>&quot;Using Form 3110-49, EPA Records Management Checklist for Separating/Transferring or Separated Personnel, ensure identification and transfer of hardcopy and electronic records(i.e.,LAN files, local hard drives, shared drives, portable electronic storage devices, electronic record keeping system, personal computer, personal and secondary email accounts, etc.), and Agency Documentary Materials, including email records, records and documents that are responsive to a Freedom of Information Act(FOIA)request, litigation hold, or other legal hold.(Cleared by Supervisor and RLO.) http://www.epa.gov/records/tools/identify.htm&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Records Management</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>Registration__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
@@ -2829,6 +3116,16 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Resignation_Termination_3110_1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Resignation/Termination</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Response_1__c</fullName>
@@ -2909,6 +3206,16 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Retirement_3110_1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Retirement</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>SON__c</fullName>
@@ -3113,6 +3420,17 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Thank_You__c</fullName>
+        <defaultValue>&quot;For taking part in the Environmental Protection Agency&apos;s Exit Survey.  The survey should take no more than 10-15 minutes to complete and your responses are strictly confidential.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Thank You</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Timesheet_Approver__c</fullName>
@@ -3757,6 +4075,26 @@ Line_Total_Price_5__c</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Transfer_Within_Agency__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Transfer Within Agency</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Transfer_to_Another_Federal_Agency_3110__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Transfer to Another Federal Agency</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Travel__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -4150,6 +4488,69 @@ Line_Total_Price_5__c</formula>
         <type>Phone</type>
     </fields>
     <fields>
+        <fullName>X2_Part_B__c</fullName>
+        <defaultValue>&quot;Return of STE Cards or STU Keys&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>2</label>
+        <length>33</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X3_Part_B__c</fullName>
+        <defaultValue>&quot;Long Term Training Agreement(s)&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>3</label>
+        <length>33</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X4_Part_B__c</fullName>
+        <defaultValue>&quot;Employee Service Agreement(s)&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>4</label>
+        <length>31</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X5_Part_B__c</fullName>
+        <defaultValue>&quot;Public Financial Disclosure, SF-278 PAS, SES,SL, ST, ALJ, Schedule C, AD, or Title 42:contact OGC.&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>5</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>X6_Part_B__c</fullName>
+        <defaultValue>&quot;Agency Issued Passport(If Yes: Call 202/564-6631 OIA/Passport Office)&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>6</label>
+        <length>71</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>X75_Day_Letter_sent__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
@@ -4172,6 +4573,17 @@ Line_Total_Price_5__c</formula>
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>X7_Part_B__c</fullName>
+        <defaultValue>&quot;Post-Employment Ethics Training: http://intranet.epa.gov/ogc/ethicstraining2003/1.htm&quot;</defaultValue>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>7</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>X8_Digit_Station_Symbol__c</fullName>

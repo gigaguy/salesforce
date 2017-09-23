@@ -174,6 +174,10 @@
         <name>Company__c</name>
     </fields>
     <fields>
+        <label><!-- Completed By --></label>
+        <name>Completed_By__c</name>
+    </fields>
+    <fields>
         <label><!-- Continued Service Agreement Expiration --></label>
         <name>Continued_Service_Agreement_Expiration__c</name>
     </fields>
@@ -212,6 +216,10 @@
             <masterLabel>Work Assignment</masterLabel>
             <translation><!-- Work Assignment --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contractor --></label>
+        <name>Contractor_3110_1__c</name>
     </fields>
     <fields>
         <label><!-- Contractor --></label>
@@ -423,6 +431,14 @@
         <name>EHRI_Employee_Number__c</name>
     </fields>
     <fields>
+        <label><!-- EPA Employee --></label>
+        <name>EPA_Employee_3110_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- EPA Form 3110-1 --></label>
+        <name>EPA_Form_3110_1__c</name>
+    </fields>
+    <fields>
         <label><!-- E Description --></label>
         <name>E_Description__c</name>
     </fields>
@@ -473,6 +489,10 @@
         <name>Exists__c</name>
     </fields>
     <fields>
+        <label><!-- Exit Survey Link --></label>
+        <name>Exit_Survey_Link__c</name>
+    </fields>
+    <fields>
         <label><!-- Expected Submission Date --></label>
         <name>Expected_Submission_Date__c</name>
     </fields>
@@ -487,6 +507,10 @@
     <fields>
         <label><!-- Fee Category --></label>
         <name>Fee_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
     </fields>
     <fields>
         <label><!-- Form Owner --></label>
@@ -567,6 +591,10 @@
     <fields>
         <label><!-- Grade --></label>
         <name>Grade__c</name>
+    </fields>
+    <fields>
+        <label><!-- Grantee --></label>
+        <name>Grantee_3110_1__c</name>
     </fields>
     <fields>
         <label><!-- HR Org Code --></label>
@@ -665,6 +693,34 @@
         <name>Issue_s_Describe_in_detail__c</name>
     </fields>
     <fields>
+        <label><!-- Item 1 --></label>
+        <name>Item_1_Part_B__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item 1 --></label>
+        <name>Item_1_Part_C__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item 2 --></label>
+        <name>Item_2_Part_C__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item 3 --></label>
+        <name>Item_3_Part_C__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item 4 --></label>
+        <name>Item_4_Part_C__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item 5 --></label>
+        <name>Item_5_Part_C__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item 6 --></label>
+        <name>Item_6_Part_C__c</name>
+    </fields>
+    <fields>
         <label><!-- Item Description --></label>
         <name>Item_Description_1__c</name>
     </fields>
@@ -745,6 +801,10 @@
         <name>Item_Quantity_5__c</name>
     </fields>
     <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
         <label><!-- Late Risk Assessment --></label>
         <name>Late_Risk_Assessment__c</name>
         <picklistValues>
@@ -787,6 +847,14 @@
     <fields>
         <label><!-- Location of Training Site --></label>
         <name>Location_of_Training_Site__c</name>
+    </fields>
+    <fields>
+        <label><!-- MI --></label>
+        <name>MI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Move Within EPA(HQ, Region, Lab) --></label>
+        <name>Move_Within_EPA_HQ_Region_Lab_3110_1__c</name>
     </fields>
     <fields>
         <label><!-- NOTICE TO EMPLOYEE --></label>
@@ -869,6 +937,10 @@
         <name>Original_PRIA_Due_Date__c</name>
     </fields>
     <fields>
+        <label><!-- Other --></label>
+        <name>Other_3110_1__c</name>
+    </fields>
+    <fields>
         <label><!-- Other Description --></label>
         <name>Other_Description__c</name>
     </fields>
@@ -877,8 +949,16 @@
         <name>Other_Details__c</name>
     </fields>
     <fields>
+        <label><!-- Other (Student, Volunteer, etc) --></label>
+        <name>Other_Student_Volunteer_etc_3110_1__c</name>
+    </fields>
+    <fields>
         <label><!-- PRIA Decision Time Frame --></label>
         <name>PRIA_Decision_Time_Frame__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part A Completed By --></label>
+        <name>Part_A_Completed_By__c</name>
     </fields>
     <fields>
         <label><!-- Part A --></label>
@@ -919,6 +999,10 @@
     <fields>
         <label><!-- Part B --></label>
         <name>Part_B__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part C Completed By: --></label>
+        <name>Part_C_Completed_By__c</name>
     </fields>
     <fields>
         <label><!-- Part C --></label>
@@ -971,6 +1055,14 @@
     <fields>
         <label><!-- Petition # (each on its own line) --></label>
         <name>Petition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Point of Contact --></label>
+        <name>Point_of_Contact__c</name>
     </fields>
     <fields>
         <label><!-- Position Level --></label>
@@ -1040,6 +1132,10 @@
             <masterLabel>Other (use Other Description field below)</masterLabel>
             <translation><!-- Other (use Other Description field below) --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Program Office --></label>
+        <name>Program_Office__c</name>
     </fields>
     <fields>
         <label><!-- Project Type(s) --></label>
@@ -1142,6 +1238,10 @@
         <name>Recipient_Work_Phone_No__c</name>
     </fields>
     <fields>
+        <label><!-- Records Management --></label>
+        <name>Records_Management_Part_B__c</name>
+    </fields>
+    <fields>
         <label><!-- Registration # (each on its own line) --></label>
         <name>Registration__c</name>
     </fields>
@@ -1173,6 +1273,10 @@
         <label><!-- Requested Recipient --></label>
         <name>Requested_Recipient__c</name>
         <relationshipLabel><!-- Forms (Requested Recipient) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Resignation/Termination --></label>
+        <name>Resignation_Termination_3110_1__c</name>
     </fields>
     <fields>
         <label><!-- Response: --></label>
@@ -1217,6 +1321,10 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Retirement --></label>
+        <name>Retirement_3110_1__c</name>
     </fields>
     <fields>
         <label><!-- SON --></label>
@@ -1294,6 +1402,10 @@
     <fields>
         <label><!-- Support Email --></label>
         <name>Support_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thank You --></label>
+        <name>Thank_You__c</name>
     </fields>
     <fields>
         <label><!-- Timesheet Approver --></label>
@@ -1637,6 +1749,14 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Transfer Within Agency --></label>
+        <name>Transfer_Within_Agency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transfer to Another Federal Agency --></label>
+        <name>Transfer_to_Another_Federal_Agency_3110__c</name>
+    </fields>
+    <fields>
         <label><!-- Travel --></label>
         <name>Travel__c</name>
     </fields>
@@ -1847,6 +1967,26 @@
         <name>Work_Phone_No__c</name>
     </fields>
     <fields>
+        <label><!-- 2 --></label>
+        <name>X2_Part_B__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3 --></label>
+        <name>X3_Part_B__c</name>
+    </fields>
+    <fields>
+        <label><!-- 4 --></label>
+        <name>X4_Part_B__c</name>
+    </fields>
+    <fields>
+        <label><!-- 5 --></label>
+        <name>X5_Part_B__c</name>
+    </fields>
+    <fields>
+        <label><!-- 6 --></label>
+        <name>X6_Part_B__c</name>
+    </fields>
+    <fields>
         <label><!-- &quot;75 Day&quot; Letter sent? --></label>
         <name>X75_Day_Letter_sent__c</name>
         <picklistValues>
@@ -1857,6 +1997,10 @@
             <masterLabel>Yes (provide date sent below)</masterLabel>
             <translation><!-- Yes (provide date sent below) --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 7 --></label>
+        <name>X7_Part_B__c</name>
     </fields>
     <fields>
         <help><!-- Example: 12-34-5678 --></help>
@@ -1997,8 +2141,8 @@
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Fields --></label>
-            <section>Fields</section>
+            <label><!-- Instructions --></label>
+            <section>Instructions</section>
         </sections>
         <sections>
             <label><!-- Procedures for Completing EPA Form 3110-1 --></label>

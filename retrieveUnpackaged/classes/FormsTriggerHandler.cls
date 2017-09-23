@@ -22,8 +22,8 @@ public class FormsTriggerHandler {
                                                             Training_Officer__c, 
                                                             Funding_Official__c,
                                                             Email,
-                                                            LAN_ID__c 				    // Lan_ID__c exists on both Users and Contacts, 
-                                                            							// used to match records
+                                                            LAN_ID__c                   // Lan_ID__c exists on both Users and Contacts, 
+                                                                                        // used to match records
                                                         from User where id in :uIDs]);
         
         if(!useContact){ 
@@ -38,15 +38,15 @@ public class FormsTriggerHandler {
                 form.User_Training_Officer__c = u.Training_Officer__c;
                 form.User_Funding_Official__c = u.Funding_Official__c;
                 form.Unlicensed_Owner_Email__c = u.Email;
-            	}
-        	} // end update from User fields loop
+                }
+            } // end update from User fields loop
         }
-    	else {
-	     // get related Contacts
-	    	for (user u : userMap.values()) {  // collecting Lan_ID__c values from Users to find matching Contacts
-	    		   lanIds.add(u.Lan_ID__c);
-	    		}
-			contactMap.putAll([select id, 
+        else {
+         // get related Contacts
+            for (user u : userMap.values()) {  // collecting Lan_ID__c values from Users to find matching Contacts
+                   lanIds.add(u.Lan_ID__c);
+                }
+            contactMap.putAll([select id, 
                                 Supervisor__c, 
                                 Supervisor_2__c, 
                                 Time_Keeper__c, 
@@ -56,9 +56,9 @@ public class FormsTriggerHandler {
                                 LAN_ID__c 
                             from Contact where Lan_ID__c in :lanIDs]);
                             
-		Map<string,id> lanMap = new Map<string,id>();    // Map of Lan_ID__c and Contact to match with Users (Form owners)
-		for (contact c : contactMap.values()) lanMap.put(c.Lan_ID__c, c.id);	   
-    	for (forms__c form : forms){ // start update from Contact fields loop
+        Map<string,id> lanMap = new Map<string,id>();    // Map of Lan_ID__c and Contact to match with Users (Form owners)
+        for (contact c : contactMap.values()) lanMap.put(c.Lan_ID__c, c.id);       
+        for (forms__c form : forms){ // start update from Contact fields loop
             User u;
             Contact c;
             String lan;
@@ -75,10 +75,21 @@ public class FormsTriggerHandler {
                 form.Unlicensed_Owner_Email__c = c.Email;
             }
         } // end update from Contact fields loop
-    	}    
+        }    
     }
     
     public void afterUpdate(Map<id,Forms__c> formMap){
+        
+        for (forms__c form : formMap.values()) {
+        system.debug('form.Prepare_Form_for__c: '+form.Prepare_Form_for__c);
+        system.debug('String.valueOf(form.Approval_Step__c): '+String.valueOf(form.Approval_Step__c));
+            if (form.Approval_Step__c != null) {
+            if (form.Prepare_Form_for__c != null && String.valueOf(form.Approval_Step__c).startsWith('Form Prepared for you by')) {
+                form.Prepare_Form_for__c = null;
+                update form;
+            }
+        }
+        }
         
         createFormShares(formMap.keyset());
        

@@ -98,6 +98,7 @@ public class FormPageController {
         try{
             system.debug(formId);
             User u = [select id from User where Name = 'Unlicensed User' limit 1];
+            
             Approval.ProcessSubmitRequest req1 = new Approval.ProcessSubmitRequest();
             req1.setComments('Automatically Submitted');
             req1.setObjectId(formId);
