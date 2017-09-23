@@ -1,0 +1,14 @@
+<apex:page standardController="Forms__c" showHEader="false">
+    
+    <script> 
+        var previousOnload = window.onload; 
+        window.onload = function() { 
+            if (previousOnload) { 
+                previousOnload(); 
+            } 
+            printWin("/{!Forms__c.id}/p?retURL=/apex/FormPDF?id=a0335000001lJXrAAM&tour=&isdtp=p1&sfdcIFrameOrigin=https://epaoei--oeiodsta.lightning.force.com&sfdcIFrameHost=web"); 
+            window.history.back(); 
+        } 
+    </script>
+
+</apex:page>

@@ -18,13 +18,71 @@
         <name>API_Name__c</name>
     </fields>
     <fields>
+        <label><!-- AWL Phone Number --></label>
+        <name>AWL_Phone_Number__c</name>
+    </fields>
+    <fields>
         <label><!-- Admin Contact --></label>
         <name>Admin_Contact__c</name>
         <relationshipLabel><!-- Forms (Admin Contact) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Approval Step --></label>
+        <name>Approval_Step__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approver 2 --></label>
+        <name>Approver_2__c</name>
+        <relationshipLabel><!-- Forms (Approver 2) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Approximate initial row count --></label>
         <name>Approximate_initial_row_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Approver --></label>
+        <name>Current_Approver__c</name>
+        <relationshipLabel><!-- Forms (Current Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date 1 A/L Hours --></label>
+        <name>Date_1_A_L_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 End Date/Time --></label>
+        <name>Date_1_End_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 S/L Hours --></label>
+        <name>Date_1_S_L_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 Start Date/Time --></label>
+        <name>Date_1_Start_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 Total Work Hours --></label>
+        <name>Date_1_Total_Work_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 A/L Hours --></label>
+        <name>Date_2_A_L_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 End Date/Time --></label>
+        <name>Date_2_End_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 S/L Hours --></label>
+        <name>Date_2_S_L_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 Start Date/Time --></label>
+        <name>Date_2_Start_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 Total Work Hours --></label>
+        <name>Date_2_Total_Work_Hours__c</name>
     </fields>
     <fields>
         <label><!-- Description --></label>
@@ -41,6 +99,16 @@
         <name>Does_Not_Contain_PII_or_CBI_Data__c</name>
     </fields>
     <fields>
+        <help><!-- Clicking the &quot;Employee&apos;s Signature&quot; checkbox will sign this section upon saving the form. --></help>
+        <label><!-- Employee Digital Signature --></label>
+        <name>Employee_Digital_Signature__c</name>
+    </fields>
+    <fields>
+        <help><!-- Clicking this box digitally dates and signs this form. --></help>
+        <label><!-- Employee&apos;s Signature --></label>
+        <name>Employee_s_Signature__c</name>
+    </fields>
+    <fields>
         <help><!-- The Endpoint Name will be used in the URL as follows: https://developer.epa.gov/api/[Endpoint Name] --></help>
         <label><!-- Endpoint Name --></label>
         <name>Endpoint_Name__c</name>
@@ -48,6 +116,14 @@
     <fields>
         <label><!-- Expire Date --></label>
         <name>Expire_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Owner --></label>
+        <name>Form_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Record Name --></label>
+        <name>Form_Record_Name__c</name>
     </fields>
     <fields>
         <label><!-- Form Status --></label>
@@ -76,6 +152,10 @@
             <masterLabel>Submitted for Approval</masterLabel>
             <translation><!-- Submitted for Approval --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Form Type Name --></label>
+        <name>Form_Type_Name__c</name>
     </fields>
     <fields>
         <label><!-- Form Type --></label>
@@ -108,6 +188,14 @@
         </lookupFilter>
         <name>HR_Organization__c</name>
         <relationshipLabel><!-- Forms --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Immediate Supervisor&apos;s Digital Signature --></label>
+        <name>Immediate_Supervisor_s_Digital_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Immediate Supervisor&apos;s Signature --></label>
+        <name>Immediate_Supervisor_s_Signature__c</name>
     </fields>
     <fields>
         <label><!-- Name --></label>
@@ -169,6 +257,15 @@
         <relationshipLabel><!-- Forms (Technical Contact) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Type-1 Owner --></label>
+        <name>Unauthenticated_Owner__c</name>
+        <relationshipLabel><!-- Forms (Type-1 Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Owner Email --></label>
+        <name>Unlicensed_Owner_Email__c</name>
+    </fields>
+    <fields>
         <help><!-- Authorizes this contact to be able to update API information --></help>
         <label><!-- Update Data Associated with the API --></label>
         <name>Update_Data_Associated_with_the_API_AC__c</name>
@@ -182,6 +279,35 @@
         <help><!-- Authorizes this contact to be able to update API information --></help>
         <label><!-- Update Data Associated with the API --></label>
         <name>Update_Data_Associated_with_the_API_TC__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Funding Official --></label>
+        <name>User_Funding_Official__c</name>
+        <relationshipLabel><!-- Forms (User Funding Official) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User Supervisor 2 --></label>
+        <name>User_Supervisor_2__c</name>
+        <relationshipLabel><!-- Forms (User Supervisor 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User Supervisor --></label>
+        <name>User_Supervisor__c</name>
+        <relationshipLabel><!-- Forms (User Supervisor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User Time Keeper --></label>
+        <name>User_Time_Keeper__c</name>
+        <relationshipLabel><!-- Forms (User Time Keeper) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User Training Officer --></label>
+        <name>User_Training_Officer__c</name>
+        <relationshipLabel><!-- Forms (User Training Officer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Work Description --></label>
+        <name>Work_Description__c</name>
     </fields>
     <layouts>
         <layout>API Request</layout>
@@ -221,6 +347,60 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
+    <layouts>
+        <layout>EPA-100</layout>
+        <sections>
+            <label><!-- AWL Details --></label>
+            <section>AWL Details</section>
+        </sections>
+        <sections>
+            <label><!-- AWL Planned Work Date(s) and Schedule --></label>
+            <section>AWL Planned Work Date(s) and Schedule</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Employee&apos;s Signature --></label>
+            <section>Employee&apos;s Signature</section>
+        </sections>
+        <sections>
+            <label><!-- Instructions --></label>
+            <section>Instructions</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>EPA-100 Admin View</layout>
+        <sections>
+            <label><!-- AWL Details --></label>
+            <section>AWL Details</section>
+        </sections>
+        <sections>
+            <label><!-- AWL Planned Work Date(s) and Schedule --></label>
+            <section>AWL Planned Work Date(s) and Schedule</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Employee&apos;s Signature --></label>
+            <section>Employee&apos;s Signature</section>
+        </sections>
+        <sections>
+            <label><!-- Instructions --></label>
+            <section>Instructions</section>
+        </sections>
+    </layouts>
     <recordTypes>
         <label><!-- API Request --></label>
         <name>API_Request</name>
@@ -238,4 +418,8 @@
         <name>SF_182</name>
     </recordTypes>
     <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Printable_View --></label>
+        <name>Printable_View</name>
+    </webLinks>
 </CustomObjectTranslation>
