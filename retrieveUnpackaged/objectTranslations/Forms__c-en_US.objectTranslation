@@ -9,12 +9,104 @@
         <value>Forms</value>
     </caseValues>
     <fields>
+        <label><!-- AWL Phone Number --></label>
+        <name>AWL_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Step --></label>
+        <name>Approval_Step__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approver 2 --></label>
+        <name>Approver_2__c</name>
+        <relationshipLabel><!-- Forms (Approver 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Authorization Reason --></label>
+        <name>Authorization_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Application</masterLabel>
+            <translation><!-- Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organizational Allocation</masterLabel>
+            <translation><!-- Organizational Allocation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Role</masterLabel>
+            <translation><!-- Role --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Current Approver --></label>
+        <name>Current_Approver__c</name>
+        <relationshipLabel><!-- Forms (Current Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date 1 A/L Hours --></label>
+        <name>Date_1_A_L_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 End Date/Time --></label>
+        <name>Date_1_End_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 S/L Hours --></label>
+        <name>Date_1_S_L_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 Start Date/Time --></label>
+        <name>Date_1_Start_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 Total Work Hours --></label>
+        <name>Date_1_Total_Work_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 A/L Hours --></label>
+        <name>Date_2_A_L_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 End Date/Time --></label>
+        <name>Date_2_End_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 S/L Hours --></label>
+        <name>Date_2_S_L_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 Start Date/Time --></label>
+        <name>Date_2_Start_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 Total Work Hours --></label>
+        <name>Date_2_Total_Work_Hours__c</name>
+    </fields>
+    <fields>
         <label><!-- Description --></label>
         <name>Description__c</name>
     </fields>
     <fields>
+        <help><!-- Clicking the &quot;Employee&apos;s Signature&quot; checkbox will sign this section upon saving the form. --></help>
+        <label><!-- Employee Digital Signature --></label>
+        <name>Employee_Digital_Signature__c</name>
+    </fields>
+    <fields>
+        <help><!-- Clicking this box digitally dates and signs this form. --></help>
+        <label><!-- Employee&apos;s Signature --></label>
+        <name>Employee_s_Signature__c</name>
+    </fields>
+    <fields>
         <label><!-- Expire Date --></label>
         <name>Expire_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Owner --></label>
+        <name>Form_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Record Name --></label>
+        <name>Form_Record_Name__c</name>
     </fields>
     <fields>
         <label><!-- Form Status --></label>
@@ -45,11 +137,23 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Form Type Name --></label>
+        <name>Form_Type_Name__c</name>
+    </fields>
+    <fields>
         <label><!-- Form Type --></label>
         <name>Form_Type__c</name>
         <picklistValues>
+            <masterLabel>Code Storage MB</masterLabel>
+            <translation><!-- Code Storage MB --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Custom Object</masterLabel>
             <translation><!-- Custom Object --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Storage MB</masterLabel>
+            <translation><!-- Data Storage MB --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Developer Pro Sandbox</masterLabel>
@@ -60,8 +164,20 @@
             <translation><!-- Developer Sandbox --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Files Storage MB</masterLabel>
+            <translation><!-- Files Storage MB --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Full Sandbox</masterLabel>
             <translation><!-- Full Sandbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full User Count</masterLabel>
+            <translation><!-- Full User Count --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Starter User Count</masterLabel>
+            <translation><!-- Starter User Count --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -77,12 +193,53 @@
         <relationshipLabel><!-- Forms --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Immediate Supervisor&apos;s Digital Signature --></label>
+        <name>Immediate_Supervisor_s_Digital_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Immediate Supervisor&apos;s Signature --></label>
+        <name>Immediate_Supervisor_s_Signature__c</name>
+    </fields>
+    <fields>
         <label><!-- Name --></label>
         <name>Name__c</name>
     </fields>
     <fields>
+        <label><!-- Organization Allocation --></label>
+        <name>Organization_Allocation__c</name>
+        <relationshipLabel><!-- Forms (Organization Allocation) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Quantity --></label>
         <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>FCO</masterLabel>
+            <translation><!-- FCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health &amp; Safety Officer</masterLabel>
+            <translation><!-- Health &amp; Safety Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT Approver</masterLabel>
+            <translation><!-- IT Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Section 508 Compliance Approver</masterLabel>
+            <translation><!-- Section 508 Compliance Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supervisor</masterLabel>
+            <translation><!-- Supervisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TimeKeeper</masterLabel>
+            <translation><!-- TimeKeeper --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- SandboxURL --></label>
@@ -98,6 +255,44 @@
         <name>Technical_Contact__c</name>
         <relationshipLabel><!-- Forms (Technical Contact) --></relationshipLabel>
     </fields>
+    <fields>
+        <label><!-- Type-1 Owner --></label>
+        <name>Unauthenticated_Owner__c</name>
+        <relationshipLabel><!-- Forms (Type-1 Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Owner Email --></label>
+        <name>Unlicensed_Owner_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Funding Official --></label>
+        <name>User_Funding_Official__c</name>
+        <relationshipLabel><!-- Forms (User Funding Official) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User Supervisor 2 --></label>
+        <name>User_Supervisor_2__c</name>
+        <relationshipLabel><!-- Forms (User Supervisor 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User Supervisor --></label>
+        <name>User_Supervisor__c</name>
+        <relationshipLabel><!-- Forms (User Supervisor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User Time Keeper --></label>
+        <name>User_Time_Keeper__c</name>
+        <relationshipLabel><!-- Forms (User Time Keeper) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User Training Officer --></label>
+        <name>User_Training_Officer__c</name>
+        <relationshipLabel><!-- Forms (User Training Officer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Work Description --></label>
+        <name>Work_Description__c</name>
+    </fields>
     <layouts>
         <layout>BAP Provisioning Layout</layout>
         <sections>
@@ -107,6 +302,60 @@
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>EPA-100</layout>
+        <sections>
+            <label><!-- AWL Details --></label>
+            <section>AWL Details</section>
+        </sections>
+        <sections>
+            <label><!-- AWL Planned Work Date(s) and Schedule --></label>
+            <section>AWL Planned Work Date(s) and Schedule</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Employee&apos;s Signature --></label>
+            <section>Employee&apos;s Signature</section>
+        </sections>
+        <sections>
+            <label><!-- Instructions --></label>
+            <section>Instructions</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>EPA-100 Admin View</layout>
+        <sections>
+            <label><!-- AWL Details --></label>
+            <section>AWL Details</section>
+        </sections>
+        <sections>
+            <label><!-- AWL Planned Work Date(s) and Schedule --></label>
+            <section>AWL Planned Work Date(s) and Schedule</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Employee&apos;s Signature --></label>
+            <section>Employee&apos;s Signature</section>
+        </sections>
+        <sections>
+            <label><!-- Instructions --></label>
+            <section>Instructions</section>
         </sections>
     </layouts>
     <recordTypes>
@@ -122,4 +371,16 @@
         <name>SF_182</name>
     </recordTypes>
     <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- If Authorization Reason &quot;Organization Allocation&quot; is selected, the Organization Allocation field must be completed. --></errorMessage>
+        <name>Authorization_Org_Allocation_Reason_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Authorization Reason &quot;Role&quot; is chosen, Role field must be completed. --></errorMessage>
+        <name>Authorization_Role_Reason</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Printable_View --></label>
+        <name>Printable_View</name>
+    </webLinks>
 </CustomObjectTranslation>

@@ -100,6 +100,7 @@
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>AccountId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
@@ -175,6 +176,17 @@
     <fields>
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Funding_Official__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Funding Official</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contact_Funding_Official</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Grade__c</fullName>
@@ -375,6 +387,28 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Supervisor_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Supervisor 2</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contact_Supervisor_2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Supervisor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Supervisor</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contact_Supervisor</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Supervisors__c</fullName>
         <externalId>false</externalId>
         <label>Supervisors</label>
@@ -385,8 +419,30 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Time_Keeper__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Time Keeper</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contact_Time_Keeper</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Title</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Training_Officer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Training Officer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contact_Training_Officer</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>User__c</fullName>

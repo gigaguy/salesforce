@@ -1,6 +1,8 @@
-Dear {!ApprovalRequest.Process_Assignee},
-<br><br>
-The Form <a href="{!Forms__c.Link}">{!Forms__c.Form_Type__c} {!Forms__c.Name__c}</a> has been submitted for your approval.
+<br>
+The Form {!Forms__c.RecordType} has been submitted for your approval by {!Forms__c.Form_Owner__c}.
 <Br>
+<p>
+Record ID: {!Forms__c.Form_Record_Name__c}<Br>
+{!Forms__c.Link}
+</p>
 <br><br>
-Thank you
