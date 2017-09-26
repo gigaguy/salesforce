@@ -5,6 +5,25 @@ public class FormsTriggerHandler {
     
     public void beforeUpdate(Map<id,Forms__c> formMap){
         updateFormLookups(formMap.values(), false);
+        // clear Prepare For field
+        for (forms__c form : formMap.values()) {
+        system.debug('form.Prepare_Form_for__c: '+form.Prepare_Form_for__c);
+        system.debug('String.valueOf(form.Approval_Step__c): '+String.valueOf(form.Approval_Step__c));
+
+            if (form.Approval_Step__c != null) {
+            if (form.Prepare_Form_for__c != null && String.valueOf(form.Approval_Step__c).startsWith('Form Prepared for you by')) {
+                contact c = [select id, LAN_ID__c from contact where id = :form.prepare_Form_for__c limit 1];
+                user u = [select id, LAN_ID__c from user where LAN_ID__c = :c.LAN_ID__c limit 1];
+                
+                if (form.Unauthenticated_Owner__c == null){
+                    form.ownerid = u.id;}
+                
+                else {form.Unauthenticated_Owner__c = u.id;}
+                
+                form.Prepare_Form_for__c = null;
+                }
+            }
+        }
     }
     
     private void updateFormLookups(List<Forms__c> forms, boolean onInsert){
@@ -79,17 +98,6 @@ public class FormsTriggerHandler {
     }
     
     public void afterUpdate(Map<id,Forms__c> formMap){
-        
-        for (forms__c form : formMap.values()) {
-        system.debug('form.Prepare_Form_for__c: '+form.Prepare_Form_for__c);
-        system.debug('String.valueOf(form.Approval_Step__c): '+String.valueOf(form.Approval_Step__c));
-            if (form.Approval_Step__c != null) {
-            if (form.Prepare_Form_for__c != null && String.valueOf(form.Approval_Step__c).startsWith('Form Prepared for you by')) {
-                form.Prepare_Form_for__c = null;
-                update form;
-            }
-        }
-        }
         
         createFormShares(formMap.keyset());
        

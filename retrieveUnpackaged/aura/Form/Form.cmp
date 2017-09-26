@@ -120,7 +120,7 @@
         <aura:iteration var="FPforms" items="{!v.FandP_forms}">  
             <tr style="background-color: white; width: 100%; border: 1px solid lightgray;">
                 <td style="color: black; padding: 5px; width: 10%; border: 1px solid lightgray; text-align: center;">
-                <a href="{!FPforms.File_Url__c}" download="form.pdf">
+                <a href="{!FPforms.File_Url__c}" target="_blank">
                     <button style="color: black;">Download</button>
                	</a>  
                 </td>
@@ -249,7 +249,7 @@
             </button>
             <h2 id="header99" class="slds-text-heading--medium">
                 Status:  
-                <aura:if isTrue="{!or(v.oldForm.Approval_Step__c == null,v.oldForm.Approval_Step__c == 'Rejected', v.oldForm.Approval_Step__c == 'Recalled', v.oldForm.Approval_Step__c == 'Approved')}">
+                <aura:if isTrue="{!or(v.oldForm.Approval_Step__c == null,v.oldForm.Approval_Step__c == 'Rejected', v.oldForm.Approval_Step__c == 'Recalled', v.oldForm.Approval_Step__c == 'Approved', v.oldForm.Approval_Step__c == '%Form Prepared for you%')}">
                 	Not Submitted
                     <aura:set attribute="else">
                           Submitted &nbsp;&nbsp; | &nbsp;&nbsp; {!v.oldForm.Approval_Step__c}
@@ -267,7 +267,7 @@
           </div>
           <!--BOX BODY-->
           <div class="slds-modal__content slds-p-around--medium">
-              <aura:if isTrue="{!or(v.oldForm.Approval_Step__c == null,v.oldForm.Approval_Step__c == 'Rejected', v.oldForm.Approval_Step__c == 'Recalled', v.oldForm.Approval_Step__c == 'Approved')}">
+              <aura:if isTrue="{!or(v.oldForm.Approval_Step__c == null,v.oldForm.Approval_Step__c == 'Rejected', v.oldForm.Approval_Step__c == 'Recalled', v.oldForm.Approval_Step__c == 'Approved', v.oldForm.Approval_Step__c == '%Form Prepared for you%')}">
                   <force:recordEdit aura:id="edit" recordId="{!v.viewFormID}" />
                   <aura:set attribute="else">
                       <force:recordview aura:id="view" recordId="{!v.viewFormID}" />
@@ -277,7 +277,7 @@
           <!--BOX FOOTER-->
           <div class="slds-modal__footer">
               <ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.closeModal}" />  
-              <aura:if isTrue="{!or(v.oldForm.Approval_Step__c == null, v.oldForm.Approval_Step__c == 'Rejected', v.oldForm.Approval_Step__c == 'Recalled', v.oldForm.Approval_Step__c == 'Approved')}">
+              <aura:if isTrue="{!or(v.oldForm.Approval_Step__c == null, v.oldForm.Approval_Step__c == 'Rejected', v.oldForm.Approval_Step__c == 'Recalled', v.oldForm.Approval_Step__c == 'Approved', v.oldForm.Approval_Step__c == '%Form Prepared for you%')}">
               <!--    <ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.deleteFormJS}" />   -->
                   <ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmDelete}" />
                   <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveOnly}" />

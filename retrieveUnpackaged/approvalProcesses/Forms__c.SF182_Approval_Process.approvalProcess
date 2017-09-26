@@ -130,9 +130,9 @@
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
         <formula>AND(
- RecordType.DeveloperName  = &apos;SF-182&apos;,
+ RecordType.Name  = &apos;SF-182&apos;,
  NOT( ISPICKVAL(Approval_Routing_Options__c, &apos;&apos;) ),
- ISNULL( Prepare_Form_for__c )   
+ ISBLANK( Prepare_Form_for__c )   
 )</formula>
     </entryCriteria>
     <finalApprovalActions>

@@ -151,7 +151,9 @@
     <fieldUpdates>
         <fullName>Approval_Step_SF_182_Prepared_As</fullName>
         <field>Approval_Step__c</field>
-        <formula>&quot;Form Prepared for you by &quot; &amp; Owner:User.FirstName &amp;&quot; &quot;&amp; Owner:User.LastName &amp;&quot; - Not Submitted&quot;</formula>
+        <formula>IF( ISNULL( Unauthenticated_Owner__c ), 
+&quot;Form Prepared for you by &quot; &amp; Owner:User.FirstName &amp;&quot; &quot;&amp; Owner:User.LastName &amp;&quot; - Not Submitted&quot;, 
+&quot;Form Prepared for you by &quot; &amp; Unauthenticated_Owner__r.FirstName &amp;&quot; &quot;&amp; Unauthenticated_Owner__r.LastName &amp;&quot; - Not Submitted&quot;)</formula>
         <name>Approval Step - SF-182 Prepared As</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>

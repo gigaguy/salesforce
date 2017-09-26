@@ -3,6 +3,9 @@
     <active>true</active>
     <allowRecall>false</allowRecall>
     <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
         <type>owner</type>
     </allowedSubmitters>
     <approvalPageFields>
@@ -30,9 +33,8 @@
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
         <formula>AND(
- RecordType.DeveloperName  = &quot;SF_182&quot;,
- NOT ( ISPICKVAL (Approval_Routing_Options__c, &quot;&quot;) ),
- NOT( ISNULL( Prepare_Form_for__c ) )  
+ RecordType.Name  = &apos;SF-182&apos;,
+ NOT(ISBLANK( Prepare_Form_for__c ) )  
 )</formula>
     </entryCriteria>
     <finalApprovalRecordLock>false</finalApprovalRecordLock>

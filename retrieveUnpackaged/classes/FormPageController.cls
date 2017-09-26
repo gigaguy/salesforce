@@ -35,7 +35,13 @@ public class FormPageController {
     
     @AuraEnabled
     public static Forms__c viewForm(string formID){
-        return [select id, name, Approval_step__c from Forms__c where id = :formID];
+        forms__c form = [select id, name, Approval_step__c from Forms__c where id = :formID limit 1];
+        if(string.valueOf(form.approval_step__c).startsWith('Form Prepared for you')){
+            form.approval_step__c = null;
+            update form;}
+           
+        return form;
+        
     }
     
     @AuraEnabled
@@ -97,13 +103,14 @@ public class FormPageController {
         String message = 'Not Submitted - Please check that all your approvers are set and try again';
         try{
             system.debug(formId);
-            User u = [select id from User where Name = 'Unlicensed User' limit 1];
+    //        User u = [select id from User where Name = 'Unlicensed User' limit 1];
+
             
             Approval.ProcessSubmitRequest req1 = new Approval.ProcessSubmitRequest();
             req1.setComments('Automatically Submitted');
             req1.setObjectId(formId);
             //req1.setSubmitterId('00535000000VAA9');
-            req1.setSubmitterID(u.ID);
+    //        req1.setSubmitterID(u.ID);
             Approval.ProcessResult result = Approval.process(req1);
             if (result.IsSuccess()) message = 'Submitted';
             return message;

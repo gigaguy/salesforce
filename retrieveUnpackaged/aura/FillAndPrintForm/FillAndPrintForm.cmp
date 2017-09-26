@@ -31,7 +31,7 @@
         <aura:iteration var="FPforms" items="{!v.FandP_forms}">  
             <tr style="background-color: white; width: 100%; border: 1px solid lightgray;">
                 <td style="color: black; padding: 5px; width: 10%; border: 1px solid lightgray; text-align: center;">
-                <a href="{!FPforms.File_Url__c}" download="form.pdf">
+                <a href="{!FPforms.File_Url__c}" target="_blank">
                     <button style="color: black;">Download</button>
                	</a>  
                 </td>

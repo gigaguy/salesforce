@@ -97,6 +97,7 @@ public class FormsTriggerHandler_Test {
         //system.assertEquals(u3.ID, [select User_Supervisor__c from Forms__c where id = :form.ID].User_Supervisor__c);
         
     }
+    
     @isTest
     static void testTriggerC(){
         
@@ -221,4 +222,35 @@ public class FormsTriggerHandler_Test {
         system.assertEquals(u3.ID, [select User_Supervisor__c from Forms__c where id = :form.ID].User_Supervisor__c);
         
     }
+
+    @isTest
+    static void testTriggerE(){
+        insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = true); // checkbox from "Contact Approvers" Custom Setting
+        
+                //Insert Test Data        
+            Profile p = [select id, name from profile where name = 'AuthTest Profile'];        
+                
+            User u = new User(FirstName='Bob', LastName='Smith', Lan_ID__c = 'thetest', profileID=p.id, Username='test@fake.ccc', 
+                  email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
+                  LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');
+            insert u;
+    
+            contact c = new contact(FirstName='Bob', LastName='Smith', Lan_ID__c = 'thetest');
+            insert c;
+            
+                    
+        Forms__c form = new Forms__c(Unauthenticated_Owner__c = u.Id, approval_step__c = 'Form Prepared for you by test', prepare_form_for__c = c.id, RecordtypeId = [select id from RecordType where sObjectType = 'Forms__c' and DeveloperName = 'EPA_100'].ID);
+        insert form;
+        
+        Approval.ProcessSubmitRequest req1 = new Approval.ProcessSubmitRequest();
+
+        // Submit the approval request for the account
+        try{Approval.ProcessResult result = Approval.process(req1);}catch (Exception e){}
+        
+        
+        update form;
+        //system.assertEquals(u3.ID, [select User_Supervisor__c from Forms__c where id = :form.ID].User_Supervisor__c);
+        
+    }
+
 }
