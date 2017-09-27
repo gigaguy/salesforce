@@ -36,10 +36,11 @@ public class FormPageController {
     @AuraEnabled
     public static Forms__c viewForm(string formID){
         forms__c form = [select id, name, Approval_step__c from Forms__c where id = :formID limit 1];
+        if(form.approval_step__c != null){
         if(string.valueOf(form.approval_step__c).startsWith('Form Prepared for you')){
             form.approval_step__c = null;
             update form;}
-           
+          }
         return form;
         
     }
@@ -47,6 +48,7 @@ public class FormPageController {
     @AuraEnabled
     public static Forms__c insertNewForms(string sID, string rtID){
         system.debug('Starting insertNewForms');
+        string rtName = [select id, developerName from recordtype where id = :rtID limit 1].developerName;
         Forms__c existingForm;
         User u;
         try{
@@ -62,7 +64,7 @@ public class FormPageController {
             if (u != null){
                 Forms__c nf = new Forms__c();
                 nf.put('Unauthenticated_Owner__c', u.id);
-                nf.put('User_Supervisor__c', u.Supervisor__c);
+                if(rtName != 'SF_182') nf.put('User_Supervisor__c', u.Supervisor__c);
                 nf.put('RecordTypeId', rtID);
                 nf.put('Quantity__c', 1);
                 insert nf;
@@ -103,7 +105,7 @@ public class FormPageController {
         String message = 'Not Submitted - Please check that all your approvers are set and try again';
         try{
             system.debug(formId);
-    //        User u = [select id from User where Name = 'Unlicensed User' limit 1];
+    //        User u = [select id from User where Name = 'EPA Business Automation Platform User' limit 1];
 
             
             Approval.ProcessSubmitRequest req1 = new Approval.ProcessSubmitRequest();
@@ -123,30 +125,8 @@ public class FormPageController {
 
     @AuraEnabled
     public static List<BAP_Fill_and_Print_List__mdt> getFandP_FormRTs(){
-        
-        Set<string> formNames = new Set<String>();
-            
-            //hardcoding Fill and Print form names
-            formNames.add('EPA-107');
-            formNames.add('EPA-2550-10');
-            formNames.add('EPA-102');      
-            formNames.add('EPA Form 1900-65a');
-            formNames.add('EPA Form 1900-65b');
-            formNames.add('EPA-112');
-            formNames.add('EPA-1700-9');
-            formNames.add('EPA-2560-34');
-            formNames.add('EPA-3130-1a');
-            formNames.add('EPA-3130-QSI');
-            formNames.add('EPA-3150-1');
-            formNames.add('EPA-5100-8');
-            formNames.add('FMS-2231');
-            formNames.add('SF-2810');
-            formNames.add('SF-52');
-            
-            
-      //  return [select id, Name, Description from RecordType where sObjectType = 'Forms__c' and Name in :formNames];
-          
-          return [select Label, Description__c, File_Url__c from BAP_Fill_and_Print_List__mdt where Label in :formNames];
+                
+          return [select Label, Description__c, File_Url__c from BAP_Fill_and_Print_List__mdt ORDER BY Label ASC];
           
     }
     

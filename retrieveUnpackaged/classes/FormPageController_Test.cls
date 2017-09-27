@@ -29,11 +29,17 @@ public class FormPageController_Test {
         u.Supervisor_2__c = u2.id;
         update u;
         
+        Forms__c testForm = new Forms__c();
+        testForm.approval_step__c = 'Form Prepared for you by test';
+        testForm.RecordTypeID = [select id from RecordType where sObjectType = 'Forms__c' ORDER BY createddate limit 1].id;
+        insert testForm;
         
-        Forms__c form = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' ORDER BY createddate limit 1].ID);
+        
+        Forms__c form = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' ORDER BY createddate limit 1].ID);     
         form = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' limit 1].ID);
         
         Forms__c xform;
+        
         try{
             xform = FormPageController.insertNewForms('123ABC', [select id from RecordType where name = 'EPA-100' limit 1].ID);
             }
@@ -54,6 +60,7 @@ public class FormPageController_Test {
         FormPageController.findExistingForms('xyz');
         FormPageController.findExistingForms('123ABC');
         FormPageController.viewForm(form.ID);
+        FormPageController.viewForm(testForm.ID);
         FormPageController.saveForm(form, '123ABC');
         FormPageController.saveForm(yform, '123ABC');
         FormPageController.deleteForm(form.ID, '123ABC');
