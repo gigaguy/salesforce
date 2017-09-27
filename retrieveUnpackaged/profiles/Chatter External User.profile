@@ -377,7 +377,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Application__c.Custom_Fields_Required__c</field>
+        <field>Application__c.Custom_Objects_Required__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
