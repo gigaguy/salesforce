@@ -52,13 +52,24 @@ public class FormsTriggerHandler {
             if (!onInsert) u =userMap.get(form.Unauthenticated_Owner__c == null ? form.OwnerID : form.Unauthenticated_Owner__c);
             else u =userMap.get(form.Unauthenticated_Owner__c == null ? userInfo.getUserID() : form.Unauthenticated_Owner__c);
             if (u != null && rt.developerName == 'SF_182'){
-                if(form.User_supervisor__c == null && !onInsert){form.User_supervisor__c = u.Supervisor__c;}
-                if(form.User_Supervisor_2__c == null && !onInsert){form.User_Supervisor_2__c = u.Supervisor_2__c;}
-                if(form.User_Time_Keeper__c == null && !onInsert){form.User_Time_Keeper__c = u.Time_Keeper__c;}
-                if(form.User_Training_Officer__c == null && !onInsert){form.User_Training_Officer__c = u.Training_Officer__c;}
-                if(form.User_Funding_Official__c == null && !onInsert){form.User_Funding_Official__c = u.Funding_Official__c;}
-                if(form.Unlicensed_Owner_Email__c == null && !onInsert){form.Unlicensed_Owner_Email__c = u.Email;}
-                }
+                if(form.Prepare_Form_for__c == null){
+                    if(form.User_supervisor__c == null && form.Approval_Routing_Options__c != null){form.User_supervisor__c = u.Supervisor__c;}
+                    if(form.User_Supervisor_2__c == null && form.Approval_Routing_Options__c != null){form.User_Supervisor_2__c = u.Supervisor_2__c;}
+                    if(form.User_Time_Keeper__c == null && form.Approval_Routing_Options__c != null){form.User_Time_Keeper__c = u.Time_Keeper__c;}
+                    if(form.User_Training_Officer__c == null && form.Approval_Routing_Options__c != null){form.User_Training_Officer__c = u.Training_Officer__c;}
+                    if(form.User_Funding_Official__c == null && form.Approval_Routing_Options__c != null){form.User_Funding_Official__c = u.Funding_Official__c;}
+                    if(form.Unlicensed_Owner_Email__c == null && form.Approval_Routing_Options__c != null){form.Unlicensed_Owner_Email__c = u.Email;}
+                  }
+                else if(form.Prepare_Form_for__c != null){
+                 contact prep4U = [select id, Supervisor__c, Supervisor_2__c, Time_Keeper__c, Training_Officer__c, Funding_Official__c, email from contact where id = :form.Prepare_Form_for__c limit 1];
+                  if(form.User_supervisor__c == null && form.Approval_Routing_Options__c != null){form.User_supervisor__c = prep4U.Supervisor__c;}
+                  if(form.User_Supervisor_2__c == null && form.Approval_Routing_Options__c != null){form.User_Supervisor_2__c = prep4U.Supervisor_2__c;} 
+                  if(form.User_Time_Keeper__c == null && form.Approval_Routing_Options__c != null){form.User_Time_Keeper__c = prep4U.Time_Keeper__c;}
+                  if(form.User_Training_Officer__c == null && form.Approval_Routing_Options__c != null){form.User_Training_Officer__c = prep4U.Training_Officer__c;}
+                  if(form.User_Funding_Official__c == null && form.Approval_Routing_Options__c != null){form.User_Funding_Official__c = prep4U.Funding_Official__c;}
+                  if(form.Unlicensed_Owner_Email__c == null && form.Approval_Routing_Options__c != null){form.Unlicensed_Owner_Email__c = prep4U.Email;} 
+                 }
+               }
             else if (u != null && rt.developerName != 'SF_182'){
                 form.User_supervisor__c = u.Supervisor__c;
                 form.User_Supervisor_2__c = u.Supervisor_2__c;
@@ -69,7 +80,7 @@ public class FormsTriggerHandler {
                 }
             } // end update from User fields loop
         }
-        else {
+        else { // USE Contact records for approvers
          // get related Contacts
             for (user u : userMap.values()) {  // collecting Lan_ID__c values from Users to find matching Contacts
                    lanIds.add(u.Lan_ID__c);
@@ -106,7 +117,13 @@ public class FormsTriggerHandler {
                 if(form.Unlicensed_Owner_Email__c == null && form.Approval_Routing_Options__c != null){form.Unlicensed_Owner_Email__c = c.Email;}
                }
               else if(form.Prepare_Form_for__c != null){
-               contact prepU = [select id, Supervisor__c, Supervisor_2__c, Time_Keeper__c, Training_Officer__c, Funding_Official__c from contact where id = :form.Prepare_Form_for__c limit 1];
+               contact prep4U = [select id, Supervisor__c, Supervisor_2__c, Time_Keeper__c, Training_Officer__c, Funding_Official__c, email from contact where id = :form.Prepare_Form_for__c limit 1];
+                if(form.User_supervisor__c == null && form.Approval_Routing_Options__c != null){form.User_supervisor__c = prep4U.Supervisor__c;}
+                if(form.User_Supervisor_2__c == null && form.Approval_Routing_Options__c != null){form.User_Supervisor_2__c = prep4U.Supervisor_2__c;} 
+                if(form.User_Time_Keeper__c == null && form.Approval_Routing_Options__c != null){form.User_Time_Keeper__c = prep4U.Time_Keeper__c;}
+                if(form.User_Training_Officer__c == null && form.Approval_Routing_Options__c != null){form.User_Training_Officer__c = prep4U.Training_Officer__c;}
+                if(form.User_Funding_Official__c == null && form.Approval_Routing_Options__c != null){form.User_Funding_Official__c = prep4U.Funding_Official__c;}
+                if(form.Unlicensed_Owner_Email__c == null && form.Approval_Routing_Options__c != null){form.Unlicensed_Owner_Email__c = prep4U.Email;}
                }
             }
             else if (c != null && rt.developerName != 'SF_182'){

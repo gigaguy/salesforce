@@ -35,13 +35,8 @@ public class FormPageController {
     
     @AuraEnabled
     public static Forms__c viewForm(string formID){
-        forms__c form = [select id, name, Approval_step__c from Forms__c where id = :formID limit 1];
-        if(form.approval_step__c != null){
-        if(string.valueOf(form.approval_step__c).startsWith('Form Prepared for you')){
-            form.approval_step__c = null;
-            update form;}
-          }
-        return form;
+        forms__c form = [select id, name, Approval_step__c, SF_182_Prepare_For_checker__c from Forms__c where id = :formID limit 1];
+     return form;
         
     }
     
