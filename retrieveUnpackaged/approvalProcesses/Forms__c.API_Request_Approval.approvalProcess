@@ -76,6 +76,14 @@
     </entryCriteria>
     <finalApprovalActions>
         <action>
+            <name>API_Request_Approved_Ready_for_Completion</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Date_Approved_Entered</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
             <name>Status_Updated_to_Approved</name>
             <type>FieldUpdate</type>
         </action>

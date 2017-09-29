@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
+        <fullName>API_Request_Approved_Ready_for_Completion</fullName>
+        <ccEmails>developers@epa.gov</ccEmails>
+        <description>API Request Approved Ready for Completion</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>yuen.andrew2@epa.gov</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>API_Request_Notificaitons/API_Request_Ready_for_Create</template>
+    </alerts>
+    <alerts>
         <fullName>API_Request_Approved_by_IMO_Notification</fullName>
         <description>API Request Approved by IMO Notification</description>
         <protected>false</protected>
@@ -50,6 +62,16 @@
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>API_Request_Notificaitons/API_Request_Rejected_by_Supervisor</template>
+    </alerts>
+    <alerts>
+        <fullName>API_Request_Submission_Reminder</fullName>
+        <description>API Request Submission Reminder</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>API_Request_Notificaitons/API_Submit_Reminder</template>
     </alerts>
     <alerts>
         <fullName>Attach_Sandbox_Approval_to_Record</fullName>
@@ -243,6 +265,16 @@
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Date_Approved_Entered</fullName>
+        <description>When the record is final approved, the Date Approved field is updated</description>
+        <field>Date_Approved__c</field>
+        <formula>Today()</formula>
+        <name>Date Approved Entered</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Log_Submission_Date</fullName>
         <field>Submission_Date__c</field>
         <formula>TODAY()</formula>
@@ -316,5 +348,29 @@
             <value>Completed</value>
         </criteriaItems>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>API Request Reminder to Submit</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Forms__c.Form_Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Forms__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>API Request</value>
+        </criteriaItems>
+        <description>Reminder after 3 days and the request has not been submitted for approval.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>API_Request_Submission_Reminder</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>3</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
     </rules>
 </Workflow>

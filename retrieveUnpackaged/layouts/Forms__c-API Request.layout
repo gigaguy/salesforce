@@ -32,6 +32,10 @@
                 <behavior>Edit</behavior>
                 <field>Does_Not_Contain_PII_or_CBI_Data__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Date_Approved__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
