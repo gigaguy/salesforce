@@ -16,7 +16,7 @@
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>misty.grooms2@csra.com</recipient>
+            <recipient>misty.grooms@csra.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
@@ -42,7 +42,7 @@
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>misty.grooms2@csra.com</recipient>
+            <recipient>misty.grooms@csra.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
