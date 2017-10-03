@@ -47,7 +47,7 @@ public class UtilityMethods {
     }
     
     // 9/21/2017 - Larry Spackman - Disabled for deployment to Production because HeaderLogs custom object not being deployed
-    /*
+     /*
     public static void logHeaders() {
     // Collects header info sent from WAM
         // Log Header & Parameters
@@ -83,7 +83,7 @@ public class UtilityMethods {
         insert hl;
         // End Log Header & Parameters
     }
-	*/
+    */
     
     public static boolean validateSession(String sessionID, string userID) {    
         User u = [select id, Session_Token__c, Session_IP__c, Session_Environment__c, Session_Timestamp__c from User where id = :userID AND Session_Token__c = :sessionID];

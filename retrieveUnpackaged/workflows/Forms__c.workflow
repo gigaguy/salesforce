@@ -193,10 +193,7 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
     <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Next_Approver_2</fullName>
         <field>Approval_Step__c</field>
-        <formula>IF( 
-ispickval( Approval_Routing_Options__c, &quot;Leadership Development Institute Training&quot;), 
-&quot;Awaiting Leadership Development Institute Training Queue Approval&quot;, 
-&quot;Awaiting Training Officer Approval&quot;)</formula>
+        <formula>&quot;Awaiting &quot;&amp; TEXT( Approval_Routing_Options__c ) &amp;&quot; Queue Approval&quot;</formula>
         <name>Approval Step - Sent to Next Approver2</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>

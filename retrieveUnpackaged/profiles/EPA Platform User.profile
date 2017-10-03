@@ -95,6 +95,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>FileUploadController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ForgotPasswordController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -2573,6 +2577,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.SF_182_Override_Instructions__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Forms__c.SF_182_Prepare_For_checker__c</field>
         <readable>true</readable>
@@ -3843,20 +3852,20 @@
         <recordType>Forms__c.EPA_100</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Forms__c-EPA-1900-8A</layout>
-        <recordType>Forms__c.EPA_1900_8a</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-EPA-1900-8A</layout>
-        <recordType>Forms__c.EPA_1900_8a_old</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Forms__c-EPA-3110-1</layout>
         <recordType>Forms__c.EPA3110_1</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Forms__c-EPA-3160-6v5</layout>
         <recordType>Forms__c.EPA3160_6v5</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-EPA-PCOR</layout>
+        <recordType>Forms__c.EPA_1900_8a_old</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-EPA-PCOR</layout>
+        <recordType>Forms__c.EPA_PCOR</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Forms__c-ORD-111</layout>
@@ -4217,7 +4226,7 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
-        <recordType>Forms__c.EPA_1900_8a</recordType>
+        <recordType>Forms__c.EPA_PCOR</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
