@@ -9,6 +9,7 @@
     <aura:attribute name="selectedFormId" type="Id"/>
     <aura:attribute name="selectedFormName" type="string"/>
     <aura:attribute name="hrefInfo" type="string"/>
+    <aura:attribute name="hrefEmail" type="string"/>
     <aura:attribute name="viewFormID" type="Id"/>
     <aura:attribute name="newForm" type="Forms__c"/>
     <aura:attribute name="oldForm" type="Forms__c"/>
@@ -211,8 +212,8 @@
             </h2>
               
               <h3>                    
-                  <br/>For help using {!v.selectedFormName} please contact: <a href="{!v.hrefInfo}" target="_blank">lspackman@innovateteam.com</a>
-              </h3>  
+                  <br/>For help using {!v.selectedFormName} please contact: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a>
+              </h3> 
             
             <div aura:id="div1"></div>
           </div>
@@ -261,8 +262,8 @@
             </h2>   
               
               <h3>                    
-                  <br/>For help using {!v.selectedFormName} please contact: <a href="{!v.hrefInfo}" target="_blank">lspackman@innovateteam.com</a>
-              </h3>
+                  <br/>For help using {!v.selectedFormName} please contact: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a>
+              </h3> 
               
           </div>
           <!--BOX BODY-->

@@ -103,7 +103,7 @@
         <fullName>Additional_Data_Required__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
-        <label>Additional Data Required</label>
+        <label>Additional Data Required:</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -161,6 +161,19 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Agency_subelement_submitting_office__c</fullName>
+        <defaultValue>&quot;EPA00&quot;</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Agency, Subelement, Submitting Office #</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>All_Personel_Printed_Name_Part_F__c</fullName>
         <description>EPA-3100-1</description>
         <externalId>false</externalId>
@@ -188,7 +201,7 @@
         <fullName>Approval_Routing_Options__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <label>Approval Routing Options</label>
+        <label>Select Training Official Routing Options</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -340,45 +353,38 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Billing_Address__c</fullName>
+        <fullName>Beginning_Date_of_Development_Activity__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <label>Billing Address</label>
+        <label>Beginning Date of Development Activity</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>TextArea</type>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Billing_Instructions__c</fullName>
-        <description>SF-182</description>
         <externalId>false</externalId>
+        <formula>CASE(Furnish_Invoice_to__c, 
+  &quot;USEPA RTP Finance Center&quot;, 
+        &quot;USEPA RTP Finance Center&quot;&amp;BR()&amp;
+        &quot;Mail Code AA 216-01&quot;&amp;BR()&amp;
+        &quot;4930 Old Page Road&quot;&amp;BR()&amp;
+        &quot;Durham, NC 27703&quot;,
+  &quot;USEPA Cincinnati Finance Center&quot;, 
+        &quot;USEPA Cincinnati Finance Center&quot;&amp;BR()&amp;
+        &quot;West Martin Luther King Dr&quot;&amp;BR()&amp;
+        &quot;MS002&quot;&amp;BR()&amp;
+        &quot;Cincinnati, Ohio 45268&quot;,
+null
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Billing Instructions</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>USEPA RTP Finance Center</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>USEPA Cincinnati Finance Center</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>Purchase Card Transaction</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>No Cost Training</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Books_Materials__c</fullName>
@@ -1015,6 +1021,16 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Continued_Service_Agreement_Expires__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Continued Service Agreement Expires:</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Continued_Service_Agreement__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -1042,7 +1058,7 @@
         <fullName>Contract_Actions__c</fullName>
         <description>ORD-111</description>
         <externalId>false</externalId>
-        <label>Contract Actions</label>
+        <label>Contract Actions:</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -1073,7 +1089,7 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-        <visibleLines>3</visibleLines>
+        <visibleLines>5</visibleLines>
     </fields>
     <fields>
         <fullName>Contractor_3110_1__c</fullName>
@@ -1106,18 +1122,6 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Course_Number_Code__c</fullName>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Course Number Code</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Course_Title__c</fullName>
@@ -1182,7 +1186,7 @@
         <fullName>Data_Deficiencies__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
-        <label>Data Deficiencies</label>
+        <label>Data Deficiencies:</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -1554,16 +1558,6 @@
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Date_of_Birth__c</fullName>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Date of Birth</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Decision__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
@@ -1583,16 +1577,6 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
-    </fields>
-    <fields>
-        <fullName>Describe_special_accommodation__c</fullName>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Describe special accommodation</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Description__c</fullName>
@@ -1757,30 +1741,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Does_applicant_need_special_accomodation__c</fullName>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Does applicant need special accomodation</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Yes</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>No</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>EHRI_Employee_Number__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -1836,18 +1796,6 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Education_Level__c</fullName>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Education Level</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Effective_Date_of_This_Action__c</fullName>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
@@ -1883,6 +1831,30 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Employee_Name_SF_182__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Employee Name:</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_Signature__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Employee Signature:</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Employee_s_Signature__c</fullName>
         <defaultValue>false</defaultValue>
         <description>All</description>
@@ -1892,6 +1864,16 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Ending_Date_of_Development_Activity__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Ending Date of Development Activity:</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Estimated_Award__c</fullName>
@@ -2264,26 +2246,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Home_Address__c</fullName>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Home Address</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>TextArea</type>
-    </fields>
-    <fields>
-        <fullName>Home_Telephone__c</fullName>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Home Telephone</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Phone</type>
-    </fields>
-    <fields>
         <fullName>Hours_Designated__c</fullName>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
@@ -2354,6 +2316,17 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>I_Agree_1__c</fullName>
+        <defaultValue>&quot;that, upon completion of the Government‐ sponsored training during which I received a salary described in the SF‐182 training request, I will serve in the agency the number of hours as required by EPA Policy. Service begins the first day after the completion of the training course Note: For the purposes of this agreement, the term “agency” refers to the employing organization (Environmental Protection Agency), not to a segment of such an organization.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>I Agree 1</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>If_not_date_Fix_expected__c</fullName>
@@ -2896,7 +2869,7 @@
     </fields>
     <fields>
         <fullName>Local_Reference_Identifier__c</fullName>
-        <description>EPA-1900-8a</description>
+        <description>EPA-PCOR</description>
         <externalId>false</externalId>
         <label>Local Reference Identifier</label>
         <length>50</length>
@@ -2972,6 +2945,16 @@
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Name_of_Course_or_Development_Activity__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Name of Course or Development Activity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>National_Program__c</fullName>
         <description>ORD-111</description>
         <externalId>false</externalId>
@@ -3011,7 +2994,7 @@
         <fullName>Non_contract_Actions__c</fullName>
         <description>ORD-111</description>
         <externalId>false</externalId>
-        <label>Non-contract Actions</label>
+        <label>Non-contract Actions:</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -3053,6 +3036,18 @@
         <visibleLines>7</visibleLines>
     </fields>
     <fields>
+        <fullName>Note_SF_182__c</fullName>
+        <defaultValue>&quot;This agreement must be signed by the nominee for Government training that exceeds 80 hours (or such other designated period, less than 80 hours as prescribed by the agency) for which the Government approves payment of training costs prior to the commencement of such training. Nothing contained in this agreement below shall be construed as limiting the authority of an agency to waive, in whole or in part, an obligation of an employee to pay expenses incurred by the Government in connection with the training.&quot;</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Note</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>Notified_this_is_the_last_negotiation__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
@@ -3071,6 +3066,42 @@
                 </value>
                 <value>
                     <fullName>Not Applicable</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Number_of_training_or_course_credit_hour__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Number of training or course credit hour</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0 credit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1 credit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 credits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3 credits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4 credits</fullName>
                     <default>false</default>
                 </value>
             </valueSetDefinition>
@@ -3117,6 +3148,19 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Originator__c</fullName>
+        <description>ORD-111</description>
+        <externalId>false</externalId>
+        <formula>Form_Owner__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Originator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Other_3110_1__c</fullName>
@@ -4177,7 +4221,7 @@
         <fullName>Product_Chemistry__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
-        <label>Product Chemistry</label>
+        <label>Product Chemistry:</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -4238,7 +4282,7 @@
         <fullName>Project_Type_s__c</fullName>
         <description>ORD-111</description>
         <externalId>false</externalId>
-        <label>Project Type(s)</label>
+        <label>Project Type(s):</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -4482,6 +4526,38 @@
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Request_Status__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Request Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Resubmission</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Initial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Correction</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cancellation</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Request_Type__c</fullName>
         <description>EPA-1900-8a</description>
         <externalId>false</externalId>
@@ -4526,7 +4602,7 @@
     <fields>
         <fullName>Requested_Recipient__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <description>EPA-1900-8a</description>
+        <description>EPA-PCOR</description>
         <externalId>false</externalId>
         <label>Requested Recipient</label>
         <referenceTo>User</referenceTo>
@@ -4535,6 +4611,15 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Requires_Escalated_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Requires Escalated Approval</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Resignation_Termination_3110_1__c</fullName>
@@ -4812,6 +4897,66 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sign_1_SF_182__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>SF_182</description>
+        <externalId>false</externalId>
+        <label>Sign 1</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sign_2_SF_182__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Sign 2</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sign_3_F_182__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Sign 3</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sign_4_1_SF_182__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Sign 4-1</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sign_4_2_SF_182__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Sign 4-2</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sign_4_SF_182__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Sign 4</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Signature_Admin_Office__c</fullName>
@@ -5123,6 +5268,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Supervisor_Name__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Supervisor Name:</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Support_Email__c</fullName>
         <description>All</description>
         <externalId>false</externalId>
@@ -5206,7 +5363,7 @@
     </fields>
     <fields>
         <fullName>Total_Request_Amount__c</fullName>
-        <description>EPA-1900-8a</description>
+        <description>EPA-PCOR</description>
         <externalId>false</externalId>
         <formula>Line_Total_Price_1__c  + 
 Line_Total_Price_2__c  +
@@ -5859,7 +6016,7 @@ Line_Total_Price_5__c</formula>
         <fullName>Type__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
-        <label>Type</label>
+        <label>Type:</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -6238,6 +6395,18 @@ Line_Total_Price_5__c</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>X2_SF_182__c</fullName>
+        <defaultValue>&quot;If I voluntarily leave the agency before completing the period of service agreed to in item 1 above; or do not complete the training; or do not receive a passing grade for this development activity, I AGREE to reimburse the agency for the tuition and related fees, travel and other special expenses (excluding salary) paid in connection with my training. These amounts are reflected in Section C: Cost and Billing Information, 1a through c and 2b, on the SF182 form. I will also provide a copy of my official final grade/transcript to my supervisor of record within 30 days of the completion of the course.&quot;</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>2</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>X3_Part_B__c</fullName>
         <defaultValue>&quot;Long Term Training Agreement(s)&quot;</defaultValue>
         <description>EPA-3110-1</description>
@@ -6251,6 +6420,42 @@ Line_Total_Price_5__c</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>X3_SF_182__c</fullName>
+        <defaultValue>&quot;I FURTHER AGREE that, if I voluntarily leave the agency to enter the service of another Federal Department, agency, or other organization in any branch of the Government before completing the period of service agreed to in item 1 above, I will give my organization written notice at least ten working days, during which time a determination concerning reimbursement will be made by EPA. If I fail to give this advance notice, I AGREE to pay the amount of additional expenses according to 5 U.S.C. 4109 (a)(2) incurred by the Government for this training.&quot;</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>3</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>X4_1_SF_182__c</fullName>
+        <defaultValue>&quot;I FURTHER AGREE to obtain approval from my organization’s Training Officer and any person(s) responsible for authorizing non‐government training requests of any proposed change in my approved training program involving course and schedule changes, withdrawals or course incompletion, and increased costs.&quot;</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>4-1</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>X4_2_SF_182__c</fullName>
+        <defaultValue>&quot;I acknowledge that this agreement does not in any way commit the Government to continue my employment. I understand that, if there is a transfer of my service obligation to another Federal agency or other organization in any branch of the Government, the agreements in items 1, 2, and 3 of this section will remain in effect until I have completed my obligated service with that other agency or organization.&quot;</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>4-2</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>X4_Part_B__c</fullName>
         <defaultValue>&quot;Employee Service Agreement(s)&quot;</defaultValue>
         <description>EPA-3110-1</description>
@@ -6262,6 +6467,18 @@ Line_Total_Price_5__c</formula>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X4_SF_182__c</fullName>
+        <defaultValue>&quot;I understand that any amounts which may be due the agency as a result of any failure on my part to meet the terms of this agreement may be withheld from any monies owed me by the Government, or may be recovered by such other methods as are approved by law.&quot;</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>4</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>X5_Part_B__c</fullName>
@@ -6597,25 +6814,6 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Before</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Billing_Instructions__c</picklist>
-            <values>
-                <fullName>No Cost Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Purchase Card Transaction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7002,17 +7200,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Does_applicant_need_special_accomodation__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -7153,6 +7340,29 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
+            <values>
+                <fullName>0 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 credits</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -7402,6 +7612,25 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Status__c</picklist>
+            <values>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resubmission</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -8009,25 +8238,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Billing_Instructions__c</picklist>
-            <values>
-                <fullName>No Cost Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Purchase Card Transaction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Cleared_1_Part_B__c</picklist>
             <values>
                 <fullName>NA</fullName>
@@ -8410,17 +8620,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Does_applicant_need_special_accomodation__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -8561,6 +8760,29 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
+            <values>
+                <fullName>0 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 credits</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -8810,6 +9032,25 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Status__c</picklist>
+            <values>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resubmission</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -9429,25 +9670,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Billing_Instructions__c</picklist>
-            <values>
-                <fullName>No Cost Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Purchase Card Transaction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Cleared_1_Part_B__c</picklist>
             <values>
                 <fullName>NA</fullName>
@@ -9830,17 +10052,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Does_applicant_need_special_accomodation__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -9981,6 +10192,29 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
+            <values>
+                <fullName>0 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 credits</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10230,6 +10464,25 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Status__c</picklist>
+            <values>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resubmission</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10849,25 +11102,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Billing_Instructions__c</picklist>
-            <values>
-                <fullName>No Cost Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Purchase Card Transaction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Cleared_1_Part_B__c</picklist>
             <values>
                 <fullName>NA</fullName>
@@ -11250,17 +11484,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Does_applicant_need_special_accomodation__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -11401,6 +11624,29 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
+            <values>
+                <fullName>0 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 credits</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11650,6 +11896,25 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Status__c</picklist>
+            <values>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resubmission</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12257,25 +12522,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Billing_Instructions__c</picklist>
-            <values>
-                <fullName>No Cost Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Purchase Card Transaction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Cleared_1_Part_B__c</picklist>
             <values>
                 <fullName>NA</fullName>
@@ -12658,17 +12904,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Does_applicant_need_special_accomodation__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -12809,6 +13044,29 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
+            <values>
+                <fullName>0 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 credits</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13058,6 +13316,25 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Status__c</picklist>
+            <values>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resubmission</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13665,25 +13942,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Billing_Instructions__c</picklist>
-            <values>
-                <fullName>No Cost Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Purchase Card Transaction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Cleared_1_Part_B__c</picklist>
             <values>
                 <fullName>NA</fullName>
@@ -14066,17 +14324,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Does_applicant_need_special_accomodation__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -14217,6 +14464,29 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
+            <values>
+                <fullName>0 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 credits</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14466,6 +14736,25 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Status__c</picklist>
+            <values>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resubmission</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -15085,25 +15374,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Billing_Instructions__c</picklist>
-            <values>
-                <fullName>No Cost Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Purchase Card Transaction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Cleared_1_Part_B__c</picklist>
             <values>
                 <fullName>NA</fullName>
@@ -15486,17 +15756,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Does_applicant_need_special_accomodation__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -15637,6 +15896,29 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
+            <values>
+                <fullName>0 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 credits</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -15886,6 +16168,25 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Status__c</picklist>
+            <values>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resubmission</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -16505,25 +16806,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Billing_Instructions__c</picklist>
-            <values>
-                <fullName>No Cost Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Purchase Card Transaction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Cleared_1_Part_B__c</picklist>
             <values>
                 <fullName>NA</fullName>
@@ -16906,17 +17188,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Does_applicant_need_special_accomodation__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -17057,6 +17328,29 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
+            <values>
+                <fullName>0 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 credits</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -17306,6 +17600,25 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Status__c</picklist>
+            <values>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resubmission</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -17949,25 +18262,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Billing_Instructions__c</picklist>
-            <values>
-                <fullName>No Cost Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Purchase Card Transaction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Cleared_1_Part_B__c</picklist>
             <values>
                 <fullName>NA</fullName>
@@ -18350,17 +18644,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Does_applicant_need_special_accomodation__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -18501,6 +18784,29 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
+            <values>
+                <fullName>0 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 credits</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -18750,6 +19056,25 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Status__c</picklist>
+            <values>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resubmission</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

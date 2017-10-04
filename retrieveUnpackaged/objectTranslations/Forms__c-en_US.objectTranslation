@@ -25,7 +25,7 @@
         <name>Action_Information__c</name>
     </fields>
     <fields>
-        <label><!-- Additional Data Required --></label>
+        <label><!-- Additional Data Required: --></label>
         <name>Additional_Data_Required__c</name>
         <picklistValues>
             <masterLabel>Acute Tox</masterLabel>
@@ -65,6 +65,10 @@
         <name>Admin_Program_Printed_Name__c</name>
     </fields>
     <fields>
+        <label><!-- Agency, Subelement, Submitting Office # --></label>
+        <name>Agency_subelement_submitting_office__c</name>
+    </fields>
+    <fields>
         <label><!-- All Personel (Printed Name) --></label>
         <name>All_Personel_Printed_Name_Part_F__c</name>
     </fields>
@@ -73,7 +77,7 @@
         <name>Applicant_Name_Last_First_MI__c</name>
     </fields>
     <fields>
-        <label><!-- Approval Routing Options --></label>
+        <label><!-- Select Training Official Routing Options --></label>
         <name>Approval_Routing_Options__c</name>
         <picklistValues>
             <masterLabel>Ann Arbor</masterLabel>
@@ -166,28 +170,12 @@
         <name>Badging_Office_Printed_Name__c</name>
     </fields>
     <fields>
-        <label><!-- Billing Address --></label>
-        <name>Billing_Address__c</name>
+        <label><!-- Beginning Date of Development Activity --></label>
+        <name>Beginning_Date_of_Development_Activity__c</name>
     </fields>
     <fields>
         <label><!-- Billing Instructions --></label>
         <name>Billing_Instructions__c</name>
-        <picklistValues>
-            <masterLabel>No Cost Training</masterLabel>
-            <translation><!-- No Cost Training --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Purchase Card Transaction</masterLabel>
-            <translation><!-- Purchase Card Transaction --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>USEPA Cincinnati Finance Center</masterLabel>
-            <translation><!-- USEPA Cincinnati Finance Center --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>USEPA RTP Finance Center</masterLabel>
-            <translation><!-- USEPA RTP Finance Center --></translation>
-        </picklistValues>
     </fields>
     <fields>
         <label><!-- Books &amp; Materials --></label>
@@ -526,6 +514,10 @@
         <name>Continued_Service_Agreement_Expiration__c</name>
     </fields>
     <fields>
+        <label><!-- Continued Service Agreement Expires: --></label>
+        <name>Continued_Service_Agreement_Expires__c</name>
+    </fields>
+    <fields>
         <label><!-- Continued Service Agreement --></label>
         <name>Continued_Service_Agreement__c</name>
         <picklistValues>
@@ -538,7 +530,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Contract Actions --></label>
+        <label><!-- Contract Actions: --></label>
         <name>Contract_Actions__c</name>
         <picklistValues>
             <masterLabel>Contract</masterLabel>
@@ -574,10 +566,6 @@
         <name>Coordinator_Date__c</name>
     </fields>
     <fields>
-        <label><!-- Course Number Code --></label>
-        <name>Course_Number_Code__c</name>
-    </fields>
-    <fields>
         <label><!-- Course Title --></label>
         <name>Course_Title__c</name>
     </fields>
@@ -599,7 +587,7 @@
         <name>D__c</name>
     </fields>
     <fields>
-        <label><!-- Data Deficiencies --></label>
+        <label><!-- Data Deficiencies: --></label>
         <name>Data_Deficiencies__c</name>
         <picklistValues>
             <masterLabel>Acute Tox</masterLabel>
@@ -763,20 +751,12 @@
         <name>Date__c</name>
     </fields>
     <fields>
-        <label><!-- Date of Birth --></label>
-        <name>Date_of_Birth__c</name>
-    </fields>
-    <fields>
         <label><!-- Decision # (each on its own line) --></label>
         <name>Decision__c</name>
     </fields>
     <fields>
         <label><!-- Describe Interactions with Company --></label>
         <name>Describe_Interactions_with_Company__c</name>
-    </fields>
-    <fields>
-        <label><!-- Describe special accommodation --></label>
-        <name>Describe_special_accommodation__c</name>
     </fields>
     <fields>
         <label><!-- Description --></label>
@@ -839,18 +819,6 @@
         <name>Documentation_Requirements__c</name>
     </fields>
     <fields>
-        <label><!-- Does applicant need special accomodation --></label>
-        <name>Does_applicant_need_special_accomodation__c</name>
-        <picklistValues>
-            <masterLabel>No</masterLabel>
-            <translation><!-- No --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Yes</masterLabel>
-            <translation><!-- Yes --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
         <label><!-- EHRI Employee Number --></label>
         <name>EHRI_Employee_Number__c</name>
     </fields>
@@ -871,10 +839,6 @@
         <name>E__c</name>
     </fields>
     <fields>
-        <label><!-- Education Level --></label>
-        <name>Education_Level__c</name>
-    </fields>
-    <fields>
         <label><!-- Effective Date of This Action --></label>
         <name>Effective_Date_of_This_Action__c</name>
     </fields>
@@ -888,9 +852,21 @@
         <name>Employee_ID_No__c</name>
     </fields>
     <fields>
+        <label><!-- Employee Name: --></label>
+        <name>Employee_Name_SF_182__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee Signature: --></label>
+        <name>Employee_Signature__c</name>
+    </fields>
+    <fields>
         <help><!-- Clicking this box digitally dates and signs this form. --></help>
         <label><!-- Employee&apos;s Signature --></label>
         <name>Employee_s_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ending Date of Development Activity: --></label>
+        <name>Ending_Date_of_Development_Activity__c</name>
     </fields>
     <fields>
         <label><!-- Estimated Award $ --></label>
@@ -1045,14 +1021,6 @@
         <name>HR_Signature__c</name>
     </fields>
     <fields>
-        <label><!-- Home Address --></label>
-        <name>Home_Address__c</name>
-    </fields>
-    <fields>
-        <label><!-- Home Telephone --></label>
-        <name>Home_Telephone__c</name>
-    </fields>
-    <fields>
         <label><!-- Hours Designated --></label>
         <name>Hours_Designated__c</name>
     </fields>
@@ -1075,6 +1043,10 @@
     <fields>
         <label><!-- ITO/IMO, Telecom (Printed Name) --></label>
         <name>ITO_IMO_Telecom_Printed_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- I Agree 1 --></label>
+        <name>I_Agree_1__c</name>
     </fields>
     <fields>
         <label><!-- If not, date &quot;Fix&quot; expected --></label>
@@ -1293,6 +1265,10 @@
         <name>Name_and_Address_of_Vendor__c</name>
     </fields>
     <fields>
+        <label><!-- Name of Course or Development Activity --></label>
+        <name>Name_of_Course_or_Development_Activity__c</name>
+    </fields>
+    <fields>
         <label><!-- National Program --></label>
         <name>National_Program__c</name>
     </fields>
@@ -1305,7 +1281,7 @@
         <name>Non_Government_Contribution_Cost__c</name>
     </fields>
     <fields>
-        <label><!-- Non-contract Actions --></label>
+        <label><!-- Non-contract Actions: --></label>
         <name>Non_contract_Actions__c</name>
         <picklistValues>
             <masterLabel>CRADA/MTA</masterLabel>
@@ -1337,6 +1313,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Note --></label>
+        <name>Note_SF_182__c</name>
+    </fields>
+    <fields>
         <label><!-- Notified this is the last negotiation? --></label>
         <name>Notified_this_is_the_last_negotiation__c</name>
         <picklistValues>
@@ -1346,6 +1326,30 @@
         <picklistValues>
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Number of training or course credit hour --></label>
+        <name>Number_of_training_or_course_credit_hour__c</name>
+        <picklistValues>
+            <masterLabel>0 credit</masterLabel>
+            <translation><!-- 0 credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 credit</masterLabel>
+            <translation><!-- 1 credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 credits</masterLabel>
+            <translation><!-- 2 credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 credits</masterLabel>
+            <translation><!-- 3 credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 credits</masterLabel>
+            <translation><!-- 4 credits --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -1363,6 +1367,10 @@
     <fields>
         <label><!-- Original PRIA Due Date --></label>
         <name>Original_PRIA_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Originator --></label>
+        <name>Originator__c</name>
     </fields>
     <fields>
         <label><!-- Other --></label>
@@ -1798,7 +1806,7 @@
         <name>Printed_Name__c</name>
     </fields>
     <fields>
-        <label><!-- Product Chemistry --></label>
+        <label><!-- Product Chemistry: --></label>
         <name>Product_Chemistry__c</name>
         <picklistValues>
             <masterLabel>Acute Tox</masterLabel>
@@ -1830,7 +1838,7 @@
         <name>Program_Office__c</name>
     </fields>
     <fields>
-        <label><!-- Project Type(s) --></label>
+        <label><!-- Project Type(s): --></label>
         <name>Project_Type_s__c</name>
         <picklistValues>
             <masterLabel>Decision Support Tools</masterLabel>
@@ -1942,6 +1950,26 @@
         <name>Registration__c</name>
     </fields>
     <fields>
+        <label><!-- Request Status --></label>
+        <name>Request_Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancellation</masterLabel>
+            <translation><!-- Cancellation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Correction</masterLabel>
+            <translation><!-- Correction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initial</masterLabel>
+            <translation><!-- Initial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resubmission</masterLabel>
+            <translation><!-- Resubmission --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Request Type --></label>
         <name>Request_Type__c</name>
         <picklistValues>
@@ -1969,6 +1997,10 @@
         <label><!-- Requested Recipient --></label>
         <name>Requested_Recipient__c</name>
         <relationshipLabel><!-- Forms (Requested Recipient) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Requires Escalated Approval --></label>
+        <name>Requires_Escalated_Approval__c</name>
     </fields>
     <fields>
         <label><!-- Resignation/Termination --></label>
@@ -2091,6 +2123,30 @@
         <name>Shared_Services_Centers_SSC__c</name>
     </fields>
     <fields>
+        <label><!-- Sign 1 --></label>
+        <name>Sign_1_SF_182__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sign 2 --></label>
+        <name>Sign_2_SF_182__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sign 3 --></label>
+        <name>Sign_3_F_182__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sign 4-1 --></label>
+        <name>Sign_4_1_SF_182__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sign 4-2 --></label>
+        <name>Sign_4_2_SF_182__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sign 4 --></label>
+        <name>Sign_4_SF_182__c</name>
+    </fields>
+    <fields>
         <label><!-- Signature --></label>
         <name>Signature_Admin_Office__c</name>
     </fields>
@@ -2194,6 +2250,10 @@
     <fields>
         <label><!-- Super/SEE/Contract (Printed Name) --></label>
         <name>Super_SEE_Contract_Printed_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supervisor Name: --></label>
+        <name>Supervisor_Name__c</name>
     </fields>
     <fields>
         <label><!-- Support Email --></label>
@@ -2569,7 +2629,7 @@
         <name>Tuition_and_Fees__c</name>
     </fields>
     <fields>
-        <label><!-- Type --></label>
+        <label><!-- Type: --></label>
         <name>Type__c</name>
         <picklistValues>
             <masterLabel>Administrative-FR Notice</masterLabel>
@@ -2775,12 +2835,32 @@
         <name>X2_Part_B__c</name>
     </fields>
     <fields>
+        <label><!-- 2 --></label>
+        <name>X2_SF_182__c</name>
+    </fields>
+    <fields>
         <label><!-- 3 --></label>
         <name>X3_Part_B__c</name>
     </fields>
     <fields>
+        <label><!-- 3 --></label>
+        <name>X3_SF_182__c</name>
+    </fields>
+    <fields>
+        <label><!-- 4-1 --></label>
+        <name>X4_1_SF_182__c</name>
+    </fields>
+    <fields>
+        <label><!-- 4-2 --></label>
+        <name>X4_2_SF_182__c</name>
+    </fields>
+    <fields>
         <label><!-- 4 --></label>
         <name>X4_Part_B__c</name>
+    </fields>
+    <fields>
+        <label><!-- 4 --></label>
+        <name>X4_SF_182__c</name>
     </fields>
     <fields>
         <label><!-- 5 --></label>
@@ -3099,6 +3179,10 @@
             <section>Type of Action</section>
         </sections>
         <sections>
+            <label><!-- action spacer --></label>
+            <section>action spacer</section>
+        </sections>
+        <sections>
             <label><!-- response --></label>
             <section>response</section>
         </sections>
@@ -3173,8 +3257,16 @@
             <section>Custom Links</section>
         </sections>
         <sections>
+            <label><!-- EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE --></label>
+            <section>EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE</section>
+        </sections>
+        <sections>
             <label><!-- Fields --></label>
             <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Header --></label>
+            <section>Header</section>
         </sections>
         <sections>
             <label><!-- Override Form Approvers --></label>
