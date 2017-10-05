@@ -17,15 +17,19 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>GENERAL INSTRUCTIONS AND INFORMATON ABOUT THE LEAVE BANK PROGRAM</label>
+        <label>GENERAL INSTRUCTIONS AND INFORMATION</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>NOTICE_TO_EMPLOYEE__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Instructions__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Instructions_Continued__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
@@ -72,7 +76,7 @@
                 <field>A__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>A_Description__c</field>
             </layoutItems>
             <layoutItems>
@@ -80,7 +84,7 @@
                 <field>B__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>B_Description__c</field>
             </layoutItems>
             <layoutItems>
@@ -88,7 +92,7 @@
                 <field>C__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>C_Description__c</field>
             </layoutItems>
             <layoutItems>
@@ -96,7 +100,7 @@
                 <field>D__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>D_Description__c</field>
             </layoutItems>
             <layoutItems>
@@ -104,7 +108,7 @@
                 <field>E__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>E_Description__c</field>
             </layoutItems>
             <layoutItems>

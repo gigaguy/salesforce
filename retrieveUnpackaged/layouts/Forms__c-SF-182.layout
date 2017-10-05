@@ -259,12 +259,19 @@
                 <field>Direct_Appropriation_Fund__c</field>
             </layoutItems>
             <layoutItems>
+                <emptySpace>true</emptySpace>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Non_Government_Contribution_Cost__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Doc_Purchase_Order_Requisition__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>X8_Digit_Station_Symbol__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -290,6 +297,14 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Billing_Instructions__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Card_Holder_s_Name__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Card_Holder_s_Phone_Number__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -384,6 +399,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Sign_4_2_SF_182__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Employee_s_Signature__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Employee_Digital_Signature__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

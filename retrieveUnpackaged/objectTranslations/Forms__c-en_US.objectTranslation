@@ -198,6 +198,14 @@
         <name>C__c</name>
     </fields>
     <fields>
+        <label><!-- Card Holder’s Name --></label>
+        <name>Card_Holder_s_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card Holder’s Phone Number --></label>
+        <name>Card_Holder_s_Phone_Number__c</name>
+    </fields>
+    <fields>
         <label><!-- Certification --></label>
         <name>Certification__c</name>
     </fields>
@@ -984,8 +992,8 @@
             <translation><!-- No Cost Training --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Purchase Card Transaction</masterLabel>
-            <translation><!-- Purchase Card Transaction --></translation>
+            <masterLabel>Purchase Card Transaction (fill out Card Holder fields below)</masterLabel>
+            <translation><!-- Purchase Card Transaction (fill out Card Holder fields below) --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>USEPA Cincinnati Finance Center</masterLabel>
@@ -1067,6 +1075,10 @@
     <fields>
         <label><!-- Indirect Total --></label>
         <name>Indirect_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instructions Continued --></label>
+        <name>Instructions_Continued__c</name>
     </fields>
     <fields>
         <label><!-- Instructions --></label>
@@ -1211,6 +1223,10 @@
     <fields>
         <label><!-- Librarian (Printed Name) --></label>
         <name>Librarian_Printed_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PCOR Instructions --></label>
+        <name>Line_Item_Instructions__c</name>
     </fields>
     <fields>
         <label><!-- Line Total Price --></label>
@@ -1536,12 +1552,12 @@
             <translation><!-- NA --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>NO</masterLabel>
-            <translation><!-- NO --></translation>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>YES</masterLabel>
-            <translation><!-- YES --></translation>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -3006,8 +3022,16 @@
             <section>Items</section>
         </sections>
         <sections>
+            <label><!-- Items Spacer --></label>
+            <section>Items Spacer</section>
+        </sections>
+        <sections>
             <label><!-- Local Financial Management Office --></label>
             <section>Local Financial Management Office</section>
+        </sections>
+        <sections>
+            <label><!-- Local Financial Management Office Spacer --></label>
+            <section>Local Financial Management Office Spacer</section>
         </sections>
         <sections>
             <label><!-- Part A --></label>
@@ -3050,6 +3074,10 @@
             <section>Program Office</section>
         </sections>
         <sections>
+            <label><!-- Program Office Spacer --></label>
+            <section>Program Office Spacer</section>
+        </sections>
+        <sections>
             <label><!-- Reason For Leaving --></label>
             <section>Reason For Leaving</section>
         </sections>
@@ -3062,8 +3090,16 @@
             <section>Security Management Division</section>
         </sections>
         <sections>
+            <label><!-- Security Management Spacer --></label>
+            <section>Security Management Spacer</section>
+        </sections>
+        <sections>
             <label><!-- Shared Service Centers --></label>
             <section>Shared Service Centers</section>
+        </sections>
+        <sections>
+            <label><!-- Shared Service Centers Spacer --></label>
+            <section>Shared Service Centers Spacer</section>
         </sections>
     </layouts>
     <layouts>
@@ -3073,8 +3109,8 @@
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- GENERAL INSTRUCTIONS AND INFORMATON ABOUT THE LEAVE BANK PROGRAM --></label>
-            <section>GENERAL INSTRUCTIONS AND INFORMATON ABOUT THE LEAVE BANK PROGRAM</section>
+            <label><!-- GENERAL INSTRUCTIONS AND INFORMATION --></label>
+            <section>GENERAL INSTRUCTIONS AND INFORMATION</section>
         </sections>
         <sections>
             <label><!-- I. Information About You --></label>
@@ -3106,6 +3142,10 @@
         <sections>
             <label><!-- Fields --></label>
             <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Instructions --></label>
+            <section>Instructions</section>
         </sections>
         <sections>
             <label><!-- Line Items --></label>

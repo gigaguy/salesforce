@@ -33,10 +33,6 @@
         <label>top</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Form_Owner__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Chemical_Name__c</field>
             </layoutItems>
@@ -55,7 +51,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>CreatedById</field>
+                <field>Originator__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -209,14 +205,12 @@
                 <behavior>Edit</behavior>
                 <field>Date_75_Day_Letter_sent__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Notified_this_is_the_last_negotiation__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>

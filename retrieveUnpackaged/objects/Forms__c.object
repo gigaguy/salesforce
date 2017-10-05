@@ -146,7 +146,7 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-        <visibleLines>4</visibleLines>
+        <visibleLines>5</visibleLines>
     </fields>
     <fields>
         <fullName>Admin_Program_Printed_Name__c</fullName>
@@ -364,6 +364,7 @@
     </fields>
     <fields>
         <fullName>Billing_Instructions__c</fullName>
+        <description>SF-182</description>
         <externalId>false</externalId>
         <formula>CASE(Furnish_Invoice_to__c, 
   &quot;USEPA RTP Finance Center&quot;, 
@@ -376,6 +377,9 @@
         &quot;West Martin Luther King Dr&quot;&amp;BR()&amp;
         &quot;MS002&quot;&amp;BR()&amp;
         &quot;Cincinnati, Ohio 45268&quot;,
+  &quot;Purchase Card Transaction&quot;,
+        &quot;Purchase Card Holder’s Name: &quot;&amp; Card_Holder_s_Name__c &amp; BR() &amp;
+        &quot;Purchase Card Holder’s Telephone Number: &quot;&amp; Card_Holder_s_Phone_Number__c,
 null
 )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
@@ -444,6 +448,27 @@ null
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Card_Holder_s_Name__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Card Holder’s Name</label>
+        <length>70</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Card_Holder_s_Phone_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Card Holder’s Phone Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
         <fullName>Certification__c</fullName>
         <defaultValue>&quot;By signing this form you certify that all U.S. Government property has been returned and that all documentary materials, records(including documents that are responsive to a Freedom of Information Act(FOIA) request, litigation hold, or other legal hold) have been properly identified and transferred.  The statements made on this form and all attachments thereto are true, accurate, and complete.  You acknowledge that any knowingly false or misleading statement may be punishable by fine or imprisonment or both under applicable law.&quot;</defaultValue>
         <description>EPA-3110-1</description>
@@ -509,6 +534,7 @@ null
     </fields>
     <fields>
         <fullName>Cleared_1_Part_C__c</fullName>
+        <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part C Cleared 1</label>
         <required>false</required>
@@ -564,6 +590,7 @@ null
     </fields>
     <fields>
         <fullName>Cleared_2_Part_C__c</fullName>
+        <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part C Cleared 2</label>
         <required>false</required>
@@ -619,6 +646,7 @@ null
     </fields>
     <fields>
         <fullName>Cleared_3_Part_C__c</fullName>
+        <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part C Cleared 3</label>
         <required>false</required>
@@ -922,6 +950,7 @@ null
     </fields>
     <fields>
         <fullName>Cleared_9_Part_C__c</fullName>
+        <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part C Cleared 9</label>
         <required>false</required>
@@ -1001,6 +1030,7 @@ null
     <fields>
         <fullName>Completed_By__c</fullName>
         <defaultValue>&quot;Shared Service Centers(SSC) Human Resources Office(HRO) Regional Human Resources Officers(RHRO) or Appropriate Designee&quot;</defaultValue>
+        <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part E Completed By</label>
         <length>121</length>
@@ -1910,6 +1940,7 @@ null
     <fields>
         <fullName>Evaluation_Factor__c</fullName>
         <defaultValue>&quot;For new actions, has the QA documentation required in Section IV of this form been included in the RFA, RFP, SOW or PWS as an evaluation factor?&quot;</defaultValue>
+        <description>ORD-111</description>
         <externalId>false</externalId>
         <label>Evaluation Factor</label>
         <length>144</length>
@@ -2320,9 +2351,10 @@ null
     <fields>
         <fullName>I_Agree_1__c</fullName>
         <defaultValue>&quot;that, upon completion of the Government‐ sponsored training during which I received a salary described in the SF‐182 training request, I will serve in the agency the number of hours as required by EPA Policy. Service begins the first day after the completion of the training course Note: For the purposes of this agreement, the term “agency” refers to the employing organization (Environmental Protection Agency), not to a segment of such an organization.&quot;</defaultValue>
+        <description>SF-182</description>
         <externalId>false</externalId>
         <label>I Agree 1</label>
-        <length>32768</length>
+        <length>5000</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -2387,8 +2419,20 @@ null
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>Instructions_Continued__c</fullName>
+        <defaultValue>&quot;CERTIFICATION FOR SECTION III&quot; + BR()+BR() + &quot;The Human Resources Official whose signature appears in this section certifies the following:&quot; + BR()+BR() + &quot;(1) That if the applicant has checked Box A under Section II, he or she has submitted this form to the Human Resources Office within the established time limits of either an Agency open enrollment period or an individual enrollment period.&quot;+ BR()+BR() + &quot;(2) That if the applicant has checked Box B under Section II, the number of hours contributed either does not exceed the regulatory limitations, or (if it does exceed the limitations) a waiver has been obtained.&quot;+ BR()+BR() + &quot;(3) That if the applicant has checked Box C under Section II, the employee designated to receive the leave is a currently qualified leave recipient under the EPA Leave Bank Program.&quot; + BR()+BR() + &quot;INSTRUCTIONS FOR SECTION IV&quot;+ BR() + &quot;This section is completed by the Agency Official authorized to grant any waiver that may be required to process this application.&quot;</defaultValue>
+        <description>EPA3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Instructions Continued</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
         <fullName>Instructions__c</fullName>
-        <defaultValue>&quot;This form is used to apply for membership in the EPA Leave Bank. Contribute extra hours beyond your basic membership fee to the Leave Bank.  Designate all or a portion of the extra contribution in the above to a specific individual who is a qualified leave recipient.  Donate use-or-lose leave to EPA’s Leave Bank. Withdraw from EPA’s Leave Bank. Complete sections I and II, and return the form to your Human Resources Office.  You may check Box IIA and join the EPA Leave Bank only during an open enrollment period for all Agency employees or during an individual enrollment period if your are a new EPA employee or one returning to EPA from an absence covering an entire open enrollment period.  You may check Boxes IIB and/or IIC and submit this form to the Human Resources Office at any time during the year, including an open enrollment period. All contributions of leave are deposited in the Bank. They are not returned to you if you leave EPA. Also, if the person to whom you designate leave no longer has the medical emergency, any unused leave is returned to the Bank, not to you. There are limitations on the total amount of leave you may donate to the Agency Leave Bank in any one year. These limitations are: 1-You may not donate more than one half of the amount of annual leave you are projected to earn in a leave year. 2- If you are projected to forfeit leave, you may donate no more than the number of hours you are scheduled to work and receive pay from the date of the contribution. EXAMPLE: If you had 80 hours use-or-lose leave and only 5 work days remaining in the leave year, the maximum number of hours you could donate would be 40. The other 40 hours will be forfeited. Under certain conditions, these two limitations may be waived. If you need to request a waiver to donate leave beyond these limitations, see your Human Resources Officer.  The Human Resources Official whose signature appears in this section certifies the following:  1- That if the applicant has checked Box A under Section II, he or she has submitted this form to the Human Resources Office within the established time limits of either an Agency open enrollment period or an individual enrollment period.  2. That if the applicant has checked Box B under Section II, the number of hours contributed either does not exceed the regulatory limitations, or if it does exceed the limitations a waiver has been obtained.  3. That if the applicant has checked Box C under Section II, the employee designated to receive the leave is a currently qualified leave recipient under the EPA Leave Bank Program.&quot;</defaultValue>
+        <defaultValue>&quot;This form is used to: (1) apply for &apos;membership&apos; in the EPA Leave Bank, (2) contribute extra hours beyond your basic membership fee to the Leave Bank, (3) designate all or a portion of the extra contribution in (2) above to a specific individual who is a qualified leave recipient, (4) donate use-or-lose leave to EPA&apos;s Leave Bank, and (5) withdraw from EPA&apos;s Leave Bank. Complete sections I and II, and return the form to your Human Resources Office.&quot; + BR()+BR() + &quot;You may check Box IIA and join the EPA Leave Bank only during an open enrollment period for all Agency employees or during an individual enrollment period if your are a new EPA employee or one returning to EPA from an absence covering an entire open enrollment period.&quot; + BR()+BR() + &quot;You may check Boxes IIB and/or IIC and submit this form to the Human Resources Office at any time during the year, including an open enrollment period.&quot; + BR()+BR() + &quot;All contributions of leave are deposited in the Bank. They are not returned to you if you leave EPA. Also, if the person to whom you designate leave no longer has the medical emergency, any unused leave is returned to the Bank, not to you.&quot; + BR()+BR() + &quot;There are limitations on the total amount of leave you may donate to the Agency Leave Bank in any one year. These limitations are:&quot; + BR()+BR() + &quot;(1) You may not donate more than one half of the amount of annual leave you are projected to earn in a leave year, and&quot;+ BR()+BR() + &quot;(2) If you are projected to forfeit leave, you may donate no more than the number of hours you are scheduled to work and receive pay (from the date of the contribution). (EXAMPLE: If you had 80 hours &apos;use-or-lose&apos; leave and only 5 work days remaining in the leave year, the maximum number of hours you could donate would be 40. The other 40 hours will be forfeited.)&quot; + BR()+BR() + &quot;Under certain conditions, these two limitations may be waived. If you need to request a waiver to donate leave beyond these limitations, see your Human Resources Officer.&quot; + BR()+BR() + &quot;INSTRUCTIONS FOR SECTION I&quot;+ BR() + &quot;Complete all items in this section. Please type or print legibly with a ballpoint pen.&quot; + BR()+BR() + &quot;INSTRUCTIONS FOR SECTION II&quot;+ BR() + &quot;Check any boxes that apply. &apos;Box A&apos; is used to indicate that you want to enroll as a member of the EPA Leave Bank. The membership &apos;fee&apos; for one year&apos;s membership in the Leave Bank is one pay period&apos;s accrual of annual leave (i.e., 4,6, or 8 hours) or an amount lower or higher as set by the Agency Leave Bank Board for a particular enrollment period. All basic membership contributions will be deposited in the central Bank. They may not be designated to a recipient.&quot; + BR()+BR() + &quot;Use &apos;Box B&apos; to contribute extra hours beyond your basic membership fee. You may make this type of contribution at any time during the year.&quot; + BR()+BR() + &quot;Check &apos;Box C&apos; if you want to designate all or a portion of the extra hours you show in &apos;Box B&apos; to a particular EPA employee whom you know is a qualified recipient under the Leave Bank program. You may donate leave to any qualified recipient, other than your immediate supervisor.&quot;</defaultValue>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
         <label>Instructions</label>
@@ -2787,6 +2831,17 @@ null
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Line_Item_Instructions__c</fullName>
+        <defaultValue>&quot;To view calculated totals, please save the form.&quot;</defaultValue>
+        <description>EPA-PCOR</description>
+        <externalId>false</externalId>
+        <label>PCOR Instructions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>Line_Total_Price_1__c</fullName>
         <description>EPA-1900-8a</description>
         <externalId>false</externalId>
@@ -3119,7 +3174,7 @@ null
     </fields>
     <fields>
         <fullName>Organization_Mailing_Address__c</fullName>
-        <description>SF182</description>
+        <description>SF-182</description>
         <externalId>false</externalId>
         <label>Organization Mailing Address</label>
         <required>false</required>
@@ -3627,11 +3682,11 @@ null
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>YES</fullName>
+                    <fullName>Yes</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>NO</fullName>
+                    <fullName>No</fullName>
                     <default>false</default>
                 </value>
                 <value>
@@ -3699,6 +3754,7 @@ null
     </fields>
     <fields>
         <fullName>Part_D_Cleared_5__c</fullName>
+        <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part D Cleared 5</label>
         <required>false</required>
@@ -3727,6 +3783,7 @@ null
     <fields>
         <fullName>Part_D_Completed_By__c</fullName>
         <defaultValue>&quot;Completed By: Local Financial Management Office, Office of the Comptroller, Cincinnati Finance Center or Appropriate Designee&quot;</defaultValue>
+        <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part D Completed By</label>
         <length>32768</length>
@@ -4145,6 +4202,7 @@ null
     <fields>
         <fullName>Prepare_Form_for__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
+        <description>SF-182</description>
         <externalId>false</externalId>
         <label>Prepare Form for:</label>
         <referenceTo>Contact</referenceTo>
@@ -4252,7 +4310,7 @@ null
                 </value>
             </valueSetDefinition>
         </valueSet>
-        <visibleLines>3</visibleLines>
+        <visibleLines>5</visibleLines>
     </fields>
     <fields>
         <fullName>Program_Office_Part_F__c</fullName>
@@ -4321,7 +4379,7 @@ null
                 </value>
             </valueSetDefinition>
         </valueSet>
-        <visibleLines>4</visibleLines>
+        <visibleLines>7</visibleLines>
     </fields>
     <fields>
         <fullName>Proposed_New_PRIA_Due_Date__c</fullName>
@@ -4615,6 +4673,7 @@ null
     <fields>
         <fullName>Requires_Escalated_Approval__c</fullName>
         <defaultValue>false</defaultValue>
+        <description>SF-182</description>
         <externalId>false</externalId>
         <label>Requires Escalated Approval</label>
         <trackHistory>false</trackHistory>
@@ -4724,6 +4783,7 @@ null
     <fields>
         <fullName>SF_182_Override_Instructions__c</fullName>
         <defaultValue>&quot;The section below provides you the ability to identify an approver that will replace the default approver for this form. The default approvers are set up by individuals on his or her approval profile.&quot;</defaultValue>
+        <description>SF-182</description>
         <externalId>false</externalId>
         <label>SF-182 Override Instructions</label>
         <required>false</required>
@@ -5107,10 +5167,12 @@ null
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Signature</label>
+        <length>50</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>TextArea</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Signature_Records_Liaison_Officer__c</fullName>
@@ -5211,7 +5273,7 @@ null
     <fields>
         <fullName>Submitted_on_Behalf_Of__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
-        <description>Submitted on Behalf Of</description>
+        <description>SF-182</description>
         <externalId>false</externalId>
         <label>Submitted on Behalf Of</label>
         <lookupFilter>
@@ -5318,6 +5380,7 @@ null
     </fields>
     <fields>
         <fullName>Title_Office__c</fullName>
+        <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Title/Office</label>
         <length>50</length>
@@ -6059,7 +6122,7 @@ Line_Total_Price_5__c</formula>
                 </value>
             </valueSetDefinition>
         </valueSet>
-        <visibleLines>4</visibleLines>
+        <visibleLines>5</visibleLines>
     </fields>
     <fields>
         <fullName>Type_of_Action__c</fullName>
@@ -6400,7 +6463,7 @@ Line_Total_Price_5__c</formula>
         <description>SF-182</description>
         <externalId>false</externalId>
         <label>2</label>
-        <length>32768</length>
+        <length>1000</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -6425,7 +6488,7 @@ Line_Total_Price_5__c</formula>
         <description>SF-182</description>
         <externalId>false</externalId>
         <label>3</label>
-        <length>32768</length>
+        <length>1000</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -6437,7 +6500,7 @@ Line_Total_Price_5__c</formula>
         <description>SF-182</description>
         <externalId>false</externalId>
         <label>4-1</label>
-        <length>32768</length>
+        <length>1000</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -6449,7 +6512,7 @@ Line_Total_Price_5__c</formula>
         <description>SF-182</description>
         <externalId>false</externalId>
         <label>4-2</label>
-        <length>32768</length>
+        <length>1000</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -6474,7 +6537,7 @@ Line_Total_Price_5__c</formula>
         <description>SF-182</description>
         <externalId>false</externalId>
         <label>4</label>
-        <length>32768</length>
+        <length>1000</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -7252,7 +7315,7 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction</fullName>
+                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -7388,11 +7451,11 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>NO</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>YES</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -8672,7 +8735,7 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction</fullName>
+                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8808,11 +8871,11 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>NO</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>YES</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10104,7 +10167,7 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction</fullName>
+                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10240,11 +10303,11 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>NO</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>YES</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11536,7 +11599,7 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction</fullName>
+                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11672,11 +11735,11 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>NO</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>YES</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12956,7 +13019,7 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction</fullName>
+                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13092,11 +13155,11 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>NO</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>YES</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14376,7 +14439,7 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction</fullName>
+                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14512,11 +14575,11 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>NO</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>YES</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -15808,7 +15871,7 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction</fullName>
+                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -15944,11 +16007,11 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>NO</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>YES</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -17240,7 +17303,7 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction</fullName>
+                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -17376,11 +17439,11 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>NO</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>YES</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -18696,7 +18759,7 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction</fullName>
+                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -18832,11 +18895,11 @@ Line_Total_Price_5__c</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>NO</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>YES</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
