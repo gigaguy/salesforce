@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>EPA-100 Layout</description>
+    <description>EPA-PCOR Layout</description>
     <flexiPageRegions>
         <componentInstances>
             <componentInstanceProperties>
@@ -20,7 +20,7 @@
         <componentInstances>
             <componentName>force:detailPanel</componentName>
         </componentInstances>
-        <name>facet-0702df94-9561-4f80-b9fe-e9d47cd98966</name>
+        <name>facet-c94f0ce9-ced8-494c-9f28-5fa41fb7c160</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -35,7 +35,7 @@
             </componentInstanceProperties>
             <componentName>force:relatedListSingleContainer</componentName>
         </componentInstances>
-        <name>facet-acccf4c0-91dc-41a2-80ee-9f4c9a7e20da</name>
+        <name>facet-a1f3d10a-290b-4b25-bd84-463cbeead561</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -46,7 +46,7 @@
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>body</name>
-                <value>facet-0702df94-9561-4f80-b9fe-e9d47cd98966</value>
+                <value>facet-c94f0ce9-ced8-494c-9f28-5fa41fb7c160</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>title</name>
@@ -56,8 +56,12 @@
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>
+                <name>active</name>
+                <value>false</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
                 <name>body</name>
-                <value>facet-acccf4c0-91dc-41a2-80ee-9f4c9a7e20da</value>
+                <value>facet-a1f3d10a-290b-4b25-bd84-463cbeead561</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>title</name>
@@ -65,28 +69,28 @@
             </componentInstanceProperties>
             <componentName>flexipage:tab</componentName>
         </componentInstances>
-        <name>facet-2d13add6-cf87-4847-8450-12591d83d2ef</name>
+        <name>facet-a9013870-76e9-4b53-90a3-3aadbee8b7dc</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
             <componentInstanceProperties>
                 <name>richTextValue</name>
-                <value>For help using EPA-100 please contact: &amp;nbsp;&lt;a href=&quot;mailto:McNeal.Detha@epa.gov?subject=Help%20request%3A%20%20EPA-100%20Form&quot;&gt;McNeal.Detha@epa.gov&lt;/a&gt;</value>
+                <value>For help using EPA-PCOR please contact: &amp;nbsp;&lt;a href=&quot;mailto:lspackman@innovateteam.com?subject=Help%20request%3A%20%20EPA-100%20Form&quot;&gt;To be determined&lt;/a&gt;</value>
             </componentInstanceProperties>
             <componentName>flexipage:richText</componentName>
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>
                 <name>tabs</name>
-                <value>facet-2d13add6-cf87-4847-8450-12591d83d2ef</value>
+                <value>facet-a9013870-76e9-4b53-90a3-3aadbee8b7dc</value>
             </componentInstanceProperties>
             <componentName>flexipage:tabset</componentName>
         </componentInstances>
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>EPA-100</masterLabel>
+    <masterLabel>EPA-PCOR</masterLabel>
     <pageTemplate>flexipage:recordHomeSingleColTemplateDesktop</pageTemplate>
     <sobjectType>Forms__c</sobjectType>
     <type>RecordPage</type>

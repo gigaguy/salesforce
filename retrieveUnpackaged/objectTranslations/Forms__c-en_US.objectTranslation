@@ -563,10 +563,6 @@
     </fields>
     <fields>
         <label><!-- Contractor --></label>
-        <name>Contractor_3110_1__c</name>
-    </fields>
-    <fields>
-        <label><!-- Contractor --></label>
         <name>Contractor__c</name>
     </fields>
     <fields>
@@ -763,6 +759,14 @@
         <name>Decision__c</name>
     </fields>
     <fields>
+        <label><!-- Delivery Address --></label>
+        <name>Delivery_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Phone Number --></label>
+        <name>Delivery_Phone_Number__c</name>
+    </fields>
+    <fields>
         <label><!-- Describe Interactions with Company --></label>
         <name>Describe_Interactions_with_Company__c</name>
     </fields>
@@ -829,10 +833,6 @@
     <fields>
         <label><!-- EHRI Employee Number --></label>
         <name>EHRI_Employee_Number__c</name>
-    </fields>
-    <fields>
-        <label><!-- EPA Employee --></label>
-        <name>EPA_Employee_3110_1__c</name>
     </fields>
     <fields>
         <label><!-- EPA Form 3110-1 --></label>
@@ -1007,10 +1007,6 @@
     <fields>
         <label><!-- Grade --></label>
         <name>Grade__c</name>
-    </fields>
-    <fields>
-        <label><!-- Grantee --></label>
-        <name>Grantee_3110_1__c</name>
     </fields>
     <fields>
         <label><!-- HR Org Code --></label>
@@ -1201,6 +1197,10 @@
         <name>Items_turned_in_to_Human_Resources__c</name>
     </fields>
     <fields>
+        <label><!-- Justification --></label>
+        <name>Justification__c</name>
+    </fields>
+    <fields>
         <label><!-- Last Name --></label>
         <name>Last_Name__c</name>
     </fields>
@@ -1263,10 +1263,6 @@
     <fields>
         <label><!-- MI --></label>
         <name>MI__c</name>
-    </fields>
-    <fields>
-        <label><!-- Move Within EPA(HQ, Region, Lab) --></label>
-        <name>Move_Within_EPA_HQ_Region_Lab_3110_1__c</name>
     </fields>
     <fields>
         <label><!-- NOTICE TO EMPLOYEE --></label>
@@ -1333,6 +1329,10 @@
         <name>Note_SF_182__c</name>
     </fields>
     <fields>
+        <label><!-- Note: --></label>
+        <name>Note__c</name>
+    </fields>
+    <fields>
         <label><!-- Notified this is the last negotiation? --></label>
         <name>Notified_this_is_the_last_negotiation__c</name>
         <picklistValues>
@@ -1389,10 +1389,6 @@
         <name>Originator__c</name>
     </fields>
     <fields>
-        <label><!-- Other --></label>
-        <name>Other_3110_1__c</name>
-    </fields>
-    <fields>
         <label><!-- Other Description --></label>
         <name>Other_Description__c</name>
     </fields>
@@ -1403,10 +1399,6 @@
     <fields>
         <label><!-- Other --></label>
         <name>Other_Part_C__c</name>
-    </fields>
-    <fields>
-        <label><!-- Other (Student, Volunteer, etc) --></label>
-        <name>Other_Student_Volunteer_etc_3110_1__c</name>
     </fields>
     <fields>
         <label><!-- PRIA Decision Time Frame --></label>
@@ -1757,6 +1749,26 @@
         <name>Per_diem__c</name>
     </fields>
     <fields>
+        <label><!-- Personnel Type --></label>
+        <name>Personnel_Type__c</name>
+        <picklistValues>
+            <masterLabel>Contractor</masterLabel>
+            <translation><!-- Contractor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPA Employee</masterLabel>
+            <translation><!-- EPA Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grantee</masterLabel>
+            <translation><!-- Grantee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other (Student, Volunteer, etc.)</masterLabel>
+            <translation><!-- Other (Student, Volunteer, etc.) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Petition # (each on its own line) --></label>
         <name>Petition__c</name>
     </fields>
@@ -1938,6 +1950,34 @@
         <name>Rationale_for_Proposed_Due_Date__c</name>
     </fields>
     <fields>
+        <label><!-- Reason For Leaving --></label>
+        <name>Reason_For_Leaving__c</name>
+        <picklistValues>
+            <masterLabel>Move Within EPA(HQ, Region, Lab)</masterLabel>
+            <translation><!-- Move Within EPA(HQ, Region, Lab) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resignation/Termination</masterLabel>
+            <translation><!-- Resignation/Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retirement</masterLabel>
+            <translation><!-- Retirement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transfer Within Agency</masterLabel>
+            <translation><!-- Transfer Within Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transfer to Another Federal Agency</masterLabel>
+            <translation><!-- Transfer to Another Federal Agency --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Employee ID No. --></label>
         <name>Recipient_Employee_ID_No__c</name>
     </fields>
@@ -2019,10 +2059,6 @@
         <name>Requires_Escalated_Approval__c</name>
     </fields>
     <fields>
-        <label><!-- Resignation/Termination --></label>
-        <name>Resignation_Termination_3110_1__c</name>
-    </fields>
-    <fields>
         <label><!-- Response: --></label>
         <name>Response_1__c</name>
         <picklistValues>
@@ -2065,10 +2101,6 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
-    </fields>
-    <fields>
-        <label><!-- Retirement --></label>
-        <name>Retirement_3110_1__c</name>
     </fields>
     <fields>
         <label><!-- SF-182 Override Instructions --></label>
@@ -2625,14 +2657,6 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Transfer Within Agency --></label>
-        <name>Transfer_Within_Agency__c</name>
-    </fields>
-    <fields>
-        <label><!-- Transfer to Another Federal Agency --></label>
-        <name>Transfer_to_Another_Federal_Agency_3110__c</name>
-    </fields>
-    <fields>
         <label><!-- Transit/Parking (Printed Name) --></label>
         <name>Transit_Parking_Printed_Name__c</name>
     </fields>
@@ -3062,10 +3086,6 @@
             <section>Personnel Separation or Transfer Checklist</section>
         </sections>
         <sections>
-            <label><!-- Personnel Type --></label>
-            <section>Personnel Type</section>
-        </sections>
-        <sections>
             <label><!-- Procedures for Completing EPA Form 3110-1 --></label>
             <section>Procedures for Completing EPA Form 3110-1</section>
         </sections>
@@ -3076,10 +3096,6 @@
         <sections>
             <label><!-- Program Office Spacer --></label>
             <section>Program Office Spacer</section>
-        </sections>
-        <sections>
-            <label><!-- Reason For Leaving --></label>
-            <section>Reason For Leaving</section>
         </sections>
         <sections>
             <label><!-- SF-52 Request for Personnel Action - Initiated by the Program Office --></label>
@@ -3299,6 +3315,10 @@
         <sections>
             <label><!-- EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE --></label>
             <section>EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE</section>
+        </sections>
+        <sections>
+            <label><!-- EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE SPACER --></label>
+            <section>EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE SPACER</section>
         </sections>
         <sections>
             <label><!-- Fields --></label>

@@ -316,6 +316,19 @@
         <label>EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE</label>
         <layoutColumns>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Note__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>OneColumn</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>false</detailHeading>
+        <editHeading>false</editHeading>
+        <label>EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE SPACER</label>
+        <layoutColumns>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>I_Agree_1__c</field>
             </layoutItems>

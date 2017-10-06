@@ -1122,16 +1122,6 @@ null
         <visibleLines>5</visibleLines>
     </fields>
     <fields>
-        <fullName>Contractor_3110_1__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>EPA-3110-1</description>
-        <externalId>false</externalId>
-        <label>Contractor</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>Contractor__c</fullName>
         <description>ORD-111</description>
         <externalId>false</externalId>
@@ -1598,6 +1588,26 @@ null
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Delivery_Address__c</fullName>
+        <description>EPA-PCOR</description>
+        <externalId>false</externalId>
+        <label>Delivery Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Delivery_Phone_Number__c</fullName>
+        <description>EPA-PCOR</description>
+        <externalId>false</externalId>
+        <label>Delivery Phone Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
         <fullName>Describe_Interactions_with_Company__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
@@ -1781,16 +1791,6 @@ null
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>EPA_Employee_3110_1__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>EPA-3110-1</description>
-        <externalId>false</externalId>
-        <label>EPA Employee</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>EPA_Form_3110_1__c</fullName>
@@ -2213,16 +2213,6 @@ null
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Grantee_3110_1__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>EPA-3110-1</description>
-        <externalId>false</externalId>
-        <label>Grantee</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>HR_Org_Code__c</fullName>
@@ -2771,6 +2761,16 @@ null
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Justification__c</fullName>
+        <description>EPA-PCOR</description>
+        <externalId>false</externalId>
+        <label>Justification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>Last_Name__c</fullName>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
@@ -2957,16 +2957,6 @@ null
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Move_Within_EPA_HQ_Region_Lab_3110_1__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>EPA-3110-1</description>
-        <externalId>false</externalId>
-        <label>Move Within EPA(HQ, Region, Lab)</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>NOTICE_TO_EMPLOYEE__c</fullName>
         <defaultValue>&quot;Before completing this form, please read the instructions for Sections I and II below. A signed copy of this form will be returned via email form New Membership Enrollment only.&quot;</defaultValue>
         <description>EPA3160-6v5</description>
@@ -3103,6 +3093,18 @@ null
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>Note__c</fullName>
+        <defaultValue>&quot;This agreement must be signed by the nominee for Government training that exceeds 80 hours (or such other designated period, less than 80 hours as prescribed by the agency) for which the Government approves payment of training costs prior to the commencement of such training. Nothing contained in this agreement below shall be construed as limiting the authority of an agency to waive, in whole or in part, an obligation of an employee to pay expenses incurred by the Government in connection with the training.&quot;</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Note:</label>
+        <length>515</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Notified_this_is_the_last_negotiation__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
@@ -3206,7 +3208,7 @@ null
     </fields>
     <fields>
         <fullName>Originator__c</fullName>
-        <description>ORD-111</description>
+        <description>Multiple Forms</description>
         <externalId>false</externalId>
         <formula>Form_Owner__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
@@ -3216,16 +3218,6 @@ null
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Other_3110_1__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>EPA-3110-1</description>
-        <externalId>false</externalId>
-        <label>Other</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Other_Description__c</fullName>
@@ -3261,16 +3253,6 @@ null
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
-    </fields>
-    <fields>
-        <fullName>Other_Student_Volunteer_etc_3110_1__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>EPA-3110-1</description>
-        <externalId>false</externalId>
-        <label>Other (Student, Volunteer, etc)</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>PRIA_Decision_Time_Frame__c</fullName>
@@ -4124,6 +4106,38 @@ null
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>Personnel_Type__c</fullName>
+        <description>EPA3110-1</description>
+        <externalId>false</externalId>
+        <label>Personnel Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>EPA Employee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Grantee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contractor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other (Student, Volunteer, etc.)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Petition__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
@@ -4504,6 +4518,46 @@ null
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Reason_For_Leaving__c</fullName>
+        <description>EPA3110-1</description>
+        <externalId>false</externalId>
+        <label>Reason For Leaving</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Retirement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Resignation/Termination</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Move Within EPA(HQ, Region, Lab)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Transfer Within Agency</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Transfer to Another Federal Agency</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Recipient_Employee_ID_No__c</fullName>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
@@ -4663,7 +4717,8 @@ null
         <description>EPA-PCOR</description>
         <externalId>false</externalId>
         <label>Requested Recipient</label>
-        <referenceTo>User</referenceTo>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Requested Recipient)</relationshipLabel>
         <relationshipName>Forms2</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -4676,16 +4731,6 @@ null
         <description>SF-182</description>
         <externalId>false</externalId>
         <label>Requires Escalated Approval</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Resignation_Termination_3110_1__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>EPA-3110-1</description>
-        <externalId>false</externalId>
-        <label>Resignation/Termination</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -4769,16 +4814,6 @@ null
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Retirement_3110_1__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>EPA-3110-1</description>
-        <externalId>false</externalId>
-        <label>Retirement</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>SF_182_Override_Instructions__c</fullName>
@@ -6018,26 +6053,6 @@ Line_Total_Price_5__c</formula>
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Transfer_Within_Agency__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>EPA-3110-1</description>
-        <externalId>false</externalId>
-        <label>Transfer Within Agency</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Transfer_to_Another_Federal_Agency_3110__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>EPA-3110-1</description>
-        <externalId>false</externalId>
-        <label>Transfer to Another Federal Agency</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Transit_Parking_Printed_Name__c</fullName>
@@ -7580,6 +7595,25 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Personnel_Type__c</picklist>
+            <values>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EPA Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28Student%2C Volunteer%2C etc%2E%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Position_Level__c</picklist>
             <values>
                 <fullName>Executive</fullName>
@@ -7675,6 +7709,33 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_For_Leaving__c</picklist>
+            <values>
+                <fullName>Move Within EPA%28HQ%2C Region%2C Lab%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resignation%2FTermination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer Within Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Another Federal Agency</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -9000,6 +9061,25 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Personnel_Type__c</picklist>
+            <values>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EPA Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28Student%2C Volunteer%2C etc%2E%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Position_Level__c</picklist>
             <values>
                 <fullName>Executive</fullName>
@@ -9095,6 +9175,33 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_For_Leaving__c</picklist>
+            <values>
+                <fullName>Move Within EPA%28HQ%2C Region%2C Lab%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resignation%2FTermination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer Within Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Another Federal Agency</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10432,6 +10539,25 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Personnel_Type__c</picklist>
+            <values>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EPA Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28Student%2C Volunteer%2C etc%2E%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Position_Level__c</picklist>
             <values>
                 <fullName>Executive</fullName>
@@ -10527,6 +10653,33 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_For_Leaving__c</picklist>
+            <values>
+                <fullName>Move Within EPA%28HQ%2C Region%2C Lab%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resignation%2FTermination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer Within Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Another Federal Agency</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11864,6 +12017,25 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Personnel_Type__c</picklist>
+            <values>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EPA Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28Student%2C Volunteer%2C etc%2E%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Position_Level__c</picklist>
             <values>
                 <fullName>Executive</fullName>
@@ -11959,6 +12131,33 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_For_Leaving__c</picklist>
+            <values>
+                <fullName>Move Within EPA%28HQ%2C Region%2C Lab%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resignation%2FTermination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer Within Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Another Federal Agency</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -13284,6 +13483,25 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Personnel_Type__c</picklist>
+            <values>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EPA Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28Student%2C Volunteer%2C etc%2E%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Position_Level__c</picklist>
             <values>
                 <fullName>Executive</fullName>
@@ -13379,6 +13597,33 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_For_Leaving__c</picklist>
+            <values>
+                <fullName>Move Within EPA%28HQ%2C Region%2C Lab%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resignation%2FTermination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer Within Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Another Federal Agency</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14704,6 +14949,25 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Personnel_Type__c</picklist>
+            <values>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EPA Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28Student%2C Volunteer%2C etc%2E%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Position_Level__c</picklist>
             <values>
                 <fullName>Executive</fullName>
@@ -14799,6 +15063,33 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_For_Leaving__c</picklist>
+            <values>
+                <fullName>Move Within EPA%28HQ%2C Region%2C Lab%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resignation%2FTermination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer Within Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Another Federal Agency</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -16136,6 +16427,25 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Personnel_Type__c</picklist>
+            <values>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EPA Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28Student%2C Volunteer%2C etc%2E%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Position_Level__c</picklist>
             <values>
                 <fullName>Executive</fullName>
@@ -16231,6 +16541,33 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_For_Leaving__c</picklist>
+            <values>
+                <fullName>Move Within EPA%28HQ%2C Region%2C Lab%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resignation%2FTermination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer Within Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Another Federal Agency</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -17568,6 +17905,25 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Personnel_Type__c</picklist>
+            <values>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EPA Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28Student%2C Volunteer%2C etc%2E%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Position_Level__c</picklist>
             <values>
                 <fullName>Executive</fullName>
@@ -17663,6 +18019,33 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_For_Leaving__c</picklist>
+            <values>
+                <fullName>Move Within EPA%28HQ%2C Region%2C Lab%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resignation%2FTermination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer Within Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Another Federal Agency</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -19024,6 +19407,25 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Personnel_Type__c</picklist>
+            <values>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EPA Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28Student%2C Volunteer%2C etc%2E%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Position_Level__c</picklist>
             <values>
                 <fullName>Executive</fullName>
@@ -19119,6 +19521,33 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_For_Leaving__c</picklist>
+            <values>
+                <fullName>Move Within EPA%28HQ%2C Region%2C Lab%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resignation%2FTermination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer Within Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Another Federal Agency</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
