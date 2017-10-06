@@ -2310,7 +2310,7 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Application__c-Prospect Application Layout</layout>
-        <recordType>Application__c.Prospect_Application</recordType>
+        <recordType>Application__c.Candidate_Application</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Asset-Asset Layout</layout>
@@ -2861,13 +2861,13 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>Application__c.Forms</recordType>
+        <default>false</default>
+        <recordType>Application__c.Candidate_Application</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Application__c.Prospect_Application</recordType>
+        <default>true</default>
+        <recordType>Application__c.Forms</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
