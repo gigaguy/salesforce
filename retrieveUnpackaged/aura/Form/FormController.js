@@ -16,10 +16,18 @@
     openModal: function(component, event, helper) {
         var formID = event.currentTarget.id;
         var formName = event.currentTarget.name;
-        var hrefInfo = "mailto:lspackman@innovateteam.com?subject=Help%20request%3A%20%20"+formName+"%20Form"
+        if (formName === "BAP Provisioning") {
+            var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+        	var hrefEmail = "BAP_Admins@epa.gov";
+        }
+        else {
+            var hrefInfo = "mailto:McNeal.Detha@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+       	 	var hrefEmail = "McNeal.Detha@epa.gov";
+        }
         component.set("v.selectedFormId", formID);
         component.set("v.selectedFormName", formName);
         component.set("v.hrefInfo", hrefInfo);
+        component.set("v.hrefEmail", hrefEmail);
          
 		var action = component.get("c.insertNewForms");
         action.setParams({
@@ -45,11 +53,19 @@
     viewFormJS : function(component, event, helper){
         var formID = event.currentTarget.id;
         var formName = event.currentTarget.name;
-        var hrefInfo = "mailto:lspackman@innovateteam.com?subject=Help%20request%3A%20%20"+formName+"%20Form"
+        if (formName === "BAP Provisioning") {
+            var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+        	var hrefEmail = "BAP_Admins@epa.gov";
+        }
+        else {
+            var hrefInfo = "mailto:McNeal.Detha@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+       	 	var hrefEmail = "McNeal.Detha@epa.gov";
+        }
         component.set("v.viewFormID", formID);
         component.set("v.modalName", "viewForm");
         component.set("v.selectedFormName", formName);
         component.set("v.hrefInfo", hrefInfo);
+        component.set("v.hrefEmail", hrefEmail);
 
         var action = component.get("c.viewForm");
         action.setParams({

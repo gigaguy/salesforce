@@ -3,6 +3,7 @@ The Form {!Forms__c.RecordType} has been submitted for your approval by {!Forms_
 <Br>
 <p>
 Record ID: {!Forms__c.Form_Record_Name__c}<Br>
-{!Forms__c.Link}
+{!ApprovalRequest.Internal_URL}
+
 </p>
 <br><br>

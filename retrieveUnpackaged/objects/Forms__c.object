@@ -46,6 +46,14 @@
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>EPA_100</fullName>
+        <fields>Name</fields>
+        <fields>RecordTypeId</fields>
+        <fields>Approval_Step__c</fields>
+        <fields>LastModifiedById</fields>
+        <label>EPA-100</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
@@ -837,6 +845,7 @@
     <recordTypes>
         <fullName>EPA_100</fullName>
         <active>true</active>
+        <compactLayoutAssignment>EPA_100</compactLayoutAssignment>
         <description>Episodic Flexiplace  (workflow)</description>
         <label>EPA-100</label>
         <picklistValues>
@@ -1026,6 +1035,10 @@
         <customTabListAdditionalFields>Name__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
         <customTabListAdditionalFields>Form_Status__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Form_Owner__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Approval_Step__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
     <validationRules>

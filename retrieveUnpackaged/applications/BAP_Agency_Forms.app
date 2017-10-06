@@ -11,6 +11,8 @@
     <tab>Forms__c</tab>
     <tab>Fill_Print</tab>
     <tab>Edit_My_Approvers</tab>
+    <tab>standard-Contact</tab>
+    <tab>standard-Account</tab>
     <uiType>Lightning</uiType>
     <utilityBar>BAP_Agency_Forms_UtilityBar</utilityBar>
 </CustomApplication>
