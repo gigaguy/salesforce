@@ -1,0 +1,21 @@
+<apex:page >
+<apex:includeScript value="/lightning/lightning.out.js" />
+
+    <script>
+          $Lightning.use("c:FillAndPrintForms", function() {
+   //       $Lightning.use("c:Forms", function() {
+            $Lightning.createComponent(
+                "c:FillAndPrintForm",
+           //     "c:Form",
+                {},
+                "theLead",
+                function(cmp) {
+                    console.log("Component created!");
+                    console.log(cmp);
+                });
+            });
+    </script>
+    
+    <div id="theLead"></div>
+
+</apex:page>
