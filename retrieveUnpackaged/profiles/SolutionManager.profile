@@ -124,6 +124,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>FormPrintableTypeOne</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>FormPrintableTypeOne_Test</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>FormPrintableUnlicensed</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -2762,6 +2770,10 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>FormPrintable</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>FormPrintableTypeOne</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>

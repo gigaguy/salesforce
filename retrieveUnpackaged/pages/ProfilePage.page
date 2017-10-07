@@ -121,6 +121,11 @@
                         <apex:outputlabel value="Training Officer" />
                         <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!trainID}" syncManualEntry="false" />
                     </apex:pageblocksectionitem>
+                    <apex:pageblocksectionitem >
+                    	<div style="text-align: center;">
+                            Not able to find one of your approvers in the lookups? <a href="mailto:BAP_Admins@epa.gov?subject=BAP Approver%20Activiation%20Request&body=Please%20include%20approvers%20name%20and%20role%20in%20this%20email%20request">Click here to email BAP_Admins@epa.gov to request their activation</a>
+                        </div>
+                    </apex:pageblocksectionitem>
                 </apex:pageBlockSection>
                 
                 <div style="text-align: center; padding-top: 20px;">
