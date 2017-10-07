@@ -864,10 +864,6 @@
         <name>Employee_Name_SF_182__c</name>
     </fields>
     <fields>
-        <label><!-- Employee Signature: --></label>
-        <name>Employee_Signature__c</name>
-    </fields>
-    <fields>
         <help><!-- Clicking this box digitally dates and signs this form. --></help>
         <label><!-- Employee&apos;s Signature --></label>
         <name>Employee_s_Signature__c</name>
@@ -1325,10 +1321,6 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Note --></label>
-        <name>Note_SF_182__c</name>
-    </fields>
-    <fields>
         <label><!-- Note: --></label>
         <name>Note__c</name>
     </fields>
@@ -1342,30 +1334,6 @@
         <picklistValues>
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
-        <label><!-- Number of training or course credit hour --></label>
-        <name>Number_of_training_or_course_credit_hour__c</name>
-        <picklistValues>
-            <masterLabel>0 credit</masterLabel>
-            <translation><!-- 0 credit --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>1 credit</masterLabel>
-            <translation><!-- 1 credit --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>2 credits</masterLabel>
-            <translation><!-- 2 credits --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>3 credits</masterLabel>
-            <translation><!-- 3 credits --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>4 credits</masterLabel>
-            <translation><!-- 4 credits --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -2171,30 +2139,6 @@
         <name>Shared_Services_Centers_SSC__c</name>
     </fields>
     <fields>
-        <label><!-- Sign 1 --></label>
-        <name>Sign_1_SF_182__c</name>
-    </fields>
-    <fields>
-        <label><!-- Sign 2 --></label>
-        <name>Sign_2_SF_182__c</name>
-    </fields>
-    <fields>
-        <label><!-- Sign 3 --></label>
-        <name>Sign_3_F_182__c</name>
-    </fields>
-    <fields>
-        <label><!-- Sign 4-1 --></label>
-        <name>Sign_4_1_SF_182__c</name>
-    </fields>
-    <fields>
-        <label><!-- Sign 4-2 --></label>
-        <name>Sign_4_2_SF_182__c</name>
-    </fields>
-    <fields>
-        <label><!-- Sign 4 --></label>
-        <name>Sign_4_SF_182__c</name>
-    </fields>
-    <fields>
         <label><!-- Signature --></label>
         <name>Signature_Admin_Office__c</name>
     </fields>
@@ -2655,6 +2599,10 @@
             <masterLabel>03 Basic Training Area (Orientation etc)</masterLabel>
             <translation><!-- 03 Basic Training Area (Orientation etc) --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training or course credit hours --></label>
+        <name>Training_or_course_credit_hours__c</name>
     </fields>
     <fields>
         <label><!-- Transit/Parking (Printed Name) --></label>
@@ -3313,8 +3261,8 @@
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE --></label>
-            <section>EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE</section>
+            <label><!-- EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE (Sign Below) --></label>
+            <section>EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE (Sign Below)</section>
         </sections>
         <sections>
             <label><!-- EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE SPACER --></label>

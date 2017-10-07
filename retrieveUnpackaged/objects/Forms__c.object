@@ -324,11 +324,10 @@
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
         <label>B. Description</label>
-        <length>32768</length>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>LongTextArea</type>
-        <visibleLines>5</visibleLines>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>B__c</fullName>
@@ -356,6 +355,8 @@
         <fullName>Beginning_Date_of_Development_Activity__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
+        <formula>Training_Start_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Beginning Date of Development Activity</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1054,6 +1055,8 @@ null
         <fullName>Continued_Service_Agreement_Expires__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
+        <formula>Continued_Service_Agreement_Expiration__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Continued Service Agreement Expires:</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1864,20 +1867,17 @@ null
         <fullName>Employee_Name_SF_182__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
+        <formula>IF(  CONTAINS(Applicant_Name_Last_First_MI__c, &quot;,&quot;) ,
+  RIGHT(Applicant_Name_Last_First_MI__c,  
+   (LEN(Applicant_Name_Last_First_MI__c) 
+   - FIND(&quot;,&quot;, Applicant_Name_Last_First_MI__c ,1)-1))
+     &amp;&quot; &quot;&amp;LEFT(Applicant_Name_Last_First_MI__c,  
+   (LEN(Applicant_Name_Last_First_MI__c) 
+   - FIND(&quot;,&quot;,Applicant_Name_Last_First_MI__c, 1)-1)), 
+ Applicant_Name_Last_First_MI__c
+     )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Employee Name:</label>
-        <length>50</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Employee_Signature__c</fullName>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Employee Signature:</label>
-        <length>50</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -1899,6 +1899,8 @@ null
         <fullName>Ending_Date_of_Development_Activity__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
+        <formula>Training_End_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Ending Date of Development Activity:</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -2993,11 +2995,14 @@ null
         <fullName>Name_of_Course_or_Development_Activity__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
+        <formula>Course_Title__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Name of Course or Development Activity</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>TextArea</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>National_Program__c</fullName>
@@ -3081,18 +3086,6 @@ null
         <visibleLines>7</visibleLines>
     </fields>
     <fields>
-        <fullName>Note_SF_182__c</fullName>
-        <defaultValue>&quot;This agreement must be signed by the nominee for Government training that exceeds 80 hours (or such other designated period, less than 80 hours as prescribed by the agency) for which the Government approves payment of training costs prior to the commencement of such training. Nothing contained in this agreement below shall be construed as limiting the authority of an agency to waive, in whole or in part, an obligation of an employee to pay expenses incurred by the Government in connection with the training.&quot;</defaultValue>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Note</label>
-        <length>32768</length>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>LongTextArea</type>
-        <visibleLines>4</visibleLines>
-    </fields>
-    <fields>
         <fullName>Note__c</fullName>
         <defaultValue>&quot;This agreement must be signed by the nominee for Government training that exceeds 80 hours (or such other designated period, less than 80 hours as prescribed by the agency) for which the Government approves payment of training costs prior to the commencement of such training. Nothing contained in this agreement below shall be construed as limiting the authority of an agency to waive, in whole or in part, an obligation of an employee to pay expenses incurred by the Government in connection with the training.&quot;</defaultValue>
         <description>SF-182</description>
@@ -3123,42 +3116,6 @@ null
                 </value>
                 <value>
                     <fullName>Not Applicable</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Number_of_training_or_course_credit_hour__c</fullName>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Number of training or course credit hour</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>0 credit</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>1 credit</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>2 credits</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>3 credits</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>4 credits</fullName>
                     <default>false</default>
                 </value>
             </valueSetDefinition>
@@ -4994,66 +4951,6 @@ null
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Sign_1_SF_182__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>SF_182</description>
-        <externalId>false</externalId>
-        <label>Sign 1</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Sign_2_SF_182__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Sign 2</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Sign_3_F_182__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Sign 3</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Sign_4_1_SF_182__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Sign 4-1</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Sign_4_2_SF_182__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Sign 4-2</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Sign_4_SF_182__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Sign 4</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>Signature_Admin_Office__c</fullName>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
@@ -5368,8 +5265,9 @@ null
         <fullName>Supervisor_Name__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
+        <formula>User_Supervisor__r.FirstName &amp;&quot; &quot;&amp; User_Supervisor__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Supervisor Name:</label>
-        <length>50</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -6055,6 +5953,19 @@ Line_Total_Price_5__c</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Training_or_course_credit_hours__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Training_Credit__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Training or course credit hours</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Transit_Parking_Printed_Name__c</fullName>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
@@ -6552,7 +6463,7 @@ Line_Total_Price_5__c</formula>
         <description>SF-182</description>
         <externalId>false</externalId>
         <label>4</label>
-        <length>1000</length>
+        <length>260</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -7418,29 +7329,6 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
-            <values>
-                <fullName>0 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>1 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4 credits</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -8884,29 +8772,6 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
-            <values>
-                <fullName>0 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>1 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4 credits</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -10366,29 +10231,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
-            <values>
-                <fullName>0 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>1 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4 credits</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Part_D_Cleared_1__c</picklist>
             <values>
                 <fullName>NA</fullName>
@@ -11844,29 +11686,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
-            <values>
-                <fullName>0 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>1 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4 credits</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Part_D_Cleared_1__c</picklist>
             <values>
                 <fullName>NA</fullName>
@@ -13310,29 +13129,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
-            <values>
-                <fullName>0 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>1 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4 credits</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Part_D_Cleared_1__c</picklist>
             <values>
                 <fullName>NA</fullName>
@@ -14772,29 +14568,6 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
-            <values>
-                <fullName>0 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>1 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4 credits</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -16254,29 +16027,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
-            <values>
-                <fullName>0 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>1 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4 credits</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Part_D_Cleared_1__c</picklist>
             <values>
                 <fullName>NA</fullName>
@@ -17728,29 +17478,6 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
-            <values>
-                <fullName>0 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>1 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4 credits</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -19230,29 +18957,6 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Number_of_training_or_course_credit_hour__c</picklist>
-            <values>
-                <fullName>0 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>1 credit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>2 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>3 credits</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4 credits</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

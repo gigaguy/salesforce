@@ -1197,12 +1197,12 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Forms__c.Card_Holder_s_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Forms__c.Card_Holder_s_Phone_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1542,14 +1542,14 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Forms__c.Delivery_Address__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Forms__c.Delivery_Phone_Number__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -1629,11 +1629,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Forms__c.Employee_Name_SF_182__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.Employee_Signature__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1947,9 +1942,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Forms__c.Justification__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -2063,22 +2058,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Forms__c.Note_SF_182__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Forms__c.Note__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.Notified_this_is_the_last_negotiation__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.Number_of_training_or_course_credit_hour__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2587,12 +2572,12 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Forms__c.Requested_Recipient__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Forms__c.Requires_Escalated_Approval__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2654,36 +2639,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.Shared_Services_Centers_SSC__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.Sign_1_SF_182__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.Sign_2_SF_182__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.Sign_3_F_182__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.Sign_4_1_SF_182__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.Sign_4_2_SF_182__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.Sign_4_SF_182__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2919,6 +2874,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.Training_Type_Code__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forms__c.Training_or_course_credit_hours__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
