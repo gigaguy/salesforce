@@ -86,6 +86,19 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Board_Member__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Board Member</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Applications (Board Member)</relationshipLabel>
+        <relationshipName>Applications1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Data_Availability_Comments__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Please provide additional requirements for data availability</inlineHelpText>
@@ -187,6 +200,18 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Full_Users__c</fullName>
+        <externalId>false</externalId>
+        <label>Full Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -404,6 +429,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Starter_Users__c</fullName>
+        <externalId>false</externalId>
+        <label>Starter Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Status_By__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -432,6 +469,63 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Candidate</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>In Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>In Production</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Deferred/Cancelled</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Users__c</fullName>
+        <externalId>false</externalId>
+        <formula>Type_1_Users__c + Starter_Users__c + Full_Users__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type_1_Users__c</fullName>
+        <externalId>false</externalId>
+        <label>Type 1 Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Type__c</fullName>
@@ -463,6 +557,7 @@
         <columns>Form_Number__c</columns>
         <columns>RECORDTYPE</columns>
         <columns>Notes__c</columns>
+        <columns>Primary_Contact__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -595,6 +690,25 @@
             </values>
             <values>
                 <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Candidate</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Deferred%2FCancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Production</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -748,6 +862,25 @@
             </values>
             <values>
                 <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Candidate</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Deferred%2FCancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Production</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
