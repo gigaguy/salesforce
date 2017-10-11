@@ -2208,8 +2208,11 @@ null
         <fullName>Grade__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
+        <formula>IF( ISBLANK( Prepare_Form_for__c ) ,
+    $User.Grade__c ,
+  Prepare_Form_for__r.Grade__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Grade</label>
-        <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -2400,7 +2403,7 @@ null
         <fullName>Indirect_Total__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>Per_diem__c + Travel__c</formula>
+        <formula>Per_diem__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Indirect Total</label>
         <precision>18</precision>
@@ -4042,8 +4045,11 @@ null
         <fullName>Pay_Plan__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
+        <formula>IF( ISBLANK( Prepare_Form_for__c ) ,
+  $User.Pay_Plan__c ,
+  Prepare_Form_for__r.Pay_Plan__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Pay Plan</label>
-        <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -4929,8 +4935,11 @@ null
         <fullName>Series__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
+        <formula>IF( ISBLANK( Prepare_Form_for__c ) ,
+   $User.Occ_Series__c  ,
+  Prepare_Form_for__r.Occ_Series__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Series</label>
-        <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -5194,8 +5203,11 @@ null
         <fullName>Step__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
+        <formula>IF( ISBLANK( Prepare_Form_for__c ) ,
+     $User.Step__c ,
+  Prepare_Form_for__r.Step__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Step</label>
-        <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -5976,18 +5988,6 @@ Line_Total_Price_5__c</formula>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Travel__c</fullName>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Travel</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Tuition_and_Fees__c</fullName>

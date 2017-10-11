@@ -19,11 +19,15 @@
     <aura:attribute name="message" type="string" />
     <aura:attribute name="currentUser" type="Id"/>
     <aura:attribute name="sessionID" type="string"/>
+    <aura:attribute name="fileToBeUploaded" type="Object[]"/>
+    <aura:attribute name="hasAttachments" type="boolean" default="false"/>
+    <aura:attribute name="attachList" type="Attachment[]"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     <aura:handler name="change" value="{!v.newForm}" action="{!c.openModal2}" />
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
     <aura:handler name="recordSave" event="force:recordSave" action="{!c.handleSave}" />
-
+	<lightning:spinner aura:id="mySpinner" class="slds-hide"/>
+    
     <!-- Header-->
     <p style="margin-bottom: 35px; font-size: 125%;">
         <aura:if isTrue="{!v.pageStatus == 'viewFormTypes'}">
@@ -227,6 +231,37 @@
           </div>
           <!--BOX FOOTER-->
           <div class="slds-modal__footer">
+            <!--attachments list-->
+              <aura:if isTrue="{!v.hasAttachments}">
+              	<table style="border: 1px solid lightgray;">
+                	<tr style="background-color: #0070d2; border: 1px solid lightgray;">
+                        <td colspan="5" style="color: white; padding: 5px; border: 1px solid lightgray;">
+                            Attachments
+                        </td>
+                	</tr>
+                    <aura:iteration var="attach" items="{!v.attachList}">
+                        <tr style="background-color: white; border: 1px solid lightgray;">
+                        <td style="color: black; padding: 5px; border: 1px solid lightgray;">
+                            {!attach.Name}
+                        </td>
+                        </tr>
+                    </aura:iteration>
+                </table> 
+                  <br/>
+              </aura:if>
+            <!--end attachments list-->  
+              
+            <!--add attachments-->
+            	<div align="left">
+                    <lightning:input aura:id="file-input" type="file"
+                                     files="{!v.fileToBeUploaded}"
+                                     onchange="{!c.onFileUploaded}"
+                                     label="Upload Attachments"
+                                     name="file" multiple="true"/>
+            	</div>
+            <!--end add attachments-->
+            
+          
               <ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.cancelCreationModal}" />
               <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveOnly}" />
           <!--    <ui:button class="slds-button slds-button_success" label="Submit" press="{!c.saveAndSubmit}" /> -->
