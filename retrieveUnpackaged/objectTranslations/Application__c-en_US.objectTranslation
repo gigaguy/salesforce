@@ -40,6 +40,11 @@
         <relationshipLabel><!-- Applications (Application Technical POC) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Board Member --></label>
+        <name>Board_Member__c</name>
+        <relationshipLabel><!-- Applications (Board Member) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Custom Objects Required --></label>
         <name>Custom_Objects_Required__c</name>
     </fields>
@@ -114,6 +119,10 @@
     <fields>
         <label><!-- Form Number --></label>
         <name>Form_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Users --></label>
+        <name>Full_Users__c</name>
     </fields>
     <fields>
         <help><!-- Highly formatted data entry requirement. --></help>
@@ -215,7 +224,7 @@
         <name>Other_System_Integration_Requirements__c</name>
     </fields>
     <fields>
-        <help><!-- Enter in primary contact. Additional contacts may be added in the application contacts related list --></help>
+        <help><!-- Primary Contact is the application owner. Additional contacts may be added in the application contacts related list. --></help>
         <label><!-- Primary Contact --></label>
         <name>Primary_Contact__c</name>
         <relationshipLabel><!-- Applications --></relationshipLabel>
@@ -272,6 +281,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Starter Users --></label>
+        <name>Starter_Users__c</name>
+    </fields>
+    <fields>
         <label><!-- Status By --></label>
         <name>Status_By__c</name>
         <relationshipLabel><!-- Applications --></relationshipLabel>
@@ -285,6 +298,26 @@
         <name>Status_Narrative__c</name>
     </fields>
     <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled/Deferred</masterLabel>
+            <translation><!-- Cancelled/Deferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Candidate</masterLabel>
+            <translation><!-- Candidate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Development</masterLabel>
+            <translation><!-- In Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Production</masterLabel>
+            <translation><!-- In Production --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- System Integration Requirements --></label>
         <name>System_Integration_Requirements__c</name>
         <picklistValues>
@@ -295,6 +328,14 @@
             <masterLabel>PASTA</masterLabel>
             <translation><!-- PASTA --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Users --></label>
+        <name>Total_Users__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type 1 Users --></label>
+        <name>Type_1_Users__c</name>
     </fields>
     <fields>
         <label><!-- Type --></label>
@@ -323,6 +364,13 @@
         </sections>
     </layouts>
     <layouts>
+        <layout>Candidate Application Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
         <layout>Forms</layout>
         <sections>
             <label><!-- Custom Links --></label>
@@ -331,13 +379,6 @@
         <sections>
             <label><!-- Fields --></label>
             <section>Fields</section>
-        </sections>
-    </layouts>
-    <layouts>
-        <layout>Prospect Application Layout</layout>
-        <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
         </sections>
     </layouts>
     <recordTypes>

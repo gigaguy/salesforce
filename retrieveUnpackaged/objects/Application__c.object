@@ -117,6 +117,20 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Board_Member__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Board Member field was useful in the run-up to the WCF Board Meeting that was to decide whether to adopt the BAP as a headcount service in the WCF.  It could be useful again someday, but for now I&apos;m taking it off the main page layout.  We might eventually delete it entirely or convert it to a lookup of the board member by the organization associated with the application.</description>
+        <externalId>false</externalId>
+        <label>Board Member</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Applications (Board Member)</relationshipLabel>
+        <relationshipName>Applications3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Custom_Objects_Required__c</fullName>
         <externalId>false</externalId>
         <label>Custom Objects Required</label>
@@ -273,6 +287,18 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Full_Users__c</fullName>
+        <externalId>false</externalId>
+        <label>Full Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -449,7 +475,7 @@
         <fullName>Primary_Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <inlineHelpText>Enter in primary contact. Additional contacts may be added in the application contacts related list</inlineHelpText>
+        <inlineHelpText>Primary Contact is the application owner. Additional contacts may be added in the application contacts related list.</inlineHelpText>
         <label>Primary Contact</label>
         <referenceTo>Contact</referenceTo>
         <relationshipLabel>Applications</relationshipLabel>
@@ -543,6 +569,18 @@
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>Starter_Users__c</fullName>
+        <externalId>false</externalId>
+        <label>Starter Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Status_By__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -573,6 +611,37 @@
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Candidate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>In Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>In Production</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cancelled/Deferred</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>System_Integration_Requirements__c</fullName>
         <externalId>false</externalId>
         <label>System Integration Requirements</label>
@@ -595,6 +664,32 @@
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Total_Users__c</fullName>
+        <externalId>false</externalId>
+        <formula>Full_Users__c +  Starter_Users__c + Type_1_Users__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type_1_Users__c</fullName>
+        <externalId>false</externalId>
+        <label>Type 1 Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Type__c</fullName>
@@ -809,6 +904,25 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled%2FDeferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Production</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>System_Integration_Requirements__c</picklist>
             <values>
                 <fullName>Other</fullName>
@@ -1003,6 +1117,25 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled%2FDeferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Production</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>System_Integration_Requirements__c</picklist>
             <values>
                 <fullName>Other</fullName>
@@ -1193,6 +1326,25 @@
             </values>
             <values>
                 <fullName>User</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled%2FDeferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Production</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

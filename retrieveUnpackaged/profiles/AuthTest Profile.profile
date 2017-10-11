@@ -377,6 +377,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Application__c.Board_Member__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Application__c.Custom_Objects_Required__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -423,6 +428,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Application__c.Form_Number__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Application__c.Full_Users__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -492,6 +502,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Application__c.Starter_Users__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Application__c.Status_By__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -507,7 +522,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Application__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Application__c.System_Integration_Requirements__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Application__c.Total_Users__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Application__c.Type_1_Users__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

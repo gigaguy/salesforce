@@ -68,10 +68,9 @@
     <compactLayouts>
         <fullName>Account_Compact_Layout</fullName>
         <fields>Name</fields>
-        <fields>Phone</fields>
-        <fields>BillingAddress</fields>
-        <fields>Website</fields>
-        <fields>OwnerId</fields>
+        <fields>Short_Description__c</fields>
+        <fields>Code__c</fields>
+        <fields>ParentId</fields>
         <label>Account Compact Layout</label>
     </compactLayouts>
     <enableEnhancedLookup>true</enableEnhancedLookup>
@@ -283,7 +282,7 @@
         <columns>ACCOUNT.TYPE</columns>
         <columns>CORE.USERS.FIRST_NAME</columns>
         <columns>CORE.USERS.LAST_NAME</columns>
-        <filterScope>Mine</filterScope>
+        <filterScope>Everything</filterScope>
         <label>All Organizations</label>
     </listViews>
     <listViews>
@@ -309,6 +308,7 @@
         <fullName>HR_Orgs</fullName>
         <columns>Code__c</columns>
         <columns>ACCOUNT.NAME</columns>
+        <columns>Short_Description__c</columns>
         <columns>PARENT_NAME</columns>
         <columns>Deleted__c</columns>
         <filterScope>Everything</filterScope>

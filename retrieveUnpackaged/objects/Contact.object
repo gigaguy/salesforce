@@ -97,7 +97,7 @@
         <fullName>EPA_Person</fullName>
         <fields>Name</fields>
         <fields>Title</fields>
-        <fields>HR_Org__c</fields>
+        <fields>AccountId</fields>
         <fields>Phone</fields>
         <fields>Email</fields>
         <label>EPA Person</label>
@@ -469,6 +469,11 @@
         <columns>CORE.USERS.FIRST_NAME</columns>
         <columns>CORE.USERS.LAST_NAME</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>Preferred_Name__c</field>
+            <operation>greaterThan</operation>
+            <value>a</value>
+        </filters>
         <label>All Contacts</label>
     </listViews>
     <listViews>
