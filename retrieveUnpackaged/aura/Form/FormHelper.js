@@ -19,8 +19,6 @@
                 formID = component.get("v.newForm.Id");
             }
         console.log('formID: ' + formID);
-        console.log('file name: ' + file.name);
-        console.log('contentType: ' + file.type);
         var action = component.get("c.uploadFile");
         console.log('type: ' + file.type);
         action.setParams({
@@ -50,14 +48,8 @@
         $A.util.addClass(spinner, "slds-hide");
     },
     getAttachList : function(component, formID){
- /*       var formID;
-        if (component.get("v.modalName") == 'viewForm') {
-            formID = component.get("v.viewFormID");
-        }
-        else {
-            formID = component.get("v.newForm.Id");
-        }
-   */ console.log('formID: ' + formID);     
+		
+        console.log('formID: ' + formID);     
         var action = component.get("c.getListOfAttachments");
        		action.setParams({
 			"formID" : formID
@@ -71,6 +63,10 @@
                 console.log('in here');
                 component.set("v.attachList", response.getReturnValue());
                 component.set("v.hasAttachments", true);
+             }
+            else {
+                component.set("v.hasAttachments", false);
+                component.set("v.message", null);
             }
         });
      $A.enqueueAction(action);

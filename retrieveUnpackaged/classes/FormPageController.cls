@@ -127,7 +127,7 @@ public class FormPageController {
     
     @AuraEnabled
     public static Id uploadFile(String FormID, String fileName, String base64Data, String contentType) { 
-        base64Data = EncodingUtil.urlDecode(base64Data, 'UTF-8');
+     //   base64Data = EncodingUtil.urlDecode(base64Data, 'UTF-8');
         Attachment a = new Attachment();
         a.parentId = FormID;
         a.Body = EncodingUtil.base64Decode(base64Data);
@@ -139,14 +139,15 @@ public class FormPageController {
     }
     
     @AuraEnabled
-   public static List<attachment> getListOfAttachments(String formID) { 
-       
-        try{     
-            return [select id, Name from Attachment where parentID = :formID order by CreatedDate DESC];
-        }
-        catch (exception e){return null;}
-        
-        
+    public static List<attachment> getListOfAttachments(String formID) {        
+        return [select id, Name from Attachment where parentID = :formID order by CreatedDate DESC];        
     }
-    
+        
+    @AuraEnabled
+    public static string deleteFormAttachment(ID attID){
+     
+            delete [select id from Attachment where ID = :attID];
+            return '-- Attachment Deleted';    
+    }
+     
 }

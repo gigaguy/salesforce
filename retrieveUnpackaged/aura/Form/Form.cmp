@@ -26,7 +26,7 @@
     <aura:handler name="change" value="{!v.newForm}" action="{!c.openModal2}" />
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
     <aura:handler name="recordSave" event="force:recordSave" action="{!c.handleSave}" />
-	<lightning:spinner aura:id="mySpinner" class="slds-hide"/>
+	<lightning:spinner aura:id="mySpinner" alternativeText="Uploading Attachment" class="slds-hide slds-is-fixed"/>
     
     <!-- Header-->
     <p style="margin-bottom: 35px; font-size: 125%;">
@@ -212,7 +212,7 @@
             <span class="slds-assistive-text">Close</span>
             </button>
             <h2 id="header99" class="slds-text-heading--medium">
-                Status: Not Saved {!v.message}
+                Status: Form Not Saved {!v.message}
             </h2>
               
               <h3>                    
@@ -233,18 +233,39 @@
           <div class="slds-modal__footer">
             <!--attachments list-->
               <aura:if isTrue="{!v.hasAttachments}">
-              	<table style="border: 1px solid lightgray;">
-                	<tr style="background-color: #0070d2; border: 1px solid lightgray;">
+             	<table style="border: 1px solid lightgray;">
+                	<tr style="background-color: #0070d2; border: 1px solid lightgray;">         
                         <td colspan="5" style="color: white; padding: 5px; border: 1px solid lightgray;">
                             Attachments
                         </td>
                 	</tr>
-                    <aura:iteration var="attach" items="{!v.attachList}">
-                        <tr style="background-color: white; border: 1px solid lightgray;">
-                        <td style="color: black; padding: 5px; border: 1px solid lightgray;">
+                    <tr style="background-color: white;  height: 50%; border: 1px solid lightgray;">
+                        <td style="width: 10px; color: white; padding: 5px; border: 0px solid white;">
+                            
+                        </td>
+                        <td style="width: 15px; color: white; padding: 5px; border: 0px solid white;">
+                            
+                        </td>
+                        <td style="color: black; padding: 5px; font-weight: bold; border: 1px solid lightgray; text-align: left;">
+                            FILE NAME
+                        </td>
+                    </tr>
+           			<aura:iteration var="attach" items="{!v.attachList}">
+                      <tr style="background-color: white; border: 1px solid lightgray;">
+                        <td style="width: 10px; color: black; padding: 5px; border: 0px solid #0070d2; text-align: center;">
+                            <a href="{!'/servlet/servlet.FileDownload?file='+attach.Id}" target="_blank">
+                                <button style="color: black;">View</button>
+                            </a>  
+                        </td>    
+                        <td style="width: 15px; color: black; padding: 5px; border: 0px solid #0070d2; text-align: center;">
+                            <button id="{!attach.Id}" onclick="{!c.deleteAttachment}">Del</button>
+                        </td>
+                        <td style="color: black; padding: 10px; border: 1px solid lightgray; text-align: left;">
                             {!attach.Name}
                         </td>
-                        </tr>
+             <!--           <td style="width: 80%; color: black; padding: 5px; border: 0px solid #0070d2; text-align: center;">                         
+                        </td>  -->
+                      </tr>
                     </aura:iteration>
                 </table> 
                   <br/>

@@ -82,4 +82,26 @@ public class FormPageController_Test {
           }
       
       }
+      
+      @isTest
+        static void testAttachmentMethods(){
+            insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
+            
+            //create test data: forms
+            Forms__c testForm = new Forms__c();
+            testForm.RecordTypeID = [select id from RecordType where sObjectType = 'Forms__c' ORDER BY createddate limit 1].id;
+            insert testForm;
+            
+            //create test data: file
+            ID formID = testForm.id;
+            String fileName = 'testFile.txt';
+            String base64Data = 'testdata';
+            String contentType = 'text/plain';
+            
+            String attID = FormPageController.uploadFile(formID, fileName, base64Data, contentType);            
+            FormPageController.getListOfAttachments(formID);
+            FormPageController.deleteFormAttachment(attID);
+            
+      }
+      
 }

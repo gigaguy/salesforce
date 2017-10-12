@@ -291,6 +291,7 @@
         component.set("v.approvalSuccess", null);
         component.set("v.isOpen", false);
         component.set("v.modalName", "");
+        component.set("v.hasAttachments", false);
     	
         var action = component.get("c.deleteForm");
         action.setParams({
@@ -461,6 +462,37 @@
         else{            
             helper.hide(component,event);
         }
-    }
+    },
+    deleteAttachment : function(component, event, helper){
+        var attID = event.currentTarget.id;
+        console.log(attID);
+		var action = component.get("c.deleteFormAttachment");
+        action.setParams({
+            "attID":attID
+        });
+        action.setCallback(this,function(resp){
+			console.log('in action');
+            var formID;
+                if (component.get("v.modalName") == 'viewForm') { 
+                    formID = component.get("v.viewFormID"); }
+                else { formID = component.get("v.newForm.Id"); }
+            
+            var state = resp.getState();
+            console.log('state: ' +state);
+            if(state === 'SUCCESS'){
+                component.set("v.message", resp.getReturnValue());
+                helper.getAttachList(component, formID);
+    //            component.set("v.oldForm", null);
+    //            component.set("v.modalName", "");
+            }
+            else if(state === 'ERROR'){
+                var errors = resp.getError();
+                for(var i = 0 ;i < errors.length;i++){
+                    console.log(errors[i].message);
+                }
+            }
+        });
+        $A.enqueueAction(action);
+      }
 	
 })
