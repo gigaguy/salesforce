@@ -25,10 +25,6 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
-        <application>standard__DataAssessment</application>
-        <visible>false</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
         <application>standard__LightningSales</application>
         <visible>false</visible>
     </applicationVisibilities>
@@ -590,6 +586,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Asset.StockKeepingUnit</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Asset.UsageEndDate</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -866,6 +867,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.AssistantPhone</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Authorization__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1825,6 +1831,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Product2.StockKeepingUnit</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Quote.AccountId</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1990,11 +2001,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Snippet__c.Date_Added__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Snippet__c.Document_Link__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2041,11 +2047,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Snippet__c.Submission_Number__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Snippet__c.Substantive__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
