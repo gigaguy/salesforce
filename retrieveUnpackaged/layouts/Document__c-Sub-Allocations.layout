@@ -11,12 +11,16 @@
         <label>Sub-Allocation Meta</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>File_Name__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Required</behavior>
                 <field>Operating_Plan_Year__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Primary__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>File_Name__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

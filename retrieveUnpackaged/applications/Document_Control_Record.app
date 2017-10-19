@@ -13,8 +13,7 @@
     <tab>Project__c</tab>
     <tab>Qlik_Reports</tab>
     <tab>Help</tab>
-    <tab>standard-File</tab>
-    <tab>standard-ContentNote</tab>
+    <tab>standard-report</tab>
     <uiType>Lightning</uiType>
     <utilityBar>Document_Control_Register_UtilityBar</utilityBar>
 </CustomApplication>

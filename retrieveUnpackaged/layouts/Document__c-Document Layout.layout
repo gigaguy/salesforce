@@ -11,6 +11,10 @@
         <label>Account</label>
         <layoutColumns>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Record_Type_Code__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Required</behavior>
                 <field>DCN__c</field>
             </layoutItems>
@@ -223,7 +227,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Total_Dollar_Amont__c</field>
+                <field>Total_Dollar_Amount__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

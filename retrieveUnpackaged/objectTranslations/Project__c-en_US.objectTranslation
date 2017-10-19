@@ -53,6 +53,10 @@
         <name>Project__c</name>
     </fields>
     <fields>
+        <label><!-- SFID --></label>
+        <name>SFID__c</name>
+    </fields>
+    <fields>
         <label><!-- Sub-Task Name --></label>
         <name>Sub_Task_Name__c</name>
     </fields>
@@ -63,6 +67,10 @@
     <fields>
         <label><!-- Sub-Task Code --></label>
         <name>Sub_Task_code__c</name>
+        <picklistValues>
+            <masterLabel>-</masterLabel>
+            <translation><!-- - --></translation>
+        </picklistValues>
         <picklistValues>
             <masterLabel>1</masterLabel>
             <translation><!-- 1 --></translation>
@@ -103,6 +111,14 @@
     <fields>
         <label><!-- Task code --></label>
         <name>Task_code__c</name>
+        <picklistValues>
+            <masterLabel>-</masterLabel>
+            <translation><!-- - --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0</masterLabel>
+            <translation><!-- 0 --></translation>
+        </picklistValues>
         <picklistValues>
             <masterLabel>1</masterLabel>
             <translation><!-- 1 --></translation>
