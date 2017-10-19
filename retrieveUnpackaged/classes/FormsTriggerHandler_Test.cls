@@ -173,6 +173,9 @@ public class FormsTriggerHandler_Test {
         update form;
         system.assertEquals(null, [select User_Supervisor__c from Forms__c where id = :form.ID].User_Supervisor__c);
         
+        form.approval_step__c = 'Approved';
+        update form;
+        
     }
 
 }

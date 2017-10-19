@@ -140,7 +140,7 @@ public class FormPageController {
     
     @AuraEnabled
     public static List<attachment> getListOfAttachments(String formID) {        
-        return [select id, Name from Attachment where parentID = :formID order by CreatedDate DESC];        
+        return [select id, Name, CreatedDate from Attachment where parentID = :formID order by CreatedDate DESC];        
     }
         
     @AuraEnabled

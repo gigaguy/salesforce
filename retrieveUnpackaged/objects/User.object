@@ -61,6 +61,14 @@
     <enableFeeds>true</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
+        <fullName>Agree_To_Rules_of_Behavior__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Agree To Rules of Behavior</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Building__c</fullName>
         <externalId>false</externalId>
         <label>Building</label>
@@ -253,6 +261,16 @@
         <fullName>Session_Token__c</fullName>
         <externalId>false</externalId>
         <label>Session Token</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature__c</fullName>
+        <externalId>false</externalId>
+        <label>Signature</label>
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>

@@ -90,6 +90,7 @@ public class UtilityMethods {
         // Check that the IP address and user environment is the same as when the session was created, and that the session is less than 12 hours old
         system.debug(u);
         system.debug(u.Session_IP__c);
+        system.debug('check 92: ' + ApexPages.currentPage().getHeaders().get('X-Salesforce-SIP'));
         system.debug(ApexPages.currentPage().getHeaders().get('X-Salesforce-SIP'));
         if (u.Session_IP__c == ApexPages.currentPage().getHeaders().get('X-Salesforce-SIP') &&
                 u.Session_Environment__c == ApexPages.currentPage().getHeaders().get('User-Agent') &&

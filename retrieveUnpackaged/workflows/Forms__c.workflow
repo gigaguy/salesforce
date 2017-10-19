@@ -119,6 +119,171 @@
         <template>unfiled$public/Dev_Sandbox_Request_Rejected_Template</template>
     </alerts>
     <fieldUpdates>
+        <fullName>Approval_PCOR_Approved_by_508_Approver</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting &quot; &amp; 
+IF(NOT(ISBLANK(IT_Reviewer__c)),&quot;IT Reviewer Approval&quot;, 
+IF(NOT(ISBLANK(Approving_Official__c)),&quot;Approving Official&quot;, 
+IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;, 
+&quot;&quot; 
+)))</formula>
+        <name>Approval PCOR - Approved by 508 Approver</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_PCOR_Approved_by_Deputy_Dir</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting &quot; &amp; 
+IF(NOT(ISBLANK(Director__c)),&quot;Director Approval&quot;, 
+IF(NOT(ISBLANK(Property__c)),&quot;Property Approval&quot;, 
+IF(NOT(ISBLANK(X508_Compliance_Approver__c)),&quot;508 Compliance Approval&quot;, 
+IF(NOT(ISBLANK(IT_Reviewer__c)),&quot;IT Reviewer Approval&quot;, 
+IF(NOT(ISBLANK(Approving_Official__c)),&quot;Approving Official&quot;, 
+IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;, 
+&quot;&quot; 
+))))))</formula>
+        <name>Approval PCOR - Approved by Deputy Dir</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_PCOR_Approved_by_Director</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting &quot; &amp; 
+IF(NOT(ISBLANK(Property__c)),&quot;Property Approval&quot;, 
+IF(NOT(ISBLANK(X508_Compliance_Approver__c)),&quot;508 Compliance Approval&quot;, 
+IF(NOT(ISBLANK(IT_Reviewer__c)),&quot;IT Reviewer Approval&quot;, 
+IF(NOT(ISBLANK(Approving_Official__c)),&quot;Approving Official&quot;, 
+IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;, 
+&quot;&quot; 
+)))))</formula>
+        <name>Approval PCOR - Approved by Director</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_PCOR_Approved_by_Div_Dir_1</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting &quot; &amp;  
+IF(NOT(ISBLANK(Division_Director_2__c)),&quot;Division Director 2 Approval&quot;, 
+IF(NOT(ISBLANK(Deputy_Director__c)),&quot;Deputy Director Approval&quot;, 
+IF(NOT(ISBLANK(Director__c)),&quot;Director Approval&quot;, 
+IF(NOT(ISBLANK(Property__c)),&quot;Property Approval&quot;, 
+IF(NOT(ISBLANK(X508_Compliance_Approver__c)),&quot;508 Compliance Approval&quot;, 
+IF(NOT(ISBLANK(IT_Reviewer__c)),&quot;IT Reviewer Approval&quot;, 
+IF(NOT(ISBLANK(Approving_Official__c)),&quot;Approving Official&quot;, 
+IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;, 
+&quot;&quot; 
+))))))))</formula>
+        <name>Approval PCOR - Approved by Div Dir 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_PCOR_Approved_by_Div_Dir_2</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting &quot; &amp;  
+IF(NOT(ISBLANK(Deputy_Director__c)),&quot;Deputy Director Approval&quot;, 
+IF(NOT(ISBLANK(Director__c)),&quot;Director Approval&quot;, 
+IF(NOT(ISBLANK(Property__c)),&quot;Property Approval&quot;, 
+IF(NOT(ISBLANK(X508_Compliance_Approver__c)),&quot;508 Compliance Approval&quot;, 
+IF(NOT(ISBLANK(IT_Reviewer__c)),&quot;IT Reviewer Approval&quot;, 
+IF(NOT(ISBLANK(Approving_Official__c)),&quot;Approving Official&quot;, 
+IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;, 
+&quot;&quot; 
+)))))))</formula>
+        <name>Approval PCOR - Approved by Div Dir 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_PCOR_Approved_by_IT_Reviewer</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting &quot; &amp; 
+IF(NOT(ISBLANK(Approving_Official__c)),&quot;Approving Official&quot;, 
+IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;, 
+&quot;&quot; 
+))</formula>
+        <name>Approval PCOR - Approved by IT Reviewer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_PCOR_Approved_by_Official</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting &quot; &amp; 
+IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;, 
+&quot;&quot; 
+)</formula>
+        <name>Approval PCOR - Approved by Official</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_PCOR_Approved_by_Property</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting &quot; &amp; 
+IF(NOT(ISBLANK(X508_Compliance_Approver__c)),&quot;508 Compliance Approval&quot;, 
+IF(NOT(ISBLANK(IT_Reviewer__c)),&quot;IT Reviewer Approval&quot;, 
+IF(NOT(ISBLANK(Approving_Official__c)),&quot;Approving Official&quot;, 
+IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;, 
+&quot;&quot; 
+))))</formula>
+        <name>Approval PCOR - Approved by Property</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_PCOR_Card_Holder_Approved</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting &quot; &amp;
+IF(NOT(ISBLANK(Division_Director_1__c)),&quot;Division Director 1 Approval&quot;,
+IF(NOT(ISBLANK(Division_Director_2__c)),&quot;Division Director 2 Approval&quot;,
+IF(NOT(ISBLANK(Deputy_Director__c)),&quot;Deputy Director Approval&quot;,
+IF(NOT(ISBLANK(Director__c)),&quot;Director Approval&quot;,
+IF(NOT(ISBLANK(Property__c)),&quot;Property Approval&quot;,
+IF(NOT(ISBLANK(X508_Compliance_Approver__c)),&quot;508 Compliance Approval&quot;,
+IF(NOT(ISBLANK(IT_Reviewer__c)),&quot;IT Reviewer Approval&quot;,
+IF(NOT(ISBLANK(Approving_Official__c)),&quot;Approving Official&quot;,
+IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;,
+&quot;&quot;
+)))))))))</formula>
+        <name>Approval PCOR - Card Holder Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_PCOR_Initial</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting &quot; &amp;
+IF(NOT(ISBLANK(Card_Holder__c)),&quot;Card Holder Approval&quot;,
+IF(NOT(ISBLANK(Division_Director_1__c)),&quot;Division Director 1 Approval&quot;,
+IF(NOT(ISBLANK(Division_Director_2__c)),&quot;Division Director 2 Approval&quot;,
+IF(NOT(ISBLANK(Deputy_Director__c)),&quot;Deputy Director Approval&quot;,
+IF(NOT(ISBLANK(Director__c)),&quot;Director Approval&quot;,
+IF(NOT(ISBLANK(Property__c)),&quot;Property Approval&quot;,
+IF(NOT(ISBLANK(X508_Compliance_Approver__c)),&quot;508 Compliance Approval&quot;,
+IF(NOT(ISBLANK(IT_Reviewer__c)),&quot;IT Reviewer Approval&quot;,
+IF(NOT(ISBLANK(Approving_Official__c)),&quot;Approving Official&quot;,
+IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;,
+&quot;&quot;
+))))))))))</formula>
+        <name>Approval PCOR - Initial</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Approval_Step_Approved</fullName>
         <field>Approval_Step__c</field>
         <formula>&quot;Approved&quot;</formula>
@@ -181,10 +346,12 @@
     <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Next_Approver_1</fullName>
         <field>Approval_Step__c</field>
-        <formula>IF( 
+        <formula>IF(RecordType.DeveloperName = &quot;SF-182&quot;, 
+IF( 
 ispickval(of_Approval_Supervisors__c, &quot;2&quot;), 
 &quot;Awaiting Supervisor 2 Approval&quot;, 
-&quot;Awaiting Funding Official Approval&quot;)</formula>
+&quot;Awaiting Funding Official Approval&quot;), 
+&quot;Awaiting Next Approver&quot;)</formula>
         <name>Approval Step - Sent to Next Approver1</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
@@ -228,6 +395,15 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
         <operation>Literal</operation>
         <protected>false</protected>
         <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejection_Remove_Manager_Signature</fullName>
+        <field>Immediate_Supervisor_s_Signature__c</field>
+        <literalValue>0</literalValue>
+        <name>Rejection - Remove Manager Signature</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Send_to_Financial</fullName>

@@ -82,7 +82,7 @@
         <defaultValue>false</defaultValue>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>A</label>
+        <label>Description &quot;A&quot; Applies</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -295,6 +295,19 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Approving_Official__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>EPA-PCOR</description>
+        <externalId>false</externalId>
+        <label>Approving Official</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Award_Documentation_before_or_after__c</fullName>
         <description>ORD-111</description>
         <externalId>false</externalId>
@@ -334,7 +347,7 @@
         <defaultValue>false</defaultValue>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>B</label>
+        <label>Description &quot;B&quot; Applies</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -432,7 +445,7 @@ null
         <defaultValue>&quot;Of the total hours shown in box B above, I wish to designate hours of annual leave to the qualified recipient named below.  I certify that this employee is not my immediate supervisor.&quot;</defaultValue>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>C Description</label>
+        <label>C. Description</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -443,10 +456,23 @@ null
         <defaultValue>false</defaultValue>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>C</label>
+        <label>Description &quot;C&quot; Applies</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Card_Holder__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>EPA-PCOR</description>
+        <externalId>false</externalId>
+        <label>Card Holder</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Card_Holder_s_Name__c</fullName>
@@ -1006,6 +1032,34 @@ null
         </valueSet>
     </fields>
     <fields>
+        <fullName>Cleared_Part_A_SF52__c</fullName>
+        <description>EPA-3110-1</description>
+        <externalId>false</externalId>
+        <label>Cleared</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Comment_s__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
@@ -1200,7 +1254,7 @@ null
         <defaultValue>false</defaultValue>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>D</label>
+        <label>Description &quot;D&quot; Applies</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -1611,6 +1665,19 @@ null
         <type>Phone</type>
     </fields>
     <fields>
+        <fullName>Deputy_Director__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>EPA-PCOR</description>
+        <externalId>false</externalId>
+        <label>Deputy Director</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms5</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Describe_Interactions_with_Company__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
@@ -1747,6 +1814,19 @@ null
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>Director__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>EPA-PCOR</description>
+        <externalId>false</externalId>
+        <label>Director</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms6</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Disposition_of_EPA_Form_3110_1__c</fullName>
         <defaultValue>&quot;EPA Form 3110-1, Personnel Separation or Transfer Checklist, becomes part of the EPA employee&apos;s Electronic Official Personnel File(eOPF) and retention requirements are governed by the EPA Record Control Schedule. For contractors and grantees, the completed EPA Form 3110-1 will remain in the possession of their COR/SEE Monitor/Coordinator or designee for record keeping purposes, filed with the appropriate program file and retained in accordance with the appropriate Agency records schedule.&quot;</defaultValue>
         <description>EPA-3110-1</description>
@@ -1757,6 +1837,32 @@ null
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Division_Director_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>EPA-PCOR</description>
+        <externalId>false</externalId>
+        <label>Division Director 1</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms7</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Division_Director_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>EPA-PCOR</description>
+        <externalId>false</externalId>
+        <label>Division Director 2</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms8</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Doc_Purchase_Order_Requisition__c</fullName>
@@ -1797,7 +1903,7 @@ null
     </fields>
     <fields>
         <fullName>EPA_Form_3110_1__c</fullName>
-        <defaultValue>&quot;EPA personnel are required to account for all Government property in you possession or custody, outstanding cash or leave advances, financial indebtedness to the Agency and unexpired terms and conditions of outstanding employment and/or training agreements. You are responsible for arranging, through appropriate administrative channels, settlement of outstanding debts and obligations, and clearance for proprietary or sensitive information. Failure to complete this clearance process may result in the delay of final salary payments. CORs and SEE Monitor/Coordinators are required to account for all Government property on behalf of the contractor, SEE, grantee, etc. in their possession or custody including Agency records, hard copy and electronic and Library materials. By signing Part F, you acknowledge that you have completed your responsibilities to the best of you knowledge and that knowingly providing false or misleading statements in the completion of this form may be punishable by fine or imprisonment or both under applicable laws.&quot;</defaultValue>
+        <defaultValue>&quot;EPA personnel are required to account for all Government property in you possession or custody, outstanding cash or leave advances, financial indebtedness to the Agency and unexpired terms and conditions of outstanding employment and/or training agreements. You are responsible for arranging, through appropriate administrative channels, settlement of outstanding debts and obligations, and clearance for proprietary or sensitive information. Failure to complete this clearance process may result in the delay of final salary payments.&quot; + BR()+BR() + &quot;CORs and SEE Monitor/Coordinators are required to account for all Government property on behalf of the contractor, SEE, grantee, etc. in their possession or custody including Agency records, hard copy and electronic and Library materials. By signing Part F, you acknowledge that you have completed your responsibilities to the best of you knowledge and that knowingly providing false or misleading statements in the completion of this form may be punishable by fine or imprisonment or both under applicable laws.&quot;</defaultValue>
         <description>EPA3110-1</description>
         <externalId>false</externalId>
         <label>EPA Form 3110-1</label>
@@ -1823,7 +1929,7 @@ null
         <defaultValue>false</defaultValue>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>E</label>
+        <label>Description &quot;E&quot; Applies</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -1997,7 +2103,7 @@ null
         <fullName>Extra_Hour_Donation__c</fullName>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>Extra Hour Donation</label>
+        <label>B. Extra Hour Donation</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -2005,6 +2111,19 @@ null
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FCO__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>EPA-PCOR</description>
+        <externalId>false</externalId>
+        <label>FCO</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms9</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Facilities_Management_Printed_Name__c</fullName>
@@ -2173,6 +2292,17 @@ null
         </valueSet>
     </fields>
     <fields>
+        <fullName>Form_emailed_to_Cincinnati__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Approved SF-182 forms are emailed to Cincinnati.</inlineHelpText>
+        <label>Form emailed to Cincinnati</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Furnish_Invoice_to__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -2275,7 +2405,7 @@ null
         <fullName>Hours_Designated__c</fullName>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>Hours Designated</label>
+        <label>C. Hours Designated</label>
         <length>18</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -2342,6 +2472,19 @@ null
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IT_Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>EPA-PCOR</description>
+        <externalId>false</externalId>
+        <label>IT Reviewer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>FormsXamw</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>I_Agree_1__c</fullName>
@@ -2626,7 +2769,7 @@ null
         <description>EPA-PCOR</description>
         <externalId>false</externalId>
         <label>Item Number</label>
-        <precision>1</precision>
+        <precision>2</precision>
         <required>false</required>
         <scale>0</scale>
         <trackHistory>false</trackHistory>
@@ -2637,7 +2780,7 @@ null
     <fields>
         <fullName>Item_Number_1__c</fullName>
         <defaultValue>1</defaultValue>
-        <description>EPA-1900-8a</description>
+        <description>EPA-1900-8a, EPA-PCOR</description>
         <externalId>false</externalId>
         <label>Item Number</label>
         <precision>1</precision>
@@ -2651,7 +2794,7 @@ null
     <fields>
         <fullName>Item_Number_2__c</fullName>
         <defaultValue>2</defaultValue>
-        <description>EPA-1900-8a</description>
+        <description>EPA-1900-8a, EPA-PCOR</description>
         <externalId>false</externalId>
         <label>Item Number</label>
         <precision>1</precision>
@@ -2665,7 +2808,7 @@ null
     <fields>
         <fullName>Item_Number_3__c</fullName>
         <defaultValue>3</defaultValue>
-        <description>EPA-1900-8a</description>
+        <description>EPA-1900-8a, EPA-PCOR</description>
         <externalId>false</externalId>
         <label>Item Number</label>
         <precision>1</precision>
@@ -2679,7 +2822,7 @@ null
     <fields>
         <fullName>Item_Number_4__c</fullName>
         <defaultValue>4</defaultValue>
-        <description>EPA-1900-8a</description>
+        <description>EPA-1900-8a, EPA-PCOR</description>
         <externalId>false</externalId>
         <label>Item Number</label>
         <precision>1</precision>
@@ -2693,7 +2836,7 @@ null
     <fields>
         <fullName>Item_Number_5__c</fullName>
         <defaultValue>5</defaultValue>
-        <description>EPA-1900-8a</description>
+        <description>EPA-1900-8a, EPA-PCOR</description>
         <externalId>false</externalId>
         <label>Item Number</label>
         <precision>1</precision>
@@ -3288,7 +3431,7 @@ null
     </fields>
     <fields>
         <fullName>NOTICE_TO_EMPLOYEE__c</fullName>
-        <defaultValue>&quot;Before completing this form, please read the instructions for Sections I and II below. A signed copy of this form will be returned via email form New Membership Enrollment only.&quot;</defaultValue>
+        <defaultValue>&quot;Before completing this form, please read the instructions for Sections I and II below. A signed copy of this form will be returned via email for New Membership Enrollment only.&quot;</defaultValue>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
         <label>NOTICE TO EMPLOYEE</label>
@@ -3564,7 +3707,7 @@ null
     </fields>
     <fields>
         <fullName>Part_A__c</fullName>
-        <defaultValue>&quot;All Personnel - Employees, Students, Contracting Officer Representatives(COR)(on behalf of contractors and grantees), and Senior Environmental Employment Monitor/Coordinators(on behalf of SEES), Volunteers, Supervisors, or Appropriate Designee.  All personnel must place their Program Office Contact&apos;s name and telephone number in Part A of this form.  Failure to do so will result in the delay in processing of your clearance.  Print out EPA Form 3110-1.  After you have filled in items in this part, start the routing process by hand carrying to each designated official in each appropriate office.  When you have obtained all the clearance procedures and signatures, then you are to sign the personnel certification in Part F of the EPA Form 3110-1 and return the form to your Program Contact and/or Supervisor.  Once an EPA employee&apos;s form has been approved, it will be routed to the Shared Services Center&apos;s Human Resources Office along with the SF-52 Request for Personnel Action to complete the separation action.  Once a contractor or grantee&apos;s form has been approved, it should be filed by their COR/SEE Monitor/Coordinator or Designee with the appropriate program file and retained in accordance with the appropriate Agency records schedule.  Exit Survey: EPA is sincerely interested in learning about your experience while working at EPA.  Learning from your experience will help us find better ways to keep talented people like you from leaving our organization.  Please take a moment to share your views.  The survey will take 10 to 15 minutes to complete and your responses are strictly anonymous.&quot;</defaultValue>
+        <defaultValue>&quot;All Personnel - Employees, Students, Contracting Officer Representatives(COR)(on behalf of contractors and grantees), and Senior Environmental Employment Monitor/Coordinators(on behalf of SEES), Volunteers, Supervisors, or Appropriate Designee.&quot; + BR()+BR() + &quot;All personnel must place their Program Office Contact&apos;s name and telephone number in Part A of this form.  Failure to do so will result in the delay in processing of your clearance.  Print out EPA Form 3110-1.  After you have filled in items in this part, start the routing process by hand carrying to each designated official in each appropriate office.  When you have obtained all the clearance procedures and signatures, then you are to sign the personnel certification in Part F of the EPA Form 3110-1 and return the form to your Program Contact and/or Supervisor.  Once an EPA employee&apos;s form has been approved, it will be routed to the Shared Services Center&apos;s Human Resources Office along with the SF-52 Request for Personnel Action to complete the separation action.  Once a contractor or grantee&apos;s form has been approved, it should be filed by their COR/SEE Monitor/Coordinator or Designee with the appropriate program file and retained in accordance with the appropriate Agency records schedule.&quot; + BR()+BR() + &quot;Exit Survey: EPA is sincerely interested in learning about your experience while working at EPA.  Learning from your experience will help us find better ways to keep talented people like you from leaving our organization.  Please take a moment to share your views.  The survey will take 10 to 15 minutes to complete and your responses are strictly anonymous.&quot;</defaultValue>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part A</label>
@@ -3576,11 +3719,11 @@ null
     </fields>
     <fields>
         <fullName>Part_B_1__c</fullName>
-        <defaultValue>&quot;Computers, Lotus Notes, LAN, Outlook, Domino Directory, Laptops, and Telecommunications:You must coordinate with the Information Technology Office and have them configure all of your IT accounts to remove all logical access to Agency systems and closure on telecommunications systems as of your separation date.  The IT Office should initial Part B and provide their signature as certification in Part F of the EPA Form 3110-1 to certify they have configured the separating, transferring and separated personnel&apos;s accounts to remove all logical access and to deactivate all telecommunication access as of the separation date.&quot;</defaultValue>
+        <defaultValue>&quot;Computers, Lotus Notes, LAN, Outlook, Domino Directory, Laptops, and Telecommunications: You must coordinate with the Information Technology Office and have them configure all of your IT accounts to remove all logical access to Agency systems and closure on telecommunications systems as of your separation date.  The IT Office should initial Part B and provide their signature as certification in Part F of the EPA Form 3110-1 to certify they have configured the separating, transferring and separated personnel&apos;s accounts to remove all logical access and to deactivate all telecommunication access as of the separation date.&quot;</defaultValue>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part B (1)</label>
-        <length>626</length>
+        <length>650</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -3588,11 +3731,11 @@ null
     </fields>
     <fields>
         <fullName>Part_B_2__c</fullName>
-        <defaultValue>&quot;Return of STE Cards or STU Keys(EPA Employees Only):If you are in possession of a secure/classified telephone and equipment, you must call 202-564-3857 to obtain a signed confirmation before initialing &apos;cleared&apos;.  If you are not in possession of this equipment, initial as N/A.&quot;</defaultValue>
+        <defaultValue>&quot;Return of STE Cards or STU Keys(EPA Employees Only): If you are in possession of a secure/classified telephone and equipment, you must call 202-564-3857 to obtain a signed confirmation before initialing &apos;cleared&apos;.  If you are not in possession of this equipment, initial as N/A.&quot;</defaultValue>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part B (2)</label>
-        <length>279</length>
+        <length>300</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -3671,6 +3814,60 @@ null
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>Part_B_Cleared_RLO__c</fullName>
+        <externalId>false</externalId>
+        <label>Part B Cleared RLO</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NA</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Part_B_Cleared_Supervisor__c</fullName>
+        <externalId>false</externalId>
+        <label>Part B Cleared Supervisor</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NA</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Part_B_Completed_By__c</fullName>
         <defaultValue>&quot;Program Office - Program Contact, Administrative Officer, Custodial Property Officer, Supervisor, Senior Environmental Employment Monitor/Coordinators, Contracting Officer&apos;s Representative(COR), Information Technology Officer(ITO), Information Management Officer(IMO), Telecommunications, Records Liaison Officer(RLO), or Appropriate Designee.&quot;</defaultValue>
         <description>EPA-3110-1</description>
@@ -3684,11 +3881,11 @@ null
     </fields>
     <fields>
         <fullName>Part_B__c</fullName>
-        <defaultValue>&quot;Completed By:Program Office - Program Contact, Administrative Officer, Custodial Property Officer, Supervisor, SEE Monitor/Coordinator, Contracting Officer&apos;s Representative, Information Technology Officer(ITO), Information Management Officer(IMO), Telecommunication, Records Liaison Officer, or Appropriate Designee.  Each Program should establish internal checklists and procedures to address transition of work products. A primary and alternate person/contact should be appointed to be responsible for verifying that the separating or transferring personnel has satisfied their program requirements. The designated program person/contact should initial the appropriate item/s in Part B and provide their certification on Part F of the EPA Form 3110-1.&quot;</defaultValue>
+        <defaultValue>&quot;Completed By: Program Office - Program Contact, Administrative Officer, Custodial Property Officer, Supervisor, SEE Monitor/Coordinator, Contracting Officer&apos;s Representative, Information Technology Officer(ITO), Information Management Officer(IMO), Telecommunication, Records Liaison Officer, or Appropriate Designee.&quot; + BR()+BR() + &quot;Each Program should establish internal checklists and procedures to address transition of work products. A primary and alternate person/contact should be appointed to be responsible for verifying that the separating or transferring personnel has satisfied their program requirements. The designated program person/contact should initial the appropriate item/s in Part B and provide their certification on Part F of the EPA Form 3110-1.&quot;</defaultValue>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part B</label>
-        <length>755</length>
+        <length>800</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -3696,11 +3893,11 @@ null
     </fields>
     <fields>
         <fullName>Part_C_1__c</fullName>
-        <defaultValue>&quot;Security Clearance Termination Debriefing(SCI and/or Collateral.&quot;</defaultValue>
+        <defaultValue>&quot;Security Clearance Termination Debriefing (SCI and/or Collateral)&quot;</defaultValue>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part C (1)</label>
-        <length>66</length>
+        <length>70</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -3709,11 +3906,11 @@ null
     </fields>
     <fields>
         <fullName>Part_C_2__c</fullName>
-        <defaultValue>&quot;Transfer of Classified Materials(NSI)&quot;</defaultValue>
+        <defaultValue>&quot;Transfer of Classified Materials (NSI)&quot;</defaultValue>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part C (2)</label>
-        <length>39</length>
+        <length>40</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -3722,11 +3919,11 @@ null
     </fields>
     <fields>
         <fullName>Part_C_3__c</fullName>
-        <defaultValue>&quot;EPASS(All EPA Identification Badges)&quot;</defaultValue>
+        <defaultValue>&quot;EPASS (All EPA Identification Badges)&quot;</defaultValue>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part C (3)</label>
-        <length>38</length>
+        <length>40</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -3748,11 +3945,11 @@ null
     </fields>
     <fields>
         <fullName>Part_C_5__c</fullName>
-        <defaultValue>&quot;Government-Owned Personal Property, vehicles, Personal Protective Equipment, i.e. uniforms, safety glasses, lab coats, etc) Property pass(es)&quot;</defaultValue>
+        <defaultValue>&quot;Government-Owned Personal Property, vehicles, Personal Protective Equipment, (i.e. uniforms, safety glasses, lab coats, etc) Property pass(es)&quot;</defaultValue>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part C (5)</label>
-        <length>144</length>
+        <length>150</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -3787,7 +3984,7 @@ null
     </fields>
     <fields>
         <fullName>Part_C_8__c</fullName>
-        <defaultValue>&quot;Office Keys(ALL office keys are returned to the Security Management Division)&quot;</defaultValue>
+        <defaultValue>&quot;Office Keys (ALL office keys are returned to the Security Management Division)&quot;</defaultValue>
         <description>EPA-3100-1</description>
         <externalId>false</externalId>
         <label>Part C (8)</label>
@@ -3832,11 +4029,11 @@ null
     </fields>
     <fields>
         <fullName>Part_C__c</fullName>
-        <defaultValue>&quot;Security Management Division (SMD) National Security Information, Personnel Security Branch, Badging Office, Facilities Management Office, Transit Subsidy, Safety, Health and Environmental Management Program Office, Financial Management Office and/or Appropriate Designee SMD staff (HQ or Region) should complete the appropriate box(es) and sign in Part C of the EPA Form 3110-1 once they have collected the separating personnel’s identification badges and inspector credentials, office keys and ensured separating EPA personnel who have been granted a security clearance receive a clear Security Clearance Termination debriefing and transfer all classified NSI material. By completing the appropriate box(es) and signing Part C of this form, the SMD staff are certifying that the listed items in Part C of this form have been returned and/or accounted for. Facilities Management staff should complete the appropriate box(es) and sign in Part C of the EPA Form 3110-1 once they have collected the separating personnel’s Government-owned property, transportation, i.e. (transit subsidy, car pool, parking permits, parking subsidy, parking passes, bicycle subsidy, etc.) and de-enrolled the recipient of unused transit subsidies. By completing the appropriate box(es) and signing Part C of this form, the Facilities Management staff are certifying that the listed items in Part C of this form have been returned and/or accounted for. The Librarian/Designee is responsible for verifying that EPA Library publications, books and other materials have been returned. The Librarian/Designee should complete the appropriate box(es) and sign Part C of the EPA Form 3110-1 to indicate that all items have been returned and/or accounted for. Safety, Health and Environmental Management Program staff should complete the appropriate box(es) and sign in Part C of the EPA Form 3110-1 once they have collected the separating personnel’s Government-owned PPE and SHEM equipment, 3 as well as validated that if the departing person is in the EPA’s Occupational Medical Surveillance Program, the individual completed an exit exam that has been verified by the Federal Occupational Health physician. Additionally, the Safety, Health and Environmental Management Program staff has determined that the separating person has stopped their fitness center membership and direct deposit allocation. By completing the appropriate box(es) and signing Part C of this form, the Safety, Health and Environmental Management Program staff are certifying that the listed items in Part C of this form have been returned, accounted for or validated.&quot;</defaultValue>
+        <defaultValue>&quot;Security Management Division (SMD) National Security Information, Personnel Security Branch, Badging Office, Facilities Management Office, Transit Subsidy, Safety, Health and Environmental Management Program Office, Financial Management Office and/or Appropriate Designee.&quot; + BR()+BR() + &quot;SMD staff (HQ or Region) should complete the appropriate box(es) and sign in Part C of the EPA Form 3110-1 once they have collected the separating personnel’s identification badges and inspector credentials, office keys and ensured separating EPA personnel who have been granted a security clearance receive a clear Security Clearance Termination debriefing and transfer all classified NSI material. By completing the appropriate box(es) and signing Part C of this form, the SMD staff are certifying that the listed items in Part C of this form have been returned and/or accounted for.&quot; + BR()+BR() + &quot;Facilities Management staff should complete the appropriate box(es) and sign in Part C of the EPA Form 3110-1 once they have collected the separating personnel’s Government-owned property, transportation, i.e. (transit subsidy, car pool, parking permits, parking subsidy, parking passes, bicycle subsidy, etc.) and de-enrolled the recipient of unused transit subsidies. By completing the appropriate box(es) and signing Part C of this form, the Facilities Management staff are certifying that the listed items in Part C of this form have been returned and/or accounted for.&quot; + BR()+BR() + &quot;The Librarian/Designee is responsible for verifying that EPA Library publications, books and other materials have been returned. The Librarian/Designee should complete the appropriate box(es) and sign Part C of the EPA Form 3110-1 to indicate that all items have been returned and/or accounted for.&quot; + BR()+BR() + &quot;Safety, Health and Environmental Management Program staff should complete the appropriate box(es) and sign in Part C of the EPA Form 3110-1 once they have collected the separating personnel’s Government-owned PPE and SHEM equipment, 3 as well as validated that if the departing person is in the EPA’s Occupational Medical Surveillance Program, the individual completed an exit exam that has been verified by the Federal Occupational Health physician. Additionally, the Safety, Health and Environmental Management Program staff has determined that the separating person has stopped their fitness center membership and direct deposit allocation. By completing the appropriate box(es) and signing Part C of this form, the Safety, Health and Environmental Management Program staff are certifying that the listed items in Part C of this form have been returned, accounted for or validated.&quot;</defaultValue>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part C</label>
-        <length>2617</length>
+        <length>2700</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -3844,11 +4041,11 @@ null
     </fields>
     <fields>
         <fullName>Part_D_1__c</fullName>
-        <defaultValue>&quot;Training and Development&quot;</defaultValue>
+        <defaultValue>&quot;Negative Leave Balance&quot;</defaultValue>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part D (1)</label>
-        <length>26</length>
+        <length>40</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -4061,11 +4258,11 @@ null
     </fields>
     <fields>
         <fullName>Part_D__c</fullName>
-        <defaultValue>&quot;Local Financial Management Office, Office of the Comptroller/Budget Office, and when applicable, the Cincinnati Finance Center The Financial Management Office representative must ensure that all financial obligation documents have been executed by the Environmental Protection Agency personnel before initialing Part D and signing Part F of EPA Form 3110-1. All bankcard holders are to submit the Purchase Card Maintenance Form located on the following link http://purchasecard.epa.gov/node/111  to the Purchase Card Team (PCT). The PCT representative is responsible for destroying the bankcard and immediately contacting the Bank to request the bankcard be canceled. The PCT representative will inform the Bank that the holder no longer works at the Agency. The representative shall make known to the Bank that neither the United States Federal Government nor the Environmental Protection Agency be liable for any unauthorized usage of the bankcard if reissued to the cardholder. By initialing the appropriate box(es) and signing Part F of the EPA Form 3110-1, the Financial Management Office representative is certifying that items listed in Part D of the form have been returned and/or are accounted for. The PCT representative has or will contact the bank immediately to request the cardholder account be closed and no further issuance of a card will be issued under the cardholder account.&quot;</defaultValue>
+        <defaultValue>&quot;Local Financial Management Office, Office of the Comptroller/Budget Office, and when applicable, the Cincinnati Finance Center.&quot; + BR()+BR() + &quot;The Financial Management Office representative must ensure that all financial obligation documents have been executed by the Environmental Protection Agency personnel before initialing Part D and signing Part F of EPA Form 3110-1. All bankcard holders are to submit the Purchase Card Maintenance Form located on the following link http://purchasecard.epa.gov/node/111  to the Purchase Card Team (PCT). The PCT representative is responsible for destroying the bankcard and immediately contacting the Bank to request the bankcard be canceled. The PCT representative will inform the Bank that the holder no longer works at the Agency. The representative shall make known to the Bank that neither the United States Federal Government nor the Environmental Protection Agency be liable for any unauthorized usage of the bankcard if reissued to the cardholder. By initialing the appropriate box(es) and signing Part F of the EPA Form 3110-1, the Financial Management Office representative is certifying that items listed in Part D of the form have been returned and/or are accounted for. The PCT representative has or will contact the bank immediately to request the cardholder account be closed and no further issuance of a card will be issued under the cardholder account.&quot;</defaultValue>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part D</label>
-        <length>1395</length>
+        <length>1500</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -4262,11 +4459,11 @@ null
     </fields>
     <fields>
         <fullName>Part_E__c</fullName>
-        <defaultValue>&quot;Shared Service Centers(SSC)Human Resources Office(HRO), Regional Human Resources Officers(RHRO), or Appropriate Designee, The SSC, HRO, RHRO, or designee is responsible for obtaining both the completed Standard Form 52, Request Personnel Action, and EPA form 3110-1 for separating or transferring EPA personnel, before executing the SF-52.  The completed EPA Form 3110-1 and SF 52 are submitted to the Shared Service Center(SSC) for final clearance processing.  By initialing Part E and signing Part F of the EPA Form 3110-1, the SSC, HRO, RHRO or designee is certifying that all items listed in Parts 1 through 5 of the form have been accounted for and/or completed by all the appropriate offices.  A copy of the form will be retained in the EPA employee&apos;s electronic Official Personnel File(eOPF) file in accordance with retention policies required by EPA records Schedule 0553(or other appropriate records schedules if this is revised in the future).&quot;</defaultValue>
+        <defaultValue>&quot;Shared Service Centers(SSC)Human Resources Office(HRO), Regional Human Resources Officers(RHRO), or Appropriate Designee.&quot; + BR()+BR() + &quot;The SSC, HRO, RHRO, or designee is responsible for obtaining both the completed Standard Form 52, Request Personnel Action, and EPA form 3110-1 for separating or transferring EPA personnel, before executing the SF-52.  The completed EPA Form 3110-1 and SF 52 are submitted to the Shared Service Center(SSC) for final clearance processing.  By initialing Part E and signing Part F of the EPA Form 3110-1, the SSC, HRO, RHRO or designee is certifying that all items listed in Parts 1 through 5 of the form have been accounted for and/or completed by all the appropriate offices.&quot; + BR()+BR() + &quot;A copy of the form will be retained in the EPA employee&apos;s electronic Official Personnel File(eOPF) file in accordance with retention policies required by EPA records Schedule 0553(or other appropriate records schedules if this is revised in the future).&quot;</defaultValue>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part E</label>
-        <length>963</length>
+        <length>1000</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -4286,11 +4483,11 @@ null
     </fields>
     <fields>
         <fullName>Part_F__c</fullName>
-        <defaultValue>&quot;Employees, CORs(on behalf of Contractors), and SEE Monitor/Coordinators(on behalf of SEES, Grantees, Students, Volunteers, etc.), Supervisors, or Appropriate Designee and Responsible Reviewers.  By signing Part F of this form, you , your supervisor/COR/SEE Monitor/Coordinator or designee and all responsible reviewers are each certifying that all U.S. Government property has been returned.  The EPA supervisor also ensures that the timekeeper of the separating, transferring or separated EPA personnel has verified and submitted any hours worked prior to departure.  In addition, the supervisor/COR/SEE Monitor/Coordinator or designee and the RLO must certify that by using Form 3110-49, EPA Records Management Checklist for Separating/Transferring or Separated Personnel, all documentary materials, records(including documents that are responsive to a Freedom of Information Act(FOIA) request, litigation hold, or other legal hold) have been properly identified and transferred.  You and your supervisor/COR/SEE Monitor/Coordinator designee are each also certifying that the statements made on this form and all attachments thereto are true, accurate, and complete.  You and your supervisor, COR/SEE Monitor/Coordinator/Designee are each also certifying that you each acknowledge that any knowingly false or misleading statement may be punishable by fine or imprisonment or both under applicable law.&quot;</defaultValue>
+        <defaultValue>&quot;Employees, CORs(on behalf of Contractors), and SEE Monitor/Coordinators(on behalf of SEES, Grantees, Students, Volunteers, etc.), Supervisors, or Appropriate Designee and Responsible Reviewers.&quot; + BR()+BR() + &quot;By signing Part F of this form, you , your supervisor/COR/SEE Monitor/Coordinator or designee and all responsible reviewers are each certifying that all U.S. Government property has been returned.  The EPA supervisor also ensures that the timekeeper of the separating, transferring or separated EPA personnel has verified and submitted any hours worked prior to departure.  In addition, the supervisor/COR/SEE Monitor/Coordinator or designee and the RLO must certify that by using Form 3110-49, EPA Records Management Checklist for Separating/Transferring or Separated Personnel, all documentary materials, records(including documents that are responsive to a Freedom of Information Act(FOIA) request, litigation hold, or other legal hold) have been properly identified and transferred.  You and your supervisor/COR/SEE Monitor/Coordinator designee are each also certifying that the statements made on this form and all attachments thereto are true, accurate, and complete.  You and your supervisor, COR/SEE Monitor/Coordinator/Designee are each also certifying that you each acknowledge that any knowingly false or misleading statement may be punishable by fine or imprisonment or both under applicable law.&quot;</defaultValue>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part F</label>
-        <length>1933</length>
+        <length>1500</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -4742,6 +4939,19 @@ null
             </valueSetDefinition>
         </valueSet>
         <visibleLines>7</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Property__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>EPA-PCOR</description>
+        <externalId>false</externalId>
+        <label>Property</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>FormsXan6</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Proposed_New_PRIA_Due_Date__c</fullName>
@@ -6855,6 +7065,19 @@ Line_Total_Price_5__c</formula>
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>X508_Compliance_Approver__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>EPA-PCOR</description>
+        <externalId>false</externalId>
+        <label>508 Compliance Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>X5_Part_B__c</fullName>
         <defaultValue>&quot;Public Financial Disclosure, SF-278 PAS, SES,SL, ST, ALJ, Schedule C, AD, or Title 42:contact OGC.&quot;</defaultValue>
         <description>EPA-3110-1</description>
@@ -7462,6 +7685,21 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Cleared_Part_A_SF52__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -7710,6 +7948,36 @@ Line_Total_Price_5__c</formula>
             <picklist>Notified_this_is_the_last_negotiation__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_RLO__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_Supervisor__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8905,6 +9173,21 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Cleared_Part_A_SF52__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -9153,6 +9436,36 @@ Line_Total_Price_5__c</formula>
             <picklist>Notified_this_is_the_last_negotiation__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_RLO__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_Supervisor__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10360,6 +10673,21 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Cleared_Part_A_SF52__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -10608,6 +10936,36 @@ Line_Total_Price_5__c</formula>
             <picklist>Notified_this_is_the_last_negotiation__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_RLO__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_Supervisor__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11815,6 +12173,21 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Cleared_Part_A_SF52__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -12063,6 +12436,36 @@ Line_Total_Price_5__c</formula>
             <picklist>Notified_this_is_the_last_negotiation__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_RLO__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_Supervisor__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13258,6 +13661,21 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Cleared_Part_A_SF52__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -13506,6 +13924,36 @@ Line_Total_Price_5__c</formula>
             <picklist>Notified_this_is_the_last_negotiation__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_RLO__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_Supervisor__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -14701,6 +15149,21 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Cleared_Part_A_SF52__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -14949,6 +15412,36 @@ Line_Total_Price_5__c</formula>
             <picklist>Notified_this_is_the_last_negotiation__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_RLO__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_Supervisor__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16156,6 +16649,21 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Cleared_Part_A_SF52__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -16404,6 +16912,36 @@ Line_Total_Price_5__c</formula>
             <picklist>Notified_this_is_the_last_negotiation__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_RLO__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_Supervisor__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -17611,6 +18149,21 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Cleared_Part_A_SF52__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -17859,6 +18412,36 @@ Line_Total_Price_5__c</formula>
             <picklist>Notified_this_is_the_last_negotiation__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_RLO__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_Supervisor__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -19090,6 +19673,21 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Cleared_Part_A_SF52__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Continued_Service_Agreement__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -19338,6 +19936,36 @@ Line_Total_Price_5__c</formula>
             <picklist>Notified_this_is_the_last_negotiation__c</picklist>
             <values>
                 <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_RLO__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Part_B_Cleared_Supervisor__c</picklist>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
             <values>

@@ -1,4 +1,5 @@
 public class FormsTriggerHandler {
+
     public void beforeInsert(List<Forms__c> forms){
         updateFormLookups(forms, true);
     }
@@ -139,28 +140,42 @@ public class FormsTriggerHandler {
     }
     
     public void afterUpdate(Map<id,Forms__c> formMap){
-        
-        createFormShares(formMap.keyset());
-       
-        /*List<Forms__Share> formShares = new List<Forms__Share>();
-        for (id formID : formIdToPeopleIds.keyset()){
-            Set<id> usedPeople = new Set<id>();
-            for (id personID: formIdToPeopleIds.get(formId)){
-                if (!usedPeople.contains(personid)){
-                    formShares.add(new Forms__Share(ParentID = formId, UserorGroupID = personid, AccessLevel = 'edit'));
-                    usedPeople.adD(personId);
+        system.debug('in after update');
+        //get sf-182 record type
+            ID rtID = [SELECT Id,Name FROM RecordType WHERE name = 'SF-182' limit 1].id;
+            
+        for (forms__c form : formMap.values()) {
+                if(form.Approval_Step__c != 'Approved'){
+                    system.debug('approval step does not equal approved');
+                    createFormShares(formMap.keyset());
+                  }  
+            //send email to cincinatti for approved SF-182 forms                    
+                    if(form.Approval_Step__c == 'Approved' && !form.Form_emailed_to_Cincinnati__c && form.RecordTypeID == rtID){
+                        sendCincinnatiEmail.sendMessage(form.id);                       
+                    }
                 }
-            }
-        }
         
-        database.insert(formShares, false);*/
+               ////////////////////////////////////////////////////////////////////////
+               //         /*List<Forms__Share> formShares = new List<Forms__Share>();
+               //         for (id formID : formIdToPeopleIds.keyset()){
+               //             Set<id> usedPeople = new Set<id>();
+               //             for (id personID: formIdToPeopleIds.get(formId)){
+               //                 if (!usedPeople.contains(personid)){
+               //                     formShares.add(new Forms__Share(ParentID = formId, UserorGroupID = personid, AccessLevel = 'edit'));
+               //                     usedPeople.adD(personId);
+               //                 }
+               //             }
+               //         }
+               //         
+               //         database.insert(formShares, false);*/
+               ///////////////////////////////////////////////////////////////////////////
     }
     
     @future
     // Shares Form record with Approvers
     public static void createFormShares(Set<id> mainIds){
         List<ProcessInstance> processInstances = [SELECT Id, (SELECT Id, ActorID,TargetObjectId, isPending, StepStatus, Comments FROM StepsAndWorkitems) FROM ProcessInstance where TargetObjectId in :mainIds];
-        
+        system.debug('pis: ' + processInstances);
         Map<id, List<id>> formIdToPeopleIds = new Map<id, List<id>>();
         for (ProcessInstance pi : processInstances){
             system.debug(pi);

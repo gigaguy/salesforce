@@ -17,7 +17,7 @@
         <name>A_Description__c</name>
     </fields>
     <fields>
-        <label><!-- A --></label>
+        <label><!-- Description &quot;A&quot; Applies --></label>
         <name>A__c</name>
     </fields>
     <fields>
@@ -146,6 +146,11 @@
         <relationshipLabel><!-- Forms (Approver 2) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Approving Official --></label>
+        <name>Approving_Official__c</name>
+        <relationshipLabel><!-- Forms (Approving Official) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Before or After Award Documentation? --></label>
         <name>Award_Documentation_before_or_after__c</name>
         <picklistValues>
@@ -162,7 +167,7 @@
         <name>B_Description__c</name>
     </fields>
     <fields>
-        <label><!-- B --></label>
+        <label><!-- Description &quot;B&quot; Applies --></label>
         <name>B__c</name>
     </fields>
     <fields>
@@ -190,12 +195,17 @@
         <name>Budget_Office_Printed_Name__c</name>
     </fields>
     <fields>
-        <label><!-- C Description --></label>
+        <label><!-- C. Description --></label>
         <name>C_Description__c</name>
     </fields>
     <fields>
-        <label><!-- C --></label>
+        <label><!-- Description &quot;C&quot; Applies --></label>
         <name>C__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card Holder --></label>
+        <name>Card_Holder__c</name>
+        <relationshipLabel><!-- Forms (Card Holder) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Card Holder’s Name --></label>
@@ -506,6 +516,22 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Cleared --></label>
+        <name>Cleared_Part_A_SF52__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Comment(s) --></label>
         <name>Comment_s__c</name>
     </fields>
@@ -587,7 +613,7 @@
         <name>D_Description__c</name>
     </fields>
     <fields>
-        <label><!-- D --></label>
+        <label><!-- Description &quot;D&quot; Applies --></label>
         <name>D__c</name>
     </fields>
     <fields>
@@ -767,6 +793,11 @@
         <name>Delivery_Phone_Number__c</name>
     </fields>
     <fields>
+        <label><!-- Deputy Director --></label>
+        <name>Deputy_Director__c</name>
+        <relationshipLabel><!-- Forms (Deputy Director) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Describe Interactions with Company --></label>
         <name>Describe_Interactions_with_Company__c</name>
     </fields>
@@ -819,8 +850,23 @@
         <name>Direct_Cost_Total__c</name>
     </fields>
     <fields>
+        <label><!-- Director --></label>
+        <name>Director__c</name>
+        <relationshipLabel><!-- Forms (Director) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Disposition of EPA Form 3110-1. --></label>
         <name>Disposition_of_EPA_Form_3110_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division Director 1 --></label>
+        <name>Division_Director_1__c</name>
+        <relationshipLabel><!-- Forms (Division Director 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Division Director 2 --></label>
+        <name>Division_Director_2__c</name>
+        <relationshipLabel><!-- Forms (Division Director 2) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Doc / Purchase Order / Requisition # --></label>
@@ -843,7 +889,7 @@
         <name>E_Description__c</name>
     </fields>
     <fields>
-        <label><!-- E --></label>
+        <label><!-- Description &quot;E&quot; Applies --></label>
         <name>E__c</name>
     </fields>
     <fields>
@@ -905,8 +951,13 @@
         <name>Expire_Date__c</name>
     </fields>
     <fields>
-        <label><!-- Extra Hour Donation --></label>
+        <label><!-- B. Extra Hour Donation --></label>
         <name>Extra_Hour_Donation__c</name>
+    </fields>
+    <fields>
+        <label><!-- FCO --></label>
+        <name>FCO__c</name>
+        <relationshipLabel><!-- Forms (FCO) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Facilities Management (Printed Name) --></label>
@@ -981,6 +1032,11 @@
         </picklistValues>
     </fields>
     <fields>
+        <help><!-- Approved SF-182 forms are emailed to Cincinnati. --></help>
+        <label><!-- Form emailed to Cincinnati --></label>
+        <name>Form_emailed_to_Cincinnati__c</name>
+    </fields>
+    <fields>
         <label><!-- Furnish Invoice to --></label>
         <name>Furnish_Invoice_to__c</name>
         <picklistValues>
@@ -1021,7 +1077,7 @@
         <name>HR_Signature__c</name>
     </fields>
     <fields>
-        <label><!-- Hours Designated --></label>
+        <label><!-- C. Hours Designated --></label>
         <name>Hours_Designated__c</name>
     </fields>
     <fields>
@@ -1043,6 +1099,11 @@
     <fields>
         <label><!-- ITO/IMO, Telecom (Printed Name) --></label>
         <name>ITO_IMO_Telecom_Printed_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- IT Reviewer --></label>
+        <name>IT_Reviewer__c</name>
+        <relationshipLabel><!-- Forms (IT Reviewer) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- I Agree 1 --></label>
@@ -1511,6 +1572,38 @@
     <fields>
         <label><!-- Part B (8) --></label>
         <name>Part_B_8__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part B Cleared RLO --></label>
+        <name>Part_B_Cleared_RLO__c</name>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Part B Cleared Supervisor --></label>
+        <name>Part_B_Cleared_Supervisor__c</name>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Part B Completed By --></label>
@@ -1984,6 +2077,11 @@
             <masterLabel>Use of Existing Data</masterLabel>
             <translation><!-- Use of Existing Data --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Property --></label>
+        <name>Property__c</name>
+        <relationshipLabel><!-- Forms (Property) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Proposed New PRIA Due Date --></label>
@@ -2967,6 +3065,11 @@
         <name>X4_SF_182__c</name>
     </fields>
     <fields>
+        <label><!-- 508 Compliance Approver --></label>
+        <name>X508_Compliance_Approver__c</name>
+        <relationshipLabel><!-- Forms (508 Compliance Approver) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- 5 --></label>
         <name>X5_Part_B__c</name>
     </fields>
@@ -3106,6 +3209,10 @@
             <section>Instructions</section>
         </sections>
         <sections>
+            <label><!-- Item Spacer --></label>
+            <section>Item Spacer</section>
+        </sections>
+        <sections>
             <label><!-- Items --></label>
             <section>Items</section>
         </sections>
@@ -3189,47 +3296,51 @@
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- GENERAL INSTRUCTIONS AND INFORMATION --></label>
-            <section>GENERAL INSTRUCTIONS AND INFORMATION</section>
-        </sections>
-        <sections>
             <label><!-- I. Information About You --></label>
             <section>I. Information About You</section>
         </sections>
         <sections>
-            <label><!-- II. Type of Contribution .           Check all the boxes that apply with an “X” --></label>
-            <section>II. Type of Contribution .           Check all the boxes that apply with an “X”</section>
+            <label><!-- II. Type of Contribution. Check all the boxes that apply --></label>
+            <section>II. Type of Contribution. Check all the boxes that apply</section>
         </sections>
         <sections>
             <label><!-- III. Human Resources Office Certification --></label>
             <section>III. Human Resources Office Certification</section>
         </sections>
         <sections>
+            <label><!-- IV. Waiver.  If applicable, waiver for II-B above is authorized --></label>
+            <section>IV. Waiver.  If applicable, waiver for II-B above is authorized</section>
+        </sections>
+        <sections>
+            <label><!-- Leave Bank Election Form --></label>
+            <section>Leave Bank Election Form</section>
+        </sections>
+        <sections>
+            <label><!-- Leave Bank Election Form - General Instructions --></label>
+            <section>Leave Bank Election Form - General Instructions</section>
+        </sections>
+        <sections>
             <label><!-- Leave Recipient Information --></label>
             <section>Leave Recipient Information</section>
         </sections>
         <sections>
-            <label><!-- Waiver If applicable, waiver for II-B above is authorized --></label>
-            <section>Waiver If applicable, waiver for II-B above is authorized</section>
+            <label><!-- Sig Section (title not shown) --></label>
+            <section>Sig Section (title not shown)</section>
         </sections>
     </layouts>
     <layouts>
         <layout>EPA-PCOR</layout>
         <sections>
+            <label><!-- Approval Spacer --></label>
+            <section>Approval Spacer</section>
+        </sections>
+        <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Fields --></label>
-            <section>Fields</section>
-        </sections>
-        <sections>
             <label><!-- Instructions --></label>
             <section>Instructions</section>
-        </sections>
-        <sections>
-            <label><!-- Line Items --></label>
-            <section>Line Items</section>
         </sections>
         <sections>
             <label><!-- LineItemSpacer1 --></label>
@@ -3268,6 +3379,18 @@
             <section>LineItemSpacer9</section>
         </sections>
         <sections>
+            <label><!-- Request --></label>
+            <section>Request</section>
+        </sections>
+        <sections>
+            <label><!-- Select Approvers (leave blank if not required) --></label>
+            <section>Select Approvers (leave blank if not required)</section>
+        </sections>
+        <sections>
+            <label><!-- Supplies or Services --></label>
+            <section>Supplies or Services</section>
+        </sections>
+        <sections>
             <label><!-- Vendor Information --></label>
             <section>Vendor Information</section>
         </sections>
@@ -3279,20 +3402,24 @@
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- General Information --></label>
-            <section>General Information</section>
+            <label><!-- I. Type of Action --></label>
+            <section>I. Type of Action</section>
         </sections>
         <sections>
-            <label><!-- Incorporation of Rqmts into Extramural Documentation --></label>
-            <section>Incorporation of Rqmts into Extramural Documentation</section>
+            <label><!-- II. General Information --></label>
+            <section>II. General Information</section>
         </sections>
         <sections>
-            <label><!-- QA Documentation --></label>
-            <section>QA Documentation</section>
+            <label><!-- III. Status of QA Documentation --></label>
+            <section>III. Status of QA Documentation</section>
         </sections>
         <sections>
-            <label><!-- Signatures --></label>
-            <section>Signatures</section>
+            <label><!-- IV. QA Documentation --></label>
+            <section>IV. QA Documentation</section>
+        </sections>
+        <sections>
+            <label><!-- ORD Quality Assurance Review Form (QARF) --></label>
+            <section>ORD Quality Assurance Review Form (QARF)</section>
         </sections>
         <sections>
             <label><!-- Spacer3 --></label>
@@ -3307,16 +3434,12 @@
             <section>Spacer6</section>
         </sections>
         <sections>
-            <label><!-- Status of QA Documentation --></label>
-            <section>Status of QA Documentation</section>
+            <label><!-- V. Incorporation of Requirements into Extramural Documentation --></label>
+            <section>V. Incorporation of Requirements into Extramural Documentation</section>
         </sections>
         <sections>
-            <label><!-- Top --></label>
-            <section>Top</section>
-        </sections>
-        <sections>
-            <label><!-- Type of Action --></label>
-            <section>Type of Action</section>
+            <label><!-- VI. Signatures --></label>
+            <section>VI. Signatures</section>
         </sections>
         <sections>
             <label><!-- action spacer --></label>
@@ -3370,8 +3493,8 @@
             <section>Previous Negotiated Due Dates:</section>
         </sections>
         <sections>
-            <label><!-- Top --></label>
-            <section>Top</section>
+            <label><!-- Recommendation of Division Directors Negotiated Due Dates --></label>
+            <section>Recommendation of Division Directors Negotiated Due Dates</section>
         </sections>
         <sections>
             <label><!-- company --></label>

@@ -2,9 +2,9 @@
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <layoutSections>
         <customLabel>true</customLabel>
-        <detailHeading>false</detailHeading>
-        <editHeading>false</editHeading>
-        <label>Top</label>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>ORD Quality Assurance Review Form (QARF)</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -21,7 +21,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Type of Action</label>
+        <label>I. Type of Action</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -61,7 +61,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>General Information</label>
+        <label>II. General Information</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -133,17 +133,12 @@
                 <field>QA_Category__c</field>
             </layoutItems>
             <layoutItems>
-                <emptySpace>true</emptySpace>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Estimated_Award__c</field>
             </layoutItems>
             <layoutItems>
-                <emptySpace>true</emptySpace>
-            </layoutItems>
-            <layoutItems>
-                <emptySpace>true</emptySpace>
+                <behavior>Edit</behavior>
+                <field>Estimated_Start_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -160,10 +155,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Estimated_Start_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Estimated_End_Date__c</field>
             </layoutItems>
         </layoutColumns>
@@ -173,12 +164,27 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Status of QA Documentation</label>
+        <label>III. Status of QA Documentation</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Exists__c</field>
             </layoutItems>
+            <layoutItems>
+                <emptySpace>true</emptySpace>
+            </layoutItems>
+            <layoutItems>
+                <emptySpace>true</emptySpace>
+            </layoutItems>
+            <layoutItems>
+                <emptySpace>true</emptySpace>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>To_Be_Prepared__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>ID_Number__c</field>
@@ -191,11 +197,8 @@
                 <behavior>Edit</behavior>
                 <field>QA_Approval_Date__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>To_Be_Prepared__c</field>
+                <emptySpace>true</emptySpace>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -212,7 +215,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>QA Documentation</label>
+        <label>IV. QA Documentation</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -244,7 +247,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Incorporation of Rqmts into Extramural Documentation</label>
+        <label>V. Incorporation of Requirements into Extramural Documentation</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -301,7 +304,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Signatures</label>
+        <label>VI. Signatures</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>

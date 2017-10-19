@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
-    <active>true</active>
+    <active>false</active>
     <allowRecall>false</allowRecall>
     <allowedSubmitters>
         <type>creator</type>
@@ -13,7 +13,7 @@
         <field>Owner</field>
     </approvalPageFields>
     <approvalStep>
-        <allowDelegate>false</allowDelegate>
+        <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
                 <name>Approval_Step_Sent_to_Next_Approver_1</name>
@@ -35,7 +35,7 @@
         <name>Send_to_Supervisor</name>
     </approvalStep>
     <approvalStep>
-        <allowDelegate>false</allowDelegate>
+        <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
                 <name>Approval_Step_Sent_to_Funding_Official</name>
@@ -56,15 +56,25 @@
                 <value>2</value>
             </criteriaItems>
         </entryCriteria>
-        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
         <label>Send to Supervisor 2</label>
         <name>Send_to_Supervisor_2</name>
         <rejectBehavior>
-            <type>RejectRequest</type>
+            <type>BackToPrevious</type>
         </rejectBehavior>
+        <rejectionActions>
+            <action>
+                <name>Approval_Step_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>Rejection_Remove_Manager_Signature</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
     </approvalStep>
     <approvalStep>
-        <allowDelegate>false</allowDelegate>
+        <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
                 <name>Approval_Step_Sent_to_Next_Approver_2</name>
@@ -81,11 +91,17 @@
         <label>Send to Funding Official</label>
         <name>Send_to_Funding_Official</name>
         <rejectBehavior>
-            <type>RejectRequest</type>
+            <type>BackToPrevious</type>
         </rejectBehavior>
+        <rejectionActions>
+            <action>
+                <name>Approval_Step_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
     </approvalStep>
     <approvalStep>
-        <allowDelegate>false</allowDelegate>
+        <allowDelegate>true</allowDelegate>
         <assignedApprover>
             <approver>
                 <name>SF182_HQ_Office_of_Human_Resources</name>
@@ -104,11 +120,11 @@
         <label>Send to HQ Office of Human Resources Queue</label>
         <name>Send_to_HQ_Office_of_Human_Resources_Queue</name>
         <rejectBehavior>
-            <type>RejectRequest</type>
+            <type>BackToPrevious</type>
         </rejectBehavior>
     </approvalStep>
     <approvalStep>
-        <allowDelegate>false</allowDelegate>
+        <allowDelegate>true</allowDelegate>
         <assignedApprover>
             <approver>
                 <name>SF182_Region_1</name>
@@ -127,11 +143,11 @@
         <label>Send to Region 1 Queue</label>
         <name>Send_to_Region_1_Queue</name>
         <rejectBehavior>
-            <type>RejectRequest</type>
+            <type>BackToPrevious</type>
         </rejectBehavior>
     </approvalStep>
     <approvalStep>
-        <allowDelegate>false</allowDelegate>
+        <allowDelegate>true</allowDelegate>
         <assignedApprover>
             <approver>
                 <name>SF182_Region_2</name>
@@ -150,11 +166,11 @@
         <label>Send to Region 2 Queue</label>
         <name>Send_to_Region_2_Queue</name>
         <rejectBehavior>
-            <type>RejectRequest</type>
+            <type>BackToPrevious</type>
         </rejectBehavior>
     </approvalStep>
     <approvalStep>
-        <allowDelegate>false</allowDelegate>
+        <allowDelegate>true</allowDelegate>
         <assignedApprover>
             <approver>
                 <name>SF182_Region_3</name>
@@ -173,11 +189,11 @@
         <label>Send to Region 3 Queue</label>
         <name>Send_to_Region_3_Queue</name>
         <rejectBehavior>
-            <type>RejectRequest</type>
+            <type>BackToPrevious</type>
         </rejectBehavior>
     </approvalStep>
     <approvalStep>
-        <allowDelegate>false</allowDelegate>
+        <allowDelegate>true</allowDelegate>
         <assignedApprover>
             <approver>
                 <name>SF182_Region_4</name>
@@ -196,11 +212,11 @@
         <label>Send to Region 4 Queue</label>
         <name>Send_to_Region_4_Queue</name>
         <rejectBehavior>
-            <type>RejectRequest</type>
+            <type>BackToPrevious</type>
         </rejectBehavior>
     </approvalStep>
     <approvalStep>
-        <allowDelegate>false</allowDelegate>
+        <allowDelegate>true</allowDelegate>
         <assignedApprover>
             <approver>
                 <name>SF182_Region_5</name>
@@ -219,11 +235,11 @@
         <label>Send to Region 5 Queue</label>
         <name>Send_to_Region_5_Queue</name>
         <rejectBehavior>
-            <type>RejectRequest</type>
+            <type>BackToPrevious</type>
         </rejectBehavior>
     </approvalStep>
     <approvalStep>
-        <allowDelegate>false</allowDelegate>
+        <allowDelegate>true</allowDelegate>
         <assignedApprover>
             <approver>
                 <name>SF182_Region_6</name>
@@ -242,7 +258,7 @@
         <label>Send to Region 6 Queue</label>
         <name>Send_to_Region_6_Queue</name>
         <rejectBehavior>
-            <type>RejectRequest</type>
+            <type>BackToPrevious</type>
         </rejectBehavior>
     </approvalStep>
     <approvalStep>
@@ -433,6 +449,10 @@
         <action>
             <name>Final_Rejection_Email</name>
             <type>Alert</type>
+        </action>
+        <action>
+            <name>Rejection_Remove_Manager_Signature</name>
+            <type>FieldUpdate</type>
         </action>
     </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>

@@ -5,9 +5,9 @@
     <excludeButtons>Clone</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
-        <detailHeading>false</detailHeading>
-        <editHeading>false</editHeading>
-        <label>Top</label>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Recommendation of Division Directors Negotiated Due Dates</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -175,6 +175,10 @@
                 <behavior>Edit</behavior>
                 <field>Product_Chemistry__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Other_Description__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -205,10 +209,6 @@
                 <behavior>Edit</behavior>
                 <field>Date_75_Day_Letter_sent__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Notified_this_is_the_last_negotiation__c</field>
-            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
@@ -224,7 +224,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Other_Description__c</field>
+                <field>Notified_this_is_the_last_negotiation__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
