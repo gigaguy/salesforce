@@ -43,6 +43,14 @@
                 <behavior>Required</behavior>
                 <field>Approval_Routing_Options__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Requires_Escalated_Approval__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Select_Escalated_Approver_s__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -401,7 +409,12 @@
         <detailHeading>false</detailHeading>
         <editHeading>false</editHeading>
         <label>Fields</label>
-        <layoutColumns/>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Approval_Step__c</field>
+            </layoutItems>
+        </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>

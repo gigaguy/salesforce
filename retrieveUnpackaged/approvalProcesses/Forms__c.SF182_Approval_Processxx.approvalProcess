@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
-    <active>true</active>
+    <active>false</active>
     <allowRecall>false</allowRecall>
     <allowedSubmitters>
         <type>creator</type>
@@ -591,63 +591,11 @@
         </rejectionActions>
     </approvalStep>
     <approvalStep>
-        <allowDelegate>true</allowDelegate>
+        <allowDelegate>false</allowDelegate>
         <assignedApprover>
             <approver>
-                <name>jjenkins@innovateteam.com</name>
-                <type>user</type>
+                <type>adhoc</type>
             </approver>
-            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
-        </assignedApprover>
-        <entryCriteria>
-            <booleanFilter>(1 AND 2) OR 3 OR 4 OR 5</booleanFilter>
-            <criteriaItems>
-                <field>Forms__c.Requires_Escalated_Approval__c</field>
-                <operation>equals</operation>
-                <value>True</value>
-            </criteriaItems>
-            <criteriaItems>
-                <field>Forms__c.Select_Escalated_Approver_s__c</field>
-                <operation>equals</operation>
-                <value>Sharon Ridings</value>
-            </criteriaItems>
-            <criteriaItems>
-                <field>Forms__c.Training_Start_Date__c</field>
-                <operation>lessOrEqual</operation>
-                <value>TODAY</value>
-            </criteriaItems>
-            <criteriaItems>
-                <field>Forms__c.Direct_Cost_Total__c</field>
-                <operation>greaterThan</operation>
-                <value>50000</value>
-            </criteriaItems>
-            <criteriaItems>
-                <field>Forms__c.Indirect_Total__c</field>
-                <operation>greaterThan</operation>
-                <value>50000</value>
-            </criteriaItems>
-        </entryCriteria>
-        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
-        <label>Send to Sharon (Escalated Approver)</label>
-        <name>Send_to_Sharon_Escalated_Approver</name>
-        <rejectBehavior>
-            <type>BackToPrevious</type>
-        </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
-    </approvalStep>
-    <approvalStep>
-        <allowDelegate>true</allowDelegate>
-        <assignedApprover>
-            <approver>
-                <name>SF182_Research_Triangle_Park</name>
-                <type>queue</type>
-            </approver>
-            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
         <entryCriteria>
             <criteriaItems>
@@ -655,58 +603,9 @@
                 <operation>equals</operation>
                 <value>True</value>
             </criteriaItems>
-            <criteriaItems>
-                <field>Forms__c.Select_Escalated_Approver_s__c</field>
-                <operation>equals</operation>
-                <value>USEPA RTP Finance Center</value>
-            </criteriaItems>
-            <criteriaItems>
-                <field>Forms__c.Approval_Routing_Options__c</field>
-                <operation>notEqual</operation>
-                <value>Research Triangle Park</value>
-            </criteriaItems>
         </entryCriteria>
-        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
-        <label>Send to RTP (Escalated Approver)</label>
-        <name>Send_to_RTP_Escalated_Approver</name>
-        <rejectBehavior>
-            <type>BackToPrevious</type>
-        </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
-    </approvalStep>
-    <approvalStep>
-        <allowDelegate>true</allowDelegate>
-        <assignedApprover>
-            <approver>
-                <name>SF182_Cincinnati</name>
-                <type>queue</type>
-            </approver>
-            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
-        </assignedApprover>
-        <entryCriteria>
-            <criteriaItems>
-                <field>Forms__c.Requires_Escalated_Approval__c</field>
-                <operation>equals</operation>
-                <value>True</value>
-            </criteriaItems>
-            <criteriaItems>
-                <field>Forms__c.Select_Escalated_Approver_s__c</field>
-                <operation>equals</operation>
-                <value>USEPA Cincinnati Finance Center</value>
-            </criteriaItems>
-            <criteriaItems>
-                <field>Forms__c.Approval_Routing_Options__c</field>
-                <operation>notEqual</operation>
-                <value>Cincinnati</value>
-            </criteriaItems>
-        </entryCriteria>
-        <label>Send to Cincinnati Finance (Escalated Approver)</label>
-        <name>Send_to_Cincinnati_Finance_Escalated_Approver</name>
+        <label>Send to Escalated Approval</label>
+        <name>Send_to_Escalated_Approval</name>
         <rejectBehavior>
             <type>BackToPrevious</type>
         </rejectBehavior>
@@ -762,7 +661,7 @@
             <type>Alert</type>
         </action>
     </initialSubmissionActions>
-    <label>SF182 Approval Process</label>
+    <label>SF182 Approval Processxx</label>
     <recallActions>
         <action>
             <name>Approval_Step_Recalled</name>

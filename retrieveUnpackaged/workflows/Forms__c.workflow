@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
+        <fullName>BAP_Generic_Submission_Confirmation</fullName>
+        <description>BAP Generic Submission Confirmation</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/BAP_Forms_Generic_Submission_Confirmation</template>
+    </alerts>
+    <alerts>
         <fullName>Dev_Sandbox_recalled</fullName>
         <description>Dev Sandbox recalled</description>
         <protected>false</protected>
@@ -334,6 +344,18 @@ IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;,
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_Escalated_Apprvr</fullName>
+        <field>Approval_Step__c</field>
+        <formula>IF(  Requires_Escalated_Approval__c = true,
+&quot;Awaiting &quot; + TEXT( Select_Escalated_Approver_s__c ) + 
+&quot; Approval (Escalated Approver)&quot;,
+&quot;&quot; )</formula>
+        <name>Approval Step - Sent to Escalated Apprvr</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Funding_Official</fullName>
         <field>Approval_Step__c</field>
         <formula>&quot;Awaiting Funding Official Approval&quot;</formula>
@@ -346,7 +368,7 @@ IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;,
     <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Next_Approver_1</fullName>
         <field>Approval_Step__c</field>
-        <formula>IF(RecordType.DeveloperName = &quot;SF-182&quot;, 
+        <formula>IF(RecordType.DeveloperName = &quot;SF_182&quot;, 
 IF( 
 ispickval(of_Approval_Supervisors__c, &quot;2&quot;), 
 &quot;Awaiting Supervisor 2 Approval&quot;, 
@@ -358,10 +380,10 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>Approval_Step_Sent_to_Next_Approver_2</fullName>
+        <fullName>Approval_Step_Sent_to_Queue_Approval</fullName>
         <field>Approval_Step__c</field>
         <formula>&quot;Awaiting &quot;&amp; TEXT( Approval_Routing_Options__c ) &amp;&quot; Queue Approval&quot;</formula>
-        <name>Approval Step - Sent to Next Approver2</name>
+        <name>Approval Step - Sent to Queue Approval</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
         <protected>false</protected>

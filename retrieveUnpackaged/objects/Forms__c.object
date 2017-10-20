@@ -5527,6 +5527,33 @@ null
         </valueSet>
     </fields>
     <fields>
+        <fullName>Select_Escalated_Approver_s__c</fullName>
+        <externalId>false</externalId>
+        <label>Select Escalated Approver(s):</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sharon Ridings</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>USEPA RTP Finance Center</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>USEPA Cincinnati Finance Center</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Series__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -8383,6 +8410,21 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Select_Escalated_Approver_s__c</picklist>
+            <values>
+                <fullName>Sharon Ridings</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Summary_of_Deficiency_Type_s__c</picklist>
             <values>
                 <fullName>Deficiencies %28D%29</fullName>
@@ -9879,6 +9921,21 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Programmatic QA Project Plan with supplements for each specific project</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Select_Escalated_Approver_s__c</picklist>
+            <values>
+                <fullName>Sharon Ridings</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11383,6 +11440,21 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Select_Escalated_Approver_s__c</picklist>
+            <values>
+                <fullName>Sharon Ridings</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Summary_of_Deficiency_Type_s__c</picklist>
             <values>
                 <fullName>Deficiencies %28D%29</fullName>
@@ -12871,6 +12943,21 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Select_Escalated_Approver_s__c</picklist>
+            <values>
+                <fullName>Sharon Ridings</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Summary_of_Deficiency_Type_s__c</picklist>
             <values>
                 <fullName>Deficiencies %28D%29</fullName>
@@ -14355,6 +14442,21 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Programmatic QA Project Plan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Select_Escalated_Approver_s__c</picklist>
+            <values>
+                <fullName>Sharon Ridings</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -15859,6 +15961,21 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Select_Escalated_Approver_s__c</picklist>
+            <values>
+                <fullName>Sharon Ridings</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Summary_of_Deficiency_Type_s__c</picklist>
             <values>
                 <fullName>Deficiencies %28D%29</fullName>
@@ -17359,6 +17476,21 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Select_Escalated_Approver_s__c</picklist>
+            <values>
+                <fullName>Sharon Ridings</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Summary_of_Deficiency_Type_s__c</picklist>
             <values>
                 <fullName>Deficiencies %28D%29</fullName>
@@ -18843,6 +18975,21 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Programmatic QA Project Plan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Select_Escalated_Approver_s__c</picklist>
+            <values>
+                <fullName>Sharon Ridings</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -20367,6 +20514,21 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Programmatic QA Project Plan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Select_Escalated_Approver_s__c</picklist>
+            <values>
+                <fullName>Sharon Ridings</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
