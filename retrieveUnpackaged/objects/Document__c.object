@@ -12244,7 +12244,7 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
     <fields>
         <fullName>Project_Name__c</fullName>
         <externalId>false</externalId>
-        <formula>Project__r.Project__c</formula>
+        <formula>Project__r.Project_Code__c &amp; &quot; - &quot; &amp; Project__r.Project__c</formula>
         <label>Project Name</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -16112,8 +16112,8 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
         <columns>DCN__c</columns>
         <columns>AHRC__c</columns>
         <columns>BOC_1__c</columns>
-        <columns>Total_Dollar_Amount__c</columns>
         <columns>Project__c</columns>
+        <columns>Total_Dollar_Amount__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>RECORDTYPE</field>
