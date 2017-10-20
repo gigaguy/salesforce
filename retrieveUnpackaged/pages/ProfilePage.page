@@ -1,0 +1,145 @@
+<apex:page controller="ProfilePageController" showheader="false" sidebar="false" title="BAP Agency Forms - Edit Approvers" cache="false" action="{!validateOrRedirect}">
+
+    <style>
+        body { background-color: #E0F1FF; }
+        
+        .msg {
+            font-size: .75rem;
+            line-height: 1.25;
+            color: rgb(84, 105, 141);
+            text-transform: uppercase;
+            letter-spacing: .0625rem;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: block;
+            -webkit-margin-before: 1em;
+            -webkit-margin-after: 1em;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            margin-left: 200px;
+            margin-bottom: 20px;
+            margin-top: -20px;
+            width: 75%;
+            text-align: center;
+            font-family: 'Salesforce Sans',Arial,sans-serif;
+            background: rgb(253, 253, 253);
+            -webkit-tap-highlight-color: transparent;
+            }
+        
+    </style>
+    
+    <!--Header-->
+    <apex:form rendered="{!valid == true}">
+    <apex:outputpanel rendered="{!t1User == true}">
+        <div class="topBar1" style="width: 100%; height: 110px; background-color: #0E6993; min-width: 1175px;">
+            <a href="http://workplace.epa.gov/" style="margin-left: 25%;"><img src="{!$Resource.EPAOneLogo}" style="margin-top: 20px;"/></a>
+        </div>
+        <div class="topBar2" style="width: 100%; height: 38px; background-color: #0A5071; min-width: 1175px;">
+            &nbsp;
+        </div>
+    </apex:outputpanel>
+    <div class="WebFormsNav" style="width: 100%; height: 200px; min-width: 1150px;">
+        <table style="width: 80%; padding: 20px;">
+            <tr>
+                <td style="width: 180px; vertical-align: top;">
+                    <img src="{!$Resource.EPALogo}"/>
+                </td>
+                <td style="vertical-align: top;">
+                    <h1 style="font-size: 250%; padding-bottom: 20px;">Business Automation Platform – Agency Forms</h1>
+                    <p style="margin-top: 30px; font-size: 125%;">
+                        Editing Approvers for: {!userName} 
+                    </p>
+                    <apex:outputpanel rendered="{!t1User == true}">
+                        <p style="margin-top: 50px; font-size: 16.25px">
+                            <apex:commandlink value="{!canMsg}" action="{!cancel}"></apex:commandlink>
+                        </p>
+                    </apex:outputpanel>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </apex:form>
+    <!-- End Header -->
+    
+    <!--Body-->
+    <div style="width: 50%; padding-left: 200px;">
+    <apex:pageMessage rendered="{!lanError}" severity="error" escape="false" summary="Your User record does not have a valid 'Lan ID'.<br/>Please contact your administrator.<br/<br/>Changes on this page will not be saved." />
+    <apex:pageMessage rendered="{!noContact}" severity="error" escape="false" summary="You do not have a Contact record in the system with a valid 'Lan ID'.<br/>Please contact your administrator.<br/<br/>Changes on this page will not be saved." />
+    <apex:pageMessages />
+    </div>  
+    
+    <apex:outputPanel rendered="{!profSaved}" styleClass="msg" >
+     <br/>Approvers saved successfully!<br/><br/>
+    </apex:outputPanel>
+        
+    <div style="width: 75%; padding-left: 200px;">
+        <apex:form rendered="{!valid == true}">
+            <apex:pageblock >
+                <apex:pageBlockSection title="Approver Fields" columns="1">
+                    <apex:pageBlockSectionItem rendered="{!useContact != true}">
+                        <apex:outputLabel value="Supervisor"/>
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!u.Supervisor__c}" syncManualEntry="false" />
+                    </apex:pageBlockSectionItem>                    
+                    <apex:pageBlockSectionItem rendered="{!useContact == true}">
+                        <apex:outputLabel value="Supervisor"/>
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!supID}" syncManualEntry="false"/>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageblocksectionitem rendered="{!useContact != true}">
+                        <apex:outputlabel value="Time Keeper" />
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!u.Time_Keeper__c}" syncManualEntry="false" />
+                    </apex:pageblocksectionitem>
+                    <apex:pageblocksectionitem rendered="{!useContact == true}">
+                        <apex:outputlabel value="Time Keeper" />
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!timekID}" syncManualEntry="false" />
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem rendered="{!useContact != true}">
+                        <apex:outputlabel value="Supervisor 2" />
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!u.Supervisor_2__c}" syncManualEntry="false" />
+                    </apex:pageblocksectionitem>
+                    <apex:pageblocksectionitem rendered="{!useContact == true}">
+                        <apex:outputlabel value="Supervisor 2" />
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!sup2ID}" syncManualEntry="false" />
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem rendered="{!useContact != true}">
+                        <apex:outputlabel value="Funding Official" />
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!u.Funding_Official__c}" syncManualEntry="false" />
+                    </apex:pageblocksectionitem>
+                    <apex:pageblocksectionitem rendered="{!useContact == true}">
+                        <apex:outputlabel value="Funding Official" />
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!fundID}" syncManualEntry="false" />
+                    </apex:pageblocksectionitem>
+                    
+                    <apex:pageblocksectionitem rendered="{!useContact != true}">
+                        <apex:outputlabel value="Training Officer" />
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!u.Training_Officer__c}" syncManualEntry="false" />
+                    </apex:pageblocksectionitem>
+                    <apex:pageblocksectionitem rendered="{!useContact == true}">
+                        <apex:outputlabel value="Training Officer" />
+                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!trainID}" syncManualEntry="false" />
+                    </apex:pageblocksectionitem>
+                    <apex:pageblocksectionitem >
+                        <div style="text-align: center;">
+                            Not able to find one of your approvers in the lookups? <a href="mailto:BAP-Request@epa.gov?subject=BAP Approver%20Activiation%20Request&body=Please%20include%20approvers%20name%20and%20role%20in%20this%20email%20request">Click here to email BAP-Request@epa.gov to request their activation</a>
+                        </div>
+                    </apex:pageblocksectionitem>
+                </apex:pageBlockSection>
+                
+                <div style="text-align: center; padding-top: 20px;">
+                    <apex:commandbutton value="Cancel" action="{!cancel}" />
+                    &nbsp;
+                    <apex:commandbutton value="Save" action="{!save}" />
+                </div>
+                
+            </apex:pageblock>
+        </apex:form>   
+        <apex:form rendered="{!valid == false}">
+            Not authenticated!
+        </apex:form>
+    </div>
+    <!--End Body-->
+    
+</apex:page>

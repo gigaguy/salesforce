@@ -1,0 +1,80 @@
+<apex:page controller="FormPageVFController" showHeader="false" title="BAP Agency Forms" cache="false" action="{!validateOrRedirect}">
+    <apex:includeLightning />
+    
+    <style>
+        body { background-color: #E0F1FF; }
+    </style>
+    
+    <script>
+        var sID = "{!$CurrentPage.parameters.sID}";
+        var valid = {!valid};
+
+        $Lightning.use("c:Forms", function() {
+          $Lightning.createComponent("c:Form",
+                {"authenticated": valid,
+                "sessionID" : sID
+                },
+                  "lightning",
+                  function(cmp) {
+                      
+                });
+        });
+    </script>
+    <!--Header-->
+    <apex:form rendered="{!valid == true}">
+	<div class="topBar1" style="width: 100%; height: 110px; background-color: #0E6993; min-width: 1175px;">
+    	<a href="http://workplace.epa.gov/" style="margin-left: 25%;"><img src="{!$Resource.EPAOneLogo}" style="margin-top: 20px;"/></a>
+    </div>
+    <div class="topBar2" style="width: 100%; height: 38px; background-color: #0A5071; min-width: 1175px;">
+    	&nbsp;
+    </div>
+    <div class="WebFormsNav" style="width: 100%; height: 150px; min-width: 1150px;">
+        <table style="width: 80%; padding: 20px;">
+            <tr>
+            	<td style="width: 180px; vertical-align: top;">
+                    <img src="{!$Resource.EPALogo}"/>
+                </td>
+                <td style="vertical-align: top;">
+                    <div style="float: right;">
+                        <apex:commandLink style="font-size: 150%;" action="{!logout}" value="Logout" />
+                    </div>
+                    <h1 style="font-size: 250%; padding-bottom: 20px;">Business Automation Platform – Agency Forms</h1>
+                    <p style="margin-top: 30px; font-size: 125%;">
+                        Welcome {!userName}!  
+                    </p>     
+           			<apex:pageMessage rendered="{!lanError}" severity="error" escape="false" summary="Your User record does not have a valid 'Lan ID'.<br/>Please contact your administrator before continuing." />
+      			    <apex:pageMessage rendered="{!noContact}" severity="error" escape="false" summary="You do not have a Contact record in the system with a valid 'Lan ID'.<br/>Please contact your administrator." /><apex:pageMessages />            
+                    <apex:outputPanel rendered="{!IF((instructions==true && lanError!=true && noContact!=true),true,false)}" style="font-size: 125%; font-weight: bold;">
+                        Please set your Supervisor and Time Keeper before creating or submitting any forms.<br/>Click the "Edit My Approvers" link to do this.
+                    </apex:outputPanel>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </apex:form>
+    <!-- End Header -->
+    
+    <!--Body Lightning Component-->
+    <div class="WebFormsNav" style="width: 100%; min-width: 1175px;">
+        <table style="width: 80%; padding: 20px;">
+            <tr>
+            	<td style="width: 180px; vertical-align: top;">
+                    &nbsp;
+                </td>
+                <td style="vertical-align: top;">
+                    <div class="slds" style="margin-top: 20px;"> 
+                        <div id="lightning" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--End Body Lightning Component-->
+    
+    <!--Not Authenticated-->
+    <apex:form rendered="{!valid == false}">
+        Not authenticated!
+    </apex:form>
+    <!--Not Authenticated-->
+    
+</apex:page>

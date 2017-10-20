@@ -38,10 +38,22 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>EPA_100</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>EPA_100</fullName>
+        <fields>Name</fields>
+        <fields>RecordTypeId</fields>
+        <fields>Approval_Step__c</fields>
+        <fields>LastModifiedById</fields>
+        <label>EPA-100</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
@@ -51,6 +63,186 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>AWL_Phone_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>AWL Phone Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Step__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Step</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approver_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Approver 2</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Authorization_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Authorization Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Application</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Organizational Allocation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Role</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Current_Approver__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Current Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Current_Approver</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_1_A_L_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Date 1 A/L Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_1_End_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Date 1 End Date/Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_1_S_L_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Date 1 S/L Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_1_Start_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Date 1 Start Date/Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_1_Total_Work_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Date 1 Total Work Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_2_A_L_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Date 2 A/L Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_2_End_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Date 2 End Date/Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_2_S_L_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Date 2 S/L Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_2_Start_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Date 2 Start Date/Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_2_Total_Work_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Date 2 Total Work Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
     <fields>
         <fullName>Description__c</fullName>
         <externalId>false</externalId>
@@ -62,6 +254,28 @@
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>Employee_Digital_Signature__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Clicking the &quot;Employee&apos;s Signature&quot; checkbox will sign this section upon saving the form.</inlineHelpText>
+        <label>Employee Digital Signature</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_s_Signature__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Clicking this box digitally dates and signs this form.</inlineHelpText>
+        <label>Employee&apos;s Signature</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Expire_Date__c</fullName>
         <externalId>false</externalId>
         <label>Expire Date</label>
@@ -69,6 +283,30 @@
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Form_Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Unauthenticated_Owner__c != NULL, Unauthenticated_Owner__r.FirstName + &quot; &quot; + Unauthenticated_Owner__r.LastName, Owner:User.FirstName + &quot; &quot; + Owner:User.LastName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Form Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Form_Record_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Form Record Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Form_Status__c</fullName>
@@ -110,6 +348,18 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Form_Type_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>RecordType.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Form Type Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Form_Type__c</fullName>
         <externalId>false</externalId>
         <label>Form Type</label>
@@ -138,22 +388,27 @@
                     <default>false</default>
                 </value>
                 <value>
+                    <fullName>Full User Count</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Starter User Count</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Code Storage MB</fullName>
+                    <default>false</default>
+                </value>
+                <value>
                     <fullName>Data Storage MB</fullName>
                     <default>false</default>
-                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Files Storage MB</fullName>
+                    <default>false</default>
                 </value>
                 <value>
                     <fullName>File Storage MB</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                </value>
-                <value>
-                    <fullName>Full User Count</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                </value>
-                <value>
-                    <fullName>Limited User Count</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
                 </value>
@@ -201,15 +456,48 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Immediate_Supervisor_s_Digital_Signature__c</fullName>
+        <externalId>false</externalId>
+        <label>Immediate Supervisor&apos;s Digital Signature</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Immediate_Supervisor_s_Signature__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Immediate Supervisor&apos;s Signature</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Name__c</fullName>
         <externalId>false</externalId>
         <label>Name</label>
         <length>100</length>
-        <required>true</required>
+        <required>false</required>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Organization_Allocation__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Organization Allocation</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Forms (Organization Allocation)</relationshipLabel>
+        <relationshipName>Form1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Quantity__c</fullName>
@@ -217,12 +505,60 @@
         <externalId>false</externalId>
         <label>Quantity</label>
         <precision>6</precision>
-        <required>true</required>
+        <required>false</required>
         <scale>0</scale>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Supervisor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TimeKeeper</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FCO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Health &amp; Safety Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Section 508 Compliance Approver</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IT Approver</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SandboxURL__c</fullName>
+        <externalId>false</externalId>
+        <label>SandboxURL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
     </fields>
     <fields>
         <fullName>Submitted_on_Behalf_Of__c</fullName>
@@ -247,14 +583,119 @@
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
+    <fields>
+        <fullName>Technical_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Technical Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Technical Contact)</relationshipLabel>
+        <relationshipName>Forms1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Unauthenticated_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Type-1 Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Unauthenticated_Owner</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Unlicensed_Owner_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Owner Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Funding_Official__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>User Funding Official</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>User_Funding_Official</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>User_Supervisor_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>User Supervisor 2</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>User_Supervisor_2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>User_Supervisor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>User Supervisor</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>User_Supervisor</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>User_Time_Keeper__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>User Time Keeper</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>User_Time_Keeper</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>User_Training_Officer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>User Training Officer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>User_Training_Officer</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Work_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Work Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
     <label>Form</label>
     <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>
-        <columns>Name__c</columns>
         <columns>RECORDTYPE</columns>
-        <columns>Form_Type__c</columns>
-        <columns>Form_Status__c</columns>
+        <columns>Form_Owner__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Approval_Step__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -293,6 +734,21 @@
         <description>BAP Provisioning Forms</description>
         <label>BAP Provisioning</label>
         <picklistValues>
+            <picklist>Authorization_Reason__c</picklist>
+            <values>
+                <fullName>Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organizational Allocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Role</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -322,7 +778,15 @@
         <picklistValues>
             <picklist>Form_Type__c</picklist>
             <values>
+                <fullName>Code Storage MB</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Custom Object</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Storage MB</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -334,7 +798,46 @@
                 <default>true</default>
             </values>
             <values>
+                <fullName>Files Storage MB</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Full Sandbox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full User Count</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Starter User Count</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Role__c</picklist>
+            <values>
+                <fullName>FCO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health %26 Safety Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Section 508 Compliance Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TimeKeeper</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -342,8 +845,24 @@
     <recordTypes>
         <fullName>EPA_100</fullName>
         <active>true</active>
-        <description>EPA-100 Form</description>
+        <compactLayoutAssignment>EPA_100</compactLayoutAssignment>
+        <description>Episodic Flexiplace  (workflow)</description>
         <label>EPA-100</label>
+        <picklistValues>
+            <picklist>Authorization_Reason__c</picklist>
+            <values>
+                <fullName>Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organizational Allocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Role</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
@@ -387,6 +906,33 @@
             </values>
             <values>
                 <fullName>Full Sandbox</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Role__c</picklist>
+            <values>
+                <fullName>FCO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health %26 Safety Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Section 508 Compliance Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TimeKeeper</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -397,6 +943,21 @@
         <description>SF 182 Form</description>
         <label>SF 182</label>
         <picklistValues>
+            <picklist>Authorization_Reason__c</picklist>
+            <values>
+                <fullName>Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organizational Allocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Role</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -442,11 +1003,76 @@
                 <default>false</default>
             </values>
         </picklistValues>
+        <picklistValues>
+            <picklist>Role__c</picklist>
+            <values>
+                <fullName>FCO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health %26 Safety Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Section 508 Compliance Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TimeKeeper</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
     </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>Name__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
         <customTabListAdditionalFields>Form_Status__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Form_Owner__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Approval_Step__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Authorization_Org_Allocation_Reason_Rule</fullName>
+        <active>true</active>
+        <description>If Authorization Reason &quot;Organization Allocation&quot; is selected, the Organization Allocation field must be completed.</description>
+        <errorConditionFormula>ISPICKVAL( Authorization_Reason__c , &quot;Organization Allocation&quot;) &amp;&amp;  ISBLANK( Organization_Allocation__c )</errorConditionFormula>
+        <errorDisplayField>Organization_Allocation__c</errorDisplayField>
+        <errorMessage>If Authorization Reason &quot;Organization Allocation&quot; is selected, the Organization Allocation field must be completed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Authorization_Role_Reason</fullName>
+        <active>true</active>
+        <description>If Authorization Reason &quot;Role&quot; is chosen, Role field must be completed.</description>
+        <errorConditionFormula>ISPICKVAL(Authorization_Reason__c, &quot;Role&quot;) &amp;&amp;  ISCHANGED( Role__c )</errorConditionFormula>
+        <errorDisplayField>Role__c</errorDisplayField>
+        <errorMessage>If Authorization Reason &quot;Role&quot; is chosen, Role field must be completed.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Printable_View</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Printable View</masterLabel>
+        <openType>newWindow</openType>
+        <page>FormPrintable</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
 </CustomObject>

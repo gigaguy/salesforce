@@ -78,7 +78,11 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Contact_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>ViewCustomerPortal</actionName>
@@ -96,6 +100,7 @@
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>AccountId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
@@ -108,6 +113,29 @@
     <fields>
         <fullName>AssistantPhone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Authorization__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Authorization</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>BAP Provisioning Form does not exist or does not have a match to the search criteria</errorMessage>
+            <filterItems>
+                <field>Forms__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>BAP Provisioning</value>
+            </filterItems>
+            <infoMessage>Please select the appropriate BAP Provisioning form for the user authorization</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Forms__c</referenceTo>
+        <relationshipLabel>Contacts</relationshipLabel>
+        <relationshipName>Contacts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Birthdate</fullName>
@@ -171,6 +199,17 @@
     <fields>
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Funding_Official__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Funding Official</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contact_Funding_Official</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Grade__c</fullName>
@@ -371,6 +410,28 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Supervisor_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Supervisor 2</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contact_Supervisor_2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Supervisor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Supervisor</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contact_Supervisor</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Supervisors__c</fullName>
         <externalId>false</externalId>
         <label>Supervisors</label>
@@ -381,8 +442,30 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Time_Keeper__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Time Keeper</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contact_Time_Keeper</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Title</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Training_Officer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Training Officer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contact_Training_Officer</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>User__c</fullName>
@@ -405,6 +488,14 @@
         <columns>CORE.USERS.FIRST_NAME</columns>
         <columns>CORE.USERS.LAST_NAME</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTACT.TITLE</field>
+            <operation>contains</operation>
+        </filters>
+        <filters>
+            <field>ACCOUNT.NAME</field>
+            <operation>contains</operation>
+        </filters>
         <label>All Contacts</label>
     </listViews>
     <listViews>
