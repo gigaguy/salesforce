@@ -392,7 +392,7 @@
         &quot;MS002&quot;&amp;BR()&amp;
         &quot;Cincinnati, Ohio 45268&quot;,
   &quot;Purchase Card Transaction&quot;,
-        &quot;Purchase Card Holder’s Name: &quot;&amp; Card_Holder_s_Name__c &amp; BR() &amp;
+        &quot;Purchase Card Holder’s Name: &quot;&amp; Select_Card_Holder__r.FirstName &amp;&quot; &quot;&amp; Select_Card_Holder__r.LastName &amp; BR() &amp;
         &quot;Purchase Card Holder’s Telephone Number: &quot;&amp; Card_Holder_s_Phone_Number__c,
 null
 )</formula>
@@ -475,19 +475,8 @@ null
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Card_Holder_s_Name__c</fullName>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Card Holder’s Name</label>
-        <length>70</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Card_Holder_s_Phone_Number__c</fullName>
+        <description>SF-182</description>
         <externalId>false</externalId>
         <label>Card Holder’s Phone Number</label>
         <required>false</required>
@@ -5443,6 +5432,20 @@ null
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>Select_Card_Holder__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Select Card Holder</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Select Contact Holder)</relationshipLabel>
+        <relationshipName>Forms3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Select_Documentation_Type__c</fullName>
         <description>ORD-111</description>
         <externalId>false</externalId>
@@ -5528,6 +5531,7 @@ null
     </fields>
     <fields>
         <fullName>Select_Escalated_Approver_s__c</fullName>
+        <description>SF-182</description>
         <externalId>false</externalId>
         <label>Select Escalated Approver(s):</label>
         <required>false</required>
@@ -5540,7 +5544,7 @@ null
                 <sorted>false</sorted>
                 <value>
                     <fullName>Sharon Ridings</fullName>
-                    <default>true</default>
+                    <default>false</default>
                 </value>
                 <value>
                     <fullName>USEPA RTP Finance Center</fullName>
@@ -8412,10 +8416,6 @@ Line_Total_Price_5__c</formula>
         <picklistValues>
             <picklist>Select_Escalated_Approver_s__c</picklist>
             <values>
-                <fullName>Sharon Ridings</fullName>
-                <default>true</default>
-            </values>
-            <values>
                 <fullName>USEPA Cincinnati Finance Center</fullName>
                 <default>false</default>
             </values>
@@ -9926,10 +9926,6 @@ Line_Total_Price_5__c</formula>
         </picklistValues>
         <picklistValues>
             <picklist>Select_Escalated_Approver_s__c</picklist>
-            <values>
-                <fullName>Sharon Ridings</fullName>
-                <default>true</default>
-            </values>
             <values>
                 <fullName>USEPA Cincinnati Finance Center</fullName>
                 <default>false</default>
@@ -11442,10 +11438,6 @@ Line_Total_Price_5__c</formula>
         <picklistValues>
             <picklist>Select_Escalated_Approver_s__c</picklist>
             <values>
-                <fullName>Sharon Ridings</fullName>
-                <default>true</default>
-            </values>
-            <values>
                 <fullName>USEPA Cincinnati Finance Center</fullName>
                 <default>false</default>
             </values>
@@ -12945,10 +12937,6 @@ Line_Total_Price_5__c</formula>
         <picklistValues>
             <picklist>Select_Escalated_Approver_s__c</picklist>
             <values>
-                <fullName>Sharon Ridings</fullName>
-                <default>true</default>
-            </values>
-            <values>
                 <fullName>USEPA Cincinnati Finance Center</fullName>
                 <default>false</default>
             </values>
@@ -14447,10 +14435,6 @@ Line_Total_Price_5__c</formula>
         </picklistValues>
         <picklistValues>
             <picklist>Select_Escalated_Approver_s__c</picklist>
-            <values>
-                <fullName>Sharon Ridings</fullName>
-                <default>true</default>
-            </values>
             <values>
                 <fullName>USEPA Cincinnati Finance Center</fullName>
                 <default>false</default>
@@ -15963,10 +15947,6 @@ Line_Total_Price_5__c</formula>
         <picklistValues>
             <picklist>Select_Escalated_Approver_s__c</picklist>
             <values>
-                <fullName>Sharon Ridings</fullName>
-                <default>true</default>
-            </values>
-            <values>
                 <fullName>USEPA Cincinnati Finance Center</fullName>
                 <default>false</default>
             </values>
@@ -17478,10 +17458,6 @@ Line_Total_Price_5__c</formula>
         <picklistValues>
             <picklist>Select_Escalated_Approver_s__c</picklist>
             <values>
-                <fullName>Sharon Ridings</fullName>
-                <default>true</default>
-            </values>
-            <values>
                 <fullName>USEPA Cincinnati Finance Center</fullName>
                 <default>false</default>
             </values>
@@ -18980,10 +18956,6 @@ Line_Total_Price_5__c</formula>
         </picklistValues>
         <picklistValues>
             <picklist>Select_Escalated_Approver_s__c</picklist>
-            <values>
-                <fullName>Sharon Ridings</fullName>
-                <default>true</default>
-            </values>
             <values>
                 <fullName>USEPA Cincinnati Finance Center</fullName>
                 <default>false</default>
@@ -20520,10 +20492,6 @@ Line_Total_Price_5__c</formula>
         <picklistValues>
             <picklist>Select_Escalated_Approver_s__c</picklist>
             <values>
-                <fullName>Sharon Ridings</fullName>
-                <default>true</default>
-            </values>
-            <values>
                 <fullName>USEPA Cincinnati Finance Center</fullName>
                 <default>false</default>
             </values>
@@ -20984,6 +20952,28 @@ Line_Total_Price_5__c</formula>
         <customTabListAdditionalFields>Form_Status__c</customTabListAdditionalFields>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>SF_182_Card_Holder_Lookup_Null</fullName>
+        <active>true</active>
+        <description>if the &quot;Furnish Invoice to&quot; picklist value is NOT “Purchase card Transaction”, the Card Holder lookup field must be null.</description>
+        <errorConditionFormula>AND( 
+ NOT(ISPICKVAL( Furnish_Invoice_to__c , &quot;Purchase Card Transaction&quot;)), 
+ NOT(ISBLANK( Select_Card_Holder__c )) 
+)</errorConditionFormula>
+        <errorDisplayField>Select_Card_Holder__c</errorDisplayField>
+        <errorMessage>&quot;Select Card Holder&quot; field must be blank unless the invoice is furnished to &quot;Purchase Card Transaction&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SF_182_Card_Holder_Lookup_Required</fullName>
+        <active>true</active>
+        <description>if the &quot;Furnish Invoice to&quot; picklist value is “Purchase card Transaction”, require the Card Holder lookup field to not be null.</description>
+        <errorConditionFormula>AND( 
+ ISPICKVAL( Furnish_Invoice_to__c , &quot;Purchase Card Transaction&quot;), 
+ ISBLANK( Select_Card_Holder__c ) 
+)</errorConditionFormula>
+        <errorDisplayField>Select_Card_Holder__c</errorDisplayField>
+        <errorMessage>&quot;Select Card Holder&quot; field is required if the invoice is furnished to &quot;Purchase Card Transaction&quot;</errorMessage>
+    </validationRules>
     <validationRules>
         <fullName>Test</fullName>
         <active>false</active>

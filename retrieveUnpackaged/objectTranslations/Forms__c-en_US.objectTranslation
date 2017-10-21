@@ -208,10 +208,6 @@
         <relationshipLabel><!-- Forms (Card Holder) --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- Card Holder’s Name --></label>
-        <name>Card_Holder_s_Name__c</name>
-    </fields>
-    <fields>
         <label><!-- Card Holder’s Phone Number --></label>
         <name>Card_Holder_s_Phone_Number__c</name>
     </fields>
@@ -2313,6 +2309,11 @@
         <name>Security_Management_Division_SMD__c</name>
     </fields>
     <fields>
+        <label><!-- Select Card Holder --></label>
+        <name>Select_Card_Holder__c</name>
+        <relationshipLabel><!-- Forms (Select Contact Holder) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Select Documentation Type --></label>
         <name>Select_Documentation_Type__c</name>
         <picklistValues>
@@ -3556,6 +3557,10 @@
             <section>Override Form Approvers</section>
         </sections>
         <sections>
+            <label><!-- Override Form Approvers Spacer --></label>
+            <section>Override Form Approvers Spacer</section>
+        </sections>
+        <sections>
             <label><!-- Section A - TRAINEE INFORMATION --></label>
             <section>Section A - TRAINEE INFORMATION</section>
         </sections>
@@ -3605,6 +3610,14 @@
         <name>SF_182</name>
     </recordTypes>
     <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- &quot;Select Card Holder&quot; field must be blank unless the invoice is furnished to &quot;Purchase Card Transaction&quot; --></errorMessage>
+        <name>SF_182_Card_Holder_Lookup_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &quot;Select Card Holder&quot; field is required if the invoice is furnished to &quot;Purchase Card Transaction&quot; --></errorMessage>
+        <name>SF_182_Card_Holder_Lookup_Required</name>
+    </validationRules>
     <validationRules>
         <errorMessage><!-- Phone Number can&apos;t be 123456 --></errorMessage>
         <name>Test</name>
