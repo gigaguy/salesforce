@@ -16075,9 +16075,9 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
         <columns>Total_Dollar_Amount__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>File_Name__c</field>
+            <field>Procurement_Office__c</field>
             <operation>equals</operation>
-            <value>CD</value>
+            <value>SACO - Ann Arbor</value>
         </filters>
         <label>All</label>
     </listViews>
