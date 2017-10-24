@@ -208,6 +208,10 @@
         <relationshipLabel><!-- Forms (Card Holder) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Card Holder&apos;s Email --></label>
+        <name>Card_Holder_s_Email__c</name>
+    </fields>
+    <fields>
         <label><!-- Card Holder’s Phone Number --></label>
         <name>Card_Holder_s_Phone_Number__c</name>
     </fields>
@@ -915,6 +919,10 @@
         <name>Ending_Date_of_Development_Activity__c</name>
     </fields>
     <fields>
+        <label><!-- Escalate to Chief Learning Officer --></label>
+        <name>Escalate_to_Chief_Learning_Officer__c</name>
+    </fields>
+    <fields>
         <label><!-- Estimated Award $ --></label>
         <name>Estimated_Award__c</name>
     </fields>
@@ -1108,6 +1116,10 @@
     <fields>
         <label><!-- If not, date &quot;Fix&quot; expected --></label>
         <name>If_not_date_Fix_expected__c</name>
+    </fields>
+    <fields>
+        <label><!-- If yes, please describe: --></label>
+        <name>If_yes_please_describe__c</name>
     </fields>
     <fields>
         <label><!-- Immediate Supervisor&apos;s Digital Signature --></label>
@@ -2237,10 +2249,6 @@
         <relationshipLabel><!-- Forms (Requested Recipient) --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- Requires Escalated Approval --></label>
-        <name>Requires_Escalated_Approval__c</name>
-    </fields>
-    <fields>
         <label><!-- Response: --></label>
         <name>Response_1__c</name>
         <picklistValues>
@@ -2350,22 +2358,6 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Select Escalated Approver(s): --></label>
-        <name>Select_Escalated_Approver_s__c</name>
-        <picklistValues>
-            <masterLabel>Sharon Ridings</masterLabel>
-            <translation><!-- Sharon Ridings --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>USEPA Cincinnati Finance Center</masterLabel>
-            <translation><!-- USEPA Cincinnati Finance Center --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>USEPA RTP Finance Center</masterLabel>
-            <translation><!-- USEPA RTP Finance Center --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
         <label><!-- Series --></label>
         <name>Series__c</name>
     </fields>
@@ -2452,6 +2444,10 @@
     <fields>
         <label><!-- Signature of Local LeaveBank Coordinator --></label>
         <name>Signature_of_Local_LeaveBank_Coordinator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special accommodation needed? --></label>
+        <name>Special_accommodation_needed__c</name>
     </fields>
     <fields>
         <label><!-- Step --></label>
@@ -2836,7 +2832,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Training or course credit hours --></label>
+        <label><!-- Training or Course Credit Hours --></label>
         <name>Training_or_course_credit_hours__c</name>
     </fields>
     <fields>
@@ -3561,12 +3557,24 @@
             <section>Override Form Approvers Spacer</section>
         </sections>
         <sections>
+            <label><!-- Section A - Spacer 1 --></label>
+            <section>Section A - Spacer 1</section>
+        </sections>
+        <sections>
+            <label><!-- Section A - Spacer 2 --></label>
+            <section>Section A - Spacer 2</section>
+        </sections>
+        <sections>
+            <label><!-- Section A - Spacer 3 --></label>
+            <section>Section A - Spacer 3</section>
+        </sections>
+        <sections>
             <label><!-- Section A - TRAINEE INFORMATION --></label>
             <section>Section A - TRAINEE INFORMATION</section>
         </sections>
         <sections>
-            <label><!-- Section B - TRAINEE COURSE DATE --></label>
-            <section>Section B - TRAINEE COURSE DATE</section>
+            <label><!-- Section B - TRAINEE COURSE DATA --></label>
+            <section>Section B - TRAINEE COURSE DATA</section>
         </sections>
         <sections>
             <label><!-- Section C - COST AND BILLING INFORMATION --></label>

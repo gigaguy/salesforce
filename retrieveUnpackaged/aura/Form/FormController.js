@@ -16,7 +16,7 @@
     openModal: function(component, event, helper) {
         var formID = event.currentTarget.id;
         var formName = event.currentTarget.name;
-        component.set("v.message", "Form Not Saved");
+   //     component.set("v.message", "Form Not Saved");
         if (formName === "BAP Provisioning") {
             var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
         	var hrefEmail = "BAP_Admins@epa.gov";

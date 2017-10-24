@@ -346,9 +346,8 @@ IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;,
     <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Escalated_Apprvr</fullName>
         <field>Approval_Step__c</field>
-        <formula>IF(  Requires_Escalated_Approval__c = true,
-&quot;Awaiting &quot; + TEXT( Select_Escalated_Approver_s__c ) + 
-&quot; Approval (Escalated Approver)&quot;,
+        <formula>IF(  Escalate_to_Chief_Learning_Officer__c = true,
+&quot;Awaiting Sharon Riding&apos;s Approval (Escalated Approver)&quot;,
 &quot;&quot; )</formula>
         <name>Approval Step - Sent to Escalated Apprvr</name>
         <notifyAssignee>false</notifyAssignee>

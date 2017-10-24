@@ -368,13 +368,16 @@
         <fullName>Beginning_Date_of_Development_Activity__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>Training_Start_Date__c</formula>
+        <formula>IF(ISBLANK(Training_Start_Date__c),
+&quot;Training Start Date is blank.&quot;, 
+TEXT(Training_Start_Date__c))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Beginning Date of Development Activity</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Billing_Instructions__c</fullName>
@@ -394,7 +397,7 @@
   &quot;Purchase Card Transaction&quot;,
         &quot;Purchase Card Holder’s Name: &quot;&amp; Select_Card_Holder__r.FirstName &amp;&quot; &quot;&amp; Select_Card_Holder__r.LastName &amp; BR() &amp;
         &quot;Purchase Card Holder’s Telephone Number: &quot;&amp; Card_Holder_s_Phone_Number__c,
-null
+&quot;[This field will populate after save.]&quot;
 )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Billing Instructions</label>
@@ -475,14 +478,32 @@ null
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Card_Holder_s_Phone_Number__c</fullName>
-        <description>SF-182</description>
+        <fullName>Card_Holder_s_Email__c</fullName>
         <externalId>false</externalId>
+        <formula>IF( ISBLANK(Card_Holder__c ), 
+&quot;&quot;, 
+Card_Holder__r.Email)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Card Holder&apos;s Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Card_Holder_s_Phone_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(Card_Holder__c ), 
+&quot;&quot;, 
+ Card_Holder__r.Phone )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Card Holder’s Phone Number</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Phone</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Certification__c</fullName>
@@ -1098,13 +1119,16 @@ null
         <fullName>Continued_Service_Agreement_Expires__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>Continued_Service_Agreement_Expiration__c</formula>
+        <formula>IF(ISBLANK(Continued_Service_Agreement_Expiration__c), 
+&quot;Expiration Date is blank.&quot;, 
+TEXT(Continued_Service_Agreement_Expiration__c))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Continued Service Agreement Expires:</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Continued_Service_Agreement__c</fullName>
@@ -1962,15 +1986,9 @@ null
         <fullName>Employee_Name_SF_182__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>IF(  CONTAINS(Applicant_Name_Last_First_MI__c, &quot;,&quot;) ,
-  RIGHT(Applicant_Name_Last_First_MI__c,  
-   (LEN(Applicant_Name_Last_First_MI__c) 
-   - FIND(&quot;,&quot;, Applicant_Name_Last_First_MI__c ,1)-1))
-     &amp;&quot; &quot;&amp;LEFT(Applicant_Name_Last_First_MI__c,  
-   (LEN(Applicant_Name_Last_First_MI__c) 
-   - FIND(&quot;,&quot;,Applicant_Name_Last_First_MI__c, 1)-1)), 
- Applicant_Name_Last_First_MI__c
-     )</formula>
+        <formula>IF(ISBLANK(Applicant_Name_Last_First_MI__c),
+&quot;[This field will populate after save.]&quot;,
+Applicant_Name_Last_First_MI__c)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Employee Name:</label>
         <required>false</required>
@@ -1994,13 +2012,26 @@ null
         <fullName>Ending_Date_of_Development_Activity__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>Training_End_Date__c</formula>
+        <formula>IF(ISBLANK(Training_End_Date__c), 
+&quot;Training End Date is blank.&quot;, 
+TEXT(Training_End_Date__c))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Ending Date of Development Activity:</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Escalate_to_Chief_Learning_Officer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>SF-182 was &quot;Requires_Escalated_Approval&quot;</description>
+        <externalId>false</externalId>
+        <label>Escalate to Chief Learning Officer</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Estimated_Award__c</fullName>
@@ -2327,9 +2358,13 @@ null
         <fullName>Grade__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>IF( ISBLANK( Prepare_Form_for__c ) ,
-    $User.Grade__c ,
-  Prepare_Form_for__r.Grade__c )</formula>
+        <formula>IF( ISBLANK( IF( ISBLANK( Prepare_Form_for__c ) ,
+    IF(ISBLANK(Unauthenticated_Owner__c), $User.Grade__c ,Unauthenticated_Owner__r.Grade__c ),
+  Prepare_Form_for__r.Grade__c )),
+&quot;[This field will populate after save.]&quot;,
+IF( ISBLANK( Prepare_Form_for__c ) ,
+    IF(ISBLANK(Unauthenticated_Owner__c), $User.Grade__c ,Unauthenticated_Owner__r.Grade__c ),
+  Prepare_Form_for__r.Grade__c ))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Grade</label>
         <required>false</required>
@@ -2496,6 +2531,16 @@ null
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>If_yes_please_describe__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>If yes, please describe:</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Immediate_Supervisor_s_Digital_Signature__c</fullName>
@@ -3455,7 +3500,9 @@ null
         <fullName>Name_of_Course_or_Development_Activity__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>Course_Title__c</formula>
+        <formula>IF(ISBLANK(Course_Title__c), 
+&quot;Course Title is blank.&quot;, 
+Course_Title__c)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Name of Course or Development Activity</label>
         <required>false</required>
@@ -4616,9 +4663,13 @@ null
         <fullName>Pay_Plan__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>IF( ISBLANK( Prepare_Form_for__c ) ,
-  $User.Pay_Plan__c ,
-  Prepare_Form_for__r.Pay_Plan__c )</formula>
+        <formula>IF( ISBLANK( IF( ISBLANK( Prepare_Form_for__c ) ,
+  IF(ISBLANK(Unauthenticated_Owner__c), $User.Pay_Plan__c ,Unauthenticated_Owner__r.Pay_Plan__c ),
+  Prepare_Form_for__r.Pay_Plan__c )),
+&quot;[This field will populate after save.]&quot;,  
+IF( ISBLANK( Prepare_Form_for__c ) ,
+   IF(ISBLANK(Unauthenticated_Owner__c), $User.Pay_Plan__c ,Unauthenticated_Owner__r.Pay_Plan__c ),
+  Prepare_Form_for__r.Pay_Plan__c ))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Pay Plan</label>
         <required>false</required>
@@ -5273,16 +5324,6 @@ null
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Requires_Escalated_Approval__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Requires Escalated Approval</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>Response_1__c</fullName>
         <description>ORD-111</description>
         <externalId>false</externalId>
@@ -5530,40 +5571,16 @@ null
         </valueSet>
     </fields>
     <fields>
-        <fullName>Select_Escalated_Approver_s__c</fullName>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Select Escalated Approver(s):</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Sharon Ridings</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>USEPA RTP Finance Center</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>USEPA Cincinnati Finance Center</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Series__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>IF( ISBLANK( Prepare_Form_for__c ) ,
-   $User.Occ_Series__c  ,
-  Prepare_Form_for__r.Occ_Series__c )</formula>
+        <formula>IF( ISBLANK( IF( ISBLANK( Prepare_Form_for__c ) , 
+IF(ISBLANK(Unauthenticated_Owner__c), $User.Occ_Series__c ,Unauthenticated_Owner__r.Occ_Series__c ), 
+Prepare_Form_for__r.Occ_Series__c )), 
+&quot;[This field will populate after save.]&quot;, 
+IF( ISBLANK( Prepare_Form_for__c ) , 
+IF(ISBLANK(Unauthenticated_Owner__c), $User.Occ_Series__c ,Unauthenticated_Owner__r.Occ_Series__c ), 
+Prepare_Form_for__r.Occ_Series__c ))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Series</label>
         <required>false</required>
@@ -5826,12 +5843,26 @@ null
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Special_accommodation_needed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Special accommodation needed?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Step__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>IF( ISBLANK( Prepare_Form_for__c ) ,
-     $User.Step__c ,
-  Prepare_Form_for__r.Step__c )</formula>
+        <formula>IF( ISBLANK( IF( ISBLANK( Prepare_Form_for__c ) , 
+IF(ISBLANK(Unauthenticated_Owner__c), $User.Step__c ,Unauthenticated_Owner__r.Step__c ), 
+Prepare_Form_for__r.Step__c )), 
+&quot;[This field will populate after save.]&quot;, 
+IF( ISBLANK( Prepare_Form_for__c ) , 
+IF(ISBLANK(Unauthenticated_Owner__c), $User.Step__c ,Unauthenticated_Owner__r.Step__c ), 
+Prepare_Form_for__r.Step__c ))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Step</label>
         <required>false</required>
@@ -5999,11 +6030,16 @@ null
         <fullName>Total_Request_Amount__c</fullName>
         <description>EPA-PCOR</description>
         <externalId>false</externalId>
-        <formula>Line_Total_Price_1__c  + 
-Line_Total_Price_2__c  +
-Line_Total_Price_3__c  +
-Line_Total_Price_4__c  +
-Line_Total_Price_5__c</formula>
+        <formula>Line_Total_Price_1__c + 
+Line_Total_Price_2__c +
+Line_Total_Price_3__c +
+Line_Total_Price_4__c +
+Line_Total_Price_5__c +
+Line_Total_Price_6__c +
+Line_Total_Price_7__c +
+Line_Total_Price_8__c +
+Line_Total_Price_9__c +
+Line_Total_Price_10__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Total Request Amount</label>
         <precision>18</precision>
@@ -6594,9 +6630,11 @@ Line_Total_Price_5__c</formula>
         <fullName>Training_or_course_credit_hours__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>TEXT(Training_Credit__c)</formula>
+        <formula>IF(ISPICKVAL(Training_Credit__c, &quot;&quot;), 
+&quot;Training Credit field is blank.&quot;, 
+TEXT(Training_Credit__c))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Training or course credit hours</label>
+        <label>Training or Course Credit Hours</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -8414,17 +8452,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Select_Escalated_Approver_s__c</picklist>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Summary_of_Deficiency_Type_s__c</picklist>
             <values>
                 <fullName>Deficiencies %28D%29</fullName>
@@ -9921,17 +9948,6 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Programmatic QA Project Plan with supplements for each specific project</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Select_Escalated_Approver_s__c</picklist>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11436,17 +11452,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Select_Escalated_Approver_s__c</picklist>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Summary_of_Deficiency_Type_s__c</picklist>
             <values>
                 <fullName>Deficiencies %28D%29</fullName>
@@ -12935,17 +12940,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Select_Escalated_Approver_s__c</picklist>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Summary_of_Deficiency_Type_s__c</picklist>
             <values>
                 <fullName>Deficiencies %28D%29</fullName>
@@ -14430,17 +14424,6 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Programmatic QA Project Plan</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Select_Escalated_Approver_s__c</picklist>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -15945,17 +15928,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Select_Escalated_Approver_s__c</picklist>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Summary_of_Deficiency_Type_s__c</picklist>
             <values>
                 <fullName>Deficiencies %28D%29</fullName>
@@ -17456,17 +17428,6 @@ Line_Total_Price_5__c</formula>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Select_Escalated_Approver_s__c</picklist>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Summary_of_Deficiency_Type_s__c</picklist>
             <values>
                 <fullName>Deficiencies %28D%29</fullName>
@@ -18951,17 +18912,6 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Programmatic QA Project Plan</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Select_Escalated_Approver_s__c</picklist>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -20486,17 +20436,6 @@ Line_Total_Price_5__c</formula>
             </values>
             <values>
                 <fullName>Programmatic QA Project Plan</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Select_Escalated_Approver_s__c</picklist>
-            <values>
-                <fullName>USEPA Cincinnati Finance Center</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>USEPA RTP Finance Center</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
