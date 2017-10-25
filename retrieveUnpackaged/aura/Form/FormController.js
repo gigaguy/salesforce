@@ -320,6 +320,7 @@
                 }
             }
         });
+        component.set("v.stayModal", false);
         $A.enqueueAction(action);
          }
     },
@@ -339,6 +340,7 @@
         component.set("v.modalName", "");
         component.set("v.hasAttachments", false);
         component.set("v.addAttachments", false);
+        component.set("v.stayModal", false);
     	
         var action = component.get("c.deleteForm");
         action.setParams({
@@ -364,6 +366,7 @@
     deleteFormJS : function(component, event, helper){
     	component.set("v.hasAttachments", false);
         component.set("v.addAttachments", false);
+        component.set("v.stayModal", false);
         var formID = component.get("v.viewFormID");
         console.log(formID);
 		var action = component.get("c.deleteForm");

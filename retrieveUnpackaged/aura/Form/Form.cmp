@@ -289,7 +289,7 @@
               	</div>
              </aura:if>
             <!--end add attachments-->
-            
+       
               <aura:if isTrue="{!v.stayModal}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.closeModal}" /></aura:if>
               <aura:if isTrue="{!v.stayModal==false}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.cancelCreationModal}" /></aura:if>
 			  <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>

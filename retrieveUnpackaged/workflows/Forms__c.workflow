@@ -39,6 +39,17 @@
         <template>unfiled$public/EPA_100_Forms_Submission_Confirmation</template>
     </alerts>
     <alerts>
+        <fullName>Email_to_Funding_Official</fullName>
+        <description>Email to Funding Official</description>
+        <protected>false</protected>
+        <recipients>
+            <field>User_Funding_Official__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/BAP_Forms_Approved_Form</template>
+    </alerts>
+    <alerts>
         <fullName>Final_Approval_Email</fullName>
         <description>Final Approval Email</description>
         <protected>false</protected>

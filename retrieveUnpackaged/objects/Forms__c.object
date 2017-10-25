@@ -186,11 +186,27 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Applicant_Name_Last_First_MI__c</fullName>
+        <fullName>Applicant_Name_Last_First_MI2__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <label>Applicant Name (Last, First, MI)</label>
-        <length>255</length>
+        <formula>IF(ISBLANK(
+IF( ISBLANK( Prepare_Form_for__c ),
+  IF( ISBLANK( Unauthenticated_Owner__c ),
+      Owner:User.FirstName &amp;&quot; &quot;&amp; Owner:User.LastName,
+    Unauthenticated_Owner__r.FirstName &amp;&quot; &quot;&amp; Unauthenticated_Owner__r.LastName
+    ),
+ Prepare_Form_for__r.FirstName &amp;&quot; &quot;&amp;Prepare_Form_for__r.LastName
+)),
+&quot;[This field will populate after save.]&quot;,
+IF( ISBLANK( Prepare_Form_for__c ),
+  IF( ISBLANK( Unauthenticated_Owner__c ),
+     Owner:User.FirstName &amp;&quot; &quot;&amp; Owner:User.LastName,
+    Unauthenticated_Owner__r.FirstName &amp;&quot; &quot;&amp; Unauthenticated_Owner__r.LastName
+    ),
+ Prepare_Form_for__r.FirstName &amp;&quot; &quot;&amp;Prepare_Form_for__r.LastName
+))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Applicant Name</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -369,7 +385,7 @@
         <description>SF-182</description>
         <externalId>false</externalId>
         <formula>IF(ISBLANK(Training_Start_Date__c),
-&quot;Training Start Date is blank.&quot;, 
+&quot;[Will be populated by Training Start Date field.]&quot;, 
 TEXT(Training_Start_Date__c))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Beginning Date of Development Activity</label>
@@ -395,7 +411,7 @@ TEXT(Training_Start_Date__c))</formula>
         &quot;MS002&quot;&amp;BR()&amp;
         &quot;Cincinnati, Ohio 45268&quot;,
   &quot;Purchase Card Transaction&quot;,
-        &quot;Purchase Card Holder’s Name: &quot;&amp; Select_Card_Holder__r.FirstName &amp;&quot; &quot;&amp; Select_Card_Holder__r.LastName &amp; BR() &amp;
+        &quot;Purchase Card Holder’s Name: &quot;&amp; Select_Card_Holder2__r.FirstName &amp;&quot; &quot;&amp; Select_Card_Holder2__r.LastName &amp; BR() &amp;
         &quot;Purchase Card Holder’s Telephone Number: &quot;&amp; Card_Holder_s_Phone_Number__c,
 &quot;[This field will populate after save.]&quot;
 )</formula>
@@ -479,10 +495,11 @@ TEXT(Training_Start_Date__c))</formula>
     </fields>
     <fields>
         <fullName>Card_Holder_s_Email__c</fullName>
+        <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>IF( ISBLANK(Card_Holder__c ), 
+        <formula>IF( ISBLANK(Select_Card_Holder2__c), 
 &quot;&quot;, 
-Card_Holder__r.Email)</formula>
+Select_Card_Holder2__r.Email)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Card Holder&apos;s Email</label>
         <required>false</required>
@@ -493,10 +510,11 @@ Card_Holder__r.Email)</formula>
     </fields>
     <fields>
         <fullName>Card_Holder_s_Phone_Number__c</fullName>
+        <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>IF( ISBLANK(Card_Holder__c ), 
+        <formula>IF( ISBLANK(Select_Card_Holder2__c), 
 &quot;&quot;, 
- Card_Holder__r.Phone )</formula>
+ Select_Card_Holder2__r.Phone )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Card Holder’s Phone Number</label>
         <required>false</required>
@@ -1106,6 +1124,29 @@ Card_Holder__r.Email)</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Continue_In_Service_Agreement_Signature__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Continue In Service Agreement Signature</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Continue_In_Service_Digital_Signature__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Clicking the &quot;Continue In Service Agreement Signature&quot; checkbox will sign this section upon saving the form.</inlineHelpText>
+        <label>Continue In Service Digital Signature</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Continued_Service_Agreement_Expiration__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -1120,7 +1161,7 @@ Card_Holder__r.Email)</formula>
         <description>SF-182</description>
         <externalId>false</externalId>
         <formula>IF(ISBLANK(Continued_Service_Agreement_Expiration__c), 
-&quot;Expiration Date is blank.&quot;, 
+&quot;[Will be populated by Continued Service Agreement Expiration field.]&quot;, 
 TEXT(Continued_Service_Agreement_Expiration__c))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Continued Service Agreement Expires:</label>
@@ -1903,11 +1944,25 @@ TEXT(Continued_Service_Agreement_Expiration__c))</formula>
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>EHRI_Employee_Number__c</fullName>
+        <fullName>EHRI_Employee_Number2__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
+        <formula>IF(ISBLANK( 
+IF( ISBLANK( Prepare_Form_for__c ), 
+IF( ISBLANK( Unauthenticated_Owner__c ), 
+ Owner:User.EmployeeNumber, 
+ Unauthenticated_Owner__r.EmployeeNumber ), 
+ Prepare_Form_for__r.Employee_Number__c 
+)), 
+&quot;[This field will populate after save.]&quot;, 
+IF( ISBLANK( Prepare_Form_for__c ), 
+IF( ISBLANK( Unauthenticated_Owner__c ), 
+ Owner:User.EmployeeNumber, 
+ Unauthenticated_Owner__r.EmployeeNumber ), 
+ Prepare_Form_for__r.Employee_Number__c 
+))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>EHRI Employee Number</label>
-        <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -1986,9 +2041,9 @@ TEXT(Continued_Service_Agreement_Expiration__c))</formula>
         <fullName>Employee_Name_SF_182__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>IF(ISBLANK(Applicant_Name_Last_First_MI__c),
-&quot;[This field will populate after save.]&quot;,
-Applicant_Name_Last_First_MI__c)</formula>
+        <formula>IF(ISBLANK(Applicant_Name_Last_First_MI2__c),
+&quot;[Will be populated by Applicant Name field.]&quot;,
+Applicant_Name_Last_First_MI2__c)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Employee Name:</label>
         <required>false</required>
@@ -2013,7 +2068,7 @@ Applicant_Name_Last_First_MI__c)</formula>
         <description>SF-182</description>
         <externalId>false</externalId>
         <formula>IF(ISBLANK(Training_End_Date__c), 
-&quot;Training End Date is blank.&quot;, 
+&quot;[Will be populated by Training End Date field.]&quot;, 
 TEXT(Training_End_Date__c))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Ending Date of Development Activity:</label>
@@ -2509,18 +2564,6 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>I_Agree_1__c</fullName>
-        <defaultValue>&quot;that, upon completion of the Government‐ sponsored training during which I received a salary described in the SF‐182 training request, I will serve in the agency the number of hours as required by EPA Policy. Service begins the first day after the completion of the training course Note: For the purposes of this agreement, the term “agency” refers to the employing organization (Environmental Protection Agency), not to a segment of such an organization.&quot;</defaultValue>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>I Agree 1</label>
-        <length>5000</length>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>LongTextArea</type>
-        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>If_not_date_Fix_expected__c</fullName>
@@ -3501,7 +3544,7 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
         <description>SF-182</description>
         <externalId>false</externalId>
         <formula>IF(ISBLANK(Course_Title__c), 
-&quot;Course Title is blank.&quot;, 
+&quot;[Will be populated by Course Title field.]&quot;, 
 Course_Title__c)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Name of Course or Development Activity</label>
@@ -3629,14 +3672,30 @@ Course_Title__c)</formula>
         </valueSet>
     </fields>
     <fields>
-        <fullName>Office_Telephone__c</fullName>
+        <fullName>Office_Telephone2__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
+        <formula>IF(ISBLANK( 
+IF( ISBLANK( Prepare_Form_for__c ), 
+IF( ISBLANK( Unauthenticated_Owner__c ), 
+Owner:User.Phone, 
+Unauthenticated_Owner__r.Phone ), 
+Prepare_Form_for__r.Phone
+)), 
+&quot;[This field will populate after save.]&quot;, 
+IF( ISBLANK( Prepare_Form_for__c ), 
+IF( ISBLANK( Unauthenticated_Owner__c ), 
+Owner:User.Phone, 
+Unauthenticated_Owner__r.Phone ), 
+Prepare_Form_for__r.Phone
+))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Office Telephone</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Phone</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Organization_Mailing_Address__c</fullName>
@@ -3717,6 +3776,32 @@ Course_Title__c)</formula>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Owner_s_Address__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK( 
+IF( ISBLANK( Prepare_Form_for__c ), 
+IF( ISBLANK( Unauthenticated_Owner__c ), 
+Owner:User.Mail_Stop__c &amp; BR() &amp; Owner:User.Building__c &amp; BR() &amp; Owner:User.City &amp;&quot;, &quot;&amp; Owner:User.State &amp;&quot; &quot;&amp; Owner:User.PostalCode, 
+Unauthenticated_Owner__r.Mail_Stop__c &amp; BR() &amp; Unauthenticated_Owner__r.Building__c &amp; BR() &amp; Unauthenticated_Owner__r.City &amp;&quot;, &quot;&amp; Unauthenticated_Owner__r.State &amp;&quot; &quot;&amp; Unauthenticated_Owner__r.PostalCode ), 
+Prepare_Form_for__r.Mail_Stop__c &amp; BR() &amp; Prepare_Form_for__r.Building__c &amp; BR() &amp; Prepare_Form_for__r.MailingCity &amp;&quot;, &quot;&amp; Prepare_Form_for__r.MailingState &amp;&quot; &quot;&amp; Prepare_Form_for__r.MailingPostalCode
+)), 
+&quot;[This field will populate after save.]&quot;, 
+IF( ISBLANK( Prepare_Form_for__c ), 
+IF( ISBLANK( Unauthenticated_Owner__c ), 
+Owner:User.Mail_Stop__c &amp; BR() &amp; Owner:User.Building__c &amp; BR() &amp; Owner:User.City &amp;&quot;, &quot;&amp; Owner:User.State &amp;&quot; &quot;&amp; Owner:User.PostalCode, 
+Unauthenticated_Owner__r.Mail_Stop__c &amp; BR() &amp; Unauthenticated_Owner__r.Building__c &amp; BR() &amp; Unauthenticated_Owner__r.City &amp;&quot;, &quot;&amp; Unauthenticated_Owner__r.State &amp;&quot; &quot;&amp; Unauthenticated_Owner__r.PostalCode ), 
+Prepare_Form_for__r.Mail_Stop__c &amp; BR() &amp; Prepare_Form_for__r.Building__c &amp; BR() &amp; Prepare_Form_for__r.MailingCity &amp;&quot;, &quot;&amp; Prepare_Form_for__r.MailingState &amp;&quot; &quot;&amp; Prepare_Form_for__r.MailingPostalCode
+))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owner &apos;s Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>PRIA_Decision_Time_Frame__c</fullName>
@@ -5473,14 +5558,13 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
-        <fullName>Select_Card_Holder__c</fullName>
+        <fullName>Select_Card_Holder2__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>SF-182</description>
         <externalId>false</externalId>
         <label>Select Card Holder</label>
-        <referenceTo>Contact</referenceTo>
-        <relationshipLabel>Forms (Select Contact Holder)</relationshipLabel>
-        <relationshipName>Forms3</relationshipName>
+        <referenceTo>User</referenceTo>
+        <relationshipName>FormsXrE3</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -5934,7 +6018,9 @@ Prepare_Form_for__r.Step__c ))</formula>
         <fullName>Supervisor_Name__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>User_Supervisor__r.FirstName &amp;&quot; &quot;&amp; User_Supervisor__r.LastName</formula>
+        <formula>IF( ISBLANK(User_Supervisor__c),
+&quot;[This field will populate after save.]&quot;,
+User_Supervisor__r.FirstName &amp;&quot; &quot;&amp; User_Supervisor__r.LastName)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Supervisor Name:</label>
         <required>false</required>
@@ -6631,7 +6717,7 @@ Line_Total_Price_10__c</formula>
         <description>SF-182</description>
         <externalId>false</externalId>
         <formula>IF(ISPICKVAL(Training_Credit__c, &quot;&quot;), 
-&quot;Training Credit field is blank.&quot;, 
+&quot;[Will be populated by Training Credit field.&quot;, 
 TEXT(Training_Credit__c))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Training or Course Credit Hours</label>
@@ -7014,14 +7100,29 @@ TEXT(Training_Credit__c))</formula>
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
-        <fullName>Work_Email_Address__c</fullName>
+        <fullName>Work_Email_Address2__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
+        <formula>IF(ISBLANK( 
+IF( ISBLANK( Prepare_Form_for__c ), 
+IF( ISBLANK( Unauthenticated_Owner__c ), 
+Owner:User.Email, 
+Unauthenticated_Owner__r.Email ), 
+Prepare_Form_for__r.Email
+)), 
+&quot;[This field will populate after save.]&quot;, 
+IF( ISBLANK( Prepare_Form_for__c ), 
+IF( ISBLANK( Unauthenticated_Owner__c ), 
+Owner:User.Email, 
+Unauthenticated_Owner__r.Email ), 
+Prepare_Form_for__r.Email 
+))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Work Email Address</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Email</type>
+        <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -7052,8 +7153,8 @@ TEXT(Training_Credit__c))</formula>
         <defaultValue>&quot;If I voluntarily leave the agency before completing the period of service agreed to in item 1 above; or do not complete the training; or do not receive a passing grade for this development activity, I AGREE to reimburse the agency for the tuition and related fees, travel and other special expenses (excluding salary) paid in connection with my training. These amounts are reflected in Section C: Cost and Billing Information, 1a through c and 2b, on the SF182 form. I will also provide a copy of my official final grade/transcript to my supervisor of record within 30 days of the completion of the course.&quot;</defaultValue>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <label>2</label>
-        <length>1000</length>
+        <label>2.</label>
+        <length>610</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -7077,32 +7178,8 @@ TEXT(Training_Credit__c))</formula>
         <defaultValue>&quot;I FURTHER AGREE that, if I voluntarily leave the agency to enter the service of another Federal Department, agency, or other organization in any branch of the Government before completing the period of service agreed to in item 1 above, I will give my organization written notice at least ten working days, during which time a determination concerning reimbursement will be made by EPA. If I fail to give this advance notice, I AGREE to pay the amount of additional expenses according to 5 U.S.C. 4109 (a)(2) incurred by the Government for this training.&quot;</defaultValue>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <label>3</label>
-        <length>1000</length>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>LongTextArea</type>
-        <visibleLines>3</visibleLines>
-    </fields>
-    <fields>
-        <fullName>X4_1_SF_182__c</fullName>
-        <defaultValue>&quot;I FURTHER AGREE to obtain approval from my organization’s Training Officer and any person(s) responsible for authorizing non‐government training requests of any proposed change in my approved training program involving course and schedule changes, withdrawals or course incompletion, and increased costs.&quot;</defaultValue>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>4-1</label>
-        <length>1000</length>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>LongTextArea</type>
-        <visibleLines>3</visibleLines>
-    </fields>
-    <fields>
-        <fullName>X4_2_SF_182__c</fullName>
-        <defaultValue>&quot;I acknowledge that this agreement does not in any way commit the Government to continue my employment. I understand that, if there is a transfer of my service obligation to another Federal agency or other organization in any branch of the Government, the agreements in items 1, 2, and 3 of this section will remain in effect until I have completed my obligated service with that other agency or organization.&quot;</defaultValue>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>4-2</label>
-        <length>1000</length>
+        <label>3.</label>
+        <length>560</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
@@ -7123,15 +7200,17 @@ TEXT(Training_Credit__c))</formula>
     </fields>
     <fields>
         <fullName>X4_SF_182__c</fullName>
-        <defaultValue>&quot;I understand that any amounts which may be due the agency as a result of any failure on my part to meet the terms of this agreement may be withheld from any monies owed me by the Government, or may be recovered by such other methods as are approved by law.&quot;</defaultValue>
+        <defaultValue>&quot;I understand that any amounts which may be due the agency as a result of any failure on my part to meet the terms of this agreement may be withheld from any monies owed me by the Government, or may be recovered by such other methods as are approved by law.&quot; &amp; BR() &amp; BR() &amp;
+&quot;I FURTHER AGREE to obtain approval from my organization’s Training Officer and any person(s) responsible for authorizing non‐government training requests of any proposed change in my approved training program involving course and schedule changes, withdrawals or course incompletion, and increased costs.&quot; &amp; BR() &amp; BR() &amp;
+&quot;I acknowledge that this agreement does not in any way commit the Government to continue my employment. I understand that, if there is a transfer of my service obligation to another Federal agency or other organization in any branch of the Government, the agreements in items 1, 2, and 3 of this section will remain in effect until I have completed my obligated service with that other agency or organization.&quot;</defaultValue>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <label>4</label>
-        <length>260</length>
+        <label>4.</label>
+        <length>1010</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
-        <visibleLines>3</visibleLines>
+        <visibleLines>14</visibleLines>
     </fields>
     <fields>
         <fullName>X508_Compliance_Approver__c</fullName>
@@ -7253,6 +7332,18 @@ TEXT(Training_Credit__c))</formula>
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>x1_SF_182__c</fullName>
+        <defaultValue>&quot;I agree that, upon completion of the Government‐ sponsored training during which I received a salary described in the SF‐182 training request, I will serve in the agency the number of hours as required by EPA Policy. Service begins the first day after the completion of the training course Note: For the purposes of this agreement, the term “agency” refers to the employing organization (Environmental Protection Agency), not to a segment of such an organization.&quot;</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>1.</label>
+        <length>465</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <label>Form</label>
     <listViews>
@@ -7933,7 +8024,7 @@ TEXT(Training_Credit__c))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
+                <fullName>Purchase Card Transaction %28Select Card Holder%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -9421,7 +9512,7 @@ TEXT(Training_Credit__c))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
+                <fullName>Purchase Card Transaction %28Select Card Holder%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -10921,7 +11012,7 @@ TEXT(Training_Credit__c))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
+                <fullName>Purchase Card Transaction %28Select Card Holder%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -12421,7 +12512,7 @@ TEXT(Training_Credit__c))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
+                <fullName>Purchase Card Transaction %28Select Card Holder%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -13909,7 +14000,7 @@ TEXT(Training_Credit__c))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
+                <fullName>Purchase Card Transaction %28Select Card Holder%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -15397,7 +15488,7 @@ TEXT(Training_Credit__c))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
+                <fullName>Purchase Card Transaction %28Select Card Holder%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -16897,7 +16988,7 @@ TEXT(Training_Credit__c))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
+                <fullName>Purchase Card Transaction %28Select Card Holder%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -18397,7 +18488,7 @@ TEXT(Training_Credit__c))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
+                <fullName>Purchase Card Transaction %28Select Card Holder%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -19921,7 +20012,7 @@ TEXT(Training_Credit__c))</formula>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Purchase Card Transaction %28fill out Card Holder fields below%29</fullName>
+                <fullName>Purchase Card Transaction %28Select Card Holder%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -20897,9 +20988,8 @@ TEXT(Training_Credit__c))</formula>
         <description>if the &quot;Furnish Invoice to&quot; picklist value is NOT “Purchase card Transaction”, the Card Holder lookup field must be null.</description>
         <errorConditionFormula>AND( 
  NOT(ISPICKVAL( Furnish_Invoice_to__c , &quot;Purchase Card Transaction&quot;)), 
- NOT(ISBLANK( Select_Card_Holder__c )) 
+ NOT(ISBLANK( Select_Card_Holder2__c )) 
 )</errorConditionFormula>
-        <errorDisplayField>Select_Card_Holder__c</errorDisplayField>
         <errorMessage>&quot;Select Card Holder&quot; field must be blank unless the invoice is furnished to &quot;Purchase Card Transaction&quot;</errorMessage>
     </validationRules>
     <validationRules>
@@ -20908,10 +20998,21 @@ TEXT(Training_Credit__c))</formula>
         <description>if the &quot;Furnish Invoice to&quot; picklist value is “Purchase card Transaction”, require the Card Holder lookup field to not be null.</description>
         <errorConditionFormula>AND( 
  ISPICKVAL( Furnish_Invoice_to__c , &quot;Purchase Card Transaction&quot;), 
- ISBLANK( Select_Card_Holder__c ) 
+ ISBLANK( Select_Card_Holder2__c ) 
 )</errorConditionFormula>
-        <errorDisplayField>Select_Card_Holder__c</errorDisplayField>
         <errorMessage>&quot;Select Card Holder&quot; field is required if the invoice is furnished to &quot;Purchase Card Transaction&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SF_182_Service_Agreement_Req_fields</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ ISPICKVAL(Continued_Service_Agreement__c, &quot;Yes&quot;),
+ OR(
+  Continue_In_Service_Agreement_Signature__c = False,
+  ISBLANK(Continued_Service_Agreement_Expiration__c)
+  )
+)</errorConditionFormula>
+        <errorMessage>If Continued Service Agreement is Required, &quot;Continued Service Agreement Expiration&quot; and &quot;Continue In Service Agreement Signature&quot; fields cannot be blank.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Test</fullName>

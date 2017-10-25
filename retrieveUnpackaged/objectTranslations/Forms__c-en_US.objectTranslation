@@ -73,8 +73,8 @@
         <name>All_Personel_Printed_Name_Part_F__c</name>
     </fields>
     <fields>
-        <label><!-- Applicant Name (Last, First, MI) --></label>
-        <name>Applicant_Name_Last_First_MI__c</name>
+        <label><!-- Applicant Name --></label>
+        <name>Applicant_Name_Last_First_MI2__c</name>
     </fields>
     <fields>
         <label><!-- Select Training Official Routing Options --></label>
@@ -544,6 +544,15 @@
         <name>Completed_By__c</name>
     </fields>
     <fields>
+        <label><!-- Continue In Service Agreement Signature --></label>
+        <name>Continue_In_Service_Agreement_Signature__c</name>
+    </fields>
+    <fields>
+        <help><!-- Clicking the &quot;Continue In Service Agreement Signature&quot; checkbox will sign this section upon saving the form. --></help>
+        <label><!-- Continue In Service Digital Signature --></label>
+        <name>Continue_In_Service_Digital_Signature__c</name>
+    </fields>
+    <fields>
         <label><!-- Continued Service Agreement Expiration --></label>
         <name>Continued_Service_Agreement_Expiration__c</name>
     </fields>
@@ -878,7 +887,7 @@
     </fields>
     <fields>
         <label><!-- EHRI Employee Number --></label>
-        <name>EHRI_Employee_Number__c</name>
+        <name>EHRI_Employee_Number2__c</name>
     </fields>
     <fields>
         <label><!-- EPA Form 3110-1 --></label>
@@ -1048,8 +1057,8 @@
             <translation><!-- No Cost Training --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Purchase Card Transaction (fill out Card Holder fields below)</masterLabel>
-            <translation><!-- Purchase Card Transaction (fill out Card Holder fields below) --></translation>
+            <masterLabel>Purchase Card Transaction (Select Card Holder)</masterLabel>
+            <translation><!-- Purchase Card Transaction (Select Card Holder) --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>USEPA Cincinnati Finance Center</masterLabel>
@@ -1108,10 +1117,6 @@
         <label><!-- IT Reviewer --></label>
         <name>IT_Reviewer__c</name>
         <relationshipLabel><!-- Forms (IT Reviewer) --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- I Agree 1 --></label>
-        <name>I_Agree_1__c</name>
     </fields>
     <fields>
         <label><!-- If not, date &quot;Fix&quot; expected --></label>
@@ -1507,7 +1512,7 @@
     </fields>
     <fields>
         <label><!-- Office Telephone --></label>
-        <name>Office_Telephone__c</name>
+        <name>Office_Telephone2__c</name>
     </fields>
     <fields>
         <label><!-- Organization Mailing Address --></label>
@@ -1536,6 +1541,10 @@
     <fields>
         <label><!-- Other --></label>
         <name>Other_Part_C__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner &apos;s Address --></label>
+        <name>Owner_s_Address__c</name>
     </fields>
     <fields>
         <label><!-- PRIA Decision Time Frame --></label>
@@ -2318,8 +2327,8 @@
     </fields>
     <fields>
         <label><!-- Select Card Holder --></label>
-        <name>Select_Card_Holder__c</name>
-        <relationshipLabel><!-- Forms (Select Contact Holder) --></relationshipLabel>
+        <name>Select_Card_Holder2__c</name>
+        <relationshipLabel><!-- Forms (Select Card Holder) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Select Documentation Type --></label>
@@ -3039,7 +3048,7 @@
     </fields>
     <fields>
         <label><!-- Work Email Address --></label>
-        <name>Work_Email_Address__c</name>
+        <name>Work_Email_Address2__c</name>
     </fields>
     <fields>
         <label><!-- Work Phone No --></label>
@@ -3050,7 +3059,7 @@
         <name>X2_Part_B__c</name>
     </fields>
     <fields>
-        <label><!-- 2 --></label>
+        <label><!-- 2. --></label>
         <name>X2_SF_182__c</name>
     </fields>
     <fields>
@@ -3058,23 +3067,15 @@
         <name>X3_Part_B__c</name>
     </fields>
     <fields>
-        <label><!-- 3 --></label>
+        <label><!-- 3. --></label>
         <name>X3_SF_182__c</name>
-    </fields>
-    <fields>
-        <label><!-- 4-1 --></label>
-        <name>X4_1_SF_182__c</name>
-    </fields>
-    <fields>
-        <label><!-- 4-2 --></label>
-        <name>X4_2_SF_182__c</name>
     </fields>
     <fields>
         <label><!-- 4 --></label>
         <name>X4_Part_B__c</name>
     </fields>
     <fields>
-        <label><!-- 4 --></label>
+        <label><!-- 4. --></label>
         <name>X4_SF_182__c</name>
     </fields>
     <fields>
@@ -3126,6 +3127,10 @@
     <fields>
         <label><!-- Test --></label>
         <name>test__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1. --></label>
+        <name>x1_SF_182__c</name>
     </fields>
     <layouts>
         <layout>BAP Provisioning Layout</layout>
@@ -3537,10 +3542,6 @@
             <section>EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE (Sign Below)</section>
         </sections>
         <sections>
-            <label><!-- EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE SPACER --></label>
-            <section>EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE SPACER</section>
-        </sections>
-        <sections>
             <label><!-- Fields --></label>
             <section>Fields</section>
         </sections>
@@ -3579,6 +3580,10 @@
         <sections>
             <label><!-- Section C - COST AND BILLING INFORMATION --></label>
             <section>Section C - COST AND BILLING INFORMATION</section>
+        </sections>
+        <sections>
+            <label><!-- Section C Spacer --></label>
+            <section>Section C Spacer</section>
         </sections>
     </layouts>
     <recordTypes>
@@ -3625,6 +3630,10 @@
     <validationRules>
         <errorMessage><!-- &quot;Select Card Holder&quot; field is required if the invoice is furnished to &quot;Purchase Card Transaction&quot; --></errorMessage>
         <name>SF_182_Card_Holder_Lookup_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Continued Service Agreement is Required, &quot;Continued Service Agreement Expiration&quot; and &quot;Continue In Service Agreement Signature&quot; fields cannot be blank. --></errorMessage>
+        <name>SF_182_Service_Agreement_Req_fields</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- Phone Number can&apos;t be 123456 --></errorMessage>

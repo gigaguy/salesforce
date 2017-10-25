@@ -1123,8 +1123,8 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Forms__c.Applicant_Name_Last_First_MI__c</field>
+        <editable>false</editable>
+        <field>Forms__c.Applicant_Name_Last_First_MI2__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1340,6 +1340,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Forms__c.Completed_By__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.Continue_In_Service_Agreement_Signature__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forms__c.Continue_In_Service_Digital_Signature__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1628,8 +1638,8 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Forms__c.EHRI_Employee_Number__c</field>
+        <editable>false</editable>
+        <field>Forms__c.EHRI_Employee_Number2__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1835,11 +1845,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.IT_Reviewer__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Forms__c.I_Agree_1__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2253,8 +2258,8 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Forms__c.Office_Telephone__c</field>
+        <editable>false</editable>
+        <field>Forms__c.Office_Telephone2__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2290,6 +2295,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.Other_Part_C__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forms__c.Owner_s_Address__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2849,7 +2859,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Forms__c.Select_Card_Holder__c</field>
+        <field>Forms__c.Select_Card_Holder2__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3218,8 +3228,8 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Forms__c.Work_Email_Address__c</field>
+        <editable>false</editable>
+        <field>Forms__c.Work_Email_Address2__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3245,16 +3255,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Forms__c.X3_SF_182__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.X4_1_SF_182__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.X4_2_SF_182__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3306,6 +3306,11 @@
         <editable>false</editable>
         <field>Forms__c.test__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.x1_SF_182__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
