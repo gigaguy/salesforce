@@ -2,6 +2,8 @@
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <brand>
         <headerColor>#0070D2</headerColor>
+        <logo>epa</logo>
+        <logoVersion>1</logoVersion>
     </brand>
     <description>BAP Agency Forms</description>
     <formFactors>Large</formFactors>
