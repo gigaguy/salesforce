@@ -173,25 +173,37 @@
 	},
     saveStay : function(component, event, helper){
         console.log('in c.saveStay');
+        console.log('modalname: ' + component.get("v.modalName"));
+        component.set("v.message", "Form Saved | Not Submitted");
         try {
+            if (component.get("v.modalName") != 'reopenForm'){
             component.find("edit").get("e.recordSave").fire();
-              console.log('no error');
+                console.log('no error');
+            component.set("v.message", "Form Saved | ");}
+            else if (component.get("v.modalName") == 'reopenForm'){
+            component.get("v.edit2").get("e.recordSave").fire();
+                console.log('no error');
+            component.set("v.message", "Form Saved | ");}    
             component.set("v.stayModal", true);
-            if (component.get("v.modalName") == 'viewForm') {
-                component.set("v.message", "Form Saved | "); }
-                else {component.set("v.message", "Form Saved | Not Submitted");}
-          }
+          	}
           catch (e) {
             console.log(e);
           }
+        
     },
     saveOnly : function(component, event, helper){
         console.log('in c.saveOnly');
         component.set("v.stayModal", false);
-          try {
+        try {
+            if (component.get("v.modalName") != 'reopenForm'){
             component.find("edit").get("e.recordSave").fire();
-              console.log('no error');
-          }
+                console.log('no error 1');
+            component.set("v.message", "Form Saved | ");}
+            else if (component.get("v.modalName") == 'reopenForm'){
+            component.get("v.edit2").get("e.recordSave").fire();
+                console.log('no error 2');
+            component.set("v.message", "Form Saved | ");}    
+          	}
           catch (e) {
             console.log(e);
           }
@@ -235,16 +247,29 @@
         $A.enqueueAction(action);
     },
 	saveAndSubmit : function(component, event, helper){
-        component.find("edit").get("e.recordSave").fire();
+        try {
+            if (component.get("v.modalName") != 'reopenForm'){
+            component.find("edit").get("e.recordSave").fire();
+                console.log('no error 1');
+     //       component.set("v.message", "Form Saved | ");
+     	       }
+            else if (component.get("v.modalName") == 'reopenForm'){
+            component.get("v.edit2").get("e.recordSave").fire();
+                console.log('no error 2');
+     //       component.set("v.message", "Form Saved | ");
+     	       }    
+          	}
+          catch (e) {
+            console.log(e);
+          }
         component.set("v.stayModal", false);
         // Temporary checking for modals to allow submitting from new form or view form
         var formID;
         if (component.get("v.modalName") == 'viewForm') {
-            formID = component.get("v.viewFormID");
-        }
-        else {
-            formID = component.get("v.newForm.Id");
-        }
+            formID = component.get("v.viewFormID"); }
+        else if (component.get("v.modalName") == 'reopenForm') {
+            formID = component.get("v.viewFormID"); }
+        else { formID = component.get("v.newForm.Id"); }
         
         var action = component.get("c.submitForApproval");
         action.setParams({
@@ -332,6 +357,13 @@
             component.set("v.addAttachments", false);
             component.set("v.message", "Your Form was saved");
          }
+        else {
+			component.set("v.stayModal", false);
+            component.set("v.isOpen", false);
+            
+            var a = component.get('c.createReopenModal');
+        $A.enqueueAction(a);
+        }
 	},
     cancelCreationModal : function(component, event, helper){
     	component.set("v.message", null);
@@ -555,5 +587,47 @@
                 else { formID = component.get("v.newForm.Id"); }
         helper.getAttachList(component, formID);
         	component.set("v.addAttachments", true);        
-   }
+   },
+    createReopenModal: function(component, event, helper) {
+        var formID;
+        if (component.get("v.modalName") == 'viewForm') {
+            formID = component.get("v.viewFormID"); }
+        else { formID = component.get("v.newForm.Id"); }
+        console.log('formID: ' + formID);
+		
+        component.set("v.viewFormID", formID);
+        var action = component.get("c.viewForm");
+        action.setParams({
+			"sID" : component.get("v.sessionID"),
+            "formID" : formID
+        });
+        action.setCallback(this,function(resp){
+			console.log('in action');
+
+            var state = resp.getState();
+            console.log('state: ' +state);
+            if(state === 'SUCCESS'){
+                component.set("v.oldForm", resp.getReturnValue());
+            }
+            else if(state === 'ERROR'){
+                var errors = resp.getError();
+                for(var i = 0 ;i < errors.length;i++){
+                    console.log(errors[i].message);
+                }
+            }
+        });
+        $A.enqueueAction(action);
+        
+        $A.createComponent('force:recordEdit',
+  {
+    'aura:id': 'edit2',
+    'recordId': formID
+  },
+  function(edit2){
+    component.set('v.edit2', edit2); 
+      component.set("v.modalName", "reopenForm");  
+  }
+                              
+);
+    }
 })

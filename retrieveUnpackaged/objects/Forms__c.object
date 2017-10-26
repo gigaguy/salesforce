@@ -5490,14 +5490,15 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
     </fields>
     <fields>
         <fullName>SF_182_Override_Instructions__c</fullName>
-        <defaultValue>&quot;The section below provides you the ability to identify an approver that will replace the default approver for this form. The default approvers are set up by individuals on his or her approval profile.&quot;</defaultValue>
+        <defaultValue>&quot;The section below provides you the ability to identify an approver that will replace the default approver for this form. The default approvers are set up by individuals on his or her approval profile.&quot; &amp; BR() &amp; &quot;To reset the approvers, delete name(s) and hit &apos;Save &amp; Stay&apos; button.&quot;</defaultValue>
         <description>SF-182</description>
         <externalId>false</externalId>
         <label>SF-182 Override Instructions</label>
-        <required>false</required>
+        <length>285</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>TextArea</type>
+        <type>LongTextArea</type>
+        <visibleLines>7</visibleLines>
     </fields>
     <fields>
         <fullName>SF_182_Prepare_For_checker__c</fullName>
