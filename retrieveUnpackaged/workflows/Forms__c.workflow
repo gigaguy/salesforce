@@ -82,6 +82,32 @@
         <template>unfiled$public/Development_Sandbox_Request_Form_Approved_Notification</template>
     </alerts>
     <alerts>
+        <fullName>BAP_Provisioning_Request_Completed</fullName>
+        <description>BAP Provisioning Request Completed</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Submitted_on_Behalf_Of__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/BAP_Provisioning_Approval_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>BAP_Provisioning_Request_to_Jira</fullName>
+        <ccEmails>jira@epabiac.atlassian.net</ccEmails>
+        <description>BAP Provisioning Request to Jira</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>king.roy@epa.gov</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/BAP_Provisioning_Request_Form_Approved_Jira</template>
+    </alerts>
+    <alerts>
         <fullName>Dev_Sandbox_recalled</fullName>
         <description>Dev Sandbox recalled</description>
         <protected>false</protected>

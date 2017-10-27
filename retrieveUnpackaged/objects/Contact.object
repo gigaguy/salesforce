@@ -119,6 +119,29 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Authorization__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Authorization</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>BAP Provisioning Form does not exist or does not have a match to the search criteria</errorMessage>
+            <filterItems>
+                <field>Forms__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>BAP Provisioning</value>
+            </filterItems>
+            <infoMessage>Please select the appropriate BAP Provisioning form for the user authorization</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Forms__c</referenceTo>
+        <relationshipLabel>Contacts</relationshipLabel>
+        <relationshipName>Contacts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Birthdate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
