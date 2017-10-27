@@ -64,7 +64,7 @@ public class FormPageController_Test {
         FormPageController.saveForm(form, '123ABC');
         FormPageController.saveForm(yform, '123ABC');
         FormPageController.deleteForm(form.ID, '123ABC');
-        FormPageController.getFandP_FormRTs();
+        FormPageController.getFandP_FormRTs();        
     }
     
     @isTest
@@ -101,6 +101,8 @@ public class FormPageController_Test {
             String attID = FormPageController.uploadFile(formID, fileName, base64Data, contentType);            
             FormPageController.getListOfAttachments(formID);
             FormPageController.deleteFormAttachment(attID);
+            
+            FormPageController.cloneForm(formID);
             
       }
       

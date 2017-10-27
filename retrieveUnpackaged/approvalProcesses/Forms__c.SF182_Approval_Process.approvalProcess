@@ -14,6 +14,12 @@
     </approvalPageFields>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_Supervisor</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>jjenkins@innovateteam.com</name>

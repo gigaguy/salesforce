@@ -16,7 +16,7 @@
     openModal: function(component, event, helper) {
         var formID = event.currentTarget.id;
         var formName = event.currentTarget.name;
-   //     component.set("v.message", "Form Not Saved");
+        component.set("v.message", null);
         if (formName === "BAP Provisioning") {
             var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
         	var hrefEmail = "BAP_Admins@epa.gov";
@@ -350,6 +350,7 @@
          }
     },
 	handleSaveSuccess : function(component, event, helper){
+        console.log('in handleSaveSuccess');
         if(component.get("v.stayModal")!=true){
             component.set("v.isOpen", false);
             component.set("v.modalName", "");
@@ -629,5 +630,70 @@
   }
                               
 );
-    }
+    },
+	copyForm: function(component, event, helper) {
+        console.log('in cloneForm');
+        var formID = event.currentTarget.id;
+        var formName = event.currentTarget.name;
+        component.set("v.message", null);
+        if (formName === "BAP Provisioning") {
+            var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+        	var hrefEmail = "BAP_Admins@epa.gov";
+        }
+        else if (formName === "EPA-3110-1") {
+            var hrefInfo = "";
+        	var hrefEmail = "David Ack";
+        }
+        else if (formName === "EPA-3160-6v5") {
+            var hrefInfo = "";
+        	var hrefEmail = "Bisa Cunningham";
+        }
+        else if (formName === "EPA-PCOR") {
+            var hrefInfo = "";
+        	var hrefEmail = "To be determined";
+        }
+        else if (formName === "ORD-111") {
+            var hrefInfo = "";
+        	var hrefEmail = "Bhagya Subramanian";
+        }
+        else if (formName === "PRIAv5") {
+            var hrefInfo = "";
+        	var hrefEmail = "Nicole Williams, Hamaad Syed, and Patrick Dobak";
+        }
+        else if (formName === "SF-182") {
+            var hrefInfo = "";
+        	var hrefEmail = "Sharon Ridings";
+        }
+        else {
+            var hrefInfo = "mailto:McNeal.Detha@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+       	 	var hrefEmail = "McNeal.Detha@epa.gov";
+        }
+        component.set("v.selectedFormId", formID);
+        component.set("v.selectedFormName", formName);
+        component.set("v.hrefInfo", hrefInfo);
+        component.set("v.hrefEmail", hrefEmail);
+         
+		var action = component.get("c.cloneForm");
+        action.setParams({
+			"sID" : component.get("v.sessionID"),
+            "FormID" : formID
+        });
+        action.setCallback(this,function(resp){
+			console.log('in action');
+            var state = resp.getState();
+            console.log('state: ' +state);
+            if(state === 'SUCCESS'){
+                component.set("v.newForm", resp.getReturnValue());
+                console.log('v.newForm: ' + component.get("v.newForm"));
+            }
+            else if(state === 'ERROR'){
+                var errors = resp.getError();
+                for(var i = 0 ;i < errors.length;i++){
+                    console.log(errors[i].message);
+                }
+            }
+        });
+        $A.enqueueAction(action);      
+   }
+    
 })

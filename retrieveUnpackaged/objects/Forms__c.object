@@ -3712,12 +3712,10 @@ Prepare_Form_for__r.Phone
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
         <label>Organization and Address</label>
-        <length>250</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Original_PRIA_Due_Date__c</fullName>
@@ -5269,12 +5267,10 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
         <label>Organization and Address</label>
-        <length>250</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Recipient_Work_Phone_No__c</fullName>
@@ -5490,7 +5486,7 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
     </fields>
     <fields>
         <fullName>SF_182_Override_Instructions__c</fullName>
-        <defaultValue>&quot;The section below provides you the ability to identify an approver that will replace the default approver for this form. The default approvers are set up by individuals on his or her approval profile.&quot; &amp; BR() &amp; &quot;To reset the approvers, delete name(s) and hit &apos;Save &amp; Stay&apos; button.&quot;</defaultValue>
+        <defaultValue>&quot;The section below provides you the ability to identify an approver that will replace the default approver for this form. The default approvers are set up by individuals on his or her approval profile. To reset the approvers, delete name(s) and hit &apos;Save &amp; Stay&apos; button.&quot;</defaultValue>
         <description>SF-182</description>
         <externalId>false</externalId>
         <label>SF-182 Override Instructions</label>
@@ -5498,7 +5494,7 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
-        <visibleLines>7</visibleLines>
+        <visibleLines>4</visibleLines>
     </fields>
     <fields>
         <fullName>SF_182_Prepare_For_checker__c</fullName>
@@ -20991,6 +20987,7 @@ Prepare_Form_for__r.Email
  NOT(ISPICKVAL( Furnish_Invoice_to__c , &quot;Purchase Card Transaction&quot;)), 
  NOT(ISBLANK( Select_Card_Holder2__c )) 
 )</errorConditionFormula>
+        <errorDisplayField>Select_Card_Holder2__c</errorDisplayField>
         <errorMessage>&quot;Select Card Holder&quot; field must be blank unless the invoice is furnished to &quot;Purchase Card Transaction&quot;</errorMessage>
     </validationRules>
     <validationRules>
@@ -21001,6 +20998,7 @@ Prepare_Form_for__r.Email
  ISPICKVAL( Furnish_Invoice_to__c , &quot;Purchase Card Transaction&quot;), 
  ISBLANK( Select_Card_Holder2__c ) 
 )</errorConditionFormula>
+        <errorDisplayField>Select_Card_Holder2__c</errorDisplayField>
         <errorMessage>&quot;Select Card Holder&quot; field is required if the invoice is furnished to &quot;Purchase Card Transaction&quot;</errorMessage>
     </validationRules>
     <validationRules>
@@ -21013,6 +21011,7 @@ Prepare_Form_for__r.Email
   ISBLANK(Continued_Service_Agreement_Expiration__c)
   )
 )</errorConditionFormula>
+        <errorDisplayField>Continued_Service_Agreement__c</errorDisplayField>
         <errorMessage>If Continued Service Agreement is Required, &quot;Continued Service Agreement Expiration&quot; and &quot;Continue In Service Agreement Signature&quot; fields cannot be blank.</errorMessage>
     </validationRules>
     <validationRules>
