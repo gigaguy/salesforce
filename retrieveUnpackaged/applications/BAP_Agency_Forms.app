@@ -13,6 +13,7 @@
     <tab>Edit_My_Approvers</tab>
     <tab>standard-Contact</tab>
     <tab>standard-Account</tab>
+    <tab>Candidate_Application__c</tab>
     <uiType>Lightning</uiType>
     <utilityBar>BAP_Agency_Forms_UtilityBar</utilityBar>
 </CustomApplication>

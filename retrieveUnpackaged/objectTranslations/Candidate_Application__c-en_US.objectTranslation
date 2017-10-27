@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Candidate Application</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Candidate Applications</value>
+    </caseValues>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current GS Level --></label>
+        <name>Current_GS_Level__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Current Region --></label>
+        <name>Current_Region__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- First Line supervisor --></label>
+        <name>First_Line_supervisor__c</name>
+        <relationshipLabel><!-- Candidate Applications (First Line supervisor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Intended Track --></label>
+        <name>Intended_Track__c</name>
+        <picklistValues>
+            <masterLabel>Track 1</masterLabel>
+            <translation><!-- Track 1 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LOI Reject Reason --></label>
+        <name>LOI_Reject_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Value 1</masterLabel>
+            <translation><!-- Value 1 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LOI Status --></label>
+        <name>LOI_Status__c</name>
+        <picklistValues>
+            <masterLabel>Status 1</masterLabel>
+            <translation><!-- Status 1 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Package Reject Reason --></label>
+        <name>Package_Reject_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Reason 1</masterLabel>
+            <translation><!-- Reason 1 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Package Status --></label>
+        <name>Package_Status__c</name>
+        <picklistValues>
+            <masterLabel>Status 1</masterLabel>
+            <translation><!-- Status 1 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Second Line Supervisor --></label>
+        <name>Second_Line_Supervisor__c</name>
+        <relationshipLabel><!-- Candidate Applications (Second Line Supervisor) --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
