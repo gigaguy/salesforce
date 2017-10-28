@@ -7067,7 +7067,7 @@
     </fields>
     <fields>
         <help><!-- Procurement Office --></help>
-        <label><!-- Procurement Office --></label>
+        <label><!-- Contract Procurement Office --></label>
         <name>Procurement_Office__c</name>
         <picklistValues>
             <masterLabel>CPOD - Cincinnati Procurement Operations Division</masterLabel>
@@ -7127,22 +7127,6 @@
         <picklistValues>
             <masterLabel>LAKMSC00 - WCF - Web Forms - Security</masterLabel>
             <translation><!-- LAKMSC00 - WCF - Web Forms - Security --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LBPD0000 - EV - ACES - Development</masterLabel>
-            <translation><!-- LBPD0000 - EV - ACES - Development --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LBPM0000 - EV - ACES - Maintenance</masterLabel>
-            <translation><!-- LBPM0000 - EV - ACES - Maintenance --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LBPMSC00 - EV - ACES - Maintenance - Security</masterLabel>
-            <translation><!-- LBPMSC00 - EV - ACES - Maintenance - Security --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LBPP0000 - EV - ACES - Preliminary Design</masterLabel>
-            <translation><!-- LBPP0000 - EV - ACES - Preliminary Design --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>LCED0000 - CFEIS - Development</masterLabel>
@@ -9939,7 +9923,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Vendor --></label>
+        <label><!-- Vendor / Recipient --></label>
         <name>Vendor__c</name>
     </fields>
     <fields>
@@ -10229,6 +10213,121 @@
         <name>Work_Assignment_TDD_Number__c</name>
     </fields>
     <layouts>
+        <layout>Document - Bankcard Purchase</layout>
+        <sections>
+            <label><!-- Account --></label>
+            <section>Account</section>
+        </sections>
+        <sections>
+            <label><!-- Amounts --></label>
+            <section>Amounts</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Vehicle --></label>
+            <section>Vehicle</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Document - Contract</layout>
+        <sections>
+            <label><!-- Account --></label>
+            <section>Account</section>
+        </sections>
+        <sections>
+            <label><!-- Amounts --></label>
+            <section>Amounts</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Vehicle --></label>
+            <section>Vehicle</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Document - Grant</layout>
+        <sections>
+            <label><!-- Account --></label>
+            <section>Account</section>
+        </sections>
+        <sections>
+            <label><!-- Amounts --></label>
+            <section>Amounts</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Vehicle --></label>
+            <section>Vehicle</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Document - IA</layout>
+        <sections>
+            <label><!-- Account --></label>
+            <section>Account</section>
+        </sections>
+        <sections>
+            <label><!-- Amounts --></label>
+            <section>Amounts</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Vehicle --></label>
+            <section>Vehicle</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Document - Other (MOD/SWA)</layout>
+        <sections>
+            <label><!-- Account --></label>
+            <section>Account</section>
+        </sections>
+        <sections>
+            <label><!-- Amounts --></label>
+            <section>Amounts</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Vehicle --></label>
+            <section>Vehicle</section>
+        </sections>
+    </layouts>
+    <layouts>
         <layout>Document Layout</layout>
         <sections>
             <label><!-- Account --></label>
@@ -10296,10 +10395,6 @@
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Details --></label>
-            <section>Details</section>
-        </sections>
-        <sections>
             <label><!-- Travel --></label>
             <section>Travel</section>
         </sections>
@@ -10311,6 +10406,26 @@
     <recordTypes>
         <label><!-- Document --></label>
         <name>Document</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Document - Bankcard Purchase --></label>
+        <name>Document_Bankcard_Purchase</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Document - Contract --></label>
+        <name>Document_Contract</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Document - Grant --></label>
+        <name>Document_Grant</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Document - IA --></label>
+        <name>Document_IA</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Document - Other --></label>
+        <name>Document_Other</name>
     </recordTypes>
     <recordTypes>
         <label><!-- Document - Travel --></label>

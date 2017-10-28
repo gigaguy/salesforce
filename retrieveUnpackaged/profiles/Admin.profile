@@ -2146,6 +2146,26 @@
         <layout>Contract-Contract Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Document__c-Document - Bankcard Purchase</layout>
+        <recordType>Document__c.Document_Bankcard_Purchase</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Document__c-Document - Contract</layout>
+        <recordType>Document__c.Document_Contract</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Document__c-Document - Grant</layout>
+        <recordType>Document__c.Document_Grant</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Document__c-Document - IA</layout>
+        <recordType>Document__c.Document_IA</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Document__c-Document - Other %28MOD%2FSWA%29</layout>
+        <recordType>Document__c.Document_Other</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Document__c-Document Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -2635,6 +2655,31 @@
     <recordTypeVisibilities>
         <default>true</default>
         <recordType>Document__c.Document</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Document__c.Document_Bankcard_Purchase</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Document__c.Document_Contract</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Document__c.Document_Grant</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Document__c.Document_IA</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Document__c.Document_Other</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
