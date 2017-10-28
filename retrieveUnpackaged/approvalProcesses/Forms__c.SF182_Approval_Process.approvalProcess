@@ -149,7 +149,7 @@
         <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
-                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <name>Approval_Step_Sent_to_Invoice_Approver</name>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -184,7 +184,7 @@
         <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
-                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <name>Approval_Step_Sent_to_Invoice_Approver</name>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -219,7 +219,7 @@
         <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
-                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <name>Approval_Step_Sent_to_Invoice_Approver</name>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -254,7 +254,7 @@
         <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
-                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <name>Approval_Step_Sent_to_Invoice_Approver</name>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -289,7 +289,7 @@
         <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
-                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <name>Approval_Step_Sent_to_Invoice_Approver</name>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -324,7 +324,7 @@
         <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
-                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <name>Approval_Step_Sent_to_Invoice_Approver</name>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -359,7 +359,7 @@
         <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
-                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <name>Approval_Step_Sent_to_Invoice_Approver</name>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -394,7 +394,7 @@
         <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
-                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <name>Approval_Step_Sent_to_Invoice_Approver</name>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -429,7 +429,7 @@
         <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
-                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <name>Approval_Step_Sent_to_Invoice_Approver</name>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -464,7 +464,7 @@
         <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
-                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <name>Approval_Step_Sent_to_Invoice_Approver</name>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -499,7 +499,7 @@
         <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
-                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <name>Approval_Step_Sent_to_Invoice_Approver</name>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -534,7 +534,7 @@
         <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
-                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <name>Approval_Step_Sent_to_Invoice_Approver</name>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -569,7 +569,7 @@
         <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
-                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <name>Approval_Step_Sent_to_Invoice_Approver</name>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -604,7 +604,7 @@
         <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
-                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <name>Approval_Step_Sent_to_Invoice_Approver</name>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -622,6 +622,7 @@
                 <value>Cincinnati</value>
             </criteriaItems>
         </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
         <label>Send to Cincinnati Queue</label>
         <name>Send_to_Cincinnati_Queue</name>
         <rejectBehavior>
@@ -633,6 +634,80 @@
                 <type>FieldUpdate</type>
             </action>
         </rejectionActions>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Select_Card_Holder2__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Forms__c.Furnish_Invoice_to__c</field>
+                <operation>equals</operation>
+                <value>Purchase Card Transaction</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Send to Invoice Approver (Purchase Card Holder)</label>
+        <name>Send_to_Invoice_Approver_Purchase_Card_Holder</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+        <rejectionActions>
+            <action>
+                <name>Approval_Step_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>SF182_USEPA_RTP_Finance_Center</name>
+                <type>queue</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Forms__c.Furnish_Invoice_to__c</field>
+                <operation>equals</operation>
+                <value>USEPA RTP Finance Center</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Send to USEPA RTP</label>
+        <name>Send_to_USEPA_RTP</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>SF182_USEPA_Cincinnati_Finance_Center</name>
+                <type>queue</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Forms__c.Furnish_Invoice_to__c</field>
+                <operation>equals</operation>
+                <value>USEPA Cincinnati Finance Center</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>Send to USEPA Cincinnati</label>
+        <name>Send_to_USEPA_Cincinnati</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
     </approvalStep>
     <emailTemplate>unfiled$public/Form_Approval_Request_Notification_Template</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>

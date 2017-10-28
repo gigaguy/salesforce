@@ -376,6 +376,15 @@ IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;,
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_Invoice_Approver</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting Invoice Approver&quot;</formula>
+        <name>Approval Step - Sent to Invoice Approver</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Next_Approver_1</fullName>
         <field>Approval_Step__c</field>
         <formula>IF(RecordType.DeveloperName = &quot;SF_182&quot;, 

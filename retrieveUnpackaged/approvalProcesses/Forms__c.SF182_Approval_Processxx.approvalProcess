@@ -16,6 +16,48 @@
         <allowDelegate>true</allowDelegate>
         <approvalActions>
             <action>
+                <name>Approval_Step_Sent_to_Supervisor</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>jjenkins@innovateteam.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+            <criteriaItems>
+                <field>Forms__c.Escalate_to_Chief_Learning_Officer__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Forms__c.Training_Start_Date__c</field>
+                <operation>lessOrEqual</operation>
+                <value>TODAY</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Forms__c.Direct_Cost_Total__c</field>
+                <operation>greaterThan</operation>
+                <value>50000</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Forms__c.Indirect_Total__c</field>
+                <operation>greaterThan</operation>
+                <value>50000</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Send to Sharon (Escalated Approver)</label>
+        <name>Send_to_Sharon_Escalated_Approver</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
                 <name>Approval_Step_Sent_to_Next_Approver_1</name>
                 <type>FieldUpdate</type>
             </action>
@@ -33,6 +75,9 @@
         </assignedApprover>
         <label>Send to Supervisor</label>
         <name>Send_to_Supervisor</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
@@ -577,35 +622,8 @@
                 <value>Cincinnati</value>
             </criteriaItems>
         </entryCriteria>
-        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
         <label>Send to Cincinnati Queue</label>
         <name>Send_to_Cincinnati_Queue</name>
-        <rejectBehavior>
-            <type>BackToPrevious</type>
-        </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
-    </approvalStep>
-    <approvalStep>
-        <allowDelegate>false</allowDelegate>
-        <assignedApprover>
-            <approver>
-                <type>adhoc</type>
-            </approver>
-        </assignedApprover>
-        <entryCriteria>
-            <criteriaItems>
-                <field>Forms__c.Requires_Escalated_Approval__c</field>
-                <operation>equals</operation>
-                <value>True</value>
-            </criteriaItems>
-        </entryCriteria>
-        <label>Send to Escalated Approval</label>
-        <name>Send_to_Escalated_Approval</name>
         <rejectBehavior>
             <type>BackToPrevious</type>
         </rejectBehavior>
@@ -631,6 +649,10 @@
             <type>FieldUpdate</type>
         </action>
         <action>
+            <name>Email_to_Funding_Official</name>
+            <type>Alert</type>
+        </action>
+        <action>
             <name>Final_Approval_Email</name>
             <type>Alert</type>
         </action>
@@ -653,7 +675,7 @@
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <initialSubmissionActions>
         <action>
-            <name>Approval_Step_Sent_to_Supervisor</name>
+            <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
             <type>FieldUpdate</type>
         </action>
         <action>
