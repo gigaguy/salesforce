@@ -53,6 +53,71 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
+        <fullName>Ad_Hoc_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Ad-Hoc 1</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Candidate Applications</relationshipLabel>
+        <relationshipName>Candidate_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Ad_Hoc_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Ad-Hoc 2</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Candidate Applications (Ad-Hoc 2)</relationshipLabel>
+        <relationshipName>Candidate_Applications1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Ad_Hoc_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Ad-Hoc 3</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Candidate Applications (Ad-Hoc 3)</relationshipLabel>
+        <relationshipName>Candidate_Applications2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Ad_Hoc_4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Ad-Hoc 4</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Candidate Applications (Ad-Hoc 4)</relationshipLabel>
+        <relationshipName>Candidate_Applications3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Ad_Hoc_5__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Ad-Hoc 5</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Candidate Applications (Ad-Hoc 5)</relationshipLabel>
+        <relationshipName>Candidate_Applications4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Comments__c</fullName>
         <externalId>false</externalId>
         <label>Comments</label>
@@ -208,12 +273,109 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Panel_Member_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Panel Member 1</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Candidate_Applications4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Panel_Member_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Panel Member 2</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Candidate_Applications5</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Panel_Member_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Panel Member 3</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Candidate_Applications6</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Panel_Member_4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Panel Member 4</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Candidate_Applications7</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Panel_Member_5__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Panel Member 5</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Candidate_Applications8</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Requestor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Requestor</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Candidate Applications (Requestor)</relationshipLabel>
+        <relationshipName>Candidate_Applications5</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Second_Line_Supervisor__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
         <label>Second Line Supervisor</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Candidate_Applications1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TQB_Chair__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>TQB Chair</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Candidate_Applications3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TQB_Coordinator__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>TQB Coordinator</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Candidate_Applications2</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>

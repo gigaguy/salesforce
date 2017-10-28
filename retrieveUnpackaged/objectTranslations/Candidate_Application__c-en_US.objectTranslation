@@ -9,6 +9,31 @@
         <value>Candidate Applications</value>
     </caseValues>
     <fields>
+        <label><!-- Ad-Hoc 1 --></label>
+        <name>Ad_Hoc_1__c</name>
+        <relationshipLabel><!-- Candidate Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ad-Hoc 2 --></label>
+        <name>Ad_Hoc_2__c</name>
+        <relationshipLabel><!-- Candidate Applications (Ad-Hoc 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ad-Hoc 3 --></label>
+        <name>Ad_Hoc_3__c</name>
+        <relationshipLabel><!-- Candidate Applications (Ad-Hoc 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ad-Hoc 4 --></label>
+        <name>Ad_Hoc_4__c</name>
+        <relationshipLabel><!-- Candidate Applications (Ad-Hoc 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ad-Hoc 5 --></label>
+        <name>Ad_Hoc_5__c</name>
+        <relationshipLabel><!-- Candidate Applications (Ad-Hoc 5) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Comments --></label>
         <name>Comments__c</name>
     </fields>
@@ -74,9 +99,49 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Panel Member 1 --></label>
+        <name>Panel_Member_1__c</name>
+        <relationshipLabel><!-- Candidate Applications (Panel Member 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Panel Member 2 --></label>
+        <name>Panel_Member_2__c</name>
+        <relationshipLabel><!-- Candidate Applications (Panel Member 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Panel Member 3 --></label>
+        <name>Panel_Member_3__c</name>
+        <relationshipLabel><!-- Candidate Applications (Panel Member 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Panel Member 4 --></label>
+        <name>Panel_Member_4__c</name>
+        <relationshipLabel><!-- Candidate Applications (Panel Member 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Panel Member 5 --></label>
+        <name>Panel_Member_5__c</name>
+        <relationshipLabel><!-- Candidate Applications (Panel Member 5) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Requestor --></label>
+        <name>Requestor__c</name>
+        <relationshipLabel><!-- Candidate Applications (Requestor) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Second Line Supervisor --></label>
         <name>Second_Line_Supervisor__c</name>
         <relationshipLabel><!-- Candidate Applications (Second Line Supervisor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- TQB Chair --></label>
+        <name>TQB_Chair__c</name>
+        <relationshipLabel><!-- Candidate Applications (TQB Chair) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- TQB Coordinator --></label>
+        <name>TQB_Coordinator__c</name>
+        <relationshipLabel><!-- Candidate Applications (TQB Coordinator) --></relationshipLabel>
     </fields>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>
