@@ -61,8 +61,17 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Additional Reviewer --></label>
+        <name>Additional_Reviewer__c</name>
+        <relationshipLabel><!-- Forms (Additional Reviewer) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Admin/Program (Printed Name) --></label>
         <name>Admin_Program_Printed_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- After Award Documentation --></label>
+        <name>After_Award_Documentation__c</name>
     </fields>
     <fields>
         <label><!-- Agency, Subelement, Submitting Office # --></label>
@@ -141,26 +150,9 @@
         <name>Approval_Step__c</name>
     </fields>
     <fields>
-        <label><!-- Approver 2 --></label>
-        <name>Approver_2__c</name>
-        <relationshipLabel><!-- Forms (Approver 2) --></relationshipLabel>
-    </fields>
-    <fields>
         <label><!-- Approving Official --></label>
         <name>Approving_Official__c</name>
         <relationshipLabel><!-- Forms (Approving Official) --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Before or After Award Documentation? --></label>
-        <name>Award_Documentation_before_or_after__c</name>
-        <picklistValues>
-            <masterLabel>After</masterLabel>
-            <translation><!-- After --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Before</masterLabel>
-            <translation><!-- Before --></translation>
-        </picklistValues>
     </fields>
     <fields>
         <label><!-- B. Description --></label>
@@ -173,6 +165,10 @@
     <fields>
         <label><!-- Badging Office (Printed Name) --></label>
         <name>Badging_Office_Printed_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Before Award Documentation --></label>
+        <name>Before_Award_Documentation__c</name>
     </fields>
     <fields>
         <label><!-- Beginning Date of Development Activity --></label>
@@ -536,6 +532,14 @@
         <name>Comment_s__c</name>
     </fields>
     <fields>
+        <label><!-- Comments --></label>
+        <name>Comments_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments_2__c</name>
+    </fields>
+    <fields>
         <label><!-- Company --></label>
         <name>Company__c</name>
     </fields>
@@ -816,19 +820,7 @@
     </fields>
     <fields>
         <label><!-- Developed in accordance with: --></label>
-        <name>Developed_in_accordance_with__c</name>
-        <picklistValues>
-            <masterLabel>Developed pre-award</masterLabel>
-            <translation><!-- Developed pre-award --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Documentation will be identified in individual Statements of Work or Performance Work Statement</masterLabel>
-            <translation><!-- Documentation will be identified in individual Statements of Work or Performance Work Statement --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>In Section of Work/Performance Work Statement (give section in &quot;Other Details&quot;)</masterLabel>
-            <translation><!-- In Section of Work/Performance Work Statement (give section in &quot;Other Details&quot;) --></translation>
-        </picklistValues>
+        <name>Developed_in_accordance_with_1__c</name>
         <picklistValues>
             <masterLabel>Other (provide details in &quot;Other Details&quot;)</masterLabel>
             <translation><!-- Other (provide details in &quot;Other Details&quot;) --></translation>
@@ -841,13 +833,61 @@
             <masterLabel>R-2 and R-5</masterLabel>
             <translation><!-- R-2 and R-5 --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Developed in accordance with: --></label>
+        <name>Developed_in_accordance_with_2__c</name>
+        <picklistValues>
+            <masterLabel>Other (provide details in &quot;Other Details&quot;)</masterLabel>
+            <translation><!-- Other (provide details in &quot;Other Details&quot;) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R-5</masterLabel>
+            <translation><!-- R-5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Developed in accordance with: --></label>
+        <name>Developed_in_accordance_with_3__c</name>
+        <picklistValues>
+            <masterLabel>Other (provide details in &quot;&quot;Other Details&quot;&quot;)&quot;</masterLabel>
+            <translation><!-- Other (provide details in &quot;&quot;Other Details&quot;&quot;)&quot; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R-2</masterLabel>
+            <translation><!-- R-2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R-2 and R-5</masterLabel>
+            <translation><!-- R-2 and R-5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Developed in accordance with: --></label>
+        <name>Developed_in_accordance_with_4__c</name>
+        <picklistValues>
+            <masterLabel>Documentation developed pre-award.</masterLabel>
+            <translation><!-- Documentation developed pre-award. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Documentation identified in Statement of Work or Performance Work Statement (proved section number in &quot;Other Details&quot;).</masterLabel>
+            <translation><!-- Documentation identified in Statement of Work or Performance Work Statement (proved section number in &quot;Other Details&quot;). --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Documentation will be identified in individual Statements of Work or Performance Work Statement.</masterLabel>
+            <translation><!-- Documentation will be identified in individual Statements of Work or Performance Work Statement. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other (provide details in &quot;Other Details&quot;).</masterLabel>
+            <translation><!-- Other (provide details in &quot;Other Details&quot;). --></translation>
+        </picklistValues>
         <picklistValues>
             <masterLabel>R-5</masterLabel>
             <translation><!-- R-5 --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Supplement to Programmatic QA Project Plan (provide name in &quot;Other Details&quot;)</masterLabel>
-            <translation><!-- Supplement to Programmatic QA Project Plan (provide name in &quot;Other Details&quot;) --></translation>
+            <masterLabel>Supplement to Programmatic QA Project Plan (provide name in &quot;Other Details&quot;).</masterLabel>
+            <translation><!-- Supplement to Programmatic QA Project Plan (provide name in &quot;Other Details&quot;). --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -1536,7 +1576,19 @@
     </fields>
     <fields>
         <label><!-- Other Details --></label>
-        <name>Other_Details__c</name>
+        <name>Other_Details_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Details --></label>
+        <name>Other_Details_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Details --></label>
+        <name>Other_Details_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Details --></label>
+        <name>Other_Details_4__c</name>
     </fields>
     <fields>
         <label><!-- Other --></label>
@@ -2141,6 +2193,12 @@
         </picklistValues>
     </fields>
     <fields>
+        <help><!-- ORD-111 --></help>
+        <label><!-- QA Manager --></label>
+        <name>QA_Manager__c</name>
+        <relationshipLabel><!-- Forms (QA Manager) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- QA Tracking Number --></label>
         <name>QA_Tracking_Number__c</name>
     </fields>
@@ -2261,8 +2319,8 @@
         <label><!-- Response: --></label>
         <name>Response_1__c</name>
         <picklistValues>
-            <masterLabel>No (If no, may go directly to &quot;Signatures&quot; Section.)</masterLabel>
-            <translation><!-- No (If no, may go directly to &quot;Signatures&quot; Section.) --></translation>
+            <masterLabel>No (If no, go directly to &quot;Signatures&quot; Section.)</masterLabel>
+            <translation><!-- No (If no, go directly to &quot;Signatures&quot; Section.) --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Yes</masterLabel>
@@ -2331,12 +2389,20 @@
         <relationshipLabel><!-- Forms (Select Card Holder) --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- Select Documentation Type --></label>
-        <name>Select_Documentation_Type__c</name>
+        <label><!-- 1. Select Documentation Type --></label>
+        <name>Select_Documentation_Type_1__c</name>
         <picklistValues>
-            <masterLabel>Application of QA and QC activities to the single project covered by the contract</masterLabel>
-            <translation><!-- Application of QA and QC activities to the single project covered by the contract --></translation>
+            <masterLabel>Combined documentation &amp; application (QA/QC) to contract&apos;s single project</masterLabel>
+            <translation><!-- Combined documentation &amp; application (QA/QC) to contract&apos;s single project --></translation>
         </picklistValues>
+        <picklistValues>
+            <masterLabel>Documentation of an organization’s Quality System</masterLabel>
+            <translation><!-- Documentation of an organization’s Quality System --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 3. Select Documentation Type --></label>
+        <name>Select_Documentation_Type_3__c</name>
         <picklistValues>
             <masterLabel>Combined documentation &amp; application (QA/QC) to contract&apos;s single project</masterLabel>
             <translation><!-- Combined documentation &amp; application (QA/QC) to contract&apos;s single project --></translation>
@@ -2346,24 +2412,8 @@
             <translation><!-- Documentation of an organization’s Quality System --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Documentation of the application of QA and QC activities to applicable project(s)</masterLabel>
-            <translation><!-- Documentation of the application of QA and QC activities to applicable project(s) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Existing documentation of the application of QA and QC activities will be used</masterLabel>
-            <translation><!-- Existing documentation of the application of QA and QC activities will be used --></translation>
-        </picklistValues>
-        <picklistValues>
             <masterLabel>Not Applicable</masterLabel>
             <translation><!-- Not Applicable --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Programmatic QA Project Plan</masterLabel>
-            <translation><!-- Programmatic QA Project Plan --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Programmatic QA Project Plan with supplements for each specific project</masterLabel>
-            <translation><!-- Programmatic QA Project Plan with supplements for each specific project --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -2453,6 +2503,10 @@
     <fields>
         <label><!-- Signature of Local LeaveBank Coordinator --></label>
         <name>Signature_of_Local_LeaveBank_Coordinator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Comments --></label>
+        <name>Special_Comments__c</name>
     </fields>
     <fields>
         <label><!-- Special accommodation needed? --></label>
@@ -3059,6 +3113,22 @@
         <name>X2_Part_B__c</name>
     </fields>
     <fields>
+        <label><!-- 2. QA Project Plan --></label>
+        <name>X2_QA_Project_Plan__c</name>
+        <picklistValues>
+            <masterLabel>Application of QA and QC activities to the single project covered by the contract</masterLabel>
+            <translation><!-- Application of QA and QC activities to the single project covered by the contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Programmatic QA Project Plan</masterLabel>
+            <translation><!-- Programmatic QA Project Plan --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- 2. --></label>
         <name>X2_SF_182__c</name>
     </fields>
@@ -3077,6 +3147,22 @@
     <fields>
         <label><!-- 4. --></label>
         <name>X4_SF_182__c</name>
+    </fields>
+    <fields>
+        <label><!-- 4. Select Application Documentation Type --></label>
+        <name>X4_Select_Documentation_Type__c</name>
+        <picklistValues>
+            <masterLabel>Documentation of the application of QA and QC activities to applicable project(s).</masterLabel>
+            <translation><!-- Documentation of the application of QA and QC activities to applicable project(s). --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Existing documentation of the application of QA and QC activities will be used (give details below).</masterLabel>
+            <translation><!-- Existing documentation of the application of QA and QC activities will be used (give details below). --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Programmatic QA Project Plan with supplements for each specific project.</masterLabel>
+            <translation><!-- Programmatic QA Project Plan with supplements for each specific project. --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- 508 Compliance Approver --></label>
@@ -3438,6 +3524,18 @@
         <sections>
             <label><!-- ORD Quality Assurance Review Form (QARF) --></label>
             <section>ORD Quality Assurance Review Form (QARF)</section>
+        </sections>
+        <sections>
+            <label><!-- QA Documentation Spacer --></label>
+            <section>QA Documentation Spacer</section>
+        </sections>
+        <sections>
+            <label><!-- QA Documentation Spacer 2 --></label>
+            <section>QA Documentation Spacer 2</section>
+        </sections>
+        <sections>
+            <label><!-- QARF Spacer 1 --></label>
+            <section>QARF Spacer 1</section>
         </sections>
         <sections>
             <label><!-- Spacer3 --></label>

@@ -33,7 +33,7 @@
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
         <formula>AND(
- RecordType.Name  = &apos;SF-182&apos;,
+ RecordType.Name  = &apos;ORD-111&apos;,
  NOT(ISBLANK( Prepare_Form_for__c ) )  
 )</formula>
     </entryCriteria>
@@ -45,11 +45,11 @@
             <type>FieldUpdate</type>
         </action>
         <action>
-            <name>SF_182_Submission_Confirmation</name>
+            <name>ORD_111_Submission_Confirmation</name>
             <type>Alert</type>
         </action>
     </initialSubmissionActions>
-    <label>SF182 Approval Process - Prepared As</label>
+    <label>ORD-111 Approval Process - Prepared As</label>
     <recallActions>
         <action>
             <name>Approval_Step_Recalled</name>

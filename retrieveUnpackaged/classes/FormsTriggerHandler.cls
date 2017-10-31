@@ -7,7 +7,7 @@ public class FormsTriggerHandler {
     public void beforeUpdate(Map<id,Forms__c> formMap){
         updateFormLookups(formMap.values(), false);
         
-        // (sf-182 process -- set form owner to person prepared for and then clear Prepare For field
+        // (sf-182 / ord-111 processes -- set form owner to person prepared for and then clear Prepare For field
         for (forms__c form : formMap.values()) {
     
             if (form.Approval_Step__c != null) {

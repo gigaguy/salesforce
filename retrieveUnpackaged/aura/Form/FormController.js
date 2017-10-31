@@ -34,8 +34,8 @@
         	var hrefEmail = "To be determined";
         }
         else if (formName === "ORD-111") {
-            var hrefInfo = "";
-        	var hrefEmail = "Bhagya Subramanian";
+            var hrefInfo = "https://intranet.ord.epa.gov/sites/default/files/media/qa/ORDQARFinstructions073008.pdf";
+        	var hrefEmail = "ORDQARFinstructions073008.pdf";
         }
         else if (formName === "PRIAv5") {
             var hrefInfo = "";
@@ -96,8 +96,8 @@
         	var hrefEmail = "To be determined";
         }
         else if (formName === "ORD-111") {
-            var hrefInfo = "";
-        	var hrefEmail = "Bhagya Subramanian";
+            var hrefInfo = "https://intranet.ord.epa.gov/sites/default/files/media/qa/ORDQARFinstructions073008.pdf";
+        	var hrefEmail = "ORDQARFinstructions073008.pdf";
         }
         else if (formName === "PRIAv5") {
             var hrefInfo = "";
@@ -653,8 +653,8 @@
         	var hrefEmail = "To be determined";
         }
         else if (formName === "ORD-111") {
-            var hrefInfo = "";
-        	var hrefEmail = "Bhagya Subramanian";
+            var hrefInfo = "https://intranet.ord.epa.gov/sites/default/files/media/qa/ORDQARFinstructions073008.pdf";
+        	var hrefEmail = "ORDQARFinstructions073008.pdf";
         }
         else if (formName === "PRIAv5") {
             var hrefInfo = "";

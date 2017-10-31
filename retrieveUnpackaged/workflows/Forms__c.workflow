@@ -89,8 +89,19 @@
         <template>unfiled$public/Form_Approval_Request_Notification_Template</template>
     </alerts>
     <alerts>
+        <fullName>ORD_111_Submission_Confirmation</fullName>
+        <description>ORD-111 Submission Confirmation (prepared for another user)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Prepare_Form_for__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/ORD_111_Forms_Submission_Confirm_submitted_by_other_person</template>
+    </alerts>
+    <alerts>
         <fullName>SF_182_Submission_Confirmation</fullName>
-        <description>SF-182 Submission Confirmation</description>
+        <description>SF-182 Submission Confirmation (prepared for another user)</description>
         <protected>false</protected>
         <recipients>
             <field>Prepare_Form_for__c</field>
@@ -315,6 +326,17 @@ IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;,
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Approval_Step_Prepared_As</fullName>
+        <field>Approval_Step__c</field>
+        <formula>IF( ISBLANK( Unauthenticated_Owner__c ), 
+&quot;Form Prepared for you by &quot; &amp;  CreatedBy.FirstName &amp;&quot; &quot;&amp; CreatedBy.LastName &amp;&quot; - Not Submitted&quot;, 
+&quot;Form Prepared for you by &quot; &amp; Unauthenticated_Owner__r.FirstName &amp;&quot; &quot;&amp; Unauthenticated_Owner__r.LastName &amp;&quot; - Not Submitted&quot;)</formula>
+        <name>Approval Step - Prepared As</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Approval_Step_Recalled</fullName>
         <field>Approval_Step__c</field>
         <formula>&quot;Recalled&quot;</formula>
@@ -333,17 +355,6 @@ IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;,
         <operation>Formula</operation>
         <protected>false</protected>
         <reevaluateOnChange>true</reevaluateOnChange>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Approval_Step_SF_182_Prepared_As</fullName>
-        <field>Approval_Step__c</field>
-        <formula>IF( ISBLANK( Unauthenticated_Owner__c ), 
-&quot;Form Prepared for you by &quot; &amp;  CreatedBy.FirstName &amp;&quot; &quot;&amp; CreatedBy.LastName &amp;&quot; - Not Submitted&quot;, 
-&quot;Form Prepared for you by &quot; &amp; Unauthenticated_Owner__r.FirstName &amp;&quot; &quot;&amp; Unauthenticated_Owner__r.LastName &amp;&quot; - Not Submitted&quot;)</formula>
-        <name>Approval Step - SF-182 Prepared As</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Approval_Queue</fullName>

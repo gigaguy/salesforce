@@ -223,7 +223,8 @@
             </h2>
               
               <h3>                    
-                  <br/>For help using {!v.selectedFormName} please contact: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a>
+                  <aura:if isTrue="{!v.selectedFormName!='ORD-111'}"><br/>For help using {!v.selectedFormName} please contact: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>
+                  <aura:if isTrue="{!v.selectedFormName=='ORD-111'}"><br/>For instructions using {!v.selectedFormName} please click here: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>
               </h3> 
             
             <div aura:id="div1"></div>
@@ -332,7 +333,8 @@
             </h2>   
               
               <h3>                    
-                  <br/>For help using {!v.selectedFormName} please contact: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a>
+                  <aura:if isTrue="{!v.selectedFormName!='ORD-111'}"><br/>For help using {!v.selectedFormName} please contact: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>
+                  <aura:if isTrue="{!v.selectedFormName=='ORD-111'}"><br/>For instructions using {!v.selectedFormName} please click here: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>
               </h3> 
               
           </div>
@@ -443,7 +445,8 @@
             </h2>   
               
               <h3>                    
-                  <br/>For help using {!v.selectedFormName} please contact: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a>
+                  <aura:if isTrue="{!v.selectedFormName!='ORD-111'}"><br/>For help using {!v.selectedFormName} please contact: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>
+                  <aura:if isTrue="{!v.selectedFormName=='ORD-111'}"><br/>For instructions using {!v.selectedFormName} please click here: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>
               </h3> 
               
           </div>
