@@ -143,5 +143,28 @@
         <name>TQB_Coordinator__c</name>
         <relationshipLabel><!-- Candidate Applications (TQB Coordinator) --></relationshipLabel>
     </fields>
+    <layouts>
+        <layout>Candidate Application Layout</layout>
+        <sections>
+            <label><!-- Ad-Hoc Members --></label>
+            <section>Ad-Hoc Members</section>
+        </sections>
+        <sections>
+            <label><!-- Candidate Package Details --></label>
+            <section>Candidate Package Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Panel Members --></label>
+            <section>Panel Members</section>
+        </sections>
+        <sections>
+            <label><!-- Supervisors --></label>
+            <section>Supervisors</section>
+        </sections>
+    </layouts>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

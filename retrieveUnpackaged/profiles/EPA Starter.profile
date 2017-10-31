@@ -2390,6 +2390,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>URL_Details__c.ContentURL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>URL_Details__c.Display_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>URL_Details__c.More_Details__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>User.Building__c</field>
         <readable>true</readable>
     </fieldPermissions>
