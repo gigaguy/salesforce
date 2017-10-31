@@ -896,7 +896,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Authorization__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
