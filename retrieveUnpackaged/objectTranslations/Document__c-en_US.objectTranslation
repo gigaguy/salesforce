@@ -366,7 +366,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Comments --></label>
+        <label><!-- Comments / Description --></label>
         <name>Comments__c</name>
     </fields>
     <fields>
@@ -6792,6 +6792,10 @@
         <name>Grant_Number__c</name>
     </fields>
     <fields>
+        <label><!-- Grant Title --></label>
+        <name>Grant_Title__c</name>
+    </fields>
+    <fields>
         <label><!-- Group --></label>
         <name>Group__c</name>
         <picklistValues>
@@ -9923,7 +9927,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Vendor / Recipient --></label>
+        <label><!-- Vendor / Recipient / Traveler --></label>
         <name>Vendor__c</name>
     </fields>
     <fields>
@@ -10223,16 +10227,12 @@
             <section>Amounts</section>
         </sections>
         <sections>
+            <label><!-- Bankcard Purchase Details --></label>
+            <section>Bankcard Purchase Details</section>
+        </sections>
+        <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
-        </sections>
-        <sections>
-            <label><!-- Details --></label>
-            <section>Details</section>
-        </sections>
-        <sections>
-            <label><!-- Vehicle --></label>
-            <section>Vehicle</section>
         </sections>
     </layouts>
     <layouts>
@@ -10246,16 +10246,12 @@
             <section>Amounts</section>
         </sections>
         <sections>
+            <label><!-- Contract Details --></label>
+            <section>Contract Details</section>
+        </sections>
+        <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
-        </sections>
-        <sections>
-            <label><!-- Details --></label>
-            <section>Details</section>
-        </sections>
-        <sections>
-            <label><!-- Vehicle --></label>
-            <section>Vehicle</section>
         </sections>
     </layouts>
     <layouts>
@@ -10273,12 +10269,8 @@
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Details --></label>
-            <section>Details</section>
-        </sections>
-        <sections>
-            <label><!-- Vehicle --></label>
-            <section>Vehicle</section>
+            <label><!-- Grant Details --></label>
+            <section>Grant Details</section>
         </sections>
     </layouts>
     <layouts>
@@ -10296,12 +10288,8 @@
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Details --></label>
-            <section>Details</section>
-        </sections>
-        <sections>
-            <label><!-- Vehicle --></label>
-            <section>Vehicle</section>
+            <label><!-- IA Details --></label>
+            <section>IA Details</section>
         </sections>
     </layouts>
     <layouts>
@@ -10319,12 +10307,8 @@
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Details --></label>
-            <section>Details</section>
-        </sections>
-        <sections>
-            <label><!-- Vehicle --></label>
-            <section>Vehicle</section>
+            <label><!-- Other Details --></label>
+            <section>Other Details</section>
         </sections>
     </layouts>
     <layouts>
@@ -10395,12 +10379,8 @@
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Travel --></label>
-            <section>Travel</section>
-        </sections>
-        <sections>
-            <label><!-- Vehicle --></label>
-            <section>Vehicle</section>
+            <label><!-- Travel Details --></label>
+            <section>Travel Details</section>
         </sections>
     </layouts>
     <recordTypes>

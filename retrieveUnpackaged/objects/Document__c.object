@@ -597,7 +597,7 @@
     <fields>
         <fullName>Comments__c</fullName>
         <externalId>false</externalId>
-        <label>Comments</label>
+        <label>Comments / Description</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -11659,6 +11659,17 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Grant_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Title</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Group__c</fullName>
         <externalId>false</externalId>
         <label>Group</label>
@@ -15453,7 +15464,7 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
     <fields>
         <fullName>Vendor__c</fullName>
         <externalId>false</externalId>
-        <label>Vendor / Recipient</label>
+        <label>Vendor / Recipient / Traveler</label>
         <length>180</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -26529,12 +26540,8 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
         <picklistValues>
             <picklist>Bankcard_Purchase__c</picklist>
             <values>
-                <fullName>No</fullName>
-                <default>true</default>
-            </values>
-            <values>
                 <fullName>Yes</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -26549,7 +26556,7 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
             </values>
             <values>
                 <fullName>PR - Procurement Request</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
             <values>
                 <fullName>SWA - Secure Work Authorization</fullName>
@@ -36676,7 +36683,7 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
             </values>
             <values>
                 <fullName>PR - Procurement Request</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
             <values>
                 <fullName>SWA - Secure Work Authorization</fullName>
@@ -46795,7 +46802,7 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
             <picklist>Document_Type__c</picklist>
             <values>
                 <fullName>CN - Commitment Notice</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
             <values>
                 <fullName>MOD - Miscellaneous Document</fullName>
@@ -46813,84 +46820,8 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
         <picklistValues>
             <picklist>Expenditure_Type__c</picklist>
             <values>
-                <fullName>Cellular Phone</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Computer Hardware</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Computer Software</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Contract - Administrative</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Contract - Programmatic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Delivery Service</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Equipment</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Facilities</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Furniture</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Grant</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>IAG</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Lab Equipment</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paper</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Printing</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Subscriptions</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Supplies</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Toner Printer%2FCopier</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Working Capital Fund</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -56940,84 +56871,8 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
         <picklistValues>
             <picklist>Expenditure_Type__c</picklist>
             <values>
-                <fullName>Cellular Phone</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Computer Hardware</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Computer Software</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Contract - Administrative</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Contract - Programmatic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Delivery Service</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Equipment</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Facilities</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Furniture</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grant</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>IAG</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Lab Equipment</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Paper</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Printing</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Subscriptions</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Supplies</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Toner Printer%2FCopier</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Working Capital Fund</fullName>
-                <default>false</default>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
