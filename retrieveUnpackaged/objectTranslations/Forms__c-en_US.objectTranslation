@@ -9,12 +9,97 @@
         <value>Forms</value>
     </caseValues>
     <fields>
+        <label><!-- 1st Line Supervisor See Before Release? --></label>
+        <name>A1st_Line_Supervisor_See_Before_Release__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- AWL Phone Number --></label>
         <name>AWL_Phone_Number__c</name>
     </fields>
     <fields>
+        <help><!-- Additional communications materials needed from clearing author (e.g., desk statement, Qs and As for Press Office). Communications Coordinator will email further instructions to clearing author, with deadline for submitting requested materials. --></help>
+        <label><!-- Additional Comms Materials Required? --></label>
+        <name>Additional_Comms_Materials_Required__c</name>
+        <picklistValues>
+            <masterLabel>Additional Communication Material Needed from Clearing Author</masterLabel>
+            <translation><!-- Additional Communication Material Needed from Clearing Author --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Does this product require advance notice of [O/P/R] senior leadership or that of other EPA offices, programs or regions? If yes, please attach the communications plan and internal fact sheet for advance notice procedures. --></help>
+        <label><!-- Advance Notice Needed? --></label>
+        <name>Advance_Notice_Needed__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Does this product require advance notice of [O/P/R] senior leadership or other EPA offices, programs or regions? If yes, please ensure advance notice procedures are followed. --></help>
+        <label><!-- Advance Notice? --></label>
+        <name>Advance_Notice__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Agency/Office Affiliation --></label>
+        <name>Agency_Office_Affiliation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Anticipated/Desired Release Date --></label>
+        <name>Anticipated_Desired_Release_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does this product use the appropriate disclaimer(s)? If no, then please suggest an appropriate one. --></help>
+        <label><!-- Appropriate Disclaimers? --></label>
+        <name>Appropriate_Disclaimers__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Approval Step --></label>
         <name>Approval_Step__c</name>
+    </fields>
+    <fields>
+        <help><!-- Approval of Draft Product by EPA Co-Authors Outside of Clearing Author’s Office --></help>
+        <label><!-- Approval of Draft Product? --></label>
+        <name>Approval_of_Draft_Product__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Approver 2 --></label>
@@ -36,6 +121,29 @@
             <masterLabel>Role</masterLabel>
             <translation><!-- Role --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Clearing Author --></label>
+        <name>Clearing_Author__c</name>
+        <relationshipLabel><!-- Forms (Clearing Author) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Refer to the communications handbook and staff for support and guidance on developing and implementing a communications plan for this product. --></help>
+        <label><!-- Communication Plan Required? --></label>
+        <name>Communication_Plan_Required__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Communications Coordinator --></label>
+        <name>Communications_Coordinator__c</name>
+        <relationshipLabel><!-- Forms (Communications Coordinator) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Current Approver --></label>
@@ -83,8 +191,59 @@
         <name>Date_2_Total_Work_Hours__c</name>
     </fields>
     <fields>
+        <label><!-- Date of Clearance Initiation --></label>
+        <name>Date_of_Clearance_Initiation__c</name>
+    </fields>
+    <fields>
         <label><!-- Description --></label>
         <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disclaimer Included? --></label>
+        <name>Disclaimer_Included__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Disclaimers --></label>
+        <name>Disclaimers__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does this product contain potential Dual Research of Concern (DURC)? If yes, please see EPA’s DURC Policy. --></help>
+        <label><!-- Dual Research of Concern (DURC)? --></label>
+        <name>Dual_Research_of_Concern_DURC__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dual Use Research --></label>
+        <name>Dual_Use_Research2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is there potential for misuse that would cause potential harm? See EPA’s Dual-Use Research of Concern Policy for more information.  
+https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-concern --></help>
+        <label><!-- Dual Use Research --></label>
+        <name>Dual_Use_Research__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <help><!-- Clicking the &quot;Employee&apos;s Signature&quot; checkbox will sign this section upon saving the form. --></help>
@@ -99,6 +258,11 @@
     <fields>
         <label><!-- Expire Date --></label>
         <name>Expire_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Line Supervisor --></label>
+        <name>First_Line_Supervisor__c</name>
+        <relationshipLabel><!-- Forms (First Line Supervisor) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Form Owner --></label>
@@ -193,6 +357,19 @@
         <relationshipLabel><!-- Forms --></relationshipLabel>
     </fields>
     <fields>
+        <help><!-- Does this product contain human subjects research (HSR)? If yes, please attach documentation of HSR approval. --></help>
+        <label><!-- Human Subjects Research --></label>
+        <name>Human_Subjects_Research__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Immediate Supervisor&apos;s Digital Signature --></label>
         <name>Immediate_Supervisor_s_Digital_Signature__c</name>
     </fields>
@@ -201,13 +378,73 @@
         <name>Immediate_Supervisor_s_Signature__c</name>
     </fields>
     <fields>
+        <help><!-- Does this product raise any potential legal concerns by either the findings presented in it or a publication agreement? If yes, please attach the document detailing the legal concerns. --></help>
+        <label><!-- Legal Concerns --></label>
+        <name>Legal_Concerns__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Upon clearance and publication, clearing author must provide a link to where the publication resides. --></help>
+        <label><!-- Link to Publication --></label>
+        <name>Link_to_Publication__c</name>
+    </fields>
+    <fields>
         <label><!-- Name --></label>
         <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Official Duties --></label>
+        <name>Official_Duties__c</name>
+        <picklistValues>
+            <masterLabel>This product was developed as part of my official duties.</masterLabel>
+            <translation><!-- This product was developed as part of my official duties. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>This product/activity is not part of my official duties, and I understand that I may have additional ethics responsibilities.</masterLabel>
+            <translation><!-- This product/activity is not part of my official duties, and I understand that I may have additional ethics responsibilities. --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Organization Allocation --></label>
         <name>Organization_Allocation__c</name>
         <relationshipLabel><!-- Forms (Organization Allocation) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Organizational Level Director --></label>
+        <name>Organizational_Level_Director__c</name>
+        <relationshipLabel><!-- Forms (Organizational Level Director) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Peer Review --></label>
+        <name>Peer_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- Definitions of Level 1 and Level 2: [link to Routing Information for Level 1 and 2 Documents] --></help>
+        <label><!-- Product Designation --></label>
+        <name>Product_Designation__c</name>
+        <picklistValues>
+            <masterLabel>Level 1 (Influential Scientific Information (ISI), Highly Influential Scientific Assessment (HISA), or High Profile</masterLabel>
+            <translation><!-- Level 1 (Influential Scientific Information (ISI), Highly Influential Scientific Assessment (HISA), or High Profile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Level 2 (all other scientific products)</masterLabel>
+            <translation><!-- Level 2 (all other scientific products) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Public Access --></label>
+        <name>Public_Access__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quality Assurance --></label>
+        <name>Quality_Assurance__c</name>
     </fields>
     <fields>
         <label><!-- Quantity --></label>
@@ -246,6 +483,32 @@
         <name>SandboxURL__c</name>
     </fields>
     <fields>
+        <help><!-- Upon clearance, should this product be submitted to Science Inventory? --></help>
+        <label><!-- Science Inventory? --></label>
+        <name>Science_Inventory__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Does this product have a Scientific Data Management Plan that is in compliance with EPA’s Public Access Plan? --></help>
+        <label><!-- Scientific Data Management Plan? --></label>
+        <name>Scientific_Data_Management_Plan__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Submitted on Behalf Of --></label>
         <name>Submitted_on_Behalf_Of__c</name>
         <relationshipLabel><!-- Forms --></relationshipLabel>
@@ -254,6 +517,40 @@
         <label><!-- Technical Contact --></label>
         <name>Technical_Contact__c</name>
         <relationshipLabel><!-- Forms (Technical Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If Applicable --></help>
+        <label><!-- Technical Information Manager --></label>
+        <name>Technical_Information_Manager__c</name>
+        <relationshipLabel><!-- Forms (Technical Information Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Title/Topic --></label>
+        <name>Title_Topic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of Product --></label>
+        <name>Type_of_Product__c</name>
+        <picklistValues>
+            <masterLabel>Book or Book Chapter</masterLabel>
+            <translation><!-- Book or Book Chapter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPA Report or Guidance</masterLabel>
+            <translation><!-- EPA Report or Guidance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Journal Article</masterLabel>
+            <translation><!-- Journal Article --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Presentation</masterLabel>
+            <translation><!-- Presentation --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Type-1 Owner --></label>
@@ -358,6 +655,29 @@
             <section>Instructions</section>
         </sections>
     </layouts>
+    <layouts>
+        <layout>eClearance</layout>
+        <sections>
+            <label><!-- Communications Check In --></label>
+            <section>Communications Check In</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Disclaimers --></label>
+            <section>Disclaimers</section>
+        </sections>
+        <sections>
+            <label><!-- First Line Supervisor Checklist --></label>
+            <section>First Line Supervisor Checklist</section>
+        </sections>
+        <sections>
+            <label><!-- Product Details --></label>
+            <section>Product Details</section>
+        </sections>
+    </layouts>
     <recordTypes>
         <label><!-- BAP Provisioning --></label>
         <name>BAP_Provisioning</name>
@@ -370,6 +690,10 @@
         <label><!-- SF 182 --></label>
         <name>SF_182</name>
     </recordTypes>
+    <recordTypes>
+        <label><!-- eClearance --></label>
+        <name>eClearance</name>
+    </recordTypes>
     <startsWith>Consonant</startsWith>
     <validationRules>
         <errorMessage><!-- If Authorization Reason &quot;Organization Allocation&quot; is selected, the Organization Allocation field must be completed. --></errorMessage>
@@ -378,6 +702,10 @@
     <validationRules>
         <errorMessage><!-- If Authorization Reason &quot;Role&quot; is chosen, Role field must be completed. --></errorMessage>
         <name>Authorization_Role_Reason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For Products designated Level 1, please indicate whether advanced noticed was given. --></errorMessage>
+        <name>Level_1_Product_Advance_Notice</name>
     </validationRules>
     <webLinks>
         <label><!-- Printable_View --></label>

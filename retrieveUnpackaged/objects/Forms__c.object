@@ -65,6 +65,29 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
+        <fullName>A1st_Line_Supervisor_See_Before_Release__c</fullName>
+        <externalId>false</externalId>
+        <label>1st Line Supervisor See Before Release?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>AWL_Phone_Number__c</fullName>
         <externalId>false</externalId>
         <label>AWL Phone Number</label>
@@ -72,6 +95,122 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Comms_Materials_Required__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Additional communications materials needed from clearing author (e.g., desk statement, Qs and As for Press Office). Communications Coordinator will email further instructions to clearing author, with deadline for submitting requested materials.</inlineHelpText>
+        <label>Additional Comms Materials Required?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Additional Communication Material Needed from Clearing Author</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Advance_Notice_Needed__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Does this product require advance notice of [O/P/R] senior leadership or that of other EPA offices, programs or regions? If yes, please attach the communications plan and internal fact sheet for advance notice procedures.</inlineHelpText>
+        <label>Advance Notice Needed?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Advance_Notice__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Does this product require advance notice of [O/P/R] senior leadership or other EPA offices, programs or regions? If yes, please ensure advance notice procedures are followed.</inlineHelpText>
+        <label>Advance Notice?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Agency_Office_Affiliation__c</fullName>
+        <externalId>false</externalId>
+        <label>Agency/Office Affiliation</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Anticipated_Desired_Release_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Anticipated/Desired Release Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Appropriate_Disclaimers__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Does this product use the appropriate disclaimer(s)? If no, then please suggest an appropriate one.</inlineHelpText>
+        <label>Appropriate Disclaimers?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Approval_Step__c</fullName>
@@ -83,6 +222,30 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_of_Draft_Product__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Approval of Draft Product by EPA Co-Authors Outside of Clearing Author’s Office</inlineHelpText>
+        <label>Approval of Draft Product?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Approver_2__c</fullName>
@@ -122,6 +285,55 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Clearing_Author__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Clearing Author</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Clearing Author)</relationshipLabel>
+        <relationshipName>Forms2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Communication_Plan_Required__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Refer to the communications handbook and staff for support and guidance on developing and implementing a communications plan for this product.</inlineHelpText>
+        <label>Communication Plan Required?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Communications_Coordinator__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Communications Coordinator</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Current_Approver__c</fullName>
@@ -244,6 +456,15 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Date_of_Clearance_Initiation__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Clearance Initiation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Description__c</fullName>
         <externalId>false</externalId>
         <label>Description</label>
@@ -252,6 +473,98 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Disclaimer_Included__c</fullName>
+        <externalId>false</externalId>
+        <label>Disclaimer Included?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Disclaimers__c</fullName>
+        <defaultValue>&quot;This scientific product may need to have a standard disclaimer on it when given to peer reviewers and while routing through clearance. An ethics disclaimer may also need to be used when the scientific product is released. Please ensure that your product includes all appropriate disclaimers.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Disclaimers</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Dual_Research_of_Concern_DURC__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Does this product contain potential Dual Research of Concern (DURC)? If yes, please see EPA’s DURC Policy.</inlineHelpText>
+        <label>Dual Research of Concern (DURC)?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Dual_Use_Research2__c</fullName>
+        <defaultValue>&quot;Is there potential for misuse that would cause potential harm? See EPA’s Dual-Use Research of Concern Policy for more information.  https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-concern&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Dual Use Research</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Dual_Use_Research__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Is there potential for misuse that would cause potential harm? See EPA’s Dual-Use Research of Concern Policy for more information.  
+https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-concern</inlineHelpText>
+        <label>Dual Use Research</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Employee_Digital_Signature__c</fullName>
@@ -283,6 +596,18 @@
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>First_Line_Supervisor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>First Line Supervisor</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Form_Owner__c</fullName>
@@ -456,6 +781,30 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Human_Subjects_Research__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Does this product contain human subjects research (HSR)? If yes, please attach documentation of HSR approval.</inlineHelpText>
+        <label>Human Subjects Research</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Immediate_Supervisor_s_Digital_Signature__c</fullName>
         <externalId>false</externalId>
         <label>Immediate Supervisor&apos;s Digital Signature</label>
@@ -476,6 +825,40 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Legal_Concerns__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Does this product raise any potential legal concerns by either the findings presented in it or a publication agreement? If yes, please attach the document detailing the legal concerns.</inlineHelpText>
+        <label>Legal Concerns</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Link_to_Publication__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Upon clearance and publication, clearing author must provide a link to where the publication resides.</inlineHelpText>
+        <label>Link to Publication</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
         <fullName>Name__c</fullName>
         <externalId>false</externalId>
         <label>Name</label>
@@ -485,6 +868,29 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Official_Duties__c</fullName>
+        <externalId>false</externalId>
+        <label>Official Duties</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>This product was developed as part of my official duties.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>This product/activity is not part of my official duties, and I understand that I may have additional ethics responsibilities.</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Organization_Allocation__c</fullName>
@@ -498,6 +904,72 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Organizational_Level_Director__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Organizational Level Director</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Peer_Review__c</fullName>
+        <defaultValue>&quot;Please ensure that this product has been through appropriate peer review. The peer review record of this product should be attached.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Peer Review</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Product_Designation__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Definitions of Level 1 and Level 2: [link to Routing Information for Level 1 and 2 Documents]</inlineHelpText>
+        <label>Product Designation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Level 1 (Influential Scientific Information (ISI), Highly Influential Scientific Assessment (HISA), or High Profile</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Level 2 (all other scientific products)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Public_Access__c</fullName>
+        <defaultValue>&quot;Please ensure that this product has a Scientific Data Management Plan in compliance with EPA’s Public Access Plan. Documentation of the plan should be attached.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Public Access</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Quality_Assurance__c</fullName>
+        <defaultValue>&quot;Please ensure that this product meets all requirements of [O/P/R]’s Quality Management Plan. All relevant QA documentation should be attached.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Quality Assurance</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Quantity__c</fullName>
@@ -561,6 +1033,54 @@
         <type>Url</type>
     </fields>
     <fields>
+        <fullName>Science_Inventory__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Upon clearance, should this product be submitted to Science Inventory?</inlineHelpText>
+        <label>Science Inventory?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Scientific_Data_Management_Plan__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Does this product have a Scientific Data Management Plan that is in compliance with EPA’s Public Access Plan?</inlineHelpText>
+        <label>Scientific Data Management Plan?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Submitted_on_Behalf_Of__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
         <description>Submitted on Behalf Of</description>
@@ -595,6 +1115,64 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Technical_Information_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>If Applicable</inlineHelpText>
+        <label>Technical Information Manager</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Technical Information Manager)</relationshipLabel>
+        <relationshipName>Forms3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Title_Topic__c</fullName>
+        <externalId>false</externalId>
+        <label>Title/Topic</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Type_of_Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of Product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>EPA Report or Guidance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Book or Book Chapter</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Journal Article</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Presentation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Unauthenticated_Owner__c</fullName>
@@ -734,6 +1312,72 @@
         <description>BAP Provisioning Forms</description>
         <label>BAP Provisioning</label>
         <picklistValues>
+            <picklist>A1st_Line_Supervisor_See_Before_Release__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Comms_Materials_Required__c</picklist>
+            <values>
+                <fullName>Additional Communication Material Needed from Clearing Author</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Advance_Notice_Needed__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Advance_Notice__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Appropriate_Disclaimers__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_of_Draft_Product__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Authorization_Reason__c</picklist>
             <values>
                 <fullName>Application</fullName>
@@ -745,6 +1389,50 @@
             </values>
             <values>
                 <fullName>Role</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Communication_Plan_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Disclaimer_Included__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dual_Research_of_Concern_DURC__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dual_Use_Research__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -815,6 +1503,50 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Human_Subjects_Research__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Legal_Concerns__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Official_Duties__c</picklist>
+            <values>
+                <fullName>This product was developed as part of my official duties%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>This product%2Factivity is not part of my official duties%2C and I understand that I may have additional ethics responsibilities%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Designation__c</picklist>
+            <values>
+                <fullName>Level 1 %28Influential Scientific Information %28ISI%29%2C Highly Influential Scientific Assessment %28HISA%29%2C or High Profile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 2 %28all other scientific products%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Role__c</picklist>
             <values>
                 <fullName>FCO</fullName>
@@ -838,6 +1570,51 @@
             </values>
             <values>
                 <fullName>TimeKeeper</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Science_Inventory__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Scientific_Data_Management_Plan__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Product__c</picklist>
+            <values>
+                <fullName>Book or Book Chapter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EPA Report or Guidance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Journal Article</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Presentation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -849,6 +1626,72 @@
         <description>Episodic Flexiplace  (workflow)</description>
         <label>EPA-100</label>
         <picklistValues>
+            <picklist>A1st_Line_Supervisor_See_Before_Release__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Comms_Materials_Required__c</picklist>
+            <values>
+                <fullName>Additional Communication Material Needed from Clearing Author</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Advance_Notice_Needed__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Advance_Notice__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Appropriate_Disclaimers__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_of_Draft_Product__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Authorization_Reason__c</picklist>
             <values>
                 <fullName>Application</fullName>
@@ -860,6 +1703,50 @@
             </values>
             <values>
                 <fullName>Role</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Communication_Plan_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Disclaimer_Included__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dual_Research_of_Concern_DURC__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dual_Use_Research__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -910,6 +1797,50 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Human_Subjects_Research__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Legal_Concerns__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Official_Duties__c</picklist>
+            <values>
+                <fullName>This product was developed as part of my official duties%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>This product%2Factivity is not part of my official duties%2C and I understand that I may have additional ethics responsibilities%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Designation__c</picklist>
+            <values>
+                <fullName>Level 1 %28Influential Scientific Information %28ISI%29%2C Highly Influential Scientific Assessment %28HISA%29%2C or High Profile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 2 %28all other scientific products%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Role__c</picklist>
             <values>
                 <fullName>FCO</fullName>
@@ -933,6 +1864,51 @@
             </values>
             <values>
                 <fullName>TimeKeeper</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Science_Inventory__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Scientific_Data_Management_Plan__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Product__c</picklist>
+            <values>
+                <fullName>Book or Book Chapter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EPA Report or Guidance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Journal Article</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Presentation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -943,6 +1919,72 @@
         <description>SF 182 Form</description>
         <label>SF 182</label>
         <picklistValues>
+            <picklist>A1st_Line_Supervisor_See_Before_Release__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Comms_Materials_Required__c</picklist>
+            <values>
+                <fullName>Additional Communication Material Needed from Clearing Author</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Advance_Notice_Needed__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Advance_Notice__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Appropriate_Disclaimers__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_of_Draft_Product__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Authorization_Reason__c</picklist>
             <values>
                 <fullName>Application</fullName>
@@ -954,6 +1996,50 @@
             </values>
             <values>
                 <fullName>Role</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Communication_Plan_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Disclaimer_Included__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dual_Research_of_Concern_DURC__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dual_Use_Research__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1004,6 +2090,50 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Human_Subjects_Research__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Legal_Concerns__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Official_Duties__c</picklist>
+            <values>
+                <fullName>This product was developed as part of my official duties%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>This product%2Factivity is not part of my official duties%2C and I understand that I may have additional ethics responsibilities%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Designation__c</picklist>
+            <values>
+                <fullName>Level 1 %28Influential Scientific Information %28ISI%29%2C Highly Influential Scientific Assessment %28HISA%29%2C or High Profile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 2 %28all other scientific products%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Role__c</picklist>
             <values>
                 <fullName>FCO</fullName>
@@ -1027,6 +2157,363 @@
             </values>
             <values>
                 <fullName>TimeKeeper</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Science_Inventory__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Scientific_Data_Management_Plan__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Product__c</picklist>
+            <values>
+                <fullName>Book or Book Chapter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EPA Report or Guidance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Journal Article</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Presentation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>eClearance</fullName>
+        <active>true</active>
+        <label>eClearance</label>
+        <picklistValues>
+            <picklist>A1st_Line_Supervisor_See_Before_Release__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Comms_Materials_Required__c</picklist>
+            <values>
+                <fullName>Additional Communication Material Needed from Clearing Author</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Advance_Notice_Needed__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Advance_Notice__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Appropriate_Disclaimers__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_of_Draft_Product__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Authorization_Reason__c</picklist>
+            <values>
+                <fullName>Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organizational Allocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Role</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Communication_Plan_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Disclaimer_Included__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dual_Research_of_Concern_DURC__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dual_Use_Research__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Form_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted for Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Form_Type__c</picklist>
+            <values>
+                <fullName>Code Storage MB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom Object</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Storage MB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Developer Pro Sandbox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Developer Sandbox</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Files Storage MB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Sandbox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full User Count</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Starter User Count</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Human_Subjects_Research__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Legal_Concerns__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Official_Duties__c</picklist>
+            <values>
+                <fullName>This product was developed as part of my official duties%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>This product%2Factivity is not part of my official duties%2C and I understand that I may have additional ethics responsibilities%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Designation__c</picklist>
+            <values>
+                <fullName>Level 1 %28Influential Scientific Information %28ISI%29%2C Highly Influential Scientific Assessment %28HISA%29%2C or High Profile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 2 %28all other scientific products%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Role__c</picklist>
+            <values>
+                <fullName>FCO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health %26 Safety Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Section 508 Compliance Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TimeKeeper</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Science_Inventory__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Scientific_Data_Management_Plan__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Product__c</picklist>
+            <values>
+                <fullName>Book or Book Chapter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EPA Report or Guidance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Journal Article</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Presentation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1056,6 +2543,14 @@
         <errorConditionFormula>ISPICKVAL(Authorization_Reason__c, &quot;Role&quot;) &amp;&amp;  ISCHANGED( Role__c )</errorConditionFormula>
         <errorDisplayField>Role__c</errorDisplayField>
         <errorMessage>If Authorization Reason &quot;Role&quot; is chosen, Role field must be completed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Level_1_Product_Advance_Notice</fullName>
+        <active>true</active>
+        <description>If eClearance product designation is level 1, advance notice field must be filled in.</description>
+        <errorConditionFormula>ISPICKVAL (Product_Designation__c, &quot;Level 1 (Influential Scientific Information (ISI), Highly Influential Scientific Assessment (HISA), or High Profile&quot;)&amp;&amp; ISBLANK(TEXT(Advance_Notice_Needed__c))</errorConditionFormula>
+        <errorDisplayField>Advance_Notice_Needed__c</errorDisplayField>
+        <errorMessage>For Products designated Level 1, please indicate whether advanced noticed was given.</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Printable_View</fullName>

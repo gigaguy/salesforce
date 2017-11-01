@@ -394,6 +394,115 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Candidate Applications</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Candidate_Package</fullName>
+        <active>true</active>
+        <label>Candidate Package</label>
+        <picklistValues>
+            <picklist>Current_GS_Level__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Current_Region__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Intended_Track__c</picklist>
+            <values>
+                <fullName>Track 1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LOI_Reject_Reason__c</picklist>
+            <values>
+                <fullName>Value 1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LOI_Status__c</picklist>
+            <values>
+                <fullName>Status 1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Package_Reject_Reason__c</picklist>
+            <values>
+                <fullName>Reason 1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Package_Status__c</picklist>
+            <values>
+                <fullName>Status 1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Letter_of_Intent_LOI</fullName>
+        <active>true</active>
+        <label>Letter of Intent (LOI)</label>
+        <picklistValues>
+            <picklist>Current_GS_Level__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Current_Region__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Intended_Track__c</picklist>
+            <values>
+                <fullName>Track 1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LOI_Reject_Reason__c</picklist>
+            <values>
+                <fullName>Value 1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LOI_Status__c</picklist>
+            <values>
+                <fullName>Status 1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Package_Reject_Reason__c</picklist>
+            <values>
+                <fullName>Reason 1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Package_Status__c</picklist>
+            <values>
+                <fullName>Status 1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

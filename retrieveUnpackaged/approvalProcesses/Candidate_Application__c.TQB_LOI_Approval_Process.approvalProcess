@@ -21,23 +21,14 @@
         <label>First Line Supervisor</label>
         <name>First_Line_Supervisor</name>
     </approvalStep>
-    <approvalStep>
-        <allowDelegate>false</allowDelegate>
-        <assignedApprover>
-            <approver>
-                <name>Second_Line_Supervisor__c</name>
-                <type>relatedUserField</type>
-            </approver>
-            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
-        </assignedApprover>
-        <label>Second Line Supervisor</label>
-        <name>Second_Line_Supervisor</name>
-        <rejectBehavior>
-            <type>RejectRequest</type>
-        </rejectBehavior>
-    </approvalStep>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
-    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalApprovalActions>
+        <action>
+            <name>Update_to_Candidate_Package</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <label>TQB LOI Approval Process</label>
     <recordEditability>AdminOnly</recordEditability>
