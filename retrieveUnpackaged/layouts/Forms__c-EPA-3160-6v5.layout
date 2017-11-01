@@ -39,6 +39,13 @@
                 <behavior>Readonly</behavior>
                 <field>Instructions_Continued__c</field>
             </layoutItems>
+            <layoutItems>
+                <emptySpace>true</emptySpace>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Request_Status__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
@@ -236,6 +243,14 @@
         <editHeading>true</editHeading>
         <label>IV. Waiver.  If applicable, waiver for II-B above is authorized</label>
         <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Request_Waiver__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Waiver_Approved__c</field>
+            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Typed_Name_Title_of_Authorizing_Official__c</field>

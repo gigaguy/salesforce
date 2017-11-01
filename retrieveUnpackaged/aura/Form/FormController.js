@@ -53,7 +53,8 @@
         component.set("v.selectedFormName", formName);
         component.set("v.hrefInfo", hrefInfo);
         component.set("v.hrefEmail", hrefEmail);
-         
+        
+        helper.show(component,event);
 		var action = component.get("c.insertNewForms");
         action.setParams({
 			"sID" : component.get("v.sessionID"),
@@ -65,9 +66,11 @@
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
                 component.set("v.newForm", resp.getReturnValue());
+                helper.hide(component,event);
             }
             else if(state === 'ERROR'){
                 var errors = resp.getError();
+                helper.hide(component,event);
                 for(var i = 0 ;i < errors.length;i++){
                     console.log(errors[i].message);
                 }
@@ -76,9 +79,11 @@
         $A.enqueueAction(action);
     },
     viewFormJS : function(component, event, helper){
+        console.log('in viewFormJS');
         var formID = event.currentTarget.id;
+        console.log('formID: '+ formID);
         var formName = event.currentTarget.name;
-        component.set("v.message", "");
+        component.set("v.message", null);
         if (formName === "BAP Provisioning") {
             var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
         	var hrefEmail = "BAP_Admins@epa.gov";
@@ -116,7 +121,8 @@
         component.set("v.selectedFormName", formName);
         component.set("v.hrefInfo", hrefInfo);
         component.set("v.hrefEmail", hrefEmail);
-
+		
+        helper.show(component,event);
         var action = component.get("c.viewForm");
         action.setParams({
 			"sID" : component.get("v.sessionID"),
@@ -129,9 +135,11 @@
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
                 component.set("v.oldForm", resp.getReturnValue());
+                helper.hide(component,event);
             }
             else if(state === 'ERROR'){
                 var errors = resp.getError();
+                helper.hide(component,event);
                 for(var i = 0 ;i < errors.length;i++){
                     console.log(errors[i].message);
                 }
@@ -198,7 +206,7 @@
             if (component.get("v.modalName") != 'reopenForm'){
             component.find("edit").get("e.recordSave").fire();
                 console.log('no error 1');
-            component.set("v.message", "Form Saved | ");}
+            component.set("v.message", "Form Saved | Not Submitted");}
             else if (component.get("v.modalName") == 'reopenForm'){
             component.get("v.edit2").get("e.recordSave").fire();
                 console.log('no error 2');
@@ -590,13 +598,15 @@
         	component.set("v.addAttachments", true);        
    },
     createReopenModal: function(component, event, helper) {
-        var formID;
-        if (component.get("v.modalName") == 'viewForm') {
+   		console.log('in createReopenModal');
+        //     component.set("v.message", null);
+        var formID = component.get("v.newForm.Id");
+        if (formID == null) {
             formID = component.get("v.viewFormID"); }
-        else { formID = component.get("v.newForm.Id"); }
         console.log('formID: ' + formID);
 		
         component.set("v.viewFormID", formID);
+        helper.show(component,event);
         var action = component.get("c.viewForm");
         action.setParams({
 			"sID" : component.get("v.sessionID"),
@@ -609,9 +619,11 @@
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
                 component.set("v.oldForm", resp.getReturnValue());
+                helper.hide(component,event);
             }
             else if(state === 'ERROR'){
                 var errors = resp.getError();
+                helper.hide(component,event);
                 for(var i = 0 ;i < errors.length;i++){
                     console.log(errors[i].message);
                 }

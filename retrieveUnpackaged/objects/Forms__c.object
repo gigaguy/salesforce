@@ -1806,7 +1806,6 @@ TEXT(Continued_Service_Agreement_Expiration__c))</formula>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Documentation of an organization’s Quality System</controllingFieldValue>
-                <controllingFieldValue>Combined documentation &amp; application (QA/QC) to contract&apos;s single project</controllingFieldValue>
                 <valueName>R-2</valueName>
             </valueSettings>
             <valueSettings>
@@ -5326,13 +5325,14 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
         <label>QA Manager</label>
         <lookupFilter>
             <active>true</active>
+            <errorMessage>User not found in QA Manager list.</errorMessage>
             <filterItems>
                 <field>User.QA_Manager__c</field>
                 <operation>equals</operation>
                 <value>True</value>
             </filterItems>
             <infoMessage>Notice! This user is not designated as a QA Manager.</infoMessage>
-            <isOptional>true</isOptional>
+            <isOptional>false</isOptional>
         </lookupFilter>
         <referenceTo>User</referenceTo>
         <relationshipName>FormsY3wv</relationshipName>
@@ -5526,6 +5526,18 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
                     <fullName>Cancellation</fullName>
                     <default>false</default>
                 </value>
+                <value>
+                    <fullName>Open Season</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Donation by Someone Who is Not a Member</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>New Employee</fullName>
+                    <default>false</default>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -5560,6 +5572,16 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Request_Waiver__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EPA-3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Request Waiver</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Requested_Delivery_Date__c</fullName>
@@ -7109,6 +7131,16 @@ TEXT(Training_Credit__c))</formula>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Waiver_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>EPA-3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Waiver Approved</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Waiver_Date__c</fullName>
@@ -11669,7 +11701,19 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
+                <fullName>Donation by Someone Who is Not a Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Initial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Season</fullName>
                 <default>false</default>
             </values>
             <values>

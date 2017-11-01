@@ -396,6 +396,18 @@ IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;,
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_Next_Approver3</fullName>
+        <description>ORD-111 checks for Additional Reviewer</description>
+        <field>Approval_Step__c</field>
+        <formula>IF( ISBLANK( Additional_Reviewer__c ) , 
+&quot;Awaiting Additional Reviewer Approval&quot;, 
+&quot;Awaiting QA Manager Approval&quot;)</formula>
+        <name>Approval Step - Sent to Next Approver3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Next_Approver_1</fullName>
         <field>Approval_Step__c</field>
         <formula>IF(RecordType.DeveloperName = &quot;SF_182&quot;, 
@@ -405,6 +417,15 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
 &quot;Awaiting Funding Official Approval&quot;), 
 &quot;Awaiting Next Approver&quot;)</formula>
         <name>Approval Step - Sent to Next Approver1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_QA_Manager</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting QA Manager Approval&quot;</formula>
+        <name>Approval Step - Sent to QA Manager</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
         <protected>false</protected>

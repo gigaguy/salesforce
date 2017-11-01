@@ -2854,6 +2854,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Forms__c.Request_Waiver__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Forms__c.Requested_Delivery_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3270,6 +3275,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.Vendor_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.Waiver_Approved__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

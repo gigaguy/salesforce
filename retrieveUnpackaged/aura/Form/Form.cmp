@@ -219,7 +219,7 @@
             </button>
             <h2 id="header99" class="slds-text-heading--medium">
                 <aura:if isTrue="{!or(v.message == null, v.message == '')}">Status: Form Not Saved</aura:if>
-                <aura:if isTrue="{!and(v.message != null, v.message != '')}">Status: {!v.message}</aura:if>
+                <aura:if isTrue="{!and(v.message != null, v.message != '')}">Status: {!v.message}Not Submitted</aura:if>
             </h2>
               
               <h3>                    

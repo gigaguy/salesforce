@@ -2195,6 +2195,10 @@
     <fields>
         <help><!-- ORD-111 --></help>
         <label><!-- QA Manager --></label>
+        <lookupFilter>
+            <errorMessage><!-- User not found in QA Manager list. --></errorMessage>
+            <informationalMessage><!-- Notice! This user is not designated as a QA Manager. --></informationalMessage>
+        </lookupFilter>
         <name>QA_Manager__c</name>
         <relationshipLabel><!-- Forms (QA Manager) --></relationshipLabel>
     </fields>
@@ -2278,8 +2282,20 @@
             <translation><!-- Correction --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Donation by Someone Who is Not a Member</masterLabel>
+            <translation><!-- Donation by Someone Who is Not a Member --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Initial</masterLabel>
             <translation><!-- Initial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Employee</masterLabel>
+            <translation><!-- New Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open Season</masterLabel>
+            <translation><!-- Open Season --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Resubmission</masterLabel>
@@ -2305,6 +2321,10 @@
             <masterLabel>Training</masterLabel>
             <translation><!-- Training --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Request Waiver --></label>
+        <name>Request_Waiver__c</name>
     </fields>
     <fields>
         <label><!-- Requested Delivery Date --></label>
@@ -3089,6 +3109,10 @@
         <name>Vendor_URL__c</name>
     </fields>
     <fields>
+        <label><!-- Waiver Approved --></label>
+        <name>Waiver_Approved__c</name>
+    </fields>
+    <fields>
         <label><!-- Date --></label>
         <name>Waiver_Date__c</name>
     </fields>
@@ -3524,14 +3548,6 @@
         <sections>
             <label><!-- ORD Quality Assurance Review Form (QARF) --></label>
             <section>ORD Quality Assurance Review Form (QARF)</section>
-        </sections>
-        <sections>
-            <label><!-- QA Documentation Spacer --></label>
-            <section>QA Documentation Spacer</section>
-        </sections>
-        <sections>
-            <label><!-- QA Documentation Spacer 2 --></label>
-            <section>QA Documentation Spacer 2</section>
         </sections>
         <sections>
             <label><!-- QARF Spacer 1 --></label>
