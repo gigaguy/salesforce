@@ -383,7 +383,7 @@
         <fullName>Primary_Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <inlineHelpText>Enter in primary contact. Additional contacts may be added in the application contacts related list</inlineHelpText>
+        <inlineHelpText>Primary Contact is the application owner. Additional contacts may be added in the application contacts related list.</inlineHelpText>
         <label>Primary Contact</label>
         <referenceTo>Contact</referenceTo>
         <relationshipLabel>Applications</relationshipLabel>
