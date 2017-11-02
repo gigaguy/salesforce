@@ -51,67 +51,51 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
-        <fullName>Question__c</fullName>
+        <fullName>Answer__c</fullName>
         <externalId>false</externalId>
-        <label>Question</label>
+        <label>Answer</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>LongTextArea</type>
-        <visibleLines>3</visibleLines>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
     </fields>
     <fields>
-        <fullName>Status__c</fullName>
+        <fullName>Candidate_Application__c</fullName>
         <externalId>false</externalId>
-        <label>Status</label>
-        <required>false</required>
+        <label>Candidate Application</label>
+        <referenceTo>Candidate_Application__c</referenceTo>
+        <relationshipName>Question_Responses</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Active</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>Inactive</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
-        <fullName>Track__c</fullName>
+        <fullName>Questions__c</fullName>
         <externalId>false</externalId>
-        <label>Track</label>
-        <required>false</required>
+        <label>Questions</label>
+        <referenceTo>Questions__c</referenceTo>
+        <relationshipName>Question_Responses</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Track 1</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
-    <label>Questions</label>
+    <label>Question Response</label>
     <nameField>
-        <displayFormat>Q-{000000}</displayFormat>
-        <label>Questions ID</label>
+        <displayFormat>QR-{000000}</displayFormat>
+        <label>Question Response ID</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Questions</pluralLabel>
+    <pluralLabel>Question Responses</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>

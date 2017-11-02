@@ -2135,7 +2135,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Question_Repsonse__c.Answer__c</field>
+        <field>Question_Response__c.Answer__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2862,7 +2862,7 @@
         <layout>ProfileSkillUser-Skill User Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Question_Repsonse__c-Question Repsonse Layout</layout>
+        <layout>Question_Response__c-Question Repsonse Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Questions__c-Questions Layout</layout>
