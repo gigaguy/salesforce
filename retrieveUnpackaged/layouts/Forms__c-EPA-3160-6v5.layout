@@ -61,7 +61,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Organization_and_Address__c</field>
+                <field>Organization__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -72,10 +72,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Work_Phone_No__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Date__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -183,7 +179,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Recipient_Organization_and_Address__c</field>
+                <field>Recipient_Organization__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -212,16 +208,8 @@
                 <behavior>Edit</behavior>
                 <field>HR_Signature__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Effective_Date_of_This_Action__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>SON__c</field>
-            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Coordinator_Date__c</field>

@@ -16,6 +16,7 @@
     openModal: function(component, event, helper) {
         var formID = event.currentTarget.id;
         var formName = event.currentTarget.name;
+        
         component.set("v.message", null);
         if (formName === "BAP Provisioning") {
             var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
@@ -66,6 +67,7 @@
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
                 component.set("v.newForm", resp.getReturnValue());
+                component.set("v.viewFormID", component.get("v.newForm.Id"));
                 helper.hide(component,event);
             }
             else if(state === 'ERROR'){
@@ -81,6 +83,7 @@
     viewFormJS : function(component, event, helper){
         console.log('in viewFormJS');
         var formID = event.currentTarget.id;
+     //   component.set("v.newForm", null)
         console.log('formID: '+ formID);
         var formName = event.currentTarget.name;
         component.set("v.message", null);
@@ -117,6 +120,7 @@
        	 	var hrefEmail = "McNeal.Detha@epa.gov";
         }
         component.set("v.viewFormID", formID);
+        console.log('formID: ' + formID);
         component.set("v.modalName", "viewForm");
         component.set("v.selectedFormName", formName);
         component.set("v.hrefInfo", hrefInfo);
@@ -600,9 +604,9 @@
     createReopenModal: function(component, event, helper) {
    		console.log('in createReopenModal');
         //     component.set("v.message", null);
-        var formID = component.get("v.newForm.Id");
-        if (formID == null) {
-            formID = component.get("v.viewFormID"); }
+        var formID = component.get("v.viewFormID");
+    //    if (formID == null) {
+    //        formID = component.get("v.viewFormID"); }
         console.log('formID: ' + formID);
 		
         component.set("v.viewFormID", formID);

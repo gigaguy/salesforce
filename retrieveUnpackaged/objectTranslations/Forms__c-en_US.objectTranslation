@@ -609,6 +609,10 @@
         <name>Coordinator_Date__c</name>
     </fields>
     <fields>
+        <label><!-- Course Number Code --></label>
+        <name>Course_Number_Code__c</name>
+    </fields>
+    <fields>
         <label><!-- Course Title --></label>
         <name>Course_Title__c</name>
     </fields>
@@ -899,6 +903,10 @@
         <name>Direct_Cost_Total__c</name>
     </fields>
     <fields>
+        <label><!-- Direct Costs and Appropriation --></label>
+        <name>Direct_Costs_and_Appropriation__c</name>
+    </fields>
+    <fields>
         <label><!-- Director --></label>
         <name>Director__c</name>
         <relationshipLabel><!-- Forms (Director) --></relationshipLabel>
@@ -940,10 +948,6 @@
     <fields>
         <label><!-- Description &quot;E&quot; Applies --></label>
         <name>E__c</name>
-    </fields>
-    <fields>
-        <label><!-- Effective Date of This Action --></label>
-        <name>Effective_Date_of_This_Action__c</name>
     </fields>
     <fields>
         <help><!-- Clicking the &quot;Employee&apos;s Signature&quot; checkbox will sign this section upon saving the form. --></help>
@@ -1177,6 +1181,10 @@
     <fields>
         <label><!-- Indirect Appropriation / Fund --></label>
         <name>Indirect_Appropriation_Fund__c</name>
+    </fields>
+    <fields>
+        <label><!-- Indirect Costs and Appropriation --></label>
+        <name>Indirect_Costs_and_Appropriation__c</name>
     </fields>
     <fields>
         <label><!-- Indirect Total --></label>
@@ -1559,8 +1567,8 @@
         <name>Organization_Mailing_Address__c</name>
     </fields>
     <fields>
-        <label><!-- Organization and Address --></label>
-        <name>Organization_and_Address__c</name>
+        <label><!-- Organization --></label>
+        <name>Organization__c</name>
     </fields>
     <fields>
         <label><!-- Original PRIA Due Date --></label>
@@ -2251,8 +2259,8 @@
         <name>Recipient_Name__c</name>
     </fields>
     <fields>
-        <label><!-- Organization and Address --></label>
-        <name>Recipient_Organization_and_Address__c</name>
+        <label><!-- Organization --></label>
+        <name>Recipient_Organization__c</name>
     </fields>
     <fields>
         <label><!-- Work Phone No. --></label>
@@ -2386,10 +2394,6 @@
     <fields>
         <label><!-- SF-182 Prepare For checker --></label>
         <name>SF_182_Prepare_For_checker__c</name>
-    </fields>
-    <fields>
-        <label><!-- SON --></label>
-        <name>SON__c</name>
     </fields>
     <fields>
         <label><!-- Safety, Health and Envi(printed name) --></label>

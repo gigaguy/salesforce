@@ -1279,6 +1279,18 @@ TEXT(Continued_Service_Agreement_Expiration__c))</formula>
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Course_Number_Code__c</fullName>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Course Number Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Course_Title__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -1989,6 +2001,19 @@ TEXT(Continued_Service_Agreement_Expiration__c))</formula>
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>Direct_Costs_and_Appropriation__c</fullName>
+        <defaultValue>&quot;Fund Chargeable&quot;</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Direct Costs and Appropriation</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Director__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>EPA-PCOR</description>
@@ -2122,16 +2147,6 @@ IF( ISBLANK( Unauthenticated_Owner__c ),
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Effective_Date_of_This_Action__c</fullName>
-        <description>EPA3160-6v5</description>
-        <externalId>false</externalId>
-        <label>Effective Date of This Action</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>Employee_Digital_Signature__c</fullName>
@@ -2734,6 +2749,19 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
         <externalId>false</externalId>
         <label>Indirect Appropriation / Fund</label>
         <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Indirect_Costs_and_Appropriation__c</fullName>
+        <defaultValue>&quot;Fund Chargeable&quot;</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Indirect Costs and Appropriation</label>
+        <length>20</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -3829,10 +3857,10 @@ Prepare_Form_for__r.Phone
         <type>TextArea</type>
     </fields>
     <fields>
-        <fullName>Organization_and_Address__c</fullName>
+        <fullName>Organization__c</fullName>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>Organization and Address</label>
+        <label>Organization</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -5444,10 +5472,10 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Recipient_Organization_and_Address__c</fullName>
+        <fullName>Recipient_Organization__c</fullName>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>Organization and Address</label>
+        <label>Organization</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -5708,18 +5736,6 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>SON__c</fullName>
-        <description>EPA3160-6v5</description>
-        <externalId>false</externalId>
-        <label>SON</label>
-        <length>25</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Safety_Health_and_Envi_printed_name__c</fullName>
@@ -7495,6 +7511,7 @@ Prepare_Form_for__r.Email
         <columns>OWNER.LAST_NAME</columns>
         <columns>Form_Owner__c</columns>
         <columns>Unlicensed_Owner_Email__c</columns>
+        <columns>Unauthenticated_Owner__c</columns>
         <filterScope>Everything</filterScope>
         <label>All - Larry Custom</label>
     </listViews>

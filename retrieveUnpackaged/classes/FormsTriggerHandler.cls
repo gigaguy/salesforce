@@ -151,7 +151,7 @@ public class FormsTriggerHandler {
                   }  
             //send email to cincinatti for approved SF-182 forms                    
                     if(form.Approval_Step__c == 'Approved' && !form.Form_emailed_to_Cincinnati__c && form.RecordTypeID == rtID){
-                        sendCincinnatiEmail.sendMessage(form.id);                       
+                        SF_182_SendCincinnatiEmail.sendMessage(form.id);                       
                     }
                 }
         
