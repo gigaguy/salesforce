@@ -401,6 +401,11 @@
         <columns>Task_Name__c</columns>
         <columns>Sub_Task_Name__c</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>AHRC__c</field>
+            <operation>equals</operation>
+            <value>56F</value>
+        </filters>
         <label>All</label>
     </listViews>
     <nameField>
