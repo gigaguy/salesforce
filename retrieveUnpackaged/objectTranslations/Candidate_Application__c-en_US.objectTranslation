@@ -9,9 +9,17 @@
         <value>Candidate Applications</value>
     </caseValues>
     <fields>
+        <label><!-- Ad-Hoc 1 Status --></label>
+        <name>Ad_Hoc_1_Status__c</name>
+    </fields>
+    <fields>
         <label><!-- Ad-Hoc 1 --></label>
         <name>Ad_Hoc_1__c</name>
         <relationshipLabel><!-- Candidate Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ad-Hoc 2 Status --></label>
+        <name>Ad_Hoc_2_Status__c</name>
     </fields>
     <fields>
         <label><!-- Ad-Hoc 2 --></label>
@@ -19,14 +27,26 @@
         <relationshipLabel><!-- Candidate Applications (Ad-Hoc 2) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Ad-Hoc 3 Status --></label>
+        <name>Ad_Hoc_3_Status__c</name>
+    </fields>
+    <fields>
         <label><!-- Ad-Hoc 3 --></label>
         <name>Ad_Hoc_3__c</name>
         <relationshipLabel><!-- Candidate Applications (Ad-Hoc 3) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Ad-Hoc 4 Status --></label>
+        <name>Ad_Hoc_4_Status__c</name>
+    </fields>
+    <fields>
         <label><!-- Ad-Hoc 4 --></label>
         <name>Ad_Hoc_4__c</name>
         <relationshipLabel><!-- Candidate Applications (Ad-Hoc 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ad-Hoc 5 Status --></label>
+        <name>Ad_Hoc_5_Status__c</name>
     </fields>
     <fields>
         <label><!-- Ad-Hoc 5 --></label>
@@ -41,16 +61,120 @@
         <label><!-- Current GS Level --></label>
         <name>Current_GS_Level__c</name>
         <picklistValues>
-            <masterLabel>1</masterLabel>
-            <translation><!-- 1 --></translation>
+            <masterLabel>GS 13</masterLabel>
+            <translation><!-- GS 13 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GS 14</masterLabel>
+            <translation><!-- GS 14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GS 15</masterLabel>
+            <translation><!-- GS 15 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Current Lab Work Location --></label>
+        <name>Current_Lab_Work_Location__c</name>
+        <picklistValues>
+            <masterLabel>Immediate Office of the Assistant Administrator</masterLabel>
+            <translation><!-- Immediate Office of the Assistant Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Center for Computational Toxicology</masterLabel>
+            <translation><!-- National Center for Computational Toxicology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Center for Environmental Assessment</masterLabel>
+            <translation><!-- National Center for Environmental Assessment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Center for Environmental Research</masterLabel>
+            <translation><!-- National Center for Environmental Research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Exposure Research Lab</masterLabel>
+            <translation><!-- National Exposure Research Lab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Health and Environmental Effects Research Lab</masterLabel>
+            <translation><!-- National Health and Environmental Effects Research Lab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Homeland Security Research Center</masterLabel>
+            <translation><!-- National Homeland Security Research Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Research Programs</masterLabel>
+            <translation><!-- National Research Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Risk Management Research Lab</masterLabel>
+            <translation><!-- National Risk Management Research Lab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Administration and Research Support</masterLabel>
+            <translation><!-- Office of Administration and Research Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Program Accountability and Resource Management</masterLabel>
+            <translation><!-- Office of Program Accountability and Resource Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Science Information Management</masterLabel>
+            <translation><!-- Office of Science Information Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of Science Policy</masterLabel>
+            <translation><!-- Office of Science Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office of the Science Adviser</masterLabel>
+            <translation><!-- Office of the Science Adviser --></translation>
         </picklistValues>
     </fields>
     <fields>
         <label><!-- Current Region --></label>
         <name>Current_Region__c</name>
         <picklistValues>
-            <masterLabel>1</masterLabel>
-            <translation><!-- 1 --></translation>
+            <masterLabel>Region 1</masterLabel>
+            <translation><!-- Region 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10</masterLabel>
+            <translation><!-- Region 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2</masterLabel>
+            <translation><!-- Region 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3</masterLabel>
+            <translation><!-- Region 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4</masterLabel>
+            <translation><!-- Region 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5</masterLabel>
+            <translation><!-- Region 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6</masterLabel>
+            <translation><!-- Region 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7</masterLabel>
+            <translation><!-- Region 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8</masterLabel>
+            <translation><!-- Region 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9</masterLabel>
+            <translation><!-- Region 9 --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -62,13 +186,49 @@
         <label><!-- Intended Track --></label>
         <name>Intended_Track__c</name>
         <picklistValues>
-            <masterLabel>Track 1</masterLabel>
-            <translation><!-- Track 1 --></translation>
+            <masterLabel>Development</masterLabel>
+            <translation><!-- Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expert</masterLabel>
+            <translation><!-- Expert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Research</masterLabel>
+            <translation><!-- Research --></translation>
         </picklistValues>
     </fields>
     <fields>
         <label><!-- LOI Reject Reason --></label>
         <name>LOI_Reject_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Candidate does not meet education requirement.</masterLabel>
+            <translation><!-- Candidate does not meet education requirement. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Candidate does not meet experience requirement.</masterLabel>
+            <translation><!-- Candidate does not meet experience requirement. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Candidate does not meet length of employment requirement.</masterLabel>
+            <translation><!-- Candidate does not meet length of employment requirement. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Candidate does not meet promotion prerequisite.</masterLabel>
+            <translation><!-- Candidate does not meet promotion prerequisite. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Candidate received below average peer review.</masterLabel>
+            <translation><!-- Candidate received below average peer review. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Candidate received below average performance review.</masterLabel>
+            <translation><!-- Candidate received below average performance review. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
         <picklistValues>
             <masterLabel>Value 1</masterLabel>
             <translation><!-- Value 1 --></translation>
@@ -132,6 +292,46 @@
         <label><!-- Second Line Supervisor --></label>
         <name>Second_Line_Supervisor__c</name>
         <relationshipLabel><!-- Candidate Applications (Second Line Supervisor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved By 1st Line Supervisor</masterLabel>
+            <translation><!-- Approved By 1st Line Supervisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved By 2nd Line Supervisor</masterLabel>
+            <translation><!-- Approved By 2nd Line Supervisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Returned</masterLabel>
+            <translation><!-- Returned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- TQB Chair --></label>
