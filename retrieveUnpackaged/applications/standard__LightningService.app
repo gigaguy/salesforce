@@ -7,7 +7,6 @@
     <tab>standard-Account</tab>
     <tab>standard-report</tab>
     <tab>standard-Dashboard</tab>
-    <tab>standard-Feed</tab>
     <tab>standard-home</tab>
     <tab>Session_Holder__c</tab>
     <tab>Fill_Print</tab>

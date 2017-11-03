@@ -8,7 +8,7 @@ public class FormsTriggerHandler_Test {
         //Insert Test Data        
             Profile p = [select id, name from profile where name = 'AuthTest Profile'];        
                 
-            User u = new User(FirstName='Bob', LastName='Smith', profileID=p.id, Username='test@fake.ccc', 
+            User u = new User(FirstName='Bob', LastName='Smith', lan_ID__c='smith123', profileID=p.id, Username='test@fake.ccc', 
                   email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
                   LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');
             insert u;
@@ -23,6 +23,10 @@ public class FormsTriggerHandler_Test {
                   LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');
             insert u3;
             
+        Account a = new account (name='acme');
+        insert a;
+        Contact c = new contact (lastname ='smith', accountid=a.id, lan_id__c='smith123');
+        insert c;
         
         u.Supervisor__c = u2.ID;
         update u;
@@ -175,6 +179,9 @@ public class FormsTriggerHandler_Test {
         
         form.approval_step__c = 'Approved';
         update form;
+        
+        Forms__c formLicUser = new Forms__c(RecordtypeId = [select id from RecordType where sObjectType = 'Forms__c' and DeveloperName = 'SF_182'].ID);
+        insert formLicUser;
         
     }
 

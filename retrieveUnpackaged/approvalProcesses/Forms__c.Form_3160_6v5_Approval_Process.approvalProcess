@@ -15,7 +15,10 @@
     <emailTemplate>unfiled$public/Form_Approval_Request_Notification_Template</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
-        <formula>RecordType.Name = &apos;EPA-3160-6v5&apos;</formula>
+        <formula>AND(
+RecordType.Name = &apos;EPA-3160-6v5&apos;,
+Approval_Step__c &lt;&gt; &apos;Approved&apos; 
+)</formula>
     </entryCriteria>
     <finalApprovalActions>
         <action>

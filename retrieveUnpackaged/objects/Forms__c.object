@@ -2774,7 +2774,7 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
         <externalId>false</externalId>
         <formula>Per_diem__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Indirect Total</label>
+        <label>Indirect Cost Total</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
@@ -6799,7 +6799,7 @@ Line_Total_Price_10__c</formula>
         <description>SF-182</description>
         <externalId>false</externalId>
         <formula>IF(ISPICKVAL(Training_Credit__c, &quot;&quot;), 
-&quot;[Will be populated by Training Credit field.&quot;, 
+&quot;[Will be populated by Training Credit field.]&quot;, 
 TEXT(Training_Credit__c))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Training or Course Credit Hours</label>
@@ -6832,6 +6832,20 @@ TEXT(Training_Credit__c))</formula>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Type_1_Owner_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Type-1 Owner Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Type-1 Owner Contact)</relationshipLabel>
+        <relationshipName>Forms3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Type__c</fullName>

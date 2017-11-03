@@ -186,16 +186,16 @@
     saveStay : function(component, event, helper){
         console.log('in c.saveStay');
         console.log('modalname: ' + component.get("v.modalName"));
-        component.set("v.message", "Form Saved | Not Submitted");
+        
         try {
             if (component.get("v.modalName") != 'reopenForm'){
-            component.find("edit").get("e.recordSave").fire();
+            	component.find("edit").get("e.recordSave").fire();
                 console.log('no error');
-            component.set("v.message", "Form Saved | ");}
+               }
             else if (component.get("v.modalName") == 'reopenForm'){
-            component.get("v.edit2").get("e.recordSave").fire();
+            	component.get("v.edit2").get("e.recordSave").fire();
                 console.log('no error');
-            component.set("v.message", "Form Saved | ");}    
+               }    
             component.set("v.stayModal", true);
           	}
           catch (e) {
@@ -208,13 +208,13 @@
         component.set("v.stayModal", false);
         try {
             if (component.get("v.modalName") != 'reopenForm'){
-            component.find("edit").get("e.recordSave").fire();
+            	component.find("edit").get("e.recordSave").fire();
                 console.log('no error 1');
-            component.set("v.message", "Form Saved | Not Submitted");}
+               }
             else if (component.get("v.modalName") == 'reopenForm'){
-            component.get("v.edit2").get("e.recordSave").fire();
+            	component.get("v.edit2").get("e.recordSave").fire();
                 console.log('no error 2');
-            component.set("v.message", "Form Saved | ");}    
+               }    
           	}
           catch (e) {
             console.log(e);
@@ -330,7 +330,8 @@
         component.set("v.modalName", "");
     },
     closeModal: function(component, event, helper) {
-            component.set("v.message", null);
+        console.log('in closeModal');    
+        	component.set("v.message", null);
             component.set("v.approvalSuccess", null);
             component.set("v.isOpen", false);
             component.set("v.modalName", "");
@@ -373,13 +374,14 @@
         else {
 			component.set("v.stayModal", false);
             component.set("v.isOpen", false);
-            
+            component.set("v.message", "Form Saved | ");
             var a = component.get('c.createReopenModal');
         $A.enqueueAction(a);
         }
 	},
     cancelCreationModal : function(component, event, helper){
-    	component.set("v.message", null);
+    	console.log('in cancelCreationModal'); 
+        component.set("v.message", null);
         component.set("v.approvalSuccess", null);
         component.set("v.isOpen", false);
         component.set("v.modalName", "");

@@ -75,6 +75,11 @@
             <operation>equals</operation>
             <value>EPA-100</value>
         </criteriaItems>
+        <criteriaItems>
+            <field>Forms__c.Approval_Step__c</field>
+            <operation>notEqual</operation>
+            <value>Approved</value>
+        </criteriaItems>
     </entryCriteria>
     <finalApprovalActions>
         <action>

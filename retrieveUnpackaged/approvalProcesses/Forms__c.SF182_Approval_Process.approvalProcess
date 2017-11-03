@@ -11,49 +11,24 @@
     <approvalPageFields>
         <field>Name</field>
         <field>Owner</field>
+        <field>Applicant_Name_Last_First_MI2__c</field>
+        <field>Supervisor_Name__c</field>
+        <field>Course_Title__c</field>
+        <field>Training_Start_Date__c</field>
+        <field>Training_End_Date__c</field>
+        <field>Name_and_Address_of_Vendor__c</field>
+        <field>Location_of_Training_Site__c</field>
+        <field>Training_Objective__c</field>
+        <field>Training_or_course_credit_hours__c</field>
+        <field>Continued_Service_Agreement__c</field>
+        <field>Tuition_and_Fees__c</field>
+        <field>Books_Materials__c</field>
+        <field>Per_diem__c</field>
+        <field>Direct_Cost_Total__c</field>
+        <field>Indirect_Total__c</field>
+        <field>Furnish_Invoice_to__c</field>
+        <field>Billing_Instructions__c</field>
     </approvalPageFields>
-    <approvalStep>
-        <allowDelegate>true</allowDelegate>
-        <approvalActions>
-            <action>
-                <name>Approval_Step_Sent_to_Supervisor</name>
-                <type>FieldUpdate</type>
-            </action>
-        </approvalActions>
-        <assignedApprover>
-            <approver>
-                <name>jjenkins@innovateteam.com</name>
-                <type>user</type>
-            </approver>
-            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
-        </assignedApprover>
-        <entryCriteria>
-            <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
-            <criteriaItems>
-                <field>Forms__c.Escalate_to_Chief_Learning_Officer__c</field>
-                <operation>equals</operation>
-                <value>True</value>
-            </criteriaItems>
-            <criteriaItems>
-                <field>Forms__c.Training_Start_Date__c</field>
-                <operation>lessOrEqual</operation>
-                <value>TODAY</value>
-            </criteriaItems>
-            <criteriaItems>
-                <field>Forms__c.Direct_Cost_Total__c</field>
-                <operation>greaterThan</operation>
-                <value>50000</value>
-            </criteriaItems>
-            <criteriaItems>
-                <field>Forms__c.Indirect_Total__c</field>
-                <operation>greaterThan</operation>
-                <value>50000</value>
-            </criteriaItems>
-        </entryCriteria>
-        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
-        <label>Send to Sharon (Escalated Approver)</label>
-        <name>Send_to_Sharon_Escalated_Approver</name>
-    </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
         <approvalActions>
@@ -75,9 +50,6 @@
         </assignedApprover>
         <label>Send to Supervisor</label>
         <name>Send_to_Supervisor</name>
-        <rejectBehavior>
-            <type>RejectRequest</type>
-        </rejectBehavior>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
@@ -703,8 +675,47 @@
                 <value>USEPA Cincinnati Finance Center</value>
             </criteriaItems>
         </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
         <label>Send to USEPA Cincinnati</label>
         <name>Send_to_USEPA_Cincinnati</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jjenkins@innovateteam.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+            <criteriaItems>
+                <field>Forms__c.Escalate_to_Chief_Learning_Officer__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Forms__c.Training_Start_Date__c</field>
+                <operation>lessOrEqual</operation>
+                <value>TODAY</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Forms__c.Direct_Cost_Total__c</field>
+                <operation>greaterThan</operation>
+                <value>50000</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Forms__c.Indirect_Total__c</field>
+                <operation>greaterThan</operation>
+                <value>50000</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>Send to Sharon (Escalated Approver)</label>
+        <name>Send_to_Sharon_Escalated_Approver</name>
         <rejectBehavior>
             <type>BackToPrevious</type>
         </rejectBehavior>
@@ -715,7 +726,8 @@
         <formula>AND(
  RecordType.Name  = &apos;SF-182&apos;,
  NOT( ISPICKVAL(Approval_Routing_Options__c, &apos;&apos;) ),
- ISBLANK( Prepare_Form_for__c )   
+ ISBLANK( Prepare_Form_for__c ),
+  Approval_Step__c &lt;&gt; &apos;Approved&apos;
 )</formula>
     </entryCriteria>
     <finalApprovalActions>
@@ -750,7 +762,7 @@
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <initialSubmissionActions>
         <action>
-            <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+            <name>Approval_Step_Sent_to_Supervisor</name>
             <type>FieldUpdate</type>
         </action>
         <action>

@@ -1,6 +1,24 @@
 public class FormsTriggerHandler {
 
     public void beforeInsert(List<Forms__c> forms){
+        for (forms__c form : forms){
+          //if Type-3 user creating form, sets Type-1 Owner field to that user
+          //otherwise, Type-1 user is Type-1 Owner
+            if(form.Unauthenticated_Owner__c == null){ 
+                form.Unauthenticated_Owner__c = userInfo.getUserID();
+              }
+              
+            //find and set Type-1 Owner Contact  
+            try{ 
+                string uLan = [select LAN_ID__c from user where ID = :form.Unauthenticated_Owner__c].LAN_ID__c;          
+                form.Type_1_Owner_Contact__c = [select id,LAN_ID__c from contact where LAN_ID__c = :uLan limit 1].id;
+               }
+               catch(Exception e) {       
+                    ApexPages.Message myMsg = new ApexPages.Message(ApexPages.Severity.ERROR,'No related Contact record found for User');
+                    ApexPages.addMessage(myMsg);
+               }
+          }
+        
         updateFormLookups(forms, true);
     }
     

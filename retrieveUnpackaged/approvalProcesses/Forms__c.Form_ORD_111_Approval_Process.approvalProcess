@@ -69,7 +69,8 @@
     <entryCriteria>
         <formula>AND(
 RecordType.Name = &apos;ORD-111&apos;,
-ISBLANK( Prepare_Form_for__c )
+ISBLANK( Prepare_Form_for__c ),
+ Approval_Step__c &lt;&gt; &apos;Approved&apos;
 )</formula>
     </entryCriteria>
     <finalApprovalActions>
