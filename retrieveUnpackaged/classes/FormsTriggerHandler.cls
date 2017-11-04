@@ -14,8 +14,7 @@ public class FormsTriggerHandler {
                 form.Type_1_Owner_Contact__c = [select id,LAN_ID__c from contact where LAN_ID__c = :uLan limit 1].id;
                }
                catch(Exception e) {       
-                    ApexPages.Message myMsg = new ApexPages.Message(ApexPages.Severity.ERROR,'No related Contact record found for User');
-                    ApexPages.addMessage(myMsg);
+                    Trigger.new[0].addError('No related Contact record found for User');
                }
           }
         

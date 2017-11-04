@@ -25,6 +25,7 @@
     <aura:attribute name="addAttachments" type="boolean" default="false"/>
     <aura:attribute name="attachList" type="Attachment[]"/>
     <aura:attribute name="stayModal" type="boolean" default="false"/>
+    <aura:attribute name="editTwo" type="boolean" default="false"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     <aura:handler name="change" value="{!v.newForm}" action="{!c.openModal2}" />
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
@@ -295,12 +296,11 @@
              </aura:if>
             <!--end add attachments-->
         
-              <aura:if isTrue="{!and(v.stayModal, v.message != null)}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.closeModal}" /></aura:if>
+              <aura:if isTrue="{!and(v.stayModal, v.message != null)}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.closeModal}" /></aura:if>
               <aura:if isTrue="{!v.stayModal==false || v.message == null}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.cancelCreationModal}" /></aura:if>
 			  <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
               <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral" label="Show/Add Attachments" press="{!c.showAttachments}" /></aura:if> 
-              <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveOnly}" />
-			  <ui:button class="slds-button slds-button--neutral" label="Save &amp; Stay" press="{!c.saveStay}" />
+     	      <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveStay}" />
               <ui:button class="slds-button slds-button_success" label="Submit" press="{!c.confirmSubmit}" />	
           </div>
         </div>
@@ -410,8 +410,7 @@
                   <ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmDelete}" />
                   <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
                   <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Attachments" press="{!c.showAttachments}" /></aura:if> 
-                  <ui:button class="slds-button slds-button--neutral " label="Save" press="{!c.saveOnly}" />
-                  <ui:button class="slds-button slds-button--neutral " label="Save &amp; Stay" press="{!c.saveStay}" />
+                  <ui:button class="slds-button slds-button--neutral " label="Save" press="{!c.saveStay}" />
                   <ui:button class="slds-button slds-button_success" label="Submit" press="{!c.confirmSubmit}" />
               </aura:if>
           </div>
@@ -522,8 +521,7 @@
                   <ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmDelete}" />
                   <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
                   <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral" label="Attachments" press="{!c.showAttachments}" /></aura:if> 
-                  <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveOnly}" />
-                  <ui:button class="slds-button slds-button--neutral" label="Save &amp; Stay" press="{!c.saveStay}" />
+                  <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveStay}" />
                   <ui:button class="slds-button slds-button_success" label="Submit" press="{!c.confirmSubmit}" />
               </aura:if>
           </div>

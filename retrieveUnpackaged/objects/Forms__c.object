@@ -217,18 +217,12 @@
         <externalId>false</externalId>
         <formula>IF(ISBLANK(
 IF( ISBLANK( Prepare_Form_for__c ),
-  IF( ISBLANK( Unauthenticated_Owner__c ),
-      Owner:User.FirstName &amp;&quot; &quot;&amp; Owner:User.LastName,
-    Unauthenticated_Owner__r.FirstName &amp;&quot; &quot;&amp; Unauthenticated_Owner__r.LastName
-    ),
+Type_1_Owner_Contact__r.FirstName &amp;&quot; &quot;&amp; Type_1_Owner_Contact__r.LastName,
  Prepare_Form_for__r.FirstName &amp;&quot; &quot;&amp;Prepare_Form_for__r.LastName
 )),
 &quot;[This field will populate after save.]&quot;,
 IF( ISBLANK( Prepare_Form_for__c ),
-  IF( ISBLANK( Unauthenticated_Owner__c ),
-     Owner:User.FirstName &amp;&quot; &quot;&amp; Owner:User.LastName,
-    Unauthenticated_Owner__r.FirstName &amp;&quot; &quot;&amp; Unauthenticated_Owner__r.LastName
-    ),
+Type_1_Owner_Contact__r.FirstName &amp;&quot; &quot;&amp; Type_1_Owner_Contact__r.LastName,
  Prepare_Form_for__r.FirstName &amp;&quot; &quot;&amp;Prepare_Form_for__r.LastName
 ))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
@@ -2095,16 +2089,12 @@ TEXT(Continued_Service_Agreement_Expiration__c))</formula>
         <externalId>false</externalId>
         <formula>IF(ISBLANK( 
 IF( ISBLANK( Prepare_Form_for__c ), 
-IF( ISBLANK( Unauthenticated_Owner__c ), 
- Owner:User.EmployeeNumber, 
- Unauthenticated_Owner__r.EmployeeNumber ), 
+ Type_1_Owner_Contact__r.Employee_Number__c , 
  Prepare_Form_for__r.Employee_Number__c 
 )), 
 &quot;[This field will populate after save.]&quot;, 
 IF( ISBLANK( Prepare_Form_for__c ), 
-IF( ISBLANK( Unauthenticated_Owner__c ), 
- Owner:User.EmployeeNumber, 
- Unauthenticated_Owner__r.EmployeeNumber ), 
+ Type_1_Owner_Contact__r.Employee_Number__c , 
  Prepare_Form_for__r.Employee_Number__c 
 ))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
@@ -2550,11 +2540,11 @@ TEXT(Training_End_Date__c))</formula>
         <description>SF-182</description>
         <externalId>false</externalId>
         <formula>IF( ISBLANK( IF( ISBLANK( Prepare_Form_for__c ) ,
-    IF(ISBLANK(Unauthenticated_Owner__c), $User.Grade__c ,Unauthenticated_Owner__r.Grade__c ),
+    Type_1_Owner_Contact__r.Grade__c ,
   Prepare_Form_for__r.Grade__c )),
 &quot;[This field will populate after save.]&quot;,
 IF( ISBLANK( Prepare_Form_for__c ) ,
-    IF(ISBLANK(Unauthenticated_Owner__c), $User.Grade__c ,Unauthenticated_Owner__r.Grade__c ),
+    Type_1_Owner_Contact__r.Grade__c ,
   Prepare_Form_for__r.Grade__c ))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Grade</label>
@@ -3826,16 +3816,12 @@ Course_Title__c)</formula>
         <externalId>false</externalId>
         <formula>IF(ISBLANK( 
 IF( ISBLANK( Prepare_Form_for__c ), 
-IF( ISBLANK( Unauthenticated_Owner__c ), 
-Owner:User.Phone, 
-Unauthenticated_Owner__r.Phone ), 
+Type_1_Owner_Contact__r.Phone , 
 Prepare_Form_for__r.Phone
 )), 
 &quot;[This field will populate after save.]&quot;, 
 IF( ISBLANK( Prepare_Form_for__c ), 
-IF( ISBLANK( Unauthenticated_Owner__c ), 
-Owner:User.Phone, 
-Unauthenticated_Owner__r.Phone ), 
+Type_1_Owner_Contact__r.Phone , 
 Prepare_Form_for__r.Phone
 ))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
@@ -3966,16 +3952,12 @@ Prepare_Form_for__r.Phone
         <externalId>false</externalId>
         <formula>IF(ISBLANK( 
 IF( ISBLANK( Prepare_Form_for__c ), 
-IF( ISBLANK( Unauthenticated_Owner__c ), 
-Owner:User.Mail_Stop__c &amp; BR() &amp; Owner:User.Building__c &amp; BR() &amp; Owner:User.City &amp;&quot;, &quot;&amp; Owner:User.State &amp;&quot; &quot;&amp; Owner:User.PostalCode, 
-Unauthenticated_Owner__r.Mail_Stop__c &amp; BR() &amp; Unauthenticated_Owner__r.Building__c &amp; BR() &amp; Unauthenticated_Owner__r.City &amp;&quot;, &quot;&amp; Unauthenticated_Owner__r.State &amp;&quot; &quot;&amp; Unauthenticated_Owner__r.PostalCode ), 
+Type_1_Owner_Contact__r.Mail_Stop__c &amp; BR() &amp; Type_1_Owner_Contact__r.Building__c &amp; BR() &amp; Type_1_Owner_Contact__r.MailingCity &amp;&quot;, &quot;&amp; Type_1_Owner_Contact__r.MailingState &amp;&quot; &quot;&amp; Type_1_Owner_Contact__r.MailingPostalCode , 
 Prepare_Form_for__r.Mail_Stop__c &amp; BR() &amp; Prepare_Form_for__r.Building__c &amp; BR() &amp; Prepare_Form_for__r.MailingCity &amp;&quot;, &quot;&amp; Prepare_Form_for__r.MailingState &amp;&quot; &quot;&amp; Prepare_Form_for__r.MailingPostalCode
 )), 
 &quot;[This field will populate after save.]&quot;, 
 IF( ISBLANK( Prepare_Form_for__c ), 
-IF( ISBLANK( Unauthenticated_Owner__c ), 
-Owner:User.Mail_Stop__c &amp; BR() &amp; Owner:User.Building__c &amp; BR() &amp; Owner:User.City &amp;&quot;, &quot;&amp; Owner:User.State &amp;&quot; &quot;&amp; Owner:User.PostalCode, 
-Unauthenticated_Owner__r.Mail_Stop__c &amp; BR() &amp; Unauthenticated_Owner__r.Building__c &amp; BR() &amp; Unauthenticated_Owner__r.City &amp;&quot;, &quot;&amp; Unauthenticated_Owner__r.State &amp;&quot; &quot;&amp; Unauthenticated_Owner__r.PostalCode ), 
+Type_1_Owner_Contact__r.Mail_Stop__c &amp; BR() &amp; Type_1_Owner_Contact__r.Building__c &amp; BR() &amp; Type_1_Owner_Contact__r.MailingCity &amp;&quot;, &quot;&amp; Type_1_Owner_Contact__r.MailingState &amp;&quot; &quot;&amp; Type_1_Owner_Contact__r.MailingPostalCode , 
 Prepare_Form_for__r.Mail_Stop__c &amp; BR() &amp; Prepare_Form_for__r.Building__c &amp; BR() &amp; Prepare_Form_for__r.MailingCity &amp;&quot;, &quot;&amp; Prepare_Form_for__r.MailingState &amp;&quot; &quot;&amp; Prepare_Form_for__r.MailingPostalCode
 ))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
@@ -4932,11 +4914,11 @@ Prepare_Form_for__r.Mail_Stop__c &amp; BR() &amp; Prepare_Form_for__r.Building__
         <description>SF-182</description>
         <externalId>false</externalId>
         <formula>IF( ISBLANK( IF( ISBLANK( Prepare_Form_for__c ) ,
-  IF(ISBLANK(Unauthenticated_Owner__c), $User.Pay_Plan__c ,Unauthenticated_Owner__r.Pay_Plan__c ),
+ Type_1_Owner_Contact__r.Pay_Plan__c ,
   Prepare_Form_for__r.Pay_Plan__c )),
 &quot;[This field will populate after save.]&quot;,  
 IF( ISBLANK( Prepare_Form_for__c ) ,
-   IF(ISBLANK(Unauthenticated_Owner__c), $User.Pay_Plan__c ,Unauthenticated_Owner__r.Pay_Plan__c ),
+ Type_1_Owner_Contact__r.Pay_Plan__c ,
   Prepare_Form_for__r.Pay_Plan__c ))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Pay Plan</label>
@@ -5056,10 +5038,16 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
     </fields>
     <fields>
         <fullName>Position_Title__c</fullName>
-        <description>SF-182</description>
         <externalId>false</externalId>
+        <formula>IF( ISBLANK( IF( ISBLANK( Prepare_Form_for__c ) , 
+Type_1_Owner_Contact__r.Position_Title__c , 
+Prepare_Form_for__r.Position_Title__c)), 
+&quot;[This field will populate after save.]&quot;, 
+IF( ISBLANK( Prepare_Form_for__c ) , 
+Type_1_Owner_Contact__r.Position_Title__c , 
+Prepare_Form_for__r.Position_Title__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Position Title</label>
-        <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -5843,11 +5831,11 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
         <description>SF-182</description>
         <externalId>false</externalId>
         <formula>IF( ISBLANK( IF( ISBLANK( Prepare_Form_for__c ) , 
-IF(ISBLANK(Unauthenticated_Owner__c), $User.Occ_Series__c ,Unauthenticated_Owner__r.Occ_Series__c ), 
+Type_1_Owner_Contact__r.Occ_Series__c , 
 Prepare_Form_for__r.Occ_Series__c )), 
 &quot;[This field will populate after save.]&quot;, 
 IF( ISBLANK( Prepare_Form_for__c ) , 
-IF(ISBLANK(Unauthenticated_Owner__c), $User.Occ_Series__c ,Unauthenticated_Owner__r.Occ_Series__c ), 
+Type_1_Owner_Contact__r.Occ_Series__c , 
 Prepare_Form_for__r.Occ_Series__c ))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Series</label>
@@ -6136,11 +6124,11 @@ Prepare_Form_for__r.Occ_Series__c ))</formula>
         <description>SF-182</description>
         <externalId>false</externalId>
         <formula>IF( ISBLANK( IF( ISBLANK( Prepare_Form_for__c ) , 
-IF(ISBLANK(Unauthenticated_Owner__c), $User.Step__c ,Unauthenticated_Owner__r.Step__c ), 
+Type_1_Owner_Contact__r.Step__c , 
 Prepare_Form_for__r.Step__c )), 
 &quot;[This field will populate after save.]&quot;, 
 IF( ISBLANK( Prepare_Form_for__c ) , 
-IF(ISBLANK(Unauthenticated_Owner__c), $User.Step__c ,Unauthenticated_Owner__r.Step__c ), 
+Type_1_Owner_Contact__r.Step__c , 
 Prepare_Form_for__r.Step__c ))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Step</label>
@@ -7211,17 +7199,13 @@ TEXT(Training_Credit__c))</formula>
         <externalId>false</externalId>
         <formula>IF(ISBLANK( 
 IF( ISBLANK( Prepare_Form_for__c ), 
-IF( ISBLANK( Unauthenticated_Owner__c ), 
-Owner:User.Email, 
-Unauthenticated_Owner__r.Email ), 
+Type_1_Owner_Contact__r.Email, 
 Prepare_Form_for__r.Email
 )), 
 &quot;[This field will populate after save.]&quot;, 
 IF( ISBLANK( Prepare_Form_for__c ), 
-IF( ISBLANK( Unauthenticated_Owner__c ), 
-Owner:User.Email, 
-Unauthenticated_Owner__r.Email ), 
-Prepare_Form_for__r.Email 
+Type_1_Owner_Contact__r.Email, 
+Prepare_Form_for__r.Email
 ))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Work Email Address</label>
@@ -21602,6 +21586,16 @@ Prepare_Form_for__r.Email
         <errorMessage>&quot;Select Card Holder&quot; field must be blank unless the invoice is furnished to &quot;Purchase Card Transaction&quot;</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>SF_182_Card_Holder_Lookup_Null_top</fullName>
+        <active>true</active>
+        <description>if the &quot;Furnish Invoice to&quot; picklist value is NOT “Purchase card Transaction”, the Card Holder lookup field must be null.</description>
+        <errorConditionFormula>AND( 
+ NOT(ISPICKVAL( Furnish_Invoice_to__c , &quot;Purchase Card Transaction&quot;)), 
+ NOT(ISBLANK( Select_Card_Holder2__c )) 
+)</errorConditionFormula>
+        <errorMessage>&quot;Select Card Holder&quot; field must be blank unless the invoice is furnished to &quot;Purchase Card Transaction&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>SF_182_Card_Holder_Lookup_Required</fullName>
         <active>true</active>
         <description>if the &quot;Furnish Invoice to&quot; picklist value is “Purchase card Transaction”, require the Card Holder lookup field to not be null.</description>
@@ -21610,6 +21604,16 @@ Prepare_Form_for__r.Email
  ISBLANK( Select_Card_Holder2__c ) 
 )</errorConditionFormula>
         <errorDisplayField>Select_Card_Holder2__c</errorDisplayField>
+        <errorMessage>&quot;Select Card Holder&quot; field is required if the invoice is furnished to &quot;Purchase Card Transaction&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SF_182_Card_Holder_Lookup_Required_top</fullName>
+        <active>true</active>
+        <description>if the &quot;Furnish Invoice to&quot; picklist value is “Purchase card Transaction”, require the Card Holder lookup field to not be null.</description>
+        <errorConditionFormula>AND( 
+ ISPICKVAL( Furnish_Invoice_to__c , &quot;Purchase Card Transaction&quot;), 
+ ISBLANK( Select_Card_Holder2__c ) 
+)</errorConditionFormula>
         <errorMessage>&quot;Select Card Holder&quot; field is required if the invoice is furnished to &quot;Purchase Card Transaction&quot;</errorMessage>
     </validationRules>
     <validationRules>
@@ -21623,6 +21627,18 @@ Prepare_Form_for__r.Email
   )
 )</errorConditionFormula>
         <errorDisplayField>Continued_Service_Agreement__c</errorDisplayField>
+        <errorMessage>If Continued Service Agreement is Required, &quot;Continued Service Agreement Expiration&quot; and &quot;Continue In Service Agreement Signature&quot; fields cannot be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SF_182_Service_Agreement_Req_fields_top</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ ISPICKVAL(Continued_Service_Agreement__c, &quot;Yes&quot;),
+ OR(
+  Continue_In_Service_Agreement_Signature__c = False,
+  ISBLANK(Continued_Service_Agreement_Expiration__c)
+  )
+)</errorConditionFormula>
         <errorMessage>If Continued Service Agreement is Required, &quot;Continued Service Agreement Expiration&quot; and &quot;Continue In Service Agreement Signature&quot; fields cannot be blank.</errorMessage>
     </validationRules>
     <validationRules>

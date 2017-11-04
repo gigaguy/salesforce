@@ -11,19 +11,11 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Unauthenticated_Owner__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Request_Status__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Prepare_Form_for__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Type_1_Owner_Contact__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -140,12 +132,12 @@
         <label>Section A - Spacer 2</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Position_Level__c</field>
+                <behavior>Readonly</behavior>
+                <field>Position_Title__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Position_Title__c</field>
+                <field>Position_Level__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

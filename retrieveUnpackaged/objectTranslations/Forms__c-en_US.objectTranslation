@@ -3751,12 +3751,24 @@
         <name>SF_182_Card_Holder_Lookup_Null</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- &quot;Select Card Holder&quot; field must be blank unless the invoice is furnished to &quot;Purchase Card Transaction&quot; --></errorMessage>
+        <name>SF_182_Card_Holder_Lookup_Null_top</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- &quot;Select Card Holder&quot; field is required if the invoice is furnished to &quot;Purchase Card Transaction&quot; --></errorMessage>
         <name>SF_182_Card_Holder_Lookup_Required</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- &quot;Select Card Holder&quot; field is required if the invoice is furnished to &quot;Purchase Card Transaction&quot; --></errorMessage>
+        <name>SF_182_Card_Holder_Lookup_Required_top</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- If Continued Service Agreement is Required, &quot;Continued Service Agreement Expiration&quot; and &quot;Continue In Service Agreement Signature&quot; fields cannot be blank. --></errorMessage>
         <name>SF_182_Service_Agreement_Req_fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Continued Service Agreement is Required, &quot;Continued Service Agreement Expiration&quot; and &quot;Continue In Service Agreement Signature&quot; fields cannot be blank. --></errorMessage>
+        <name>SF_182_Service_Agreement_Req_fields_top</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- Phone Number can&apos;t be 123456 --></errorMessage>
