@@ -840,6 +840,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Candidate_Application__c.Candidate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Candidate_Application__c.Comments__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -860,12 +865,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Candidate_Application__c.First_Line_supervisor__c</field>
+        <field>Candidate_Application__c.First_Line_Supervisor__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Candidate_Application__c.HR_Classifier__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>Candidate_Application__c.Intended_Track__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Candidate_Application__c.LOI_Approved__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -876,6 +891,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Candidate_Application__c.LOI_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Candidate_Application__c.L_C_O_Director__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -915,17 +935,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Candidate_Application__c.Requestor__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Candidate_Application__c.Second_Line_Supervisor__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>Candidate_Application__c.Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Candidate_Application__c.TQB_Chair_Approved__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

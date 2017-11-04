@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
-    <active>true</active>
+    <active>false</active>
     <allowRecall>false</allowRecall>
     <allowedSubmitters>
         <type>owner</type>
@@ -13,24 +13,23 @@
         <allowDelegate>false</allowDelegate>
         <assignedApprover>
             <approver>
-                <name>First_Line_Supervisor__c</name>
-                <type>relatedUserField</type>
+                <type>adhoc</type>
             </approver>
-            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
-        <label>First Line Supervisor</label>
-        <name>First_Line_Supervisor</name>
+        <label>Step 1</label>
+        <name>Step_1</name>
     </approvalStep>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
-    <finalApprovalActions>
-        <action>
-            <name>Update_to_Candidate_Package</name>
-            <type>FieldUpdate</type>
-        </action>
-    </finalApprovalActions>
-    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Candidate_Application__c.TQB_Chair_Approved__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
-    <label>TQB LOI Approval Process</label>
+    <label>TQB L/C/O Director Approval Process</label>
     <recordEditability>AdminOnly</recordEditability>
     <showApprovalHistory>true</showApprovalHistory>
 </ApprovalProcess>

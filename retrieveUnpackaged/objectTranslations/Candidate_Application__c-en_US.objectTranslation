@@ -54,6 +54,11 @@
         <relationshipLabel><!-- Candidate Applications (Ad-Hoc 5) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Candidate --></label>
+        <name>Candidate__c</name>
+        <relationshipLabel><!-- Candidate Applications (Requestor) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Comments --></label>
         <name>Comments__c</name>
     </fields>
@@ -178,9 +183,14 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- First Line supervisor --></label>
-        <name>First_Line_supervisor__c</name>
-        <relationshipLabel><!-- Candidate Applications (First Line supervisor) --></relationshipLabel>
+        <label><!-- First Line Supervisor --></label>
+        <name>First_Line_Supervisor__c</name>
+        <relationshipLabel><!-- Candidate Applications (First Line Supervisor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- HR Classifier --></label>
+        <name>HR_Classifier__c</name>
+        <relationshipLabel><!-- Candidate Applications (HR Classifier) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Intended Track --></label>
@@ -197,6 +207,10 @@
             <masterLabel>Research</masterLabel>
             <translation><!-- Research --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LOI Approved? --></label>
+        <name>LOI_Approved__c</name>
     </fields>
     <fields>
         <label><!-- LOI Reject Reason --></label>
@@ -243,6 +257,11 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- L/C/O Director --></label>
+        <name>L_C_O_Director__c</name>
+        <relationshipLabel><!-- Candidate Applications (L/C/O Director) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Package Reject Reason --></label>
         <name>Package_Reject_Reason__c</name>
         <picklistValues>
@@ -284,11 +303,6 @@
         <relationshipLabel><!-- Candidate Applications (Panel Member 5) --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- Requestor --></label>
-        <name>Requestor__c</name>
-        <relationshipLabel><!-- Candidate Applications (Requestor) --></relationshipLabel>
-    </fields>
-    <fields>
         <label><!-- Second Line Supervisor --></label>
         <name>Second_Line_Supervisor__c</name>
         <relationshipLabel><!-- Candidate Applications (Second Line Supervisor) --></relationshipLabel>
@@ -309,12 +323,20 @@
             <translation><!-- Approved By 2nd Line Supervisor --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Awaiting L/C/O Approval</masterLabel>
+            <translation><!-- Awaiting L/C/O Approval --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Completed</masterLabel>
             <translation><!-- Completed --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>In Progress</masterLabel>
             <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LOI Approved</masterLabel>
+            <translation><!-- LOI Approved --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Not Started</masterLabel>
@@ -332,6 +354,10 @@
             <masterLabel>Submitted</masterLabel>
             <translation><!-- Submitted --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- TQB Chair Approved? --></label>
+        <name>TQB_Chair_Approved__c</name>
     </fields>
     <fields>
         <label><!-- TQB Chair --></label>
@@ -364,6 +390,21 @@
         <sections>
             <label><!-- Supervisors --></label>
             <section>Supervisors</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Letter of Intent Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Letter of Intent Details --></label>
+            <section>Letter of Intent Details</section>
+        </sections>
+        <sections>
+            <label><!-- Supervisor Details --></label>
+            <section>Supervisor Details</section>
         </sections>
     </layouts>
     <recordTypes>

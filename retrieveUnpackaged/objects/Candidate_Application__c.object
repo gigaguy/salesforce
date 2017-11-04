@@ -183,6 +183,19 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Candidate__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Candidate</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Candidate Applications (Requestor)</relationshipLabel>
+        <relationshipName>Candidate_Applications5</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Comments__c</fullName>
         <externalId>false</externalId>
         <label>Comments</label>
@@ -346,12 +359,24 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>First_Line_supervisor__c</fullName>
+        <fullName>First_Line_Supervisor__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <label>First Line supervisor</label>
+        <label>First Line Supervisor</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Candidate_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HR_Classifier__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>HR Classifier</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Candidate_ApplicationsbAvQ</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -383,6 +408,15 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>LOI_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>LOI Approved?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>LOI_Reject_Reason__c</fullName>
@@ -449,6 +483,18 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>L_C_O_Director__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>L/C/O Director</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Candidate_Applications9</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Package_Reject_Reason__c</fullName>
@@ -549,19 +595,6 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Requestor__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>Requestor</label>
-        <referenceTo>Contact</referenceTo>
-        <relationshipLabel>Candidate Applications (Requestor)</relationshipLabel>
-        <relationshipName>Candidate_Applications5</relationshipName>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Second_Line_Supervisor__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -621,9 +654,26 @@
                     <fullName>Approved By 2nd Line Supervisor</fullName>
                     <default>false</default>
                 </value>
+                <value>
+                    <fullName>LOI Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Awaiting L/C/O Approval</fullName>
+                    <default>false</default>
+                </value>
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>TQB_Chair_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>TQB Chair Approved?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>TQB_Chair__c</fullName>
@@ -885,11 +935,19 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Awaiting L%2FC%2FO Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Completed</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LOI Approved</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1132,11 +1190,19 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Awaiting L%2FC%2FO Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Completed</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LOI Approved</fullName>
                 <default>false</default>
             </values>
             <values>

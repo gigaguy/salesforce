@@ -840,6 +840,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Candidate_Application__c.Candidate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Candidate_Application__c.Comments__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -860,13 +865,23 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Candidate_Application__c.First_Line_supervisor__c</field>
+        <field>Candidate_Application__c.First_Line_Supervisor__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Candidate_Application__c.HR_Classifier__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Candidate_Application__c.Intended_Track__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Candidate_Application__c.LOI_Approved__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -876,6 +891,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Candidate_Application__c.LOI_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Candidate_Application__c.L_C_O_Director__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -915,11 +935,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Candidate_Application__c.Requestor__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Candidate_Application__c.Second_Line_Supervisor__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -927,6 +942,11 @@
         <editable>true</editable>
         <field>Candidate_Application__c.Status__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Candidate_Application__c.TQB_Chair_Approved__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -2790,7 +2810,7 @@
         <recordType>Candidate_Application__c.Candidate_Package</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Candidate_Application__c-Candidate Application Layout</layout>
+        <layout>Candidate_Application__c-Letter of Intent Layout</layout>
         <recordType>Candidate_Application__c.Letter_of_Intent_LOI</recordType>
     </layoutAssignments>
     <layoutAssignments>
