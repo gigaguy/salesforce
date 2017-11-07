@@ -1,17 +1,21 @@
 <aura:component controller="FormPageController" implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName">
 	<aura:attribute name="pageStatus" type="string" default="viewFormTypes"/>
     <aura:attribute name="forms" type="RecordType[]"/>
+	<aura:attribute name="testing" type="boolean" default="false"/>    
     <aura:attribute name="FandP_forms" type="List"/>
     <aura:attribute name="isOpen" type="boolean" default="false"/>
 	<aura:attribute name="confirmIsOpen" type="boolean" default="false"/>
     <aura:attribute name="modalName" type="string"/>
     <aura:attribute name="authenticated" type="boolean" />
+    <aura:attribute name="isNew" type="boolean" default="false"/>
     <aura:attribute name="selectedFormId" type="Id"/>
     <aura:attribute name="selectedFormName" type="string"/>
     <aura:attribute name="hrefInfo" type="string"/>
     <aura:attribute name="hrefEmail" type="string"/>
     <aura:attribute name="viewFormID" type="Id"/>
+    <aura:attribute name="viewFormName" type="string"/>
     <aura:attribute name="edit2" type="Forms__c"/>
+    <aura:attribute name="theModal" type="Forms__c"/>
     <aura:attribute name="newForm" type="Forms__c"/>
     <aura:attribute name="oldForm" type="Forms__c"/>
     <aura:attribute name="oldForms" type="Forms__c[]"/>
@@ -84,7 +88,8 @@
         <aura:iteration var="form" items="{!v.forms}">
             <tr style="background-color: white; border: 1px solid lightgray;">
                 <td style="color: black; padding: 5px; border: 1px solid lightgray; text-align: center;">
-                	<button id="{!form.Id}" name="{!form.Name}" onclick="{!c.openModal}">New Form</button>
+          <!--      	<button id="{!form.Id}" name="{!form.Name}" onclick="{!c.openModal}">New Form</button>  -->
+                    <button id="{!form.Id}" name="{!form.Name}" onclick="{!c.newOpenModal}">New Form</button>
                 </td>
                 <td style="color: black; padding: 5px; border: 1px solid lightgray;">
                 	{!form.Name}
@@ -233,10 +238,6 @@
           <!--BOX BODY-->
           <div class="slds-modal__content slds-p-around--medium">
               <force:recordedit aura:id="edit" recordId="{!v.newForm.Id}" />
-              <!--<force:recordData aura:id="recordHandler"
-                                mode="edit"
-                                targetRecord="{!v.newForm}"
-                                recordId="{!v.newForm.Id}"/>-->
           </div>
           <!--BOX FOOTER-->
           <div class="slds-modal__footer">
@@ -291,7 +292,6 @@
                                      onchange="{!c.onFileUploaded}"
                                      label="Upload Attachments"
                                      name="file" multiple="true"/>
-        <!--    	<div align="right" style="color: black; border: 0px solid #0070d2; text-align: center;"><button onclick="{!c.hideAttachments}">Hide Attachments</button></div>  -->
               	</div>
              </aura:if>
             <!--end add attachments-->
@@ -400,7 +400,6 @@
                                      onchange="{!c.onFileUploaded}"
                                      label="Upload Attachments"
                                      name="file" multiple="true"/>
-        <!--    	<div align="right" style="color: black; border: 0px solid #0070d2; text-align: center;"><button onclick="{!c.hideAttachments}">Hide Attachments</button></div>  -->
               	</div>
              </aura:if>
             <!--end add attachments-->
@@ -511,7 +510,6 @@
                                      onchange="{!c.onFileUploaded}"
                                      label="Upload Attachments"
                                      name="file" multiple="true"/>
-        <!--    	<div align="right" style="color: black; border: 0px solid #0070d2; text-align: center;"><button onclick="{!c.hideAttachments}">Hide Attachments</button></div>  -->
               	</div>
              </aura:if>
             <!--end add attachments-->
@@ -530,5 +528,115 @@
       <div class="slds-backdrop slds-backdrop--open"></div>
     </aura:if>
     <!--End Reopen Modal-->
+    
+    <!--The Modal-->
+    <aura:if isTrue="{!v.modalName == 'theModal'}">   
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+        <div class="slds-modal__container">
+          <!--BOX HEADER-->
+          <div class="slds-modal__header">
+            <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModal}">
+            X
+            <span class="slds-assistive-text">Close</span>
+            </button>
+            <h2 id="header99" class="slds-text-heading--medium">
+                Status:  
+                <aura:if isTrue="{!or(v.oldForm.Approval_Step__c == null,v.oldForm.Approval_Step__c == 'Recalled',v.oldForm.Approval_Step__c == 'Rejected',v.oldForm.Approval_Step__c == 'Approved') || v.oldForm.SF_182_Prepare_For_checker__c}">
+                	{!v.message}Not Submitted
+                    <aura:set attribute="else">
+                          Submitted &nbsp; | &nbsp; {!v.oldForm.Approval_Step__c}
+                    </aura:set>
+                </aura:if>
+                <a href="{!'/FormPrintableTypeOne?fID='+v.viewFormID+'&amp;sid='+v.sessionID}" target="_blank" style="float: right;">
+                    <img src="{!$Resource.PDFLogo}"/>
+               	</a>
+            </h2>   
+              
+              <h3>                    
+                  <aura:if isTrue="{!v.viewFormName!='ORD-111'}"><br/>For help using {!v.viewFormName} please contact: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>
+                  <aura:if isTrue="{!v.viewFormName=='ORD-111'}"><br/>For instructions using {!v.viewFormName} please click here: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>
+              </h3> 
+              
+          </div>
+          <!--BOX BODY-->
+          <div class="slds-modal__content slds-p-around--medium">
+              <aura:if isTrue="{!or(v.oldForm.Approval_Step__c == null,v.oldForm.Approval_Step__c == 'Rejected',v.oldForm.Approval_Step__c == 'Approved') || v.oldForm.SF_182_Prepare_For_checker__c || v.oldForm.Approval_Step__c == 'Recalled'}">
+                  {!v.theModal}
+                  <aura:set attribute="else">
+                      <force:recordview aura:id="view" recordId="{!v.viewFormID}" />
+                  </aura:set>
+              </aura:if>
+          </div>
+          <!--BOX FOOTER-->
+          <div class="slds-modal__footer">
+            <!--attachments list-->
+              <aura:if isTrue="{!v.hasAttachments}">
+             	<table style="border: 1px solid lightgray;">
+                    <col width="1"/>
+                    <col width="250"/>
+                    <col width="70"/>
+                	<tr style="background-color: #0070d2; border: 1px solid lightgray;">         
+                        <td colspan="5" style="color: white; padding: 5px 5px 5px 15px; border: 1px solid lightgray;">
+                            Attachments  
+                        </td>
+                	</tr>
+                    <tr style="background-color: white; border: 1px solid lightgray;">
+                        <td style="color: white; border: 0px solid white;">                           
+                        </td>
+                        <td style="color: black; text-shadow: 0px 0px 0px #000000; padding: 3px 1px 1px 10px; border: 1px solid lightgray; text-align: left;">
+                            FILE NAME
+                        </td>
+                        <td style="color: black; text-shadow: 0px 0px 0px #000000; padding: 1px; border: 1px solid lightgray; text-align: center;">
+                            DATE ADDED
+                        </td>
+                    </tr>
+           			<aura:iteration var="attach" items="{!v.attachList}">
+                      <tr style="background-color: white; border: 1px solid lightgray;">
+                        <td style="color: black; border: 0px solid #0070d2; text-align: center;">
+                            <a href="{!'/servlet/servlet.FileDownload?file='+attach.Id}" target="_blank">
+                                <button style="color: black;">View</button>
+                            </a>  
+                          <div class="divider"/>  
+                            <button id="{!attach.Id}" onclick="{!c.deleteAttachment}">Del</button>
+                        </td>
+                        <td style="color: black; padding: 1px 1px 1px 5px; border: 1px solid lightgray; text-align: left;">
+                            {!attach.Name}
+                        </td>
+                        <td style="color: black; padding: 1px 1px 1px 5px; border: 0px solid #0070d2; text-align: center;">                         
+                           <ui:outputDateTime timezone="America/New_York" value="{!attach.CreatedDate}"/>
+                        </td>
+                      </tr>
+                    </aura:iteration>
+                </table> 
+                  <br/>
+              </aura:if>
+            <!--end attachments list-->  
+              
+            <!--add attachments-->
+              <aura:if isTrue="{!v.addAttachments}">	
+              	<div align="left">
+                    <lightning:input aura:id="file-input" type="file"
+                                     files="{!v.fileToBeUploaded}"
+                                     onchange="{!c.onFileUploaded}"
+                                     label="Upload Attachments"
+                                     name="file" multiple="true"/>
+              	</div>
+             </aura:if>
+            <!--end add attachments-->
+              
+              <ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.closeModal}" />  
+              <aura:if isTrue="{!or(v.oldForm.Approval_Step__c == null,v.oldForm.Approval_Step__c == 'Rejected',v.oldForm.Approval_Step__c == 'Approved') || v.oldForm.SF_182_Prepare_For_checker__c || v.oldForm.Approval_Step__c == 'Recalled'}">
+                  <ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmDelete}" />
+                  <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
+                  <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral" label="Attachments" press="{!c.showAttachments}" /></aura:if> 
+                  <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveStay}" />
+                  <ui:button class="slds-button slds-button_success" label="Submit" press="{!c.confirmSubmit}" />
+              </aura:if>
+          </div>
+        </div>
+      </div>
+      <div class="slds-backdrop slds-backdrop--open"></div>
+    </aura:if>
+    <!--End The Modal-->
     
 </aura:component>

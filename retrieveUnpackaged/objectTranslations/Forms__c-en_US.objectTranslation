@@ -191,8 +191,32 @@
         <name>Budget_Office_Printed_Name__c</name>
     </fields>
     <fields>
+        <label><!-- C. Comment --></label>
+        <name>C_Comment__c</name>
+    </fields>
+    <fields>
         <label><!-- C. Description --></label>
         <name>C_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- C. Hours Donated --></label>
+        <name>C_Hours_Donated__c</name>
+    </fields>
+    <fields>
+        <label><!-- C. Reason --></label>
+        <name>C_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Enter reason in Comment field below:</masterLabel>
+            <translation><!-- Enter reason in Comment field below: --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I am a family member of the recipient and I wish to donate leave.</masterLabel>
+            <translation><!-- I am a family member of the recipient and I wish to donate leave. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>There is insufficient donated leave to carry the leave recipient through the period of the medical emergency.</masterLabel>
+            <translation><!-- There is insufficient donated leave to carry the leave recipient through the period of the medical emergency. --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Description &quot;C&quot; Applies --></label>
@@ -605,10 +629,6 @@
         <name>Contractor__c</name>
     </fields>
     <fields>
-        <label><!-- Date --></label>
-        <name>Coordinator_Date__c</name>
-    </fields>
-    <fields>
         <label><!-- Course Number Code --></label>
         <name>Course_Number_Code__c</name>
     </fields>
@@ -628,6 +648,10 @@
     <fields>
         <label><!-- D. Description --></label>
         <name>D_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- D. Hours Donated --></label>
+        <name>D_Hours_Donated__c</name>
     </fields>
     <fields>
         <label><!-- Description &quot;D&quot; Applies --></label>
@@ -946,6 +970,10 @@
         <name>E_Description__c</name>
     </fields>
     <fields>
+        <label><!-- E. Hours Donated --></label>
+        <name>E_Hours_Donated__c</name>
+    </fields>
+    <fields>
         <label><!-- Description &quot;E&quot; Applies --></label>
         <name>E__c</name>
     </fields>
@@ -1015,6 +1043,14 @@
         <label><!-- FCO --></label>
         <name>FCO__c</name>
         <relationshipLabel><!-- Forms (FCO) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- F. Description --></label>
+        <name>F_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description &quot;F&quot; Applies --></label>
+        <name>F__c</name>
     </fields>
     <fields>
         <label><!-- Facilities Management (Printed Name) --></label>
@@ -1130,28 +1166,12 @@
         <relationshipLabel><!-- Forms --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- Signature --></label>
-        <name>HR_Signature__c</name>
-    </fields>
-    <fields>
-        <label><!-- C. Hours Designated --></label>
-        <name>Hours_Designated__c</name>
-    </fields>
-    <fields>
         <label><!-- Human Resources Office (Printed Name) --></label>
         <name>Human_Resources_Office_Printed_Name__c</name>
     </fields>
     <fields>
         <label><!-- ID Number --></label>
         <name>ID_Number__c</name>
-    </fields>
-    <fields>
-        <label><!-- II-A --></label>
-        <name>II_A__c</name>
-    </fields>
-    <fields>
-        <label><!-- II-B --></label>
-        <name>II_B__c</name>
     </fields>
     <fields>
         <label><!-- ITO/IMO, Telecom (Printed Name) --></label>
@@ -1471,8 +1491,76 @@
         <name>Local_Financial_Management_Office__c</name>
     </fields>
     <fields>
+        <label><!-- Local Leave Bank Coordinator Signature --></label>
+        <name>Local_Leave_Bank_Coordinator_Signature__c</name>
+    </fields>
+    <fields>
         <label><!-- Local Reference Identifier --></label>
         <name>Local_Reference_Identifier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <picklistValues>
+            <masterLabel>Ann Arbor</masterLabel>
+            <translation><!-- Ann Arbor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cincinnati</masterLabel>
+            <translation><!-- Cincinnati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Las Vegas</masterLabel>
+            <translation><!-- Las Vegas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Program Manager/Headquarters</masterLabel>
+            <translation><!-- National Program Manager/Headquarters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTP</masterLabel>
+            <translation><!-- RTP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1</masterLabel>
+            <translation><!-- Region 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10</masterLabel>
+            <translation><!-- Region 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2</masterLabel>
+            <translation><!-- Region 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3</masterLabel>
+            <translation><!-- Region 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4</masterLabel>
+            <translation><!-- Region 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5</masterLabel>
+            <translation><!-- Region 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6</masterLabel>
+            <translation><!-- Region 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7</masterLabel>
+            <translation><!-- Region 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8</masterLabel>
+            <translation><!-- Region 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9</masterLabel>
+            <translation><!-- Region 9 --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Location of Training Site --></label>
@@ -2331,10 +2419,6 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Request Waiver --></label>
-        <name>Request_Waiver__c</name>
-    </fields>
-    <fields>
         <label><!-- Requested Delivery Date --></label>
         <name>Requested_Delivery_Date__c</name>
     </fields>
@@ -2523,10 +2607,6 @@
     <fields>
         <label><!-- Signature --></label>
         <name>Signature__c</name>
-    </fields>
-    <fields>
-        <label><!-- Signature of Local LeaveBank Coordinator --></label>
-        <name>Signature_of_Local_LeaveBank_Coordinator__c</name>
     </fields>
     <fields>
         <label><!-- Special Comments --></label>
@@ -3060,10 +3140,6 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Typed Name/Title of Authorizing Official --></label>
-        <name>Typed_Name_Title_of_Authorizing_Official__c</name>
-    </fields>
-    <fields>
         <label><!-- Type-1 Owner --></label>
         <name>Unauthenticated_Owner__c</name>
         <relationshipLabel><!-- Forms (Type-1 Owner) --></relationshipLabel>
@@ -3118,15 +3194,7 @@
         <name>Vendor_URL__c</name>
     </fields>
     <fields>
-        <label><!-- Waiver Approved --></label>
-        <name>Waiver_Approved__c</name>
-    </fields>
-    <fields>
-        <label><!-- Date --></label>
-        <name>Waiver_Date__c</name>
-    </fields>
-    <fields>
-        <label><!-- Signature --></label>
+        <label><!-- Waiver Authorized Signature --></label>
         <name>Waiver_Signature__c</name>
     </fields>
     <fields>
@@ -3441,8 +3509,8 @@
             <section>II. Type of Contribution. Check all the boxes that apply</section>
         </sections>
         <sections>
-            <label><!-- III. Human Resources Office Certification --></label>
-            <section>III. Human Resources Office Certification</section>
+            <label><!-- III. Leave Bank Coordinator&apos;s Certification (See statement on back of form.) --></label>
+            <section>III. Leave Bank Coordinator&apos;s Certification (See statement on back of form.)</section>
         </sections>
         <sections>
             <label><!-- IV. Waiver.  If applicable, waiver for II-B above is authorized --></label>

@@ -396,6 +396,15 @@ IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;,
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_Leave_Bank_Team</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting Leave Bank Team Approval&quot;</formula>
+        <name>Approval Step - Sent to Leave Bank Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Next_Approver3</fullName>
         <description>ORD-111 checks for Additional Reviewer</description>
         <field>Approval_Step__c</field>
@@ -403,6 +412,18 @@ IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;,
 &quot;Awaiting Additional Reviewer Approval&quot;, 
 &quot;Awaiting QA Manager Approval&quot;)</formula>
         <name>Approval Step - Sent to Next Approver3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_Next_Approver4</fullName>
+        <description>EPA-3160-6v5 checks Location field for next approver</description>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting &quot; &amp; 
+ TEXT(Location__c) &amp;
+&quot; Approval&quot;</formula>
+        <name>Approval Step - Sent to Next Approver4</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
         <protected>false</protected>

@@ -83,7 +83,7 @@
     viewFormJS : function(component, event, helper){
         console.log('in viewFormJS');
         var formID = event.currentTarget.id;
-     //   component.set("v.newForm", null)
+    
         console.log('formID: '+ formID);
         var formName = event.currentTarget.name;
         component.set("v.message", null);
@@ -195,7 +195,7 @@
             	component.get("v.edit2").get("e.recordSave").fire();
                 console.log('no error');
                }    
-      //      component.set("v.stayModal", true);
+   
           	}
           catch (e) {
             console.log(e);
@@ -204,7 +204,7 @@
     },
     saveOnly : function(component, event, helper){
         console.log('in c.saveOnly');
-   //     component.set("v.stayModal", false);
+   
         try {
             if (component.get("v.modalName") != 'reopenForm'){
             	component.find("edit").get("e.recordSave").fire();
@@ -219,22 +219,6 @@
             console.log(e);
           }
         
-        /*component.find("edit").recordSave($A.getCallback(function(saveResult) {
-            // NOTE: If you want a specific behavior(an action or UI behavior) when this action is successful 
-            // then handle that in a callback (generic logic when record is changed should be handled in recordUpdated event handler)
-            if (saveResult.state === "SUCCESS" || saveResult.state === "DRAFT") {
-                // handle component related logic in event handler
-                console.log("Save Successful");
-            } else if (saveResult.state === "INCOMPLETE") {
-                console.log("User is offline, device doesn't support drafts.");
-            } else if (saveResult.state === "ERROR") {
-                console.log('Problem saving record, error: ' + JSON.stringify(saveResult.error));
-            } else {
-                console.log('Unknown problem, state: ' + saveResult.state + ', error: ' + JSON.stringify(saveResult.error));
-            }
-        }));*/
-        
-
         // Needed to update display of forms, sets display to "viewMyForms" for feedback to user that it was saved
         var action = component.get("c.findExistingForms");
         action.setParams({
@@ -262,18 +246,16 @@
             if (component.get("v.modalName") != 'reopenForm'){
             component.find("edit").get("e.recordSave").fire();
                 console.log('no error 1');
-     //       component.set("v.message", "Form Saved | ");
      	       }
             else if (component.get("v.modalName") == 'reopenForm'){
             component.get("v.edit2").get("e.recordSave").fire();
                 console.log('no error 2');
-     //       component.set("v.message", "Form Saved | ");
      	       }    
           	}
           catch (e) {
             console.log(e);
           }
- //       component.set("v.stayModal", false);
+ 
         // Temporary checking for modals to allow submitting from new form or view form
         var formID;
         if (component.get("v.modalName") == 'viewForm') {
@@ -325,8 +307,10 @@
         $A.enqueueAction(action);
 	},
 	openModal2: function(component, event, helper) {
+        if(component.get("v.testing")==false){
         component.set("v.isOpen", true);
         component.set("v.modalName", "");
+        }
     },
     closeModal: function(component, event, helper) {
         console.log('in closeModal');    
@@ -336,7 +320,7 @@
             component.set("v.modalName", "");
             component.set("v.hasAttachments", false);
             component.set("v.addAttachments", false);
-  //      if(component.get("v.stayModal")==true){
+
         	// Needed to update display of forms, sets display to "viewMyForms" for feedback to user that it was submitted
         var action = component.get("c.findExistingForms");
         action.setParams({
@@ -357,9 +341,8 @@
                 }
             }
         });
-  //      component.set("v.stayModal", false);
+  
         $A.enqueueAction(action);
-  //       }
     },
 	handleSaveSuccess : function(component, event, helper){
         console.log('in handleSaveSuccess');
@@ -385,21 +368,11 @@
             }
         });
         $A.enqueueAction(action);
-        
- //       if(component.get("v.stayModal")!=true){
- //           component.set("v.isOpen", false);
- //           component.set("v.modalName", "");
- //           component.set("v.hasAttachments", false);
- //           component.set("v.addAttachments", false);
-   //         component.set("v.message", "Your Form was saved");
- //        }
- //       else {
-//			component.set("v.stayModal", false);
+
             component.set("v.isOpen", false);
             component.set("v.message", "Form Saved | ");
             var a = component.get('c.createReopenModal');
         $A.enqueueAction(a);
-   //     }
 	},
     cancelCreationModal : function(component, event, helper){
     	console.log('in cancelCreationModal'); 
@@ -409,7 +382,6 @@
         component.set("v.modalName", "");
         component.set("v.hasAttachments", false);
         component.set("v.addAttachments", false);
-  //      component.set("v.stayModal", false);
     	
         var action = component.get("c.deleteForm");
         action.setParams({
@@ -435,7 +407,7 @@
     deleteFormJS : function(component, event, helper){
     	component.set("v.hasAttachments", false);
         component.set("v.addAttachments", false);
- //       component.set("v.stayModal", false);
+ 
         var formID = component.get("v.viewFormID");
         console.log(formID);
 		var action = component.get("c.deleteForm");
@@ -627,10 +599,8 @@
    },
     createReopenModal: function(component, event, helper) {
    		console.log('in createReopenModal');
-        //     component.set("v.message", null);
+        
         var formID = component.get("v.viewFormID");
-    //    if (formID == null) {
-    //        formID = component.get("v.viewFormID"); }
         console.log('formID: ' + formID);
 		
         component.set("v.viewFormID", formID);
@@ -735,6 +705,113 @@
             }
         });
         $A.enqueueAction(action);      
-   }
+   },
+    newOpenModal: function(component, event, helper) {
+        console.log('in newOpenModal');
+        component.set("v.testing", true);
+        var formID = event.currentTarget.id;
+        console.log('formID(rt): ' + formID);
+        var formName = event.currentTarget.name;
+        console.log('formName: ' + formName);
+        
+        component.set("v.isNew", true);
+        component.set("v.viewFormID", formID); 
+        component.set("v.viewFormName", formName);
+        
+        var a = component.get("c.newCreateModal");
+        $A.enqueueAction(a);
+    },
+    newCreateModal: function(component, event, helper) {
+        console.log('in newCreateModal');
+        
+        var isNew = component.get("v.isNew");
+        console.log('isNew: ' + isNew);
+        var formID = component.get("v.viewFormID");
+        console.log('formID: ' + formID);
+		var formName = component.get("v.viewFormName");        
+        console.log('formName: ' + formName);
+        
+        if (isNew==true) {
+            component.set("v.message", null);
+        if (formName === "BAP Provisioning") {
+            var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+        	var hrefEmail = "BAP_Admins@epa.gov";
+        }
+        else if (formName === "EPA-3110-1") {
+            var hrefInfo = "";
+        	var hrefEmail = "David Ack";
+        }
+        else if (formName === "EPA-3160-6v5") {
+            var hrefInfo = "";
+        	var hrefEmail = "Bisa Cunningham";
+        }
+        else if (formName === "EPA-PCOR") {
+            var hrefInfo = "";
+        	var hrefEmail = "To be determined";
+        }
+        else if (formName === "ORD-111") {
+            var hrefInfo = "https://intranet.ord.epa.gov/sites/default/files/media/qa/ORDQARFinstructions073008.pdf";
+        	var hrefEmail = "ORDQARFinstructions073008.pdf";
+        }
+        else if (formName === "PRIAv5") {
+            var hrefInfo = "";
+        	var hrefEmail = "Nicole Williams, Hamaad Syed, and Patrick Dobak";
+        }
+        else if (formName === "SF-182") {
+            var hrefInfo = "";
+        	var hrefEmail = "Sharon Ridings";
+        }
+        else {
+            var hrefInfo = "mailto:McNeal.Detha@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+       	 	var hrefEmail = "McNeal.Detha@epa.gov";
+        }
+        component.set("v.hrefInfo", hrefInfo);
+        component.set("v.hrefEmail", hrefEmail);
+        helper.show(component,event);
+		var action = component.get("c.insertNewForms");
+        action.setParams({
+			"sID" : component.get("v.sessionID"),
+            "rtID" : formID
+        });
+        action.setCallback(this,function(resp){
+			console.log('in action');
+            var state = resp.getState();
+            console.log('state: ' +state);
+            if(state === 'SUCCESS'){
+                component.set("v.newForm", resp.getReturnValue());
+                component.set("v.viewFormID", component.get("v.newForm.Id"));
+                formID = component.get("v.newForm.Id");
+                console.log('formID: '+formID);
+                
+                $A.createComponent('force:recordEdit',
+                  {
+                    'aura:id': 'theModal',
+                    'recordId': formID
+                   },
+                  function(theModal){
+                    component.set('v.theModal', theModal); 
+                    component.set("v.modalName", "theModal");  
+                      console.log('in function - formID: '+formID);
+                   }
+                                              
+                    );
+                
+                helper.hide(component,event);
+            }
+            else if(state === 'ERROR'){
+                var errors = resp.getError();
+                helper.hide(component,event);
+                for(var i = 0 ;i < errors.length;i++){
+                    console.log(errors[i].message);
+                }
+            }
+        });
+        $A.enqueueAction(action);
+          }
+        else {
+            // combined 
+          }
+        component.set("v.isNew", false);
+    }
     
 })
