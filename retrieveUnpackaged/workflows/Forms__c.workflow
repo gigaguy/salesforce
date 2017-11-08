@@ -39,6 +39,26 @@
         <template>unfiled$public/EPA_100_Forms_Submission_Confirmation</template>
     </alerts>
     <alerts>
+        <fullName>EPA_3160_6v5_Leave_Bank_Approved</fullName>
+        <description>EPA-3160-6v5 Leave Bank Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/EPA_3160_6v5_Leave_Bank_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>EPA_3160_6v5_Moving_to_Leave_Bank_Team</fullName>
+        <description>EPA-3160-6v5 Moving to Leave Bank Team</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/EPA_3160_6v5_Moving_to_Leave_Bank_Team</template>
+    </alerts>
+    <alerts>
         <fullName>Email_to_Funding_Official</fullName>
         <description>Email to Funding Official</description>
         <protected>false</protected>
@@ -421,7 +441,7 @@ IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;,
         <description>EPA-3160-6v5 checks Location field for next approver</description>
         <field>Approval_Step__c</field>
         <formula>&quot;Awaiting &quot; &amp; 
- TEXT(Location__c) &amp;
+ TEXT(Employee_Location__c) &amp;
 &quot; Approval&quot;</formula>
         <name>Approval Step - Sent to Next Approver4</name>
         <notifyAssignee>false</notifyAssignee>
@@ -479,6 +499,15 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
         <operation>Formula</operation>
         <protected>false</protected>
         <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Leave_Bank_Coordinator_Signature</fullName>
+        <field>Local_Leave_Bank_Coordinator_Signature__c</field>
+        <literalValue>1</literalValue>
+        <name>Leave Bank Coordinator Signature</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Manager_Signature</fullName>
@@ -541,6 +570,15 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
         <field>Form_Status__c</field>
         <literalValue>Rejected</literalValue>
         <name>Status Updated to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Waiver_Auth_Signature</fullName>
+        <field>Waiver_Authorized_Signature__c</field>
+        <literalValue>1</literalValue>
+        <name>Waiver Auth Signature</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
         <protected>false</protected>

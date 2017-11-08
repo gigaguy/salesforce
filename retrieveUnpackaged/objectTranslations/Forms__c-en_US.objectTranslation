@@ -978,6 +978,10 @@
         <name>E__c</name>
     </fields>
     <fields>
+        <label><!-- Effective Date --></label>
+        <name>Effective_Date__c</name>
+    </fields>
+    <fields>
         <help><!-- Clicking the &quot;Employee&apos;s Signature&quot; checkbox will sign this section upon saving the form. --></help>
         <label><!-- Employee Digital Signature --></label>
         <name>Employee_Digital_Signature__c</name>
@@ -985,6 +989,70 @@
     <fields>
         <label><!-- Employee ID No --></label>
         <name>Employee_ID_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee Location --></label>
+        <name>Employee_Location__c</name>
+        <picklistValues>
+            <masterLabel>Ann Arbor</masterLabel>
+            <translation><!-- Ann Arbor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cincinnati</masterLabel>
+            <translation><!-- Cincinnati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Las Vegas</masterLabel>
+            <translation><!-- Las Vegas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Program Manager/Headquarters</masterLabel>
+            <translation><!-- National Program Manager/Headquarters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTP</masterLabel>
+            <translation><!-- RTP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1</masterLabel>
+            <translation><!-- Region 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10</masterLabel>
+            <translation><!-- Region 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2</masterLabel>
+            <translation><!-- Region 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3</masterLabel>
+            <translation><!-- Region 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4</masterLabel>
+            <translation><!-- Region 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5</masterLabel>
+            <translation><!-- Region 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6</masterLabel>
+            <translation><!-- Region 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7</masterLabel>
+            <translation><!-- Region 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8</masterLabel>
+            <translation><!-- Region 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9</masterLabel>
+            <translation><!-- Region 9 --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Employee Name: --></label>
@@ -1439,6 +1507,10 @@
         <name>Lead_QA_Organization__c</name>
     </fields>
     <fields>
+        <label><!-- Leave Bank Coordinator Digital Signature --></label>
+        <name>Leave_Bank_Coordinator_Digital_Signature__c</name>
+    </fields>
+    <fields>
         <label><!-- Librarian (Printed Name) --></label>
         <name>Librarian_Printed_Name__c</name>
     </fields>
@@ -1497,70 +1569,6 @@
     <fields>
         <label><!-- Local Reference Identifier --></label>
         <name>Local_Reference_Identifier__c</name>
-    </fields>
-    <fields>
-        <label><!-- Location --></label>
-        <name>Location__c</name>
-        <picklistValues>
-            <masterLabel>Ann Arbor</masterLabel>
-            <translation><!-- Ann Arbor --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Cincinnati</masterLabel>
-            <translation><!-- Cincinnati --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Las Vegas</masterLabel>
-            <translation><!-- Las Vegas --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>National Program Manager/Headquarters</masterLabel>
-            <translation><!-- National Program Manager/Headquarters --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>RTP</masterLabel>
-            <translation><!-- RTP --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Region 1</masterLabel>
-            <translation><!-- Region 1 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Region 10</masterLabel>
-            <translation><!-- Region 10 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Region 2</masterLabel>
-            <translation><!-- Region 2 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Region 3</masterLabel>
-            <translation><!-- Region 3 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Region 4</masterLabel>
-            <translation><!-- Region 4 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Region 5</masterLabel>
-            <translation><!-- Region 5 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Region 6</masterLabel>
-            <translation><!-- Region 6 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Region 7</masterLabel>
-            <translation><!-- Region 7 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Region 8</masterLabel>
-            <translation><!-- Region 8 --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Region 9</masterLabel>
-            <translation><!-- Region 9 --></translation>
-        </picklistValues>
     </fields>
     <fields>
         <label><!-- Location of Training Site --></label>
@@ -2178,6 +2186,10 @@
     <fields>
         <label><!-- Printed Name --></label>
         <name>Printed_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processing Date --></label>
+        <name>Processing_Date__c</name>
     </fields>
     <fields>
         <label><!-- Product Chemistry: --></label>
@@ -3195,7 +3207,11 @@
     </fields>
     <fields>
         <label><!-- Waiver Authorized Signature --></label>
-        <name>Waiver_Signature__c</name>
+        <name>Waiver_Authorized_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Waiver Authorized Digital Signature --></label>
+        <name>Waiver_Digital_Signature__c</name>
     </fields>
     <fields>
         <label><!-- Work Description --></label>

@@ -48,7 +48,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Location__c</field>
+                <field>Employee_Location__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
@@ -230,11 +230,17 @@
         <label>III. Leave Bank Coordinator&apos;s Certification (See statement on back of form.)</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>Local_Leave_Bank_Coordinator_Signature__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>OneColumn</style>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Leave_Bank_Coordinator_Digital_Signature__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -243,15 +249,29 @@
         <label>IV. Waiver.  If applicable, waiver for II-B above is authorized</label>
         <layoutColumns>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Waiver_Authorized_Signature__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Processing_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Effective_Date__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Waiver_Signature__c</field>
+                <field>Waiver_Digital_Signature__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Title__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>OneColumn</style>
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
         <customLabel>false</customLabel>
