@@ -128,6 +128,56 @@
         <relationshipLabel><!-- Forms (Clearing Author) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Co-Author 10 --></label>
+        <name>Co_Author_10__c</name>
+        <relationshipLabel><!-- Forms (Co-Author 10) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Co-Author 1 --></label>
+        <name>Co_Author_1__c</name>
+        <relationshipLabel><!-- Forms (Co-Author 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Co-Author 2 --></label>
+        <name>Co_Author_2__c</name>
+        <relationshipLabel><!-- Forms (Co-Author 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Co-Author 3 --></label>
+        <name>Co_Author_3__c</name>
+        <relationshipLabel><!-- Forms (Co-Author 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Co-Author 4 --></label>
+        <name>Co_Author_4__c</name>
+        <relationshipLabel><!-- Forms (Co-Author 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Co-Author 5 --></label>
+        <name>Co_Author_5__c</name>
+        <relationshipLabel><!-- Forms (Co-Author 5) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Co-Author 6 --></label>
+        <name>Co_Author_6__c</name>
+        <relationshipLabel><!-- Forms (Co-Author 6) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Co-Author 7 --></label>
+        <name>Co_Author_7__c</name>
+        <relationshipLabel><!-- Forms (Co-Author 7) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Co-Author 8 --></label>
+        <name>Co_Author_8__c</name>
+        <relationshipLabel><!-- Forms (Co-Author 8) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Co-Author 9 --></label>
+        <name>Co_Author_9__c</name>
+        <relationshipLabel><!-- Forms (Co-Author 9) --></relationshipLabel>
+    </fields>
+    <fields>
         <help><!-- Refer to the communications handbook and staff for support and guidance on developing and implementing a communications plan for this product. --></help>
         <label><!-- Communication Plan Required? --></label>
         <name>Communication_Plan_Required__c</name>
@@ -355,6 +405,26 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         </lookupFilter>
         <name>HR_Organization__c</name>
         <relationshipLabel><!-- Forms --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- How Many Approval Levels? --></label>
+        <name>How_Many_Approval_Levels__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <help><!-- Does this product contain human subjects research (HSR)? If yes, please attach documentation of HSR approval. --></help>

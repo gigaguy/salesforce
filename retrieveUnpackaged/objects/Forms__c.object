@@ -300,6 +300,136 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Co_Author_10__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Co-Author 10</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Co-Author 10)</relationshipLabel>
+        <relationshipName>FormsWndl</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Co_Author_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Co-Author 1</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Co-Author 1)</relationshipLabel>
+        <relationshipName>Forms4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Co_Author_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Co-Author 2</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Co-Author 2)</relationshipLabel>
+        <relationshipName>Forms5</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Co_Author_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Co-Author 3</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Co-Author 3)</relationshipLabel>
+        <relationshipName>Forms6</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Co_Author_4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Co-Author 4</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Co-Author 4)</relationshipLabel>
+        <relationshipName>Forms7</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Co_Author_5__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Co-Author 5</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Co-Author 5)</relationshipLabel>
+        <relationshipName>Forms8</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Co_Author_6__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Co-Author 6</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Co-Author 6)</relationshipLabel>
+        <relationshipName>Forms9</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Co_Author_7__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Co-Author 7</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Co-Author 7)</relationshipLabel>
+        <relationshipName>FormsWncO</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Co_Author_8__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Co-Author 8</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Co-Author 8)</relationshipLabel>
+        <relationshipName>FormsWncd</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Co_Author_9__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Co-Author 9</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Co-Author 9)</relationshipLabel>
+        <relationshipName>FormsWnd2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Communication_Plan_Required__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Refer to the communications handbook and staff for support and guidance on developing and implementing a communications plan for this product.</inlineHelpText>
@@ -779,6 +909,37 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>How_Many_Approval_Levels__c</fullName>
+        <externalId>false</externalId>
+        <label>How Many Approval Levels?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Human_Subjects_Research__c</fullName>
@@ -1503,6 +1664,25 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>How_Many_Approval_Levels__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Human_Subjects_Research__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -1797,6 +1977,25 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>How_Many_Approval_Levels__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Human_Subjects_Research__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -2086,6 +2285,25 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
             <values>
                 <fullName>Full Sandbox</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_Many_Approval_Levels__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2398,6 +2616,25 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
             <values>
                 <fullName>Starter User Count</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_Many_Approval_Levels__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
