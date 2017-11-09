@@ -97,6 +97,17 @@
         <type>Phone</type>
     </fields>
     <fields>
+        <fullName>Additional_Co_Authors__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please list any additional co-authors beyond the first 10.</inlineHelpText>
+        <label>Additional Co-Authors</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Additional_Comms_Materials_Required__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Additional communications materials needed from clearing author (e.g., desk statement, Qs and As for Press Office). Communications Coordinator will email further instructions to clearing author, with deadline for submitting requested materials.</inlineHelpText>
@@ -628,6 +639,30 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Disclaimer_YesNo__c</fullName>
+        <description>Yes/No for Disclaimer field.</description>
+        <externalId>false</externalId>
+        <label>Disclaimer?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Disclaimers__c</fullName>
         <defaultValue>&quot;This scientific product may need to have a standard disclaimer on it when given to peer reviewers and while routing through clearance. An ethics disclaimer may also need to be used when the scientific product is released. Please ensure that your product includes all appropriate disclaimers.&quot;</defaultValue>
         <externalId>false</externalId>
@@ -726,6 +761,15 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>External_Review_Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>External Review Completed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>First_Line_Supervisor__c</fullName>
@@ -1079,6 +1123,38 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Peer_Review_Attached__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Peer Review Attached?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Peer_Review_YesNo__c</fullName>
+        <externalId>false</externalId>
+        <label>Peer Review?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Peer_Review__c</fullName>
         <defaultValue>&quot;Please ensure that this product has been through appropriate peer review. The peer review record of this product should be attached.&quot;</defaultValue>
         <externalId>false</externalId>
@@ -1113,6 +1189,29 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         </valueSet>
     </fields>
     <fields>
+        <fullName>Public_Access_YesNo__c</fullName>
+        <externalId>false</externalId>
+        <label>Public Access?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Public_Access__c</fullName>
         <defaultValue>&quot;Please ensure that this product has a Scientific Data Management Plan in compliance with EPA’s Public Access Plan. Documentation of the plan should be attached.&quot;</defaultValue>
         <externalId>false</externalId>
@@ -1121,6 +1220,29 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Quality_Assurance_YesNo__c</fullName>
+        <externalId>false</externalId>
+        <label>Quality Assurance?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Quality_Assurance__c</fullName>
@@ -1576,6 +1698,17 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Disclaimer_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Dual_Research_of_Concern_DURC__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -1716,6 +1849,17 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Peer_Review_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Product_Designation__c</picklist>
             <values>
                 <fullName>Level 1 %28Influential Scientific Information %28ISI%29%2C Highly Influential Scientific Assessment %28HISA%29%2C or High Profile</fullName>
@@ -1723,6 +1867,28 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
             <values>
                 <fullName>Level 2 %28all other scientific products%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Public_Access_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Quality_Assurance_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1909,6 +2075,17 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Disclaimer_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Dual_Research_of_Concern_DURC__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -2029,6 +2206,17 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Peer_Review_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Product_Designation__c</picklist>
             <values>
                 <fullName>Level 1 %28Influential Scientific Information %28ISI%29%2C Highly Influential Scientific Assessment %28HISA%29%2C or High Profile</fullName>
@@ -2036,6 +2224,28 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
             <values>
                 <fullName>Level 2 %28all other scientific products%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Public_Access_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Quality_Assurance_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2221,6 +2431,17 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Disclaimer_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Dual_Research_of_Concern_DURC__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -2341,6 +2562,17 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Peer_Review_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Product_Designation__c</picklist>
             <values>
                 <fullName>Level 1 %28Influential Scientific Information %28ISI%29%2C Highly Influential Scientific Assessment %28HISA%29%2C or High Profile</fullName>
@@ -2348,6 +2580,28 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
             <values>
                 <fullName>Level 2 %28all other scientific products%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Public_Access_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Quality_Assurance_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2532,6 +2786,17 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Disclaimer_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Dual_Research_of_Concern_DURC__c</picklist>
             <values>
                 <fullName>No</fullName>
@@ -2672,6 +2937,17 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Peer_Review_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Product_Designation__c</picklist>
             <values>
                 <fullName>Level 1 %28Influential Scientific Information %28ISI%29%2C Highly Influential Scientific Assessment %28HISA%29%2C or High Profile</fullName>
@@ -2679,6 +2955,28 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
             <values>
                 <fullName>Level 2 %28all other scientific products%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Public_Access_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Quality_Assurance_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

@@ -512,6 +512,34 @@
                     <fullName>Reason 1</fullName>
                     <default>false</default>
                 </value>
+                <value>
+                    <fullName>Candidate does not meet length of employment requirement.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Candidate does not meet education requirement.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Candidate does not meet experience requirement.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Candidate does not meet promotion prerequisite.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Candidate received below average performance review.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Candidate received below average peer review.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -908,6 +936,34 @@
         </picklistValues>
         <picklistValues>
             <picklist>Package_Reject_Reason__c</picklist>
+            <values>
+                <fullName>Candidate does not meet education requirement%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate does not meet experience requirement%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate does not meet length of employment requirement%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate does not meet promotion prerequisite%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate received below average peer review%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate received below average performance review%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>Reason 1</fullName>
                 <default>false</default>

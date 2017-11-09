@@ -25,6 +25,11 @@
         <name>AWL_Phone_Number__c</name>
     </fields>
     <fields>
+        <help><!-- Please list any additional co-authors beyond the first 10. --></help>
+        <label><!-- Additional Co-Authors --></label>
+        <name>Additional_Co_Authors__c</name>
+    </fields>
+    <fields>
         <help><!-- Additional communications materials needed from clearing author (e.g., desk statement, Qs and As for Press Office). Communications Coordinator will email further instructions to clearing author, with deadline for submitting requested materials. --></help>
         <label><!-- Additional Comms Materials Required? --></label>
         <name>Additional_Comms_Materials_Required__c</name>
@@ -261,6 +266,18 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Disclaimer? --></label>
+        <name>Disclaimer_YesNo__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Disclaimers --></label>
         <name>Disclaimers__c</name>
     </fields>
@@ -308,6 +325,10 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
     <fields>
         <label><!-- Expire Date --></label>
         <name>Expire_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Review Completed --></label>
+        <name>External_Review_Completed__c</name>
     </fields>
     <fields>
         <label><!-- First Line Supervisor --></label>
@@ -492,6 +513,22 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         <relationshipLabel><!-- Forms (Organizational Level Director) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Peer Review Attached? --></label>
+        <name>Peer_Review_Attached__c</name>
+    </fields>
+    <fields>
+        <label><!-- Peer Review? --></label>
+        <name>Peer_Review_YesNo__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Peer Review --></label>
         <name>Peer_Review__c</name>
     </fields>
@@ -509,8 +546,32 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Public Access? --></label>
+        <name>Public_Access_YesNo__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Public Access --></label>
         <name>Public_Access__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quality Assurance? --></label>
+        <name>Quality_Assurance_YesNo__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Quality Assurance --></label>
@@ -728,6 +789,10 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
     <layouts>
         <layout>eClearance</layout>
         <sections>
+            <label><!-- Co-Authors --></label>
+            <section>Co-Authors</section>
+        </sections>
+        <sections>
             <label><!-- Communications Check In --></label>
             <section>Communications Check In</section>
         </sections>
@@ -742,6 +807,10 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         <sections>
             <label><!-- First Line Supervisor Checklist --></label>
             <section>First Line Supervisor Checklist</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
         </sections>
         <sections>
             <label><!-- Product Details --></label>
