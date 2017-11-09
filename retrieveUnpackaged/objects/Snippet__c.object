@@ -51,6 +51,7 @@
         <fields>Submission_Number__c</fields>
         <fields>Commenter_Name__c</fields>
         <fields>Agency_Name__c</fields>
+        <fields>Commenter_Category__c</fields>
         <label>Snippet</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -275,7 +276,11 @@
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Agency Edits</fullName>
+                    <fullName>Agency Response Started</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Agency Topic Change</fullName>
                     <default>false</default>
                 </value>
                 <value>
@@ -359,7 +364,7 @@
         <filters>
             <field>Topic__c</field>
             <operation>contains</operation>
-            <value>11.4</value>
+            <value>11.0</value>
         </filters>
         <filters>
             <field>Snippet_Status__c</field>
