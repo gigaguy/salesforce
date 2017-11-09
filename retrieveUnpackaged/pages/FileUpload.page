@@ -1,4 +1,4 @@
-<apex:page controller="AttachmentUploadController" showheader="false" sidebar="false" title="BAP Agency Forms - File Upload" cache="false">
+<apex:page controller="AttachmentUploadController" showheader="false" sidebar="false" title="BAP Agency Forms - File Upload" cache="false" action="{!validateOrRedirect}">
 
     <style>
         body { background-color: #E0F1FF; }
@@ -63,35 +63,33 @@
     <!-- End Header -->
     
     <!--Body-->
-    
- <!--   <apex:outputPanel styleClass="msg" >
-     <br/>Approvers saved successfully!<br/><br/>
-    </apex:outputPanel>  -->
         
     <div style="width: 75%; padding-left: 200px;"> 
 
   <apex:form enctype="multipart/form-data">
     <apex:pageMessages />
-    <apex:pageBlock title="Upload a Attachment">
+    <apex:pageBlock title="Upload an Attachment">
 
       <apex:pageBlockButtons >
         <apex:commandButton action="{!upload}" value="Save"/>
+        <apex:commandButton action="{!goToForm}" value="Back to Form"/>
       </apex:pageBlockButtons>
 
       <apex:pageBlockSection showHeader="false" columns="2" id="block1">
 
-        <apex:pageBlockSectionItem >
+  <!--      <apex:pageBlockSectionItem >
           <apex:outputLabel value="File Name" for="fileName"/>
           <apex:inputText value="{!attachment.name}" id="fileName"/>
-        </apex:pageBlockSectionItem>
-
-        <apex:pageBlockSectionItem >
+        </apex:pageBlockSectionItem>   -->
+        
+          <apex:pageBlockSectionItem >
           <apex:outputLabel value="File" for="file"/>
           <apex:inputFile value="{!attachment.body}" filename="{!attachment.name}" id="file"/>
         </apex:pageBlockSectionItem>
-
+        <BR/>
+        
         <apex:pageBlockSectionItem >
-          <apex:outputLabel value="Description" for="description"/>
+          <apex:outputLabel value="Description (optional)" for="description"/>
           <apex:inputTextarea value="{!attachment.description}" id="description"/>
         </apex:pageBlockSectionItem>
 

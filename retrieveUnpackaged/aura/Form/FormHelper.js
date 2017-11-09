@@ -14,6 +14,8 @@
      $A.enqueueAction(action);
 	},
     upload: function(component, file, base64Data, callback) {
+        console.log('in upload');
+        
         var formID;
             if (component.get("v.modalName") == 'viewForm') {
                 formID = component.get("v.viewFormID");
@@ -57,7 +59,8 @@
         $A.util.addClass(spinner, "slds-hide");
     },
     getAttachList : function(component, formID){
-		
+		console.log('in getAttachList');
+        
         console.log('formID: ' + formID);     
         var action = component.get("c.getListOfAttachments");
        		action.setParams({
@@ -66,7 +69,7 @@
         action.setCallback(this, function(response){
             var name = response.getState();
             console.log('getting attachment list');
-            console.log('name' + name);
+            console.log('name ' + name);
             console.log('return value: ' + response.getReturnValue().length);
             if (name === "SUCCESS" && response.getReturnValue().length > 0) {
                 console.log('in here');
@@ -81,21 +84,29 @@
      $A.enqueueAction(action);
 	},
     uploadHelper: function(component, event) {
+        console.log('in uploadHelper');
+        
         // start/show the loading spinner   
         component.set("v.showLoadingSpinner", true);
         // get the selected files using aura:id [return array of files]
-        var fileInput = component.find("fileId").get("v.files");
+        var fileInput = component.get("v.uploadFiles");
+       
         // get the first file using array index[0]  
-        var file = fileInput[0];
+        var file = fileInput[0][0];
         var self = this;
+        
         // check the selected file size, if select file size greter then MAX_FILE_SIZE,
         // then show a alert msg to user,hide the loading spinner and return from function  
         if (file.size > self.MAX_FILE_SIZE) {
+            console.log('in file too big');
             component.set("v.showLoadingSpinner", false);
-            component.set("v.fileName", 'Alert : File size cannot exceed ' + self.MAX_FILE_SIZE + ' bytes.\n' + ' Selected file size: ' + file.size);
+            component.set("v.largeFile", true);
+            component.set("v.fileName", 'Alert : File size cannot exceed ' + self.MAX_FILE_SIZE + ' bytes. ' + 
+                          ' Selected file size: ' + file.size + '<br/>' +
+                          ' Please click here to upload a large file: '); 
             return;
         }
- 
+ 		
         // create a FileReader object 
         var objFileReader = new FileReader();
         // set onload function of FileReader object   
@@ -112,6 +123,8 @@
         objFileReader.readAsDataURL(file);
     },
     uploadProcess: function(component, file, fileContents) {
+        console.log('in uploadProcess');
+        
         // set a default size or startpostiton as 0 
         var startPosition = 0;
         // calculate the end size or endPostion using Math.min() function which is return the min. value   
@@ -121,11 +134,15 @@
         this.uploadInChunk(component, file, fileContents, startPosition, endPosition, '');
     },
     uploadInChunk: function(component, file, fileContents, startPosition, endPosition, attachId) {
+        console.log('in uploadInChunk');
+        
         // call the apex method 'saveChunk'
+        var formID = component.get("v.parentId");
+        console.log('formID: ' + formID);
         var getchunk = fileContents.substring(startPosition, endPosition);
         var action = component.get("c.saveChunk");
         action.setParams({
-            parentId: component.get("v.parentId"),
+            parentId: formID,
             fileName: file.name,
             base64Data: encodeURIComponent(getchunk),
             contentType: file.type,
@@ -148,8 +165,12 @@
                     this.uploadInChunk(component, file, fileContents, startPosition, endPosition, attachId);
                 } else {
                     alert('your File is uploaded successfully');
+                    component.set("v.largeFile", false);
                     component.set("v.showLoadingSpinner", false);
+                    this.getAttachList(component, formID);
                     component.set("v.hasAttachments", true);
+                    component.set("v.fileName", null);
+                    
                 }
                 // handel the response errors        
             } else if (state === "INCOMPLETE") {

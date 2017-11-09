@@ -14,8 +14,13 @@
         helper.getFandP_Forms(component);
     },
     openModal: function(component, event, helper) { //this needs to go away
+        console.log('in openModal');
+        
         var formID = event.currentTarget.id;
         var formName = event.currentTarget.name;
+        
+        component.set("v.fileName", "No File Selected..");
+        component.set("v.largeFile", false);
         
         component.set("v.message", null);
         if (formName === "BAP Provisioning") {
@@ -69,6 +74,39 @@
                 component.set("v.newForm", resp.getReturnValue());
                 component.set("v.viewFormID", component.get("v.newForm.Id"));
                 component.set("v.parentId", component.get("v.newForm.Id"));
+                
+                $A.createComponent('lightning:input',
+                           {
+                               'aura:id':'fileUp', 
+                               onchange:component.getReference("c.handleFilesChange"), 
+                               type:'file', 
+                               name:'fileUp',
+                               label:'Upload Attachment', 
+                               multiple:'false',
+                           //    files:"{!v.uploadFiles}"
+                           },
+                               function(fileUp) {
+                               component.set("v.fileUp", fileUp);
+                           }
+                               );   
+                
+  /*          $A.createComponent( 
+                        "lightning:input", {
+               //         value: component.getReference("v.accountRecord."+component.get("v.fieldName")),
+                        label: 'Upload Attachment',
+                        type: "File", 
+ 				//	  	onchange: {!c.handleFilesChange}
+                    },
+                    $A.getCallback(function(newCmp, status, error) {
+                        console.log('100: '+status);
+                        var edits = component.get("v.fileUp");
+                        edits.push(newCmp);
+                        component.set("v.fileUp", edits);
+                        var a = component.get("c.handleFilesChange");
+        				$A.enqueueAction(a);
+                    })
+                );   */
+                
                 helper.hide(component,event);
             }
             else if(state === 'ERROR'){
@@ -80,6 +118,7 @@
             }
         });
         $A.enqueueAction(action);
+        
     },
     viewFormJS : function(component, event, helper){  //this needs to go away
         console.log('in viewFormJS');
@@ -126,6 +165,9 @@
         component.set("v.selectedFormName", formName);
         component.set("v.hrefInfo", hrefInfo);
         component.set("v.hrefEmail", hrefEmail);
+        
+        component.set("v.fileName", "No File Selected..");
+        component.set("v.largeFile", false);
 		
         helper.show(component,event);
         var action = component.get("c.viewForm");
@@ -591,10 +633,14 @@
         component.set("v.addAttachments", false);
     },
 	showAttachments: function(component, event, helper) {
+        console.log('in showAttachments');
+        
         var formID;
                 if (component.get("v.modalName") == 'viewForm') { 		//this needs to go away
                     formID = component.get("v.viewFormID"); }
                 else { formID = component.get("v.newForm.Id"); }		//this needs to go away
+        console.log('formID: ' + formID);
+        
         helper.getAttachList(component, formID);
         	component.set("v.addAttachments", true);        
    },
@@ -604,6 +650,9 @@
         var formID = component.get("v.viewFormID");
         console.log('formID: ' + formID);
 		
+        component.set("v.fileName", "No File Selected..");
+        component.set("v.largeFile", false);
+        
         component.set("v.viewFormID", formID);
         helper.show(component,event);
         var action = component.get("c.viewForm");
@@ -683,6 +732,9 @@
         component.set("v.selectedFormName", formName);
         component.set("v.hrefInfo", hrefInfo);
         component.set("v.hrefEmail", hrefEmail);
+        component.set("v.fileName", "No File Selected..");
+        component.set("v.largeFile", false);
+        
          
 		var action = component.get("c.cloneForm");
         action.setParams({
@@ -768,6 +820,9 @@
         }
         component.set("v.hrefInfo", hrefInfo);
         component.set("v.hrefEmail", hrefEmail);
+        component.set("v.fileName", "No File Selected..");
+        component.set("v.largeFile", false);    
+            
         helper.show(component,event);
 		var action = component.get("c.insertNewForms");
         action.setParams({
@@ -896,7 +951,9 @@
         $A.enqueueAction(a);
     },
     doSave: function(component, event, helper) {
-        if (component.find("fileId").get("v.files").length > 0) {
+        console.log('in doSave');
+         
+        if (component.get("v.uploadFiles").length > 0) {
             helper.uploadHelper(component, event);
         } else {
             alert('Please Select a Valid File');
@@ -904,11 +961,20 @@
     },
  
     handleFilesChange: function(component, event, helper) {
+        console.log('in handleFilesChange');      
+        
         var fileName = 'No File Selected..';
+        console.log('968: ' + event.getSource().get("v.files").length);
+        component.set("v.uploadFiles", event.getSource().get("v.files"));
+        var files = component.get("v.uploadFiles");
+
         if (event.getSource().get("v.files").length > 0) {
             fileName = event.getSource().get("v.files")[0]['name'];
         }
         component.set("v.fileName", fileName);
-    }
+        component.set("v.largeFile", false);
+        var a = component.get("c.doSave");
+        $A.enqueueAction(a);
+            }
     
 })

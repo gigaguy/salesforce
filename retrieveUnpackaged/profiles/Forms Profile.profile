@@ -4451,7 +4451,7 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>FileUpload</apexPage>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
         <apexPage>Fill_and_Print</apexPage>

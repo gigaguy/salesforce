@@ -1,5 +1,21 @@
 public with sharing class AttachmentUploadController {
-
+    public string sID {get;set;}
+    public id uID {get;set;}
+    public boolean valid {get;set;}
+    public id formID {get;set;}
+        
+  public AttachmentUploadController(){
+        formID = ApexPages.currentPage().getParameters().get('formID');
+        
+        valid = false;
+        // Get session ID from URL parameters, get user ID from the matching session
+        sID = UtilityMethods.getSessionID();
+        uID = UtilityMethods.getUserID(sID);
+        
+        // Validate Session, temporarily disabled until more user data from proxy 
+        valid = UtilityMethods.validateSession(sID, uID);
+    }
+  
   public Attachment attachment {
   get {
       if (attachment == null)
@@ -12,7 +28,7 @@ public with sharing class AttachmentUploadController {
   public PageReference upload() {
 
     attachment.OwnerId = UserInfo.getUserId();
-    attachment.ParentId = 'a0335000002SBOX'; // the record the file is attached to
+    attachment.ParentId = formID; // the record the file is attached to
     attachment.IsPrivate = true;
 
     try {
@@ -27,5 +43,17 @@ public with sharing class AttachmentUploadController {
     ApexPages.addMessage(new ApexPages.message(ApexPages.severity.INFO,'Attachment uploaded successfully'));
     return null;
   }
-
+  
+   public PageReference validateOrRedirect() {
+       
+        // Valid value from Verify Session call above
+        if (!valid) {
+            PageReference retURL = new PageReference('/');
+            return retURL;
+        }
+        else { return null; }       
+    }
+    public PageReference goToForm() {
+        return null;
+      }
 }
