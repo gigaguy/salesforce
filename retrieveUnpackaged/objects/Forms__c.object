@@ -3087,6 +3087,16 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         <errorDisplayField>Advance_Notice_Needed__c</errorDisplayField>
         <errorMessage>For Products designated Level 1, please indicate whether advanced noticed was given.</errorMessage>
     </validationRules>
+    <validationRules>
+        <fullName>eClearance_Approver_Level_Validation</fullName>
+        <active>true</active>
+        <description>Mandate the filling in of approver lookups based on the approval level number selected.</description>
+        <errorConditionFormula>RecordTypeId = &quot;012r00000005DWQAA2&quot;
+ &amp;&amp;(AND(ISPICKVAL(How_Many_Approval_Levels__c, &quot;1&quot;), ISBLANK(First_Line_Supervisor__c))) 
+||(AND(ISPICKVAL(How_Many_Approval_Levels__c, &quot;2&quot;), (ISBLANK(First_Line_Supervisor__c) &amp;&amp; ISBLANK(Communications_Coordinator__c))))</errorConditionFormula>
+        <errorDisplayField>How_Many_Approval_Levels__c</errorDisplayField>
+        <errorMessage>Please complete the selection of approvers based on the approval level you have selected.</errorMessage>
+    </validationRules>
     <webLinks>
         <fullName>Printable_View</fullName>
         <availability>online</availability>

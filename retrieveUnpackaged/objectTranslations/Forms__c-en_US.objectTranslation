@@ -846,6 +846,10 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         <errorMessage><!-- For Products designated Level 1, please indicate whether advanced noticed was given. --></errorMessage>
         <name>Level_1_Product_Advance_Notice</name>
     </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please complete the selection of approvers based on the approval level you have selected. --></errorMessage>
+        <name>eClearance_Approver_Level_Validation</name>
+    </validationRules>
     <webLinks>
         <label><!-- Printable_View --></label>
         <name>Printable_View</name>
