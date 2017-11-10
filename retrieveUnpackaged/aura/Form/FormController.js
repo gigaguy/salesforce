@@ -75,7 +75,7 @@
                 component.set("v.viewFormID", component.get("v.newForm.Id"));
                 component.set("v.parentId", component.get("v.newForm.Id"));
                 
-                $A.createComponent('lightning:input',
+      /*          $A.createComponent('lightning:input',
                            {
                                'aura:id':'fileUp', 
                                onchange:component.getReference("c.handleFilesChange"), 
@@ -88,7 +88,7 @@
                                function(fileUp) {
                                component.set("v.fileUp", fileUp);
                            }
-                               );   
+                               );   */
                 
   /*          $A.createComponent( 
                         "lightning:input", {
@@ -631,6 +631,9 @@
 	hideAttachments: function(component, event, helper) {
         component.set("v.hasAttachments", false);
         component.set("v.addAttachments", false);
+        component.set("v.fileName", "No File Selected..");
+        component.set("v.largeFile", false);
+        
     },
 	showAttachments: function(component, event, helper) {
         console.log('in showAttachments');
@@ -642,7 +645,10 @@
         console.log('formID: ' + formID);
         
         helper.getAttachList(component, formID);
-        	component.set("v.addAttachments", true);        
+        	component.set("v.addAttachments", true); 
+     	var a = component.get("c.createAttachComp");
+        $A.enqueueAction(a);
+        
    },
     createReopenModal: function(component, event, helper) {            //this needs to go away
    		console.log('in createReopenModal');
@@ -975,6 +981,22 @@
         component.set("v.largeFile", false);
         var a = component.get("c.doSave");
         $A.enqueueAction(a);
-            }
+            },
+    createAttachComp: function(component, event, helper) {
+           $A.createComponent('lightning:input',
+                           {
+                               'aura:id':'fileUp', 
+                               onchange:component.getReference("c.handleFilesChange"), 
+                               type:'file', 
+                               name:'fileUp',
+                               label:'Upload Attachment', 
+                               multiple:'false',
+                           //    files:"{!v.uploadFiles}"
+                           },
+                               function(fileUp) {
+                               component.set("v.fileUp", fileUp);
+                           }
+                               );   
+    }
     
 })

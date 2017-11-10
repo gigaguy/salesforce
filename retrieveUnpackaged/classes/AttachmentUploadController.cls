@@ -1,12 +1,14 @@
 public with sharing class AttachmentUploadController {
+
     public string sID {get;set;}
     public id uID {get;set;}
     public boolean valid {get;set;}
     public id formID {get;set;}
+    public boolean uploadB {get;set;}
         
   public AttachmentUploadController(){
         formID = ApexPages.currentPage().getParameters().get('formID');
-        
+        uploadB = true;
         valid = false;
         // Get session ID from URL parameters, get user ID from the matching session
         sID = UtilityMethods.getSessionID();
@@ -24,9 +26,9 @@ public with sharing class AttachmentUploadController {
     }
   set;
   }
-
+    
   public PageReference upload() {
-
+ 
     attachment.OwnerId = UserInfo.getUserId();
     attachment.ParentId = formID; // the record the file is attached to
     attachment.IsPrivate = true;
@@ -41,6 +43,7 @@ public with sharing class AttachmentUploadController {
     }
 
     ApexPages.addMessage(new ApexPages.message(ApexPages.severity.INFO,'Attachment uploaded successfully'));
+    uploadB = false;
     return null;
   }
   
@@ -53,7 +56,4 @@ public with sharing class AttachmentUploadController {
         }
         else { return null; }       
     }
-    public PageReference goToForm() {
-        return null;
-      }
 }

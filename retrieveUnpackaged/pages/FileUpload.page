@@ -26,7 +26,7 @@
             background: rgb(253, 253, 253);
             -webkit-tap-highlight-color: transparent;
             }
-        
+
     </style>
     
     <!--Header-->
@@ -50,11 +50,7 @@
                     <p style="margin-top: 30px; font-size: 125%;">
                         Attachment Upload 
                     </p>
-   <!--                 <apex:outputpanel">
-                        <p style="margin-top: 50px; font-size: 16.25px">
-                            <apex:commandlink value="{!canMsg}" action="{!cancel}"></apex:commandlink>
-                        </p>
-                    </apex:outputpanel>  -->
+
                 </td>
             </tr>
         </table>
@@ -64,33 +60,30 @@
     
     <!--Body-->
         
-    <div style="width: 75%; padding-left: 200px;"> 
+    <div style="width: 35%; padding-left: 300px;"> 
 
   <apex:form enctype="multipart/form-data">
     <apex:pageMessages />
     <apex:pageBlock title="Upload an Attachment">
 
-      <apex:pageBlockButtons >
-        <apex:commandButton action="{!upload}" value="Save"/>
-        <apex:commandButton action="{!goToForm}" value="Back to Form"/>
+      <apex:pageBlockButtons location="bottom" >
+        <apex:commandButton rendered="{!uploadB}" action="{!upload}" value="Upload File" />
+        <apex:commandButton onClick="window.top.close();"  value="Done" />
+ 
       </apex:pageBlockButtons>
 
-      <apex:pageBlockSection showHeader="false" columns="2" id="block1">
+      <apex:pageBlockSection rendered="{!uploadB}" showHeader="false" columns="2" id="block1" >
 
-  <!--      <apex:pageBlockSectionItem >
-          <apex:outputLabel value="File Name" for="fileName"/>
-          <apex:inputText value="{!attachment.name}" id="fileName"/>
-        </apex:pageBlockSectionItem>   -->
+
         
           <apex:pageBlockSectionItem >
-          <apex:outputLabel value="File" for="file"/>
-          <apex:inputFile value="{!attachment.body}" filename="{!attachment.name}" id="file"/>
+          <apex:inputFile value="{!attachment.body}" filename="{!attachment.name}" id="file" dir="RTL" />
         </apex:pageBlockSectionItem>
         <BR/>
         
         <apex:pageBlockSectionItem >
-          <apex:outputLabel value="Description (optional)" for="description"/>
-          <apex:inputTextarea value="{!attachment.description}" id="description"/>
+          <apex:outputLabel value="Description (optional)" for="description" />
+          <apex:inputTextarea value="{!attachment.description}" id="description" />
         </apex:pageBlockSectionItem>
 
       </apex:pageBlockSection>
@@ -98,4 +91,5 @@
     </apex:pageBlock>
   </apex:form>
   </div>
+  
 </apex:page>

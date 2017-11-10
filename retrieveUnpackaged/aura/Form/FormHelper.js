@@ -72,7 +72,7 @@
             console.log('name ' + name);
             console.log('return value: ' + response.getReturnValue().length);
             if (name === "SUCCESS" && response.getReturnValue().length > 0) {
-                console.log('in here');
+            
                 component.set("v.attachList", response.getReturnValue());
                 component.set("v.hasAttachments", true);
              }
@@ -164,7 +164,7 @@
                 if (startPosition < endPosition) {
                     this.uploadInChunk(component, file, fileContents, startPosition, endPosition, attachId);
                 } else {
-                    alert('your File is uploaded successfully');
+                    alert('Your file has uploaded successfully.');
                     component.set("v.largeFile", false);
                     component.set("v.showLoadingSpinner", false);
                     this.getAttachList(component, formID);

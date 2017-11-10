@@ -299,18 +299,6 @@
             <!--add attachments-->
               <aura:if isTrue="{!v.addAttachments}">	
               	<div align="left">
-              <!-- old      <lightning:input aura:id="file-input" type="file"
-                                     files="{!v.fileToBeUploaded}"
-                                     onchange="{!c.onFileUploaded}"
-                                     label="Upload Attachments"
-                                     name="file" multiple="true"/>
-              	
-             		<lightning:input aura:id="fileId" 
-                                         onchange="{!c.handleFilesChange}" 
-                                         type="file" 
-                                         name="file" 
-                                         label="Upload Attachment" 
-                                         multiple="false"/>      -->
                     {!v.fileUp}   
                            <div class="slds-text-body_small slds-text-color_error">
                                <aura:unescapedHtml value="{!v.fileName}" />  <aura:if isTrue="{!v.largeFile}"><a href="{!'/FileUpload?sid='+v.sessionID+'&amp;formID='+v.viewFormID}" target="_blank" onclick="{!c.hideAttachments}" style="color: black; text-decoration-line: underline;"> Large File Upload</a>
@@ -322,10 +310,8 @@
                               <div class="slds-text-body_small slds-text-color_error">Uploading... 
                                  <img src="/auraFW/resources/aura/images/spinner.gif" class="spinner-img" alt="Loading"/>'
                               </div>
-                           </aura:if>
-                   
-             <!--           <button class="slds-button slds-button_brand" onclick="{!c.doSave}">Upload Attachment</button> -->   
-					<br/>
+                           </aura:if>              
+     					<br/>
                 </div>
              </aura:if>
             <!--end add attachments-->
@@ -429,11 +415,19 @@
             <!--add attachments-->
               <aura:if isTrue="{!v.addAttachments}">	
               	<div align="left">
-                    <lightning:input aura:id="file-input" type="file"
-                                     files="{!v.fileToBeUploaded}"
-                                     onchange="{!c.onFileUploaded}"
-                                     label="Upload Attachments"
-                                     name="file" multiple="true"/>
+                    {!v.fileUp}   
+                           <div class="slds-text-body_small slds-text-color_error">
+                               <aura:unescapedHtml value="{!v.fileName}" />  <aura:if isTrue="{!v.largeFile}"><a href="{!'/FileUpload?sid='+v.sessionID+'&amp;formID='+v.viewFormID}" target="_blank" onclick="{!c.hideAttachments}" style="color: black; text-decoration-line: underline;"> Large File Upload</a>
+                 		<br/></aura:if>
+                    	   </div>
+                         
+                         <!--use aura:if for show-hide the loading spinner image--> 
+                           <aura:if isTrue="{!v.showLoadingSpinner}">
+                              <div class="slds-text-body_small slds-text-color_error">Uploading... 
+                                 <img src="/auraFW/resources/aura/images/spinner.gif" class="spinner-img" alt="Loading"/>'
+                              </div>
+                           </aura:if>              
+     					<br/>
               	</div>
              </aura:if>
             <!--end add attachments-->
@@ -539,11 +533,19 @@
             <!--add attachments-->
               <aura:if isTrue="{!v.addAttachments}">	
               	<div align="left">
-                    <lightning:input aura:id="file-input" type="file"
-                                     files="{!v.fileToBeUploaded}"
-                                     onchange="{!c.onFileUploaded}"
-                                     label="Upload Attachments"
-                                     name="file" multiple="true"/>
+                    {!v.fileUp}   
+                           <div class="slds-text-body_small slds-text-color_error">
+                               <aura:unescapedHtml value="{!v.fileName}" />  <aura:if isTrue="{!v.largeFile}"><a href="{!'/FileUpload?sid='+v.sessionID+'&amp;formID='+v.viewFormID}" target="_blank" onclick="{!c.hideAttachments}" style="color: black; text-decoration-line: underline;"> Large File Upload</a>
+                 		<br/></aura:if>
+                    	   </div>
+                         
+                         <!--use aura:if for show-hide the loading spinner image--> 
+                           <aura:if isTrue="{!v.showLoadingSpinner}">
+                              <div class="slds-text-body_small slds-text-color_error">Uploading... 
+                                 <img src="/auraFW/resources/aura/images/spinner.gif" class="spinner-img" alt="Loading"/>'
+                              </div>
+                           </aura:if>              
+     					<br/>
               	</div>
              </aura:if>
             <!--end add attachments-->
@@ -654,11 +656,19 @@
             <!--add attachments-->
               <aura:if isTrue="{!v.addAttachments}">	
               	<div align="left">
-                    <lightning:input aura:id="file-input" type="file"
-                                     files="{!v.fileToBeUploaded}"
-                                     onchange="{!c.onFileUploaded}"
-                                     label="Upload Attachments"
-                                     name="file" multiple="true"/>
+                    {!v.fileUp}   
+                           <div class="slds-text-body_small slds-text-color_error">
+                               <aura:unescapedHtml value="{!v.fileName}" />  <aura:if isTrue="{!v.largeFile}"><a href="{!'/FileUpload?sid='+v.sessionID+'&amp;formID='+v.viewFormID}" target="_blank" onclick="{!c.hideAttachments}" style="color: black; text-decoration-line: underline;"> Large File Upload</a>
+                 		<br/></aura:if>
+                    	   </div>
+                         
+                         <!--use aura:if for show-hide the loading spinner image--> 
+                           <aura:if isTrue="{!v.showLoadingSpinner}">
+                              <div class="slds-text-body_small slds-text-color_error">Uploading... 
+                                 <img src="/auraFW/resources/aura/images/spinner.gif" class="spinner-img" alt="Loading"/>'
+                              </div>
+                           </aura:if>              
+     					<br/>
               	</div>
              </aura:if>
             <!--end add attachments-->
