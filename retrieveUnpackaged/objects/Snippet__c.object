@@ -356,7 +356,6 @@
         <columns>NAME</columns>
         <columns>Topic__c</columns>
         <columns>Snippet_Status__c</columns>
-        <columns>Agency_Name__c</columns>
         <columns>Extracted_Text__c</columns>
         <columns>Submission_Number__c</columns>
         <columns>Notes__c</columns>
@@ -382,6 +381,7 @@
     <pluralLabel>Snippets</pluralLabel>
     <searchLayouts>
         <customTabListAdditionalFields>Submission_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PDF_Page__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Topic__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Extracted_Text__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Response__c</customTabListAdditionalFields>
