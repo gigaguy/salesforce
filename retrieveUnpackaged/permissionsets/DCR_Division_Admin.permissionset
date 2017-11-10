@@ -982,6 +982,11 @@ Manage Document entries (delete rights)</description>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Document__c.BOC_X__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Document__c.Bankcard_Holder_Email__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1103,6 +1108,11 @@ Manage Document entries (delete rights)</description>
     <fieldPermissions>
         <editable>false</editable>
         <field>Document__c.FOC_5__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Document__c.FOC_X__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

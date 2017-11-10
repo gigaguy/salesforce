@@ -993,6 +993,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Document__c.BOC_X__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Document__c.Bankcard_Holder_Email__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1114,6 +1119,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Document__c.FOC_5__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Document__c.FOC_X__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

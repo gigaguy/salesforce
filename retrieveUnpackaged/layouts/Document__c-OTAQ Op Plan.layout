@@ -22,6 +22,10 @@
                 <behavior>Edit</behavior>
                 <field>Primary__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>BOC_X__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
