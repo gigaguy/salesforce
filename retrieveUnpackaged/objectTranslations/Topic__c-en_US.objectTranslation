@@ -13,6 +13,10 @@
         <name>Agency_Comment_Response__c</name>
     </fields>
     <fields>
+        <label><!-- Comment Summary --></label>
+        <name>Comment_Summary__c</name>
+    </fields>
+    <fields>
         <label><!-- Comment Summary Status --></label>
         <name>Comment_Summary_status__c</name>
         <picklistValues>
@@ -37,6 +41,10 @@
         <name>Topic_Name__c</name>
     </fields>
     <fields>
+        <label><!-- Topic Number --></label>
+        <name>Topic_Number__c</name>
+    </fields>
+    <fields>
         <label><!-- Topic Response Status --></label>
         <name>Topic_Response_Status__c</name>
         <picklistValues>
@@ -59,6 +67,14 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
+    <recordTypes>
+        <label><!-- Bristol Bay --></label>
+        <name>Bristol_Bay</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Waters of the US --></label>
+        <name>Waters_of_the_US</name>
+    </recordTypes>
     <startsWith>Consonant</startsWith>
     <validationRules>
         <errorMessage><!-- Insufficient privileges to edit the Topic Name field --></errorMessage>

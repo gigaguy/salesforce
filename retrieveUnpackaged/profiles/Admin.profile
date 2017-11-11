@@ -2015,12 +2015,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Snippet__c.Comment_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Snippet__c.Commenter_Category__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>Snippet__c.Commenter_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Snippet__c.Date_Added__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2075,6 +2085,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Snippet__c.Substantive__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Snippet__c.Topic_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2122,6 +2137,11 @@
         <editable>true</editable>
         <field>Submission__c.Agency_Name__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Submission__c.Campaign_Name__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -2199,6 +2219,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Submission__c.Substantive__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Submission__c.Topic__c</field>
         <readable>true</readable>
@@ -2234,6 +2259,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Topic__c.Comment_Summary__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Topic__c.Comment_Summary_status__c</field>
         <readable>true</readable>
@@ -2247,6 +2277,11 @@
         <editable>true</editable>
         <field>Topic__c.Topic_Name__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Topic__c.Topic_Number__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -2514,7 +2549,15 @@
         <layout>Macro-Macro Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Mass_Mailing_Campaign__c-Bristol Bay Mass Mailing Campaign Layout</layout>
+        <recordType>Mass_Mailing_Campaign__c.Bristol_Bay</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Mass_Mailing_Campaign__c-Mass Mailing Campaign Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Mass_Mailing_Campaign__c-Waters of the US Mass Mailing Campaign Layout</layout>
+        <recordType>Mass_Mailing_Campaign__c.Waters_of_the_US</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-Opportunity Layout</layout>
@@ -2559,7 +2602,15 @@
         <layout>ScorecardMetric-Scorecard Metric Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Snippet__c-Bristol Bay Snippet Layout</layout>
+        <recordType>Snippet__c.Bristol_Bay</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Snippet__c-Snippet Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Snippet__c-WOTUS Snippet Layout</layout>
+        <recordType>Snippet__c.Waters_of_the_US</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SocialPersona-Social Persona Layout</layout>
@@ -2574,13 +2625,29 @@
         <layout>Submission_Topic__c-Submission Topic Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Submission__c-Bristol Bay Submission Layout</layout>
+        <recordType>Submission__c.Bristol_Bay</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Submission__c-Submission Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Submission__c-WOTUS Submission Layout</layout>
+        <recordType>Submission__c.Waters_of_the_US</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Task-Task Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Topic__c-Topic Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Topic__c-Topic Layout</layout>
+        <recordType>Topic__c.Bristol_Bay</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Topic__c-Topic Layout</layout>
+        <recordType>Topic__c.Waters_of_the_US</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>User-User Layout</layout>
@@ -3062,6 +3129,46 @@
         <default>false</default>
         <recordType>Idea.InternalIdeasIdeaRecordType</recordType>
         <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Mass_Mailing_Campaign__c.Bristol_Bay</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Mass_Mailing_Campaign__c.Waters_of_the_US</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Snippet__c.Bristol_Bay</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Snippet__c.Waters_of_the_US</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Submission__c.Bristol_Bay</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Submission__c.Waters_of_the_US</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Topic__c.Bristol_Bay</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Topic__c.Waters_of_the_US</recordType>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Application__c</tab>

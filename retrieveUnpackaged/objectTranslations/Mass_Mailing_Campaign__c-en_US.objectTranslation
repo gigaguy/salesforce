@@ -41,11 +41,33 @@
         <name>Sponsoring_Entity__c</name>
     </fields>
     <layouts>
+        <layout>Bristol Bay Mass Mailing Campaign Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
         <layout>Mass Mailing Campaign Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
     </layouts>
+    <layouts>
+        <layout>Waters of the US Mass Mailing Campaign Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Bristol Bay --></label>
+        <name>Bristol_Bay</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Waters of the US --></label>
+        <name>Waters_of_the_US</name>
+    </recordTypes>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

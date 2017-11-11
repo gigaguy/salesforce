@@ -13,12 +13,40 @@
         <name>Agency_Name__c</name>
     </fields>
     <fields>
+        <label><!-- Comment Status --></label>
+        <name>Comment_Status__c</name>
+        <picklistValues>
+            <masterLabel>Addressed in Essay</masterLabel>
+            <translation><!-- Addressed in Essay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comment Added</masterLabel>
+            <translation><!-- Comment Added --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Agency Review</masterLabel>
+            <translation><!-- Ready for Agency Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Snippet Entered</masterLabel>
+            <translation><!-- Snippet Entered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Snippet Entry Verified</masterLabel>
+            <translation><!-- Snippet Entry Verified --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Commenter Category --></label>
         <name>Commenter_Category__c</name>
     </fields>
     <fields>
         <label><!-- Commenter Name --></label>
         <name>Commenter_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Added --></label>
+        <name>Date_Added__c</name>
     </fields>
     <fields>
         <label><!-- Document Link --></label>
@@ -120,16 +148,12 @@
         <label><!-- Snippet Status --></label>
         <name>Snippet_Status__c</name>
         <picklistValues>
+            <masterLabel>Agency Edits</masterLabel>
+            <translation><!-- Agency Edits --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Agency Response Complete</masterLabel>
             <translation><!-- Agency Response Complete --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Agency Response Started</masterLabel>
-            <translation><!-- Agency Response Started --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Agency Topic Change</masterLabel>
-            <translation><!-- Agency Topic Change --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Ready for Agency Review</masterLabel>
@@ -154,6 +178,10 @@
         <relationshipLabel><!-- Snippets --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Substantive? --></label>
+        <name>Substantive__c</name>
+    </fields>
+    <fields>
         <label><!-- Topic Name --></label>
         <name>Topic_Name__c</name>
     </fields>
@@ -163,11 +191,33 @@
         <relationshipLabel><!-- Snippets --></relationshipLabel>
     </fields>
     <layouts>
+        <layout>Bristol Bay Snippet Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
         <layout>Snippet Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
     </layouts>
+    <layouts>
+        <layout>WOTUS Snippet Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Bristol Bay --></label>
+        <name>Bristol_Bay</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Waters of the US --></label>
+        <name>Waters_of_the_US</name>
+    </recordTypes>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

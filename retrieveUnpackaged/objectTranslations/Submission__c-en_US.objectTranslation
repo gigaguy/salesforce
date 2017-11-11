@@ -13,11 +13,23 @@
         <name>Agency_Name__c</name>
     </fields>
     <fields>
+        <label><!-- Campaign Name --></label>
+        <name>Campaign_Name__c</name>
+    </fields>
+    <fields>
         <label><!-- Commenter Category --></label>
         <name>Commenter_Category__c</name>
         <picklistValues>
             <masterLabel>Academia</masterLabel>
             <translation><!-- Academia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Academia/ Professional Societies</masterLabel>
+            <translation><!-- Academia/ Professional Societies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska Native Corporations</masterLabel>
+            <translation><!-- Alaska Native Corporations --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Congressional Delegate</masterLabel>
@@ -28,8 +40,36 @@
             <translation><!-- EPA Document --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Faith-Based Groups</masterLabel>
+            <translation><!-- Faith-Based Groups --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Federal Government Agency</masterLabel>
             <translation><!-- Federal Government Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industry – Fisheries</masterLabel>
+            <translation><!-- Industry – Fisheries --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industry – Jewelry</masterLabel>
+            <translation><!-- Industry – Jewelry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industry – Mineral Extraction</masterLabel>
+            <translation><!-- Industry – Mineral Extraction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industry – Other</masterLabel>
+            <translation><!-- Industry – Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industry – Restaurant/Food Processing/Food Sales</masterLabel>
+            <translation><!-- Industry – Restaurant/Food Processing/Food Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industry – Tourism/Outdoor Recreation</masterLabel>
+            <translation><!-- Industry – Tourism/Outdoor Recreation --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Local Government Agency/Elected Official</masterLabel>
@@ -56,16 +96,24 @@
             <translation><!-- Non-Regulated Community - General --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Private Citizen - Environmental Justice Community</masterLabel>
-            <translation><!-- Private Citizen - Environmental Justice Community --></translation>
+            <masterLabel>Other NGOs</masterLabel>
+            <translation><!-- Other NGOs --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Private Citizen - Expert</masterLabel>
-            <translation><!-- Private Citizen - Expert --></translation>
+            <masterLabel>Private Citizen – Environmental Justice</masterLabel>
+            <translation><!-- Private Citizen – Environmental Justice --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Private Citizen - General</masterLabel>
-            <translation><!-- Private Citizen - General --></translation>
+            <masterLabel>Private Citizen – Expert</masterLabel>
+            <translation><!-- Private Citizen – Expert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private Citizen – General</masterLabel>
+            <translation><!-- Private Citizen – General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private Citizen – Watershed Visitors</masterLabel>
+            <translation><!-- Private Citizen – Watershed Visitors --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Professional Society</masterLabel>
@@ -104,8 +152,12 @@
             <translation><!-- State/Tribal Government Agency/Elected Official --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>State/Tribal and Local Agency Association</masterLabel>
-            <translation><!-- State/Tribal and Local Agency Association --></translation>
+            <masterLabel>State/Tribal and Local Agency Associations</masterLabel>
+            <translation><!-- State/Tribal and Local Agency Associations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tribal Governments and Representatives</masterLabel>
+            <translation><!-- Tribal Governments and Representatives --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -122,6 +174,10 @@
         <picklistValues>
             <masterLabel>EPA-HQ-OW-2017-0203</masterLabel>
             <translation><!-- EPA-HQ-OW-2017-0203 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPA-R10-OW-2017-0369</masterLabel>
+            <translation><!-- EPA-R10-OW-2017-0369 --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -142,6 +198,14 @@
         <picklistValues>
             <masterLabel>AZ</masterLabel>
             <translation><!-- AZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska (not Bristol Bay)</masterLabel>
+            <translation><!-- Alaska (not Bristol Bay) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bristol Bay Watershed</masterLabel>
+            <translation><!-- Bristol Bay Watershed --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>CA</masterLabel>
@@ -280,6 +344,14 @@
             <translation><!-- National --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Non-Alaska Tribe</masterLabel>
+            <translation><!-- Non-Alaska Tribe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nushagak and Kvichak Watershed</masterLabel>
+            <translation><!-- Nushagak and Kvichak Watershed --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>OH</masterLabel>
             <translation><!-- OH --></translation>
         </picklistValues>
@@ -369,11 +441,11 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Letter Type --></label>
+        <label><!-- Submission Type --></label>
         <name>Letter_Type__c</name>
         <picklistValues>
-            <masterLabel>Duplicate Letter</masterLabel>
-            <translation><!-- Duplicate Letter --></translation>
+            <masterLabel>Duplicate Submission</masterLabel>
+            <translation><!-- Duplicate Submission --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Mass Mailing Campaign</masterLabel>
@@ -384,16 +456,20 @@
             <translation><!-- Modified Mass Mailer --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Similar Letter</masterLabel>
-            <translation><!-- Similar Letter --></translation>
+            <masterLabel>Public Hearing</masterLabel>
+            <translation><!-- Public Hearing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Similar Submission</masterLabel>
+            <translation><!-- Similar Submission --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Supporting Document (EPA)</masterLabel>
             <translation><!-- Supporting Document (EPA) --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Unique Letter</masterLabel>
-            <translation><!-- Unique Letter --></translation>
+            <masterLabel>Unique Submission</masterLabel>
+            <translation><!-- Unique Submission --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Wrong docket</masterLabel>
@@ -474,10 +550,33 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Substantive --></label>
+        <name>Substantive__c</name>
+        <picklistValues>
+            <masterLabel>Maybe</masterLabel>
+            <translation><!-- Maybe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Topic --></label>
         <name>Topic__c</name>
         <relationshipLabel><!-- Submissions --></relationshipLabel>
     </fields>
+    <layouts>
+        <layout>Bristol Bay Submission Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <layouts>
         <layout>Submission Layout</layout>
         <sections>
@@ -485,6 +584,21 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
+    <layouts>
+        <layout>WOTUS Submission Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Bristol Bay --></label>
+        <name>Bristol_Bay</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Waters of the US --></label>
+        <name>Waters_of_the_US</name>
+    </recordTypes>
     <startsWith>Consonant</startsWith>
     <webLinks>
         <label><!-- Accept --></label>
