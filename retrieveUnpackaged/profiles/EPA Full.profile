@@ -2091,7 +2091,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Snippet__c.Topic_Name__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -2126,7 +2126,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Submission_Topic__c.Topic_Name__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -2549,14 +2549,14 @@
         <layout>Macro-Macro Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Mass_Mailing_Campaign__c-Mass Mailing Campaign Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Mass_Mailing_Campaign__c-Mass Mailing Campaign Layout</layout>
+        <layout>Mass_Mailing_Campaign__c-Bristol Bay Mass Mailing Campaign Layout</layout>
         <recordType>Mass_Mailing_Campaign__c.Bristol_Bay</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Mass_Mailing_Campaign__c-Mass Mailing Campaign Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Mass_Mailing_Campaign__c-Waters of the US Mass Mailing Campaign Layout</layout>
         <recordType>Mass_Mailing_Campaign__c.Waters_of_the_US</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -2602,14 +2602,14 @@
         <layout>ScorecardMetric-Scorecard Metric Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Snippet__c-Snippet Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Snippet__c-Snippet Layout</layout>
+        <layout>Snippet__c-Bristol Bay Snippet Layout</layout>
         <recordType>Snippet__c.Bristol_Bay</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Snippet__c-Snippet Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Snippet__c-WOTUS Snippet Layout</layout>
         <recordType>Snippet__c.Waters_of_the_US</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -2625,14 +2625,14 @@
         <layout>Submission_Topic__c-Submission Topic Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Submission__c-Submission Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Submission__c-Submission Layout</layout>
+        <layout>Submission__c-Bristol Bay Submission Layout</layout>
         <recordType>Submission__c.Bristol_Bay</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Submission__c-Submission Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Submission__c-WOTUS Submission Layout</layout>
         <recordType>Submission__c.Waters_of_the_US</recordType>
     </layoutAssignments>
     <layoutAssignments>
