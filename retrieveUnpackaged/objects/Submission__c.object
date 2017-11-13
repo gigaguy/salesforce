@@ -874,6 +874,26 @@
         <label>All</label>
     </listViews>
     <listViews>
+        <fullName>All_Waters_of_the_US</fullName>
+        <columns>NAME</columns>
+        <columns>Submission_Number__c</columns>
+        <columns>Commenter_Category__c</columns>
+        <columns>Commenter_Name__c</columns>
+        <columns>Agency_Name__c</columns>
+        <columns>Letter_Type__c</columns>
+        <columns>Submission_Status__c</columns>
+        <columns>Have_Snippets__c</columns>
+        <columns>Submission_Link__c</columns>
+        <columns>Geographic_Origin__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Submission__c.Waters_of_the_US</value>
+        </filters>
+        <label>All Waters of the US</label>
+    </listViews>
+    <listViews>
         <fullName>Bristol_Bay</fullName>
         <columns>NAME</columns>
         <columns>Commenter_Name__c</columns>
@@ -887,7 +907,7 @@
             <operation>equals</operation>
             <value>Submission__c.Bristol_Bay</value>
         </filters>
-        <label>Bristol Bay</label>
+        <label>All Bristol Bay</label>
     </listViews>
     <nameField>
         <displayFormat>C-{000000}</displayFormat>
