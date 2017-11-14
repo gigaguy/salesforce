@@ -320,7 +320,19 @@
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Agency Edits</fullName>
+                    <fullName>Snippet Read by Agency</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Snippet Captured in Summary</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Snippet Needs Edits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Agency Response Drafted</fullName>
                     <default>false</default>
                 </value>
                 <value>
@@ -329,6 +341,11 @@
                 </value>
                 <value>
                     <fullName>Addressed in Essay</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Agency Edits</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
                 </value>
@@ -446,33 +463,29 @@
         <columns>Extracted_Text__c</columns>
         <columns>Response__c</columns>
         <filterScope>Everything</filterScope>
-        <label>All</label>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Snippet__c.Waters_of_the_US</value>
+        </filters>
+        <label>All Waters of the US</label>
     </listViews>
     <listViews>
-        <fullName>Topic_11</fullName>
+        <fullName>All_Bristol_Bay</fullName>
         <columns>NAME</columns>
-        <columns>Topic__c</columns>
+        <columns>Submission_Number__c</columns>
+        <columns>Topic_Name__c</columns>
+        <columns>Commenter_Category__c</columns>
         <columns>Snippet_Status__c</columns>
         <columns>Extracted_Text__c</columns>
-        <columns>Submission_Number__c</columns>
-        <columns>Notes__c</columns>
+        <columns>Response__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>Topic__c</field>
-            <operation>contains</operation>
-            <value>11</value>
-        </filters>
-        <filters>
-            <field>Snippet_Status__c</field>
+            <field>RECORDTYPE</field>
             <operation>equals</operation>
-            <value>Snippet Entry Verified</value>
+            <value>Snippet__c.Bristol_Bay</value>
         </filters>
-        <filters>
-            <field>Topic__c</field>
-            <operation>notEqual</operation>
-            <value>13.11</value>
-        </filters>
-        <label>Topic 11</label>
+        <label>All Bristol Bay</label>
     </listViews>
     <nameField>
         <displayFormat>SBC-{000000}</displayFormat>
@@ -579,11 +592,11 @@
         <picklistValues>
             <picklist>Snippet_Status__c</picklist>
             <values>
-                <fullName>Agency Edits</fullName>
+                <fullName>Agency Response Complete</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Agency Response Complete</fullName>
+                <fullName>Agency Response Drafted</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -697,10 +710,6 @@
         <picklistValues>
             <picklist>Snippet_Status__c</picklist>
             <values>
-                <fullName>Agency Edits</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Agency Response Complete</fullName>
                 <default>false</default>
             </values>
@@ -709,11 +718,23 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Snippet Captured in Summary</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Snippet Entered</fullName>
                 <default>true</default>
             </values>
             <values>
                 <fullName>Snippet Entry Verified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Needs Edits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Read by Agency</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

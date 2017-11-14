@@ -126,27 +126,27 @@
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Industry – Fisheries</fullName>
+                    <fullName>Industry - Fisheries</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Industry – Jewelry</fullName>
+                    <fullName>Industry - Jewelry</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Industry – Mineral Extraction</fullName>
+                    <fullName>Industry - Mineral Extraction</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Industry – Other</fullName>
+                    <fullName>Industry - Other</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Industry – Restaurant/Food Processing/Food Sales</fullName>
+                    <fullName>Industry - Restaurant/Food Processing/Food Sales</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Industry – Tourism/Outdoor Recreation</fullName>
+                    <fullName>Industry - Tourism/Outdoor Recreation</fullName>
                     <default>false</default>
                 </value>
                 <value>
@@ -178,19 +178,19 @@
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Private Citizen – Environmental Justice</fullName>
+                    <fullName>Private Citizen - Environmental Justice</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Private Citizen – Expert</fullName>
+                    <fullName>Private Citizen - Expert</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Private Citizen – General</fullName>
+                    <fullName>Private Citizen - General</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>Private Citizen – Watershed Visitors</fullName>
+                    <fullName>Private Citizen - Watershed Visitors</fullName>
                     <default>false</default>
                 </value>
                 <value>
@@ -226,7 +226,7 @@
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>State/Tribal and Local Agency Associations</fullName>
+                    <fullName>State/Tribal and Local Agency Association</fullName>
                     <default>false</default>
                 </value>
                 <value>
@@ -243,17 +243,17 @@
                     <isActive>false</isActive>
                 </value>
                 <value>
-                    <fullName>Private Citizen - Expert</fullName>
+                    <fullName>Private Citizen – Expert</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
                 </value>
                 <value>
-                    <fullName>Private Citizen - General</fullName>
+                    <fullName>Private Citizen – General</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
                 </value>
                 <value>
-                    <fullName>State/Tribal and Local Agency Association</fullName>
+                    <fullName>State/Tribal and Local Agency Associations</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
                 </value>
@@ -603,6 +603,18 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
+                    <fullName>Unique Letter</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Duplicate Letter</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Similar Letter</fullName>
+                    <default>false</default>
+                </value>
+                <value>
                     <fullName>Unique Submission</fullName>
                     <default>false</default>
                 </value>
@@ -633,21 +645,6 @@
                 <value>
                     <fullName>Modified Mass Mailer</fullName>
                     <default>false</default>
-                </value>
-                <value>
-                    <fullName>Duplicate Letter</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                </value>
-                <value>
-                    <fullName>Similar Letter</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                </value>
-                <value>
-                    <fullName>Unique Letter</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -859,21 +856,6 @@
     </fields>
     <label>Submission</label>
     <listViews>
-        <fullName>All</fullName>
-        <columns>NAME</columns>
-        <columns>Submission_Number__c</columns>
-        <columns>Commenter_Category__c</columns>
-        <columns>Commenter_Name__c</columns>
-        <columns>Agency_Name__c</columns>
-        <columns>Letter_Type__c</columns>
-        <columns>Submission_Status__c</columns>
-        <columns>Have_Snippets__c</columns>
-        <columns>Submission_Link__c</columns>
-        <columns>Geographic_Origin__c</columns>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-    </listViews>
-    <listViews>
         <fullName>All_Waters_of_the_US</fullName>
         <columns>NAME</columns>
         <columns>Submission_Number__c</columns>
@@ -944,27 +926,27 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Industry %E2%80%93 Fisheries</fullName>
+                <fullName>Industry - Fisheries</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Industry %E2%80%93 Jewelry</fullName>
+                <fullName>Industry - Jewelry</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Industry %E2%80%93 Mineral Extraction</fullName>
+                <fullName>Industry - Mineral Extraction</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Industry %E2%80%93 Other</fullName>
+                <fullName>Industry - Other</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Industry %E2%80%93 Restaurant%2FFood Processing%2FFood Sales</fullName>
+                <fullName>Industry - Restaurant%2FFood Processing%2FFood Sales</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Industry %E2%80%93 Tourism%2FOutdoor Recreation</fullName>
+                <fullName>Industry - Tourism%2FOutdoor Recreation</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -988,19 +970,19 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Private Citizen %E2%80%93 Environmental Justice</fullName>
+                <fullName>Private Citizen - Environmental Justice</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Private Citizen %E2%80%93 Expert</fullName>
+                <fullName>Private Citizen - Expert</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Private Citizen %E2%80%93 General</fullName>
+                <fullName>Private Citizen - General</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Private Citizen %E2%80%93 Watershed Visitors</fullName>
+                <fullName>Private Citizen - Watershed Visitors</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1008,7 +990,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>State%2FTribal and Local Agency Associations</fullName>
+                <fullName>State%2FTribal and Local Agency Association</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1413,15 +1395,15 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Private Citizen %E2%80%93 Environmental Justice</fullName>
+                <fullName>Private Citizen - Environmental Justice</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Private Citizen %E2%80%93 Expert</fullName>
+                <fullName>Private Citizen - Expert</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Private Citizen %E2%80%93 General</fullName>
+                <fullName>Private Citizen - General</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1461,7 +1443,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>State%2FTribal and Local Agency Associations</fullName>
+                <fullName>State%2FTribal and Local Agency Association</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1717,7 +1699,7 @@
         <picklistValues>
             <picklist>Letter_Type__c</picklist>
             <values>
-                <fullName>Duplicate Submission</fullName>
+                <fullName>Duplicate Letter</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1729,7 +1711,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Similar Submission</fullName>
+                <fullName>Similar Letter</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1737,7 +1719,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Unique Submission</fullName>
+                <fullName>Unique Letter</fullName>
                 <default>false</default>
             </values>
             <values>

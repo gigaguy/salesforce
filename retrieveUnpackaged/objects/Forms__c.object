@@ -700,6 +700,15 @@
         <label>All</label>
     </listViews>
     <listViews>
+        <fullName>BAPM_Approvers_Forms</fullName>
+        <filterScope>Queue</filterScope>
+        <label>BAPM_Approvers</label>
+        <queue>BAPM_Approvers</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>Developer_Sandbox</fullName>
         <columns>NAME</columns>
         <columns>Name__c</columns>

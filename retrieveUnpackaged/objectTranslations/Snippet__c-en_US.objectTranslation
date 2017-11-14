@@ -148,16 +148,20 @@
         <label><!-- Snippet Status --></label>
         <name>Snippet_Status__c</name>
         <picklistValues>
-            <masterLabel>Agency Edits</masterLabel>
-            <translation><!-- Agency Edits --></translation>
-        </picklistValues>
-        <picklistValues>
             <masterLabel>Agency Response Complete</masterLabel>
             <translation><!-- Agency Response Complete --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Agency Response Drafted</masterLabel>
+            <translation><!-- Agency Response Drafted --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Ready for Agency Review</masterLabel>
             <translation><!-- Ready for Agency Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Snippet Captured in Summary</masterLabel>
+            <translation><!-- Snippet Captured in Summary --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Snippet Entered</masterLabel>
@@ -166,6 +170,14 @@
         <picklistValues>
             <masterLabel>Snippet Entry Verified</masterLabel>
             <translation><!-- Snippet Entry Verified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Snippet Needs Edits</masterLabel>
+            <translation><!-- Snippet Needs Edits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Snippet Read by Agency</masterLabel>
+            <translation><!-- Snippet Read by Agency --></translation>
         </picklistValues>
     </fields>
     <fields>

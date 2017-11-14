@@ -179,28 +179,6 @@
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
-    <listViews>
-        <fullName>topic_33</fullName>
-        <columns>NAME</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>NAME</field>
-            <operation>contains</operation>
-            <value>3.0</value>
-        </filters>
-        <label>topic 3</label>
-    </listViews>
-    <listViews>
-        <fullName>topic_34</fullName>
-        <columns>NAME</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>Topic_Name__c</field>
-            <operation>contains</operation>
-            <value>3.</value>
-        </filters>
-        <label>topic 3</label>
-    </listViews>
     <nameField>
         <label>Topic Number</label>
         <trackFeedHistory>false</trackFeedHistory>
