@@ -6,7 +6,7 @@ public class FormsTriggerHandler_Test {
         insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
         
         //Insert Test Data        
-            Profile p = [select id, name from profile where name = 'AuthTest Profile'];        
+            Profile p = [select id, name from profile where name = 'Forms Profile'];        
                 
             User u = new User(FirstName='Bob', LastName='Smith', lan_ID__c='smith123', profileID=p.id, Username='test@fake.ccc', 
                   email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
@@ -58,7 +58,7 @@ public class FormsTriggerHandler_Test {
     static void testTriggerB(){
         
         //Insert Test Data        
-            Profile p = [select id, name from profile where name = 'AuthTest Profile'];        
+            Profile p = [select id, name from profile where name = 'Forms Profile'];        
                 
             User u = new User(FirstName='Bob', LastName='Smith', profileID=p.id, Username='test@fake.ccc', 
                   email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
@@ -110,7 +110,7 @@ public class FormsTriggerHandler_Test {
         // Submit the approval request for the account
         Approval.ProcessResult result = Approval.process(req1);
         
-        
+       
         update form;
         system.assertEquals(u3.ID, [select User_Supervisor__c from Forms__c where id = :form.ID].User_Supervisor__c);
         
@@ -121,7 +121,7 @@ public class FormsTriggerHandler_Test {
         insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = true); // checkbox from "Contact Approvers" Custom Setting
         
                 //Insert Test Data        
-            Profile p = [select id, name from profile where name = 'AuthTest Profile'];        
+            Profile p = [select id, name from profile where name = 'Forms Profile'];        
                 
             User u = new User(FirstName='Bob', LastName='Smith', Lan_ID__c = 'thetest', profileID=p.id, Username='test@fake.ccc', 
                   email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
@@ -150,7 +150,7 @@ public class FormsTriggerHandler_Test {
         insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
         
                 //Insert Test Data        
-            Profile p = [select id, name from profile where name = 'AuthTest Profile'];        
+            Profile p = [select id, name from profile where name = 'Forms Profile'];        
             
             User uMgr = new User(FirstName='Rob', LastName='Jones', Lan_ID__c = 'thetest1', profileID=p.id, Username='test1@fake.ccc', 
                   email='test@fake.ccc', Alias='testU1', CommunityNickname='testU1', TimeZoneSidKey= 'America/Los_Angeles',
@@ -166,19 +166,24 @@ public class FormsTriggerHandler_Test {
             insert c;
             
                     
-        Forms__c form = new Forms__c(Unauthenticated_Owner__c = u.Id, approval_step__c = 'Form Prepared for you by test', prepare_form_for__c = c.id, RecordtypeId = [select id from RecordType where sObjectType = 'Forms__c' and DeveloperName = 'SF_182'].ID);
+        Forms__c form = new Forms__c(Unauthenticated_Owner__c = u.Id, approval_step__c = 'Approved', prepare_form_for__c = c.id, RecordtypeId = [select id from RecordType where sObjectType = 'Forms__c' and DeveloperName = 'SF_182'].ID);
         insert form;
         Approval.ProcessSubmitRequest req1 = new Approval.ProcessSubmitRequest();
-
+        
+        //add attachments
+        Attachment Att = new Attachment();
+        Att.Name='Unit Test 1';
+        Att.Description='Unit Test 1';
+        Att.Body=Blob.valueOf('Unit Test 1');
+        Att.ParentID=form.id;
+        insert Att;
+        
         // Submit the approval request for the account
         try{Approval.ProcessResult result = Approval.process(req1);}catch (Exception e){}
         
         form.Unauthenticated_Owner__c = null;
         update form;
         system.assertEquals(null, [select User_Supervisor__c from Forms__c where id = :form.ID].User_Supervisor__c);
-        
-        form.approval_step__c = 'Approved';
-        update form;
         
         Forms__c formLicUser = new Forms__c(RecordtypeId = [select id from RecordType where sObjectType = 'Forms__c' and DeveloperName = 'SF_182'].ID);
         try{insert formLicUser;}catch (Exception e){}

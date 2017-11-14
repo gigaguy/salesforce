@@ -4,7 +4,7 @@ public class ProfilePageController_Test {
     @isTest
     static void testController_t1User(){
         insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
-        Profile p = [select id, name from profile where name = 'AuthTest Profile'];        
+        Profile p = [select id, name from profile where name = 'Forms Profile'];        
         
         User u = new User(FirstName='Bob', LastName='Smith', profileID=p.id, Username='test@fake.ccc', 
                     email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
@@ -69,7 +69,7 @@ public class ProfilePageController_Test {
     @isTest
     static void testController_InvalidUser(){
         insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
-        Profile p = [select id, name from profile where name = 'AuthTest Profile'];        
+        Profile p = [select id, name from profile where name = 'Forms Profile'];        
         
         User u = new User(FirstName='Bob', LastName='Smith', profileID=p.id, Username='test@fake.ccc', 
                     email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',

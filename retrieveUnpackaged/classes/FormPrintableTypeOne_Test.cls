@@ -5,7 +5,7 @@ public class FormPrintableTypeOne_Test {
     static void testController(){
    
       //add test user   
-        Profile p = [select id, name from profile where name = 'AuthTest Profile'];        
+        Profile p = [select id, name from profile where name = 'Forms Profile'];        
         User u = new User(FirstName='Bob', LastName='Smith', profileID=p.id, Username='test@fake.ccc', 
               email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
               LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');

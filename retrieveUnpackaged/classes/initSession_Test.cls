@@ -14,7 +14,7 @@ public class initSession_Test {
         insert new Forms_URL__c(name='Form URL', URL__c = 'https://oeiodsta-oeiodstadev.cs33.force.com/FormPage'); // URL from Custom Setting
         initSession controller = new initSession();
         
-        Profile p = [select id, name from profile where name = 'AuthTest Profile'];        
+        Profile p = [select id, name from profile where name = 'Forms Profile'];        
             
         User u = new User(FirstName='Bob', LastName='Smith', profileID=p.id, Username='test@fake.ccc', 
               email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',

@@ -30,6 +30,7 @@ public with sharing class AttachmentUploadController {
   public PageReference upload() {
  
     attachment.OwnerId = UserInfo.getUserId();
+      system.debug('file owner: '+attachment.ownerid);
     attachment.ParentId = formID; // the record the file is attached to
     attachment.IsPrivate = true;
 

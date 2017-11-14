@@ -3,6 +3,7 @@
     CHUNK_SIZE: 750000,      //Chunk Max size 750Kb 
     
     getFandP_Forms : function(component){
+        console.log('in helper.getFandP_Forms');
     	var action = component.get("c.getFandP_FormRTs");
        
         action.setCallback(this, function(response){
@@ -14,7 +15,7 @@
      $A.enqueueAction(action);
 	},
     upload: function(component, file, base64Data, callback) {
-        console.log('in upload');
+        console.log('in helper.upload');
         
         var formID;
             if (component.get("v.modalName") == 'viewForm') {
@@ -49,17 +50,21 @@
         $A.enqueueAction(action);
     },
     show: function (cmp, event) {
+        console.log('in helper.show');
+        
         var spinner = cmp.find("mySpinner");
         $A.util.removeClass(spinner, "slds-hide");
         $A.util.addClass(spinner, "slds-show");
     },
     hide:function (cmp, event) {
+        console.log('in helper.hide');
+        
         var spinner = cmp.find("mySpinner");
         $A.util.removeClass(spinner, "slds-show");
         $A.util.addClass(spinner, "slds-hide");
     },
     getAttachList : function(component, formID){
-		console.log('in getAttachList');
+		console.log('in helper.getAttachList');
         
         console.log('formID: ' + formID);     
         var action = component.get("c.getListOfAttachments");
@@ -84,7 +89,7 @@
      $A.enqueueAction(action);
 	},
     uploadHelper: function(component, event) {
-        console.log('in uploadHelper');
+        console.log('in helper.uploadHelper');
         
         // start/show the loading spinner   
         component.set("v.showLoadingSpinner", true);
@@ -123,7 +128,7 @@
         objFileReader.readAsDataURL(file);
     },
     uploadProcess: function(component, file, fileContents) {
-        console.log('in uploadProcess');
+        console.log('in helper.uploadProcess');
         
         // set a default size or startpostiton as 0 
         var startPosition = 0;
@@ -134,7 +139,7 @@
         this.uploadInChunk(component, file, fileContents, startPosition, endPosition, '');
     },
     uploadInChunk: function(component, file, fileContents, startPosition, endPosition, attachId) {
-        console.log('in uploadInChunk');
+        console.log('in helper.uploadInChunk');
         
         // call the apex method 'saveChunk'
         var formID = component.get("v.parentId");

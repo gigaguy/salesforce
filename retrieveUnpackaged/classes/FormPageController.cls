@@ -152,31 +152,13 @@ public class FormPageController {
     
     @AuraEnabled
     public static Forms__c cloneForm(ID FormID) { 
-        forms__c oldForm = [select id, Agency_subelement_submitting_office__c,Approval_Routing_Options__c, BOOKS_MATERIALS__C, 
-                            Continue_In_Service_Agreement_Signature__c, Continue_In_Service_Digital_Signature__c, 
-                            Continued_Service_Agreement__c, Continued_Service_Agreement_Expiration__c, Course_Title__c, 
-                            Direct_Appropriation_Fund__c, Doc_Purchase_Order_Requisition__c, Employee_s_Signature__c, 
-                            Escalate_to_Chief_Learning_Officer__c, Form_emailed_to_Cincinnati__c, Form_Status__c, Form_Type__c, 
-                            Furnish_Invoice_to__c, HR_Organization__c, If_yes_please_describe__c, 
-                            Immediate_Supervisor_s_Digital_Signature__c, Immediate_Supervisor_s_Signature__c, 
-                            Indirect_Appropriation_Fund__c, Location_of_Training_Site__c, Name, Name_and_Address_of_Vendor__c, 
-                            Non_Government_Contribution_Cost__c, Note__c, of_Approval_Supervisors__c, Organization_Mailing_Address__c, 
-                            OwnerID, Per_diem__c, Recipient_Employee_ID_No__c, RecordTypeID, Request_Status__c, Select_Card_Holder2__c, 
-                            SF_182_Override_Instructions__c, Special_accommodation_needed__c, Submitted_on_Behalf_Of__c, 
-                            Timesheet_Approver__c, Training_Accreditation_Indicator__c, Training_Credit__c, 
-                            Training_Credit_Type_Code__c, Training_Delivery_Type_Code__c, Training_Designation_Type_Code__c, 
-                            Training_Duty_Hour__c, Training_End_Date__c, Training_Non_Duty_Hours__c, Training_Objective__c, 
-                            Training_Purpose_Type__c, Training_Source_Type_Code__c, Training_Start_Date__c, Training_Sub_Type_Code__c, 
-                            Training_Type_Code__c, Tuition_and_Fees__c, Type_of_Appointment__c, Unauthenticated_Owner__c, 
-                            User_Funding_Official__c, User_Supervisor__c, User_Supervisor_2__c, User_Time_Keeper__c, User_Training_Officer__c, 
-                            Vendor_Email_Address__c, Vendor_Telephone_Number__c, x1_SF_182__c, X2_SF_182__C, X3_SF_182__C, 
-                            X4_SF_182__C, x8_Digit_Station_Symbol__c 
-            from forms__c where id = :FormID limit 1];
-
-        forms__c newForm = oldForm.clone(false, true, false, false);
-        insert newForm;
         
-        return newForm;
+            String soql = UtilityMethods.getCreatableFieldsSOQL('forms__c','id=\''+FormID+'\'');
+            forms__c f = (forms__c)Database.query(soql);
+            forms__c f2 = f.clone(false, true);
+            insert f2;    
+
+            return f2;
     }
     
     @AuraEnabled

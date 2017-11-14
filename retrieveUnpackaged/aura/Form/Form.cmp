@@ -30,6 +30,7 @@
     <aura:attribute name="attachList" type="Attachment[]"/>
     <aura:attribute name="stayModal" type="boolean" default="false"/>
     <aura:attribute name="editTwo" type="boolean" default="false"/>
+    <aura:attribute name="onSubmit" type="boolean" default="false"/>
    
    <!-- 'parentId' Aura Attribute for store the Id for Parent Record where we are attach our file -->  
    <aura:attribute name="parentId" type="Id" />

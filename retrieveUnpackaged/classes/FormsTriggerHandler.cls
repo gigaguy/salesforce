@@ -1,5 +1,6 @@
 public class FormsTriggerHandler {
-
+    public static Boolean isFirstTime = true;
+    
     public void beforeInsert(List<Forms__c> forms){
         for (forms__c form : forms){
           //if Type-3 user creating form, sets Type-1 Owner field to that user
@@ -157,6 +158,8 @@ public class FormsTriggerHandler {
     }
     
     public void afterUpdate(Map<id,Forms__c> formMap){
+        if(isFirstTime){
+        isFirstTime = false;
         system.debug('in after update');
         //get sf-182 record type
             ID rtID = [SELECT Id,Name FROM RecordType WHERE name = 'SF-182' limit 1].id;
@@ -166,9 +169,13 @@ public class FormsTriggerHandler {
                     system.debug('approval step does not equal approved');
                     createFormShares(formMap.keyset());
                   }  
-            //send email to cincinatti for approved SF-182 forms                    
-                    if(form.Approval_Step__c == 'Approved' && !form.Form_emailed_to_Cincinnati__c && form.RecordTypeID == rtID){
-                        SF_182_SendCincinnatiEmail.sendMessage(form.id);                       
+            //send email to cincinatti for approved SF-182 forms       
+            system.debug('cin check: '+form.Approval_Step__c);
+                    if(form.Approval_Step__c == 'Approved' && form.RecordTypeID == rtID){
+                         SF_182_SendEmailWithAttachments.sendMessage(form.id);  
+                    if(!form.Form_emailed_to_Cincinnati__c){
+                        SF_182_SendCincinnatiEmail.sendMessage(form.id);  
+                       }                   
                     }
                 }
         
@@ -186,6 +193,7 @@ public class FormsTriggerHandler {
                //         
                //         database.insert(formShares, false);*/
                ///////////////////////////////////////////////////////////////////////////
+        }
     }
     
     @future

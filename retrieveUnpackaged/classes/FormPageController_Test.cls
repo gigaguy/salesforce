@@ -27,19 +27,24 @@ public class FormPageController_Test {
         u.Session_Token__c = '123ABC';
         u.Supervisor__c = u2.id;
         u.Supervisor_2__c = u2.id;
+        u.Lan_ID__c = 'thetest';
         update u;
-        
+
+        contact c = new contact(FirstName='Bob', LastName='Smith', Lan_ID__c = 'thetest');
+        insert c;
+     
         Forms__c testForm = new Forms__c();
+        testForm.Unauthenticated_Owner__c = u.Id;
         testForm.approval_step__c = 'Form Prepared for you by test';
         testForm.RecordTypeID = [select id from RecordType where sObjectType = 'Forms__c' ORDER BY createddate limit 1].id;
         insert testForm;
-        
-        
+              
         Forms__c form = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' ORDER BY createddate limit 1].ID);     
-        form = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' limit 1].ID);
+ //       form = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' limit 1].ID);
         
-        Forms__c xform;
-        
+  //      Forms__c xform = FormPageController.insertNewForms('123ABC', [select id from RecordType where name = 'EPA-100' limit 1].ID);
+          Forms__c xform;
+    
         try{
             xform = FormPageController.insertNewForms('123ABC', [select id from RecordType where name = 'EPA-100' limit 1].ID);
             }
@@ -87,9 +92,16 @@ public class FormPageController_Test {
         static void testAttachmentMethods(){
             insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
             
-            //create test data: forms
+            User u = [select id from User where isActive = true limit 1];
+            u.Lan_ID__c = 'thetest';
+            update u;
+    
+            contact c = new contact(FirstName='Bob', LastName='Smith', Lan_ID__c = 'thetest');
+            insert c;
+         
             Forms__c testForm = new Forms__c();
             testForm.RecordTypeID = [select id from RecordType where sObjectType = 'Forms__c' ORDER BY createddate limit 1].id;
+            testForm.Unauthenticated_Owner__c = u.Id;
             insert testForm;
             
             //create test data: file
@@ -103,6 +115,10 @@ public class FormPageController_Test {
             FormPageController.deleteFormAttachment(attID);
             
             FormPageController.cloneForm(formID);
+            id attChunkid;
+            FormPageController.saveChunk(formID,'att',base64Data,contentType,'');
+            id att2 = FormPageController.saveTheFile(formID,'att',base64Data,contentType);
+            FormPageController.saveChunk(formID,'att',base64Data,contentType,att2);
             
       }
       

@@ -3,6 +3,7 @@ Public class SF_182_SendCincinnatiEmail {
     
     @future (callout=true)
     public static void sendMessage(ID formID) {
+        system.debug('in SF_182_SendCincinnatiEmail.sendMessage');
 
         String sid = 'internalSysUser';
         system.debug('sid: '+sid);
