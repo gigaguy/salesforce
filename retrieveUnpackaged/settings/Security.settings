@@ -8,7 +8,7 @@
         <lockoutInterval>ThirtyMinutes</lockoutInterval>
         <maxLoginAttempts>ThreeAttempts</maxLoginAttempts>
         <minimumPasswordLength>10</minimumPasswordLength>
-        <minimumPasswordLifetime>true</minimumPasswordLifetime>
+        <minimumPasswordLifetime>false</minimumPasswordLifetime>
         <obscureSecretAnswer>true</obscureSecretAnswer>
         <questionRestriction>DoesNotContainPassword</questionRestriction>
     </passwordPolicies>
