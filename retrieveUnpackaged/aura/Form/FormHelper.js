@@ -142,7 +142,8 @@
         console.log('in helper.uploadInChunk');
         
         // call the apex method 'saveChunk'
-        var formID = component.get("v.parentId");
+    //    var formID = component.get("v.parentId");
+        var formID = component.get("v.viewFormID");
         console.log('formID: ' + formID);
         var getchunk = fileContents.substring(startPosition, endPosition);
         var action = component.get("c.saveChunk");
@@ -177,7 +178,7 @@
                     component.set("v.fileName", null);
                     
                 }
-                // handel the response errors        
+                // handle the response errors        
             } else if (state === "INCOMPLETE") {
                 alert("From server: " + response.getReturnValue());
             } else if (state === "ERROR") {

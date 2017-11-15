@@ -16,6 +16,8 @@
     openModal: function(component, event, helper) { //this needs to go away
         console.log('in openModal');
         component.set("v.onSubmit", false);
+        component.set("v.modalName", "newModal");
+          console.log('modalName: '+component.get("v.modalName"));
         var formID = event.currentTarget.id;
         var formName = event.currentTarget.name;
         
@@ -67,45 +69,13 @@
             "rtID" : formID
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in openModal action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
                 component.set("v.newForm", resp.getReturnValue());
                 component.set("v.viewFormID", component.get("v.newForm.Id"));
-                component.set("v.parentId", component.get("v.newForm.Id"));
-                
-      /*          $A.createComponent('lightning:input',
-                           {
-                               'aura:id':'fileUp', 
-                               onchange:component.getReference("c.handleFilesChange"), 
-                               type:'file', 
-                               name:'fileUp',
-                               label:'Upload Attachment', 
-                               multiple:'false',
-                           //    files:"{!v.uploadFiles}"
-                           },
-                               function(fileUp) {
-                               component.set("v.fileUp", fileUp);
-                           }
-                               );   */
-                
-  /*          $A.createComponent( 
-                        "lightning:input", {
-               //         value: component.getReference("v.accountRecord."+component.get("v.fieldName")),
-                        label: 'Upload Attachment',
-                        type: "File", 
- 				//	  	onchange: {!c.handleFilesChange}
-                    },
-                    $A.getCallback(function(newCmp, status, error) {
-                        console.log('100: '+status);
-                        var edits = component.get("v.fileUp");
-                        edits.push(newCmp);
-                        component.set("v.fileUp", edits);
-                        var a = component.get("c.handleFilesChange");
-        				$A.enqueueAction(a);
-                    })
-                );   */
+          //      component.set("v.parentId", component.get("v.newForm.Id"));
                 
                 helper.hide(component,event);
             }
@@ -128,6 +98,7 @@
         var formName = event.currentTarget.name;
         component.set("v.message", null);
         component.set("v.onSubmit", false);
+
         if (formName === "BAP Provisioning") {
             var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
         	var hrefEmail = "BAP_Admins@epa.gov";
@@ -161,9 +132,10 @@
        	 	var hrefEmail = "McNeal.Detha@epa.gov";
         }
         component.set("v.viewFormID", formID);
-        component.set("v.parentId", formID);
+     //   component.set("v.parentId", formID);
         console.log('formID: ' + formID);
         component.set("v.modalName", "viewForm");
+          console.log('modalName: '+component.get("v.modalName"));
         component.set("v.selectedFormName", formName);
         component.set("v.hrefInfo", hrefInfo);
         component.set("v.hrefEmail", hrefEmail);
@@ -178,7 +150,7 @@
             "formID" : formID
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in viewFormJS action');
 
             var state = resp.getState();
             console.log('state: ' +state);
@@ -208,7 +180,7 @@
             "rtID" : formID
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in viewExistingForms action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
@@ -231,8 +203,10 @@
 	},
     saveStay : function(component, event, helper){ //this needs to go away
         console.log('in c.saveStay');
-        console.log('modalname: ' + component.get("v.modalName"));
+        component.set("v.addAttachments", false);
+        component.set("v.hasAttachments", false);
         
+        console.log('modalName: '+component.get("v.modalName"));
         try {
             if (component.get("v.modalName") != 'reopenForm'){
             	component.find("edit").get("e.recordSave").fire();
@@ -252,6 +226,7 @@
     saveOnly : function(component, event, helper){   //this needs to go away
         console.log('in c.saveOnly');
    
+        console.log('modalName: '+component.get("v.modalName"));
         try {
             if (component.get("v.modalName") != 'reopenForm'){
             	component.find("edit").get("e.recordSave").fire();
@@ -272,7 +247,7 @@
 			"sID" : component.get("v.sessionID")
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in saveOnly action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
@@ -291,6 +266,8 @@
 	saveAndSubmit : function(component, event, helper){   //this needs to go away
         console.log('in saveAndSubmit');
         component.set("v.onSubmit", true);
+
+        console.log('modalName: '+component.get("v.modalName"));
         try {
             if (component.get("v.modalName") != 'reopenForm'){
             component.find("edit").get("e.recordSave").fire();
@@ -307,6 +284,8 @@
  
         // Temporary checking for modals to allow submitting from new form or view form
         var formID;
+        
+        console.log('modalName: '+component.get("v.modalName"));
         if (component.get("v.modalName") == 'viewForm') {
             formID = component.get("v.viewFormID"); }
         else if (component.get("v.modalName") == 'reopenForm') {
@@ -319,7 +298,7 @@
 			"sID" : component.get("v.sessionID")
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in saveAndSubmit action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
@@ -339,7 +318,7 @@
 			"sID" : component.get("v.sessionID")
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in saveAndSubmit action2');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
@@ -360,17 +339,20 @@
         
         if(component.get("v.testing")==false){		//this needs to go away
         component.set("v.isOpen", true);			//this needs to CHANGE
-        component.set("v.modalName", "");
+        component.set("v.modalName", "newModal");
+          console.log('modalName: '+component.get("v.modalName"));
         }
     },
     closeModal: function(component, event, helper) {
         console.log('in closeModal');    
-        	component.set("v.message", null);
-            component.set("v.approvalSuccess", null);
-            component.set("v.isOpen", false);
-            component.set("v.modalName", "");
-            component.set("v.hasAttachments", false);
-            component.set("v.addAttachments", false);
+           
+        component.set("v.message", null);
+        component.set("v.approvalSuccess", null);
+        component.set("v.isOpen", false);
+        component.set("v.modalName", "");
+          console.log('modalName: '+component.get("v.modalName"));
+        component.set("v.hasAttachments", false);
+        component.set("v.addAttachments", false);
 
         // Update display of forms, sets display to "viewMyForms" for feedback to user that it was submitted
         var action = component.get("c.findExistingForms");
@@ -378,7 +360,7 @@
 			"sID" : component.get("v.sessionID")
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in closeModal action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
@@ -393,7 +375,7 @@
             }
         });
   
-        $A.enqueueAction(action);
+        $A.enqueueAction(action);   
     },
 	handleSaveSuccess : function(component, event, helper){
         console.log('in handleSaveSuccess');
@@ -404,7 +386,7 @@
 			"sID" : component.get("v.sessionID")
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in handleSaveSuccess action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
@@ -419,13 +401,22 @@
             }
         });
         $A.enqueueAction(action);
-
+		
+        console.log('safeSave: '+component.get("v.safeSave"));
+        if(component.get("v.safeSave")!=true){
             component.set("v.isOpen", false);        //this needs to go away
+        	component.set("v.modalName", '');
+        	  console.log('modalName: '+component.get("v.modalName"));
             component.set("v.message", "Form Saved | ");
+        
+        console.log('onSubmit: '+component.get("v.onSubmit"));
         if (component.get("v.onSubmit") == false){
             var a = component.get('c.createReopenModal');  //this needs to CHANGE
-            $A.enqueueAction(a);
-    	  }
+        	$A.enqueueAction(a);
+          }
+        }
+        
+        component.set("v.safeSave", false);
 	},
     cancelCreationModal : function(component, event, helper){
     	console.log('in cancelCreationModal'); 
@@ -433,6 +424,7 @@
         component.set("v.approvalSuccess", null);
         component.set("v.isOpen", false);
         component.set("v.modalName", "");
+          console.log('modalName: '+component.get("v.modalName"));
         component.set("v.hasAttachments", false);
         component.set("v.addAttachments", false);
     	
@@ -442,7 +434,7 @@
 			"sID" : component.get("v.sessionID")
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in cancelCreationModal action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
@@ -471,13 +463,14 @@
 			"sID" : component.get("v.sessionID")
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in deleteFormJS action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
                 component.set("v.message", resp.getReturnValue());
                 component.set("v.oldForm", null);
                 component.set("v.modalName", "");
+                  console.log('modalName: '+component.get("v.modalName"));
             }
             else if(state === 'ERROR'){
                 var errors = resp.getError();
@@ -497,7 +490,7 @@
 			"sID" : component.get("v.sessionID")
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in deleteFormJS action2');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
@@ -521,7 +514,7 @@
 			"sID" : component.get("v.sessionID")
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in viewMyForms action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
@@ -550,6 +543,8 @@
 		var resp = confirm("Are you sure you want to submit the form?");
         var action;
         var formID;
+        
+        console.log('modalName: '+component.get("v.modalName"));
         if (component.get("v.modalName") == 'viewForm' || component.get("v.modalName") == 'reopenForm') {   //this needs to go away
             formID = component.get("v.viewFormID");
         }
@@ -574,6 +569,8 @@
 		var resp = confirm("Are you sure you want to delete the form?");
         var action;
         var formID;
+        
+        console.log('modalName: '+component.get("v.modalName"));
         if (component.get("v.modalName") == 'viewForm' || component.get("v.modalName") == 'reopenForm') {		//this needs to go away
             formID = component.get("v.viewFormID");
         }
@@ -592,7 +589,7 @@
         }
         $A.enqueueAction(action);
 	},
-     onFileUploaded:function(component,event,helper){
+    onFileUploaded:function(component,event,helper){    // does this need to go away?
         console.log('in onFileUploaded');
          
         helper.show(component,event);
@@ -631,7 +628,7 @@
             "attID":attID
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in deleteAttachment action');
             var formID;
             console.log('modalName: '+component.get("v.modalName"))
                 if (component.get("v.modalName") == 'viewForm' || component.get("v.modalName") == 'reopenForm') { 
@@ -653,7 +650,7 @@
             }
         });
         $A.enqueueAction(action);
-      },
+    },
 	hideAttachments: function(component, event, helper) {
         console.log('in hideAttachments');
         
@@ -668,9 +665,9 @@
         
         var formID;
         console.log('modalName: '+component.get("v.modalName"));
-                if (component.get("v.modalName") == 'viewForm' || component.get("v.modalName") == 'reopenForm') { 		//this needs to go away
-                    formID = component.get("v.viewFormID"); }
-                else { formID = component.get("v.newForm.Id"); }		//this needs to go away
+            if (component.get("v.modalName") == 'viewForm' || component.get("v.modalName") == 'reopenForm') { 		//this needs to go away
+                formID = component.get("v.viewFormID"); }
+            else { formID = component.get("v.newForm.Id"); }		//this needs to go away
         
         console.log('formID: ' + formID);
         
@@ -685,11 +682,13 @@
         
         var formID = component.get("v.viewFormID");
         console.log('formID: ' + formID);
-		component.set("v.parentId", formID);
+	//	component.set("v.parentId", formID);
         component.set("v.fileName", "No File Selected..");
         component.set("v.largeFile", false);
         component.set("v.onSubmit", false);
         component.set("v.viewFormID", formID);
+ //       component.set("v.hasAttachments", false);
+ //       component.set("v.addAttachments", false);
         helper.show(component,event);
         var action = component.get("c.viewForm");
         action.setParams({
@@ -697,7 +696,7 @@
             "formID" : formID
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in createReopenModal action');
 
             var state = resp.getState();
             console.log('state: ' +state);
@@ -721,16 +720,21 @@
                 'recordId': formID
               },
               function(edit2){
+                console.log('in function of createReopenModal');
                 component.set('v.edit2', edit2); 
-                  component.set("v.modalName", "reopenForm");  
+                component.set("v.modalName", "reopenForm");
+                  console.log('modalName: '+component.get("v.modalName"));
               }
                                           
            );
     },
 	copyForm: function(component, event, helper) {
         console.log('in copyForm');
+        component.set("v.onSubmit", false);
+        
         var formID = event.currentTarget.id;
         var formName = event.currentTarget.name;
+        console.log('form being copied ID: '+formID);
         component.set("v.message", null);
         if (formName === "BAP Provisioning") {
             var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
@@ -778,13 +782,13 @@
             "FormID" : formID
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in copyForm action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
                 component.set("v.newForm", resp.getReturnValue());
-                console.log('v.newForm: ' + component.get("v.newForm"));
                 component.set("v.viewFormID", component.get("v.newForm.Id"));
+                console.log('new copy form formID: '+component.get("v.newForm.Id"))
             }
             else if(state === 'ERROR'){
                 var errors = resp.getError();
@@ -813,6 +817,7 @@
     newCreateModal: function(component, event, helper) {   //this needs to be renamed
         console.log('in newCreateModal');
         component.set("v.onSubmit", false);
+        
         var isNew = component.get("v.isNew");
         console.log('isNew: ' + isNew);
         var formID = component.get("v.viewFormID");
@@ -866,7 +871,7 @@
             "rtID" : formID
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in newCreateModal action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
@@ -882,7 +887,8 @@
                    },
                   function(theModal){
                     component.set('v.theModal', theModal); 
-                    component.set("v.modalName", "theModal");  
+                    component.set("v.modalName", "theModal");
+                      console.log('modalName: '+component.get("v.modalName"));
                       console.log('in function - formID: '+formID);
                    }
                                               
@@ -938,7 +944,7 @@
 			"sID" : component.get("v.sessionID")
         });
         action.setCallback(this,function(resp){
-			console.log('in action');
+			console.log('in newSaveAndSubmit action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
@@ -990,6 +996,25 @@
     },
     doSave: function(component, event, helper) {
         console.log('in doSave');
+        
+        //save form in case of issue with attachment upload
+        console.log('modalName: '+component.get("v.modalName"));
+        component.set("v.safeSave", true);
+        console.log('safeSave: '+component.get("v.safeSave"));
+        try {
+            if (component.get("v.modalName") != 'reopenForm'){
+            	component.find("edit").get("e.recordSave").fire();
+                console.log('no error');
+               }
+            else if (component.get("v.modalName") == 'reopenForm'){
+            	component.get("v.edit2").get("e.recordSave").fire();
+                console.log('no error');
+               }    
+   
+          	}
+          catch (e) {
+            console.log(e);
+          }
          
         if (component.get("v.uploadFiles").length > 0) {
             helper.uploadHelper(component, event);
@@ -1033,6 +1058,59 @@
                                component.set("v.fileUp", fileUp);
                            }
                                );   
-    }
+    },
+    confirmCancelCreationModal : function(component, event) {
+        console.log('in confirmCancelCreationModal');
+        
+		var resp = confirm("Are you sure you want to close the form without saving changes?");
+        var action;
+        var formID = component.get("v.newForm.Id");
+        console.log('formID: '+formID);
+        
+        if(resp === true){
+            action = component.get("c.cancelCreationModal");
+            action.setParams({
+            "formID": formID,
+        });
+        	}
+        else {action = component.get("c.viewFormJS");
+            action.setParams({"formID": formID,});                       
+        }
+        $A.enqueueAction(action);
+	},
+    confirmCloseModal : function(component, event) {
+        console.log('in confirmCloseModal');
+        
+		var resp = confirm("Would you like to save the Form before closing?\nClick Cancel to close without saving.");
+        var action;
+        var formID = component.get("v.viewFormID");
+        console.log('formID: '+formID);
+        
+        if(resp === true){
+            console.log('modalName: '+component.get("v.modalName"));
+            component.set("v.safeSave", true);
+            try {
+                if (component.get("v.modalName") != 'reopenForm'){
+                component.find("edit").get("e.recordSave").fire();
+                    console.log('no error 1');
+                   }
+                else if (component.get("v.modalName") == 'reopenForm'){
+                component.get("v.edit2").get("e.recordSave").fire();
+                    console.log('no error 2');
+                   }    
+                }
+              catch (e) {
+                console.log(e);
+              }
+            action = component.get("c.closeModal");
+            action.setParams({
+            "formID": formID,
+        });
+        	}
+        else {action = component.get("c.closeModal");
+            action.setParams({"formID": formID,});                       
+        }
+        $A.enqueueAction(action);
+	}
     
 })

@@ -31,9 +31,10 @@
     <aura:attribute name="stayModal" type="boolean" default="false"/>
     <aura:attribute name="editTwo" type="boolean" default="false"/>
     <aura:attribute name="onSubmit" type="boolean" default="false"/>
-   
-   <!-- 'parentId' Aura Attribute for store the Id for Parent Record where we are attach our file -->  
-   <aura:attribute name="parentId" type="Id" />
+    <aura:attribute name="safeSave" type="boolean" default="false"/>
+    
+   <!-- 'parentId' Aura Attribute for store the Id for Parent Record where we are attach our file   
+   <aura:attribute name="parentId" type="Id" />  -->
    <!-- 'showLoadingSpinner' attribute for show/hide the uploading image and msg in aura:if-->
    <aura:attribute name="showLoadingSpinner" type="boolean" default="false" />
    <!-- 'fileName' attribute for display the selected file name -->  
@@ -232,7 +233,7 @@
         <div class="slds-modal__container">
           <!--BOX HEADER-->
           <div class="slds-modal__header">
-            <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.cancelCreationModal}">
+            <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.confirmCancelCreationModal}">
             X
             <span class="slds-assistive-text">Close</span>
             </button>
@@ -309,7 +310,7 @@
                          <!--use aura:if for show-hide the loading spinner image--> 
                            <aura:if isTrue="{!v.showLoadingSpinner}">
                               <div class="slds-text-body_small slds-text-color_error">Uploading... 
-                                 <img src="/auraFW/resources/aura/images/spinner.gif" class="spinner-img" alt="Loading"/>'
+                                 <img src="/auraFW/resources/aura/images/spinner.gif" class="spinner-img" alt="Loading"/>
                               </div>
                            </aura:if>              
      					<br/>
@@ -317,8 +318,8 @@
              </aura:if>
             <!--end add attachments-->
         
-              <aura:if isTrue="{!and(v.stayModal, v.message != null)}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.closeModal}" /></aura:if>
-              <aura:if isTrue="{!v.stayModal==false || v.message == null}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.cancelCreationModal}" /></aura:if>
+              <aura:if isTrue="{!and(v.stayModal, v.message != null)}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.confirmCloseModal}" /></aura:if>
+              <aura:if isTrue="{!v.stayModal==false || v.message == null}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.confirmCancelCreationModal}" /></aura:if>
 			  <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
               <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral" label="Show/Add Attachments" press="{!c.showAttachments}" /></aura:if> 
      	      <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveStay}" />
@@ -336,7 +337,7 @@
         <div class="slds-modal__container">
           <!--BOX HEADER-->
           <div class="slds-modal__header">
-            <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModal}">
+            <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.confirmCloseModal}">
             X
             <span class="slds-assistive-text">Close</span>
             </button>
@@ -433,11 +434,11 @@
              </aura:if>
             <!--end add attachments-->
               
-              <ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.closeModal}" />  
+              <ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.confirmCloseModal}" />  
               <aura:if isTrue="{!or(v.oldForm.Approval_Step__c == null,v.oldForm.Approval_Step__c == 'Rejected',v.oldForm.Approval_Step__c == 'Approved') || v.oldForm.SF_182_Prepare_For_checker__c || v.oldForm.Approval_Step__c == 'Recalled'}">
                   <ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmDelete}" />
                   <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
-                  <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Attachments" press="{!c.showAttachments}" /></aura:if> 
+                  <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Show/Add Attachments" press="{!c.showAttachments}" /></aura:if> 
                   <ui:button class="slds-button slds-button--neutral " label="Save" press="{!c.saveStay}" />
                   <ui:button class="slds-button slds-button_success" label="Submit" press="{!c.confirmSubmit}" />
               </aura:if>
@@ -454,7 +455,7 @@
         <div class="slds-modal__container">
           <!--BOX HEADER-->
           <div class="slds-modal__header">
-            <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModal}">
+            <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.confirmCloseModal}">
             X
             <span class="slds-assistive-text">Close</span>
             </button>
@@ -551,11 +552,11 @@
              </aura:if>
             <!--end add attachments-->
               
-              <ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.closeModal}" />  
+              <ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.confirmCloseModal}" />  
               <aura:if isTrue="{!or(v.oldForm.Approval_Step__c == null,v.oldForm.Approval_Step__c == 'Rejected',v.oldForm.Approval_Step__c == 'Approved') || v.oldForm.SF_182_Prepare_For_checker__c || v.oldForm.Approval_Step__c == 'Recalled'}">
                   <ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmDelete}" />
                   <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
-                  <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral" label="Attachments" press="{!c.showAttachments}" /></aura:if> 
+                  <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral" label="Show/Add Attachments" press="{!c.showAttachments}" /></aura:if> 
                   <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveStay}" />
                   <ui:button class="slds-button slds-button_success" label="Submit" press="{!c.confirmSubmit}" />
               </aura:if>
@@ -572,11 +573,11 @@
         <div class="slds-modal__container">
           <!--BOX HEADER-->
           <div class="slds-modal__header">
-              <aura:if isTrue="{!v.isNew}"><button class="slds-button slds-modal__close slds-button--icon-inverse" title="Cancel" onclick="{!c.cancelCreationModal}">
+              <aura:if isTrue="{!v.isNew}"><button class="slds-button slds-modal__close slds-button--icon-inverse" title="Cancel" onclick="{!c.confirmCancelCreationModal}">
                   Xnew
                 <span class="slds-assistive-text">Cancel</span>
 	            </button></aura:if>
-              <aura:set attribute="else"><button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModal}">
+              <aura:set attribute="else"><button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.confirmCloseModal}">
                   Xnew
     	        <span class="slds-assistive-text">Close</span>
         	    </button></aura:set>
@@ -674,12 +675,12 @@
              </aura:if>
             <!--end add attachments-->
               
-              <aura:if isTrue="{!v.isNew}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.cancelCreationModal}" /></aura:if>
-              <aura:set attribute="else"><ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.closeModal}" /></aura:set>  
+              <aura:if isTrue="{!v.isNew}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.confirmCancelCreationModal}" /></aura:if>
+              <aura:set attribute="else"><ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.confirmCloseModal}" /></aura:set>  
               <aura:if isTrue="{!or(v.oldForm.Approval_Step__c == null,v.oldForm.Approval_Step__c == 'Rejected',v.oldForm.Approval_Step__c == 'Approved') || v.oldForm.SF_182_Prepare_For_checker__c || v.oldForm.Approval_Step__c == 'Recalled'}">
                   <aura:if isTrue="{!v.isNew == false}"><ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmDelete}" /></aura:if> 
                   <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
-                  <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral" label="Attachments" press="{!c.showAttachments}" /></aura:if> 
+                  <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral" label="Show/Add Attachments" press="{!c.showAttachments}" /></aura:if> 
                   <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.newSaveStay}" />
            <!--       <ui:button class="slds-button slds-button_success" label="Submit" press="{!c.confirmSubmit}" /> -->
               		<ui:button class="slds-button slds-button_success" label="Submit" press="{!c.newSaveAndSubmit}" />              </aura:if>
