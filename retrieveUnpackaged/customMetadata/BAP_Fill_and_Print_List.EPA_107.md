@@ -8,6 +8,6 @@
     </values>
     <values>
         <field>File_Url__c</field>
-        <value xsi:type="xsd:string">https://www.act.org/content/dam/act/unsecured/documents/2016-17_StudentReport_withWrite_sampledata.pdf</value>
+        <value xsi:type="xsd:string">http://intranet.epa.gov/otop/biacoe/forms/EPA-107.pdf</value>
     </values>
 </CustomMetadata>

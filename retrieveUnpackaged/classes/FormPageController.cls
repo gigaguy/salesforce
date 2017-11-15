@@ -35,12 +35,20 @@ public class FormPageController {
     
     @AuraEnabled
     public static Forms__c viewForm(string formID){
-        return [select id, name, Approval_step__c from Forms__c where id = :formID];
+        forms__c form = [select id, name, Approval_step__c from Forms__c where id = :formID limit 1];
+        if(form.approval_step__c != null){
+        if(string.valueOf(form.approval_step__c).startsWith('Form Prepared for you')){
+            form.approval_step__c = null;
+            update form;}
+          }
+        return form;
+        
     }
     
     @AuraEnabled
-    public static Forms__c insertNewForms(string sID, string rtID){
+    public static Forms__c insertNewForms(string sID, string rtID, String formOption){
         system.debug('Starting insertNewForms');
+        string rtName = [select id, developerName from recordtype where id = :rtID limit 1].developerName;
         Forms__c existingForm;
         User u;
         try{
@@ -56,8 +64,16 @@ public class FormPageController {
             if (u != null){
                 Forms__c nf = new Forms__c();
                 nf.put('Unauthenticated_Owner__c', u.id);
-                nf.put('User_Supervisor__c', u.Supervisor__c);
-                nf.put('RecordTypeId', rtID);
+                if(rtName != 'SF_182') nf.put('User_Supervisor__c', u.Supervisor__c);
+                // Pre populate user detials for the purchase card form
+                if(rtName != null && (rtName == 'Purchase_Card')){
+                    prePopulatePruchaseCardDetails(nf, u,formOption);
+                    if(formOption!=null){
+						nf.put('Purchase_Card_Request_Type__c',formOption);                        
+                    }
+                }else{
+                    nf.put('RecordTypeId', rtID);
+                }                                
                 nf.put('Quantity__c', 1);
                 insert nf;
                 System.debug('newForms'+nf);
@@ -93,11 +109,18 @@ public class FormPageController {
     }
     
     @AuraEnabled
-    public static string submitForApproval(ID formID, string sID){
+    public static string submitForApproval(ID formID, string sID, string recordTypeId){
         String message = 'Not Submitted - Please check that all your approvers are set and try again';
         try{
             system.debug(formId);
-            User u = [select id from User where Name = 'Unlicensed User' limit 1];
+            User u = null;
+            // For all purchase cards forms requestors, requestor should be the submittor
+            if(UtilityMethods.isPurchaseCardFormId(recordTypeId)){
+              u = [select id, Name, Supervisor__c from User where Session_Token__c = :sID];
+            }else{
+              u = [select id from User where Name = 'EPA Business Automation Platform User' limit 1];    
+            }
+                        
             Approval.ProcessSubmitRequest req1 = new Approval.ProcessSubmitRequest();
             req1.setComments('Automatically Submitted');
             req1.setObjectId(formId);
@@ -115,31 +138,61 @@ public class FormPageController {
 
     @AuraEnabled
     public static List<BAP_Fill_and_Print_List__mdt> getFandP_FormRTs(){
-        
-        Set<string> formNames = new Set<String>();
-            
-            //hardcoding Fill and Print form names
-            formNames.add('EPA-107');
-            formNames.add('EPA-2550-10');
-            formNames.add('EPA-102');      
-            formNames.add('EPA Form 1900-65a');
-            formNames.add('EPA Form 1900-65b');
-            formNames.add('EPA-112');
-            formNames.add('EPA-1700-9');
-            formNames.add('EPA-2560-34');
-            formNames.add('EPA-3130-1a');
-            formNames.add('EPA-3130-QSI');
-            formNames.add('EPA-3150-1');
-            formNames.add('EPA-5100-8');
-            formNames.add('FMS-2231');
-            formNames.add('SF-2810');
-            formNames.add('SF-52');
-            
-            
-      //  return [select id, Name, Description from RecordType where sObjectType = 'Forms__c' and Name in :formNames];
-          
-          return [select Label, Description__c, File_Url__c from BAP_Fill_and_Print_List__mdt where Label in :formNames];
+                
+          return [select Label, Description__c, File_Url__c from BAP_Fill_and_Print_List__mdt ORDER BY Label ASC];
           
     }
     
+    /**
+     * This method return list of options for a given form type id
+     * */
+    @AuraEnabled
+    public static List<String> getAllFormOptions(String formTypeId){
+        List<String> formOptions = null;
+		Schema.DescribeFieldResult formPickList = Forms__c.Purchase_Card_Request_Type__c.getDescribe();    
+		List<Schema.PicklistEntry> listValues = formPickList.getPicklistValues();
+        if(listValues.size()>0){
+            formOptions = new List<String>();
+            for(Schema.PicklistEntry pEntry : listValues){
+                if(pEntry.isActive()){
+	                formOptions.add(pEntry.getValue());                    
+                }
+            }
+        }
+        return formOptions;
+	}
+    /**
+     * 
+     *  This method prepopulate all user detials in to the form record.
+     * */
+    private static void prePopulatePruchaseCardDetails(Forms__c form, User user, String pcType){
+        
+        try{
+            user = [select id, Name,EmployeeNumber,LAN_ID__c,Phone, MobilePhone,Email,street, PostalCode, city,state, country, Supervisor__c from User where Id = :user.Id];
+            Contact cont = [Select Id from Contact where User__r.LAN_ID__c = :user.LAN_ID__c];
+            Map<String,String> pcPageLayouts = UtilityMethods.getPCRequestRecordTypes();
+            String recordType = pcPageLayouts.get(pcType);
+            if(recordType!=null){
+                form.put('RecordTypeId', recordType);
+            }
+            
+            form.put('OwnerId', user.Id);
+			form.put('EIN__c', user.EmployeeNumber);
+            form.put('Mailing_Address__c', user.street);
+            form.put('City__c', user.city);
+            form.put('State__c', user.state);            
+            form.put('Zip__c', user.PostalCode);            
+            form.put('Email_Address__c', user.Email);
+            form.put('Purchase_Card_Request_Type__c', pcType);            
+            form.put('Cardholder_AO_Name__c', cont.Id);
+//            form.put('Approval_Step__c','0');
+            String phoneNumber = user.Phone;
+            if(phoneNumber == null){
+                phoneNumber = user.MobilePhone;
+            }            
+            form.put('Telephone_Number__c', phoneNumber);
+        }catch(Exception e){
+            System.debug('Exception - prePopulatePruchaseCardDetails - '+string.valueof(e));
+        }        
+    }
 }

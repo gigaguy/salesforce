@@ -9,6 +9,6 @@
     <textOnly>The Form {!Forms__c.RecordType} has been submitted for your approval by {!Forms__c.Form_Owner__c}.
 
 Record ID: {!Forms__c.Form_Record_Name__c}
-{!Forms__c.Link}</textOnly>
+{!ApprovalRequest.Internal_URL}</textOnly>
     <type>custom</type>
 </EmailTemplate>

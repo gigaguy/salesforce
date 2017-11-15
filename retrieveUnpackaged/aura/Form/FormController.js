@@ -14,42 +14,35 @@
         helper.getFandP_Forms(component);
     },
     openModal: function(component, event, helper) {
+       
         var formID = event.currentTarget.id;
         var formName = event.currentTarget.name;
-        var hrefInfo = "mailto:lspackman@innovateteam.com?subject=Help%20request%3A%20%20"+formName+"%20Form"
-        component.set("v.selectedFormId", formID);
-        component.set("v.selectedFormName", formName);
-        component.set("v.hrefInfo", hrefInfo);
-         
-		var action = component.get("c.insertNewForms");
-        action.setParams({
-			"sID" : component.get("v.sessionID"),
-            "rtID" : formID
-        });
-        action.setCallback(this,function(resp){
-			console.log('in action');
-            var state = resp.getState();
-            console.log('state: ' +state);
-            if(state === 'SUCCESS'){
-                component.set("v.newForm", resp.getReturnValue());
-            }
-            else if(state === 'ERROR'){
-                var errors = resp.getError();
-                for(var i = 0 ;i < errors.length;i++){
-                    console.log(errors[i].message);
-                }
-            }
-        });
-        $A.enqueueAction(action);
+        if(formID != undefined && formID=='012350000004dmUAAQ'){            
+                        
+            component.set("v.backupFormId",formID);
+            component.set("v.backUpFormName",formName);            
+            component.set("v.forceSelectFormOption",true);            
+        }else{            
+			helper.openFormModal(component, event,formID,formName,'');            
+        }  
+        
     },
     viewFormJS : function(component, event, helper){
         var formID = event.currentTarget.id;
         var formName = event.currentTarget.name;
-        var hrefInfo = "mailto:lspackman@innovateteam.com?subject=Help%20request%3A%20%20"+formName+"%20Form"
+        if (formName === "BAP Provisioning") {
+            var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+        	var hrefEmail = "BAP_Admins@epa.gov";
+        }
+        else {
+            var hrefInfo = "mailto:McNeal.Detha@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+       	 	var hrefEmail = "McNeal.Detha@epa.gov";
+        }
         component.set("v.viewFormID", formID);
         component.set("v.modalName", "viewForm");
         component.set("v.selectedFormName", formName);
         component.set("v.hrefInfo", hrefInfo);
+        component.set("v.hrefEmail", hrefEmail);
 
         var action = component.get("c.viewForm");
         action.setParams({
@@ -164,11 +157,18 @@
         else {
             formID = component.get("v.newForm.Id");
         }
+        var recordTypeId;
+        var formObj = component.get("v.newForm");
+        if(formObj!=undefined){
+            recordTypeId=formObj.RecordTypeId;
+        }
+        console.log('recordTypeId '+recordTypeId);
         
         var action = component.get("c.submitForApproval");
         action.setParams({
             "formID": formID,
-			"sID" : component.get("v.sessionID")
+			"sID" : component.get("v.sessionID"),
+            "recordTypeId" : recordTypeId
         });
         action.setCallback(this,function(resp){
 			console.log('in action');
@@ -185,6 +185,7 @@
             }
         });
         $A.enqueueAction(action);
+        
         // Needed to update display of forms, sets display to "viewMyForms" for feedback to user that it was submitted
         var action = component.get("c.findExistingForms");
         action.setParams({
@@ -370,6 +371,18 @@
             action.setParams({"formID": formID,});                       
         }
         $A.enqueueAction(action);
-	}
+	},
+    handleFormSelEvent : function(component, event, helper) {
+        component.set("v.forceSelectFormOption",false);
+        var isCancelled = event.getParam("isCancelled");
+        var formOption = event.getParam("formOption");
+        if(isCancelled){
+        	    
+        }else{
+			var formId = component.get("v.backupFormId");
+	        var formName = component.get("v.backUpFormName");
+    	    helper.openFormModal(component, event,formId,formName,formOption);            
+        }                
+    }
 	
 })

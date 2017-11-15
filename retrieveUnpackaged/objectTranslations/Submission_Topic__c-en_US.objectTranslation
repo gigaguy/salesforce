@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Submission Topic</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Submission Topics</value>
+    </caseValues>
+    <fields>
+        <label><!-- Submission --></label>
+        <name>Submission__c</name>
+        <relationshipLabel><!-- Submission Topics --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Topic Name --></label>
+        <name>Topic_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Topic --></label>
+        <name>Topic__c</name>
+        <relationshipLabel><!-- Submission Topics --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Submission Topic Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

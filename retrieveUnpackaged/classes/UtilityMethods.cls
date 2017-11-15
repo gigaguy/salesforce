@@ -100,4 +100,24 @@ public class UtilityMethods {
         return false;
     }
     
+    /*
+     *This method returns all possible purchase card request types and corresponding record types.
+	 */
+    public static Map<String,String> getPCRequestRecordTypes(){
+        return new Map<String,String>{'New Purchase Card' => '012350000004dmUAAQ',
+            						  'New Convenience Check' => '012350000004dcjAAA',
+                                      'New Approving Official (AO)' => '012350000004dctAAA',
+                                      'Cancellation of Card or Check' => '012350000004ddSAAQ',
+                                      'Change Cardholder AO' => '012350000004dd3AAA',
+                                      'Change Contact Information' => '012350000004ddDAAQ',
+                                      'Change Monthly Limit' => '012350000004ddNAAQ',
+						              'Change Name on Card or Check' => '012350000004dd8AAA',
+                                      'Suspension of Card or Check' => '012350000004ddIAAQ'};
+    }
+    public static Boolean isPurchaseCardFormId(String formId){
+        Map<String,String> allFormIds = UtilityMethods.getPCRequestRecordTypes();
+        Set<String> allValues = new Set<String>();
+        allValues.addAll(allFormIds.values());
+        return allValues.contains(formId);
+    }
 }

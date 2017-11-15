@@ -21,8 +21,8 @@ public class FormPageVFController_Test {
     @isTest
     static void testMissingContact(){    
      insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = true); // checkbox from "Contact Approvers" Custom Setting
-        Profile p = [select id, name from profile where name = 'AuthTest Profile'];        
-        	
+        Profile p = [select id, name from profile where name = 'Forms Profile'];        
+            
     User u = new User(FirstName='Bob', LastName='Smith', profileID=p.id, Username='test@fake.ccc', 
               email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
               LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');
@@ -43,8 +43,8 @@ public class FormPageVFController_Test {
     @isTest
     static void testWithContact(){    
      insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = true); // checkbox from "Contact Approvers" Custom Setting
-        Profile p = [select id, name from profile where name = 'AuthTest Profile'];        
-        	
+        Profile p = [select id, name from profile where name = 'Forms Profile'];        
+            
     User u = new User(FirstName='Bob', LastName='Smith', profileID=p.id, Username='test@fake.ccc', 
               email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
               LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');
@@ -70,8 +70,8 @@ public class FormPageVFController_Test {
     @isTest
     static void testNoApprovers(){    
      insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
-        Profile p = [select id, name from profile where name = 'AuthTest Profile'];        
-        	
+        Profile p = [select id, name from profile where name = 'Forms Profile'];        
+            
     User u = new User(FirstName='Bob', LastName='Smith', profileID=p.id, Username='test@fake.ccc', 
               email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
               LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');

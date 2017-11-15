@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
+        <fullName>AO_Email_Alert</fullName>
+        <ccEmails>sammetaphani@gmail.com</ccEmails>
+        <description>AO Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Approving_Official__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Purchase_Card_Approval_Notify_Email_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Approval_official_rejection</fullName>
+        <description>Approval official rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Purchase_Card_Reject_Email_Template</template>
+    </alerts>
+    <alerts>
         <fullName>Dev_Sandbox_recalled</fullName>
         <description>Dev Sandbox recalled</description>
         <protected>false</protected>
@@ -25,6 +47,16 @@
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Dev_Sandbox_Request_Recall_Notification_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>FinalApproval</fullName>
+        <description>FinalApproval</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Purchase_Card_Email_Template_Approved_Confirmation</template>
     </alerts>
     <alerts>
         <fullName>Final_Approval_Email</fullName>
@@ -55,7 +87,30 @@
         <template>unfiled$public/Forms_Final_Rejection</template>
     </alerts>
     <alerts>
+        <fullName>Reject_Request</fullName>
+        <description>Reject Request</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Purchase_Card_Email_Template_Rejected_Confirmation</template>
+    </alerts>
+    <alerts>
+        <fullName>Sandbox_Approved_Jira_Alert</fullName>
+        <ccEmails>jira@epabiac.atlassian.net</ccEmails>
+        <description>Sandbox Approved Jira Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>king.roy@epa.gov</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Development_Sandbox_Request_Form_Approved_Jira</template>
+    </alerts>
+    <alerts>
         <fullName>Sandbox_Approved_Notification_Alert</fullName>
+        <ccEmails>BAP_Admins@epa.gov</ccEmails>
         <description>Sandbox Approved Notification Alert</description>
         <protected>false</protected>
         <recipients>
@@ -65,20 +120,23 @@
         <recipients>
             <type>creator</type>
         </recipients>
-        <recipients>
-            <recipient>dutrow.paul2@epa.gov</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>misty.grooms2@csra.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>twinkle.malhotra2@csra.com</recipient>
-            <type>user</type>
-        </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Development_Sandbox_Request_Form_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Sandbox_Complete_Email_Notification</fullName>
+        <ccEmails>BAP_Admins@epa.gov</ccEmails>
+        <description>Sandbox Complete Email Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Submitted_on_Behalf_Of__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Development_Sandbox_Request_Form_Approved_Admin_Notification</template>
     </alerts>
     <alerts>
         <fullName>Sandbox_Rejection_Notification_Alert</fullName>
@@ -107,6 +165,36 @@
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Forms_Submission_Confirmation</template>
+    </alerts>
+    <alerts>
+        <fullName>UpdateRequestor</fullName>
+        <description>UpdateRequestor</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Purchase_Card_Email_Template_Notify_Approver</template>
+    </alerts>
+    <alerts>
+        <fullName>Update_Requestor</fullName>
+        <description>Update Requestor</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Purchase_Card_Approval_Confirmation</template>
+    </alerts>
+    <alerts>
+        <fullName>Update_Requestor_2</fullName>
+        <description>Update Requestor</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Purchase_Card_Approval_Confirmation</template>
     </alerts>
     <fieldUpdates>
         <fullName>Approval_Step_Approved</fullName>
@@ -203,6 +291,54 @@
         <name>Status Updated to Rejected</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateAOApprovalStep</fullName>
+        <description>Update approval official approval step value.</description>
+        <field>Approval_Step__c</field>
+        <formula>&quot;1&quot;</formula>
+        <name>UpdateAOApprovalStep</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateApprovalStep0</fullName>
+        <description>Update approval step value to 0</description>
+        <field>Approval_Step__c</field>
+        <formula>&apos;0&apos;</formula>
+        <name>UpdateApprovalStep0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateApprovalStep10</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;0&quot;</formula>
+        <name>UpdateApprovalStep0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateApprovalStep_0</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;0&quot;</formula>
+        <name>UpdateApprovalStep0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateManagerApprovalStep</fullName>
+        <description>update approval step value.</description>
+        <field>Approval_Step__c</field>
+        <formula>&quot;2&quot;</formula>
+        <name>UpdateManagerApprovalStep</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
         <protected>false</protected>
     </fieldUpdates>
 </Workflow>

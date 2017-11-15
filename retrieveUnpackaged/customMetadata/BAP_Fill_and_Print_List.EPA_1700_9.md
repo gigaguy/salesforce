@@ -8,6 +8,6 @@
     </values>
     <values>
         <field>File_Url__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">http://intranet.epa.gov/otop/biacoe/forms/EPA1700-9v3.pdf</value>
     </values>
 </CustomMetadata>

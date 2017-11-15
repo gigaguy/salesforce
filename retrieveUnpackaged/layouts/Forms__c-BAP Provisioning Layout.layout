@@ -51,6 +51,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Technical_Contact__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Form_Status__c</field>
             </layoutItems>
         </layoutColumns>
@@ -78,7 +82,28 @@
         <detailHeading>false</detailHeading>
         <editHeading>false</editHeading>
         <label>System Information</label>
-        <layoutColumns/>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SandboxURL__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Authorization_Reason__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Role__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Organization_Allocation__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Account_Type__c</field>
+            </layoutItems>
+        </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>

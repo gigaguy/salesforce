@@ -78,7 +78,11 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Contact_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>ViewCustomerPortal</actionName>
@@ -96,6 +100,7 @@
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>AccountId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
@@ -460,6 +465,15 @@
         <columns>CORE.USERS.FIRST_NAME</columns>
         <columns>CORE.USERS.LAST_NAME</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>LAN_ID__c</field>
+            <operation>equals</operation>
+            <value>rking07</value>
+        </filters>
+        <filters>
+            <field>ACCOUNT.NAME</field>
+            <operation>contains</operation>
+        </filters>
         <label>All Contacts</label>
     </listViews>
     <listViews>

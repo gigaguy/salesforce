@@ -77,6 +77,7 @@
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>AccountNumber</fullName>
         <trackFeedHistory>false</trackFeedHistory>
@@ -284,7 +285,12 @@
         <columns>CORE.USERS.FIRST_NAME</columns>
         <columns>CORE.USERS.LAST_NAME</columns>
         <filterScope>Everything</filterScope>
-        <label>All Accounts</label>
+        <filters>
+            <field>Short_Description__c</field>
+            <operation>contains</operation>
+            <value>permit</value>
+        </filters>
+        <label>All Organizations</label>
     </listViews>
     <listViews>
         <fullName>FRS</fullName>

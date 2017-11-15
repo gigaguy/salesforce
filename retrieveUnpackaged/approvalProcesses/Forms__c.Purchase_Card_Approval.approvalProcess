@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Approval_Step__c</field>
+        <field>Purchase_Card_Request_Type__c</field>
+        <field>Request_is_for__c</field>
+        <field>EIN__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>UpdateAOApprovalStep</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>Approving_Official__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Approval official  step</description>
+        <label>Approval official</label>
+        <name>Approval_official</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>UpdateManagerApprovalStep</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>Division_Director_Manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Division Director/Manager approval step</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Forms__c.Approval_Step__c</field>
+                <operation>equals</operation>
+                <value>1</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>Division Director/Manager</label>
+        <name>Division_Director_Manager</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>Purchase Card request approval process.</description>
+    <emailTemplate>unfiled$public/Purchase_Card_Email_Template_Notify_Approver</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(ISBLANK(Approval_Step__c), OR(
+CONTAINS( RecordType.Name, &apos;Purchase Card&apos;),
+CONTAINS( RecordType.Name, &apos;New-Convenience Check&apos;),
+CONTAINS( RecordType.Name, &apos;New-Approving Official (AO)&apos;),
+CONTAINS( RecordType.Name, &apos;Cancellation-Check or Card&apos;),
+CONTAINS( RecordType.Name, &apos;Change-Cardholder AO&apos;),
+CONTAINS( RecordType.Name, &apos;Change-Contact Information&apos;),
+CONTAINS( RecordType.Name, &apos;Change-Monthly Limit&apos;),
+CONTAINS( RecordType.Name, &apos;Change-Name on Card/Check&apos;),
+CONTAINS( RecordType.Name, &apos;Change-Suspension of Card/Check&apos;)
+))</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>FinalApproval</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Reject_Request</name>
+            <type>Alert</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>Purchase Card Approval</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>
