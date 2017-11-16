@@ -107,9 +107,40 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Approver 1 Role --></label>
+        <name>Approver_1_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approver 1 --></label>
+        <name>Approver_1__c</name>
+        <relationshipLabel><!-- Forms (Approver 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Approver 2 Role --></label>
+        <name>Approver_2_Role__c</name>
+    </fields>
+    <fields>
         <label><!-- Approver 2 --></label>
         <name>Approver_2__c</name>
         <relationshipLabel><!-- Forms (Approver 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Approver 3 Role --></label>
+        <name>Approver_3_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approver 3 --></label>
+        <name>Approver_3__c</name>
+        <relationshipLabel><!-- Forms (Approver 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Approver 4 Role --></label>
+        <name>Approver_4_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approver 4 --></label>
+        <name>Approver_4__c</name>
+        <relationshipLabel><!-- Forms (Approver 4) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Authorization Reason --></label>
@@ -788,6 +819,10 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
     </layouts>
     <layouts>
         <layout>eClearance</layout>
+        <sections>
+            <label><!-- Approvers --></label>
+            <section>Approvers</section>
+        </sections>
         <sections>
             <label><!-- Co-Authors --></label>
             <section>Co-Authors</section>

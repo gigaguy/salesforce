@@ -150,6 +150,26 @@
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Forms_Submission_Confirmation</template>
     </alerts>
+    <alerts>
+        <fullName>eClearance_Approval_Notification</fullName>
+        <description>eClearance Approval Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>eClearance_Approval_Process_Templates/eClearance_Approval_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>eClearance_Rejection_Notification</fullName>
+        <description>eClearance Rejection Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>eClearance_Approval_Process_Templates/eClearance_Request_Rejected</template>
+    </alerts>
     <fieldUpdates>
         <fullName>Approval_Step_Approved</fullName>
         <field>Approval_Step__c</field>

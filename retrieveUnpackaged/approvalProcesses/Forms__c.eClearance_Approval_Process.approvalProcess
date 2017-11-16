@@ -1,63 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
     <active>false</active>
-    <allowRecall>false</allowRecall>
+    <allowRecall>true</allowRecall>
     <allowedSubmitters>
-        <type>owner</type>
+        <type>creator</type>
     </allowedSubmitters>
     <approvalPageFields>
         <field>Name</field>
         <field>Owner</field>
+        <field>Approver_1__c</field>
+        <field>Approver_1_Role__c</field>
+        <field>Approver_2__c</field>
+        <field>Approver_2_Role__c</field>
+        <field>Approver_3__c</field>
+        <field>Approver_3_Role__c</field>
+        <field>Approver_4__c</field>
+        <field>Approver_4_Role__c</field>
+        <field>Co_Author_1__c</field>
+        <field>Co_Author_2__c</field>
+        <field>Co_Author_3__c</field>
+        <field>Co_Author_4__c</field>
+        <field>Co_Author_5__c</field>
+        <field>Co_Author_6__c</field>
+        <field>Co_Author_7__c</field>
+        <field>Co_Author_8__c</field>
+        <field>Co_Author_9__c</field>
+        <field>Co_Author_10__c</field>
     </approvalPageFields>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
         <assignedApprover>
             <approver>
-                <name>Communications_Coordinator__c</name>
+                <name>Approver_1__c</name>
                 <type>relatedUserField</type>
             </approver>
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
-        <label>Communications Check In</label>
-        <name>Communications_Check_In</name>
+        <label>Approver 1</label>
+        <name>Approver_1</name>
     </approvalStep>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
         <assignedApprover>
             <approver>
-                <name>First_Line_Supervisor__c</name>
-                <type>relatedUserField</type>
-            </approver>
-            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
-        </assignedApprover>
-        <label>First Line Supervisor</label>
-        <name>First_Line_Supervisor</name>
-        <rejectBehavior>
-            <type>RejectRequest</type>
-        </rejectBehavior>
-    </approvalStep>
-    <approvalStep>
-        <allowDelegate>false</allowDelegate>
-        <assignedApprover>
-            <approver>
-                <name>Organizational_Level_Director__c</name>
+                <name>Approver_2__c</name>
                 <type>relatedUserField</type>
             </approver>
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
         <entryCriteria>
             <criteriaItems>
-                <field>Forms__c.Product_Designation__c</field>
-                <operation>equals</operation>
-                <value>&quot;Level 1 (Influential Scientific Information (ISI), Highly Influential Scientific Assessment (HISA), or High Profile&quot;</value>
+                <field>Forms__c.Approver_2__c</field>
+                <operation>notEqual</operation>
             </criteriaItems>
         </entryCriteria>
-        <label>Organizational Level Director</label>
-        <name>Organizational_Level_Director</name>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>Approver 2</label>
+        <name>Approver_2</name>
         <rejectBehavior>
             <type>RejectRequest</type>
         </rejectBehavior>
     </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Approver_3__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Forms__c.Approver_3__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>Approver 3</label>
+        <name>Approver_3</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Approver_4__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Forms__c.Approver_4__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <label>Approver 4</label>
+        <name>Approver_4</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <emailTemplate>eClearance_Approval_Process_Templates/Approval_Requested</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
         <criteriaItems>
@@ -65,8 +112,24 @@
             <operation>equals</operation>
             <value>eClearance</value>
         </criteriaItems>
+        <criteriaItems>
+            <field>Forms__c.Approver_1__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
     </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>eClearance_Approval_Notification</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
     <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>eClearance_Rejection_Notification</name>
+            <type>Alert</type>
+        </action>
+    </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <label>eClearance Approval Process</label>
     <recordEditability>AdminOrCurrentApprover</recordEditability>
