@@ -457,6 +457,7 @@
         <fullName>All</fullName>
         <columns>NAME</columns>
         <columns>Submission_Number__c</columns>
+        <columns>Topic__c</columns>
         <columns>Topic_Name__c</columns>
         <columns>Commenter_Category__c</columns>
         <columns>Snippet_Status__c</columns>
@@ -464,9 +465,9 @@
         <columns>Response__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>RECORDTYPE</field>
+            <field>Topic__c</field>
             <operation>equals</operation>
-            <value>Snippet__c.Waters_of_the_US</value>
+            <value>7.0,7.1,7.2,7.3</value>
         </filters>
         <label>All Waters of the US</label>
     </listViews>
