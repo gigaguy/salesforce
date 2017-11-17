@@ -22,5 +22,12 @@
         <name>Questions__c</name>
         <relationshipLabel><!-- Question Responses --></relationshipLabel>
     </fields>
+    <layouts>
+        <layout>Question Repsonse Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>
