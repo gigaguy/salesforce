@@ -34,8 +34,8 @@
         	var hrefEmail = "David Ack";
         }
         else if (formName === "EPA-3160-6v5") {
-            var hrefInfo = "";
-        	var hrefEmail = "Bisa Cunningham";
+            var hrefInfo = "mailto:OHRLeaveQuestions@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+        	var hrefEmail = "OHRLeaveQuestions@epa.gov";
         }
         else if (formName === "EPA-PCOR") {
             var hrefInfo = "";
@@ -108,8 +108,8 @@
         	var hrefEmail = "David Ack";
         }
         else if (formName === "EPA-3160-6v5") {
-            var hrefInfo = "";
-        	var hrefEmail = "Bisa Cunningham";
+            var hrefInfo = "mailto:OHRLeaveQuestions@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+        	var hrefEmail = "OHRLeaveQuestions@epa.gov";
         }
         else if (formName === "EPA-PCOR") {
             var hrefInfo = "";
@@ -198,7 +198,12 @@
     },
     handleSave : function(component, event, helper){
 		console.log('in c.handleSave');
-        component.find("edit").getElement().scrollIntoView();   //this needs to be updated
+        
+        
+        if(component.get("v.testing") == true){   //this needs to be updated
+        	component.get("v.theModal").getElement().scrollIntoView(); 
+          }
+        else { component.find("edit").getElement().scrollIntoView(); } 
         
 	},
     saveStay : function(component, event, helper){ //this needs to go away
@@ -281,37 +286,41 @@
           catch (e) {
             console.log(e);
           }
- 
+ /*
         // Temporary checking for modals to allow submitting from new form or view form
-        var formID;
-        
-        console.log('modalName: '+component.get("v.modalName"));
-        if (component.get("v.modalName") == 'viewForm') {
-            formID = component.get("v.viewFormID"); }
-        else if (component.get("v.modalName") == 'reopenForm') {
-            formID = component.get("v.viewFormID"); }
-        else { formID = component.get("v.newForm.Id"); }
-        
-        var action = component.get("c.submitForApproval");
-        action.setParams({
-            "formID": formID,
-			"sID" : component.get("v.sessionID")
-        });
-        action.setCallback(this,function(resp){
-			console.log('in saveAndSubmit action');
-            var state = resp.getState();
-            console.log('state: ' +state);
-            if(state === 'SUCCESS'){
-                component.set("v.message", resp.getReturnValue());
-            }
-            else if(state === 'ERROR'){
-                var errors = resp.getError();
-                for(var i = 0 ;i < errors.length;i++){
-                    console.log(errors[i].message);
+        console.log('saveSuccessful: '+component.get("v.saveSuccessful"));
+        if(component.get("v.saveSuccessful")==true){   //stops submit if validation/req'd field error occurred
+        	var formID;
+            
+            console.log('modalName: '+component.get("v.modalName"));
+            if (component.get("v.modalName") == 'viewForm') {
+                formID = component.get("v.viewFormID"); }
+            else if (component.get("v.modalName") == 'reopenForm') {
+                formID = component.get("v.viewFormID"); }
+            else { formID = component.get("v.newForm.Id"); }
+            
+            var action = component.get("c.submitForApproval");
+            action.setParams({
+                "formID": formID,
+                "sID" : component.get("v.sessionID")
+            });
+            action.setCallback(this,function(resp){
+                console.log('in saveAndSubmit action');
+                var state = resp.getState();
+                console.log('state: ' +state);
+                if(state === 'SUCCESS'){
+                    component.set("v.message", resp.getReturnValue());
                 }
-            }
-        });
-        $A.enqueueAction(action);
+                else if(state === 'ERROR'){
+                    var errors = resp.getError();
+                    for(var i = 0 ;i < errors.length;i++){
+                        console.log(errors[i].message);
+                    }
+                }
+            });
+            $A.enqueueAction(action);
+    	}
+        
         // Needed to update display of forms, sets display to "viewMyForms" for feedback to user that it was submitted
         var action = component.get("c.findExistingForms");
         action.setParams({
@@ -332,7 +341,7 @@
                 }
             }
         });
-        $A.enqueueAction(action);
+        $A.enqueueAction(action);   */
 	},
 	openModal2: function(component, event, helper) {  
         console.log('in openModal2');
@@ -408,34 +417,44 @@
                 component.set("v.isOpen", false);        //this needs to go away
                 component.set("v.modalName", '');
                   console.log('modalName: '+component.get("v.modalName"));
-                component.set("v.message", "Form Saved | ");
             
             console.log('onSubmit: '+component.get("v.onSubmit"));
             if (component.get("v.onSubmit") == false){
+                component.set("v.message", "Form Saved | ");
                 var a = component.get('c.createReopenModal');  //this needs to CHANGE
                 $A.enqueueAction(a);
               }
+            else if(component.get("V.onSubmit") == true){
+                    var a = component.get('c.approvalSubmit');  
+                	$A.enqueueAction(a);
+                }
             }
          }
         else{
             console.log('in testing mode');
             console.log('safeSave: '+component.get("v.safeSave"));
             if(component.get("v.safeSave")!=true){
-                console.log('modalName: '+component.get("v.modalName"));
-                component.set("v.message", "Form Saved | ");
+                console.log('modalName: '+component.get("v.modalName"));                
             
             console.log('onSubmit: '+component.get("v.onSubmit"));
             if (component.get("v.onSubmit") == false){
+                component.set("v.message", "Form Saved | ");
                 component.set("v.isNew", false);
                 component.set("v.isCopy", false);
+                component.set("v.message", "Form Saved | ");
                 
                 var a = component.get('c.newCreateModal');  //this needs to CHANGE
                 $A.enqueueAction(a);
               }
+                else if(component.get("V.onSubmit") == true){
+                    var a = component.get('c.approvalSubmit');  
+                	$A.enqueueAction(a);
+                }
             }
          }
         
         component.set("v.safeSave", false);
+        
 	},
     cancelCreationModal : function(component, event, helper){
     	console.log('in cancelCreationModal'); 
@@ -744,8 +763,8 @@
         	var hrefEmail = "David Ack";
         }
         else if (formName === "EPA-3160-6v5") {
-            var hrefInfo = "";
-        	var hrefEmail = "Bisa Cunningham";
+            var hrefInfo = "mailto:OHRLeaveQuestions@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+        	var hrefEmail = "OHRLeaveQuestions@epa.gov";
         }
         else if (formName === "EPA-PCOR") {
             var hrefInfo = "";
@@ -835,8 +854,8 @@
         	var hrefEmail = "David Ack";
         }
         else if (formName === "EPA-3160-6v5") {
-            var hrefInfo = "";
-        	var hrefEmail = "Bisa Cunningham";
+            var hrefInfo = "mailto:OHRLeaveQuestions@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+        	var hrefEmail = "OHRLeaveQuestions@epa.gov";
         }
         else if (formName === "EPA-PCOR") {
             var hrefInfo = "";
@@ -971,15 +990,17 @@
         component.set("v.onSubmit", true);
         component.set("v.isCopy", false);
         
+        
         //Save the form
         try {
             component.get("v.theModal").get("e.recordSave").fire();
-            console.log('no error 2');
+            console.log('no error');
      	  	}
           catch (e) {
             console.log(e);
           }
- 
+
+/*        
         // Submit for Approval
         var formID = component.get("v.viewFormID"); 
         console.log('formID: '+formID);
@@ -1029,7 +1050,7 @@
         
         var a = component.get("c.closeModal");
         $A.enqueueAction(a);
-        
+ */       
 	},
     newViewFormJS : function(component, event, helper){				//this needs to be renamed
         console.log('in newViewFormJS');
@@ -1219,6 +1240,66 @@
         });
         $A.enqueueAction(action);     
         
-   }
+   },
+    approvalSubmit : function(component, event, helper) {
+		console.log('in approvalSubmit');
+
+        	var formID;
+   /*         
+            console.log('modalName: '+component.get("v.modalName"));
+            if (component.get("v.modalName") == 'viewForm') {
+                formID = component.get("v.viewFormID"); }
+            else if (component.get("v.modalName") == 'reopenForm') {
+                formID = component.get("v.viewFormID"); }
+            else { formID = component.get("v.newForm.Id"); }
+   */
+        formID = component.get("v.viewFormID");
+        console.log('formID: '+ formID);
+        
+            var action = component.get("c.submitForApproval");
+            action.setParams({
+                "formID": formID,
+                "sID" : component.get("v.sessionID")
+            });
+            action.setCallback(this,function(resp){
+                console.log('in approvalSubmit action');
+                var state = resp.getState();
+                console.log('state: ' +state);
+                if(state === 'SUCCESS'){
+                    component.set("v.message", resp.getReturnValue());
+                    component.set("v.modalName", '');
+                    component.set("v.onSubmit", false)
+                }
+                else if(state === 'ERROR'){
+                    var errors = resp.getError();
+                    for(var i = 0 ;i < errors.length;i++){
+                        console.log(errors[i].message);
+                    }
+                }
+            });
+            $A.enqueueAction(action);  	
+        
+        // Needed to update display of forms, sets display to "viewMyForms" for feedback to user that it was submitted
+        var action = component.get("c.findExistingForms");
+        action.setParams({
+			"sID" : component.get("v.sessionID")
+        });
+        action.setCallback(this,function(resp){
+			console.log('in approvalSubmit action2');
+            var state = resp.getState();
+            console.log('state: ' +state);
+            if(state === 'SUCCESS'){
+                component.set("v.oldForms", resp.getReturnValue());
+                component.set("v.pageStatus", "viewMyForms");
+            }
+            else if(state === 'ERROR'){
+                var errors = resp.getError();
+                for(var i = 0 ;i < errors.length;i++){
+                    console.log(errors[i].message);
+                }
+            }
+        });
+        $A.enqueueAction(action);
+    }
     
 })

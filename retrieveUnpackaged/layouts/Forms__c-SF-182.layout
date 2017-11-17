@@ -33,18 +33,25 @@
         <label>Approval Options</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>of_Approval_Supervisors__c</field>
+                <emptySpace>true</emptySpace>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Escalate_to_Chief_Learning_Officer__c</field>
+                <behavior>Required</behavior>
+                <field>of_Approval_Supervisors__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Training_Officer_List_For_Reference__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Required</behavior>
                 <field>Approval_Routing_Options__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Escalate_to_Chief_Learning_Officer__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -119,7 +126,7 @@
         <label>Section A - Spacer 1</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Organization_Mailing_Address__c</field>
             </layoutItems>
         </layoutColumns>
@@ -136,11 +143,11 @@
                 <field>Position_Title__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Position_Level__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Type_of_Appointment__c</field>
             </layoutItems>
         </layoutColumns>
@@ -188,15 +195,15 @@
         <label>Section B - TRAINEE COURSE DATA</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Name_and_Address_of_Vendor__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Vendor_Telephone_Number__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Course_Title__c</field>
             </layoutItems>
             <layoutItems>
@@ -204,7 +211,7 @@
                 <field>Course_Number_Code__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Training_Duty_Hour__c</field>
             </layoutItems>
             <layoutItems>
@@ -212,37 +219,37 @@
                 <field>Training_Non_Duty_Hours__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Training_Delivery_Type_Code__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Training_Designation_Type_Code__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Training_Credit__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Training_Credit_Type_Code__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Training_Source_Type_Code__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Training_Objective__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Location_of_Training_Site__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Vendor_Email_Address__c</field>
             </layoutItems>
             <layoutItems>
@@ -254,22 +261,22 @@
                 <field>Training_End_Date__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Training_Purpose_Type__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Training_Type_Code__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Training_Sub_Type_Code__c</field>
             </layoutItems>
             <layoutItems>
                 <emptySpace>true</emptySpace>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Training_Accreditation_Indicator__c</field>
             </layoutItems>
             <layoutItems>
@@ -290,6 +297,10 @@
         <label>Section C - COST AND BILLING INFORMATION</label>
         <layoutColumns>
             <layoutItems>
+                <behavior>Required</behavior>
+                <field>Direct_Appropriation_Fund__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Tuition_and_Fees__c</field>
             </layoutItems>
@@ -300,10 +311,6 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Direct_Cost_Total__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Direct_Appropriation_Fund__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -321,6 +328,10 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Indirect_Appropriation_Fund__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Per_diem__c</field>
             </layoutItems>
             <layoutItems>
@@ -329,10 +340,6 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Indirect_Total__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Indirect_Appropriation_Fund__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

@@ -966,15 +966,15 @@
         <name>EPA_Form_3110_1__c</name>
     </fields>
     <fields>
-        <label><!-- E. Description --></label>
-        <name>E_Description__c</name>
-    </fields>
-    <fields>
         <label><!-- E. Hours Donated --></label>
         <name>E_Hours_Donated__c</name>
     </fields>
     <fields>
-        <label><!-- Description &quot;E&quot; Applies --></label>
+        <label><!-- E. Use or Lose --></label>
+        <name>E_Use_or_Lose__c</name>
+    </fields>
+    <fields>
+        <label><!-- &quot;E. Use or Lose&quot; Applies --></label>
         <name>E__c</name>
     </fields>
     <fields>
@@ -1113,11 +1113,11 @@
         <relationshipLabel><!-- Forms (FCO) --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- F. Description --></label>
-        <name>F_Description__c</name>
+        <label><!-- F. Withdraw --></label>
+        <name>F_Withdraw__c</name>
     </fields>
     <fields>
-        <label><!-- Description &quot;F&quot; Applies --></label>
+        <label><!-- &quot;F. Withdraw&quot; Applies --></label>
         <name>F__c</name>
     </fields>
     <fields>
@@ -1583,11 +1583,11 @@
         <name>NOTICE_TO_EMPLOYEE__c</name>
     </fields>
     <fields>
-        <label><!-- Name --></label>
+        <label><!-- First/Last Name --></label>
         <name>Name__c</name>
     </fields>
     <fields>
-        <label><!-- Name and Address of Vendor --></label>
+        <label><!-- Name and Mailing Address of Vendor --></label>
         <name>Name_and_Address_of_Vendor__c</name>
     </fields>
     <fields>
@@ -2159,7 +2159,7 @@
         <name>Position_Title__c</name>
     </fields>
     <fields>
-        <label><!-- Prepare Form for: --></label>
+        <label><!-- Prepare Form As Person Other Than Self --></label>
         <name>Prepare_Form_for__c</name>
         <relationshipLabel><!-- Forms (Prepare Form for:) --></relationshipLabel>
     </fields>
@@ -2355,7 +2355,7 @@
         <name>Recipient_Employee_ID_No__c</name>
     </fields>
     <fields>
-        <label><!-- Name --></label>
+        <label><!-- Recipient Name --></label>
         <name>Recipient_Name__c</name>
     </fields>
     <fields>
@@ -2408,6 +2408,10 @@
         <picklistValues>
             <masterLabel>Resubmission</masterLabel>
             <translation><!-- Resubmission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawal</masterLabel>
+            <translation><!-- Withdrawal --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -2821,6 +2825,10 @@
     <fields>
         <label><!-- Training Objective --></label>
         <name>Training_Objective__c</name>
+    </fields>
+    <fields>
+        <label><!-- Training Officer List For Reference --></label>
+        <name>Training_Officer_List_For_Reference__c</name>
     </fields>
     <fields>
         <label><!-- Training Purpose Type --></label>
@@ -3541,12 +3549,20 @@
             <section>Leave Bank Election Form - General Instructions</section>
         </sections>
         <sections>
-            <label><!-- Leave Recipient Information --></label>
-            <section>Leave Recipient Information</section>
+            <label><!-- Leave Recipient Information (Donated to a Specific Person) --></label>
+            <section>Leave Recipient Information (Donated to a Specific Person)</section>
         </sections>
         <sections>
             <label><!-- Sig Section (title not shown) --></label>
             <section>Sig Section (title not shown)</section>
+        </sections>
+        <sections>
+            <label><!-- Type of Contribution Spacer --></label>
+            <section>Type of Contribution Spacer</section>
+        </sections>
+        <sections>
+            <label><!-- Type of Contribution Spacer 1 --></label>
+            <section>Type of Contribution Spacer 1</section>
         </sections>
     </layouts>
     <layouts>
@@ -3621,6 +3637,10 @@
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Form Approval Routing --></label>
+            <section>Form Approval Routing</section>
         </sections>
         <sections>
             <label><!-- I. Type of Action --></label>

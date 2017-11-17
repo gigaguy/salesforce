@@ -1714,13 +1714,13 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.E_Description__c</field>
+        <editable>true</editable>
+        <field>Forms__c.E_Hours_Donated__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Forms__c.E_Hours_Donated__c</field>
+        <editable>false</editable>
+        <field>Forms__c.E_Use_or_Lose__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1820,7 +1820,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Forms__c.F_Description__c</field>
+        <field>Forms__c.F_Withdraw__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3196,6 +3196,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.Training_Objective__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forms__c.Training_Officer_List_For_Reference__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
