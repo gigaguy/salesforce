@@ -46,7 +46,7 @@ public class UtilityMethods {
         return sessionID; 
     }
     
-    // 9/21/2017 - Larry Spackman - Disabled for deployment to Production because HeaderLogs custom object not being deployed
+    // 2017/09/21 - Larry Spackman - Disabled for deployment to Production because HeaderLogs custom object not being deployed
      /*
     public static void logHeaders() {
     // Collects header info sent from WAM

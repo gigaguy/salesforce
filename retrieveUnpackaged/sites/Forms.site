@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomSite xmlns="http://soap.sforce.com/2006/04/metadata">
     <active>true</active>
-    <allowHomePage>true</allowHomePage>
-    <allowStandardAnswersPages>true</allowStandardAnswersPages>
-    <allowStandardIdeasPages>true</allowStandardIdeasPages>
+    <allowHomePage>false</allowHomePage>
+    <allowStandardAnswersPages>false</allowStandardAnswersPages>
+    <allowStandardIdeasPages>false</allowStandardIdeasPages>
     <allowStandardLookups>true</allowStandardLookups>
-    <allowStandardSearch>true</allowStandardSearch>
+    <allowStandardSearch>false</allowStandardSearch>
     <authorizationRequiredPage>Unauthorized</authorizationRequiredPage>
     <bandwidthExceededPage>BandwidthExceeded</bandwidthExceededPage>
     <clickjackProtectionLevel>AllowAllFraming</clickjackProtectionLevel>
@@ -18,6 +18,42 @@
     <requireHttps>true</requireHttps>
     <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
     <siteAdmin>lspackman@innovateteam.com</siteAdmin>
+    <siteRedirectMappings>
+        <action>Temporary</action>
+        <isActive>false</isActive>
+        <source>/servlet</source>
+        <target>https://oeiodsta-oeiodstadev.cs33.force.com</target>
+    </siteRedirectMappings>
+    <siteRedirectMappings>
+        <action>Temporary</action>
+        <isActive>false</isActive>
+        <source>/servlet/%</source>
+        <target>https://oeiodsta-oeiodstadev.cs33.force.com</target>
+    </siteRedirectMappings>
+    <siteRedirectMappings>
+        <action>Temporary</action>
+        <isActive>false</isActive>
+        <source>/servlet/servlet</source>
+        <target>https://oeiodsta-oeiodstadev.cs33.force.com</target>
+    </siteRedirectMappings>
+    <siteRedirectMappings>
+        <action>Temporary</action>
+        <isActive>false</isActive>
+        <source>/servlet/servlet.</source>
+        <target>https://oeiodsta-oeiodstadev.cs33.force.com</target>
+    </siteRedirectMappings>
+    <siteRedirectMappings>
+        <action>Temporary</action>
+        <isActive>false</isActive>
+        <source>/servlet/servlet.FileDownload</source>
+        <target>https://oeiodsta-oeiodstadev.cs33.force.com</target>
+    </siteRedirectMappings>
+    <siteRedirectMappings>
+        <action>Temporary</action>
+        <isActive>false</isActive>
+        <source>/servlet/servlet.FileDownload?</source>
+        <target>https://oeiodsta-oeiodstadev.cs33.force.com</target>
+    </siteRedirectMappings>
     <siteType>Visualforce</siteType>
     <subdomain>oeiodstadev</subdomain>
 </CustomSite>

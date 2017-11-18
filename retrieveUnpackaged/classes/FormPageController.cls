@@ -1,4 +1,4 @@
-public class FormPageController {
+public without sharing class FormPageController  {
     @auraEnabled
     public static List<RecordType> getFormRTs(string sID){
         //query for permissionsetassignments for this user
@@ -205,6 +205,13 @@ public class FormPageController {
         a.Body = EncodingUtil.base64Decode(existingBody + base64Data);
  
         update a;
+    }
+     
+     @AuraEnabled
+    public static List<ContentDocument> getListOfAttachments2(String formID) {        
+   //     return [select id, Name, CreatedDate from Attachment where parentID = :formID order by CreatedDate DESC];  
+        ContentDocumentLink x = [SELECT ContentDocumentId FROM ContentDocumentLink WHERE LinkedEntityId = :formID];  
+        return [SELECT id, Title, CreatedDate from ContentDocument where Id = :x.ContentDocumentId];    
     }
      
 }

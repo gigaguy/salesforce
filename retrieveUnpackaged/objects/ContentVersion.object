@@ -24,6 +24,18 @@
         <fullName>FileType</fullName>
     </fields>
     <fields>
+        <fullName>Form__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Form</label>
+        <referenceTo>Forms__c</referenceTo>
+        <relationshipLabel>Files</relationshipLabel>
+        <relationshipName>Content_Versions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>IsAssetEnabled</fullName>
     </fields>
     <fields>

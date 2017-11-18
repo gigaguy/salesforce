@@ -75,7 +75,6 @@
             if(state === 'SUCCESS'){
                 component.set("v.newForm", resp.getReturnValue());
                 component.set("v.viewFormID", component.get("v.newForm.Id"));
-          //      component.set("v.parentId", component.get("v.newForm.Id"));
                 
                 helper.hide(component,event);
             }
@@ -132,7 +131,7 @@
        	 	var hrefEmail = "McNeal.Detha@epa.gov";
         }
         component.set("v.viewFormID", formID);
-     //   component.set("v.parentId", formID);
+     
         console.log('formID: ' + formID);
         component.set("v.modalName", "viewForm");
           console.log('modalName: '+component.get("v.modalName"));
@@ -246,7 +245,7 @@
             console.log(e);
           }
         
-        // Needed to update display of forms, sets display to "viewMyForms" for feedback to user that it was saved
+        // Update display of forms, sets display to "viewMyForms" for feedback to user that it was saved
         var action = component.get("c.findExistingForms");
         action.setParams({
 			"sID" : component.get("v.sessionID")
@@ -286,62 +285,6 @@
           catch (e) {
             console.log(e);
           }
- /*
-        // Temporary checking for modals to allow submitting from new form or view form
-        console.log('saveSuccessful: '+component.get("v.saveSuccessful"));
-        if(component.get("v.saveSuccessful")==true){   //stops submit if validation/req'd field error occurred
-        	var formID;
-            
-            console.log('modalName: '+component.get("v.modalName"));
-            if (component.get("v.modalName") == 'viewForm') {
-                formID = component.get("v.viewFormID"); }
-            else if (component.get("v.modalName") == 'reopenForm') {
-                formID = component.get("v.viewFormID"); }
-            else { formID = component.get("v.newForm.Id"); }
-            
-            var action = component.get("c.submitForApproval");
-            action.setParams({
-                "formID": formID,
-                "sID" : component.get("v.sessionID")
-            });
-            action.setCallback(this,function(resp){
-                console.log('in saveAndSubmit action');
-                var state = resp.getState();
-                console.log('state: ' +state);
-                if(state === 'SUCCESS'){
-                    component.set("v.message", resp.getReturnValue());
-                }
-                else if(state === 'ERROR'){
-                    var errors = resp.getError();
-                    for(var i = 0 ;i < errors.length;i++){
-                        console.log(errors[i].message);
-                    }
-                }
-            });
-            $A.enqueueAction(action);
-    	}
-        
-        // Needed to update display of forms, sets display to "viewMyForms" for feedback to user that it was submitted
-        var action = component.get("c.findExistingForms");
-        action.setParams({
-			"sID" : component.get("v.sessionID")
-        });
-        action.setCallback(this,function(resp){
-			console.log('in saveAndSubmit action2');
-            var state = resp.getState();
-            console.log('state: ' +state);
-            if(state === 'SUCCESS'){
-                component.set("v.oldForms", resp.getReturnValue());
-                component.set("v.pageStatus", "viewMyForms");
-            }
-            else if(state === 'ERROR'){
-                var errors = resp.getError();
-                for(var i = 0 ;i < errors.length;i++){
-                    console.log(errors[i].message);
-                }
-            }
-        });
-        $A.enqueueAction(action);   */
 	},
 	openModal2: function(component, event, helper) {  
         console.log('in openModal2');
@@ -522,7 +465,8 @@
         action.setParams({
 			"sID" : component.get("v.sessionID")
         });
-        // Needed to update display of forms
+        
+        // Update display of forms
         var action = component.get("c.findExistingForms");
         action.setParams({
 			"sID" : component.get("v.sessionID")
@@ -657,7 +601,6 @@
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
-                component.set("v.message", resp.getReturnValue());
                 helper.getAttachList(component, formID);
             }
             else if(state === 'ERROR'){
@@ -700,13 +643,12 @@
         
         var formID = component.get("v.viewFormID");
         console.log('formID: ' + formID);
-	//	component.set("v.parentId", formID);
+
         component.set("v.fileName", "No File Selected..");
         component.set("v.largeFile", false);
         component.set("v.onSubmit", false);
         component.set("v.viewFormID", formID);
- //       component.set("v.hasAttachments", false);
- //       component.set("v.addAttachments", false);
+
         helper.show(component,event);
         var action = component.get("c.viewForm");
         action.setParams({
@@ -843,8 +785,6 @@
 		var formName = component.get("v.viewFormName");        
         console.log('formName: ' + formName);
         
-        if (isNew==true) {   // start creating new form
-            component.set("v.message", null);
         if (formName === "BAP Provisioning") {
             var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
         	var hrefEmail = "BAP_Admins@epa.gov";
@@ -883,6 +823,8 @@
         component.set("v.largeFile", false);    
             
         helper.show(component,event);
+        if (isNew==true) {   // start creating new form
+            component.set("v.message", null);
 		var action = component.get("c.insertNewForms");
         action.setParams({
 			"sID" : component.get("v.sessionID"),
@@ -940,11 +882,8 @@
                 var state = resp.getState();
                 console.log('state: ' +state);
                 if(state === 'SUCCESS'){
-       //             component.set("v.newForm", resp.getReturnValue());
-       //             component.set("v.viewFormID", component.get("v.newForm.Id"));
-       //             formID = component.get("v.newForm.Id");
                     console.log('formID: '+formID);
-                    
+                    component.set("v.newForm", resp.getReturnValue());
                     $A.createComponent('force:recordEdit',
                       {
                         'aura:id': 'theModal',
@@ -989,8 +928,7 @@
         console.log('in newSaveAndSubmit');
         component.set("v.onSubmit", true);
         component.set("v.isCopy", false);
-        
-        
+               
         //Save the form
         try {
             component.get("v.theModal").get("e.recordSave").fire();
@@ -998,59 +936,7 @@
      	  	}
           catch (e) {
             console.log(e);
-          }
-
-/*        
-        // Submit for Approval
-        var formID = component.get("v.viewFormID"); 
-        console.log('formID: '+formID);
-        var action = component.get("c.submitForApproval");
-        action.setParams({
-            "formID": formID,
-			"sID" : component.get("v.sessionID")
-        });
-        action.setCallback(this,function(resp){
-			console.log('in newSaveAndSubmit action');
-            var state = resp.getState();
-            console.log('state: ' +state);
-            if(state === 'SUCCESS'){
-                component.set("v.message", resp.getReturnValue());
-            }
-            else if(state === 'ERROR'){
-                var errors = resp.getError();
-                for(var i = 0 ;i < errors.length;i++){
-                    console.log(errors[i].message);
-                }
-            }
-        });
-        $A.enqueueAction(action);
-        
-        // Update display of forms, sets display to "viewMyForms" for feedback to user that it was submitted
-        var action = component.get("c.findExistingForms");
-        action.setParams({
-			"sID" : component.get("v.sessionID")
-        });
-        action.setCallback(this,function(resp){
-			console.log('in action');
-            var state = resp.getState();
-            console.log('state: ' +state);
-            if(state === 'SUCCESS'){
-                component.set("v.oldForms", resp.getReturnValue());
-                component.set("v.pageStatus", "viewMyForms");
-                
-            }
-            else if(state === 'ERROR'){
-                var errors = resp.getError();
-                for(var i = 0 ;i < errors.length;i++){
-                    console.log(errors[i].message);
-                }
-            }
-        });
-        $A.enqueueAction(action);
-        
-        var a = component.get("c.closeModal");
-        $A.enqueueAction(a);
- */       
+          }   
 	},
     newViewFormJS : function(component, event, helper){				//this needs to be renamed
         console.log('in newViewFormJS');
@@ -1131,7 +1017,6 @@
                                name:'fileUp',
                                label:'Upload Attachment', 
                                multiple:'false',
-                           //    files:"{!v.uploadFiles}"
                            },
                                function(fileUp) {
                                component.set("v.fileUp", fileUp);
@@ -1161,35 +1046,6 @@
         console.log('in confirmCloseModal');
         
 		var resp = confirm("Are you sure you want to close this form?\nYou will lose any unsaved changes.");
- /*       var action;
-        var formID = component.get("v.viewFormID");
-        console.log('formID: '+formID);
-        
-        if(resp === true){
-            console.log('modalName: '+component.get("v.modalName"));
-            component.set("v.safeSave", true);
-            try {
-                if (component.get("v.modalName") != 'reopenForm'){
-                component.find("edit").get("e.recordSave").fire();
-                    console.log('no error 1');
-                   }
-                else if (component.get("v.modalName") == 'reopenForm'){
-                component.get("v.edit2").get("e.recordSave").fire();
-                    console.log('no error 2');
-                   }    
-                }
-              catch (e) {
-                console.log(e);
-              }
-            action = component.get("c.closeModal");
-            action.setParams({
-            "formID": formID,
-        });
-        	}
-        else {action = component.get("c.closeModal");
-            action.setParams({"formID": formID,});                       
-        }
-        $A.enqueueAction(action);  */
         
         if(resp === true){
             var a = component.get("c.closeModal");
@@ -1209,9 +1065,7 @@
         var formName = event.currentTarget.name;
         console.log('form being copied ID: '+formID);
         component.set("v.message", null);
-       
-    //    component.set("v.selectedFormId", formID);
-    //    component.set("v.selectedFormName", formName);
+
         component.set("v.viewFormName", formName);
         
 		var action = component.get("c.cloneForm");
@@ -1241,20 +1095,11 @@
         $A.enqueueAction(action);     
         
    },
-    approvalSubmit : function(component, event, helper) {
+   approvalSubmit : function(component, event, helper) {
 		console.log('in approvalSubmit');
 
-        	var formID;
-   /*         
-            console.log('modalName: '+component.get("v.modalName"));
-            if (component.get("v.modalName") == 'viewForm') {
-                formID = component.get("v.viewFormID"); }
-            else if (component.get("v.modalName") == 'reopenForm') {
-                formID = component.get("v.viewFormID"); }
-            else { formID = component.get("v.newForm.Id"); }
-   */
-        formID = component.get("v.viewFormID");
-        console.log('formID: '+ formID);
+        	var formID = component.get("v.viewFormID");
+        	console.log('formID: '+ formID);
         
             var action = component.get("c.submitForApproval");
             action.setParams({
@@ -1279,7 +1124,7 @@
             });
             $A.enqueueAction(action);  	
         
-        // Needed to update display of forms, sets display to "viewMyForms" for feedback to user that it was submitted
+        // Update display of forms, sets display to "viewMyForms" for feedback to user that it was submitted
         var action = component.get("c.findExistingForms");
         action.setParams({
 			"sID" : component.get("v.sessionID")

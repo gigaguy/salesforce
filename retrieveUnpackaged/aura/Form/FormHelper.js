@@ -67,8 +67,9 @@
 		console.log('in helper.getAttachList');
         
         console.log('formID: ' + formID);     
-        var action = component.get("c.getListOfAttachments");
-       		action.setParams({
+    //    var action = component.get("c.getListOfAttachments2"); //File Testing
+       		var action = component.get("c.getListOfAttachments");
+        	action.setParams({
 			"formID" : formID
         });
         action.setCallback(this, function(response){

@@ -45,7 +45,7 @@ public class AuthLanding {
         // Log Header & Parameters
         UtilityMethods.logHeaders();
         // End Log Header & Parameters
-		*/   
+        */   
         
         // If user identification is present
         if (UID != '') {
