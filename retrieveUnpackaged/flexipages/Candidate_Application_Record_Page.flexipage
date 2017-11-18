@@ -16,11 +16,17 @@
         <componentInstances>
             <componentName>force:detailPanel</componentName>
         </componentInstances>
-        <mode>Replace</mode>
-        <name>main</name>
-        <type>Region</type>
+        <name>facet-0ae55b99-7cf1-4feb-8351-0e4acd33474b</name>
+        <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>relatedListComponentOverride</name>
+                <value>NONE</value>
+            </componentInstanceProperties>
+            <componentName>force:relatedListContainer</componentName>
+        </componentInstances>
         <componentInstances>
             <componentInstanceProperties>
                 <name>parentFieldApiName</name>
@@ -36,13 +42,56 @@
             </componentInstanceProperties>
             <componentName>force:relatedListSingleContainer</componentName>
         </componentInstances>
+        <name>facet-06a0c270-83ee-4ff8-af40-0f618003d10b</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <componentInstances>
             <componentInstanceProperties>
-                <name>relatedListComponentOverride</name>
-                <value>NONE</value>
+                <name>active</name>
+                <value>true</value>
             </componentInstanceProperties>
-            <componentName>force:relatedListContainer</componentName>
+            <componentInstanceProperties>
+                <name>body</name>
+                <value>facet-0ae55b99-7cf1-4feb-8351-0e4acd33474b</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>title</name>
+                <value>Standard.Tab.detail</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:tab</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>active</name>
+                <value>false</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>body</name>
+                <value>facet-06a0c270-83ee-4ff8-af40-0f618003d10b</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>title</name>
+                <value>Standard.Tab.relatedLists</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:tab</componentName>
+        </componentInstances>
+        <name>facet-5040dbcf-0e5b-4b0e-832e-2ed970812add</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>tabs</name>
+                <value>facet-5040dbcf-0e5b-4b0e-832e-2ed970812add</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:tabset</componentName>
+        </componentInstances>
+        <mode>Replace</mode>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <mode>Replace</mode>
         <name>sidebar</name>
         <type>Region</type>
