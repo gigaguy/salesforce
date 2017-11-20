@@ -195,6 +195,26 @@
         });
         // enqueue the action
         $A.enqueueAction(action);
+    },
+    setSiteUserID : function(component) {             
+        var action = component.get("c.getSiteUserID");
+        action.setCallback(this, function(response){
+            var name = response.getState();
+            if (name === "SUCCESS") {
+                component.set("v.siteUserID", response.getReturnValue());
+            }
+        });
+     $A.enqueueAction(action);
+    },
+    setAPIUserID : function(component) {             
+        var action = component.get("c.getAPIUserID");
+        action.setCallback(this, function(response){
+            var name = response.getState();
+            if (name === "SUCCESS") {
+                component.set("v.apiUserID", response.getReturnValue());
+            }
+        });
+     $A.enqueueAction(action);
     }
     
 })

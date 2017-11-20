@@ -6,7 +6,7 @@ global class FormsTypeOneExpireSession {
         List<String> formIDs = new List<String>();
         List<Forms__Share> formShares = new List<Forms__Share>();
         // Set the threshold for an expired session in hours, setting to zero for testing
-        datetime expiredDateTime = System.now().addHours(0);
+        datetime expiredDateTime = System.now().addHours(-6);
         // Query all users whose type-1 session is older than expired threshold
     	users = [SELECT Id, Session_Timestamp__c
                 FROM User 

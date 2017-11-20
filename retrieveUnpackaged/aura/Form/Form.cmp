@@ -25,6 +25,8 @@
     <aura:attribute name="message" type="string" />
     <aura:attribute name="currentUser" type="Id"/>
     <aura:attribute name="sessionID" type="string"/>
+    <aura:attribute name="siteUserID" type="string"/>
+    <aura:attribute name="apiUserID" type="string"/>
     <aura:attribute name="hasAttachments" type="boolean" default="false"/>
     <aura:attribute name="addAttachments" type="boolean" default="false"/>
     <aura:attribute name="attachList" type="Attachment[]"/>
@@ -43,7 +45,7 @@
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
     <aura:handler name="recordSave" event="force:recordSave" action="{!c.handleSave}" />
 	<lightning:spinner aura:id="mySpinner" alternativeText="Uploading Attachment" class="slds-hide slds-is-fixed"/>
-    
+
     <!-- Header-->
     <p style="margin-bottom: 35px; font-size: 125%;">
         <aura:if isTrue="{!v.pageStatus == 'viewFormTypes'}">

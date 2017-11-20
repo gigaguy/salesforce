@@ -3,7 +3,8 @@ public class initSession {
     public id uID {get;set;}
     public map<string, string> headers;
     public map<string, string> params;
-
+	public string siteUserID {get;set;}
+    
     private user u;
 
     public initSession(){
@@ -41,8 +42,8 @@ public class initSession {
                 
                 update u;
                 
-                // LS 2017/11/17: Temporary method to share records with Forms Site Guest User
-                shareRecords(u);
+                // LS 2017/11/17: Temporary method to share all records with Forms Site Guest User for this logging in type-1 user
+                //shareRecords(u);
                 
                 // Redirect user to the form page with the new session ID set
                 //PageReference newPR = new PageReference('https://oeiodsta-oeiodstadev.cs33.force.com/FormPage');
@@ -73,11 +74,13 @@ public class initSession {
         // If this user has already existing forms, share each with Forms Site Guest User with read/write access. Using hard-coded ID for testing for this user of "00535000000UUHc".
         // In the future, will need to add querying for the actual user ID of Forms Site Guest User dynamically.
         if (forms.size() > 0) {
+            // Query and set ID of force.com site user
+            siteUserID = UtilityMethods.getAnyUserID('Forms', 'Site Guest User');
             for (forms__c form : forms) {
                 formIDs.add(form.Id);
             } // End for
             for (Integer i = 0; i < formIds.size();i++) {
-            	formShares.add(new Forms__Share(ParentID = formIds[i], UserorGroupID = '00535000000UUHc', AccessLevel = 'edit'));
+            	formShares.add(new Forms__Share(ParentID = formIds[i], UserorGroupID = siteUserID, AccessLevel = 'edit'));
       		}
         	database.insert(formShares, false);
         } // End if

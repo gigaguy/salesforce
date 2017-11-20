@@ -1,5 +1,5 @@
 public without sharing class FormPageController  {
-    @auraEnabled
+    @AuraEnabled
     public static List<RecordType> getFormRTs(string sID){
         //query for permissionsetassignments for this user
         User u = [select id, Name, Supervisor__c from User where Session_Token__c = :sID];
@@ -34,14 +34,14 @@ public without sharing class FormPageController  {
     }
     
     @AuraEnabled
-    public static Forms__c viewForm(string formID){
+    public static Forms__c viewForm(string formID, string siteUserID) {
+        UtilityMethods.addFormShare(formID, siteUserID);
         forms__c form = [select id, name, Approval_step__c, SF_182_Prepare_For_checker__c from Forms__c where id = :formID limit 1];
-     return form;
-        
+     	return form;
     }
     
     @AuraEnabled
-    public static Forms__c insertNewForms(string sID, string rtID){
+    public static Forms__c insertNewForms(string sID, string rtID, string siteUserID, string apiUserID){
         system.debug('Starting insertNewForms');
         string rtName = [select id, developerName from recordtype where id = :rtID limit 1].developerName;
         Forms__c existingForm;
@@ -62,7 +62,11 @@ public without sharing class FormPageController  {
                 if(rtName != 'SF_182') nf.put('User_Supervisor__c', u.Supervisor__c);
                 nf.put('RecordTypeId', rtID);
                 nf.put('Quantity__c', 1);
+                // LS 2017/11/19: Set Owner to "API" user
+                nf.put('OwnerId', apiUserID);
                 insert nf;
+                // LS 2017/11/19: Add FormShare for force.com site user to new form record
+                UtilityMethods.addFormShare(String.ValueOf(nf.Id), siteUserID);
                 System.debug('newForms'+nf);
                 return nf;
             }
@@ -207,11 +211,26 @@ public without sharing class FormPageController  {
         update a;
     }
      
-     @AuraEnabled
+    @AuraEnabled
     public static List<ContentDocument> getListOfAttachments2(String formID) {        
    //     return [select id, Name, CreatedDate from Attachment where parentID = :formID order by CreatedDate DESC];  
         ContentDocumentLink x = [SELECT ContentDocumentId FROM ContentDocumentLink WHERE LinkedEntityId = :formID];  
         return [SELECT id, Title, CreatedDate from ContentDocument where Id = :x.ContentDocumentId];    
+    }
+    
+    @AuraEnabled
+    public static string getSiteUserID() {
+        return UtilityMethods.getAnyUserID('Forms', 'Site Guest User');
+    }
+    
+    @AuraEnabled
+    public static string getAPIUserID() {
+        return UtilityMethods.getAnyUserID('EPA Business Automation Platform', 'User');
+    }
+    
+    @AuraEnabled
+    public static void removeFormShare(string formID, string siteUserID) {
+        UtilityMethods.removeFormShare(formID, siteUserID);
     }
      
 }

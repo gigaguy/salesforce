@@ -1,6 +1,6 @@
 ({
-    doInit : function(component, event, helper) {             
-              var action = component.get("c.getFormRTs");
+    doInit : function(component, event, helper) {
+        var action = component.get("c.getFormRTs");
         action.setParams({
 			"sID" : component.get("v.sessionID"),
         });
@@ -10,14 +10,17 @@
                 component.set("v.forms", response.getReturnValue());
             }
         });
-     $A.enqueueAction(action);
+        $A.enqueueAction(action);
         helper.getFandP_Forms(component);
+        // LS 2017/11/19: Added to set siteUserID and apiUserID
+        helper.setSiteUserID(component);
+        helper.setAPIUserID(component);
     },
-    openModal: function(component, event, helper) { //this needs to go away
+    openModal : function(component, event, helper) { //this needs to go away
         console.log('in openModal');
         component.set("v.onSubmit", false);
         component.set("v.modalName", "newModal");
-          console.log('modalName: '+component.get("v.modalName"));
+        console.log('modalName: '+component.get("v.modalName"));
         var formID = event.currentTarget.id;
         var formName = event.currentTarget.name;
         
@@ -306,6 +309,14 @@
         component.set("v.hasAttachments", false);
         component.set("v.addAttachments", false);
 
+        // LS 2017/11/19: Added additional action below to remove FormShare on close of modal, there may be a better place or way to do this
+        var removeShareAction = component.get("c.removeFormShare");
+        removeShareAction.setParams({
+			"formID" : component.get("v.viewFormID"),
+            "siteUserID" : component.get("v.siteUserID")
+        });
+        $A.enqueueAction(removeShareAction);
+        
         // Update display of forms, sets display to "viewMyForms" for feedback to user that it was submitted
         var action = component.get("c.findExistingForms");
         action.setParams({
@@ -828,7 +839,9 @@
 		var action = component.get("c.insertNewForms");
         action.setParams({
 			"sID" : component.get("v.sessionID"),
-            "rtID" : formID
+            "rtID" : formID,
+            "siteUserID" : component.get("v.siteUserID"),
+            "apiUserID" : component.get("v.apiUserID")
         });
         action.setCallback(this,function(resp){
 			console.log('in newCreateModal action');
@@ -865,7 +878,7 @@
             }
         });
         $A.enqueueAction(action);
-          }                   // end creating new form
+        }	// end if (isNew==true) creating new form
         
         else {         // combined
             console.log('in newCreateModal combined');
@@ -875,7 +888,8 @@
             var action = component.get("c.viewForm");
             action.setParams({
                 "sID" : component.get("v.sessionID"),
-                "formID" : formID
+                "formID" : formID,
+                "siteUserID" : component.get("v.siteUserID")
             });
             action.setCallback(this,function(resp){
                 console.log('in newCreateModal action');

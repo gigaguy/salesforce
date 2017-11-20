@@ -46,6 +46,26 @@ public class UtilityMethods {
         return sessionID; 
     }
     
+    public static String getAnyUserID(String userFirstName, String userLastName) {
+        User u = [select id from User where FirstName = :userFirstName AND LastName = :userLastName];
+        return String.ValueOf(u.Id);
+    }
+    
+    public static void addFormShare(String formID, String siteUserID) {
+        List<Forms__Share> formShares = new List<Forms__Share>();
+        if (formID != null && siteUserID !=null) {
+            formShares.add(new Forms__Share(ParentID = formID, UserorGroupID = siteUserID, AccessLevel = 'edit'));
+        	database.insert(formShares, false);
+        }
+    }
+    
+    public static void removeFormShare(String formID, String siteUserID) {  
+        if (formID != null && siteUserID !=null) {
+            Forms__Share formShare = [select id from Forms__Share where ParentID = :formID AND UserorGroupID = :siteUserID AND AccessLevel = 'edit'];
+        	database.delete(formShare, false);
+        }
+    }
+    
     // 2017/09/21 - Larry Spackman - Disabled for deployment to Production because HeaderLogs custom object not being deployed
      /*
     public static void logHeaders() {
@@ -95,7 +115,7 @@ public class UtilityMethods {
         if (u.Session_IP__c == ApexPages.currentPage().getHeaders().get('X-Salesforce-SIP') &&
                 u.Session_Environment__c == ApexPages.currentPage().getHeaders().get('User-Agent') &&
                 u.Session_Timestamp__c != null &&
-                u.Session_Timestamp__c.addHours(12) > System.now()) {
+                u.Session_Timestamp__c.addHours(6) > System.now()) {
             system.debug('valid = true');
             return true;
         }
