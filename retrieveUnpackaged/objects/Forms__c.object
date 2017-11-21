@@ -65,29 +65,6 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
-        <fullName>A1st_Line_Supervisor_See_Before_Release__c</fullName>
-        <externalId>false</externalId>
-        <label>1st Line Supervisor See Before Release?</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Yes</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>No</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>AWL_Phone_Number__c</fullName>
         <externalId>false</externalId>
         <label>AWL Phone Number</label>
@@ -755,10 +732,11 @@
         <defaultValue>&quot;This scientific product may need to have a standard disclaimer on it when given to peer reviewers and while routing through clearance. An ethics disclaimer may also need to be used when the scientific product is released. Please ensure that your product includes all appropriate disclaimers.&quot;</defaultValue>
         <externalId>false</externalId>
         <label>Disclaimers</label>
-        <required>false</required>
+        <length>400</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>TextArea</type>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>Dual_Research_of_Concern_DURC__c</fullName>
@@ -858,6 +836,30 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>First_Line_Supervisor_See_Again__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Does the First Line Supervisor need to see this request again before the product is released?</inlineHelpText>
+        <label>First Line Supervisor See Again?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>First_Line_Supervisor__c</fullName>
@@ -1683,17 +1685,6 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         <description>BAP Provisioning Forms</description>
         <label>BAP Provisioning</label>
         <picklistValues>
-            <picklist>A1st_Line_Supervisor_See_Before_Release__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Additional_Comms_Materials_Required__c</picklist>
             <values>
                 <fullName>Additional Communication Material Needed from Clearing Author</fullName>
@@ -1809,6 +1800,17 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         </picklistValues>
         <picklistValues>
             <picklist>Dual_Use_Research__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>First_Line_Supervisor_See_Again__c</picklist>
             <values>
                 <fullName>No</fullName>
                 <default>false</default>
@@ -2079,17 +2081,6 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         <description>Episodic Flexiplace  (workflow)</description>
         <label>EPA-100</label>
         <picklistValues>
-            <picklist>A1st_Line_Supervisor_See_Before_Release__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Additional_Comms_Materials_Required__c</picklist>
             <values>
                 <fullName>Additional Communication Material Needed from Clearing Author</fullName>
@@ -2205,6 +2196,17 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         </picklistValues>
         <picklistValues>
             <picklist>Dual_Use_Research__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>First_Line_Supervisor_See_Again__c</picklist>
             <values>
                 <fullName>No</fullName>
                 <default>false</default>
@@ -2454,17 +2456,6 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         <description>SF 182 Form</description>
         <label>SF 182</label>
         <picklistValues>
-            <picklist>A1st_Line_Supervisor_See_Before_Release__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Additional_Comms_Materials_Required__c</picklist>
             <values>
                 <fullName>Additional Communication Material Needed from Clearing Author</fullName>
@@ -2580,6 +2571,17 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         </picklistValues>
         <picklistValues>
             <picklist>Dual_Use_Research__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>First_Line_Supervisor_See_Again__c</picklist>
             <values>
                 <fullName>No</fullName>
                 <default>false</default>
@@ -2828,17 +2830,6 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         <active>true</active>
         <label>eClearance</label>
         <picklistValues>
-            <picklist>A1st_Line_Supervisor_See_Before_Release__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Additional_Comms_Materials_Required__c</picklist>
             <values>
                 <fullName>Additional Communication Material Needed from Clearing Author</fullName>
@@ -2954,6 +2945,17 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         </picklistValues>
         <picklistValues>
             <picklist>Dual_Use_Research__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>First_Line_Supervisor_See_Again__c</picklist>
             <values>
                 <fullName>No</fullName>
                 <default>false</default>
@@ -3250,18 +3252,6 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         <errorConditionFormula>ISPICKVAL (Product_Designation__c, &quot;Level 1 (Influential Scientific Information (ISI), Highly Influential Scientific Assessment (HISA), or High Profile&quot;)&amp;&amp; ISBLANK(TEXT(Advance_Notice_Needed__c))</errorConditionFormula>
         <errorDisplayField>Advance_Notice_Needed__c</errorDisplayField>
         <errorMessage>For Products designated Level 1, please indicate whether advanced noticed was given.</errorMessage>
-    </validationRules>
-    <validationRules>
-        <fullName>eClearance_Approver_Level_Validation</fullName>
-        <active>true</active>
-        <description>Mandate the filling in of approver lookups based on the approval level number selected.</description>
-        <errorConditionFormula>RecordTypeId = &quot;012r00000005DWQAA2&quot;
- &amp;&amp;(AND(ISPICKVAL(How_Many_Approval_Levels__c, &quot;1&quot;), ISBLANK(Approver_1__c))) 
-||(AND(ISPICKVAL(How_Many_Approval_Levels__c, &quot;2&quot;), (ISBLANK(Approver_1__c) &amp;&amp; ISBLANK(Approver_2__c))))
-||(AND(ISPICKVAL(How_Many_Approval_Levels__c, &quot;3&quot;), (ISBLANK(Approver_1__c) &amp;&amp; ISBLANK(Approver_2__c)&amp;&amp; ISBLANK( Approver_3__c ))))
-||(AND(ISPICKVAL(How_Many_Approval_Levels__c, &quot;3&quot;), (ISBLANK(Approver_1__c) &amp;&amp; ISBLANK(Approver_2__c)&amp;&amp; ISBLANK( Approver_3__c )&amp;&amp; ISBLANK(Approver_4__c))))</errorConditionFormula>
-        <errorDisplayField>How_Many_Approval_Levels__c</errorDisplayField>
-        <errorMessage>Please complete the selection of approvers based on the approval level you have selected.</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Printable_View</fullName>

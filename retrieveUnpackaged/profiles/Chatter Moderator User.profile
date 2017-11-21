@@ -1410,11 +1410,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Forms__c.A1st_Line_Supervisor_See_Before_Release__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Forms__c.AWL_Phone_Number__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1686,6 +1681,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Forms__c.External_Review_Completed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forms__c.First_Line_Supervisor_See_Again__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

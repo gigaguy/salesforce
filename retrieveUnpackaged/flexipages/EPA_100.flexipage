@@ -41,6 +41,17 @@
     <flexiPageRegions>
         <componentInstances>
             <componentInstanceProperties>
+                <name>relatedListComponentOverride</name>
+                <value>NONE</value>
+            </componentInstanceProperties>
+            <componentName>force:relatedListContainer</componentName>
+        </componentInstances>
+        <name>facet-08736343-64df-4dfb-9423-cceeb6fcfc9a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <componentInstances>
+            <componentInstanceProperties>
                 <name>active</name>
                 <value>true</value>
             </componentInstanceProperties>
@@ -65,11 +76,26 @@
             </componentInstanceProperties>
             <componentName>flexipage:tab</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>body</name>
+                <value>facet-08736343-64df-4dfb-9423-cceeb6fcfc9a</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>title</name>
+                <value>Standard.Tab.relatedLists</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:tab</componentName>
+        </componentInstances>
         <name>facet-2d13add6-cf87-4847-8450-12591d83d2ef</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
+            <componentInstanceProperties>
+                <name>decorate</name>
+                <value>true</value>
+            </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>richTextValue</name>
                 <value>For help using EPA-100 please contact: &amp;nbsp;&lt;a href=&quot;mailto:McNeal.Detha@epa.gov?subject=BAP%20Forms%20EPA-100%20Support&quot; target=&quot;_blank&quot;&gt;McNeal.Detha@epa.gov&lt;/a&gt;</value>

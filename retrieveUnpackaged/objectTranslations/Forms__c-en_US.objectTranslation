@@ -9,18 +9,6 @@
         <value>Forms</value>
     </caseValues>
     <fields>
-        <label><!-- 1st Line Supervisor See Before Release? --></label>
-        <name>A1st_Line_Supervisor_See_Before_Release__c</name>
-        <picklistValues>
-            <masterLabel>No</masterLabel>
-            <translation><!-- No --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Yes</masterLabel>
-            <translation><!-- Yes --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
         <label><!-- AWL Phone Number --></label>
         <name>AWL_Phone_Number__c</name>
     </fields>
@@ -360,6 +348,19 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
     <fields>
         <label><!-- External Review Completed --></label>
         <name>External_Review_Completed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the First Line Supervisor need to see this request again before the product is released? --></help>
+        <label><!-- First Line Supervisor See Again? --></label>
+        <name>First_Line_Supervisor_See_Again__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- First Line Supervisor --></label>
@@ -844,10 +845,6 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             <section>First Line Supervisor Checklist</section>
         </sections>
         <sections>
-            <label><!-- New Section --></label>
-            <section>New Section</section>
-        </sections>
-        <sections>
             <label><!-- Product Details --></label>
             <section>Product Details</section>
         </sections>
@@ -880,10 +877,6 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
     <validationRules>
         <errorMessage><!-- For Products designated Level 1, please indicate whether advanced noticed was given. --></errorMessage>
         <name>Level_1_Product_Advance_Notice</name>
-    </validationRules>
-    <validationRules>
-        <errorMessage><!-- Please complete the selection of approvers based on the approval level you have selected. --></errorMessage>
-        <name>eClearance_Approver_Level_Validation</name>
     </validationRules>
     <webLinks>
         <label><!-- Printable_View --></label>
