@@ -70,7 +70,7 @@
         <defaultValue>&quot;I hereby apply for membership in the EPA Leave Bank. I authorize EPA to deduct one pay period accrual of annual leave (or such other amount as the Agency’s Leave Bank Board has established for this enrollment period) each leave year for deposit into the EPA Leave Bank until I terminate my membership.&quot;</defaultValue>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>A. Description</label>
+        <label>A. New Member Enrollment</label>
         <length>1000</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -335,7 +335,7 @@ Type_1_Owner_Contact__r.FirstName &amp;&quot; &quot;&amp; Type_1_Owner_Contact__
         <defaultValue>&quot;I wish to donate hours of annual leave to the EPA Leave Bank and my donation does not exceed the minimum contribution limits.&quot;</defaultValue>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>B. Description</label>
+        <label>B. Donate Hours (no waiver needed)</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -470,7 +470,7 @@ TEXT(Training_Start_Date__c))</formula>
         <defaultValue>&quot;I wish to donate hours of annual leave to the EPA Leave Bank (enter # hours below). My donation exceeds the minimum contribution limits and I am seeking a waiver for the following reasons: (Note: A waiver is required to do this. See instructions at the top of this form.)&quot;</defaultValue>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>C. Description</label>
+        <label>C. Donate Hours (waiver needed)</label>
         <length>275</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -1367,7 +1367,7 @@ TEXT(Continued_Service_Agreement_Expiration__c))</formula>
         <defaultValue>&quot;I wish to donate hours of annual leave to the qualified recipient named below. I certify that this employee is not my immediate supervisor. (Enter # of hours below.)&quot;</defaultValue>
         <description>EPA-3160-6v5</description>
         <externalId>false</externalId>
-        <label>D. Description</label>
+        <label>D. Donate to specific Person</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>

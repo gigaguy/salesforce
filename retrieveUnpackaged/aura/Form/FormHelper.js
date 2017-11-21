@@ -14,41 +14,6 @@
         });
      $A.enqueueAction(action);
 	},
-    upload: function(component, file, base64Data, callback) {
-        console.log('in helper.upload');
-        
-        var formID;
-            if (component.get("v.modalName") == 'viewForm') {
-                formID = component.get("v.viewFormID");
-            }
-            else {
-                formID = component.get("v.newForm.Id");
-            }
-        console.log('formID: ' + formID);
-        var action = component.get("c.uploadFile");
-        console.log('type: ' + file.type);
-        action.setParams({
-            FormID: formID,
-            fileName: file.name,
-            base64Data: base64Data,
-            contentType: file.type
-        });
-        action.setCallback(this, function(a) {
-            var state = a.getState();
-            console.log('state: ' + state);
-            if (state === "SUCCESS") {
-                callback(a.getReturnValue());
-                this.getAttachList(component, formID);
-            }
-            else if(state === 'ERROR'){
-                var errors = resp.getError();
-                for(var i = 0 ;i < errors.length;i++){
-                    console.log(errors[i].message);
-                }
-            }
-        });  
-        $A.enqueueAction(action);
-    },
     show: function (cmp, event) {
         console.log('in helper.show');
         
@@ -197,6 +162,8 @@
         $A.enqueueAction(action);
     },
     setSiteUserID : function(component) {             
+        console.log('in helper.setSiteUserID');
+        
         var action = component.get("c.getSiteUserID");
         action.setCallback(this, function(response){
             var name = response.getState();
@@ -206,7 +173,9 @@
         });
      $A.enqueueAction(action);
     },
-    setAPIUserID : function(component) {             
+    setAPIUserID : function(component) {     
+		console.log('in helper.setAPIUserID');
+        
         var action = component.get("c.getAPIUserID");
         action.setCallback(this, function(response){
             var name = response.getState();
