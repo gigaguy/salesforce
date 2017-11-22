@@ -30,6 +30,12 @@ public class FormPageController_Test {
         u.Lan_ID__c = 'thetest';
         update u;
 
+        //siteUser
+        User uSU = [select id from User where isActive = true AND id != :u.id AND id != :u2.id limit 1];
+        
+        //apiUser
+        User uAU = [select id from User where isActive = true AND id != :u.id AND id != :u2.id AND id != :uSU.id limit 1];
+
         contact c = new contact(FirstName='Bob', LastName='Smith', Lan_ID__c = 'thetest');
         insert c;
      
@@ -39,14 +45,14 @@ public class FormPageController_Test {
         testForm.RecordTypeID = [select id from RecordType where sObjectType = 'Forms__c' ORDER BY createddate limit 1].id;
         insert testForm;
               
-        Forms__c form = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' ORDER BY createddate limit 1].ID);     
+        Forms__c form = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' ORDER BY createddate limit 1].ID, uSU.id, uAU.id);     
  //       form = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' limit 1].ID);
         
   //      Forms__c xform = FormPageController.insertNewForms('123ABC', [select id from RecordType where name = 'EPA-100' limit 1].ID);
           Forms__c xform;
     
         try{
-            xform = FormPageController.insertNewForms('123ABC', [select id from RecordType where name = 'EPA-100' limit 1].ID);
+            xform = FormPageController.insertNewForms('123ABC', [select id from RecordType where name = 'EPA-100' limit 1].ID, uSU.id, uAU.id);
             }
             catch(exception ex){
                 system.debug(ex.getMessage());  
@@ -54,7 +60,7 @@ public class FormPageController_Test {
         
         Forms__c yform;
         try{
-            yform = FormPageController.insertNewForms('xyz', [select id from RecordType where name = 'EPA-100' limit 1].ID);
+            yform = FormPageController.insertNewForms('xyz', [select id from RecordType where name = 'EPA-100' limit 1].ID, uSU.id, uAU.id);
             }
              catch(exception ex){
             system.debug(ex.getMessage());  
@@ -64,12 +70,16 @@ public class FormPageController_Test {
         FormPageController.submitForApproval(form.ID, '123ABC');         
         FormPageController.findExistingForms('xyz');
         FormPageController.findExistingForms('123ABC');
-        FormPageController.viewForm(form.ID);
-        FormPageController.viewForm(testForm.ID);
+        FormPageController.viewForm(form.ID, uSU.id);
+        FormPageController.viewForm(testForm.ID, uSU.id);
         FormPageController.saveForm(form, '123ABC');
         FormPageController.saveForm(yform, '123ABC');
         FormPageController.deleteForm(form.ID, '123ABC');
-        FormPageController.getFandP_FormRTs();        
+        FormPageController.getFandP_FormRTs();
+        FormPageController.getSiteUserID();
+        FormPageController.getAPIUserID();
+        FormPageController.removeFormShare(xform.ID, uSU.id);
+                
     }
     
     @isTest
@@ -78,9 +88,16 @@ public class FormPageController_Test {
          User u = [select id from User where isActive = true and PRofile.Name = 'System Administrator' limit 1];
          u.Session_Token__c = '123ABC';
         update u;  
-    
+        
+        //siteUser
+        User uSU = [select id from User where isActive = true AND id != :u.id limit 1];
+        
+        //apiUser
+        User uAU = [select id from User where isActive = true AND id != :u.id AND id != :uSU.id limit 1];
+
+        
         try{
-          Forms__c zform = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Account' limit 1].ID);
+          Forms__c zform = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Account' limit 1].ID, uSU.id, uAU.id);
           }
         catch(exception ex){
             system.debug(ex.getMessage());  

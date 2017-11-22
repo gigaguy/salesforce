@@ -29,6 +29,7 @@ public with sharing class AttachmentUploadController {
     
   public PageReference upload() {
  
+    system.debug('formID: '+formID);
     attachment.OwnerId = UserInfo.getUserId();
       system.debug('file owner: '+attachment.ownerid);
     attachment.ParentId = formID; // the record the file is attached to
@@ -37,7 +38,8 @@ public with sharing class AttachmentUploadController {
       insert attachment;
     } catch (DMLException e) {
       ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR,'Error uploading attachment'));
-      return null;
+      system.debug('error: '+e);
+        return null;
     } finally {
       attachment = new Attachment(); 
     }

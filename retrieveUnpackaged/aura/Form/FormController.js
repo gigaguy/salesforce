@@ -13,69 +13,54 @@
         });
         $A.enqueueAction(action);
         helper.getFandP_Forms(component);
-        // LS 2017/11/19: Added to set siteUserID and apiUserID
+     
+        //  set siteUserID and apiUserID for temp record sharing
         helper.setSiteUserID(component);
         helper.setAPIUserID(component);
     },
-    handleSave : function(cmp, event, helper){  //this runs at beginning of save, "handleSaveSuccess" runs after successful save
-		console.log('in c.handleSave');       
-        cmp.find("anchor").getElement().scrollIntoView();  //scrolls to top of form for user to see any error messages
-	},
-    closeModal: function(component, event, helper) {
-        console.log('in closeModal');    
-           
-        component.set("v.message", null);
-        component.set("v.modalName", "");
-          console.log('modalName: '+component.get("v.modalName"));
-        component.set("v.hasAttachments", false);
-        component.set("v.addAttachments", false);
+    approvalSubmit : function(component, event, helper) {  // submits Form for approval
+		console.log('in approvalSubmit');
 
-        // LS 2017/11/19: Added additional action below to remove FormShare on close of modal, there may be a better place or way to do this
-        var removeShareAction = component.get("c.removeFormShare");
-        removeShareAction.setParams({
-			"formID" : component.get("v.viewFormID"),
-            "siteUserID" : component.get("v.siteUserID")
-        });
-        $A.enqueueAction(removeShareAction);
+        	var formID = component.get("v.viewFormID");
+        	console.log('formID: '+ formID);
         
-        // Update display of forms, sets display to "viewMyForms" for feedback to user that it was submitted
-        var action = component.get("c.findExistingForms");
-        action.setParams({
-			"sID" : component.get("v.sessionID")
-        });
-        action.setCallback(this,function(resp){
-			console.log('in closeModal action');
-            var state = resp.getState();
-            console.log('state: ' +state);
-            if(state === 'SUCCESS'){
-                component.set("v.oldForms", resp.getReturnValue());
-                component.set("v.pageStatus", "viewMyForms");
-            }
-            else if(state === 'ERROR'){
-                var errors = resp.getError();
-                for(var i = 0 ;i < errors.length;i++){
-                    console.log(errors[i].message);
+            var action = component.get("c.submitForApproval");
+            action.setParams({
+                "formID": formID,
+                "sID" : component.get("v.sessionID")
+            });
+            action.setCallback(this,function(resp){
+                console.log('in approvalSubmit action');
+                var state = resp.getState();
+                console.log('state: ' +state);
+                if(state === 'SUCCESS'){
+                    component.set("v.message", resp.getReturnValue());
+                    component.set("v.viewTheModal", false);
+                    component.set("v.hasAttachments", false);
+        			component.set("v.addAttachments", false);
+                    component.set("v.onSubmit", false)
                 }
-            }
-        });
-  
-        $A.enqueueAction(action);   
-    },
-	handleSaveSuccess : function(component, event, helper){  //this runs after successful save, "handleSave" runs at beginning of Save process        
-        console.log('in handleSaveSuccess');
+                else if(state === 'ERROR'){
+                    var errors = resp.getError();
+                    for(var i = 0 ;i < errors.length;i++){
+                        console.log(errors[i].message);
+                    }
+                }
+            });
+            $A.enqueueAction(action);  	
         
-        // Update display of forms
+        // Update display to "viewMyForms"
         var action = component.get("c.findExistingForms");
         action.setParams({
 			"sID" : component.get("v.sessionID")
         });
         action.setCallback(this,function(resp){
-			console.log('in handleSaveSuccess action');
+			console.log('in approvalSubmit action2');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
-                component.set("v.oldForms", resp.getReturnValue());
-                component.set("v.pageStatus", "viewMyForms");
+                component.set("v.mySavedForms", resp.getReturnValue());  // returned list of user's Saved Forms
+                component.set("v.pageStatus", "viewMyForms");  // shows user list of Saved Forms
             }
             else if(state === 'ERROR'){
                 var errors = resp.getError();
@@ -85,35 +70,13 @@
             }
         });
         $A.enqueueAction(action);
-   
-            console.log('safeSave: '+component.get("v.safeSave"));
-            if(component.get("v.safeSave")!=true){
-                console.log('modalName: '+component.get("v.modalName"));                
-            
-            console.log('onSubmit: '+component.get("v.onSubmit"));
-            if (component.get("v.onSubmit") == false){
-                component.set("v.message", "Form Saved | ");
-                component.set("v.isNew", false);
-                component.set("v.isCopy", false);
-                component.set("v.message", "Form Saved | ");
-                
-                var a = component.get('c.newCreateModal');  
-                $A.enqueueAction(a);
-              }
-                else if(component.get("V.onSubmit") == true){
-                    var a = component.get('c.approvalSubmit');  
-                	$A.enqueueAction(a);
-                }
-            }
-        
-        component.set("v.safeSave", false);
-        
-	},
-    cancelCreationModal : function(component, event, helper){
+    },
+    cancelCreationModal : function(component, event, helper){ // Closes and deletes temp Form if user hits "cancel" button 
+        													  // Once Form is saved by user, the "cancel" button is no longer available
     	console.log('in cancelCreationModal'); 
         component.set("v.message", null);
-        component.set("v.modalName", "");
-          console.log('modalName: '+component.get("v.modalName"));
+        component.set("v.viewTheModal", false);
+          console.log('viewTheModal: '+component.get("v.viewTheModal"));
         component.set("v.hasAttachments", false);
         component.set("v.addAttachments", false);
     	
@@ -138,27 +101,35 @@
         });
         $A.enqueueAction(action);
 	},
-    deleteFormJS : function(component, event, helper){
-    	console.log('in deleteFormJS');
-        
+    closeModal: function(component, event, helper) {  // closes theModal
+        console.log('in closeModal');    
+           
+        component.set("v.message", null);
+        component.set("v.viewTheModal", false);
+          console.log('viewTheModal: '+component.get("v.viewTheModal"));
         component.set("v.hasAttachments", false);
         component.set("v.addAttachments", false);
- 
-        var formID = component.get("v.viewFormID");
-        console.log(formID);
-		var action = component.get("c.deleteForm");
+
+        // LS 2017/11/19: Added additional action below to remove FormShare on close of modal, there may be a better place or way to do this
+        var removeShareAction = component.get("c.removeFormShare");
+        removeShareAction.setParams({
+			"formID" : component.get("v.viewFormID"),
+            "siteUserID" : component.get("v.siteUserID")
+        });
+        $A.enqueueAction(removeShareAction);
+        
+        // Update  display to "viewMyForms" 
+        var action = component.get("c.findExistingForms");
         action.setParams({
-            "formID":formID,
 			"sID" : component.get("v.sessionID")
         });
         action.setCallback(this,function(resp){
-			console.log('in deleteFormJS action');
+			console.log('in closeModal action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
-                component.set("v.message", resp.getReturnValue());
-                component.set("v.modalName", "");
-                  console.log('modalName: '+component.get("v.modalName"));
+                component.set("v.mySavedForms", resp.getReturnValue());  // returned list of user's Saved Forms
+                component.set("v.pageStatus", "viewMyForms");      // shows user list of Saved Forms
             }
             else if(state === 'ERROR'){
                 var errors = resp.getError();
@@ -167,83 +138,41 @@
                 }
             }
         });
-        $A.enqueueAction(action);
-        var action = component.get("c.findExistingForms");
-        action.setParams({
-			"sID" : component.get("v.sessionID")
-        });
+  
+        $A.enqueueAction(action);   
+    },
+    confirmCancelCreationModal : function(component, event) {  
+        console.log('in confirmCancelCreationModal');
         
-        // Update display of forms
-        var action = component.get("c.findExistingForms");
-        action.setParams({
-			"sID" : component.get("v.sessionID")
-        });
-        action.setCallback(this,function(resp){
-			console.log('in deleteFormJS action2');
-            var state = resp.getState();
-            console.log('state: ' +state);
-            if(state === 'SUCCESS'){
-                component.set("v.oldForms", resp.getReturnValue());
-                component.set("v.pageStatus", "viewMyForms");
-            }
-            else if(state === 'ERROR'){
-                var errors = resp.getError();
-                for(var i = 0 ;i < errors.length;i++){
-                    console.log(errors[i].message);
-                }
-            }
-        });
-        $A.enqueueAction(action);
-	}, 
-    viewMyForms : function(component, event, helper){  // gets list of user's existing Form records, adds to "v.oldForms"
-        console.log('in viewMyForms');
-        
-        var action = component.get("c.findExistingForms");
-        action.setParams({
-			"sID" : component.get("v.sessionID")
-        });
-        action.setCallback(this,function(resp){
-			console.log('in viewMyForms action');
-            var state = resp.getState();
-            console.log('state: ' +state);
-            if(state === 'SUCCESS'){
-                component.set("v.oldForms", resp.getReturnValue());
-                component.set("v.message", null);
-                component.set("v.pageStatus", "viewMyForms");
-            }
-            else if(state === 'ERROR'){
-                var errors = resp.getError();
-                for(var i = 0 ;i < errors.length;i++){
-                    console.log(errors[i].message);
-                }
-            }
-        });
-        $A.enqueueAction(action);
-	},
-    viewFormTypes : function(component, event, helper){ // shows user list of available Workflow Forms
-        console.log('in viewFormTypes');
-        
-        component.set("v.message", null);
-		component.set("v.pageStatus", "viewFormTypes");
-	},
-	confirmSubmit : function(component, event) {
-        console.log('in confirmSubmit');
-        
-		var resp = confirm("Are you sure you want to submit the form?");
-        
+		var resp = confirm("Are you sure you want to close this form?\nYou will lose any unsaved changes.");
         var action;
-        var formID = component.get("v.viewFormID");
+        var formID = component.get("v.newForm.Id");
+        console.log('formID: '+formID);
         
         if(resp === true){
-            action = component.get("c.newSaveAndSubmit");
+            action = component.get("c.cancelCreationModal");
             action.setParams({
             "formID": formID,
         });
         	}
-        else {action = component.get("c.viewFormJS");
+        else {action = component.get("c.viewFormJS");  //is this needed?  I think can be nothing like in confirmCloseModal
             action.setParams({"formID": formID,});                       
         }
         $A.enqueueAction(action);
+	},
+    confirmCloseModal : function(component, event) {
+        console.log('in confirmCloseModal');
+        
+		var resp = confirm("Are you sure you want to close this form?\nYou will lose any unsaved changes.");
+        
+        if(resp === true){
+            var a = component.get("c.closeModal");
+            $A.enqueueAction(a);
+        }
+        else {
+            //cancel
+        }
+        
 	},
     confirmFormDelete : function(component, event) {
         console.log('in confirmFormDelete');
@@ -262,24 +191,53 @@
           }
         $A.enqueueAction(action);
 	},
-    deleteAttachment : function(component, event, helper){
-        console.log('in deleteAttachment');
+    confirmSubmit : function(component, event) { 
+        console.log('in confirmSubmit');
         
+		var resp = confirm("Are you sure you want to submit the form?");
+        
+        var action;
         var formID = component.get("v.viewFormID");
-          console.log('formID: '+formID);
-        var attID = event.currentTarget.id;
-          console.log('attID: '+attID);
-		var action = component.get("c.deleteFormAttachment");
+        
+        if(resp === true){
+            action = component.get("c.saveAndSubmit");
+            action.setParams({
+            "formID": formID,
+        });
+        	}
+        else {action = component.get("c.viewFormJS");
+            action.setParams({"formID": formID,});                       
+        }
+        $A.enqueueAction(action);
+	},
+    copyForm: function(component, event, helper) {   // process for copying an existing Form
+        console.log('in copyForm');
+        component.set("v.onSubmit", false);
+        component.set("v.isCopy", true);
+        
+        var formID = event.currentTarget.id;
+        var formName = event.currentTarget.name;
+        console.log('form being copied ID: '+formID);
+        component.set("v.message", null);
+
+        component.set("v.viewFormName", formName);
+        
+		var action = component.get("c.cloneForm");
         action.setParams({
-            "attID":attID
+			"sID" : component.get("v.sessionID"),
+            "FormID" : formID
         });
         action.setCallback(this,function(resp){
-			console.log('in deleteAttachment action');
-             
+			console.log('in copyForm action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
-                helper.getAttachList(component, formID);
+                component.set("v.newForm", resp.getReturnValue());
+                component.set("v.viewFormID", component.get("v.newForm.Id"));
+                console.log('new copy form formID: '+component.get("v.newForm.Id"))
+                
+                var a = component.get("c.createTheModal");
+        		$A.enqueueAction(a);
             }
             else if(state === 'ERROR'){
                 var errors = resp.getError();
@@ -288,30 +246,27 @@
                 }
             }
         });
-        $A.enqueueAction(action);
+        $A.enqueueAction(action);            
     },
-	hideAttachments: function(component, event, helper) { // hides list of attachments when user hits "hide attachments" button
-        console.log('in hideAttachments');
+    createAttachComp: function(component, event, helper) {  //creates upload attachment component
+        console.log('in createAttachComp');
         
-        component.set("v.hasAttachments", false);
-        component.set("v.addAttachments", false);
-        component.set("v.fileName", "No File Selected..");
-        component.set("v.largeFile", false);
-        
+           $A.createComponent('lightning:input',
+                           {
+                               'aura:id':'fileUploadCmp', 
+                               onchange:component.getReference("c.handleFilesChange"), 
+                               type:'file', 
+                               name:'fileUploadCmp',
+                               label:'Upload Attachment', 
+                               multiple:'false',
+                           },
+                               function(fileUploadCmp) {
+                               component.set("v.fileUploadCmp", fileUploadCmp);
+                           }
+                               );   
     },
-	showAttachments: function(component, event, helper) {  // shows list of attachments when user hits "show/add attachments" button
-        console.log('in showAttachments');
-        
-        var formID = component.get("v.viewFormID"); 
-          console.log('formID: ' + formID);
-        
-        helper.getAttachList(component, formID);
-        	component.set("v.addAttachments", true); 
-     	var a = component.get("c.createAttachComp");
-        $A.enqueueAction(a);
-   },
-   newOpenModal: function(component, event, helper) {  //this needs to be renamed
-   		console.log('in newOpenModal');
+    createNewForm: function(component, event, helper) {  // opens theModal when user hits "New Form" button
+   		console.log('in createNewForm');
         
         var formID = event.currentTarget.id;
         console.log('formID(rt): ' + formID);
@@ -322,11 +277,11 @@
         component.set("v.viewFormID", formID); 
         component.set("v.viewFormName", formName);
         
-        var a = component.get("c.newCreateModal");
+        var a = component.get("c.createTheModal");
         $A.enqueueAction(a);
     },
-    newCreateModal: function(component, event, helper) {   //this needs to be renamed
-        console.log('in newCreateModal');
+    createTheModal: function(component, event, helper) {   // creates theModal component
+        console.log('in createTheModal');
         component.set("v.onSubmit", false);
         
         var isNew = component.get("v.isNew");
@@ -375,6 +330,7 @@
             
         helper.show(component,event);
         if (isNew==true) {   // start creating new form
+            console.log('in createTheModal new form')
             component.set("v.message", null);
 		var action = component.get("c.insertNewForms");
         action.setParams({
@@ -384,7 +340,7 @@
             "apiUserID" : component.get("v.apiUserID")
         });
         action.setCallback(this,function(resp){
-			console.log('in newCreateModal action');
+			console.log('in createTheModal action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
@@ -400,9 +356,9 @@
                    },
                   function(theModal){
                     component.set('v.theModal', theModal); 
-                    component.set("v.modalName", "theModal");
-                      console.log('modalName: '+component.get("v.modalName"));
-                      console.log('in theModal function(newCreateModal action) - formID: '+formID);
+                    component.set("v.viewTheModal", true);
+                      console.log('viewTheModal: '+component.get("v.viewTheModal"));
+                      console.log('in theModal function(createTheModal action) - formID: '+formID);
                    }
                                               
                     );
@@ -421,7 +377,7 @@
         }	// end if (isNew==true) creating new form
         
         else {         // combined
-            console.log('in newCreateModal combined');
+            console.log('in createTheModal existing form');
             console.log('formID: '+formID);
             component.set("v.isNew",false);
             helper.show(component,event);
@@ -432,7 +388,7 @@
                 "siteUserID" : component.get("v.siteUserID")
             });
             action.setCallback(this,function(resp){
-                console.log('in newCreateModal action');
+                console.log('in createTheModal action');
                 var state = resp.getState();
                 console.log('state: ' +state);
                 if(state === 'SUCCESS'){
@@ -445,9 +401,9 @@
                        },
                       function(theModal){
                         component.set('v.theModal', theModal); 
-                        component.set("v.modalName", "theModal");
-                          console.log('modalName: '+component.get("v.modalName"));
-                          console.log('in theModal function(newCreateModal action) - formID: '+formID);
+                        component.set("v.viewTheModal", true);
+                          console.log('viewTheModal: '+component.get("v.viewTheModal"));
+                          console.log('in theModal function(createTheModal action) - formID: '+formID);
                        }
                                                   
                         );
@@ -465,56 +421,98 @@
         $A.enqueueAction(action);   
           }
     },
-    newSaveStay : function(component, event, helper){                  //this needs to be renamed
-        console.log('in c.newSaveStay');
-        console.log('modalname: ' + component.get("v.modalName"));
+    deleteAttachment : function(component, event, helper){
+        console.log('in deleteAttachment');
         
-        try {
-            	component.get('v.theModal').get("e.recordSave").fire();
-                console.log('no error');
-          	}
-          catch (e) {
-            console.log(e);
-          }
-        
+        var formID = component.get("v.viewFormID");
+          console.log('formID: '+formID);
+        var attID = event.currentTarget.id;
+          console.log('attID: '+attID);
+		var action = component.get("c.deleteFormAttachment");
+        action.setParams({
+            "attID":attID
+        });
+        action.setCallback(this,function(resp){
+			console.log('in deleteAttachment action');
+             
+            var state = resp.getState();
+            console.log('state: ' +state);
+            if(state === 'SUCCESS'){
+                helper.getAttachList(component, formID);
+            }
+            else if(state === 'ERROR'){
+                var errors = resp.getError();
+                for(var i = 0 ;i < errors.length;i++){
+                    console.log(errors[i].message);
+                }
+            }
+        });
+        $A.enqueueAction(action);
     },
-	newSaveAndSubmit : function(component, event, helper){                //this needs to be renamed
-        console.log('in newSaveAndSubmit');
-        component.set("v.onSubmit", true);
-        component.set("v.isCopy", false);
-               
-        //Save the form
-        try {
-            component.get("v.theModal").get("e.recordSave").fire();
-            console.log('no error');
-     	  	}
-          catch (e) {
-            console.log(e);
-          }   
-	},
-    newViewFormJS : function(component, event, helper){				//this needs to be renamed
-        console.log('in newViewFormJS');
-        var formID = event.currentTarget.id;   
-        console.log('formID: '+ formID);
+    deleteFormJS : function(component, event, helper){
+    	console.log('in deleteFormJS');
         
-        var formName = event.currentTarget.name;
+        component.set("v.hasAttachments", false);
+        component.set("v.addAttachments", false);
+ 
+        var formID = component.get("v.viewFormID");
+        console.log(formID);
+		var action = component.get("c.deleteForm");
+        action.setParams({
+            "formID":formID,
+			"sID" : component.get("v.sessionID")
+        });
+        action.setCallback(this,function(resp){
+			console.log('in deleteFormJS action');
+            var state = resp.getState();
+            console.log('state: ' +state);
+            if(state === 'SUCCESS'){
+                component.set("v.message", resp.getReturnValue());
+                component.set("v.viewTheModal", false);
+                  console.log('viewTheModal: '+component.get("v.viewTheModal"));
+            }
+            else if(state === 'ERROR'){
+                var errors = resp.getError();
+                for(var i = 0 ;i < errors.length;i++){
+                    console.log(errors[i].message);
+                }
+            }
+        });
+        $A.enqueueAction(action);
+        var action = component.get("c.findExistingForms");
+        action.setParams({
+			"sID" : component.get("v.sessionID")
+        });
         
-        component.set("v.isNew", false);
-        component.set("v.viewFormID", formID); 
-        component.set("v.viewFormName", formName);
-        component.set("v.isCopy", false);
-        
-        var a = component.get("c.newCreateModal");
-        $A.enqueueAction(a);
-    },
-    doSave: function(component, event, helper) {
+        // Update  display to "viewMyForms"
+        var action = component.get("c.findExistingForms");
+        action.setParams({
+			"sID" : component.get("v.sessionID")
+        });
+        action.setCallback(this,function(resp){
+			console.log('in deleteFormJS action2');
+            var state = resp.getState();
+            console.log('state: ' +state);
+            if(state === 'SUCCESS'){
+                component.set("v.mySavedForms", resp.getReturnValue());  // returned list of user's Saved Forms
+                component.set("v.pageStatus", "viewMyForms");  // shows user list of Saved Forms
+            }
+            else if(state === 'ERROR'){
+                var errors = resp.getError();
+                for(var i = 0 ;i < errors.length;i++){
+                    console.log(errors[i].message);
+                }
+            }
+        });
+        $A.enqueueAction(action);
+	}, 
+    doSave: function(component, event, helper) {    // saves Form before uploading attachment
         console.log('in doSave');
         
         //save form in case of issue with attachment upload
-        component.set("v.safeSave", true);
-        console.log('safeSave: '+component.get("v.safeSave"));
+        component.set("v.saveAndClose", true);
+        console.log('saveAndClose: '+component.get("v.saveAndClose"));
         try {
-            	console.log('3');
                 component.get("v.theModal").get("e.recordSave").fire();
                 console.log('no error');  
           	}
@@ -528,11 +526,11 @@
             alert('Please Select a Valid File');
         }
     },
-    handleFilesChange: function(component, event, helper) {
+    handleFilesChange: function(component, event, helper) {  // runs when user selects file for attachment upload
         console.log('in handleFilesChange');      
         
         var fileName = 'No File Selected..';
-        console.log('976: ' + event.getSource().get("v.files").length);
+       
         component.set("v.uploadFiles", event.getSource().get("v.files"));
         var files = component.get("v.uploadFiles");
 
@@ -547,136 +545,25 @@
         $A.enqueueAction(a);
           }
     },
-    createAttachComp: function(component, event, helper) {  //creates upload attachment component
-        console.log('in createAttachComp');
-        
-           $A.createComponent('lightning:input',
-                           {
-                               'aura:id':'fileUp', 
-                               onchange:component.getReference("c.handleFilesChange"), 
-                               type:'file', 
-                               name:'fileUp',
-                               label:'Upload Attachment', 
-                               multiple:'false',
-                           },
-                               function(fileUp) {
-                               component.set("v.fileUp", fileUp);
-                           }
-                               );   
-    },
-    confirmCancelCreationModal : function(component, event) {  
-        console.log('in confirmCancelCreationModal');
-        
-		var resp = confirm("Are you sure you want to close this form?\nYou will lose any unsaved changes.");
-        var action;
-        var formID = component.get("v.newForm.Id");
-        console.log('formID: '+formID);
-        
-        if(resp === true){
-            action = component.get("c.cancelCreationModal");
-            action.setParams({
-            "formID": formID,
-        });
-        	}
-        else {action = component.get("c.viewFormJS");  //is this needed?  I think can be nothing like in confirmCloseModal
-            action.setParams({"formID": formID,});                       
-        }
-        $A.enqueueAction(action);
+    handleSave : function(cmp, event, helper){  //this runs at beginning of save, "handleSaveSuccess" runs after successful save
+		console.log('in c.handleSave');       
+        cmp.find("anchor").getElement().scrollIntoView();  //scrolls to top of form for user to see any error messages
 	},
-    confirmCloseModal : function(component, event) {
-        console.log('in confirmCloseModal');
+	handleSaveSuccess : function(component, event, helper){  //this runs after successful save, "handleSave" runs at beginning of Save process        
+        console.log('in handleSaveSuccess');
         
-		var resp = confirm("Are you sure you want to close this form?\nYou will lose any unsaved changes.");
-        
-        if(resp === true){
-            var a = component.get("c.closeModal");
-            $A.enqueueAction(a);
-        }
-        else {
-            //cancel
-        }
-        
-	},
-    newCopyForm: function(component, event, helper) {   //this needs to be renamed
-        console.log('in newCopyForm');
-        component.set("v.onSubmit", false);
-        component.set("v.isCopy", true);
-        
-        var formID = event.currentTarget.id;
-        var formName = event.currentTarget.name;
-        console.log('form being copied ID: '+formID);
-        component.set("v.message", null);
-
-        component.set("v.viewFormName", formName);
-        
-		var action = component.get("c.cloneForm");
-        action.setParams({
-			"sID" : component.get("v.sessionID"),
-            "FormID" : formID
-        });
-        action.setCallback(this,function(resp){
-			console.log('in copyForm action');
-            var state = resp.getState();
-            console.log('state: ' +state);
-            if(state === 'SUCCESS'){
-                component.set("v.newForm", resp.getReturnValue());
-                component.set("v.viewFormID", component.get("v.newForm.Id"));
-                console.log('new copy form formID: '+component.get("v.newForm.Id"))
-                
-                var a = component.get("c.newCreateModal");
-        		$A.enqueueAction(a);
-            }
-            else if(state === 'ERROR'){
-                var errors = resp.getError();
-                for(var i = 0 ;i < errors.length;i++){
-                    console.log(errors[i].message);
-                }
-            }
-        });
-        $A.enqueueAction(action);     
-        
-   },
-   approvalSubmit : function(component, event, helper) {
-		console.log('in approvalSubmit');
-
-        	var formID = component.get("v.viewFormID");
-        	console.log('formID: '+ formID);
-        
-            var action = component.get("c.submitForApproval");
-            action.setParams({
-                "formID": formID,
-                "sID" : component.get("v.sessionID")
-            });
-            action.setCallback(this,function(resp){
-                console.log('in approvalSubmit action');
-                var state = resp.getState();
-                console.log('state: ' +state);
-                if(state === 'SUCCESS'){
-                    component.set("v.message", resp.getReturnValue());
-                    component.set("v.modalName", '');
-                    component.set("v.onSubmit", false)
-                }
-                else if(state === 'ERROR'){
-                    var errors = resp.getError();
-                    for(var i = 0 ;i < errors.length;i++){
-                        console.log(errors[i].message);
-                    }
-                }
-            });
-            $A.enqueueAction(action);  	
-        
-        // Update display of forms, sets display to "viewMyForms" for feedback to user that it was submitted
+        // Update display of forms
         var action = component.get("c.findExistingForms");
         action.setParams({
 			"sID" : component.get("v.sessionID")
         });
         action.setCallback(this,function(resp){
-			console.log('in approvalSubmit action2');
+			console.log('in handleSaveSuccess action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
-                component.set("v.oldForms", resp.getReturnValue());
-                component.set("v.pageStatus", "viewMyForms");
+                component.set("v.mySavedForms", resp.getReturnValue());  // returned list of user's Saved Forms
+                component.set("v.pageStatus", "viewMyForms");  // shows user list of Saved Forms
             }
             else if(state === 'ERROR'){
                 var errors = resp.getError();
@@ -686,6 +573,123 @@
             }
         });
         $A.enqueueAction(action);
-    }
-    
+   			
+        	// checks "saveAndClose" -- some save operations close modal (i.e. on submit for approval)
+            console.log('saveAndClose: '+component.get("v.saveAndClose"));
+            if(component.get("v.saveAndClose")!=true){
+                console.log('viewTheModal: '+component.get("v.viewTheModal"));                
+            
+            console.log('onSubmit: '+component.get("v.onSubmit"));
+            if (component.get("v.onSubmit") == false){
+                component.set("v.message", "Form Saved | ");
+                component.set("v.isNew", false);
+                component.set("v.isCopy", false);
+                component.set("v.message", "Form Saved | ");
+                
+                var a = component.get('c.createTheModal');  
+                $A.enqueueAction(a);
+              }
+                else if(component.get("V.onSubmit") == true){
+                    var a = component.get('c.approvalSubmit');  
+                	$A.enqueueAction(a);
+                }
+            }
+        
+        component.set("v.saveAndClose", false);
+        
+	},
+    hideAttachments: function(component, event, helper) { // hides list of attachments when user hits "hide attachments" button
+        console.log('in hideAttachments');
+        
+        component.set("v.hasAttachments", false);
+        component.set("v.addAttachments", false);
+        component.set("v.fileName", "No File Selected..");
+        component.set("v.largeFile", false);
+        
+    },
+    saveAndSubmit : function(component, event, helper){   // saves Form and submits for approval
+        console.log('in saveAndSubmit');
+        component.set("v.onSubmit", true);
+        component.set("v.isCopy", false);
+               
+        //Save the form
+        try {
+            component.get("v.theModal").get("e.recordSave").fire();
+            console.log('no error');
+     	  	}
+          catch (e) {
+            console.log(e);
+          }   
+	},
+    saveStay : function(component, event, helper){        // saves Form, does not close modal
+        console.log('in c.saveStay');
+        console.log('viewTheModal: ' + component.get("v.viewTheModal"));
+        
+        try {
+            	component.get('v.theModal').get("e.recordSave").fire();
+                console.log('no error');
+          	}
+          catch (e) {
+            console.log(e);
+          }
+        
+    },
+    showAttachments: function(component, event, helper) {  // shows list of attachments when user hits "show/add attachments" button
+        console.log('in showAttachments');
+        
+        var formID = component.get("v.viewFormID"); 
+          console.log('formID: ' + formID);
+        
+        helper.getAttachList(component, formID);
+        	component.set("v.addAttachments", true); 
+     	var a = component.get("c.createAttachComp");
+        $A.enqueueAction(a);
+    },
+    viewFormJS : function(component, event, helper){	  // queries for user's saved Forms
+        console.log('in viewFormJS');
+        var formID = event.currentTarget.id;   
+        console.log('formID: '+ formID);
+        
+        var formName = event.currentTarget.name;
+        
+        component.set("v.isNew", false);
+        component.set("v.viewFormID", formID); 
+        component.set("v.viewFormName", formName);
+        component.set("v.isCopy", false);
+        
+        var a = component.get("c.createTheModal");
+        $A.enqueueAction(a);
+    },
+    viewFormTypes : function(component, event, helper){ // shows user list of available Workflow Forms
+        console.log('in viewFormTypes');
+        
+        component.set("v.message", null);
+		component.set("v.pageStatus", "viewFormTypes");  // shows user list of Available Workflow and Fill&Print Forms
+	},
+    viewMyForms : function(component, event, helper){  // gets list of user's existing Form records, adds to "v.mySavedForms"
+        console.log('in viewMyForms');
+        
+        var action = component.get("c.findExistingForms");
+        action.setParams({
+			"sID" : component.get("v.sessionID")
+        });
+        action.setCallback(this,function(resp){
+			console.log('in viewMyForms action');
+            var state = resp.getState();
+            console.log('state: ' +state);
+            if(state === 'SUCCESS'){
+                component.set("v.mySavedForms", resp.getReturnValue());  // returned list of user's Saved Forms
+                component.set("v.message", null);
+                component.set("v.pageStatus", "viewMyForms");  // shows user list of Saved Forms
+            }
+            else if(state === 'ERROR'){
+                var errors = resp.getError();
+                for(var i = 0 ;i < errors.length;i++){
+                    console.log(errors[i].message);
+                }
+            }
+        });
+        $A.enqueueAction(action);
+	}
+       
 })

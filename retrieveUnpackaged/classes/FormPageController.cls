@@ -37,7 +37,7 @@ public without sharing class FormPageController  {
     public static Forms__c viewForm(string formID, string siteUserID) {
         UtilityMethods.addFormShare(formID, siteUserID);
         forms__c form = [select id, name, Approval_step__c, SF_182_Prepare_For_checker__c from Forms__c where id = :formID limit 1];
-     	return form;
+        return form;
     }
     
     @AuraEnabled
@@ -156,7 +156,6 @@ public without sharing class FormPageController  {
     
     @AuraEnabled
     public static Forms__c cloneForm(ID FormID) { 
-        
             String soql = UtilityMethods.getCreatableFieldsSOQL('forms__c','id=\''+FormID+'\'');
             forms__c f = (forms__c)Database.query(soql);
             forms__c f2 = f.clone(false, true);
@@ -209,13 +208,6 @@ public without sharing class FormPageController  {
         a.Body = EncodingUtil.base64Decode(existingBody + base64Data);
  
         update a;
-    }
-     
-    @AuraEnabled
-    public static List<ContentDocument> getListOfAttachments2(String formID) {        
-   //     return [select id, Name, CreatedDate from Attachment where parentID = :formID order by CreatedDate DESC];  
-        ContentDocumentLink x = [SELECT ContentDocumentId FROM ContentDocumentLink WHERE LinkedEntityId = :formID];  
-        return [SELECT id, Title, CreatedDate from ContentDocument where Id = :x.ContentDocumentId];    
     }
     
     @AuraEnabled

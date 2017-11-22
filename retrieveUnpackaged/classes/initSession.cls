@@ -3,7 +3,7 @@ public class initSession {
     public id uID {get;set;}
     public map<string, string> headers;
     public map<string, string> params;
-	public string siteUserID {get;set;}
+    public string siteUserID {get;set;}
     
     private user u;
 
@@ -61,9 +61,9 @@ public class initSession {
         return u;
     } // End findUser()
     
-    private void shareRecords(User u){
+     private void shareRecords(User u){
         // LS 2017/11/17: Temporary bulk method to get all form records for the logging in type-1 user and share read/write access with the general Forms Site Guest User.
-    	// In the future, this method should either be bulkified to not break with tons of form records or removed entirely to be done on-demand when an existing form is opened. 
+        // In the future, this method should either be bulkified to not break with tons of form records or removed entirely to be done on-demand when an existing form is opened. 
         List<Forms__c> forms = new List<Forms__c>(); 
         List<id> formIds = new List<Id>();
         List<Forms__Share> formShares = new List<Forms__Share>();  
@@ -80,9 +80,9 @@ public class initSession {
                 formIDs.add(form.Id);
             } // End for
             for (Integer i = 0; i < formIds.size();i++) {
-            	formShares.add(new Forms__Share(ParentID = formIds[i], UserorGroupID = siteUserID, AccessLevel = 'edit'));
-      		}
-        	database.insert(formShares, false);
+                formShares.add(new Forms__Share(ParentID = formIds[i], UserorGroupID = siteUserID, AccessLevel = 'edit'));
+            }
+            database.insert(formShares, false);
         } // End if
     } // End shareRecords(User u)
     

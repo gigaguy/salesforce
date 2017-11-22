@@ -2,7 +2,7 @@
     MAX_FILE_SIZE: 4500000, //Max file size 4.5 MB 
     CHUNK_SIZE: 750000,      //Chunk Max size 750Kb 
     
-    getFandP_Forms : function(component){
+    getFandP_Forms : function(component){     // gets list of available Fill&Print Forms
         console.log('in helper.getFandP_Forms');
     	var action = component.get("c.getFandP_FormRTs");
        
@@ -14,25 +14,24 @@
         });
      $A.enqueueAction(action);
 	},
-    show: function (cmp, event) {
+    show: function (cmp, event) {     // shows Lightning spinner
         console.log('in helper.show');
         
         var spinner = cmp.find("mySpinner");
         $A.util.removeClass(spinner, "slds-hide");
         $A.util.addClass(spinner, "slds-show");
     },
-    hide:function (cmp, event) {
+    hide:function (cmp, event) {       // hides Lightning spinner
         console.log('in helper.hide');
         
         var spinner = cmp.find("mySpinner");
         $A.util.removeClass(spinner, "slds-show");
         $A.util.addClass(spinner, "slds-hide");
     },
-    getAttachList : function(component, formID){
+    getAttachList : function(component, formID){   // gets list of attachments on Form record
 		console.log('in helper.getAttachList');
         
         console.log('formID: ' + formID);     
-    //    var action = component.get("c.getListOfAttachments2"); //File Testing
        		var action = component.get("c.getListOfAttachments");
         	action.setParams({
 			"formID" : formID
@@ -54,7 +53,7 @@
         });
      $A.enqueueAction(action);
 	},
-    uploadHelper: function(component, event) {
+    uploadHelper: function(component, event) {  // part of attachment upload process
         console.log('in helper.uploadHelper');
         
         // start/show the loading spinner   
@@ -93,7 +92,7 @@
  
         objFileReader.readAsDataURL(file);
     },
-    uploadProcess: function(component, file, fileContents) {
+    uploadProcess: function(component, file, fileContents) {   // part of attachment upload process
         console.log('in helper.uploadProcess');
         
         // set a default size or startpostiton as 0 
@@ -104,7 +103,7 @@
         // start with the initial chunk, and set the attachId(last parameter)is null in begin
         this.uploadInChunk(component, file, fileContents, startPosition, endPosition, '');
     },
-    uploadInChunk: function(component, file, fileContents, startPosition, endPosition, attachId) {
+    uploadInChunk: function(component, file, fileContents, startPosition, endPosition, attachId) {  // part of attachment upload process
         console.log('in helper.uploadInChunk');
         
         // call the apex method 'saveChunk'
@@ -161,7 +160,7 @@
         // enqueue the action
         $A.enqueueAction(action);
     },
-    setSiteUserID : function(component) {             
+    setSiteUserID : function(component) {	// set siteUserID for temp record sharing         
         console.log('in helper.setSiteUserID');
         
         var action = component.get("c.getSiteUserID");
@@ -173,7 +172,7 @@
         });
      $A.enqueueAction(action);
     },
-    setAPIUserID : function(component) {     
+    setAPIUserID : function(component) {	// set apiUserID for temp record sharing
 		console.log('in helper.setAPIUserID');
         
         var action = component.get("c.getAPIUserID");

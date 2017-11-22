@@ -1,8 +1,8 @@
 <aura:component controller="FormPageController" implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName">
-	<aura:attribute name="pageStatus" type="string" default="viewFormTypes"/>
+	<aura:attribute name="pageStatus" type="string" default="viewFormTypes"/>  
     <aura:attribute name="forms" type="RecordType[]"/>  
     <aura:attribute name="FandP_forms" type="List"/>
-    <aura:attribute name="modalName" type="string"/>
+    <aura:attribute name="viewTheModal" type="boolean" default="false"/>
     <aura:attribute name="isNew" type="boolean" default="false"/>
     <aura:attribute name="isCopy" type="boolean" default="false"/>
     <aura:attribute name="hrefInfo" type="string"/>
@@ -11,30 +11,27 @@
     <aura:attribute name="viewFormName" type="string"/>
     <aura:attribute name="theModal" type="Forms__c"/>
     <aura:attribute name="newForm" type="Forms__c"/>
-    <aura:attribute name="oldForms" type="Forms__c[]"/>
+    <aura:attribute name="mySavedForms" type="Forms__c[]"/>
     <aura:attribute name="message" type="string" />
-    <aura:attribute name="currentUser" type="Id"/>
     <aura:attribute name="sessionID" type="string"/>
     <aura:attribute name="siteUserID" type="string"/>
     <aura:attribute name="apiUserID" type="string"/>
     <aura:attribute name="hasAttachments" type="boolean" default="false"/>
     <aura:attribute name="addAttachments" type="boolean" default="false"/>
     <aura:attribute name="attachList" type="Attachment[]"/>
-    <aura:attribute name="stayModal" type="boolean" default="false"/>
-    <aura:attribute name="editTwo" type="boolean" default="false"/>
     <aura:attribute name="onSubmit" type="boolean" default="false"/>
-    <aura:attribute name="safeSave" type="boolean" default="false"/>
+    <aura:attribute name="saveAndClose" type="boolean" default="false"/>
     <aura:attribute name="showLoadingSpinner" type="boolean" default="false" />
     <aura:attribute name="fileName" type="String" default="No File Selected.." />
     <aura:attribute name="largeFile" type="boolean" default="false" />
-    <aura:attribute name="fileUp" type="Aura.Component[]"/>
+    <aura:attribute name="fileUploadCmp" type="Aura.Component[]"/>
     <aura:attribute name="uploadFiles" type="Object[]"/>
     
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
- 
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
     <aura:handler name="recordSave" event="force:recordSave" action="{!c.handleSave}" />
-	<lightning:spinner aura:id="mySpinner" alternativeText="Uploading Attachment" class="slds-hide slds-is-fixed"/>
+
+    <lightning:spinner aura:id="mySpinner" alternativeText="Uploading Attachment" class="slds-hide slds-is-fixed"/>
 
     <!-- Header-->
     <p style="margin-bottom: 35px; font-size: 125%;">
@@ -88,7 +85,7 @@
         <aura:iteration var="form" items="{!v.forms}">
             <tr style="background-color: white; border: 1px solid lightgray;">
                 <td style="color: black; padding: 5px; border: 1px solid lightgray; text-align: center;">
-          <button id="{!form.Id}" name="{!form.Name}" onclick="{!c.newOpenModal}">New Form</button>
+          <button id="{!form.Id}" name="{!form.Name}" onclick="{!c.createNewForm}">New Form</button>
                 </td>
                 <td style="color: black; padding: 5px; border: 1px solid lightgray;">
                 	{!form.Name}
@@ -182,13 +179,13 @@
                         CREATED DATE
                     </td>
                 </tr>
-                <aura:iteration var="form" items="{!v.oldForms}">
+                <aura:iteration var="form" items="{!v.mySavedForms}">
                     <tr style="background-color: white; border: 1px solid lightgray;">
                         <td style="color: black; padding: 5px; border: 1px solid lightgray; text-align: center;">
-                        <button id="{!form.Id}" name="{!form.Form_Type_Name__c}" onclick="{!c.newViewFormJS}">Open Form</button> 
+                        <button id="{!form.Id}" name="{!form.Form_Type_Name__c}" onclick="{!c.viewFormJS}">Open Form</button> 
                         </td>
                         <td style="color: black; padding: 5px; border: 1px solid lightgray; text-align: center;">
-                        <button id="{!form.Id}" name="{!form.Form_Type_Name__c}" onclick="{!c.newCopyForm}">Copy Form</button>
+                        <button id="{!form.Id}" name="{!form.Form_Type_Name__c}" onclick="{!c.copyForm}">Copy Form</button>
                         </td>
                         <td style="color: black; padding: 5px; border: 1px solid lightgray;">
                             {!form.Name}
@@ -213,7 +210,7 @@
     <!--End View My Forms List-->
     
     <!--The Modal-->
-    <aura:if isTrue="{!v.modalName == 'theModal'}">   
+    <aura:if isTrue="{!v.viewTheModal}">   
         <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
         <div class="slds-modal__container">
           <!--BOX HEADER-->
@@ -313,7 +310,7 @@
             <!--add attachments-->
               <aura:if isTrue="{!and(v.addAttachments, or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled')}">
               	<div align="left">
-                    {!v.fileUp}   
+                    {!v.fileUploadCmp}   
                            <div class="slds-text-body_small slds-text-color_error">
                                <aura:unescapedHtml value="{!v.fileName}" />  <aura:if isTrue="{!v.largeFile}"><a href="{!'/FileUpload?sid='+v.sessionID+'&amp;formID='+v.viewFormID}" target="_blank" onclick="{!c.hideAttachments}" style="color: black; text-decoration-line: underline;"> Large File Upload</a>
                  		<br/></aura:if>
@@ -337,7 +334,7 @@
                   <aura:if isTrue="{!v.isNew == false}"><ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmFormDelete}" /></aura:if> 
                   <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
                   <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral" label="Show/Add Attachments" press="{!c.showAttachments}" /></aura:if> 
-                  <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.newSaveStay}" />
+                  <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveStay}" />
            		  <ui:button class="slds-button slds-button_success" label="Submit" press="{!c.confirmSubmit}" /> 
                 <aura:set attribute="else"><ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.closeModal}" />
                   <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
