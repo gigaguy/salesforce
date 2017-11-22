@@ -129,6 +129,10 @@
         <columns>Mass_Mailing_Campaign_Content__c</columns>
         <columns>OBJECT_ID</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>Docket_Count__c</field>
+            <operation>equals</operation>
+        </filters>
         <label>All</label>
     </listViews>
     <nameField>
