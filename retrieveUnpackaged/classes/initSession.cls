@@ -3,8 +3,7 @@ public class initSession {
     public id uID {get;set;}
     public map<string, string> headers;
     public map<string, string> params;
-    public string siteUserID {get;set;}
-    
+   
     private user u;
 
     public initSession(){
@@ -60,30 +59,5 @@ public class initSession {
         User u = [select id from User where Session_Token__c = :sID limit 1];
         return u;
     } // End findUser()
-    
-     private void shareRecords(User u){
-        // LS 2017/11/17: Temporary bulk method to get all form records for the logging in type-1 user and share read/write access with the general Forms Site Guest User.
-        // In the future, this method should either be bulkified to not break with tons of form records or removed entirely to be done on-demand when an existing form is opened. 
-        List<Forms__c> forms = new List<Forms__c>(); 
-        List<id> formIds = new List<Id>();
-        List<Forms__Share> formShares = new List<Forms__Share>();  
-        // Get all forms for this logging in user
-        forms = [SELECT Id, Unauthenticated_Owner__c
-                FROM Forms__c 
-                WHERE Unauthenticated_Owner__c = :u.Id];      
-        // If this user has already existing forms, share each with Forms Site Guest User with read/write access. Using hard-coded ID for testing for this user of "00535000000UUHc".
-        // In the future, will need to add querying for the actual user ID of Forms Site Guest User dynamically.
-        if (forms.size() > 0) {
-            // Query and set ID of force.com site user
-            siteUserID = UtilityMethods.getAnyUserID('Forms', 'Site Guest User');
-            for (forms__c form : forms) {
-                formIDs.add(form.Id);
-            } // End for
-            for (Integer i = 0; i < formIds.size();i++) {
-                formShares.add(new Forms__Share(ParentID = formIds[i], UserorGroupID = siteUserID, AccessLevel = 'edit'));
-            }
-            database.insert(formShares, false);
-        } // End if
-    } // End shareRecords(User u)
     
 }

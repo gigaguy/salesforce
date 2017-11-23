@@ -42,10 +42,6 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Training_Officer_List_For_Reference__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Required</behavior>
                 <field>Approval_Routing_Options__c</field>
             </layoutItems>
@@ -364,17 +360,6 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Billing_Instructions__c</field>
-            </layoutItems>
-            <layoutItems>
-                <emptySpace>true</emptySpace>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Employee_s_Signature__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Employee_Digital_Signature__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>

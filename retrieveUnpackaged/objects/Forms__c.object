@@ -6682,17 +6682,6 @@ Line_Total_Price_10__c</formula>
         <type>TextArea</type>
     </fields>
     <fields>
-        <fullName>Training_Officer_List_For_Reference__c</fullName>
-        <defaultValue>&quot;http://www.google.com&quot;</defaultValue>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <label>Training Officer List For Reference</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>TextArea</type>
-    </fields>
-    <fields>
         <fullName>Training_Purpose_Type__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -7266,10 +7255,11 @@ TEXT(Training_Credit__c))</formula>
         <description>SF-182</description>
         <externalId>false</externalId>
         <label>Vendor Email Address</label>
+        <length>80</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Email</type>
+        <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -22447,6 +22437,15 @@ Prepare_Form_for__r.Email
  ISBLANK( Select_Card_Holder2__c ) 
 )</errorConditionFormula>
         <errorMessage>&quot;Select Card Holder&quot; field is required if the invoice is furnished to &quot;Purchase Card Transaction&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SF_182_Invalid_Email_Address</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+NOT(REGEX(Vendor_Email_Address__c ,&apos;([a-zA-Z0-9_\\-\\.]+)@((\\[a-z]{1,3}\\.[a-z]{1,3}\\.[a-z]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})&apos;)),
+NOT(ISBLANK(Vendor_Email_Address__c))
+)</errorConditionFormula>
+        <errorMessage>Vendor Email Address is not a valid email address.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>SF_182_Service_Agreement_Req_fields</fullName>

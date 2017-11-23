@@ -146,6 +146,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>FormsTypeOneExpireSession_Schedule_Test</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>MyProfilePageController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -3209,11 +3213,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Forms__c.Training_Objective__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.Training_Officer_List_For_Reference__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

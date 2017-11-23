@@ -2827,10 +2827,6 @@
         <name>Training_Objective__c</name>
     </fields>
     <fields>
-        <label><!-- Training Officer List For Reference --></label>
-        <name>Training_Officer_List_For_Reference__c</name>
-    </fields>
-    <fields>
         <label><!-- Training Purpose Type --></label>
         <name>Training_Purpose_Type__c</name>
         <picklistValues>
@@ -3865,6 +3861,10 @@
     <validationRules>
         <errorMessage><!-- &quot;Select Card Holder&quot; field is required if the invoice is furnished to &quot;Purchase Card Transaction&quot; --></errorMessage>
         <name>SF_182_Card_Holder_Lookup_Required_top</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Vendor Email Address is not a valid email address. --></errorMessage>
+        <name>SF_182_Invalid_Email_Address</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- If Continued Service Agreement is Required, &quot;Continued Service Agreement Expiration&quot; and &quot;Continue In Service Agreement Signature&quot; fields cannot be blank. --></errorMessage>
