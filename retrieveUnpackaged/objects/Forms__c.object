@@ -5858,11 +5858,11 @@ Prepare_Form_for__r.Position_Title__c ))</formula>
     </fields>
     <fields>
         <fullName>SF_182_Override_Instructions__c</fullName>
-        <defaultValue>&quot;The section below provides you the ability to identify an approver that will replace the default approver for this form. The default approvers are set up by individuals on his or her approval profile. To reset the approvers, delete name(s) and hit &apos;Save&apos; button.&quot;</defaultValue>
+        <defaultValue>&quot;This form will submit to your supervisor(s) and funding officials as designated by your approval profile. This profile can be modified using the \&quot;Edit My Approvers\&quot; link on the BAP Forms Home Page. If you know an approver is out of the office and need to designate a replacement, begin typing in the appropriate box below to search. Then, click the person&apos;s name when it appears. Note: If you have previously saved the form, you will need to remove the saved approver&apos;s name by clicking the \&quot;X\&quot; prior to searching for a new approver.&quot;</defaultValue>
         <description>SF-182</description>
         <externalId>false</externalId>
         <label>SF-182 Override Instructions</label>
-        <length>285</length>
+        <length>540</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
