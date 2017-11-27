@@ -464,6 +464,11 @@
         <columns>Extracted_Text__c</columns>
         <columns>Response__c</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>Topic_Name__c</field>
+            <operation>contains</operation>
+            <value>14.3</value>
+        </filters>
         <label>All Waters of the US</label>
     </listViews>
     <listViews>
