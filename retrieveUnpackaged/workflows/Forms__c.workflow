@@ -5,7 +5,8 @@
         <description>BAP Generic Submission Confirmation</description>
         <protected>false</protected>
         <recipients>
-            <type>owner</type>
+            <field>Unauthenticated_Owner__c</field>
+            <type>userLookup</type>
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/BAP_Forms_Generic_Submission_Confirmation</template>

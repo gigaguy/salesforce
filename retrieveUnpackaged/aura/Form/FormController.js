@@ -526,6 +526,20 @@
             alert('Please Select a Valid File');
         }
     },
+    enableAttachments: function(component, event, helper) {    // saves Form before allowing attachments
+    	console.log('in enableAttachments');
+        
+        try {
+           	component.get('v.theModal').get("e.recordSave").fire();
+            console.log('no error');
+          	}
+        catch (e) {
+            console.log(e);
+          }
+        
+        var a = component.get("c.showAttachments");
+        $A.enqueueAction(a);
+    },
     handleFilesChange: function(component, event, helper) {  // runs when user selects file for attachment upload
         console.log('in handleFilesChange');      
         
@@ -652,6 +666,7 @@
         
         var formName = event.currentTarget.name;
         
+        component.set("v.message", "");
         component.set("v.isNew", false);
         component.set("v.viewFormID", formID); 
         component.set("v.viewFormName", formName);

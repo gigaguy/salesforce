@@ -13,11 +13,11 @@
         <name>AWL_Phone_Number__c</name>
     </fields>
     <fields>
-        <label><!-- A. New Member Enrollment --></label>
+        <label><!-- Description --></label>
         <name>A_Description__c</name>
     </fields>
     <fields>
-        <label><!-- Description &quot;A&quot; Applies --></label>
+        <label><!-- A. New Member Enrollment --></label>
         <name>A__c</name>
     </fields>
     <fields>
@@ -155,11 +155,15 @@
         <relationshipLabel><!-- Forms (Approving Official) --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- B. Donate Hours (no waiver needed) --></label>
+        <label><!-- Description --></label>
         <name>B_Description__c</name>
     </fields>
     <fields>
-        <label><!-- Description &quot;B&quot; Applies --></label>
+        <label><!-- Extra Hour Donation --></label>
+        <name>B_Extra_Hour_Donation__c</name>
+    </fields>
+    <fields>
+        <label><!-- B. Donate Hours (no waiver needed) --></label>
         <name>B__c</name>
     </fields>
     <fields>
@@ -191,19 +195,19 @@
         <name>Budget_Office_Printed_Name__c</name>
     </fields>
     <fields>
-        <label><!-- C. Comment --></label>
+        <label><!-- Comment --></label>
         <name>C_Comment__c</name>
     </fields>
     <fields>
-        <label><!-- C. Donate Hours (waiver needed) --></label>
+        <label><!-- Description --></label>
         <name>C_Description__c</name>
     </fields>
     <fields>
-        <label><!-- C. Hours Donated --></label>
+        <label><!-- Hours Donated --></label>
         <name>C_Hours_Donated__c</name>
     </fields>
     <fields>
-        <label><!-- C. Reason --></label>
+        <label><!-- Reason --></label>
         <name>C_Reason__c</name>
         <picklistValues>
             <masterLabel>Enter reason in Comment field below:</masterLabel>
@@ -219,7 +223,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Description &quot;C&quot; Applies --></label>
+        <label><!-- C. Donate Hours (waiver needed) --></label>
         <name>C__c</name>
     </fields>
     <fields>
@@ -646,15 +650,15 @@
         <name>Custodial_Property_Officer_Printed_Name__c</name>
     </fields>
     <fields>
-        <label><!-- D. Donate to specific Person --></label>
+        <label><!-- Description --></label>
         <name>D_Description__c</name>
     </fields>
     <fields>
-        <label><!-- D. Hours Donated --></label>
+        <label><!-- Hours Donated --></label>
         <name>D_Hours_Donated__c</name>
     </fields>
     <fields>
-        <label><!-- Description &quot;D&quot; Applies --></label>
+        <label><!-- D. Donate to specific Person --></label>
         <name>D__c</name>
     </fields>
     <fields>
@@ -966,15 +970,15 @@
         <name>EPA_Form_3110_1__c</name>
     </fields>
     <fields>
-        <label><!-- E. Hours Donated --></label>
+        <label><!-- Hours Donated --></label>
         <name>E_Hours_Donated__c</name>
     </fields>
     <fields>
-        <label><!-- E. Use or Lose --></label>
+        <label><!-- Description --></label>
         <name>E_Use_or_Lose__c</name>
     </fields>
     <fields>
-        <label><!-- &quot;E. Use or Lose&quot; Applies --></label>
+        <label><!-- E. Use or Lose --></label>
         <name>E__c</name>
     </fields>
     <fields>
@@ -1104,20 +1108,16 @@
         <name>Expire_Date__c</name>
     </fields>
     <fields>
-        <label><!-- B. Extra Hour Donation --></label>
-        <name>Extra_Hour_Donation__c</name>
-    </fields>
-    <fields>
         <label><!-- FCO --></label>
         <name>FCO__c</name>
         <relationshipLabel><!-- Forms (FCO) --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- F. Withdraw --></label>
-        <name>F_Withdraw__c</name>
+        <label><!-- Description --></label>
+        <name>F_Description__c</name>
     </fields>
     <fields>
-        <label><!-- &quot;F. Withdraw&quot; Applies --></label>
+        <label><!-- F. Withdraw --></label>
         <name>F__c</name>
     </fields>
     <fields>
@@ -1131,6 +1131,10 @@
     <fields>
         <label><!-- Financial Management(Printed Name) --></label>
         <name>Financial_Management_Printed_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name_3160__c</name>
     </fields>
     <fields>
         <label><!-- First Name --></label>
@@ -1488,6 +1492,10 @@
     </fields>
     <fields>
         <label><!-- Last Name --></label>
+        <name>Last_Name_3160__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
         <name>Last_Name__c</name>
     </fields>
     <fields>
@@ -1665,6 +1673,114 @@
     <fields>
         <label><!-- Organization --></label>
         <name>Organization__c</name>
+        <picklistValues>
+            <masterLabel>Ann Arbor</masterLabel>
+            <translation><!-- Ann Arbor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cincinnati</masterLabel>
+            <translation><!-- Cincinnati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Las Vegas</masterLabel>
+            <translation><!-- Las Vegas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OA</masterLabel>
+            <translation><!-- OA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OAR</masterLabel>
+            <translation><!-- OAR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OARM</masterLabel>
+            <translation><!-- OARM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCFO</masterLabel>
+            <translation><!-- OCFO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCSPP</masterLabel>
+            <translation><!-- OCSPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OECA</masterLabel>
+            <translation><!-- OECA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEI</masterLabel>
+            <translation><!-- OEI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGC</masterLabel>
+            <translation><!-- OGC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OIG</masterLabel>
+            <translation><!-- OIG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OITA</masterLabel>
+            <translation><!-- OITA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OLEM</masterLabel>
+            <translation><!-- OLEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORD</masterLabel>
+            <translation><!-- ORD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OW</masterLabel>
+            <translation><!-- OW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTP</masterLabel>
+            <translation><!-- RTP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1</masterLabel>
+            <translation><!-- Region 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10</masterLabel>
+            <translation><!-- Region 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2</masterLabel>
+            <translation><!-- Region 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3</masterLabel>
+            <translation><!-- Region 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4</masterLabel>
+            <translation><!-- Region 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5</masterLabel>
+            <translation><!-- Region 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6</masterLabel>
+            <translation><!-- Region 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7</masterLabel>
+            <translation><!-- Region 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8</masterLabel>
+            <translation><!-- Region 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9</masterLabel>
+            <translation><!-- Region 9 --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Original PRIA Due Date --></label>
@@ -2390,8 +2506,12 @@
             <translation><!-- Correction --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Donation by Someone Who is Not a Member</masterLabel>
-            <translation><!-- Donation by Someone Who is Not a Member --></translation>
+            <masterLabel>Donation (Member)</masterLabel>
+            <translation><!-- Donation (Member) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donation (Non-Member)</masterLabel>
+            <translation><!-- Donation (Non-Member) --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Initial</masterLabel>
@@ -3533,8 +3653,8 @@
             <section>III. Leave Bank Coordinator&apos;s Certification (See instructions above)</section>
         </sections>
         <sections>
-            <label><!-- IV. Waiver.  If applicable, waiver for II-B above is authorized --></label>
-            <section>IV. Waiver.  If applicable, waiver for II-B above is authorized</section>
+            <label><!-- IV. OHR Certification --></label>
+            <section>IV. OHR Certification</section>
         </sections>
         <sections>
             <label><!-- Leave Bank Election Form --></label>
@@ -3549,6 +3669,10 @@
             <section>Leave Recipient Information (Donated to a Specific Person)</section>
         </sections>
         <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
             <label><!-- Sig Section (title not shown) --></label>
             <section>Sig Section (title not shown)</section>
         </sections>
@@ -3559,6 +3683,10 @@
         <sections>
             <label><!-- Type of Contribution Spacer 1 --></label>
             <section>Type of Contribution Spacer 1</section>
+        </sections>
+        <sections>
+            <label><!-- V. Waiver --></label>
+            <section>V. Waiver</section>
         </sections>
     </layouts>
     <layouts>

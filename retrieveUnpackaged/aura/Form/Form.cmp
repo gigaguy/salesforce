@@ -331,9 +331,13 @@
                   <aura:if isTrue="{!v.isNew || v.isCopy}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.confirmCancelCreationModal}" />
                     <aura:set attribute="else"><ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.confirmCloseModal}" /></aura:set>
                   </aura:if>  
-                  <aura:if isTrue="{!v.isNew == false}"><ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmFormDelete}" /></aura:if> 
-                  <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
-                  <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral" label="Show/Add Attachments" press="{!c.showAttachments}" /></aura:if> 
+                  <aura:if isTrue="{!and(v.isNew == false, v.isCopy == false)}"><ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmFormDelete}" /></aura:if> 
+                  <aura:if isTrue="{!v.isNew || v.isCopy}">
+                  	<ui:button class="slds-button slds-button--neutral" label="Save to Enable Attachments" press="{!c.enableAttachments}" />			
+                  <aura:set attribute="else">
+                  	<aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
+                  	<aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral" label="Show/Add Attachments" press="{!c.showAttachments}" /></aura:if> 
+                      </aura:set></aura:if>
                   <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveStay}" />
            		  <ui:button class="slds-button slds-button_success" label="Submit" press="{!c.confirmSubmit}" /> 
                 <aura:set attribute="else"><ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.closeModal}" />
