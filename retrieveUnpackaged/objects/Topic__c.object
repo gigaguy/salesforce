@@ -179,6 +179,20 @@
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
+    <listViews>
+        <fullName>All_Bristol_Bay</fullName>
+        <columns>NAME</columns>
+        <columns>Topic_Name__c</columns>
+        <columns>Summary_of_Comments_on_this_Topic__c</columns>
+        <columns>Topic_Response_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Topic__c.Bristol_Bay</value>
+        </filters>
+        <label>All Bristol Bay</label>
+    </listViews>
     <nameField>
         <label>Topic Number</label>
         <trackFeedHistory>false</trackFeedHistory>

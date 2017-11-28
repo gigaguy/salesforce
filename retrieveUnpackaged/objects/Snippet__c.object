@@ -465,9 +465,9 @@
         <columns>Response__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>Topic_Name__c</field>
-            <operation>contains</operation>
-            <value>14.3</value>
+            <field>Snippet_Status__c</field>
+            <operation>equals</operation>
+            <value>Snippet Read by Agency,Snippet Needs Edits,Agency Response Drafted,Agency Response Complete</value>
         </filters>
         <label>All Waters of the US</label>
     </listViews>
@@ -710,12 +710,14 @@
         <searchFilterFields>Topic__c</searchFilterFields>
         <searchFilterFields>Document_Number__c</searchFilterFields>
         <searchFilterFields>Snippet_Status__c</searchFilterFields>
+        <searchFilterFields>RECORDTYPE</searchFilterFields>
         <searchResultsAdditionalFields>Submission_Number__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Topic__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Topic_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Extracted_Text__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Response__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Snippet_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>

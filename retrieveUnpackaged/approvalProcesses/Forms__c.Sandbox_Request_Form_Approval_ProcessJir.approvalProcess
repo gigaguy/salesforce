@@ -30,8 +30,8 @@
             </approver>
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
-        <label>Step 1</label>
-        <name>Step_1</name>
+        <label>BAP Request Submitted Step</label>
+        <name>BAP_Request_Submitted_Step</name>
     </approvalStep>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
@@ -49,8 +49,8 @@
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
         <description>Signals that the sandbox has been built</description>
-        <label>Sandbox_Complete_Step</label>
-        <name>Sandbox_Complete_Step</name>
+        <label>BAP Request Complete Step</label>
+        <name>BAP_Request_Complete_Step</name>
         <rejectBehavior>
             <type>RejectRequest</type>
         </rejectBehavior>
