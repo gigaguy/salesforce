@@ -1182,6 +1182,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Forms__c.Autopopulated_Employee_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Forms__c.B_Description__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2383,6 +2388,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Forms__c.Original_PRIA_Due_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forms__c.Originator_ORD111__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4501,6 +4511,10 @@
     <pageAccesses>
         <apexPage>InMaintenance</apexPage>
         <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>LeaveBankInstructions</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
         <apexPage>LogoutPage</apexPage>

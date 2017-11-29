@@ -155,6 +155,10 @@
         <relationshipLabel><!-- Forms (Approving Official) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Autopopulated Employee ID # --></label>
+        <name>Autopopulated_Employee_ID__c</name>
+    </fields>
+    <fields>
         <label><!-- Description --></label>
         <name>B_Description__c</name>
     </fields>
@@ -1788,6 +1792,10 @@
     </fields>
     <fields>
         <label><!-- Originator --></label>
+        <name>Originator_ORD111__c</name>
+    </fields>
+    <fields>
+        <label><!-- Originator --></label>
         <name>Originator__c</name>
     </fields>
     <fields>
@@ -2473,10 +2481,119 @@
     <fields>
         <label><!-- Recipient Name --></label>
         <name>Recipient_Name__c</name>
+        <relationshipLabel><!-- Forms (Recipient Name) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Organization --></label>
         <name>Recipient_Organization__c</name>
+        <picklistValues>
+            <masterLabel>Ann Arbor</masterLabel>
+            <translation><!-- Ann Arbor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cincinnati</masterLabel>
+            <translation><!-- Cincinnati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Las Vegas</masterLabel>
+            <translation><!-- Las Vegas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OA</masterLabel>
+            <translation><!-- OA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OAR</masterLabel>
+            <translation><!-- OAR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OARM</masterLabel>
+            <translation><!-- OARM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCFO</masterLabel>
+            <translation><!-- OCFO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCSPP</masterLabel>
+            <translation><!-- OCSPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OECA</masterLabel>
+            <translation><!-- OECA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEI</masterLabel>
+            <translation><!-- OEI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGC</masterLabel>
+            <translation><!-- OGC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OIG</masterLabel>
+            <translation><!-- OIG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OITA</masterLabel>
+            <translation><!-- OITA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OLEM</masterLabel>
+            <translation><!-- OLEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORD</masterLabel>
+            <translation><!-- ORD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OW</masterLabel>
+            <translation><!-- OW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTP</masterLabel>
+            <translation><!-- RTP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1</masterLabel>
+            <translation><!-- Region 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10</masterLabel>
+            <translation><!-- Region 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2</masterLabel>
+            <translation><!-- Region 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3</masterLabel>
+            <translation><!-- Region 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4</masterLabel>
+            <translation><!-- Region 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5</masterLabel>
+            <translation><!-- Region 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6</masterLabel>
+            <translation><!-- Region 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7</masterLabel>
+            <translation><!-- Region 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8</masterLabel>
+            <translation><!-- Region 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9</masterLabel>
+            <translation><!-- Region 9 --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Work Phone No. --></label>

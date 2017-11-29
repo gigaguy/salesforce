@@ -8,7 +8,8 @@ public class FormsTriggerHandler {
             if(form.Unauthenticated_Owner__c == null){ 
                 form.Unauthenticated_Owner__c = userInfo.getUserID();
               }
-              
+            form.Originator_ORD111__c = form.Form_Owner__c;
+            
             //find and set Type-1 Owner Contact  
             try{ 
                 string uLan = [select LAN_ID__c from user where ID = :form.Unauthenticated_Owner__c].LAN_ID__c;          
@@ -162,14 +163,16 @@ public class FormsTriggerHandler {
         isFirstTime = false;
         system.debug('in after update');
         //get sf-182 record type
-            ID rtID = [SELECT Id,Name FROM RecordType WHERE name = 'SF-182' limit 1].id;
+            Id rtID = Schema.SObjectType.Forms__c.getRecordTypeInfosByName().get('SF-182').getRecordTypeId();
+            system.debug('sf-182 rt: '+rtID);
             
         for (forms__c form : formMap.values()) {
                 if(form.Approval_Step__c != 'Approved'){
                     system.debug('approval step does not equal approved');
                     createFormShares(formMap.keyset());
                   }  
-            //send email to cincinatti for approved SF-182 forms       
+                  
+ /*           //send email to cincinatti for approved SF-182 forms       
             system.debug('cin check: '+form.Approval_Step__c);
                     if(form.Approval_Step__c == 'Approved' && form.RecordTypeID == rtID){
                          SF_182_SendEmailWithAttachments.sendMessage(form.id);  
@@ -177,22 +180,8 @@ public class FormsTriggerHandler {
                         SF_182_SendCincinnatiEmail.sendMessage(form.id);  
                        }                   
                     }
-                }
-        
-               ////////////////////////////////////////////////////////////////////////
-               //         /*List<Forms__Share> formShares = new List<Forms__Share>();
-               //         for (id formID : formIdToPeopleIds.keyset()){
-               //             Set<id> usedPeople = new Set<id>();
-               //             for (id personID: formIdToPeopleIds.get(formId)){
-               //                 if (!usedPeople.contains(personid)){
-               //                     formShares.add(new Forms__Share(ParentID = formId, UserorGroupID = personid, AccessLevel = 'edit'));
-               //                     usedPeople.adD(personId);
-               //                 }
-               //             }
-               //         }
-               //         
-               //         database.insert(formShares, false);*/
-               ///////////////////////////////////////////////////////////////////////////
+  */                  
+            }
         }
     }
     

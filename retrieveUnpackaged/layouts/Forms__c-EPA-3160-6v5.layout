@@ -69,10 +69,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Name__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Organization__c</field>
             </layoutItems>
         </layoutColumns>
@@ -82,7 +78,7 @@
                 <field>Employee_ID_No__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Work_Phone_No__c</field>
             </layoutItems>
         </layoutColumns>
@@ -175,7 +171,11 @@
                 <field>Recipient_Employee_ID_No__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
+                <field>Autopopulated_Employee_ID__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
                 <field>Recipient_Work_Phone_No__c</field>
             </layoutItems>
         </layoutColumns>

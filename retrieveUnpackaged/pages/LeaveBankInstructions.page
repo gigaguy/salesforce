@@ -1,0 +1,131 @@
+<apex:page controller="ProfilePageController" showheader="false" sidebar="false" title="BAP Agency Forms - Leave Bank Instructions" cache="false" action="{!validateOrRedirect}">
+
+    <style>
+        body { background-color: #E0F1FF; }
+    </style>
+    
+    <!--Header-->
+    <apex:form >
+    <apex:outputpanel >
+        <div class="topBar1" style="width: 100%; height: 110px; background-color: #0E6993; min-width: 1175px;">
+            <a href="http://workplace.epa.gov/" style="margin-left: 25%;"><img src="{!$Resource.EPAOneLogo}" style="margin-top: 20px;"/></a>
+        </div>
+        <div class="topBar2" style="width: 100%; height: 38px; background-color: #0A5071; min-width: 1175px;">
+            &nbsp;
+        </div>
+    </apex:outputpanel>
+    <div class="WebFormsNav" style="width: 100%; height: 200px; min-width: 1150px;">
+        <table style="width: 80%; padding: 20px;">
+            <tr>
+                <td style="width: 180px; vertical-align: top;">
+                    <img src="{!$Resource.EPALogo}"/>
+                </td>
+                <td style="vertical-align: top;">
+                    <h1 style="font-size: 250%; padding-bottom: 20px;">Business Automation Platform – Agency Forms</h1>
+                    <p style="margin-top: 30px; font-size: 125%;">
+                        Leave Bank Election Form Instructions 
+                    </p>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    </apex:form>
+    <!-- End Header -->
+    
+    <!--Body-->
+        
+    <div style="width: 60%; padding-left: 200px; font-size: 125%;"> 
+        <div style="width: 75%; padding-left: 75px; text-align:center; font-size: 135%;">
+<b>GENERAL INSTRUCTIONS AND INFORMATON ABOUT THE LEAVE BANK PROGRAM</b>
+        </div><br/>
+This form is used to: (1) apply for membership in the EPA Leave Bank, (2) donate additional hours beyond your annual required minimum 
+contribution to the Leave Bank, (3) donate to a specific individual who is a qualified leave recipient, (4) donate use-or-lose leave to 
+EPA’s Leave Bank, and (5) withdraw from EPA’s Leave Bank. Complete sections I and II, and return the form to your Human Resources Office.
+<br/><br/>
+You may check Box IIA and join the EPA Leave Bank only during an open enrollment period for all Agency employees or during an individual 
+enrollment period if you are a new EPA employee or one returning to EPA from an absence covering an entire open enrollment period.
+<br/><br/>
+You may check Boxes IIB, IIC, IID, and/or IIE and submit this form to your Leave Bank Coordinator at any time during the year, 
+including an open enrollment period. You do not have to be a Leave Bank member to donate leave to the Leave Bank. However, if 
+contributions are outside an open or individual enrollment period, the contribution will not entitle the employee to membership in the 
+Leave Bank.
+<br/><br/>
+All donations of leave are deposited in the Bank. They are not returned to you if you leave EPA. Also, if the person to whom you 
+designate leave no longer has the medical emergency, any unused leave is returned to the Bank, not to you.
+<br/><br/>
+There are limitations on the total amount of leave you may donate to the Agency Leave Bank in any one year. These limitations apply 
+to a combined total amount of annual leave donated by an employee under the leave bank and leave transfer programs. 
+These limitations are:
+<br/><br/>
+
+<ul>
+<li>In any one leave year, a leave contributor may contribute no more than a total of one-half of the amount of annual leave he 
+   or she would be entitled to accrue during the leave year in which the contribution is made. </li>
+   <br/>
+<li>In the case of a leave contributor who is projected to have annual leave that otherwise would be subject to forfeiture at the end 
+of the leave year under 5 U.S.C. 6304(a), the maximum amount of annual leave that may be contributed during the leave year shall be 
+the lesser of – </li>
+ <br/>
+<ul style="list-style-type:circle">
+<li>One-half of the amount of annual leave he or she would be entitled to accrue during the leave year in which the contribution is 
+made; or </li>
+   <br/>
+<li>The number of hours remaining in the leave year (as of the date of the contribution) for which the leave contributor is scheduled 
+to work and receive pay. </li>
+</ul>
+</ul>
+   <br/> 
+   
+EXAMPLE: If you had 80 hours “use-or-lose” leave and only 5 work days remaining in the leave year, the maximum number of hours you 
+could donate would be 40. The other 40 hours will be forfeited.
+   <br/><br/>
+Under certain conditions, the aforementioned limitations may be waived for a valid reason.If you need to request a waiver to donate 
+leave beyond these limitations, select a reason for the waiver request.
+   <br/><br/>
+<b>INSTRUCTIONS FOR SECTION I </b>
+  <br/>
+Complete all items in this section. Please type or print legibly with a ballpoint pen.
+   <br/><br/>
+<b>INSTRUCTIONS FOR SECTION II </b>
+<br/>
+Check any boxes that apply. “Box A” is used to indicate that you want to enroll as a member of the EPA Leave Bank. The membership 
+“fee” for one year’s membership in the Leave Bank is one pay period’s accrual of annual leave (i.e., 4,6, or 8 hours) or an amount 
+lower or higher as set by the Agency Leave Bank Board for a particular enrollment period. All basic membership contributions will 
+be deposited in the central Bank. They may not be designated to a recipient.
+   <br/><br/>
+Use “Box B” to donate extra hours beyond your annual required minimum contribution. You may make this type of contribution at any 
+time during the year.
+   <br/><br/>
+Check “Box C” if you want to donate extra hours beyond your annual required minimum contribution to a particular EPA employee whom 
+you know is a qualified recipient under the Leave Bank program. You may donate leave to any qualified recipient, other than your 
+immediate supervisor. You may make this type of contribution at any time during the year.
+   <br/><br/>
+Check “Box D” if you wish to donate annual leave that would otherwise be forfeited at the end of the current leave year to the 
+EPA Leave Bank. You must identify the number of hours you are donating.
+   <br/><br/>
+
+<b>CERTIFICATION FOR SECTION III </b>
+  <br/>
+The Agency Official whose signature appears in this section certifies the following:
+  <br/>
+<ol>
+<li>That if the applicant has checked Box A under Section II, he or she has submitted this form to the Leave Bank Coordinator within the established time limits of either an Agency 
+open enrollment period or an individual enrollment period.</li>
+<li>That if the applicant has checked Box B, C, or D under Section II, the number of hours donated either do not exceed the 
+regulatory limitations, or (if it does exceed the limitations) a waiver has been requested.</li>
+<li>That if the applicant has checked Box D under Section II, the employee designated to receive the leave is a currently qualified 
+leave recipient under the EPA Leave Bank Program.</li>
+</ol>
+<b>CERTIFICATION FOR SECTION IV </b>
+  <br/>
+This section is completed by the OHR National Leave Bank Program.
+  <br/><br/>
+<b>INSTRUCTIONS FOR SECTION V </b>
+  <br/>
+This section is completed by the OHR National Leave Bank Program.
+   <br/><br/><br/><br/><br/>
+
+  </div>
+  
+</apex:page>
