@@ -226,6 +226,9 @@
     </platformActionList>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Questions__c.Question__c</fields>
+        <fields>Answer__c</fields>
+        <fields>Questions__c.Status__c</fields>
         <relatedList>Question_Response__c.Candidate_Application__c</relatedList>
     </relatedLists>
     <relatedLists>

@@ -18,7 +18,7 @@ public class TQBRequestHandler {
     public static List<Questions__c> getRelatedQuestions(String track){
         List<Questions__c> relatedQuestions = null;
         try{
-            relatedQuestions = [Select id from Questions__c where Track__c =:track];
+            relatedQuestions = [Select id,Question__c from Questions__c where Track__c =:track];
         }catch(Exception e){
             System.debug('getRelatedQuestions query fail.'+e.getMessage());
         }
@@ -33,7 +33,7 @@ public class TQBRequestHandler {
             Boolean updateExistingQuestions = true;
             Boolean insertNewRecords = false;
             if(updateExistingQuestions){
-				newRecords = [Select Id from Question_Response__c where Candidate_Application__r.Id =:request.Id];                
+				newRecords = [Select Id,Question__c from Question_Response__c where Candidate_Application__r.Id =:request.Id];                
             }
             if(newRecords != null && newRecords.size()>0){
                  delete newRecords; 
@@ -49,6 +49,9 @@ public class TQBRequestHandler {
 					Question_Response__c reqResponse = new Question_Response__c();
     	            reqResponse.Candidate_Application__c = request.Id;
         	        reqResponse.Questions__c = relatedQuestion.Id;
+                    System.debug('AAA 1');
+                    reqResponse.Question__c = relatedQuestion.Question__c;
+                    System.debug('AAA 2');
             	    newRecords.add(reqResponse);
 	            }
             }

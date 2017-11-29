@@ -76,10 +76,22 @@
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
+        <fullName>Question__c</fullName>
+        <description>Question text.</description>
+        <externalId>false</externalId>
+        <label>Question</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Questions__c</fullName>
         <externalId>false</externalId>
         <label>Questions</label>
         <referenceTo>Questions__c</referenceTo>
+        <relationshipLabel>Question Responses</relationshipLabel>
         <relationshipName>Question_Responses</relationshipName>
         <relationshipOrder>1</relationshipOrder>
         <reparentableMasterDetail>false</reparentableMasterDetail>
