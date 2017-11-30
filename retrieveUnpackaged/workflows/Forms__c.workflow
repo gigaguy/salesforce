@@ -107,7 +107,7 @@
             <type>userLookup</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Form_Approval_Request_Notification_Template</template>
+        <template>unfiled$public/Form_Submission_Notification_Template</template>
     </alerts>
     <alerts>
         <fullName>ORD_111_Submission_Confirmation</fullName>
@@ -530,6 +530,15 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>SF182_Final_Sharing_Confirmation</fullName>
+        <field>Form_emailed_to_Cincinnati__c</field>
+        <literalValue>1</literalValue>
+        <name>SF182 Final Sharing Confirmation</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Send_to_Financial</fullName>
         <field>Approval_Step__c</field>
         <formula>&quot;Sent to Financial&quot;</formula>
@@ -582,6 +591,14 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
         <name>Waiver Auth Signature</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>test</fullName>
+        <field>Approval_Step__c</field>
+        <name>test</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
         <protected>false</protected>
     </fieldUpdates>
 </Workflow>

@@ -316,8 +316,8 @@
         	var hrefEmail = "Nicole Williams, Hamaad Syed, and Patrick Dobak";
         }
         else if (formName === "SF-182") {
-            var hrefInfo = "";
-        	var hrefEmail = "Sharon Ridings";
+            var hrefInfo = "https://usepa.sharepoint.com/sites/OARM_Community/EPAU/SitePages/Training%20Officers%20&%20Coordinators.aspx";
+        	var hrefEmail = "Here";
         }
         else {
             var hrefInfo = "mailto:McNeal.Detha@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
@@ -419,7 +419,7 @@
             }
         });
         $A.enqueueAction(action);   
-          }
+        }
     },
     deleteAttachment : function(component, event, helper){
         console.log('in deleteAttachment');

@@ -170,17 +170,12 @@ public class FormsTriggerHandler {
                 if(form.Approval_Step__c != 'Approved'){
                     system.debug('approval step does not equal approved');
                     createFormShares(formMap.keyset());
-                  }  
-                  
- /*           //send email to cincinatti for approved SF-182 forms       
-            system.debug('cin check: '+form.Approval_Step__c);
-                    if(form.Approval_Step__c == 'Approved' && form.RecordTypeID == rtID){
-                         SF_182_SendEmailWithAttachments.sendMessage(form.id);  
-                    if(!form.Form_emailed_to_Cincinnati__c){
-                        SF_182_SendCincinnatiEmail.sendMessage(form.id);  
-                       }                   
-                    }
-  */                  
+                  }
+
+//                else if (form.recordtypeID == rtID && form.Form_emailed_to_Cincinnati__c == false){
+//                    system.debug('going to share with invoice folks');
+//                    shareApprovedRecord(formMap.keyset());    
+//                }
             }
         }
     }
@@ -222,5 +217,22 @@ public class FormsTriggerHandler {
         }
         
         database.insert(formShares, false);
+    }
+    
+     @future
+    // Shares Form record with queue name in Furnish Invoice Field
+    public static void shareApprovedRecord(Set<id> mainIds){
+        List<Forms__c> forms = [select id, Form_emailed_to_Cincinnati__c, Furnish_Invoice_to__c from Forms__c where id in :mainIds];
+        For(forms__c form : forms){
+        
+            if(form.Furnish_Invoice_to__c == 'USEPA RTP Finance Center'){
+            ID qID = [select ID, Group.Name from Group where Group.Name = 'SF182-USEPA RTP Finance Center'].ID;
+            }
+            else if (form.Furnish_Invoice_to__c == 'USEPA Cincinnati Finance Center'){
+            ID qID = [select ID, Group.Name from Group where Group.Name = 'SF182-USEPA Cincinnati Finance Center'].ID;
+            }
+            
+            form.Form_emailed_to_Cincinnati__c = true;
+        }
     }
 }

@@ -1431,6 +1431,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Forms__c.Continued_Service_Agreement_Inst_Calc__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.Continued_Service_Agreement__c</field>
         <readable>true</readable>
@@ -1881,6 +1886,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Forms__c.Form_Record_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.Form_Status__c</field>
         <readable>true</readable>
@@ -1973,16 +1983,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Forms__c.Indirect_Total__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.Instructions_Continued__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.Instructions__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2232,6 +2232,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Forms__c.LeaveBankInstructions__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Forms__c.Leave_Bank_Coordinator_Digital_Signature__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2318,11 +2323,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.MI__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.NOTICE_TO_EMPLOYEE__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4567,7 +4567,7 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>LeaveBankInstructions</apexPage>
+        <apexPage>Leave_Bank_Instructions</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
@@ -4688,12 +4688,12 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Forms__c.EPA3110_1</recordType>
-        <visible>false</visible>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Forms__c.EPA3160_6v5</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>

@@ -244,8 +244,9 @@
             </h2>   
               
               <h3>                    
-                  <aura:if isTrue="{!v.viewFormName!='ORD-111'}"><br/>For help using {!v.viewFormName} please contact: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>
+                  <aura:if isTrue="{!and(v.viewFormName!='ORD-111',v.viewFormName!='SF-182')}"><br/>For help using {!v.viewFormName} please contact: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>
                   <aura:if isTrue="{!v.viewFormName=='ORD-111'}"><br/>For instructions using {!v.viewFormName} please click here: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>
+			      <aura:if isTrue="{!v.viewFormName=='SF-182'}"><br/>For help using {!v.viewFormName} please contact your Training Officer.<br/>Employees will find their Training Officer <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>            
               </h3> 
               
           </div>

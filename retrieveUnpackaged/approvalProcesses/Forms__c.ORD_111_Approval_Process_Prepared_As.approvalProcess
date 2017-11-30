@@ -29,7 +29,7 @@
         <label>Auto Approve</label>
         <name>Auto_Approve</name>
     </approvalStep>
-    <emailTemplate>unfiled$public/Form_Approval_Request_Notification_Template</emailTemplate>
+    <emailTemplate>unfiled$public/Form_Submission_Notification_Template</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
         <formula>AND(
@@ -44,6 +44,10 @@
         <action>
             <name>Approval_Step_Prepared_As</name>
             <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>BAP_Generic_Submission_Confirmation</name>
+            <type>Alert</type>
         </action>
         <action>
             <name>ORD_111_Submission_Confirmation</name>

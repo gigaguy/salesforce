@@ -55,7 +55,7 @@
         <label>ORD-111 Send to QA Manager</label>
         <name>ORD_111_Send_to_QA_Manager</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
         <rejectionActions>
             <action>
@@ -105,7 +105,7 @@ ISBLANK( Prepare_Form_for__c ),
             <type>Alert</type>
         </action>
     </initialSubmissionActions>
-    <label>Form: ORD-111 Approval Process</label>
+    <label>ORD-111 (1)</label>
     <recallActions>
         <action>
             <name>Approval_Step_Recalled</name>

@@ -597,6 +597,10 @@
         <name>Continued_Service_Agreement_Expires__c</name>
     </fields>
     <fields>
+        <label><!-- Continued Service Agreement Inst &amp; Calc --></label>
+        <name>Continued_Service_Agreement_Inst_Calc__c</name>
+    </fields>
+    <fields>
         <label><!-- Continued Service Agreement --></label>
         <name>Continued_Service_Agreement__c</name>
         <picklistValues>
@@ -1149,6 +1153,10 @@
         <name>Form_Owner__c</name>
     </fields>
     <fields>
+        <label><!-- Form Record Name --></label>
+        <name>Form_Record_Name__c</name>
+    </fields>
+    <fields>
         <label><!-- Form Status --></label>
         <name>Form_Status__c</name>
         <picklistValues>
@@ -1285,14 +1293,6 @@
     <fields>
         <label><!-- Indirect Cost Total --></label>
         <name>Indirect_Total__c</name>
-    </fields>
-    <fields>
-        <label><!-- Instructions Continued --></label>
-        <name>Instructions_Continued__c</name>
-    </fields>
-    <fields>
-        <label><!-- Instructions --></label>
-        <name>Instructions__c</name>
     </fields>
     <fields>
         <label><!-- Interim Consideration --></label>
@@ -1519,6 +1519,10 @@
         <name>Lead_QA_Organization__c</name>
     </fields>
     <fields>
+        <label><!-- Click here to view instructions: --></label>
+        <name>LeaveBankInstructions__c</name>
+    </fields>
+    <fields>
         <label><!-- Leave Bank Coordinator Digital Signature --></label>
         <name>Leave_Bank_Coordinator_Digital_Signature__c</name>
     </fields>
@@ -1589,10 +1593,6 @@
     <fields>
         <label><!-- MI --></label>
         <name>MI__c</name>
-    </fields>
-    <fields>
-        <label><!-- NOTICE TO EMPLOYEE --></label>
-        <name>NOTICE_TO_EMPLOYEE__c</name>
     </fields>
     <fields>
         <label><!-- First/Last Name --></label>

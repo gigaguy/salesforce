@@ -589,7 +589,7 @@
         <label>Send to Leave Bank Team</label>
         <name>Send_to_Leave_Bank_Team</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
     </approvalStep>
     <emailTemplate>unfiled$public/Form_Submission_Notification_Template</emailTemplate>
@@ -632,7 +632,7 @@ Approval_Step__c &lt;&gt; &apos;Approved&apos;
             <type>Alert</type>
         </action>
     </initialSubmissionActions>
-    <label>Form: 3160-6v5 Approval Process</label>
+    <label>EPA-3160-6 (1)</label>
     <recallActions>
         <action>
             <name>Approval_Step_Recalled</name>
