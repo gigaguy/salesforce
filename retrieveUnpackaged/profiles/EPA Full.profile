@@ -188,6 +188,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TQBRequestHandler_Test</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>UtilityMethods</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -1825,6 +1829,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.Quantity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.Report_results_of_EPA_funded_research__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

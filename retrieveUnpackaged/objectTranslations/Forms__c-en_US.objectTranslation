@@ -614,6 +614,18 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         <name>Quantity__c</name>
     </fields>
     <fields>
+        <label><!-- Report results of EPA funded research? --></label>
+        <name>Report_results_of_EPA_funded_research__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Role --></label>
         <name>Role__c</name>
         <picklistValues>

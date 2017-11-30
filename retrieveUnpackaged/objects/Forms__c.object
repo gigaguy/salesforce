@@ -1358,6 +1358,29 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Report_results_of_EPA_funded_research__c</fullName>
+        <externalId>false</externalId>
+        <label>Report results of EPA funded research?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Role__c</fullName>
         <externalId>false</externalId>
         <label>Role</label>
@@ -1983,6 +2006,17 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Report_results_of_EPA_funded_research__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Role__c</picklist>
             <values>
                 <fullName>FCO</fullName>
@@ -2359,6 +2393,17 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Report_results_of_EPA_funded_research__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Role__c</picklist>
             <values>
                 <fullName>FCO</fullName>
@@ -2724,6 +2769,17 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         </picklistValues>
         <picklistValues>
             <picklist>Quality_Assurance_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Report_results_of_EPA_funded_research__c</picklist>
             <values>
                 <fullName>No</fullName>
                 <default>false</default>
@@ -3118,6 +3174,17 @@ https://www.epa.gov/research/policy-and-procedures-managing-dual-use-research-co
         </picklistValues>
         <picklistValues>
             <picklist>Quality_Assurance_YesNo__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Report_results_of_EPA_funded_research__c</picklist>
             <values>
                 <fullName>No</fullName>
                 <default>false</default>

@@ -49,9 +49,7 @@ public class TQBRequestHandler {
 					Question_Response__c reqResponse = new Question_Response__c();
     	            reqResponse.Candidate_Application__c = request.Id;
         	        reqResponse.Questions__c = relatedQuestion.Id;
-                    System.debug('AAA 1');
                     reqResponse.Question__c = relatedQuestion.Question__c;
-                    System.debug('AAA 2');
             	    newRecords.add(reqResponse);
 	            }
             }

@@ -431,10 +431,6 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Value 1</fullName>
-                    <default>false</default>
-                </value>
-                <value>
                     <fullName>Candidate does not meet length of employment requirement.</fullName>
                     <default>false</default>
                 </value>
@@ -508,10 +504,6 @@
             <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
-                <value>
-                    <fullName>Reason 1</fullName>
-                    <default>false</default>
-                </value>
                 <value>
                     <fullName>Candidate does not meet length of employment requirement.</fullName>
                     <default>false</default>
@@ -922,10 +914,6 @@
                 <fullName>Other</fullName>
                 <default>false</default>
             </values>
-            <values>
-                <fullName>Value 1</fullName>
-                <default>false</default>
-            </values>
         </picklistValues>
         <picklistValues>
             <picklist>LOI_Status__c</picklist>
@@ -962,10 +950,6 @@
             </values>
             <values>
                 <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Reason 1</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1205,10 +1189,6 @@
                 <fullName>Other</fullName>
                 <default>false</default>
             </values>
-            <values>
-                <fullName>Value 1</fullName>
-                <default>false</default>
-            </values>
         </picklistValues>
         <picklistValues>
             <picklist>LOI_Status__c</picklist>
@@ -1220,7 +1200,31 @@
         <picklistValues>
             <picklist>Package_Reject_Reason__c</picklist>
             <values>
-                <fullName>Reason 1</fullName>
+                <fullName>Candidate does not meet education requirement%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate does not meet experience requirement%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate does not meet length of employment requirement%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate does not meet promotion prerequisite%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate received below average peer review%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Candidate received below average performance review%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
