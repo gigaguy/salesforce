@@ -2,6 +2,23 @@
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <flexiPageRegions>
         <componentInstances>
+            <componentInstanceProperties>
+                <name>decorate</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>richTextValue</name>
+                <value>&lt;span data-aura-rendered-by=&quot;18:353;a&quot; style=&quot;color:#444444;&quot;&gt;&lt;span style=&quot;font-family:segoe ui,sans-serif;&quot;&gt;&lt;span style=&quot;font-size:10.0pt;&quot;&gt;Welcome to the Business Automation Platform!&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br data-aura-rendered-by=&quot;18:353;a&quot; /&gt;
+&lt;br data-aura-rendered-by=&quot;18:353;a&quot; /&gt;
+&lt;span data-aura-rendered-by=&quot;18:353;a&quot; style=&quot;color:#444444;&quot;&gt;&lt;span style=&quot;font-family:segoe ui,sans-serif;&quot;&gt;&lt;span style=&quot;font-size:10.0pt;&quot;&gt;In 2017 the Office of Environmental Information (OEI) established the Agency&amp;#39;s Business Automation Platform (BAP), based on the &lt;a href=&quot;http://Force.com&quot; target=&quot;_blank&quot;&gt;Force.com&lt;/a&gt; platform from SalesForce, an industry-leading application Platform as a Service (aPaaS) provider.&amp;nbsp;The BAP supports all EPA Offices and Regions by supporting development and hosting of&amp;nbsp;applications for business processes, data collection, reporting, and workflow automation. &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br data-aura-rendered-by=&quot;18:353;a&quot; /&gt;
+&lt;br data-aura-rendered-by=&quot;18:353;a&quot; /&gt;
+&lt;span data-aura-rendered-by=&quot;18:353;a&quot; style=&quot;color:#444444;&quot;&gt;&lt;span style=&quot;font-family:segoe ui,sans-serif;&quot;&gt;&lt;span style=&quot;font-size:10.0pt;&quot;&gt;The BAP allows development and deployment of forms, workflow automation, and reports in a declarative environment, i.e., without writing programming code. This saves the Agency time and money.&amp;nbsp;It also&amp;nbsp;lets application owners and developers avoid getting bogged down in infrastructure provision and management, as SalesForce handles that for them. &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span data-aura-rendered-by=&quot;18:353;a&quot; style=&quot;color:#444444;&quot;&gt;&lt;span style=&quot;font-family:segoe ui,sans-serif;&quot;&gt;&lt;span style=&quot;font-size:10.0pt;&quot;&gt;The BAP helps you build your application with modern frameworks that handle security, user access, user interface, reporting, etc. All you have to do is concentrate on your business logic.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br data-aura-rendered-by=&quot;18:353;a&quot; /&gt;
+&lt;br data-aura-rendered-by=&quot;18:353;a&quot; /&gt;
+&lt;span data-aura-rendered-by=&quot;18:353;a&quot; style=&quot;color:#444444;&quot;&gt;&lt;span style=&quot;font-family:segoe ui,sans-serif;&quot;&gt;&lt;span style=&quot;font-size:10.0pt;&quot;&gt;For more information, visit the &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;a data-aura-rendered-by=&quot;18:353;a&quot; href=&quot;https://usepa.sharepoint.com/sites/oei_Community/BAP/SitePages/Home.aspx&quot;&gt;&lt;span style=&quot;font-family:segoe ui,sans-serif;&quot;&gt;&lt;span style=&quot;font-size:10.0pt;&quot;&gt;BAP Community SharePoint&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;span data-aura-rendered-by=&quot;18:353;a&quot; style=&quot;color:#444444;&quot;&gt;&lt;span style=&quot;font-family:segoe ui,sans-serif;&quot;&gt;&lt;span style=&quot;font-size:10.0pt;&quot;&gt;. If you have any specific questions, email &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;a data-aura-rendered-by=&quot;18:353;a&quot; href=&quot;mailto:bap-request@epa.gov&quot;&gt;&lt;span style=&quot;font-family:segoe ui,sans-serif;&quot;&gt;&lt;span style=&quot;font-size:10.0pt;&quot;&gt;bap-request@epa.gov&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;span data-aura-rendered-by=&quot;18:353;a&quot; style=&quot;color:#444444;&quot;&gt;&lt;span style=&quot;font-family:segoe ui,sans-serif;&quot;&gt;&lt;span style=&quot;font-size:10.0pt;&quot;&gt;. &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:richText</componentName>
+        </componentInstances>
+        <componentInstances>
             <componentName>runtime_approval_process:pendingApprovalCard</componentName>
         </componentInstances>
         <mode>Replace</mode>

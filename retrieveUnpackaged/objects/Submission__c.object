@@ -877,9 +877,9 @@
         <columns>Geographic_Origin__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>Submission_Number__c</field>
+            <field>RECORDTYPE</field>
             <operation>equals</operation>
-            <value>11728</value>
+            <value>Submission__c.Waters_of_the_US</value>
         </filters>
         <label>All Waters of the US</label>
     </listViews>
