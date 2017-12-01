@@ -20,22 +20,7 @@
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>relatedListApiName</name>
-                <value>ActivityHistories</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>relatedListComponentOverride</name>
-                <value>NONE</value>
-            </componentInstanceProperties>
-            <componentName>force:relatedListSingleContainer</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>parentFieldApiName</name>
-                <value>Forms__c.Id</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>relatedListApiName</name>
-                <value>ActivityHistories</value>
+                <value>ProcessSteps</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>relatedListComponentOverride</name>
@@ -51,21 +36,6 @@
             <componentName>force:detailPanel</componentName>
         </componentInstances>
         <name>facet-0702df94-9561-4f80-b9fe-e9d47cd98966</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>parentFieldApiName</name>
-                <value>Forms__c.Id</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>relatedListApiName</name>
-                <value>ProcessSteps</value>
-            </componentInstanceProperties>
-            <componentName>force:relatedListSingleContainer</componentName>
-        </componentInstances>
-        <name>facet-acccf4c0-91dc-41a2-80ee-9f4c9a7e20da</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -106,17 +76,6 @@
         <componentInstances>
             <componentInstanceProperties>
                 <name>body</name>
-                <value>facet-acccf4c0-91dc-41a2-80ee-9f4c9a7e20da</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>title</name>
-                <value>Approval</value>
-            </componentInstanceProperties>
-            <componentName>flexipage:tab</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>body</name>
                 <value>facet-f375c467-d4da-4462-ad15-374870efdd25</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
@@ -136,7 +95,7 @@
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>richTextValue</name>
-                <value>For instructions using ORD-111 please click here:&amp;nbsp;https://intranet.ord.epa.gov/sites/default/files/media/qa/ORDQARFinstructions073008.pdf</value>
+                <value>For help using EPA-100 please contact: &lt;a href=&quot;mailto:McNeal.Detha@epa.gov?subject=BAP%20Forms%20EPA-100%20Support&quot; target=&quot;_blank&quot;&gt;McNeal.Detha@epa.gov&lt;/a&gt;</value>
             </componentInstanceProperties>
             <componentName>flexipage:richText</componentName>
         </componentInstances>

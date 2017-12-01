@@ -172,10 +172,6 @@ public class FormsTriggerHandler {
                     createFormShares(formMap.keyset());
                   }
 
-//                else if (form.recordtypeID == rtID && form.Form_emailed_to_Cincinnati__c == false){
-//                    system.debug('going to share with invoice folks');
-//                    shareApprovedRecord(formMap.keyset());    
-//                }
             }
         }
     }
@@ -219,20 +215,4 @@ public class FormsTriggerHandler {
         database.insert(formShares, false);
     }
     
-     @future
-    // Shares Form record with queue name in Furnish Invoice Field
-    public static void shareApprovedRecord(Set<id> mainIds){
-        List<Forms__c> forms = [select id, Form_emailed_to_Cincinnati__c, Furnish_Invoice_to__c from Forms__c where id in :mainIds];
-        For(forms__c form : forms){
-        
-            if(form.Furnish_Invoice_to__c == 'USEPA RTP Finance Center'){
-            ID qID = [select ID, Group.Name from Group where Group.Name = 'SF182-USEPA RTP Finance Center'].ID;
-            }
-            else if (form.Furnish_Invoice_to__c == 'USEPA Cincinnati Finance Center'){
-            ID qID = [select ID, Group.Name from Group where Group.Name = 'SF182-USEPA Cincinnati Finance Center'].ID;
-            }
-            
-            form.Form_emailed_to_Cincinnati__c = true;
-        }
-    }
 }

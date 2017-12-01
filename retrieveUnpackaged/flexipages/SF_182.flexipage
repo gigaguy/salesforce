@@ -12,6 +12,21 @@
             </componentInstanceProperties>
             <componentName>force:highlightsPanel</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>parentFieldApiName</name>
+                <value>Forms__c.Id</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>relatedListApiName</name>
+                <value>ProcessSteps</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>relatedListComponentOverride</name>
+                <value>NONE</value>
+            </componentInstanceProperties>
+            <componentName>force:relatedListSingleContainer</componentName>
+        </componentInstances>
         <name>header</name>
         <type>Region</type>
     </flexiPageRegions>
@@ -24,9 +39,21 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
-            <componentName>force:relatedListContainer</componentName>
+            <componentInstanceProperties>
+                <name>parentFieldApiName</name>
+                <value>Forms__c.Id</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>relatedListApiName</name>
+                <value>CombinedAttachments</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>relatedListComponentOverride</name>
+                <value>NONE</value>
+            </componentInstanceProperties>
+            <componentName>force:relatedListSingleContainer</componentName>
         </componentInstances>
-        <name>facet-1e283a5a-d7a0-47f0-9c9a-b2ceeffb59a5</name>
+        <name>facet-68555e92-f58c-48c8-b1a7-bfe014da3f40</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -44,11 +71,11 @@
         <componentInstances>
             <componentInstanceProperties>
                 <name>body</name>
-                <value>facet-1e283a5a-d7a0-47f0-9c9a-b2ceeffb59a5</value>
+                <value>facet-68555e92-f58c-48c8-b1a7-bfe014da3f40</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>title</name>
-                <value>Approval</value>
+                <value>Attachments</value>
             </componentInstanceProperties>
             <componentName>flexipage:tab</componentName>
         </componentInstances>
@@ -58,8 +85,13 @@
     <flexiPageRegions>
         <componentInstances>
             <componentInstanceProperties>
+                <name>decorate</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
                 <name>richTextValue</name>
-                <value>For help using SF-182 please contact: &amp;nbsp;&lt;a href=&quot;mailto:lspackman@innovateteam.com?subject=Help%20request%3A%20%20EPA-100%20Form&quot;&gt;lspackman@innovateteam.com&lt;/a&gt;</value>
+                <value>For help using SF-182 please contact your Training Officer.&lt;br /&gt;
+Employees will find their Training Officer &lt;a href=&quot;https://usepa.sharepoint.com/sites/OARM_Community/EPAU/SitePages/Training%20Officers%20&amp;amp;%20Coordinators.aspx&quot;&gt;Here&lt;/a&gt;</value>
             </componentInstanceProperties>
             <componentName>flexipage:richText</componentName>
         </componentInstances>

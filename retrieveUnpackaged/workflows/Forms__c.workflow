@@ -121,6 +121,17 @@
         <template>unfiled$public/ORD_111_Forms_Submission_Confirm_submitted_by_other_person</template>
     </alerts>
     <alerts>
+        <fullName>SF_182_Final_Approval_to_Funding_Official</fullName>
+        <description>SF-182 Final Approval to Funding Official</description>
+        <protected>false</protected>
+        <recipients>
+            <field>User_Funding_Official__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/SF_182_Forms_Final_Approval_to_Funding_Official</template>
+    </alerts>
+    <alerts>
         <fullName>SF_182_Submission_Confirmation</fullName>
         <description>SF-182 Submission Confirmation (prepared for another user)</description>
         <protected>false</protected>
@@ -389,9 +400,15 @@ IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;,
     <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Escalated_Apprvr</fullName>
         <field>Approval_Step__c</field>
-        <formula>IF(  Escalate_to_Chief_Learning_Officer__c = true,
+        <formula>IF(  
+OR(
+   Escalate_to_Chief_Learning_Officer__c = true,
+   Training_Start_Date__c &lt;= TODAY(),
+   Direct_Cost_Total__c &gt; 25000,
+   Indirect_Total__c &gt; 25000
+  ),
 &quot;Awaiting Sharon Riding&apos;s Approval (Escalated Approver)&quot;,
-&quot;Awaiting Supervisor Approval&quot; )</formula>
+&quot;&quot; )</formula>
         <name>Approval Step - Sent to Escalated Apprvr</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
@@ -406,15 +423,6 @@ IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;,
         <operation>Formula</operation>
         <protected>false</protected>
         <reevaluateOnChange>true</reevaluateOnChange>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Approval_Step_Sent_to_Invoice_Approver</fullName>
-        <field>Approval_Step__c</field>
-        <formula>&quot;Awaiting Invoice Approver&quot;</formula>
-        <name>Approval Step - Sent to Invoice Approver</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Leave_Bank_Team</fullName>
@@ -530,31 +538,12 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>SF182_Final_Sharing_Confirmation</fullName>
-        <field>Form_emailed_to_Cincinnati__c</field>
-        <literalValue>1</literalValue>
-        <name>SF182 Final Sharing Confirmation</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Literal</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
         <fullName>Send_to_Financial</fullName>
         <field>Approval_Step__c</field>
         <formula>&quot;Sent to Financial&quot;</formula>
         <name>Send to Financial</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Status_Update_to_Submitted_for_Approval</fullName>
-        <description>Update to submitted for approval</description>
-        <field>Form_Status__c</field>
-        <literalValue>Submitted for Approval</literalValue>
-        <name>Status Update to Submitted for Approval</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Literal</operation>
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>

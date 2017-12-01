@@ -55,14 +55,14 @@ public class UtilityMethods {
         List<Forms__Share> formShares = new List<Forms__Share>();
         if (formID != null && siteUserID !=null) {
             formShares.add(new Forms__Share(ParentID = formID, UserorGroupID = siteUserID, AccessLevel = 'edit'));
-        	database.insert(formShares, false);
+            database.insert(formShares, false);
         }
     }
     
     public static void removeFormShare(String formID, String siteUserID) {  
         if (formID != null && siteUserID !=null) {
             Forms__Share formShare = [select id from Forms__Share where ParentID = :formID AND UserorGroupID = :siteUserID AND AccessLevel = 'edit'];
-        	database.delete(formShare, false);
+            database.delete(formShare, false);
         }
     }
     
@@ -136,9 +136,10 @@ public class UtilityMethods {
         if (fMap != null){
             for (Schema.SObjectField ft : fMap.values()){ // loop through all field tokens (ft)
                 Schema.DescribeFieldResult fd = ft.getDescribe(); // describe each field (fd)
-                if (fd.isCreateable()){ // field is creatable
+                if (fd.isCreateable() && fd.getName()!='Approval_Step__c') //editable fields to be copied on cloned form
+                  {                    
                     selectFields.add(fd.getName());
-                }
+                  }
             }
         }
          

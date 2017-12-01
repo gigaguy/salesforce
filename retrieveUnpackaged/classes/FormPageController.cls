@@ -13,8 +13,11 @@ public without sharing class FormPageController  {
         for (PermissionSet ps : [select id, Label from PermissionSet where id in :psIDs]){
             
             formNames.add(ps.label.removeStart('BAPForms User - '));
-            //hardcoding EPA-100 for all users
+            //hardcoding form RTs for all users
             formNames.add('EPA-100');
+            formNames.add('SF-182');
+            formNames.add('ORD-111');
+            formNames.add('EPA-3160-6v5');
         }
         return [select id, Name, Description from RecordType where sObjectType = 'Forms__c' and IsActive = true and Name in :formNames];
     }

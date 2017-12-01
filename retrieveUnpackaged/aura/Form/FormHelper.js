@@ -56,8 +56,6 @@
     uploadHelper: function(component, event) {  // part of attachment upload process
         console.log('in helper.uploadHelper');
         
-        // start/show the loading spinner   
-        component.set("v.showLoadingSpinner", true);
         // get the selected files using aura:id [return array of files]
         var fileInput = component.get("v.uploadFiles");
        
@@ -95,6 +93,8 @@
     uploadProcess: function(component, file, fileContents) {   // part of attachment upload process
         console.log('in helper.uploadProcess');
         
+        // start/show the loading spinner   
+        component.set("v.showLoadingSpinner", true);
         // set a default size or startpostiton as 0 
         var startPosition = 0;
         // calculate the end size or endPostion using Math.min() function which is return the min. value   

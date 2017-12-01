@@ -46,6 +46,22 @@
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>EPA_100</fullName>
+        <fields>Name</fields>
+        <fields>RecordTypeId</fields>
+        <fields>Approval_Step__c</fields>
+        <fields>LastModifiedById</fields>
+        <label>EPA-100</label>
+    </compactLayouts>
+    <compactLayouts>
+        <fullName>SF_182</fullName>
+        <fields>Name</fields>
+        <fields>RecordTypeId</fields>
+        <fields>Approval_Step__c</fields>
+        <fields>LastModifiedById</fields>
+        <label>SF-182</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
@@ -433,7 +449,7 @@ TEXT(Training_Start_Date__c))</formula>
         &quot;MS002&quot;&amp;BR()&amp;
         &quot;Cincinnati, Ohio 45268&quot;,
   &quot;Purchase Card Transaction&quot;,
-        &quot;Purchase Card Holder’s Name: &quot;&amp; Select_Card_Holder2__r.FirstName &amp;&quot; &quot;&amp; Select_Card_Holder2__r.LastName &amp; BR() &amp;
+        &quot;Purchase Card Holder’s Name: &quot;&amp; Select_Card_Holder__r.FirstName &amp;&quot; &quot;&amp; Select_Card_Holder__r.LastName &amp; BR() &amp;
         &quot;Purchase Card Holder’s Telephone Number: &quot;&amp; Card_Holder_s_Phone_Number__c,
 &quot;[This field will populate after save.]&quot;
 )</formula>
@@ -570,9 +586,9 @@ TEXT(Training_Start_Date__c))</formula>
         <fullName>Card_Holder_s_Email__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>IF( ISBLANK(Select_Card_Holder2__c), 
+        <formula>IF( ISBLANK(Select_Card_Holder__c), 
 &quot;&quot;, 
-Select_Card_Holder2__r.Email)</formula>
+Select_Card_Holder__r.Email)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Card Holder&apos;s Email</label>
         <required>false</required>
@@ -585,9 +601,9 @@ Select_Card_Holder2__r.Email)</formula>
         <fullName>Card_Holder_s_Phone_Number__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
-        <formula>IF( ISBLANK(Select_Card_Holder2__c), 
+        <formula>IF( ISBLANK(Select_Card_Holder__c), 
 &quot;&quot;, 
- Select_Card_Holder2__r.Phone )</formula>
+ Select_Card_Holder__r.Phone )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Card Holder’s Phone Number</label>
         <required>false</required>
@@ -2712,17 +2728,6 @@ TEXT(Training_End_Date__c))</formula>
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Form_emailed_to_Cincinnati__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>SF-182</description>
-        <externalId>false</externalId>
-        <inlineHelpText>Approved SF-182 forms are emailed to Cincinnati.</inlineHelpText>
-        <label>Form emailed to Cincinnati</label>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Furnish_Invoice_to__c</fullName>
@@ -6142,7 +6147,7 @@ Prepare_Form_for__r.Position_Title__c ))</formula>
     </fields>
     <fields>
         <fullName>SF_182_Override_Instructions__c</fullName>
-        <defaultValue>&quot;This form will submit to your supervisor(s) and funding officials as designated by your approval profile. This profile can be modified using the \&quot;Edit My Approvers\&quot; link on the BAP Forms Home Page. If you know an approver is out of the office and need to designate a replacement, begin typing in the appropriate box below to search. Then, click the person&apos;s name when it appears. Note: If you have previously saved the form, you will need to remove the saved approver&apos;s name by clicking the \&quot;X\&quot; prior to searching for a new approver.&quot;</defaultValue>
+        <defaultValue>&quot;This form will be submitted to your supervisor(s) and funding officials as designated by your approval profile. This profile can be modified using the \&quot;Edit My Approvers\&quot; link on the BAP Forms Home Page. If you know an approver is out of the office and need to designate a replacement, begin typing in the appropriate box below to search. Then, click the person&apos;s name when it appears. Note: If you have previously saved the form, you will need to remove the saved approver&apos;s name by clicking the \&quot;X\&quot; prior to searching for a new approver.&quot;</defaultValue>
         <description>SF-182</description>
         <externalId>false</externalId>
         <label>SF-182 Override Instructions</label>
@@ -6199,13 +6204,14 @@ Prepare_Form_for__r.Position_Title__c ))</formula>
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
-        <fullName>Select_Card_Holder2__c</fullName>
+        <fullName>Select_Card_Holder__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>SF-182</description>
         <externalId>false</externalId>
         <label>Select Card Holder</label>
-        <referenceTo>User</referenceTo>
-        <relationshipName>FormsXrE3</relationshipName>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Forms (Select Card Holder)</relationshipLabel>
+        <relationshipName>Forms1SCH</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -13608,6 +13614,7 @@ Prepare_Form_for__r.Email
     <recordTypes>
         <fullName>EPA_100</fullName>
         <active>true</active>
+        <compactLayoutAssignment>EPA_100</compactLayoutAssignment>
         <description>Episodic Flexiplace</description>
         <label>EPA-100</label>
         <picklistValues>
@@ -22807,6 +22814,7 @@ Prepare_Form_for__r.Email
     <recordTypes>
         <fullName>SF_182</fullName>
         <active>true</active>
+        <compactLayoutAssignment>SF_182</compactLayoutAssignment>
         <description>Authorization, Agreement and Certification of Training</description>
         <label>SF-182</label>
         <picklistValues>
@@ -24691,9 +24699,9 @@ Prepare_Form_for__r.Email
         <description>if the &quot;Furnish Invoice to&quot; picklist value is NOT “Purchase card Transaction”, the Card Holder lookup field must be null.</description>
         <errorConditionFormula>AND( 
  NOT(ISPICKVAL( Furnish_Invoice_to__c , &quot;Purchase Card Transaction&quot;)), 
- NOT(ISBLANK( Select_Card_Holder2__c )) 
+ NOT(ISBLANK( Select_Card_Holder__c )) 
 )</errorConditionFormula>
-        <errorDisplayField>Select_Card_Holder2__c</errorDisplayField>
+        <errorDisplayField>Select_Card_Holder__c</errorDisplayField>
         <errorMessage>&quot;Select Card Holder&quot; field must be blank unless the invoice is furnished to &quot;Purchase Card Transaction&quot;</errorMessage>
     </validationRules>
     <validationRules>
@@ -24702,7 +24710,7 @@ Prepare_Form_for__r.Email
         <description>if the &quot;Furnish Invoice to&quot; picklist value is NOT “Purchase card Transaction”, the Card Holder lookup field must be null.</description>
         <errorConditionFormula>AND( 
  NOT(ISPICKVAL( Furnish_Invoice_to__c , &quot;Purchase Card Transaction&quot;)), 
- NOT(ISBLANK( Select_Card_Holder2__c )) 
+ NOT(ISBLANK( Select_Card_Holder__c )) 
 )</errorConditionFormula>
         <errorMessage>&quot;Select Card Holder&quot; field must be blank unless the invoice is furnished to &quot;Purchase Card Transaction&quot;</errorMessage>
     </validationRules>
@@ -24712,9 +24720,9 @@ Prepare_Form_for__r.Email
         <description>if the &quot;Furnish Invoice to&quot; picklist value is “Purchase card Transaction”, require the Card Holder lookup field to not be null.</description>
         <errorConditionFormula>AND( 
  ISPICKVAL( Furnish_Invoice_to__c , &quot;Purchase Card Transaction&quot;), 
- ISBLANK( Select_Card_Holder2__c ) 
+ ISBLANK( Select_Card_Holder__c ) 
 )</errorConditionFormula>
-        <errorDisplayField>Select_Card_Holder2__c</errorDisplayField>
+        <errorDisplayField>Select_Card_Holder__c</errorDisplayField>
         <errorMessage>&quot;Select Card Holder&quot; field is required if the invoice is furnished to &quot;Purchase Card Transaction&quot;</errorMessage>
     </validationRules>
     <validationRules>
@@ -24723,7 +24731,7 @@ Prepare_Form_for__r.Email
         <description>if the &quot;Furnish Invoice to&quot; picklist value is “Purchase card Transaction”, require the Card Holder lookup field to not be null.</description>
         <errorConditionFormula>AND( 
  ISPICKVAL( Furnish_Invoice_to__c , &quot;Purchase Card Transaction&quot;), 
- ISBLANK( Select_Card_Holder2__c ) 
+ ISBLANK( Select_Card_Holder__c ) 
 )</errorConditionFormula>
         <errorMessage>&quot;Select Card Holder&quot; field is required if the invoice is furnished to &quot;Purchase Card Transaction&quot;</errorMessage>
     </validationRules>

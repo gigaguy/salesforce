@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
-    <active>false</active>
+    <active>true</active>
     <allowRecall>true</allowRecall>
     <allowedSubmitters>
         <type>creator</type>
@@ -10,9 +10,7 @@
     </allowedSubmitters>
     <approvalPageFields>
         <field>Name</field>
-        <field>Owner</field>
         <field>Applicant_Name_Last_First_MI2__c</field>
-        <field>Supervisor_Name__c</field>
         <field>Course_Title__c</field>
         <field>Training_Start_Date__c</field>
         <field>Training_End_Date__c</field>
@@ -28,6 +26,7 @@
         <field>Indirect_Total__c</field>
         <field>Furnish_Invoice_to__c</field>
         <field>Billing_Instructions__c</field>
+        <field>Owner</field>
     </approvalPageFields>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
@@ -77,18 +76,8 @@
         <label>Send to Supervisor 2</label>
         <name>Send_to_Supervisor_2</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-            <action>
-                <name>Rejection_Remove_Manager_Signature</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
@@ -108,17 +97,17 @@
         <label>Send to Funding Official</label>
         <name>Send_to_Funding_Official</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>SF182_HQ_Office_of_Human_Resources</name>
@@ -137,17 +126,17 @@
         <label>Send to HQ Office of Human Resources Queue</label>
         <name>Send_to_HQ_Office_of_Human_Resources_Queue</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>SF182_Region_1</name>
@@ -166,17 +155,17 @@
         <label>Send to Region 1 Queue</label>
         <name>Send_to_Region_1_Queue</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>SF182_Region_2</name>
@@ -195,17 +184,17 @@
         <label>Send to Region 2 Queue</label>
         <name>Send_to_Region_2_Queue</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>SF182_Region_3</name>
@@ -224,17 +213,17 @@
         <label>Send to Region 3 Queue</label>
         <name>Send_to_Region_3_Queue</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>SF182_Region_4</name>
@@ -253,17 +242,17 @@
         <label>Send to Region 4 Queue</label>
         <name>Send_to_Region_4_Queue</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>SF182_Region_5</name>
@@ -282,17 +271,17 @@
         <label>Send to Region 5 Queue</label>
         <name>Send_to_Region_5_Queue</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>SF182_Region_6</name>
@@ -311,17 +300,17 @@
         <label>Send to Region 6 Queue</label>
         <name>Send_to_Region_6_Queue</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>SF182_Region_7</name>
@@ -340,17 +329,17 @@
         <label>Send to Region 7 Queue</label>
         <name>Send_to_Region_7_Queue</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>SF182_Region_8</name>
@@ -369,17 +358,17 @@
         <label>Send to Region 8 Queue</label>
         <name>Send_to_Region_8_Queue</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>SF182_Region_9</name>
@@ -398,17 +387,17 @@
         <label>Send to Region 9 Queue</label>
         <name>Send_to_Region_9_Queue</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>SF182_Region_10</name>
@@ -427,17 +416,17 @@
         <label>Send to Region 10 Queue</label>
         <name>Send_to_Region_10_Queue</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>SF182_Ann_Arbor</name>
@@ -456,17 +445,17 @@
         <label>Send to Ann Arbor Queue</label>
         <name>Send_to_Ann_Arbor_Queue</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>SF182_Research_Triangle_Park</name>
@@ -485,17 +474,17 @@
         <label>Send to Research Triangle Park Queue</label>
         <name>Send_to_Research_Triangle_Park_Queue</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_Escalated_Apprvr</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>SF182_Cincinnati</name>
@@ -514,95 +503,14 @@
         <label>Send to Cincinnati Queue</label>
         <name>Send_to_Cincinnati_Queue</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
-        </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
-    </approvalStep>
-    <approvalStep>
-        <allowDelegate>true</allowDelegate>
-        <assignedApprover>
-            <approver>
-                <name>FCO__c</name>
-                <type>relatedUserField</type>
-            </approver>
-            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
-        </assignedApprover>
-        <entryCriteria>
-            <criteriaItems>
-                <field>Forms__c.Furnish_Invoice_to__c</field>
-                <operation>equals</operation>
-                <value>Purchase Card Transaction</value>
-            </criteriaItems>
-        </entryCriteria>
-        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
-        <label>Send to Invoice Approver (Purchase Card Holder)</label>
-        <name>Send_to_Invoice_Approver_Purchase_Card_Holder</name>
-        <rejectBehavior>
-            <type>BackToPrevious</type>
-        </rejectBehavior>
-        <rejectionActions>
-            <action>
-                <name>Approval_Step_Rejected</name>
-                <type>FieldUpdate</type>
-            </action>
-        </rejectionActions>
-    </approvalStep>
-    <approvalStep>
-        <allowDelegate>true</allowDelegate>
-        <assignedApprover>
-            <approver>
-                <name>SF182_USEPA_RTP_Finance_Center</name>
-                <type>queue</type>
-            </approver>
-            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
-        </assignedApprover>
-        <entryCriteria>
-            <criteriaItems>
-                <field>Forms__c.Furnish_Invoice_to__c</field>
-                <operation>equals</operation>
-                <value>USEPA RTP Finance Center</value>
-            </criteriaItems>
-        </entryCriteria>
-        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
-        <label>Send to USEPA RTP</label>
-        <name>Send_to_USEPA_RTP</name>
-        <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
     </approvalStep>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
         <assignedApprover>
             <approver>
-                <name>SF182_USEPA_Cincinnati_Finance_Center</name>
-                <type>queue</type>
-            </approver>
-            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
-        </assignedApprover>
-        <entryCriteria>
-            <criteriaItems>
-                <field>Forms__c.Furnish_Invoice_to__c</field>
-                <operation>equals</operation>
-                <value>USEPA Cincinnati Finance Center</value>
-            </criteriaItems>
-        </entryCriteria>
-        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
-        <label>Send to USEPA Cincinnati</label>
-        <name>Send_to_USEPA_Cincinnati</name>
-        <rejectBehavior>
-            <type>BackToPrevious</type>
-        </rejectBehavior>
-    </approvalStep>
-    <approvalStep>
-        <allowDelegate>true</allowDelegate>
-        <assignedApprover>
-            <approver>
-                <name>jjenkins@innovateteam.com</name>
+                <name>ridings.sharon2@epa.gov</name>
                 <type>user</type>
             </approver>
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
@@ -622,18 +530,18 @@
             <criteriaItems>
                 <field>Forms__c.Direct_Cost_Total__c</field>
                 <operation>greaterThan</operation>
-                <value>50000</value>
+                <value>25000</value>
             </criteriaItems>
             <criteriaItems>
                 <field>Forms__c.Indirect_Total__c</field>
                 <operation>greaterThan</operation>
-                <value>50000</value>
+                <value>25000</value>
             </criteriaItems>
         </entryCriteria>
         <label>Send to Sharon (Escalated Approver)</label>
         <name>Send_to_Sharon_Escalated_Approver</name>
         <rejectBehavior>
-            <type>BackToPrevious</type>
+            <type>RejectRequest</type>
         </rejectBehavior>
     </approvalStep>
     <emailTemplate>unfiled$public/Form_Submission_Notification_Template</emailTemplate>
@@ -652,11 +560,11 @@
             <type>FieldUpdate</type>
         </action>
         <action>
-            <name>Email_to_Funding_Official</name>
+            <name>Final_Approval_Email</name>
             <type>Alert</type>
         </action>
         <action>
-            <name>Final_Approval_Email</name>
+            <name>SF_182_Final_Approval_to_Funding_Official</name>
             <type>Alert</type>
         </action>
     </finalApprovalActions>
@@ -686,7 +594,7 @@
             <type>Alert</type>
         </action>
     </initialSubmissionActions>
-    <label>SF182 Approval Process</label>
+    <label>SF-182 (1)</label>
     <recallActions>
         <action>
             <name>Approval_Step_Recalled</name>
