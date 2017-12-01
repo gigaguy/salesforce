@@ -467,7 +467,7 @@
         <filters>
             <field>Topic__c</field>
             <operation>equals</operation>
-            <value>3.2</value>
+            <value>13.6</value>
         </filters>
         <label>All Waters of the US</label>
     </listViews>
@@ -487,6 +487,12 @@
             <value>Snippet__c.Bristol_Bay</value>
         </filters>
         <label>All Bristol Bay</label>
+    </listViews>
+    <listViews>
+        <fullName>Waters_of_the_US</fullName>
+        <columns>NAME</columns>
+        <filterScope>Mine</filterScope>
+        <label>Waters of the US</label>
     </listViews>
     <nameField>
         <displayFormat>SBC-{000000}</displayFormat>
