@@ -106,7 +106,7 @@ public class ProfilePageController {
     
     public pageReference cancel() {
         string url = '/FormPage';
-        if(!t1User){url = '/one/one.app?source=aloha#/n/Edit_My_Approvers';}     
+        if(!t1User){url = '/one/one.app?source=aloha#/n/Edit_My_Approvers';}
         PageReference newPR = new PageReference(url);
         newPR.getParameters().clear();
         newPR.getParameters().put('sID', sID);
