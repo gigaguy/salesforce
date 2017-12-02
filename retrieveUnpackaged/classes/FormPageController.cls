@@ -176,7 +176,7 @@ public class FormPageController {
                 form.put('RecordTypeId', recordType);
             }
             // Marking the user id as the owner
-            form.put('OwnerId', user.Id);
+            //form.put('OwnerId', user.Id);
 			form.put('EIN__c', user.EmployeeNumber);
             form.put('Mailing_Address__c', user.street);
             form.put('City__c', user.city);
