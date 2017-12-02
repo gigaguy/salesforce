@@ -40,10 +40,6 @@
                 <behavior>Edit</behavior>
                 <field>LOI_Reject_Reason__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Ad_Hoc_5_Specialty__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -103,13 +99,6 @@
             <sortOrder>3</sortOrder>
         </platformActionListItems>
     </platformActionList>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Questions__c.Question__c</fields>
-        <fields>Answer__c</fields>
-        <fields>Questions__c.Status__c</fields>
-        <relatedList>Question_Response__c.Candidate_Application__c</relatedList>
-    </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
     </relatedLists>

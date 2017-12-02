@@ -298,6 +298,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- EAS Input Date --></label>
+        <name>EAS_Input_Date__c</name>
+    </fields>
+    <fields>
         <label><!-- First Line Supervisor --></label>
         <name>First_Line_Supervisor__c</name>
         <relationshipLabel><!-- Candidate Applications (First Line Supervisor) --></relationshipLabel>
@@ -431,6 +435,30 @@
         <label><!-- Panel Member 5 --></label>
         <name>Panel_Member_5__c</name>
         <relationshipLabel><!-- Candidate Applications (Panel Member 5) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Panel Recomendation --></label>
+        <name>Panel_Recomendation__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Promotion Decision --></label>
+        <name>Promotion_Decision__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Second Line Supervisor --></label>

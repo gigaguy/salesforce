@@ -18,7 +18,7 @@ public class TQBRequestHandler {
     public static List<Questions__c> getRelatedQuestions(String track){
         List<Questions__c> relatedQuestions = null;
         try{
-            relatedQuestions = [Select id,Question__c from Questions__c where Track__c =:track];
+            relatedQuestions = [Select id,Question__c from Questions__c where Status__c = 'Active' AND Track__c =:track];
         }catch(Exception e){
             System.debug('getRelatedQuestions query fail.'+e.getMessage());
         }
