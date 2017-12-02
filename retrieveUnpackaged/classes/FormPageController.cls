@@ -149,6 +149,22 @@ public without sharing class FormPageController  {
     public static List<attachment> getListOfAttachments(String formID) {        
         return [select id, Name, CreatedDate from Attachment where parentID = :formID order by CreatedDate DESC];        
     }
+    
+     @AuraEnabled
+    public static List<ContentVersion> getListOfFiles(String formID) {        
+        list<ContentDocumentLink> filez = [SELECT ContentDocumentId, LinkedEntityId FROM ContentDocumentLink where LinkedEntityId = :formID];
+        List<ID> fileIDs = new List<ID>();
+        for(ContentDocumentLink fil : filez){
+            fileIDs.add(fil.ContentDocumentId);
+        }
+        List<ContentDocument> cdocs = [select id from ContentDocument where id in :fileIDs];
+        List<ID> docIDs = new List<ID>();
+        for(ContentDocument cd : cdocs){
+            docIDs.add(cd.id);
+        }
+        
+        return [Select Id, ContentDocumentId, Title, createddate, IsLatest FROM ContentVersion where ContentDocumentID in :docIDs AND IsLatest = true];        
+    }
         
     @AuraEnabled
     public static string deleteFormAttachment(ID attID){

@@ -4417,6 +4417,7 @@ Prepare_Form_for__r.Mail_Stop__c &amp; BR() &amp; Prepare_Form_for__r.Building__
     </fields>
     <fields>
         <fullName>Part_B_Cleared_RLO__c</fullName>
+        <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part B Cleared RLO</label>
         <required>false</required>
@@ -4444,6 +4445,7 @@ Prepare_Form_for__r.Mail_Stop__c &amp; BR() &amp; Prepare_Form_for__r.Building__
     </fields>
     <fields>
         <fullName>Part_B_Cleared_Supervisor__c</fullName>
+        <description>EPA-3110-1</description>
         <externalId>false</externalId>
         <label>Part B Cleared Supervisor</label>
         <required>false</required>
@@ -5354,6 +5356,7 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
     </fields>
     <fields>
         <fullName>Position_Title__c</fullName>
+        <description>SF-182</description>
         <externalId>false</externalId>
         <formula>IF( ISBLANK( IF( ISBLANK( Prepare_Form_for__c ) , 
 Type_1_Owner_Contact__r.Position_Title__c , 

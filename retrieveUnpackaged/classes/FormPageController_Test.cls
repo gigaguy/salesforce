@@ -137,6 +137,27 @@ public class FormPageController_Test {
             id att2 = FormPageController.saveTheFile(formID,'att',base64Data,contentType);
             FormPageController.saveChunk(formID,'att',base64Data,contentType,att2);
             
+            
+            //test files
+            Blob beforeblob=Blob.valueOf('Unit Test Attachment Body');
+
+            ContentVersion cv = new ContentVersion();
+            cv.title = 'test content trigger';      
+            cv.PathOnClient ='test';           
+            cv.VersionData =beforeblob;          
+            insert cv;         
+    
+            ContentVersion testContent = [SELECT id, ContentDocumentId FROM ContentVersion where Id = :cv.Id];
+    
+            ContentDocumentLink contentlink=new ContentDocumentLink();
+            contentlink.LinkedEntityId=formID;
+            contentlink.ShareType= 'V';
+            contentlink.ContentDocumentId=testcontent.ContentDocumentId;
+    
+            insert contentlink;
+                    
+            FormPageController.getListOfFiles(formID); 
+            
       }
       
 }

@@ -26,6 +26,7 @@
     <aura:attribute name="largeFile" type="boolean" default="false" />
     <aura:attribute name="fileUploadCmp" type="Aura.Component[]"/>
     <aura:attribute name="uploadFiles" type="Object[]"/>
+    <aura:attribute name="fileList" type="ContentVersion[]"/>
     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
@@ -303,6 +304,26 @@
                         </td>
                       </tr>
                     </aura:iteration>
+           			<aura:iteration var="file" items="{!v.fileList}">
+                      <tr style="background-color: white; border: 1px solid lightgray;">
+                        <td style="color: black; border: 0px solid #0070d2; text-align: center;">
+                            <a href="{!'/sfc/servlet.shepherd/version/download/'+file.Id}" target="_blank">
+                     <!--           <button style="color: black;">View</button>     -->
+                                <button style="color: black;">Download</button>
+                            </a>  
+                    <!--      <div class="divider"/>
+                            <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">
+                            <button id="{!file.Id}" onclick="{!c.deleteAttachment}">Del</button>
+                            </aura:if>       -->
+                        </td>
+                        <td style="color: black; padding: 1px 1px 1px 5px; border: 1px solid lightgray; text-align: left;">
+                            {!file.Title}
+                        </td>
+                        <td style="color: black; padding: 1px 1px 1px 5px; border: 0px solid #0070d2; text-align: center;">                         
+                           <ui:outputDateTime timezone="America/New_York" value="{!file.CreatedDate}"/>
+                        </td>
+                      </tr>
+                    </aura:iteration>                    
                 </table> 
                   <br/>
               </aura:if>

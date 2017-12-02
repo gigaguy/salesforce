@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
     <active>false</active>
     <allowRecall>true</allowRecall>
     <allowedSubmitters>
@@ -63,12 +63,6 @@
         </action>
     </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
-    <initialSubmissionActions>
-        <action>
-            <name xsi:nil="true"/>
-            <type>FieldUpdate</type>
-        </action>
-    </initialSubmissionActions>
     <label>Development Sandbox Approval Process</label>
     <recallActions>
         <action>

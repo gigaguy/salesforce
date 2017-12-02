@@ -30,7 +30,8 @@
     },
     getAttachList : function(component, formID){   // gets list of attachments on Form record
 		console.log('in helper.getAttachList');
-        
+        component.set("v.attachList", null);
+        component.set("v.fileList", null);
         console.log('formID: ' + formID);     
        		var action = component.get("c.getListOfAttachments");
         	action.setParams({
@@ -48,6 +49,32 @@
              }
             else {
                 component.set("v.hasAttachments", false);
+                component.set("v.message", null);
+            }
+        });
+     $A.enqueueAction(action);
+        this.getFileList(component, formID);
+	},
+    getFileList : function(component, formID){   // gets list of files on Form record
+		console.log('in helper.getFileList');
+        
+        console.log('formID: ' + formID);     
+       		var action = component.get("c.getListOfFiles");
+        	action.setParams({
+			"formID" : formID
+        });
+        action.setCallback(this, function(response){
+            var name = response.getState();
+            console.log('getting files list');
+            console.log('name ' + name);
+            console.log('return value: ' + response.getReturnValue().length);
+            if (name === "SUCCESS" && response.getReturnValue().length > 0) {
+            
+                component.set("v.fileList", response.getReturnValue());
+                component.set("v.hasAttachments", true);
+             }
+            else {
+            //    component.set("v.hasAttachments", false);
                 component.set("v.message", null);
             }
         });
