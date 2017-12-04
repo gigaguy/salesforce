@@ -55,6 +55,22 @@
         <label>EPA-100</label>
     </compactLayouts>
     <compactLayouts>
+        <fullName>EPA_3160_6</fullName>
+        <fields>Name</fields>
+        <fields>RecordTypeId</fields>
+        <fields>Approval_Step__c</fields>
+        <fields>LastModifiedById</fields>
+        <label>EPA-3160-6</label>
+    </compactLayouts>
+    <compactLayouts>
+        <fullName>ORD_111</fullName>
+        <fields>Name</fields>
+        <fields>RecordTypeId</fields>
+        <fields>Approval_Step__c</fields>
+        <fields>LastModifiedById</fields>
+        <label>ORD-111</label>
+    </compactLayouts>
+    <compactLayouts>
         <fullName>SF_182</fullName>
         <fields>Name</fields>
         <fields>RecordTypeId</fields>
@@ -171,7 +187,7 @@
         <externalId>false</externalId>
         <label>Additional Reviewer</label>
         <referenceTo>User</referenceTo>
-        <relationshipName>Forms</relationshipName>
+        <relationshipName>FormsORD111AdditionalReviewer</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -5962,7 +5978,7 @@ Prepare_Form_for__r.Position_Title__c ))</formula>
     </fields>
     <fields>
         <fullName>Request_Status__c</fullName>
-        <description>SF-182</description>
+        <description>EPA-3160-6</description>
         <externalId>false</externalId>
         <label>Request Status</label>
         <required>false</required>
@@ -6162,6 +6178,7 @@ Prepare_Form_for__r.Position_Title__c ))</formula>
     </fields>
     <fields>
         <fullName>SF_182_Prepare_For_checker__c</fullName>
+        <description>SF-182</description>
         <externalId>false</externalId>
         <formula>IF(  CONTAINS(Approval_Step__c, &apos;Form Prepared for&apos;) , true, false)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
@@ -7687,7 +7704,7 @@ Prepare_Form_for__r.Email
     <fields>
         <fullName>X2_SF_182__c</fullName>
         <defaultValue>&quot;If I voluntarily leave the agency before completing the period of service agreed to in item 1 above; or do not complete the training; or do not receive a passing grade for this development activity, I AGREE to reimburse the agency for the tuition and related fees, travel and other special expenses (excluding salary) paid in connection with my training. These amounts are reflected in Section C: Cost and Billing Information, 1a through c and 2b, on the SF182 form. I will also provide a copy of my official final grade/transcript to my supervisor of record within 30 days of the completion of the course.&quot;</defaultValue>
-        <description>SF-182</description>
+        <description>SF-182, read only</description>
         <externalId>false</externalId>
         <label>2.</label>
         <length>610</length>
@@ -7712,7 +7729,7 @@ Prepare_Form_for__r.Email
     <fields>
         <fullName>X3_SF_182__c</fullName>
         <defaultValue>&quot;I FURTHER AGREE that, if I voluntarily leave the agency to enter the service of another Federal Department, agency, or other organization in any branch of the Government before completing the period of service agreed to in item 1 above, I will give my organization written notice at least ten working days, during which time a determination concerning reimbursement will be made by EPA. If I fail to give this advance notice, I AGREE to pay the amount of additional expenses according to 5 U.S.C. 4109 (a)(2) incurred by the Government for this training.&quot;</defaultValue>
-        <description>SF-182</description>
+        <description>SF-182, read only</description>
         <externalId>false</externalId>
         <label>3.</label>
         <length>560</length>
@@ -7739,7 +7756,7 @@ Prepare_Form_for__r.Email
         <defaultValue>&quot;I understand that any amounts which may be due the agency as a result of any failure on my part to meet the terms of this agreement may be withheld from any monies owed me by the Government, or may be recovered by such other methods as are approved by law.&quot; &amp; BR() &amp; BR() &amp;
 &quot;I FURTHER AGREE to obtain approval from my organization’s Training Officer and any person(s) responsible for authorizing non‐government training requests of any proposed change in my approved training program involving course and schedule changes, withdrawals or course incompletion, and increased costs.&quot; &amp; BR() &amp; BR() &amp;
 &quot;I acknowledge that this agreement does not in any way commit the Government to continue my employment. I understand that, if there is a transfer of my service obligation to another Federal agency or other organization in any branch of the Government, the agreements in items 1, 2, and 3 of this section will remain in effect until I have completed my obligated service with that other agency or organization.&quot;</defaultValue>
-        <description>SF-182</description>
+        <description>SF-182, read only</description>
         <externalId>false</externalId>
         <label>4.</label>
         <length>1010</length>
@@ -7850,7 +7867,7 @@ Prepare_Form_for__r.Email
     </fields>
     <fields>
         <fullName>X8_Digit_Station_Symbol__c</fullName>
-        <description>SF-182 (no longer used)</description>
+        <description>SF-182</description>
         <externalId>false</externalId>
         <inlineHelpText>Example: 12-34-5678</inlineHelpText>
         <label>8 Digit Station Symbol</label>
@@ -7900,7 +7917,7 @@ Prepare_Form_for__r.Email
     <fields>
         <fullName>x1_SF_182__c</fullName>
         <defaultValue>&quot;I agree that, upon completion of the Government‐ sponsored training during which I received a salary described in the SF‐182 training request, I will serve in the agency the number of hours as required by EPA Policy. Service begins the first day after the completion of the training course Note: For the purposes of this agreement, the term “agency” refers to the employing organization (Environmental Protection Agency), not to a segment of such an organization.&quot;</defaultValue>
-        <description>SF-182</description>
+        <description>SF-182, read only</description>
         <externalId>false</externalId>
         <label>1.</label>
         <length>465</length>
@@ -11774,6 +11791,7 @@ Prepare_Form_for__r.Email
     <recordTypes>
         <fullName>EPA3160_6v5</fullName>
         <active>true</active>
+        <compactLayoutAssignment>EPA_3160_6</compactLayoutAssignment>
         <description>Leave Bank Election Form</description>
         <label>EPA-3160-6v5</label>
         <picklistValues>
@@ -19135,6 +19153,7 @@ Prepare_Form_for__r.Email
     <recordTypes>
         <fullName>ORD_111</fullName>
         <active>true</active>
+        <compactLayoutAssignment>ORD_111</compactLayoutAssignment>
         <description>ORD Quality Assurance Review Form (QARF)</description>
         <label>ORD-111</label>
         <picklistValues>

@@ -4309,7 +4309,7 @@
         <recordType>Forms__c.EPA_PCOR</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Forms__c-ORD-111</layout>
+        <layout>Forms__c-ORD-111 Admin View</layout>
         <recordType>Forms__c.ORD_111</recordType>
     </layoutAssignments>
     <layoutAssignments>

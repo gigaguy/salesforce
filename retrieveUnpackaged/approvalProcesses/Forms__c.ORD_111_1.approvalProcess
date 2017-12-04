@@ -11,6 +11,20 @@
     <approvalPageFields>
         <field>Name</field>
         <field>Owner</field>
+        <field>Form_Owner__c</field>
+        <field>Type_of_Action__c</field>
+        <field>Non_contract_Actions__c</field>
+        <field>Contract_Actions__c</field>
+        <field>Vehicle__c</field>
+        <field>Contractor__c</field>
+        <field>QA_Tracking_Number__c</field>
+        <field>National_Program__c</field>
+        <field>ID_Number__c</field>
+        <field>QA_Approval_Date__c</field>
+        <field>QA_Documentation__c</field>
+        <field>Expected_Submission_Date__c</field>
+        <field>Additional_Reviewer__c</field>
+        <field>QA_Manager__c</field>
     </approvalPageFields>
     <approvalStep>
         <allowDelegate>true</allowDelegate>
