@@ -237,6 +237,20 @@
     </fields>
     <label>Project</label>
     <listViews>
+        <fullName>ASD_Projects</fullName>
+        <columns>NAME</columns>
+        <columns>Task_Name__c</columns>
+        <columns>Project_Name__c</columns>
+        <columns>Sub_Task_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AHRC__c</field>
+            <operation>equals</operation>
+            <value>56H,56H - ASD</value>
+        </filters>
+        <label>ASD Projects</label>
+    </listViews>
+    <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>
         <columns>AHRC__c</columns>
@@ -245,6 +259,62 @@
         <columns>Sub_Task_Name__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>CD_Projects</fullName>
+        <columns>NAME</columns>
+        <columns>Task_Name__c</columns>
+        <columns>Project_Name__c</columns>
+        <columns>Sub_Task_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AHRC__c</field>
+            <operation>equals</operation>
+            <value>56C,56C - CD</value>
+        </filters>
+        <label>CD Projects</label>
+    </listViews>
+    <listViews>
+        <fullName>IO_AA_Projects</fullName>
+        <columns>NAME</columns>
+        <columns>Task_Name__c</columns>
+        <columns>Project_Name__c</columns>
+        <columns>Sub_Task_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AHRC__c</field>
+            <operation>equals</operation>
+            <value>56E,56E - IO-AA</value>
+        </filters>
+        <label>IO-AA Projects</label>
+    </listViews>
+    <listViews>
+        <fullName>IO_DC_Projects</fullName>
+        <columns>NAME</columns>
+        <columns>Task_Name__c</columns>
+        <columns>Project_Name__c</columns>
+        <columns>Sub_Task_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AHRC__c</field>
+            <operation>equals</operation>
+            <value>56A,56A - IO-DC</value>
+        </filters>
+        <label>IO-DC Projects</label>
+    </listViews>
+    <listViews>
+        <fullName>TATD_Projects</fullName>
+        <columns>NAME</columns>
+        <columns>Task_Name__c</columns>
+        <columns>Project_Name__c</columns>
+        <columns>Sub_Task_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AHRC__c</field>
+            <operation>equals</operation>
+            <value>56D,56D - TATD</value>
+        </filters>
+        <label>TATD Projects</label>
     </listViews>
     <listViews>
         <fullName>TCD_Projects1</fullName>

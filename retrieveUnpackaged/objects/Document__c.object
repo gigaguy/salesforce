@@ -10624,12 +10624,18 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
     </listViews>
     <listViews>
         <fullName>Travel</fullName>
+        <columns>BBFY_EBFY__c</columns>
         <columns>NAME</columns>
         <columns>DCN__c</columns>
         <columns>TA_Number__c</columns>
-        <columns>Operating_Plan_Year__c</columns>
+        <columns>AHRC__c</columns>
+        <columns>Work_Area__c</columns>
+        <columns>Traveler__c</columns>
+        <columns>Travel_Destination__c</columns>
+        <columns>Travel_Destination_State__c</columns>
+        <columns>Travel_End_Date__c</columns>
+        <columns>Project__c</columns>
         <columns>Total_Dollar_Amount__c</columns>
-        <columns>Procurement_Office__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>RECORDTYPE</field>
