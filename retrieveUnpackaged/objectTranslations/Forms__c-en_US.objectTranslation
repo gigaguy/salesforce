@@ -100,6 +100,14 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Business Justification --></label>
+        <name>Business_Justification__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLPs --></label>
+        <name>CLP_s__c</name>
+    </fields>
+    <fields>
         <label><!-- Cancelling? --></label>
         <name>Cancelling__c</name>
         <picklistValues>
@@ -220,6 +228,10 @@
         <relationshipLabel><!-- Forms (Cardholder 8) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Cardholder/AO Display Name --></label>
+        <name>Cardholder_AO_Display_Name__c</name>
+    </fields>
+    <fields>
         <help><!-- Approving Official to be relieved of responsibility for the identified cardholder(s). --></help>
         <label><!-- Cardholder AO From --></label>
         <name>Cardholder_AO_From__c</name>
@@ -245,8 +257,41 @@
         <name>Change_Name_on_Card_Check_To__c</name>
     </fields>
     <fields>
+        <label><!-- Check Request Type --></label>
+        <name>Check_Request_Type__c</name>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recorder</masterLabel>
+            <translation><!-- Recorder --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- City --></label>
         <name>City__c</name>
+    </fields>
+    <fields>
+        <help><!-- Confirm that the AO is either the supervisor or one organizational (grade) level above the cardholder(s) that I/he/she will support. --></help>
+        <label><!-- Confirm AO (Supervisor or 1 Level Above) --></label>
+        <name>Confirm_AO_Supervisor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Course Title --></label>
+        <name>Course_Title__c</name>
+        <picklistValues>
+            <masterLabel>GSA SmartPay Purchase Card Training</masterLabel>
+            <translation><!-- GSA SmartPay Purchase Card Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PCard Agency Supplemental Training</masterLabel>
+            <translation><!-- PCard Agency Supplemental Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PaymentNet (PNET)</masterLabel>
+            <translation><!-- PaymentNet (PNET) --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Current Approver --></label>
@@ -296,6 +341,10 @@
     <fields>
         <label><!-- Date Card is to be Closed --></label>
         <name>Date_Card_is_to_be_Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
     </fields>
     <fields>
         <label><!-- Date to Be Reactivated --></label>
@@ -430,11 +479,6 @@
         <relationshipLabel><!-- Forms --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- that the AO is either the supervisor or one organizational (grade) level above the cardholder(s) that I/he/she will support. --></help>
-        <label><!-- I Confirm --></label>
-        <name>I_Confirm__c</name>
-    </fields>
-    <fields>
         <label><!-- Immediate Supervisor&apos;s Digital Signature --></label>
         <name>Immediate_Supervisor_s_Digital_Signature__c</name>
     </fields>
@@ -449,6 +493,266 @@
     <fields>
         <label><!-- Justification for Limit Change --></label>
         <name>Justification_for_Limit_Change__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <picklistValues>
+            <masterLabel>ADA OK</masterLabel>
+            <translation><!-- ADA OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ANN ARBOR MI</masterLabel>
+            <translation><!-- ANN ARBOR MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ATHENS GA</masterLabel>
+            <translation><!-- ATHENS GA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BOISE ID</masterLabel>
+            <translation><!-- BOISE ID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BOSTON - REGION 1</masterLabel>
+            <translation><!-- BOSTON - REGION 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHICAGO IL</masterLabel>
+            <translation><!-- CHICAGO IL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHICAGO REGION 5</masterLabel>
+            <translation><!-- CHICAGO REGION 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CINCINNATI, OH</masterLabel>
+            <translation><!-- CINCINNATI, OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cincinnati OH</masterLabel>
+            <translation><!-- Cincinnati OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corvallis OR</masterLabel>
+            <translation><!-- Corvallis OR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DULUTH MN</masterLabel>
+            <translation><!-- DULUTH MN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Edison NJ</masterLabel>
+            <translation><!-- Edison NJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAI On-Line</masterLabel>
+            <translation><!-- FAI On-Line --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fort Meade, MD</masterLabel>
+            <translation><!-- Fort Meade, MD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GULF BREEZE FL</masterLabel>
+            <translation><!-- GULF BREEZE FL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ - CRYSTAL GATEWAY</masterLabel>
+            <translation><!-- HQ - CRYSTAL GATEWAY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ - CRYSTAL STATION</masterLabel>
+            <translation><!-- HQ - CRYSTAL STATION --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ - OCFO ONLY</masterLabel>
+            <translation><!-- HQ - OCFO ONLY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ - OFFICE OF WATER</masterLabel>
+            <translation><!-- HQ - OFFICE OF WATER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ - OSTRI- CRYSTAL GATEWAY</masterLabel>
+            <translation><!-- HQ - OSTRI- CRYSTAL GATEWAY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ - WIC 3N</masterLabel>
+            <translation><!-- HQ - WIC 3N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ CMM2 OPP</masterLabel>
+            <translation><!-- HQ CMM2 OPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ or Washington DC</masterLabel>
+            <translation><!-- HQ or Washington DC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ, CMM2, OPP</masterLabel>
+            <translation><!-- HQ, CMM2, OPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Las Vegas NV</masterLabel>
+            <translation><!-- Las Vegas NV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montgomery AL</masterLabel>
+            <translation><!-- Montgomery AL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NARRAGANSETT RI</masterLabel>
+            <translation><!-- NARRAGANSETT RI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Orleans, LA</masterLabel>
+            <translation><!-- New Orleans, LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPPT/EAD NETI 2138</masterLabel>
+            <translation><!-- OPPT/EAD NETI 2138 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On-Line Training</masterLabel>
+            <translation><!-- On-Line Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC Refresher On-Line</masterLabel>
+            <translation><!-- PC Refresher On-Line --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REGION 2</masterLabel>
+            <translation><!-- REGION 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REGION 3 - WELLINGING WV LAB</masterLabel>
+            <translation><!-- REGION 3 - WELLINGING WV LAB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REGION 6 - HOUSTON LAB</masterLabel>
+            <translation><!-- REGION 6 - HOUSTON LAB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTP NC</masterLabel>
+            <translation><!-- RTP NC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTP NC, NC</masterLabel>
+            <translation><!-- RTP NC, NC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1</masterLabel>
+            <translation><!-- Region 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10</masterLabel>
+            <translation><!-- Region 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3</masterLabel>
+            <translation><!-- Region 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4</masterLabel>
+            <translation><!-- Region 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5</masterLabel>
+            <translation><!-- Region 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6</masterLabel>
+            <translation><!-- Region 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7</masterLabel>
+            <translation><!-- Region 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8</masterLabel>
+            <translation><!-- Region 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9</masterLabel>
+            <translation><!-- Region 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SHEPHARDSTOWN WV</masterLabel>
+            <translation><!-- SHEPHARDSTOWN WV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Juan PR</masterLabel>
+            <translation><!-- San Juan PR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shepherdstown WV</masterLabel>
+            <translation><!-- Shepherdstown WV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC</masterLabel>
+            <translation><!-- Washington DC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - 1310 L St.</masterLabel>
+            <translation><!-- Washington DC - 1310 L St. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - AR</masterLabel>
+            <translation><!-- Washington DC - AR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - AR North Room B-305</masterLabel>
+            <translation><!-- Washington DC - AR North Room B-305 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - AR South</masterLabel>
+            <translation><!-- Washington DC - AR South --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - CG</masterLabel>
+            <translation><!-- Washington DC - CG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - CM</masterLabel>
+            <translation><!-- Washington DC - CM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - CS</masterLabel>
+            <translation><!-- Washington DC - CS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - EE</masterLabel>
+            <translation><!-- Washington DC - EE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - OFFICE OF WATER</masterLabel>
+            <translation><!-- Washington DC - OFFICE OF WATER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - PY</masterLabel>
+            <translation><!-- Washington DC - PY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - RRB</masterLabel>
+            <translation><!-- Washington DC - RRB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC OCFO</masterLabel>
+            <translation><!-- Washington DC OCFO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC, OAM ONLY</masterLabel>
+            <translation><!-- Washington DC, OAM ONLY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web-Based Training</masterLabel>
+            <translation><!-- Web-Based Training --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Mail Code --></label>
@@ -517,6 +821,18 @@
         <relationshipLabel><!-- Forms (Organization Allocation) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Pass/Fail --></label>
+        <name>Pass_Fail__c</name>
+        <picklistValues>
+            <masterLabel>F</masterLabel>
+            <translation><!-- F --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P</masterLabel>
+            <translation><!-- P --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Purchase Card Request Type --></label>
         <name>Purchase_Card_Request_Type__c</name>
         <picklistValues>
@@ -555,6 +871,11 @@
             <masterLabel>Suspension of Card or Check</masterLabel>
             <translation><!-- Suspension of Card or Check --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Purchase Card Request --></label>
+        <name>Purchase_Card_Request__c</name>
+        <relationshipLabel><!-- Forms --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Quantity --></label>
@@ -725,6 +1046,10 @@
         <label><!-- Zip --></label>
         <name>Zip__c</name>
     </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>comments__c</name>
+    </fields>
     <layouts>
         <layout>BAP Provisioning Layout</layout>
         <sections>
@@ -741,6 +1066,10 @@
         <sections>
             <label><!-- Approvers --></label>
             <section>Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
         </sections>
         <sections>
             <label><!-- Custom Links --></label>
@@ -766,6 +1095,10 @@
             <section>Cardholder AO Request</section>
         </sections>
         <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
@@ -783,6 +1116,10 @@
         <sections>
             <label><!-- Approvers --></label>
             <section>Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
         </sections>
         <sections>
             <label><!-- Contact Information Change Details --></label>
@@ -836,6 +1173,10 @@
             <section>Cardholder 8</section>
         </sections>
         <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
@@ -853,6 +1194,10 @@
         <sections>
             <label><!-- Approvers --></label>
             <section>Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
         </sections>
         <sections>
             <label><!-- Custom Links --></label>
@@ -932,6 +1277,10 @@
             <section>Cardholder(s)</section>
         </sections>
         <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
@@ -951,6 +1300,10 @@
             <section>Approvers</section>
         </sections>
         <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
@@ -968,6 +1321,10 @@
         <sections>
             <label><!-- Approvers --></label>
             <section>Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
         </sections>
         <sections>
             <label><!-- Custom Links --></label>
@@ -1000,6 +1357,10 @@
             <section>Approvers</section>
         </sections>
         <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
@@ -1010,6 +1371,13 @@
         <sections>
             <label><!-- Temporary Closure/Reactivation Details --></label>
             <section>Temporary Closure/Reactivation Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Training</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
         </sections>
     </layouts>
     <recordTypes>
@@ -1059,6 +1427,10 @@
     <recordTypes>
         <label><!-- SF 182 --></label>
         <name>SF_182</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Training --></label>
+        <name>Training</name>
     </recordTypes>
     <startsWith>Consonant</startsWith>
     <validationRules>

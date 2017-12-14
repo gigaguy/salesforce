@@ -1,5 +1,5 @@
 ({
-    doInit : function(component, event, helper) {             
+    doInit : function(component, event, helper) {  
               var action = component.get("c.getFormRTs");
         action.setParams({
 			"sID" : component.get("v.sessionID"),
@@ -16,9 +16,10 @@
     openModal: function(component, event, helper) {
        
         var formID = event.currentTarget.id;
-        var formName = event.currentTarget.name;
-        if(formID != undefined && formID=='012350000004dmUAAQ'){            
-                        
+        var formName = event.currentTarget.name;        
+        if(formName != undefined && formName =='Purchase Card'){            
+            formID = formName;// can not depend on 
+	        console.log('formName '+formName);
             component.set("v.backupFormId",formID);
             component.set("v.backUpFormName",formName);            
             component.set("v.forceSelectFormOption",true);            
@@ -27,12 +28,16 @@
         }  
         
     },
-    viewFormJS : function(component, event, helper){
+    viewFormJS : function(component, event, helper){        
         var formID = event.currentTarget.id;
-        var formName = event.currentTarget.name;
+        var formName = event.currentTarget.name;        
         if (formName === "BAP Provisioning") {
             var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
         	var hrefEmail = "BAP_Admins@epa.gov";
+        }
+        else if (formName === "Purchase Card") {
+            var hrefInfo = "mailto:Creed.Suzette@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+        	var hrefEmail = "Creed.Suzette@epa.gov";
         }
         else {
             var hrefInfo = "mailto:McNeal.Detha@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
@@ -99,6 +104,8 @@
 		
 	},
     saveOnly : function(component, event, helper){
+        
+        component.set("v.isSaveFired", true);
         console.log('in c.saveOnly');
           try {
             component.find("edit").get("e.recordSave").fire();
@@ -147,66 +154,7 @@
         $A.enqueueAction(action);
     },
 	saveAndSubmit : function(component, event, helper){
-        component.find("edit").get("e.recordSave").fire();
-        
-        // Temporary checking for modals to allow submitting from new form or view form
-        var formID;
-        if (component.get("v.modalName") == 'viewForm') {
-            formID = component.get("v.viewFormID");
-        }
-        else {
-            formID = component.get("v.newForm.Id");
-        }
-        var recordTypeId;
-        var formObj = component.get("v.newForm");
-        if(formObj!=undefined){
-            recordTypeId=formObj.RecordTypeId;
-        }
-        console.log('recordTypeId '+recordTypeId);
-        
-        var action = component.get("c.submitForApproval");
-        action.setParams({
-            "formID": formID,
-			"sID" : component.get("v.sessionID"),
-            "recordTypeId" : recordTypeId
-        });
-        action.setCallback(this,function(resp){
-			console.log('in action');
-            var state = resp.getState();
-            console.log('state: ' +state);
-            if(state === 'SUCCESS'){
-                component.set("v.message", resp.getReturnValue());
-            }
-            else if(state === 'ERROR'){
-                var errors = resp.getError();
-                for(var i = 0 ;i < errors.length;i++){
-                    console.log(errors[i].message);
-                }
-            }
-        });
-        $A.enqueueAction(action);
-        
-        // Needed to update display of forms, sets display to "viewMyForms" for feedback to user that it was submitted
-        var action = component.get("c.findExistingForms");
-        action.setParams({
-			"sID" : component.get("v.sessionID")
-        });
-        action.setCallback(this,function(resp){
-			console.log('in action');
-            var state = resp.getState();
-            console.log('state: ' +state);
-            if(state === 'SUCCESS'){
-                component.set("v.oldForms", resp.getReturnValue());
-                component.set("v.pageStatus", "viewMyForms");
-            }
-            else if(state === 'ERROR'){
-                var errors = resp.getError();
-                for(var i = 0 ;i < errors.length;i++){
-                    console.log(errors[i].message);
-                }
-            }
-        });
-        $A.enqueueAction(action);
+        helper.saveAndSubmit(component, event);
 	},
 	openModal2: function(component, event, helper) {
         component.set("v.isOpen", true);
@@ -217,18 +165,32 @@
         component.set("v.approvalSuccess", null);
         component.set("v.isOpen", false);
         component.set("v.modalName", "");
+        component.set("v.backupFormId ", null);        
+        component.set("v.newFormId", null);
+        component.set("v.trainingPageMode", "showRecords");
     },
 	handleSaveSuccess : function(component, event, helper){
-		component.set("v.isOpen", false);
-        component.set("v.modalName", "");
-		component.set("v.message", "Your Form was saved");
+        var isSaveFired = component.get("v.isSaveFired");
+        if(isSaveFired){
+			console.log('Forms handleSaveSuccess Done.');
+			component.set("v.isOpen", false);
+    	    component.set("v.modalName", "");
+			component.set("v.message", "Your Form was saved");
+	        component.set("v.backupFormId",null); 
+            component.set("v.newFormId", null);
+        }
+		component.set("v.isSaveFired",false);        
 	},
     cancelCreationModal : function(component, event, helper){
     	component.set("v.message", null);
         component.set("v.approvalSuccess", null);
         component.set("v.isOpen", false);
         component.set("v.modalName", "");
-    	
+    	component.set("v.backupFormId",null);
+        component.set("v.isSaveFired",false);
+        component.set("v.newFormId", null);
+        component.set("v.trainingPageMode", "showRecords");
+        
         var action = component.get("c.deleteForm");
         action.setParams({
             "formID":component.get("v.newForm.Id"),
@@ -252,6 +214,7 @@
 	},
     deleteFormJS : function(component, event, helper){
     	var formID = component.get("v.viewFormID");
+        component.set("v.isSaveFired",false);
         console.log(formID);
 		var action = component.get("c.deleteForm");
         action.setParams({
@@ -266,8 +229,12 @@
                 component.set("v.message", resp.getReturnValue());
                 component.set("v.oldForm", null);
                 component.set("v.modalName", "");
+                component.set("v.backupFormId",null);
+                component.set("v.newFormId", null);
+                component.set("v.trainingPageMode", "showRecords");
             }
             else if(state === 'ERROR'){
+                component.set("v.backupFormId",null);
                 var errors = resp.getError();
                 for(var i = 0 ;i < errors.length;i++){
                     console.log(errors[i].message);
@@ -373,16 +340,44 @@
         $A.enqueueAction(action);
 	},
     handleFormSelEvent : function(component, event, helper) {
+        console.log('handleFormSelEvent');
         component.set("v.forceSelectFormOption",false);
         var isCancelled = event.getParam("isCancelled");
         var formOption = event.getParam("formOption");
         if(isCancelled){
-        	    
+        	component.set("v.backupFormId",null);
         }else{
 			var formId = component.get("v.backupFormId");
 	        var formName = component.get("v.backUpFormName");
     	    helper.openFormModal(component, event,formId,formName,formOption);            
         }                
+    },
+    viewMyTrainingForms: function(component, event, helper) {
+        component.set("v.trainingPageMode", "showRecords");
+        component.set("v.pageStatus", "viewMyTrainings");                
+    },
+    addTrainingRecords: function(component, event, helper) {
+
+        document.getElementById('newFrmDiv').hidden = "hidden";
+        component.set("v.trainingPageMode", "newPurchaseCard");
+        component.set("v.pageStatus", "viewMyTrainings");        
+        console.log('== '+component.get("v.trainingPageMode"));
+    },
+	handleTrainingBackEvent: function(component, event, helper) {
+        
+        var newFormDiv = document.getElementById('newFrmDiv');
+        if(newFormDiv!=undefined){
+			newFormDiv.hidden = "";            
+        }        
+        var sourceCmpUniqueId = event.getParam("sourceCmpUniqueId");
+        
+        component.set("v.trainingPageMode", null);
+        component.set("v.pageStatus", null);
+        
+        if(sourceCmpUniqueId=='newPCTraingRecSuccess'){
+            // Now save main form            
+            helper.saveAndSubmit(component, event);
+        }
+        component.set("v.pageStatus", "viewFormTypes");
     }
-	
 })

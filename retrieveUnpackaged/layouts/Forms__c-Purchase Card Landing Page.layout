@@ -19,6 +19,14 @@
                 <behavior>Edit</behavior>
                 <field>Account_Type__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>comments__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Cardholder_AO_Display_Name__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsLeftToRight</style>
@@ -33,6 +41,13 @@
         <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Name__c</fields>
+        <fields>RECORDTYPE</fields>
+        <fields>Form_Status__c</fields>
+        <relatedList>Forms__c.Purchase_Card_Request__c</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

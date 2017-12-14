@@ -27,13 +27,19 @@
     <aura:handler name="formOptionSelEvent" event="c:FormOptionSelectedEvent" action="{!c.handleFormSelEvent}"/>
     <aura:attribute name="forceSelectFormOption" type="boolean" default="false"/>
     <aura:attribute name="backupFormId" type="string"/>
+    <aura:attribute name="newFormId" type="string"/>
     <aura:attribute name="backUpFormName" type="string"/>
+    <aura:attribute name="trainingPageMode" type="string"/>
+    <aura:attribute name="isSaveFired" type="boolean" default="false"/>
+    
+    <aura:handler name="trainingBackEvent" event="c:NavigationEvent" action="{!c.handleTrainingBackEvent}"/>  
     
     <!-- Header-->
     <p style="margin-bottom: 35px; font-size: 125%;">
         <aura:if isTrue="{!v.pageStatus == 'viewFormTypes'}">
             <a onclick="{!c.viewMyForms}" style="color: black; font-family: Arial,Helvetica,sans-serif; text-decoration-line: underline;">My Forms</a>
             <a href="{!'/ProfilePage?sid='+v.sessionID}" style="margin-left: 30px; color: black; font-family: Arial,Helvetica,sans-serif; text-decoration-line: underline;">Edit My Approvers</a>
+		    <a onclick="{!c.viewMyTrainingForms}" style="margin-left: 30px;color: black; font-family: Arial,Helvetica,sans-serif; text-decoration-line: underline;">My Trainings</a>
         </aura:if>
         <aura:if isTrue="{!v.pageStatus == 'viewMyForms'}">
             <a onclick="{!c.viewFormTypes}" style="color: black; font-family: Arial,Helvetica,sans-serif; text-decoration-line: underline;">Back to Form Types</a>
@@ -204,7 +210,7 @@
     
     <!--New Form Modal-->
     <aura:if isTrue="{!and(v.isOpen, or(v.newForm.Approval_Step__c == null, v.newForm.Approval_Step__c == 'Rejected', v.newForm.Approval_Step__c == 'Recalled'))}">
-      <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+      <div  id="newFrmDiv" role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
         <div class="slds-modal__container">
           <!--BOX HEADER-->
           <div class="slds-modal__header">
@@ -224,6 +230,7 @@
           </div>
           <!--BOX BODY-->
           <div class="slds-modal__content slds-p-around--medium">
+              <div aura:id="formIntro"></div>
               <force:recordedit aura:id="edit" recordId="{!v.newForm.Id}" />
               <!--<force:recordData aura:id="recordHandler"
                                 mode="edit"
@@ -233,9 +240,14 @@
           <!--BOX FOOTER-->
           <div class="slds-modal__footer">
               <ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.cancelCreationModal}" />
-              <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveOnly}" />
-          <!--    <ui:button class="slds-button slds-button_success" label="Submit" press="{!c.saveAndSubmit}" /> -->
-			  <ui:button class="slds-button slds-button_success" label="Submit" press="{!c.confirmSubmit}" />	
+              <aura:if isTrue="{!v.backupFormId == 'Purchase Card'}">
+                  <ui:button class="slds-button slds-button--neutral" label="Next" press="{!c.addTrainingRecords}" />
+                  <aura:set attribute="else">
+                      <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveOnly}" />
+         			 <!--<ui:button class="slds-button slds-button_success" label="Submit" press="{!c.saveAndSubmit}" /> -->
+					  <ui:button class="slds-button slds-button_success" label="Submit" press="{!c.confirmSubmit}" />
+                  </aura:set>
+              </aura:if>              	
           </div>
         </div>
       </div>
@@ -296,7 +308,7 @@
       <div class="slds-backdrop slds-backdrop--open"></div>
     </aura:if>
     <!--End Combined Modal-->
-    <!-- Show OPitons View -->
+    <!-- Show options View -->
     
     <aura:if isTrue="{!v.forceSelectFormOption}">
         <div class="slds-modal slds-fade-in-open">
@@ -309,5 +321,10 @@
           </div>
         </div>
         <div class="slds-backdrop slds-backdrop--open"></div>
+    </aura:if>
+    
+    <!-- Training Records Component -->
+    <aura:if isTrue="{!v.pageStatus == 'viewMyTrainings'}">
+        <c:Training sessionID="{!v.sessionID}" pageMode="{!v.trainingPageMode}" pcRecordId="{!v.newFormId}"></c:Training>
     </aura:if>    
 </aura:component>

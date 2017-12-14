@@ -179,6 +179,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TrainingController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TrainingController_Test</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>UtilityMethods</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -949,6 +957,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.GSA_SmartPay_Training_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Contact.Grade__c</field>
         <readable>false</readable>
@@ -1264,6 +1277,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Forms__c.Business_Justification__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.CLP_s__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.Cancelling__c</field>
         <readable>true</readable>
@@ -1390,6 +1413,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Forms__c.Cardholder_AO_Display_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Forms__c.Cardholder_AO_From__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1414,8 +1442,23 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Forms__c.Check_Request_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.City__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.Confirm_AO_Supervisor__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.Course_Title__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1476,6 +1519,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.Date_Card_is_to_be_Closed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1560,11 +1608,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Forms__c.I_Confirm__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Forms__c.Immediate_Supervisor_s_Digital_Signature__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1585,6 +1628,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Forms__c.Location__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Forms__c.Mail_Code__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1594,7 +1642,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Forms__c.Monthly_Purchase_Limit__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1665,7 +1713,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Forms__c.Pass_Fail__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Forms__c.Purchase_Card_Request_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.Purchase_Card_Request__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1709,7 +1767,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Forms__c.Single_Purchase_Limit__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1776,6 +1834,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.Zip__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.comments__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2868,6 +2931,10 @@
         <recordType>Forms__c.Change_Suspension_of_cardcheck</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Forms__c-Training</layout>
+        <recordType>Forms__c.Training</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Global-Global Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -2970,7 +3037,7 @@
         <layout>WorkThanks-Thanks Layout</layout>
     </layoutAssignments>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
+        <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
@@ -3228,6 +3295,11 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
+        <recordType>Forms__c.Training</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
         <recordType>Idea.InternalIdeasIdeaRecordType</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
@@ -3293,7 +3365,7 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-DuplicateRecordSet</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Idea</tab>
@@ -3325,7 +3397,7 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-ProfileSkill</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Quote</tab>

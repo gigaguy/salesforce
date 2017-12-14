@@ -227,6 +227,24 @@
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_AO</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting AO Approval&quot;</formula>
+        <name>Approval Step - Sent to AO</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_DD</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting Division Director/Manager Approval&quot;</formula>
+        <name>Approval Step - Sent to DD</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Supervisor</fullName>
         <field>Approval_Step__c</field>
         <formula>&quot;Awaiting Supervisor Approval&quot;</formula>
@@ -245,6 +263,24 @@
         <operation>Formula</operation>
         <protected>false</protected>
         <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Step_Update_Approved</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Approved&quot;</formula>
+        <name>Approval Step - Update Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Step_Update_Rejected</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Rejected&quot;</formula>
+        <name>Approval Step - Update Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Manager_Signature</fullName>

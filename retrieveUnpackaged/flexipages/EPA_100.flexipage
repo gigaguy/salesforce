@@ -20,6 +20,13 @@
         <componentInstances>
             <componentName>force:detailPanel</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>relatedListComponentOverride</name>
+                <value>NONE</value>
+            </componentInstanceProperties>
+            <componentName>force:relatedListContainer</componentName>
+        </componentInstances>
         <name>facet-0702df94-9561-4f80-b9fe-e9d47cd98966</name>
         <type>Facet</type>
     </flexiPageRegions>
