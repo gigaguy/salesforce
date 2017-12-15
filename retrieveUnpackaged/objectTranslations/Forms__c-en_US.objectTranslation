@@ -487,6 +487,10 @@
         <name>Immediate_Supervisor_s_Signature__c</name>
     </fields>
     <fields>
+        <label><!-- Instructions --></label>
+        <name>Instructions__c</name>
+    </fields>
+    <fields>
         <label><!-- Justification for 8 or more cardholders --></label>
         <name>Justification_for_8_or_more_cardholders__c</name>
     </fields>
@@ -1329,6 +1333,10 @@
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Instructions --></label>
+            <section>Purchase Card Instructions</section>
         </sections>
         <sections>
             <label><!-- Request for Purchase Card --></label>

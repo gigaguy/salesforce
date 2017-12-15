@@ -1,4 +1,4 @@
-@istest(SeeAllData=true)
+@istest
 public class FormPageController_Test {
 	
     @isTest
@@ -86,16 +86,26 @@ public class FormPageController_Test {
 	
         String tokenId = '123ABC';
         User user = [select id from User where isActive = true and PRofile.Name = 'System Administrator' limit 1];
-        user.Session_Token__c = tokenId;
-        
+        user.Session_Token__c = tokenId;        
         update user;
         try{
-	        Forms__c pcform = FormPageController.insertNewForms(tokenId, [select id from RecordType where name = 'Purchase Card' limit 1].ID,'New Purchase Card');    	    
+	        Forms__c pcform = FormPageController.insertNewForms(tokenId, 'Purchase Card','New Purchase Card');    	    
+            Id recordTypeId = [select id from RecordType where name = 'Purchase Card' limit 1].ID;
             FormPageController.deleteForm(pcform.ID, tokenId);
-			FormPageController.submitForApproval(pcform.ID, tokenId,'012350000004dmUAAQ');                        
+			FormPageController.submitForApproval(pcform.ID, tokenId,recordTypeId);                        
         }
         catch(exception ex){
             system.debug(ex.getMessage());  
           }
+    }
+    @isTest
+    static void testGetAllFormOptions(){
+       List<String> result = FormPageController.getAllFormOptions('sample');
+       System.assert(result.size()>0);        
+    }
+    @isTest
+    static void testGetFormIntroduction(){
+      String result = FormPageController.getFormIntroduction('New Purchase Card');
+       System.assert(result!=null);        
     }
 }

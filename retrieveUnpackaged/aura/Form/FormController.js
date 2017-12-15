@@ -16,7 +16,8 @@
     openModal: function(component, event, helper) {
        
         var formID = event.currentTarget.id;
-        var formName = event.currentTarget.name;        
+        var formName = event.currentTarget.name;  
+        component.set("v.formOption", null); 
         if(formName != undefined && formName =='Purchase Card'){            
             formID = formName;// can not depend on 
 	        console.log('formName '+formName);
@@ -167,6 +168,7 @@
         component.set("v.modalName", "");
         component.set("v.backupFormId ", null);        
         component.set("v.newFormId", null);
+        component.set("v.formOption", null); 
         component.set("v.trainingPageMode", "showRecords");
     },
 	handleSaveSuccess : function(component, event, helper){
@@ -178,6 +180,7 @@
 			component.set("v.message", "Your Form was saved");
 	        component.set("v.backupFormId",null); 
             component.set("v.newFormId", null);
+            component.set("v.formOption", null); 
         }
 		component.set("v.isSaveFired",false);        
 	},
@@ -189,6 +192,7 @@
     	component.set("v.backupFormId",null);
         component.set("v.isSaveFired",false);
         component.set("v.newFormId", null);
+        component.set("v.formOption", null); 
         component.set("v.trainingPageMode", "showRecords");
         
         var action = component.get("c.deleteForm");
@@ -346,9 +350,11 @@
         var formOption = event.getParam("formOption");
         if(isCancelled){
         	component.set("v.backupFormId",null);
+            component.set("v.formOption", null); 
         }else{
 			var formId = component.get("v.backupFormId");
 	        var formName = component.get("v.backUpFormName");
+            //helper.getFormIntroduction(component, event,formOption);
     	    helper.openFormModal(component, event,formId,formName,formOption);            
         }                
     },

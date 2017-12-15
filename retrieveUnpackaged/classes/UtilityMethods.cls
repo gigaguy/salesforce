@@ -124,19 +124,7 @@ public class UtilityMethods {
                 System.debug(e.getMessage());
             }            
         }
-        return pcRecordTypes;
-        /*
-        return new Map<String,String>{'New Purchase Card' => '012350000004dmUAAQ',
-            						  'New Convenience Check' => '012350000004dcjAAA',
-                                      'New Approving Official (AO)' => '012350000004dctAAA',
-                                      'Cancellation of Card or Check' => '012350000004ddSAAQ',
-                                      'Change Cardholder AO' => '012350000004dd3AAA',
-                                      'Change Contact Information' => '012350000004ddDAAQ',
-                                      'Change Monthly Limit' => '012350000004ddNAAQ',
-						              'Change Name on Card or Check' => '012350000004dd8AAA',
-                                      'Suspension of Card or Check' => '012350000004ddIAAQ'};
-                                          */
-                                          
+        return pcRecordTypes;                                                  
     }
     
     public static Boolean isPurchaseCardFormId(String formId){

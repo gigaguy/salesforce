@@ -1122,6 +1122,39 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Instructions__c</fullName>
+        <defaultValue>&quot;As a reminder with a revision, the moratorium is still in effect on the issuance of new purchase card and convenience check accounts.&quot;+BR()+ BR()+
+
+&quot;For those instances where establishing a new account is mission critical, the cognizant senior resource official and/or Division Director must submit a written justification, explaining that mission criticality, to the EPA National Purchase Card Program Manager (NPCPM) Mr. Brian Long.&quot; +BR()+ BR()+
+
+&quot;Authorizations may be granted on an exception basis.&quot;+BR()+ BR()+
+
+&quot;Reminder: Refer to  http://purchasecard.epa.gov, Important Reminders About Existing Agency Purchase Card Policy that are in effect and remain unchanged.&quot; +BR()+ BR()+
+
+&quot;The EPA Acquisition Guide (EPAAG) section 13.3.1 was posted in December 2015 which includes the latest policy for the purchase card program and is located at https://oamintra.epa.gov/EPAAG.&quot; +BR()+BR()+
+
+&quot;The EPA purchase card program provides an efficient and convenient way of buying commercial/off the shelf goods and services in order to meet the Agency mission. However, it is essential that cardholders and approving officials ensure that all purchases made with the purchase card comply with the rules and regulations, and that proper documentation is completed to justify all purchase card transactions.&quot; +BR()+BR()+
+
+&quot;Please note that purchase card and/or convenience check misuse will result in either suspension or rescission of an Approving Official and/or Purchase Cardholder delegation of authority.&quot;+ BR()+BR()+
+
+&quot;All cardholders and approving officials are responsible for ensuring appropriate use of purchase cards. Please communicate this information to your subordinates and stress that you will personally hold purchase cardholders accountable for proper use of the purchase card. Approving Officials will also be held accountable for proper review and authorization of their purchase cardholder transactions and records.&quot;+BR()+BR()+
+
+&quot;The Office of Acquisition Management provides this Purchase Card Web Site for cardholders. Before disputing any purchase card transaction please review the appropriate guidelines.&quot;+BR()+BR()+
+
+&quot;SP2 JPMC Bank (Fleet): Dispute Guidelines Customer Service:(888)297-0781&quot; + BR()+
+&quot;SP2 JPMC Bank (Purchase): Dispute Guidelines Customer Service:(888)297-0781&quot; +BR()+
+&quot;Purchase Card Program issues: Dianne Lyles (202)564-6111&quot;+BR()+ 
+&quot;Fleet Card Program issues: Bryford Metoyer (202)564-0310&quot; +BR()+
+&quot;Allocation and Finance issues: Cynthia Spadaro (513)487-2069&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Instructions</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
         <fullName>Justification_for_8_or_more_cardholders__c</fullName>
         <externalId>false</externalId>
         <label>Justification for 8 or more cardholders</label>
@@ -1722,7 +1755,7 @@
         </lookupFilter>
         <referenceTo>Forms__c</referenceTo>
         <relationshipLabel>Forms</relationshipLabel>
-        <relationshipName>Forms</relationshipName>
+        <relationshipName>PCForms</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -2117,6 +2150,17 @@
             <value>Forms__c.BAP_Provisioning</value>
         </filters>
         <label>Developer Sandbox</label>
+    </listViews>
+    <listViews>
+        <fullName>New_Purchase_Card_Forms</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Form_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>Purchase Card</value>
+        </filters>
+        <label>New Purchase Card Forms</label>
     </listViews>
     <nameField>
         <displayFormat>{00000}</displayFormat>
@@ -6104,7 +6148,6 @@
     <recordTypes>
         <fullName>Training</fullName>
         <active>true</active>
-        <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
         <description>Training records</description>
         <label>Training</label>
         <picklistValues>

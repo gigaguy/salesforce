@@ -87,7 +87,7 @@
     </table>
     </div>
     </aura:if>
-    
+    <br/>
     <!--New Form Modal-->
     <aura:if isTrue="{!or(v.pageMode == 'editRecord', v.pageMode == 'newPurchaseCard')}">
       <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open">
@@ -97,13 +97,11 @@
             <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.cancelEditTraining}">
             X
             <span class="slds-assistive-text">Close</span>
-            </button>
-                       
-            
+            </button>                                   
           </div>
           <!--BOX BODY-->
           <div class="slds-modal__content slds-p-around--medium">
-              <force:recordedit aura:id="editTrainingRec" recordId="{!v.recordId}" /> 
+             <div><force:recordedit aura:id="editTrainingRec" recordId="{!v.recordId}"/></div>
               <lightning:input aura:id="fileId" onchange="{!c.handleFilesChange}" type="file" name="file" label="Upload Attachment" multiple="false"/>
               <div class="slds-text-body_small slds-text-color_error">{!v.fileName} </div>
               <aura:if isTrue="{!v.showLoadingSpinner}">

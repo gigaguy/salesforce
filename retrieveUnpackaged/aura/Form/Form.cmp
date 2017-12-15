@@ -28,6 +28,10 @@
     <aura:attribute name="forceSelectFormOption" type="boolean" default="false"/>
     <aura:attribute name="backupFormId" type="string"/>
     <aura:attribute name="newFormId" type="string"/>
+    <aura:attribute name="formOption" type="string"/>    
+    <aura:attribute name="pcOptionPurchaseCard" type="string" default='New Purchase Card'/>
+    <aura:attribute name="pcOptionConvenienceCheck" type="string" default='New Convenience Check'/>
+    
     <aura:attribute name="backUpFormName" type="string"/>
     <aura:attribute name="trainingPageMode" type="string"/>
     <aura:attribute name="isSaveFired" type="boolean" default="false"/>
@@ -39,7 +43,7 @@
         <aura:if isTrue="{!v.pageStatus == 'viewFormTypes'}">
             <a onclick="{!c.viewMyForms}" style="color: black; font-family: Arial,Helvetica,sans-serif; text-decoration-line: underline;">My Forms</a>
             <a href="{!'/ProfilePage?sid='+v.sessionID}" style="margin-left: 30px; color: black; font-family: Arial,Helvetica,sans-serif; text-decoration-line: underline;">Edit My Approvers</a>
-		    <a onclick="{!c.viewMyTrainingForms}" style="margin-left: 30px;color: black; font-family: Arial,Helvetica,sans-serif; text-decoration-line: underline;">My Trainings</a>
+		    <a onclick="{!c.viewMyTrainingForms}" style="margin-left: 30px;color: black; font-family: Arial,Helvetica,sans-serif; text-decoration-line: underline;">My Training</a>
         </aura:if>
         <aura:if isTrue="{!v.pageStatus == 'viewMyForms'}">
             <a onclick="{!c.viewFormTypes}" style="color: black; font-family: Arial,Helvetica,sans-serif; text-decoration-line: underline;">Back to Form Types</a>
@@ -230,7 +234,7 @@
           </div>
           <!--BOX BODY-->
           <div class="slds-modal__content slds-p-around--medium">
-              <div aura:id="formIntro"></div>
+              <div id="formIntro"></div>
               <force:recordedit aura:id="edit" recordId="{!v.newForm.Id}" />
               <!--<force:recordData aura:id="recordHandler"
                                 mode="edit"
@@ -240,7 +244,7 @@
           <!--BOX FOOTER-->
           <div class="slds-modal__footer">
               <ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.cancelCreationModal}" />
-              <aura:if isTrue="{!v.backupFormId == 'Purchase Card'}">
+              <aura:if isTrue="{!or(v.formOption == v.pcOptionPurchaseCard, v.formOption == v.pcOptionConvenienceCheck)}">
                   <ui:button class="slds-button slds-button--neutral" label="Next" press="{!c.addTrainingRecords}" />
                   <aura:set attribute="else">
                       <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveOnly}" />
@@ -325,6 +329,8 @@
     
     <!-- Training Records Component -->
     <aura:if isTrue="{!v.pageStatus == 'viewMyTrainings'}">
-        <c:Training sessionID="{!v.sessionID}" pageMode="{!v.trainingPageMode}" pcRecordId="{!v.newFormId}"></c:Training>
+        <div>
+	        <c:Training sessionID="{!v.sessionID}" pageMode="{!v.trainingPageMode}" pcRecordId="{!v.newFormId}"></c:Training>
+            </div>
     </aura:if>    
 </aura:component>

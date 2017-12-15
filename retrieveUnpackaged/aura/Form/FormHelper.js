@@ -42,29 +42,16 @@
         action.setCallback(this,function(resp){
             var state = resp.getState();
             if(state === 'SUCCESS'){
+                
+                if(formOption!=undefined){
+                   component.set("v.formOption", formOption); 
+                    //Download Form introduction text if applicabl
+	               this.getFormIntroduction(component, event,formOption);
+                }
                 var formObj = resp.getReturnValue();
                 component.set("v.newForm", formObj);
                 component.set("v.newFormId", formObj.Id);
-               // console.log(JSON.stringify(formObj));
-               //Download Form introduction text if applicabl
-               var formName = component.get("v.backupFormId");
-               console.log('formName '+formName);
-               /*
-               if(formName!=undefined && formName =='Purchase Card'){
-                    var introAction = component.get("c.getFormIntroduction");
-                    introAction.setParams({
-                        "getFormIntroduction" : formName
-                    });
-                   introAction.setCallback(this,function(resp1){
-                       var state = resp1.getState();
-                       if(state === 'SUCCESS'){
-                           var introText = resp1.getReturnValue();
-                           console.log(introText);
-                           var introDiv = document.getElementById('formIntro');
-                           introDiv.innerHTML = introText;
-                       }
-          	         });
-                }*/
+               // console.log(JSON.stringify(formObj));                              
             }
             else if(state === 'ERROR'){
                 component.set("v.newFormId", null);
@@ -75,6 +62,24 @@
             }
         });
         $A.enqueueAction(action);
+    },
+    getFormIntroduction:function(component, event, formName){
+        console.log('getFormIntroduction');
+        var introAction = component.get("c.getFormIntroduction");
+        introAction.setParams({
+            "formName" : formName
+        });
+        introAction.setCallback(this,function(resp1){
+            var state = resp1.getState();
+            if(state === 'SUCCESS'){
+                var introText = resp1.getReturnValue();
+                
+                var introDiv = document.getElementById('formIntro');
+                console.log('introDiv '+introDiv);
+                introDiv.innerHTML = introText;
+            }
+        });
+        $A.enqueueAction(introAction);
     },
     saveAndSubmit: function(component, event){
 
