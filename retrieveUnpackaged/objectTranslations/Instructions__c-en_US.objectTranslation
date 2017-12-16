@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Instructions</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Instructions</value>
+    </caseValues>
+    <fields>
+        <label><!-- InstructionContent --></label>
+        <name>InstructionContent__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParentRecordType --></label>
+        <name>ParentRecordType__c</name>
+        <picklistValues>
+            <masterLabel>Cancellation-Check or Card</masterLabel>
+            <translation><!-- Cancellation-Check or Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change-Cardholder AO</masterLabel>
+            <translation><!-- Change-Cardholder AO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change-Contact Information</masterLabel>
+            <translation><!-- Change-Contact Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change-Monthly Limit</masterLabel>
+            <translation><!-- Change-Monthly Limit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change-Name on Card/Check</masterLabel>
+            <translation><!-- Change-Name on Card/Check --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change-Suspension of Card/Check</masterLabel>
+            <translation><!-- Change-Suspension of Card/Check --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New-Approving Official (AO)</masterLabel>
+            <translation><!-- New-Approving Official (AO) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New-Convenience Check</masterLabel>
+            <translation><!-- New-Convenience Check --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchase Card</masterLabel>
+            <translation><!-- Purchase Card --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

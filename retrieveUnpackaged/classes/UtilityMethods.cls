@@ -105,16 +105,7 @@ public class UtilityMethods {
 	 */
     public static Map<String,String> getPCRequestRecordTypes(){
         Map<String,String> pcRecordTypes = new Map<String,String>();
-        Map<String,String> mappingRecordTypes = new Map<String,String>{
-            						  'New Purchase Card' => 'Purchase Card',
-            						  'New Convenience Check' => 'New-Convenience Check',
-                                      'New Approving Official (AO)' => 'New-Approving Official (AO)',
-                                      'Cancellation of Card or Check' => 'Cancellation-Check or Card',
-                                      'Change Cardholder AO' => 'Change-Cardholder AO',
-                                      'Change Contact Information' => 'Change-Contact Information',
-                                      'Change Monthly Limit' => 'Change-Monthly Limit',
-						              'Change Name on Card or Check' => 'Change-Name on Card/Check',
-                                      'Suspension of Card or Check' => 'Change-Suspension of Card/Check'};
+        Map<String,String> mappingRecordTypes = UtilityMethods.getPCRequestRecordTypeMappings();
         for(String pcOption : mappingRecordTypes.keySet()){
             try{
                 String recordTypeValue = mappingRecordTypes.get(pcOption);
@@ -126,7 +117,18 @@ public class UtilityMethods {
         }
         return pcRecordTypes;                                                  
     }
-    
+    public static Map<String,String> getPCRequestRecordTypeMappings(){
+        return new Map<String,String>{
+            	'New Purchase Card' => 'Purchase Card',
+                'New Convenience Check' => 'New-Convenience Check',
+                'New Approving Official (AO)' => 'New-Approving Official (AO)',
+                'Cancellation of Card or Check' => 'Cancellation-Check or Card',
+                'Change Cardholder AO' => 'Change-Cardholder AO',
+                'Change Contact Information' => 'Change-Contact Information',
+                'Change Monthly Limit' => 'Change-Monthly Limit',
+                'Change Name on Card or Check' => 'Change-Name on Card/Check',
+                'Suspension of Card or Check' => 'Change-Suspension of Card/Check'};
+    }
     public static Boolean isPurchaseCardFormId(String formId){
         Map<String,String> allFormIds = UtilityMethods.getPCRequestRecordTypes();
         Set<String> allValues = new Set<String>();

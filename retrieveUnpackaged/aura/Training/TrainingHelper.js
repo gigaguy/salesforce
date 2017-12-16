@@ -20,7 +20,7 @@
                     var result = resp.getReturnValue();
                     var recordId = result.Id;
                     component.set("v.recordId",recordId);
-                    console.log('\nNew Form\n'+JSON.stringify(result));
+                    //console.log('\nNew Form\n'+JSON.stringify(result));
                     component.set("v.pageMode",'editRecord');
                     component.set("v.isNewRecord",true);                    
                 }});

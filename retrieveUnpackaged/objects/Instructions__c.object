@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object will have instructions, help etc related html content. Primarily Forms needs instructions.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>InstructionContent__c</fullName>
+        <description>It would be rich text content.</description>
+        <externalId>false</externalId>
+        <label>InstructionContent</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ParentRecordType__c</fullName>
+        <description>Instructions are mapped to a record type.</description>
+        <externalId>false</externalId>
+        <label>ParentRecordType</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cancellation-Check or Card</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Change-Cardholder AO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Change-Contact Information</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Change-Monthly Limit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Change-Name on Card/Check</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Change-Suspension of Card/Check</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>New-Approving Official (AO)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>New-Convenience Check</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Purchase Card</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Instructions</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>I-{0000}</displayFormat>
+        <label>Instructions Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Instructions</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

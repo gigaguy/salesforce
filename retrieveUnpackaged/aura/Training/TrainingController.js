@@ -13,35 +13,45 @@
         }     
     },
     saveTraining: function(component, event, helper) {
-                
-        var savingTraining = component.get('v.savingTraining');
-        if(!savingTraining){
-            helper.startSaving(component, event,"save");
-            /*
-            component.set("v.nextAction","save");
-            component.set("v.savingTraining",true);
-            if (component.find("fileId").get("v.files").length > 0){
-                helper.uploadHelper(component, event);            
-            }else{
-                component.find("editTrainingRec").get("e.recordSave").fire();
+        if (component.find("fileId").get("v.files").length > 0){
+            var savingTraining = component.get('v.savingTraining');
+            if(!savingTraining){
+                helper.startSaving(component, event,"save");
+                /*
+                component.set("v.nextAction","save");
+                component.set("v.savingTraining",true);
+                if (component.find("fileId").get("v.files").length > 0){
+                    helper.uploadHelper(component, event);            
+                }else{
+                    component.find("editTrainingRec").get("e.recordSave").fire();
+                }
+                */
             }
-            */
-        }        		
+        }else{
+            // Alert attachment is mandatory
+            
+            //component.set("v.recordError","Please select an attachemnt.");            
+            //component.set("v.recordError","Please select an attachemnt.");            
+        }                		
     },
     saveNextTraining: function(component, event, helper) {
-                
-        var savingTraining = component.get('v.savingTraining');
-        if(!savingTraining){            
-            helper.startSaving(component, event,"savenext");
-        }        		
+        if (component.find("fileId").get("v.files").length > 0){
+            var savingTraining = component.get('v.savingTraining');
+            if(!savingTraining){            
+                helper.startSaving(component, event,"savenext");
+            }
+        }else{            
+            // Alert attachment is mandatory
+        }                		
     },
     handleTrngSaveSuccess : function(component, event, helper){
 		
 		var nextAction = component.get("v.nextAction");
-        var maxTrngRecords = component.get("v.maxTrainingRecords");
-        maxTrngRecords = maxTrngRecords - 1;
-        component.set("v.maxTrainingRecords",maxTrngRecords);
-        console.log('nextAction '+nextAction);
+        var curTrainingRecordNum = component.get("v.curTrainingRecordNum");
+        curTrainingRecordNum = curTrainingRecordNum + 1;
+        component.set("v.curTrainingRecordNum",curTrainingRecordNum);
+        component.set("v.fileName",'No File Selected..');
+
         if(nextAction=='savenext'){
             component.set("v.pageMode",'waiting');
             component.set("v.savingTraining",false);

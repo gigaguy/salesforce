@@ -1834,6 +1834,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Instructions__c.InstructionContent__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Instructions__c.ParentRecordType__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Lead.Address</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3062,6 +3072,10 @@
     <tabSettings>
         <tab>Forms__c</tab>
         <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Instructions__c</tab>
+        <visibility>None</visibility>
     </tabSettings>
     <tabSettings>
         <tab>Mass_Mailing_Campaign__c</tab>

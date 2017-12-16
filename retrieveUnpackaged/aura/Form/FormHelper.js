@@ -64,7 +64,7 @@
         $A.enqueueAction(action);
     },
     getFormIntroduction:function(component, event, formName){
-        console.log('getFormIntroduction');
+
         var introAction = component.get("c.getFormIntroduction");
         introAction.setParams({
             "formName" : formName
@@ -72,10 +72,8 @@
         introAction.setCallback(this,function(resp1){
             var state = resp1.getState();
             if(state === 'SUCCESS'){
-                var introText = resp1.getReturnValue();
-                
-                var introDiv = document.getElementById('formIntro');
-                console.log('introDiv '+introDiv);
+                var introText = resp1.getReturnValue();                
+                var introDiv = document.getElementById('formIntro');                
                 introDiv.innerHTML = introText;
             }
         });
@@ -83,7 +81,7 @@
     },
     saveAndSubmit: function(component, event){
 
-        console.log('saveAndSubmit');
+
 		component.set("v.isSaveFired", true);
         component.find("edit").get("e.recordSave").fire();        
         // Temporary checking for modals to allow submitting from new form or view form

@@ -25,9 +25,14 @@ public class UtilityMethods_Test {
         Map<String,String> result = UtilityMethods.getPCRequestRecordTypes();
         System.assert(result.values().size() ==9);
     }
-        @isTest
+    @isTest
     static void testIsPurchaseCardFormId(){
 		Boolean res = UtilityMethods.isPurchaseCardFormId('abc');
+        System.assert(res!=null);
+    }
+    @isTest
+    static void testPCRequestRecordTypeMappings(){
+		Map<String,String> res = UtilityMethods.getPCRequestRecordTypeMappings();
         System.assert(res!=null);
     }
 }
