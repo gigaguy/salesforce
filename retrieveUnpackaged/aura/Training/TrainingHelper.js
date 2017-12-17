@@ -5,7 +5,7 @@
 	createNewTraining : function(component) {
         var sessionId = component.get("v.sessionID");
         var pcRecordId = component.get("v.pcRecordId");
-        //console.log('createNewTraining '+sessionId + ' pcRecordId= '+pcRecordId);
+        console.log('createNewTraining '+sessionId + ' pcRecordId= '+pcRecordId);
         if(sessionId!=undefined){
             // Insert a new Training record                        
             var action = component.get("c.insertTrainingForm");            
@@ -20,7 +20,7 @@
                     var result = resp.getReturnValue();
                     var recordId = result.Id;
                     component.set("v.recordId",recordId);
-                    //console.log('\nNew Form\n'+JSON.stringify(result));
+                    console.log('\nNew Form\n'+JSON.stringify(result));
                     component.set("v.pageMode",'editRecord');
                     component.set("v.isNewRecord",true);                    
                 }});

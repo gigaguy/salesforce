@@ -1,5 +1,6 @@
 public class TrainingController {
-    public static string TRAINING_RECORD_TYPE_ID = '012350000004fFSAAY';
+    //public static string TRAINING_RECORD_TYPE_ID = '';
+    public static string TRAINING_RECORD_TYPE_NAME = 'Training';
     public static string TRAINING_RECORD_DEFUALT_APPROVAL_STEP = 'Saved';
 	@auraEnabled
     public static List<Forms__c> getUserTrainingForms(string sID){
@@ -7,6 +8,9 @@ public class TrainingController {
         List<Forms__c> trainings = null;        
         User u;
         try{
+            
+            string TRAINING_RECORD_TYPE_ID = [select id from RecordType where name = :TRAINING_RECORD_TYPE_NAME limit 1].ID;
+            System.debug('TRAINING_RECORD_TYPE_ID ' +TRAINING_RECORD_TYPE_ID);
             u = [select id from User where Session_Token__c = :sID];            
             trainings = [select id, Course_Title__c, Location__c, Date__c, CLP_s__c, Pass_Fail__c from Forms__c where Course_Title__c != NULL AND Unauthenticated_Owner__c = :u.ID AND RecordTypeId =:TRAINING_RECORD_TYPE_ID order by Date__c DESC];
         }
@@ -24,6 +28,7 @@ public class TrainingController {
             u = [select id from User where Session_Token__c = :sID];
             if (u != null){
                 trainingForm = new Forms__c();
+                string TRAINING_RECORD_TYPE_ID = [select id from RecordType where name = :TRAINING_RECORD_TYPE_NAME limit 1].ID;
                 trainingForm.put('RecordTypeId', TRAINING_RECORD_TYPE_ID);
                 trainingForm.put('Approval_Step__c', TRAINING_RECORD_DEFUALT_APPROVAL_STEP);
                 trainingForm.put('Unauthenticated_Owner__c',u.Id);
