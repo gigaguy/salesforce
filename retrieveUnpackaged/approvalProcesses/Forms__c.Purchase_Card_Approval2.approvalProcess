@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
-    <active>false</active>
+    <active>true</active>
     <allowRecall>false</allowRecall>
     <allowedSubmitters>
         <type>owner</type>
@@ -32,13 +32,17 @@
             </approver>
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
-        <description>Approval official  step</description>
-        <label>Approval official</label>
+        <description>Approval Official step</description>
+        <label>Approval Official</label>
         <name>Approval_official</name>
     </approvalStep>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
         <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_PCM</name>
+                <type>FieldUpdate</type>
+            </action>
             <action>
                 <name>UpdateManagerApprovalStep</name>
                 <type>FieldUpdate</type>
@@ -59,10 +63,26 @@
                 <value>1</value>
             </criteriaItems>
         </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
         <label>Division Director/Manager</label>
         <name>Division_Director_Manager</name>
         <rejectBehavior>
             <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>long.brian2@epa.gov</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Purchase Card Manager Review</label>
+        <name>Purchase_Card_Manager_Review</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
         </rejectBehavior>
     </approvalStep>
     <description>Purchase Card request approval process.</description>
@@ -99,7 +119,7 @@ CONTAINS( RecordType.Name, &apos;Change-Suspension of Card/Check&apos;)
             <type>FieldUpdate</type>
         </action>
     </finalApprovalActions>
-    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
     <finalRejectionActions>
         <action>
             <name>Approval_Step_Update_Rejected</name>
@@ -122,10 +142,6 @@ CONTAINS( RecordType.Name, &apos;Change-Suspension of Card/Check&apos;)
         </action>
     </initialSubmissionActions>
     <label>Purchase Card Provisioning Approval</label>
-    <nextAutomatedApprover>
-        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
-        <userHierarchyField>Manager</userHierarchyField>
-    </nextAutomatedApprover>
     <recallActions>
         <action>
             <name>Status_Updated_to_Recalled</name>

@@ -197,6 +197,18 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Assigned_to__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assigned to</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Authorization_Reason__c</fullName>
         <externalId>false</externalId>
         <label>Authorization Reason</label>
@@ -990,6 +1002,14 @@
                     <fullName>Completed</fullName>
                     <default>false</default>
                 </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Processed</fullName>
+                    <default>false</default>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -1100,6 +1120,16 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>I_Agree_with_Terms__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Please check this box to indicate you agree with the terms listed above.</inlineHelpText>
+        <label>I Agree with Terms</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Immediate_Supervisor_s_Digital_Signature__c</fullName>
@@ -2152,15 +2182,64 @@
         <label>Developer Sandbox</label>
     </listViews>
     <listViews>
-        <fullName>New_Purchase_Card_Forms</fullName>
+        <fullName>New_Purchase_Card_Actions</fullName>
         <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Cardholder_AO_Name__c</columns>
+        <columns>Approving_Official__c</columns>
+        <columns>Division_Director_Manager__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Assigned_to__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>Form_Type_Name__c</field>
+            <field>RECORDTYPE</field>
             <operation>equals</operation>
-            <value>Purchase Card</value>
+            <value>Forms__c.Cancellation_Check_or_Card,Forms__c.Change_Cardholder_AO,Forms__c.Change_Contact_Information,Forms__c.Change_Monthly_Limit,Forms__c.Change_Name_Name_on_CardCheck,Forms__c.Change_Suspension_of_cardcheck,Forms__c.New_Approving_Official_AO,Forms__c.New_Convenience_Check,Forms__c.Purchase_Card</value>
         </filters>
-        <label>New Purchase Card Forms</label>
+        <filters>
+            <field>Form_Status__c</field>
+            <operation>equals</operation>
+            <value>Pending</value>
+        </filters>
+        <label>Pending Purchase Card Actions</label>
+    </listViews>
+    <listViews>
+        <fullName>New_Purchase_Card_Actions_Forms</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Cardholder_AO_Name__c</columns>
+        <columns>Approving_Official__c</columns>
+        <columns>Division_Director_Manager__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Assigned_to__c</columns>
+        <filterScope>Queue</filterScope>
+        <label>New Purchase Card Actions</label>
+        <queue>New_Purchase_Card_Actions</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Processed_Purchase_Card_Actions</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Cardholder_AO_Name__c</columns>
+        <columns>Approving_Official__c</columns>
+        <columns>Division_Director_Manager__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Assigned_to__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Forms__c.Cancellation_Check_or_Card,Forms__c.Change_Cardholder_AO,Forms__c.Change_Contact_Information,Forms__c.Change_Monthly_Limit,Forms__c.Change_Name_Name_on_CardCheck,Forms__c.Change_Suspension_of_cardcheck,Forms__c.New_Approving_Official_AO,Forms__c.New_Convenience_Check,Forms__c.Purchase_Card</value>
+        </filters>
+        <filters>
+            <field>Form_Status__c</field>
+            <operation>equals</operation>
+            <value>Processed</value>
+        </filters>
+        <label>Processed Purchase Card Actions</label>
     </listViews>
     <nameField>
         <displayFormat>{00000}</displayFormat>
@@ -2622,16 +2701,16 @@
         <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
-                <fullName>Approved</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>New</fullName>
                 <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processed</fullName>
+                <default>false</default>
             </values>
             <values>
                 <fullName>Recalled</fullName>
@@ -2968,6 +3047,14 @@
                 <default>true</default>
             </values>
             <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processed</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Recalled</fullName>
                 <default>false</default>
             </values>
@@ -3300,6 +3387,14 @@
             <values>
                 <fullName>New</fullName>
                 <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processed</fullName>
+                <default>false</default>
             </values>
             <values>
                 <fullName>Recalled</fullName>
@@ -3636,6 +3731,14 @@
                 <default>true</default>
             </values>
             <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processed</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Recalled</fullName>
                 <default>false</default>
             </values>
@@ -3970,6 +4073,14 @@
                 <default>true</default>
             </values>
             <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processed</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Recalled</fullName>
                 <default>false</default>
             </values>
@@ -4302,6 +4413,14 @@
             <values>
                 <fullName>New</fullName>
                 <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processed</fullName>
+                <default>false</default>
             </values>
             <values>
                 <fullName>Recalled</fullName>
@@ -4954,6 +5073,14 @@
                 <default>true</default>
             </values>
             <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processed</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Recalled</fullName>
                 <default>false</default>
             </values>
@@ -5289,6 +5416,14 @@
                 <default>true</default>
             </values>
             <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processed</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Recalled</fullName>
                 <default>false</default>
             </values>
@@ -5617,12 +5752,16 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Completed</fullName>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>New</fullName>
-                <default>true</default>
+                <fullName>Processed</fullName>
+                <default>false</default>
             </values>
             <values>
                 <fullName>Recalled</fullName>

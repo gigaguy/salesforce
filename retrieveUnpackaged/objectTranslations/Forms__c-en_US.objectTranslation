@@ -84,6 +84,11 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Assigned to --></label>
+        <name>Assigned_to__c</name>
+        <relationshipLabel><!-- Forms (Assigned to) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Authorization Reason --></label>
         <name>Authorization_Reason__c</name>
         <picklistValues>
@@ -410,6 +415,14 @@
             <translation><!-- New --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Recalled</masterLabel>
             <translation><!-- Recalled --></translation>
         </picklistValues>
@@ -477,6 +490,11 @@
         </lookupFilter>
         <name>HR_Organization__c</name>
         <relationshipLabel><!-- Forms --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Please check this box to indicate you agree with the terms listed above. --></help>
+        <label><!-- I Agree with Terms --></label>
+        <name>I_Agree_with_Terms__c</name>
     </fields>
     <fields>
         <label><!-- Immediate Supervisor&apos;s Digital Signature --></label>

@@ -1273,6 +1273,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Forms__c.Assigned_to__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Forms__c.Authorization_Reason__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1607,6 +1612,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.I_Agree_with_Terms__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Forms__c.Immediate_Supervisor_s_Digital_Signature__c</field>
         <readable>true</readable>
@@ -1617,7 +1627,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Forms__c.Instructions__c</field>
         <readable>true</readable>
     </fieldPermissions>

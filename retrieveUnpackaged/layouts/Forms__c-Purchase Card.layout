@@ -9,6 +9,10 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Assigned_to__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Cardholder_AO_Name__c</field>
             </layoutItems>
             <layoutItems>
@@ -37,6 +41,10 @@
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Form_Status__c</field>
+            </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>HR_Org_Code__c</field>
@@ -93,6 +101,14 @@
                 <behavior>Edit</behavior>
                 <field>Instructions__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>I_Agree_with_Terms__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Business_Justification__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
@@ -109,10 +125,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Account_Type__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Business_Justification__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
