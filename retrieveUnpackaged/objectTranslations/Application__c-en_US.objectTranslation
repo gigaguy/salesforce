@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Application</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Applications</value>
+    </caseValues>
+    <fields>
+        <help><!-- Additional workflow requirement, i.e., addition of workflow to a heretofore fill and print form. --></help>
+        <label><!-- Addition of Workflow Requirement --></label>
+        <name>Addition_of_Workflow_Requirement__c</name>
+        <picklistValues>
+            <masterLabel>0: Not Required</masterLabel>
+            <translation><!-- 0: Not Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1: Desired if no cost to owner</masterLabel>
+            <translation><!-- 1: Desired if no cost to owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2: Required and owner willing to pay</masterLabel>
+            <translation><!-- 2: Required and owner willing to pay --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Board Member --></label>
+        <name>Board_Member__c</name>
+        <relationshipLabel><!-- Applications (Board Member) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Please provide additional requirements for data availability --></help>
+        <label><!-- Data Availability Comments --></label>
+        <name>Data_Availability_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the data need to be exported or integrated into another system? Is searching, bulk upload, etc. required? --></help>
+        <label><!-- Data Availability External Requirement --></label>
+        <name>Data_Availability_External_Requirement__c</name>
+        <picklistValues>
+            <masterLabel>0: Not Required</masterLabel>
+            <translation><!-- 0: Not Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1: Desired if no cost to owner</masterLabel>
+            <translation><!-- 1: Desired if no cost to owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2: Required and owner willing to pay</masterLabel>
+            <translation><!-- 2: Required and owner willing to pay --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Electronic signature requirement. --></help>
+        <label><!-- Electronic Signature Requirement --></label>
+        <name>Electronic_Signature_Requirement__c</name>
+        <picklistValues>
+            <masterLabel>0: Not Required</masterLabel>
+            <translation><!-- 0: Not Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1: Desired if no cost to owner</masterLabel>
+            <translation><!-- 1: Desired if no cost to owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2: Required and owner willing to pay</masterLabel>
+            <translation><!-- 2: Required and owner willing to pay --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- FY 16 Usage Count --></label>
+        <name>FY_16_Usage__c</name>
+    </fields>
+    <fields>
+        <label><!-- FY 17 Usage Count --></label>
+        <name>FY_17_Usage_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Number --></label>
+        <name>Form_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Users --></label>
+        <name>Full_Users__c</name>
+    </fields>
+    <fields>
+        <help><!-- Highly formatted data entry requirement. --></help>
+        <label><!-- Highly Formatted Input Requirement --></label>
+        <name>Highly_Formatted_Input_Requirement__c</name>
+        <picklistValues>
+            <masterLabel>0: Not required</masterLabel>
+            <translation><!-- 0: Not required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1: Desired if no cost to owner</masterLabel>
+            <translation><!-- 1: Desired if no cost to owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2: Required and owner is willing to pay</masterLabel>
+            <translation><!-- 2: Required and owner is willing to pay --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Print to .pdf in exactly the same layout of the form? --></help>
+        <label><!-- Highly Formatted Output Requirement --></label>
+        <name>Highly_Formatted_Output_Requirement__c</name>
+        <picklistValues>
+            <masterLabel>0: Not Required</masterLabel>
+            <translation><!-- 0: Not Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1: Desired if no cost to owner</masterLabel>
+            <translation><!-- 1: Desired if no cost to owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2: Required and owner willing to pay</masterLabel>
+            <translation><!-- 2: Required and owner willing to pay --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Migration Priority --></label>
+        <name>Migration_Priority__c</name>
+        <picklistValues>
+            <masterLabel>0: Not a Priority - Will Not Migrate</masterLabel>
+            <translation><!-- 0: Not a Priority - Will Not Migrate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1: High Priority - Will Definitely Migrate</masterLabel>
+            <translation><!-- 1: High Priority - Will Definitely Migrate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2: Medium Priority - Will Probably Migrate</masterLabel>
+            <translation><!-- 2: Medium Priority - Will Probably Migrate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3: Low Priority - Probably Will Not Migrate</masterLabel>
+            <translation><!-- 3: Low Priority - Probably Will Not Migrate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Migration Status --></label>
+        <name>Migration_Status__c</name>
+        <picklistValues>
+            <masterLabel>BAP Downloadable Planned</masterLabel>
+            <translation><!-- BAP Downloadable Planned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAP Workflow Planned</masterLabel>
+            <translation><!-- BAP Workflow Planned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAP Workflow Under Development</masterLabel>
+            <translation><!-- BAP Workflow Under Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delete</masterLabel>
+            <translation><!-- Delete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deleted</masterLabel>
+            <translation><!-- Deleted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Do Not Migrate</masterLabel>
+            <translation><!-- Do Not Migrate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FormSmart Downloadable Planned</masterLabel>
+            <translation><!-- FormSmart Downloadable Planned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Known</masterLabel>
+            <translation><!-- Known --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orphan</masterLabel>
+            <translation><!-- Orphan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Office --></label>
+        <name>Office__c</name>
+        <relationshipLabel><!-- Applications (Office) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Primary Contact is the application owner. Additional contacts may be added in the application contacts related list. --></help>
+        <label><!-- Primary Contact --></label>
+        <name>Primary_Contact__c</name>
+        <relationshipLabel><!-- Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Responsible Org --></label>
+        <name>Responsible_Org__c</name>
+        <relationshipLabel><!-- Applications (Responsible Org) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter in the name of the Sandbox that was granted for the prospect application --></help>
+        <label><!-- Sandbox Name --></label>
+        <name>Sandbox_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Form Number --></label>
+        <name>Standard_Form_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Starter Users --></label>
+        <name>Starter_Users__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status By --></label>
+        <name>Status_By__c</name>
+        <relationshipLabel><!-- Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status Date --></label>
+        <name>Status_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Narrative --></label>
+        <name>Status_Narrative__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Candidate</masterLabel>
+            <translation><!-- Candidate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deferred/Cancelled</masterLabel>
+            <translation><!-- Deferred/Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Development</masterLabel>
+            <translation><!-- In Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Production</masterLabel>
+            <translation><!-- In Production --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Users --></label>
+        <name>Total_Users__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type 1 Users --></label>
+        <name>Type_1_Users__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Fill and Print</masterLabel>
+            <translation><!-- Fill and Print --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Workflow</masterLabel>
+            <translation><!-- Workflow --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Application Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Candidate Application Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Forms</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Candidate Application --></label>
+        <name>Candidate_Application</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Form --></label>
+        <name>Forms</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please provide additional requirements for data availability when selected as desired or required. --></errorMessage>
+        <name>Data_Availability_Comments_Required</name>
+    </validationRules>
+</CustomObjectTranslation>

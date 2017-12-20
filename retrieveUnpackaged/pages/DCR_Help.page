@@ -1,0 +1,40 @@
+<apex:page lightningStyleSheets="true">
+    <head>
+        <title>DCR Help Page</title>
+        <apex:slds />
+    </head>
+    
+    
+<div id="container" style="margin:15px 15px;">
+  
+<table id="theGrid">
+    <tbody>
+        <tr>
+            <td valign="top"><span class="slds-text-heading_large">Welcome to the Document Control Registry </span></td>
+        </tr>
+    </tbody>
+</table>
+
+ <div style="border:1px solid #ccc;margin:5px; padding:10px;">
+  <a href="https://usepa.sharepoint.com/sites/ORD/OARS/RA/_layouts/15/guestaccess.aspx?guestaccesstoken=RTT4Nc9esxroWYC4dnUqoQd2RtkVZqBsNIG7nO6L9M4%3D&docid=2_1ce98bb21a060420e9937d6d1b89fa964&rev=1&e=c750eda34d594cd5a295de4397a0d0dd" target="_blank">
+  <span class="slds-text-heading_large"><strong>DCR User Guide</strong></span>
+  </a>
+  </div>
+  
+   <div style="border:1px solid #ccc;margin:5px; padding:10px;">
+    <a href="https://usepa.sharepoint.com/sites/ORD/OARS/RA/_layouts/15/guestaccess.aspx?guestaccesstoken=bydpw5YdjdBBPwxhz9b8oEBRFokzcdvi2HfzjLFoBnQ%3D&docid=2_1ba143f04db364193ab58afe8b83a43a4&rev=1&e=b265ade5cb3440d291f3fb651eabcf85" target="_blank">
+  <span class="slds-text-heading_large"><strong>Qlik Sense User Guide</strong></span>
+  </a>
+  </div>
+  
+   <div style="border:1px solid #ccc;margin:5px; padding:10px;">
+    <a href="https://usepa.sharepoint.com/sites/ORD/OARS/RA/_layouts/15/guestaccess.aspx?guestaccesstoken=t%2F1pB%2FXfsw2D3d%2FnKDr7f63ED0Vgk3KP4%2Bh%2FG4QmW3o%3D&docid=2_1ef1b9a5ce65a4e91a91f574b30012453&rev=1&e=e74576be6e1148f5a6fd49096162352f" target="_blank">
+  <span class="slds-text-heading_large"><strong>Division Sub-Allocation Template</strong></span>
+  </a>
+  </div>
+
+  <p>&nbsp;</p>
+  
+  </div>
+
+</apex:page>

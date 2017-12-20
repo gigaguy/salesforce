@@ -1,0 +1,21 @@
+<apex:page standardController="Forms__c" showHEader="false" extensions="formPrintable">
+    <head>
+        <style type="text/css">
+            input {
+                visibility: hidden;
+                display: none;
+            } 
+            .mainTitle {
+                visibility: hidden;
+                display: none; 
+            }
+            .fewerMore {
+                visibility: hidden;
+                display: none; 
+            }
+        </style>
+    </head>
+    <apex:image value="{!$Resource.EPALogo}"/>
+    Form Record ID: <b>{!Forms__c.Name}</b>
+    <apex:detail relatedList="true"/>
+</apex:page>

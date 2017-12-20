@@ -1,0 +1,45 @@
+<apex:page controller="logoutPageController" title="Logout" cache="false" showHeader="false">
+
+    <style>
+        body { background-color: #E0F1FF; }
+        h2{
+            font-size: 150%;
+            left: 0;
+            line-height: 200px;
+            margin: auto;
+            margin-top: -100px;
+            position: absolute;
+            top: 45%;
+            width: 100%;
+            text-align: center;
+        }
+        .divider{
+            width:5px;
+            height:auto;
+            display:inline-block;
+        }
+    </style>
+    
+     <apex:form >   
+ 
+        <div style="padding: 25px; width: 75%; height: 90px;">
+         <div style="width: 190px; float: left; position: relative;">
+            <img src="{!$Resource.EPALogo}"/>
+         </div>
+
+         <div style="float: left; position: relative;">
+            <h1 style="font-size: 300%; padding-bottom: 20px;">BAP Agency Forms</h1>
+         </div> 
+        </div>
+        
+         <h2>Are you sure you want to logout?</h2>
+
+         <p><h2 style="top: 50%;">
+         <apex:commandButton action="{!logout}" value="Logout" />
+         <div class="divider"></div>
+         <apex:commandButton action="{!cancel}" value="Cancel" />
+         </h2></p>
+
+    </apex:form>
+    
+</apex:page>

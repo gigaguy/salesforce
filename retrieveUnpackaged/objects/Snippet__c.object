@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Substantive_Content_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>Snippet</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Snippet</fullName>
+        <fields>Submission_Number__c</fields>
+        <fields>Commenter_Name__c</fields>
+        <fields>Agency_Name__c</fields>
+        <fields>Commenter_Category__c</fields>
+        <label>Snippet</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Agency_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Submission__r.Agency_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agency Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comment_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Comment Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Snippet Entered</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Snippet Entry Verified</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ready for Agency Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Comment Added</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Addressed in Essay</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Commenter_Category__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Submission__r.Commenter_Category__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Commenter Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Commenter_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Submission__r.Commenter_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Commenter Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Added__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Added</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Document_Link__c</fullName>
+        <externalId>false</externalId>
+        <label>Document Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Document_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Document Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Extracted_Text__c</fullName>
+        <externalId>false</externalId>
+        <label>Extracted Text</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PDF_Page__c</fullName>
+        <externalId>false</externalId>
+        <label>PDF Page</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Related_Reference__c</fullName>
+        <externalId>false</externalId>
+        <label>Related Reference</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Relevant_Essays__c</fullName>
+        <externalId>false</externalId>
+        <label>Relevant Essays</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>13</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>14</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>15</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>16</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Response__c</fullName>
+        <externalId>false</externalId>
+        <label>Response</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Snippet_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Snippet Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Snippet Entered</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Snippet Entry Verified</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ready for Agency Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Snippet Read by Agency</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Snippet Captured in Summary</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Snippet Needs Edits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Agency Response Drafted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Agency Response Complete</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Addressed in Essay</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Agency Edits</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Agency Response Started</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Agency Topic Change</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Comment Added</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Submission_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Submission__r.Submission_Number__c</formula>
+        <label>Submission Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submission__c</fullName>
+        <externalId>false</externalId>
+        <label>Submission</label>
+        <referenceTo>Submission__c</referenceTo>
+        <relationshipLabel>Snippets</relationshipLabel>
+        <relationshipName>Snippets</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Substantive__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Submission__r.Have_Snippets__c)</formula>
+        <label>Substantive?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Topic_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Topic__r.Topic_Name__c</formula>
+        <label>Topic Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Topic__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Topic</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>(1 AND 2) OR (3 AND 4)</booleanFilter>
+            <filterItems>
+                <field>$Source.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Waters of the US, WOTUS Recommendations</value>
+            </filterItems>
+            <filterItems>
+                <field>Topic__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Waters of the US</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Bristol Bay</value>
+            </filterItems>
+            <filterItems>
+                <field>Topic__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Bristol Bay</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Topic__c</referenceTo>
+        <relationshipLabel>Snippets</relationshipLabel>
+        <relationshipName>Substantive_Contents</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Snippet</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Submission_Number__c</columns>
+        <columns>Topic__c</columns>
+        <columns>Topic_Name__c</columns>
+        <columns>Commenter_Category__c</columns>
+        <columns>Snippet_Status__c</columns>
+        <columns>Extracted_Text__c</columns>
+        <columns>Response__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Snippet_Status__c</field>
+            <operation>equals</operation>
+            <value>Snippet Entered,Snippet Entry Verified,Ready for Agency Review</value>
+        </filters>
+        <filters>
+            <field>Commenter_Category__c</field>
+            <operation>notEqual</operation>
+            <value>Mass Mailer</value>
+        </filters>
+        <label>All Waters of the US</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Bristol_Bay</fullName>
+        <columns>NAME</columns>
+        <columns>Submission_Number__c</columns>
+        <columns>Topic_Name__c</columns>
+        <columns>Commenter_Category__c</columns>
+        <columns>Snippet_Status__c</columns>
+        <columns>Extracted_Text__c</columns>
+        <columns>Response__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Snippet__c.Bristol_Bay</value>
+        </filters>
+        <label>All Bristol Bay</label>
+    </listViews>
+    <listViews>
+        <fullName>Waters_of_the_US</fullName>
+        <columns>NAME</columns>
+        <filterScope>Mine</filterScope>
+        <label>Waters of the US</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SBC-{000000}</displayFormat>
+        <label>Snippet ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Snippets</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Bristol_Bay</fullName>
+        <active>true</active>
+        <label>Bristol Bay</label>
+        <picklistValues>
+            <picklist>Comment_Status__c</picklist>
+            <values>
+                <fullName>Addressed in Essay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comment Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Agency Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Entered</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Snippet Entry Verified</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relevant_Essays__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Snippet_Status__c</picklist>
+            <values>
+                <fullName>Agency Response Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agency Response Drafted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Agency Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Entered</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Snippet Entry Verified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Needs Edits</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>WOTUS_Recommendations</fullName>
+        <active>true</active>
+        <description>to host recommendations people made on what EPA should do for Step 2</description>
+        <label>WOTUS Recommendations</label>
+        <picklistValues>
+            <picklist>Comment_Status__c</picklist>
+            <values>
+                <fullName>Addressed in Essay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comment Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Agency Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Entered</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Snippet Entry Verified</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relevant_Essays__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Snippet_Status__c</picklist>
+            <values>
+                <fullName>Agency Response Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Agency Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Captured in Summary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Entered</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Snippet Entry Verified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Needs Edits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Read by Agency</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Waters_of_the_US</fullName>
+        <active>true</active>
+        <label>Waters of the US</label>
+        <picklistValues>
+            <picklist>Comment_Status__c</picklist>
+            <values>
+                <fullName>Addressed in Essay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comment Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Agency Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Entered</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Snippet Entry Verified</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relevant_Essays__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Snippet_Status__c</picklist>
+            <values>
+                <fullName>Agency Response Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Agency Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Captured in Summary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Entered</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Snippet Entry Verified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Needs Edits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Read by Agency</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Submission_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Topic__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Extracted_Text__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Response__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Snippet_Status__c</customTabListAdditionalFields>
+        <searchFilterFields>Submission_Number__c</searchFilterFields>
+        <searchFilterFields>Topic__c</searchFilterFields>
+        <searchFilterFields>Document_Number__c</searchFilterFields>
+        <searchFilterFields>Snippet_Status__c</searchFilterFields>
+        <searchFilterFields>RECORDTYPE</searchFilterFields>
+        <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Submission_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Topic__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Topic_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Extracted_Text__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Response__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Snippet_Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>
