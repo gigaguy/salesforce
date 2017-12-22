@@ -96,14 +96,27 @@ public class TrainingController {
       
       Contact cont;
       User u;
+       
       try{ 
           if(uIds.size()>0){
               Id uId = uIds.get(0);
-	          u = [select LAN_ID__c from User where Id = :uId];
+	          u = [select Name, LAN_ID__c from User where Id = :uId];
     		  cont = [Select Id,GSA_SmartPay_Training_Date__c from Contact where LAN_ID__c = :u.LAN_ID__c];
-        	  cont.GSA_SmartPay_Training_Date__c = System.today();
+              String theName = u.Name;
+              List<Forms__c> myForms = [SELECT Date__c FROM Forms__c WHERE Form_Owner__c = :theName];
+              Date newestDate;
+
+              for(Forms__c thisForm : myForms){
+                if(thisForm.Date__c != null){
+                    if(newestDate == null || thisForm.Date__c > newestDate){
+                        newestDate = thisForm.Date__c;
+                    }
+                }
+              }
+        	  cont.GSA_SmartPay_Training_Date__c = newestDate;
 	          update cont;
           }
+          
          }catch(Exception e){
               System.debug(e.getMessage());
        }
