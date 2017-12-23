@@ -99,6 +99,7 @@
             X
             <span class="slds-assistive-text">Close</span>
             </button> 
+            Training Record {!v.curTrainingRecordNum} Of {!v.maxTrainingRecords}
           </div>
           <!--BOX BODY-->
           <div class="slds-modal__content slds-p-around--medium">
@@ -115,7 +116,9 @@
           <div class="slds-modal__footer">
               <ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.cancelEditTraining}" />
               <ui:button aura:id="saveaction" class="slds-button slds-button--neutral" label="Save" press="{!c.saveTraining}" />              
-             
+             <aura:if isTrue="{!v.maxTrainingRecords > v.curTrainingRecordNum}">
+                  <ui:button aura:id="savenext" class="slds-button slds-button--neutral" label="{!v.saveNext}" press="{!c.saveNextTraining}" />
+             </aura:if>
           </div>
         </div>
       </div>
