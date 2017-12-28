@@ -53,7 +53,8 @@
         <description>FinalApproval</description>
         <protected>false</protected>
         <recipients>
-            <type>owner</type>
+            <field>Cardholder_AO_Name__c</field>
+            <type>contactLookup</type>
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Purchase_Card_Email_Template_Approved_Confirmation</template>
