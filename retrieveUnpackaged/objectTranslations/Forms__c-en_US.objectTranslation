@@ -1471,6 +1471,10 @@
         <errorMessage><!-- If Authorization Reason &quot;Role&quot; is chosen, Role field must be completed. --></errorMessage>
         <name>Authorization_Role_Reason</name>
     </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Contracting Officers (CO), Simplified Acquisition Contracting Officers (SACO), and Training Officers (TO) may have a Monthly or Single Purchase Limit or than the default $7,000 Monthly or $3,500 Single Purchase. --></errorMessage>
+        <name>Purchase_Card_Limit_Validation</name>
+    </validationRules>
     <webLinks>
         <label><!-- Printable_View --></label>
         <name>Printable_View</name>
