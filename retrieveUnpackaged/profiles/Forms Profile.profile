@@ -1662,7 +1662,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Forms__c.Monthly_Purchase_Limit__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1787,7 +1787,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Forms__c.Single_Purchase_Limit__c</field>
         <readable>true</readable>
     </fieldPermissions>

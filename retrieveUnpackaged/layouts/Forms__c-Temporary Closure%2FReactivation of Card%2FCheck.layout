@@ -32,7 +32,7 @@
                 <field>EIN__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Service_Comp_Date__c</field>
             </layoutItems>
             <layoutItems>
@@ -79,13 +79,13 @@
         <label>Approvers</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Approving_Official__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Division_Director_Manager__c</field>
             </layoutItems>
         </layoutColumns>
@@ -108,7 +108,7 @@
         <label>Temporary Closure/Reactivation Details</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Reason_for_Temporary_Closure__c</field>
             </layoutItems>
         </layoutColumns>
