@@ -844,7 +844,7 @@
         <fullName>Date__c</fullName>
         <description>Date of a form record. Created for a Training taken date but can be used for other purposes.</description>
         <externalId>false</externalId>
-        <label>Date</label>
+        <label>Completion Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -1008,10 +1008,6 @@
                 </value>
                 <value>
                     <fullName>Pending</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>Processed</fullName>
                     <default>false</default>
                 </value>
             </valueSetDefinition>
@@ -2216,6 +2212,11 @@
         <columns>CREATED_DATE</columns>
         <columns>Assigned_to__c</columns>
         <filterScope>Queue</filterScope>
+        <filters>
+            <field>Form_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </filters>
         <label>New Purchase Card Actions</label>
         <queue>New_Purchase_Card_Actions</queue>
         <sharedTo>
@@ -2720,10 +2721,6 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Processed</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Recalled</fullName>
                 <default>false</default>
             </values>
@@ -3063,10 +3060,6 @@
             </values>
             <values>
                 <fullName>Pending</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Processed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3412,10 +3405,6 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Processed</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Recalled</fullName>
                 <default>false</default>
             </values>
@@ -3755,10 +3744,6 @@
             </values>
             <values>
                 <fullName>Pending</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Processed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -4104,10 +4089,6 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Processed</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Recalled</fullName>
                 <default>false</default>
             </values>
@@ -4447,10 +4428,6 @@
             </values>
             <values>
                 <fullName>Pending</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Processed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5112,10 +5089,6 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Processed</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Recalled</fullName>
                 <default>false</default>
             </values>
@@ -5459,10 +5432,6 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Processed</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Recalled</fullName>
                 <default>false</default>
             </values>
@@ -5800,10 +5769,6 @@
             </values>
             <values>
                 <fullName>Pending</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Processed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -6933,12 +6898,13 @@
     <validationRules>
         <fullName>Purchase_Card_Limit_Validation</fullName>
         <active>true</active>
-        <errorConditionFormula>AND( RecordType.DeveloperName = &apos;Change_Monthly_Limit&apos;,
+        <errorConditionFormula>OR( RecordType.DeveloperName = &quot;Purchase_Card&quot;, RecordType.DeveloperName = &quot;New_Convenience_Check&quot;) &amp;&amp;
 
-NOT( OR( Monthly_Purchase_Limit__c = 7000,  Single_Purchase_Limit__c = 3500)
+OR( NOT(IsPickVal( Account_Type__c , &quot;TO&quot;)), NOT(IsPickVal( Account_Type__c , &quot;CO&quot;)), NOT(IsPickVal( Account_Type__c , &quot;SACO&quot;))) &amp;&amp;
 
-))</errorConditionFormula>
-        <errorMessage>Only Contracting Officers (CO), Simplified Acquisition Contracting Officers (SACO), and Training Officers (TO) may have a Monthly or Single Purchase Limit or than the default $7,000 Monthly or $3,500 Single Purchase.</errorMessage>
+OR( Monthly_Purchase_Limit__c &lt;&gt; 7000.00,  Single_Purchase_Limit__c  &lt;&gt; 3500.00)</errorConditionFormula>
+        <errorDisplayField>Account_Type__c</errorDisplayField>
+        <errorMessage>Only Contracting Officers (CO), Simplified Acquisition Contracting Officers (SACO), and Training Officers (TO) Account Types may have a Monthly or Single Purchase Limit other than the default of $7,000 Monthly or $3,500 Single Purchase.</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Printable_View</fullName>

@@ -352,7 +352,7 @@
         <name>Date_Card_is_to_be_Closed__c</name>
     </fields>
     <fields>
-        <label><!-- Date --></label>
+        <label><!-- Completion Date --></label>
         <name>Date__c</name>
     </fields>
     <fields>
@@ -421,10 +421,6 @@
         <picklistValues>
             <masterLabel>Pending</masterLabel>
             <translation><!-- Pending --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Processed</masterLabel>
-            <translation><!-- Processed --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Recalled</masterLabel>
@@ -1472,7 +1468,7 @@
         <name>Authorization_Role_Reason</name>
     </validationRules>
     <validationRules>
-        <errorMessage><!-- Only Contracting Officers (CO), Simplified Acquisition Contracting Officers (SACO), and Training Officers (TO) may have a Monthly or Single Purchase Limit or than the default $7,000 Monthly or $3,500 Single Purchase. --></errorMessage>
+        <errorMessage><!-- Only Contracting Officers (CO), Simplified Acquisition Contracting Officers (SACO), and Training Officers (TO) Account Types may have a Monthly or Single Purchase Limit other than the default of $7,000 Monthly or $3,500 Single Purchase. --></errorMessage>
         <name>Purchase_Card_Limit_Validation</name>
     </validationRules>
     <webLinks>
