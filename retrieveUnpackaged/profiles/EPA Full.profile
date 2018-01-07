@@ -4651,6 +4651,10 @@
     <userLicense>Salesforce Platform</userLicense>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ApexRestServices</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ApiEnabled</name>
     </userPermissions>
     <userPermissions>
