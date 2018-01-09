@@ -2,12 +2,16 @@
 	<aura:attribute name="pageStatus" type="string" default="viewFormTypes"/>
     <aura:attribute name="forms" type="RecordType[]"/>
     <aura:attribute name="FandP_forms" type="List"/>
+    
+    
     <aura:attribute name="isOpen" type="boolean" default="false"/>
 	<aura:attribute name="confirmIsOpen" type="boolean" default="false"/>
     <aura:attribute name="modalName" type="string"/>
     <aura:attribute name="authenticated" type="boolean" />
     <aura:attribute name="selectedFormId" type="Id"/>
     <aura:attribute name="selectedFormName" type="string"/>
+    
+    
     <aura:attribute name="hrefInfo" type="string"/>
     <aura:attribute name="hrefEmail" type="string"/>
     <aura:attribute name="viewFormID" type="Id"/>
