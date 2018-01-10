@@ -191,7 +191,7 @@ public class FormPageController {
     private static void prePopulatePruchaseCardDetails(Forms__c form, User user, String pcType){
         
         try{
-            user = [select id, Name,EmployeeNumber,LAN_ID__c,Phone, MobilePhone,Email,street, PostalCode, city,state, country, Supervisor__c from User where Id = :user.Id];
+            user = [select id, Name,EmployeeNumber,LAN_ID__c,Phone, MobilePhone,Email,street, PostalCode, Mail_Stop__c, city,state, country, Supervisor__c from User where Id = :user.Id];
             Contact cont = [Select Id, Name, AccountId  from Contact where LAN_ID__c = :user.LAN_ID__c];
             Map<String,String> pcPageLayouts = UtilityMethods.getPCRequestRecordTypes();
             String recordType = pcPageLayouts.get(pcType);
@@ -203,7 +203,8 @@ public class FormPageController {
 			form.put('EIN__c', (user.EmployeeNumber!=null?user.EmployeeNumber:''));
             form.put('Mailing_Address__c', (user.street!=null?user.street:''));
             form.put('City__c', (user.city!=null?user.city:''));
-            form.put('State__c', (user.state!=null?user.state:''));            
+            form.put('State__c', (user.state!=null?user.state:''));
+			form.put('Mail_Code__c', (user.Mail_Stop__c!=null?user.Mail_Stop__c:''));           
             form.put('Zip__c', (user.PostalCode!=null?user.PostalCode:''));            
             form.put('Email_Address__c',(user.Email!=null?user.Email:''));
             form.put('Purchase_Card_Request_Type__c', pcType);            

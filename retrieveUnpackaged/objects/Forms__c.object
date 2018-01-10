@@ -5641,7 +5641,7 @@
         <fullName>Purchase_Card</fullName>
         <active>true</active>
         <compactLayoutAssignment>Purchase_Card</compactLayoutAssignment>
-        <description>Request for new purchase card (Workflow)</description>
+        <description>Request for New Purchase Card (Workflow), Changes to Existing Purchase Card, or Upload Purchase Card Training Certifications</description>
         <label>Purchase Card</label>
         <picklistValues>
             <picklist>Account_Type__c</picklist>
@@ -6903,7 +6903,6 @@
 OR( NOT(IsPickVal( Account_Type__c , &quot;TO&quot;)), NOT(IsPickVal( Account_Type__c , &quot;CO&quot;)), NOT(IsPickVal( Account_Type__c , &quot;SACO&quot;))) &amp;&amp;
 
 OR( Monthly_Purchase_Limit__c &lt;&gt; 7000.00,  Single_Purchase_Limit__c  &lt;&gt; 3500.00)</errorConditionFormula>
-        <errorDisplayField>Account_Type__c</errorDisplayField>
         <errorMessage>Only Contracting Officers (CO), Simplified Acquisition Contracting Officers (SACO), and Training Officers (TO) Account Types may have a Monthly or Single Purchase Limit other than the default of $7,000 Monthly or $3,500 Single Purchase.</errorMessage>
     </validationRules>
     <webLinks>

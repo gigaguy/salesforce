@@ -964,7 +964,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.GSA_SmartPay_Training_Expiry_Date__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -2908,6 +2908,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>FeedItem-Feed Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>FlowInterview-Flow Interview Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Forms__c-BAP Provisioning Layout</layout>

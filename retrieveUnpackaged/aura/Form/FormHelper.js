@@ -20,6 +20,7 @@
         	var hrefEmail = "BAP_Admins@epa.gov";
         }
         else if (formName === "Purchase Card") {
+            console.log('This was called too becuase the formName = ' + formName);
             var hrefInfo = "mailto:Creed.Suzette@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
         	var hrefEmail = "Creed.Suzette@epa.gov";
         }

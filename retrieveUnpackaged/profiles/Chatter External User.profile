@@ -2910,6 +2910,9 @@
         <layout>FeedItem-Feed Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>FlowInterview-Flow Interview Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Forms__c-BAP Provisioning Layout</layout>
     </layoutAssignments>
     <layoutAssignments>

@@ -14,9 +14,10 @@
         helper.getFandP_Forms(component);
     },
     openModal: function(component, event, helper) {
-       
+       	console.log('They pressed the new button');
         var formID = event.currentTarget.id;
-        var formName = event.currentTarget.name;  
+        var formName = event.currentTarget.name;
+        console.log('The formName is = ' + formName);
         component.set("v.formOption", null); 
         if(formName != undefined && formName =='Purchase Card'){            
             formID = formName;// can not depend on 
@@ -355,6 +356,7 @@
 			var formId = component.get("v.backupFormId");
 	        var formName = component.get("v.backUpFormName");
             //helper.getFormIntroduction(component, event,formOption);
+            console.log('This is were it was called');
     	    helper.openFormModal(component, event,formId,formName,formOption);            
         }                
     },
