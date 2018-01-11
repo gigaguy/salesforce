@@ -6882,17 +6882,15 @@
     <validationRules>
         <fullName>Authorization_Org_Allocation_Reason_Rule</fullName>
         <active>true</active>
-        <description>If Authorization Reason &quot;Organization Allocation&quot; is selected, the Organization Allocation field must be completed.</description>
+        <description>If Authorization Reason &quot;Organization Allocation&quot; is selected, the Organization Allocation field must be completed. (Error to display on Organization Allocation field)</description>
         <errorConditionFormula>ISPICKVAL( Authorization_Reason__c , &quot;Organization Allocation&quot;) &amp;&amp;  ISBLANK( Organization_Allocation__c )</errorConditionFormula>
-        <errorDisplayField>Organization_Allocation__c</errorDisplayField>
         <errorMessage>If Authorization Reason &quot;Organization Allocation&quot; is selected, the Organization Allocation field must be completed.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Authorization_Role_Reason</fullName>
         <active>true</active>
-        <description>If Authorization Reason &quot;Role&quot; is chosen, Role field must be completed.</description>
+        <description>If Authorization Reason &quot;Role&quot; is chosen, Role field must be completed. (Error Location on Role field)</description>
         <errorConditionFormula>ISPICKVAL(Authorization_Reason__c, &quot;Role&quot;) &amp;&amp;  ISCHANGED( Role__c )</errorConditionFormula>
-        <errorDisplayField>Role__c</errorDisplayField>
         <errorMessage>If Authorization Reason &quot;Role&quot; is chosen, Role field must be completed.</errorMessage>
     </validationRules>
     <validationRules>
@@ -6902,7 +6900,7 @@
 
 OR( NOT(IsPickVal( Account_Type__c , &quot;TO&quot;)), NOT(IsPickVal( Account_Type__c , &quot;CO&quot;)), NOT(IsPickVal( Account_Type__c , &quot;SACO&quot;))) &amp;&amp;
 
-OR( Monthly_Purchase_Limit__c &lt;&gt; 7000.00,  Single_Purchase_Limit__c  &lt;&gt; 3500.00)</errorConditionFormula>
+OR( Monthly_Purchase_Limit__c != 7000.00,  Single_Purchase_Limit__c  != 3500.00)</errorConditionFormula>
         <errorMessage>Only Contracting Officers (CO), Simplified Acquisition Contracting Officers (SACO), and Training Officers (TO) Account Types may have a Monthly or Single Purchase Limit other than the default of $7,000 Monthly or $3,500 Single Purchase.</errorMessage>
     </validationRules>
     <webLinks>

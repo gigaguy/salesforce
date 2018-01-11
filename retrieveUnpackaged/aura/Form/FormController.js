@@ -16,11 +16,12 @@
     openModal: function(component, event, helper) {
        	console.log('They pressed the new button');
         var formID = event.currentTarget.id;
+        console.log('This is the event.currentTarget.id which is now the var formID: ' + event.currentTarget.id);
         var formName = event.currentTarget.name;
         console.log('The formName is = ' + formName);
         component.set("v.formOption", null); 
         if(formName != undefined && formName =='Purchase Card'){            
-            formID = formName;// can not depend on 
+            formID = "Purchase Card" //formName;// can not depend on 
 	        console.log('formName '+formName);
             component.set("v.backupFormId",formID);
             component.set("v.backUpFormName",formName);            
@@ -345,6 +346,8 @@
         $A.enqueueAction(action);
 	},
     handleFormSelEvent : function(component, event, helper) {
+        //var target = event.getSource().getLocalId();
+    	//console.log(target.get()); 
         console.log('handleFormSelEvent');
         component.set("v.forceSelectFormOption",false);
         var isCancelled = event.getParam("isCancelled");
