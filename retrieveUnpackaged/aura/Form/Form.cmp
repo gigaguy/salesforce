@@ -250,6 +250,7 @@
               <ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.cancelCreationModal}" />
               <aura:if isTrue="{!or(v.formOption == v.pcOptionPurchaseCard, v.formOption == v.pcOptionConvenienceCheck)}">
                   <ui:button class="slds-button slds-button--neutral" label="Next" press="{!c.addTrainingRecords}" />
+                  <ui:button class="slds-button slds-button--neutral" label="Save and Next TEST" press="{!c.saveOnlyTEST}" />
                   <aura:set attribute="else">
                       <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveOnly}" />
          			 <!--<ui:button class="slds-button slds-button_success" label="Submit" press="{!c.saveAndSubmit}" /> -->

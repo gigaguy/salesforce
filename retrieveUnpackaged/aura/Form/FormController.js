@@ -390,5 +390,84 @@
             helper.saveAndSubmit(component, event);
         }
         component.set("v.pageStatus", "viewFormTypes");
+    },
+    
+    saveOnlyTEST : function(component, event, helper){
+        //var formObjId = component.find("edit");
+        //var skipAll = false;
+        
+        /*try {
+            component.find("edit").get("e.recordSave").fire();
+            console.log('no error');
+        }
+        catch (e) {
+            console.log(e);
+            skipAll = true;
+        }*/
+       /* console.log('ff: :'+component.get("v.newForm.Id"));
+        component.find("edit").get("e.recordSave").fire();
+        console.log('ff: :'+component.get("v.newForm.Id"));
+        //console.log("form: "+formObj);
+        var action = component.get("c.custValSuccess");  
+        action.setParams({
+			"formID" : component.get("v.newForm.Id"),
+        });
+        action.setCallback(this,function(resp){
+			console.log('in action 2');
+            var state = resp.getState();
+            console.log('state: ' +state);
+            if(state === 'SUCCESS'){
+			var result = resp.getReturnValue();
+                if(result.length == 1 && result[0] == 'true')
+                {
+                    console.log("good 0");
+                }
+                else
+                {
+                	console.log("bad 1");  
+                }
+            }
+            else if(state === 'ERROR'){
+                var errors = resp.getError();
+                for(var i = 0 ;i < errors.length;i++){
+                    console.log(errors[i].message);
+                }
+            }
+        });
+        $A.enqueueAction(action); */
+        
+       // component.find("edit").get("e.recordSave").fire();
+        console.log('ff: :'+component.get("v.newForm.Id"));
+        //console.log("form: "+formObj);
+        var action = component.get("c.custValSuccess");  
+        action.setParams({
+			"formID" : component.get("v.newForm.Id"),
+        });
+          action.setCallback(component.find("edit").get("e.recordSave").fire(),function(resp){
+			console.log('in action 2');
+            var state = resp.getState();
+            console.log('state: ' +state);
+            if(state === 'SUCCESS'){
+			var result = resp.getReturnValue();
+                if(result.length == 1 && result[0] == 'true')
+                {
+                    console.log("good 0");
+                }
+                else
+                {
+                	console.log("bad 1");  
+                }
+            }
+            else if(state === 'ERROR'){
+                var errors = resp.getError();
+                for(var i = 0 ;i < errors.length;i++){
+                    console.log(errors[i].message);
+                }
+            }
+        });
+        $A.enqueueAction(action);
+        
+       
     }
+
 })

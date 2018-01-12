@@ -14,7 +14,7 @@ public class TrainingController_Test {
         trainingForm = new Forms__c();
         trainingForm.put('RecordTypeId', TRAINING_RECORD_TYPE_ID);
         trainingForm.put('Pass_Fail__c', 'P');
-        trainingForm.put('Course_Title__c', 'GSA SmartPay Purchase Card Training');
+        trainingForm.put('PC_Course_Title__c', 'GSA SmartPay Purchase Card Training');
         trainingForm.put('Approval_Step__c', TRAINING_RECORD_DEFUALT_APPROVAL_STEP);
         trainingForm.put('Unauthenticated_Owner__c',u.Id);        
         insert trainingForm;
@@ -47,7 +47,7 @@ public class TrainingController_Test {
         pcform.put('Purchase_Card_Request_Type__c', 'New Purchase Card');
         pcform.put('Pass_Fail__c', 'P');
         pcform.put('RecordTypeId', [select id from RecordType where name = 'Purchase Card' limit 1].ID);
-        pcform.put('Course_Title__c', 'GSA SmartPay Purchase Card Training');
+        pcform.put('PC_Course_Title__c', 'GSA SmartPay Purchase Card Training');
         pcform.put('Unauthenticated_Owner__c', u.Id);
         insert pcform;
         
@@ -69,7 +69,7 @@ public class TrainingController_Test {
         trainingForm = new Forms__c();
         trainingForm.put('RecordTypeId', TRAINING_RECORD_TYPE_ID);
         trainingForm.put('Pass_Fail__c', 'P');
-        trainingForm.put('Course_Title__c', 'GSA SmartPay Purchase Card Training');
+        trainingForm.put('PC_Course_Title__c', 'GSA SmartPay Purchase Card Training');
         trainingForm.put('Approval_Step__c', TRAINING_RECORD_DEFUALT_APPROVAL_STEP);
         trainingForm.put('Unauthenticated_Owner__c',u.Id);        
         insert trainingForm;
@@ -91,7 +91,7 @@ public class TrainingController_Test {
         trainingForm = new Forms__c();
         trainingForm.put('RecordTypeId', TRAINING_RECORD_TYPE_ID);
         trainingForm.put('Pass_Fail__c', 'P');
-        trainingForm.put('Course_Title__c', 'GSA SmartPay Purchase Card Training');
+        trainingForm.put('PC_Course_Title__c', 'GSA SmartPay Purchase Card Training');
         trainingForm.put('Approval_Step__c', TRAINING_RECORD_DEFUALT_APPROVAL_STEP);
         trainingForm.put('Unauthenticated_Owner__c',u.Id);        
         insert trainingForm;
@@ -111,7 +111,7 @@ public class TrainingController_Test {
         trainingForm = new Forms__c();
         trainingForm.put('RecordTypeId', TRAINING_RECORD_TYPE_ID);
         trainingForm.put('Pass_Fail__c', 'P');
-        trainingForm.put('Course_Title__c', 'GSA SmartPay Purchase Card Training');
+        trainingForm.put('PC_Course_Title__c', 'GSA SmartPay Purchase Card Training');
         trainingForm.put('Approval_Step__c', TRAINING_RECORD_DEFUALT_APPROVAL_STEP);
         trainingForm.put('Unauthenticated_Owner__c',u.Id);        
         insert trainingForm;        

@@ -317,7 +317,7 @@
         <label>Cardholder 1</label>
         <referenceTo>Contact</referenceTo>
         <relationshipLabel>Forms (Cardholder 1)</relationshipLabel>
-        <relationshipName>Forms4</relationshipName>
+        <relationshipName>Forms4b</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -588,7 +588,7 @@
         <label>Cardholder AO From</label>
         <referenceTo>Contact</referenceTo>
         <relationshipLabel>Forms (Cardholder AO From)</relationshipLabel>
-        <relationshipName>Forms3</relationshipName>
+        <relationshipName>Forms3b</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -683,33 +683,6 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Course_Title__c</fullName>
-        <externalId>false</externalId>
-        <label>Course Title</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>PCard Agency Supplemental Training</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>PaymentNet (PNET)</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>GSA SmartPay Purchase Card Training</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
     </fields>
     <fields>
         <fullName>Current_Approver__c</fullName>
@@ -1653,6 +1626,33 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>PC_Course_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Course Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PCard Agency Supplemental Training</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PaymentNet (PNET)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GSA SmartPay Purchase Card Training</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Pass_Fail__c</fullName>
         <externalId>false</externalId>
         <label>Pass/Fail</label>
@@ -1956,6 +1956,18 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Service_Comp_Date_MM_YYYY__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter in your service comp date is the MM/YYYY format</inlineHelpText>
+        <label>Service Comp. Date (MM/YYYY)</label>
+        <length>7</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Service_Comp_Date__c</fullName>
@@ -2354,21 +2366,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Course_Title__c</picklist>
-            <values>
-                <fullName>GSA SmartPay Purchase Card Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PCard Agency Supplemental Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PaymentNet %28PNET%29</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -2450,6 +2447,21 @@
             </values>
             <values>
                 <fullName>Washington DC - PY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2692,21 +2704,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Course_Title__c</picklist>
-            <values>
-                <fullName>GSA SmartPay Purchase Card Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PCard Agency Supplemental Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PaymentNet %28PNET%29</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -2788,6 +2785,21 @@
             </values>
             <values>
                 <fullName>Washington DC - PY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3030,21 +3042,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Course_Title__c</picklist>
-            <values>
-                <fullName>GSA SmartPay Purchase Card Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PCard Agency Supplemental Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PaymentNet %28PNET%29</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -3130,6 +3127,21 @@
             </values>
             <values>
                 <fullName>Washington DC - PY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3372,21 +3384,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Course_Title__c</picklist>
-            <values>
-                <fullName>GSA SmartPay Purchase Card Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PCard Agency Supplemental Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PaymentNet %28PNET%29</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -3472,6 +3469,21 @@
             </values>
             <values>
                 <fullName>Washington DC - PY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3714,21 +3726,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Course_Title__c</picklist>
-            <values>
-                <fullName>GSA SmartPay Purchase Card Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PCard Agency Supplemental Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PaymentNet %28PNET%29</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -3814,6 +3811,21 @@
             </values>
             <values>
                 <fullName>Washington DC - PY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4056,21 +4068,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Course_Title__c</picklist>
-            <values>
-                <fullName>GSA SmartPay Purchase Card Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PCard Agency Supplemental Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PaymentNet %28PNET%29</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -4156,6 +4153,21 @@
             </values>
             <values>
                 <fullName>Washington DC - PY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4398,21 +4410,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Course_Title__c</picklist>
-            <values>
-                <fullName>GSA SmartPay Purchase Card Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PCard Agency Supplemental Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PaymentNet %28PNET%29</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -4498,6 +4495,21 @@
             </values>
             <values>
                 <fullName>Washington DC - PY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4738,21 +4750,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Course_Title__c</picklist>
-            <values>
-                <fullName>GSA SmartPay Purchase Card Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PCard Agency Supplemental Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PaymentNet %28PNET%29</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -4814,6 +4811,21 @@
             </values>
             <values>
                 <fullName>Washington DC - PY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5056,21 +5068,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Course_Title__c</picklist>
-            <values>
-                <fullName>GSA SmartPay Purchase Card Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PCard Agency Supplemental Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PaymentNet %28PNET%29</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -5156,6 +5153,21 @@
             </values>
             <values>
                 <fullName>Washington DC - PY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5399,21 +5411,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Course_Title__c</picklist>
-            <values>
-                <fullName>GSA SmartPay Purchase Card Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PCard Agency Supplemental Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PaymentNet %28PNET%29</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -5499,6 +5496,21 @@
             </values>
             <values>
                 <fullName>Washington DC - PY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5743,21 +5755,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Course_Title__c</picklist>
-            <values>
-                <fullName>GSA SmartPay Purchase Card Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PCard Agency Supplemental Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PaymentNet %28PNET%29</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -5839,6 +5836,21 @@
             </values>
             <values>
                 <fullName>Washington DC - PY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6078,21 +6090,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Course_Title__c</picklist>
-            <values>
-                <fullName>GSA SmartPay Purchase Card Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PCard Agency Supplemental Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PaymentNet %28PNET%29</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -6154,6 +6151,21 @@
             </values>
             <values>
                 <fullName>Washington DC - PY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6389,21 +6401,6 @@
             </values>
             <values>
                 <fullName>Reorder</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Course_Title__c</picklist>
-            <values>
-                <fullName>GSA SmartPay Purchase Card Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PCard Agency Supplemental Training</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>PaymentNet %28PNET%29</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -6733,6 +6730,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>PC_Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Pass_Fail__c</picklist>
             <values>
                 <fullName>F</fullName>
@@ -6896,12 +6908,33 @@
     <validationRules>
         <fullName>Purchase_Card_Limit_Validation</fullName>
         <active>true</active>
-        <errorConditionFormula>OR( RecordType.DeveloperName = &quot;Purchase_Card&quot;, RecordType.DeveloperName = &quot;New_Convenience_Check&quot;) &amp;&amp;
+        <errorConditionFormula>OR( NOT(IsPickVal( Account_Type__c , &quot;TO&quot;)), NOT(IsPickVal( Account_Type__c , &quot;CO&quot;)), NOT(IsPickVal( Account_Type__c , &quot;SACO&quot;))) &amp;&amp;
 
-OR( NOT(IsPickVal( Account_Type__c , &quot;TO&quot;)), NOT(IsPickVal( Account_Type__c , &quot;CO&quot;)), NOT(IsPickVal( Account_Type__c , &quot;SACO&quot;))) &amp;&amp;
-
-OR( Monthly_Purchase_Limit__c != 7000.00,  Single_Purchase_Limit__c  != 3500.00)</errorConditionFormula>
+OR( Monthly_Purchase_Limit__c &lt;&gt; 7000.00,  Single_Purchase_Limit__c  &lt;&gt; 3500.00)</errorConditionFormula>
+        <errorDisplayField>Account_Type__c</errorDisplayField>
         <errorMessage>Only Contracting Officers (CO), Simplified Acquisition Contracting Officers (SACO), and Training Officers (TO) Account Types may have a Monthly or Single Purchase Limit other than the default of $7,000 Monthly or $3,500 Single Purchase.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Purchase_Card_Limit_Validation_Top</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR( NOT(IsPickVal( Account_Type__c , &quot;TO&quot;)), NOT(IsPickVal( Account_Type__c , &quot;CO&quot;)), NOT(IsPickVal( Account_Type__c , &quot;SACO&quot;))) &amp;&amp;
+
+OR( Monthly_Purchase_Limit__c &lt;&gt; 7000.00,  Single_Purchase_Limit__c  &lt;&gt; 3500.00)</errorConditionFormula>
+        <errorMessage>Only Contracting Officers (CO), Simplified Acquisition Contracting Officers (SACO), and Training Officers (TO) Account Types may have a Monthly or Single Purchase Limit other than the default of $7,000 Monthly or $3,500 Single Purchase.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Service_Comp_Date_MM_YYYY_Format</fullName>
+        <active>false</active>
+        <errorConditionFormula>NOT(REGEX( Service_Comp_Date_MM_YYYY__c  ,&quot;^((0[1-9])|(1[0-2]))/[0-9]{4}$&quot;))</errorConditionFormula>
+        <errorDisplayField>Service_Comp_Date_MM_YYYY__c</errorDisplayField>
+        <errorMessage>Please enter the date in a MM/YYYY format</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Service_Comp_Date_MM_YYYY_Format_TOP</fullName>
+        <active>false</active>
+        <description>Display on Top of Page</description>
+        <errorConditionFormula>NOT(REGEX( Service_Comp_Date_MM_YYYY__c  ,&quot;^((0[1-9])|(1[0-2]))/[0-9]{4}$&quot;))</errorConditionFormula>
+        <errorMessage>Please enter the date in a MM/YYYY format</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Printable_View</fullName>

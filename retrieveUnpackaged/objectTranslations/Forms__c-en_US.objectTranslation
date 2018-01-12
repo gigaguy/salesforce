@@ -287,22 +287,6 @@
         <name>Confirm_AO_Supervisor__c</name>
     </fields>
     <fields>
-        <label><!-- Course Title --></label>
-        <name>Course_Title__c</name>
-        <picklistValues>
-            <masterLabel>GSA SmartPay Purchase Card Training</masterLabel>
-            <translation><!-- GSA SmartPay Purchase Card Training --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>PCard Agency Supplemental Training</masterLabel>
-            <translation><!-- PCard Agency Supplemental Training --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>PaymentNet (PNET)</masterLabel>
-            <translation><!-- PaymentNet (PNET) --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
         <label><!-- Current Approver --></label>
         <name>Current_Approver__c</name>
         <relationshipLabel><!-- Forms (Current Approver) --></relationshipLabel>
@@ -843,6 +827,22 @@
         <relationshipLabel><!-- Forms (Organization Allocation) --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Course Title --></label>
+        <name>PC_Course_Title__c</name>
+        <picklistValues>
+            <masterLabel>GSA SmartPay Purchase Card Training</masterLabel>
+            <translation><!-- GSA SmartPay Purchase Card Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PCard Agency Supplemental Training</masterLabel>
+            <translation><!-- PCard Agency Supplemental Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PaymentNet (PNET)</masterLabel>
+            <translation><!-- PaymentNet (PNET) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Pass/Fail --></label>
         <name>Pass_Fail__c</name>
         <picklistValues>
@@ -999,6 +999,11 @@
     <fields>
         <label><!-- SandboxURL --></label>
         <name>SandboxURL__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter in your service comp date is the MM/YYYY format --></help>
+        <label><!-- Service Comp. Date (MM/YYYY) --></label>
+        <name>Service_Comp_Date_MM_YYYY__c</name>
     </fields>
     <fields>
         <label><!-- Service Comp. Date --></label>
@@ -1470,6 +1475,18 @@
     <validationRules>
         <errorMessage><!-- Only Contracting Officers (CO), Simplified Acquisition Contracting Officers (SACO), and Training Officers (TO) Account Types may have a Monthly or Single Purchase Limit other than the default of $7,000 Monthly or $3,500 Single Purchase. --></errorMessage>
         <name>Purchase_Card_Limit_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Contracting Officers (CO), Simplified Acquisition Contracting Officers (SACO), and Training Officers (TO) Account Types may have a Monthly or Single Purchase Limit other than the default of $7,000 Monthly or $3,500 Single Purchase. --></errorMessage>
+        <name>Purchase_Card_Limit_Validation_Top</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the date in a MM/YYYY format --></errorMessage>
+        <name>Service_Comp_Date_MM_YYYY_Format</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the date in a MM/YYYY format --></errorMessage>
+        <name>Service_Comp_Date_MM_YYYY_Format_TOP</name>
     </validationRules>
     <webLinks>
         <label><!-- Printable_View --></label>
