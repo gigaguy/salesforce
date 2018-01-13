@@ -6908,32 +6908,62 @@
     <validationRules>
         <fullName>Purchase_Card_Limit_Validation</fullName>
         <active>true</active>
-        <errorConditionFormula>OR( NOT(IsPickVal( Account_Type__c , &quot;TO&quot;)), NOT(IsPickVal( Account_Type__c , &quot;CO&quot;)), NOT(IsPickVal( Account_Type__c , &quot;SACO&quot;))) &amp;&amp;
+        <errorConditionFormula>OR(
+ISPICKVAL(Account_Type__c, &apos;COOP&apos;),
+ISPICKVAL(Account_Type__c, &apos;ERT&apos;),
+ISPICKVAL(Account_Type__c, &apos;IMPREST ACCOUNT&apos;),
+ISPICKVAL(Account_Type__c, &apos;OSC&apos;),
+ISPICKVAL(Account_Type__c, &apos;TA&apos;),
+ISPICKVAL(Account_Type__c, &apos;UTIL&apos;),
+ISPICKVAL(Account_Type__c, &apos;FSSI&apos;),
+ISPICKVAL(Account_Type__c, &apos;UPS&apos;)
+)
 
-OR( Monthly_Purchase_Limit__c &lt;&gt; 7000.00,  Single_Purchase_Limit__c  &lt;&gt; 3500.00)</errorConditionFormula>
+&amp;&amp;
+
+OR(
+Monthly_Purchase_Limit__c &lt;&gt; 7000, 
+Single_Purchase_Limit__c  &lt;&gt; 3500
+)</errorConditionFormula>
         <errorDisplayField>Account_Type__c</errorDisplayField>
         <errorMessage>Only Contracting Officers (CO), Simplified Acquisition Contracting Officers (SACO), and Training Officers (TO) Account Types may have a Monthly or Single Purchase Limit other than the default of $7,000 Monthly or $3,500 Single Purchase.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Purchase_Card_Limit_Validation_Top</fullName>
         <active>true</active>
-        <errorConditionFormula>OR( NOT(IsPickVal( Account_Type__c , &quot;TO&quot;)), NOT(IsPickVal( Account_Type__c , &quot;CO&quot;)), NOT(IsPickVal( Account_Type__c , &quot;SACO&quot;))) &amp;&amp;
+        <errorConditionFormula>OR(
+ISPICKVAL(Account_Type__c, &apos;COOP&apos;),
+ISPICKVAL(Account_Type__c, &apos;ERT&apos;),
+ISPICKVAL(Account_Type__c, &apos;IMPREST ACCOUNT&apos;),
+ISPICKVAL(Account_Type__c, &apos;OSC&apos;),
+ISPICKVAL(Account_Type__c, &apos;TA&apos;),
+ISPICKVAL(Account_Type__c, &apos;UTIL&apos;),
+ISPICKVAL(Account_Type__c, &apos;FSSI&apos;),
+ISPICKVAL(Account_Type__c, &apos;UPS&apos;)
+)
 
-OR( Monthly_Purchase_Limit__c &lt;&gt; 7000.00,  Single_Purchase_Limit__c  &lt;&gt; 3500.00)</errorConditionFormula>
+&amp;&amp;
+
+OR(
+Monthly_Purchase_Limit__c &lt;&gt; 7000, 
+Single_Purchase_Limit__c  &lt;&gt; 3500
+)</errorConditionFormula>
         <errorMessage>Only Contracting Officers (CO), Simplified Acquisition Contracting Officers (SACO), and Training Officers (TO) Account Types may have a Monthly or Single Purchase Limit other than the default of $7,000 Monthly or $3,500 Single Purchase.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Service_Comp_Date_MM_YYYY_Format</fullName>
-        <active>false</active>
-        <errorConditionFormula>NOT(REGEX( Service_Comp_Date_MM_YYYY__c  ,&quot;^((0[1-9])|(1[0-2]))/[0-9]{4}$&quot;))</errorConditionFormula>
+        <active>true</active>
+        <errorConditionFormula>NOT(REGEX( Service_Comp_Date_MM_YYYY__c, &quot;[0-9]{2}/[0-9]{4}&quot;)) &amp;&amp; NOT(ISBLANK(Service_Comp_Date_MM_YYYY__c))</errorConditionFormula>
         <errorDisplayField>Service_Comp_Date_MM_YYYY__c</errorDisplayField>
         <errorMessage>Please enter the date in a MM/YYYY format</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Service_Comp_Date_MM_YYYY_Format_TOP</fullName>
-        <active>false</active>
-        <description>Display on Top of Page</description>
-        <errorConditionFormula>NOT(REGEX( Service_Comp_Date_MM_YYYY__c  ,&quot;^((0[1-9])|(1[0-2]))/[0-9]{4}$&quot;))</errorConditionFormula>
+        <active>true</active>
+        <description>Display on Top of Page
+
+NOT(REGEX( Service_Comp_Date_MM_YYYY__c  ,&quot;^((0[1-9])|(1[0-2]))/[0-9]{4}$&quot;))</description>
+        <errorConditionFormula>NOT(REGEX( Service_Comp_Date_MM_YYYY__c, &quot;[0-9]{2}/[0-9]{4}&quot;)) &amp;&amp; NOT(ISBLANK(Service_Comp_Date_MM_YYYY__c))</errorConditionFormula>
         <errorMessage>Please enter the date in a MM/YYYY format</errorMessage>
     </validationRules>
     <webLinks>

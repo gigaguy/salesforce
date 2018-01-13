@@ -41,6 +41,7 @@
     <aura:attribute name="isSaveFired" type="boolean" default="false"/>
     
     <aura:handler name="trainingBackEvent" event="c:NavigationEvent" action="{!c.handleTrainingBackEvent}"/>  
+    <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.onSaveSuccessTraining}"/> 
     
     <!-- Header-->
     <p style="margin-bottom: 35px; font-size: 125%;">
@@ -249,8 +250,8 @@
           <div class="slds-modal__footer">
               <ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.cancelCreationModal}" />
               <aura:if isTrue="{!or(v.formOption == v.pcOptionPurchaseCard, v.formOption == v.pcOptionConvenienceCheck)}">
-                  <ui:button class="slds-button slds-button--neutral" label="Next" press="{!c.addTrainingRecords}" />
-                  <ui:button class="slds-button slds-button--neutral" label="Save and Next TEST" press="{!c.saveOnlyTEST}" />
+                  <!--ui:button class="slds-button slds-button-neutral" label="Next" press="{!c.addTrainingRecords}" /-->
+                  <ui:button class="slds-button slds-button--neutral" label="Next" press="{!c.saveOnly}" />
                   <aura:set attribute="else">
                       <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveOnly}" />
          			 <!--<ui:button class="slds-button slds-button_success" label="Submit" press="{!c.saveAndSubmit}" /> -->

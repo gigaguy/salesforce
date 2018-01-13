@@ -1,5 +1,7 @@
 ({
     doInit: function(component, event, helper) {
+        console.log('doInit: '+component.get("v.pcRecordId"));
+        console.log('doInit: '+component.get("v.recordId"));
 		var pcRecordId = component.get("v.pcRecordId");        
         var pageMode = component.get("v.pageMode");
         var sessionId = component.get("v.sessionID");
@@ -10,7 +12,8 @@
         }else if(pageMode=="newPurchaseCard"){            
 			component.set("v.isNewPCRequest",true);
             helper.createNewTraining(component);
-        }     
+        }  
+        console.log('doInit: '+component.get("v.recordId"));
     },
     saveTraining: function(component, event, helper) {
         if (component.find("fileId").get("v.files").length > 0){
