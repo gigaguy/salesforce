@@ -21,6 +21,8 @@
                     var result = resp.getReturnValue();
                     var recordId = result.Id;
                     component.set("v.recordId",recordId);
+                    //tSHERMAN 1.15.18
+                    console.log('line 26 recordId: '+component.get("v.recordId"));
                     console.log('\nNew Form\n'+JSON.stringify(result));
                     component.set("v.pageMode",'editRecord');
                     component.set("v.isNewRecord",true);                    
@@ -199,5 +201,19 @@
         });
         // enqueue the action
         $A.enqueueAction(action);
+    },
+    
+    initHide: function(component) {
+        var editCmp = component.find("editDiv");
+        $A.util.addClass(editCmp, 'slds-hide');
+
+    },
+    initShow: function(component) {
+        setTimeout(function()
+                   { 
+                       var editCmp = component.find("editDiv");
+                       $A.util.removeClass(editCmp, 'slds-hide');
+                   }, 900);
+
     }
 })

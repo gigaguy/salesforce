@@ -103,7 +103,7 @@
           </div>
           <!--BOX BODY-->
           <div class="slds-modal__content slds-p-around--medium">
-             <div><force:recordedit aura:id="editTrainingRec" recordId="{!v.recordId}"/></div>
+             <div aura:id="editDiv" ><force:recordedit aura:id="editTrainingRec" recordId="{!v.recordId}"/></div>
               <lightning:input aura:id="fileId" onchange="{!c.handleFilesChange}" type="file" name="file" label="Upload Copy of Certificate" multiple="false" required="true"/>
               <div class="slds-text-body_small slds-text-color_error">{!v.fileName} </div>
               <aura:if isTrue="{!v.showLoadingSpinner}">

@@ -368,18 +368,23 @@
         component.set("v.pageStatus", "viewMyTrainings");                
     },
     addTrainingRecords: function(component, event, helper) {
-
+        //t.s. 1.15.18
+        console.log('372'+ component.get("v.backupFormId"));
+         var tempId = component.get("v.recordId");
+		component.set("v.tFormId",tempId);
         document.getElementById('newFrmDiv').hidden = "hidden";
         component.set("v.trainingPageMode", "newPurchaseCard");
         component.set("v.pageStatus", "viewMyTrainings");        
         console.log('== '+component.get("v.trainingPageMode"));
     },
 	handleTrainingBackEvent: function(component, event, helper) {
-        
+        console.log("378");
+        //tshermanb1.15.18
+        console.log("line 379t: "+event.currentTarget.id);
         var newFormDiv = document.getElementById('newFrmDiv');
         if(newFormDiv!=undefined){
 			newFormDiv.hidden = "";            
-        }        
+        }        console.log("382");
         var sourceCmpUniqueId = event.getParam("sourceCmpUniqueId");
         
         component.set("v.trainingPageMode", null);
@@ -387,9 +392,12 @@
         
         if(sourceCmpUniqueId=='newPCTraingRecSuccess'){
             // Now save main form            
+            console.log("390");
             helper.saveAndSubmit(component, event);
+            console.log("392");
         }
         component.set("v.pageStatus", "viewFormTypes");
+        console.log("395");
     },
     
     onSaveSuccessTraining : function(component, event, helper){
@@ -398,7 +406,7 @@
         var targetForm2 = component.get("v.pcOptionConvenienceCheck");
 
         var action = component.get("c.addTrainingRecords");  
-        console.log('onSaveSuccessTraining: '+component.get("v.recordId"));
+        console.log('onSaveSuccessTraining: '+component.get("v.recordId"));//is empty?
         
         //if(currentForm == targetForm1 || currentForm == targetForm2)
         {

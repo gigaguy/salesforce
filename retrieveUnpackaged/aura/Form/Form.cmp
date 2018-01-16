@@ -43,6 +43,9 @@
     <aura:handler name="trainingBackEvent" event="c:NavigationEvent" action="{!c.handleTrainingBackEvent}"/>  
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.onSaveSuccessTraining}"/> 
     
+    <!-- t.s. 1.15.18-->
+    <aura:attribute name="tFormId" type="string"/>
+    
     <!-- Header-->
     <p style="margin-bottom: 35px; font-size: 125%;">
         <aura:if isTrue="{!v.pageStatus == 'viewFormTypes'}">
@@ -250,7 +253,7 @@
           <div class="slds-modal__footer">
               <ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.cancelCreationModal}" />
               <aura:if isTrue="{!or(v.formOption == v.pcOptionPurchaseCard, v.formOption == v.pcOptionConvenienceCheck)}">
-                  <!--ui:button class="slds-button slds-button-neutral" label="Next" press="{!c.addTrainingRecords}" /-->
+                  <!--ui:button class="slds-button slds-button-neutral" label="NextOld" press="{!c.addTrainingRecords}" /-->
                   <ui:button class="slds-button slds-button--neutral" label="Next" press="{!c.saveOnly}" />
                   <aura:set attribute="else">
                       <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveOnly}" />

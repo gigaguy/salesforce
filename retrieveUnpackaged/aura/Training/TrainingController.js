@@ -1,7 +1,10 @@
 ({
     doInit: function(component, event, helper) {
-        console.log('doInit: '+component.get("v.pcRecordId"));
-        console.log('doInit: '+component.get("v.recordId"));
+        console.log('Training doInit: '+component.get("v.pcRecordId"));
+        console.log('Training doInit: '+component.get("v.recordId"));
+        
+        helper.initHide(component);
+        
 		var pcRecordId = component.get("v.pcRecordId");        
         var pageMode = component.get("v.pageMode");
         var sessionId = component.get("v.sessionID");
@@ -14,6 +17,7 @@
             helper.createNewTraining(component);
         }  
         console.log('doInit: '+component.get("v.recordId"));
+        helper.initShow(component);
     },
     saveTraining: function(component, event, helper) {
         if (component.find("fileId").get("v.files").length > 0){
@@ -32,12 +36,13 @@
             }
         }else{
             // Alert attachment is mandatory
-            
+            console.log("ERROR LINE 35 in saveTraining Method");
             //component.set("v.recordError","Please select an attachemnt.");            
             //component.set("v.recordError","Please select an attachemnt.");            
         }                		
     },
     saveNextTraining: function(component, event, helper) {
+        console.log("Line 45: saveNextTraining");
         if (component.find("fileId").get("v.files").length > 0){
             var savingTraining = component.get('v.savingTraining');
             if(!savingTraining){            
@@ -45,6 +50,7 @@
             }
         }else{            
             // Alert attachment is mandatory
+            console.log("ERROR LINE 48 in saveNextTraining Method");
         }                		
     },
     handleTrngSaveSuccess : function(component, event, helper){
