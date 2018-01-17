@@ -11,8 +11,10 @@ public class TrainingController {
             
             string TRAINING_RECORD_TYPE_ID = [select id from RecordType where name = :TRAINING_RECORD_TYPE_NAME limit 1].ID;
             System.debug('TRAINING_RECORD_TYPE_ID ' +TRAINING_RECORD_TYPE_ID);
-            u = [select id from User where Session_Token__c = :sID];            
-         	trainings = [select id, PC_Course_Title__c, Location__c, Date__c, CLP_s__c, Pass_Fail__c from Forms__c where PC_Course_Title__c != NULL AND Unauthenticated_Owner__c = :u.ID AND RecordTypeId =:TRAINING_RECORD_TYPE_ID order by Date__c DESC];
+            u = [select id from User where Session_Token__c = :sID];     
+            //t.s. 1.16.18 Purchase_Card_Request__c
+            trainings = [select id,Purchase_Card_Request__c, PC_Course_Title__c, Location__c, Date__c, CLP_s__c, Pass_Fail__c from Forms__c where PC_Course_Title__c != NULL AND Unauthenticated_Owner__c = :u.ID AND RecordTypeId =:TRAINING_RECORD_TYPE_ID order by Date__c DESC];
+         //	trainings = [select id,Purchase_Card_Request__c, PC_Course_Title__c, Location__c, Date__c, CLP_s__c, Pass_Fail__c from Forms__c where PC_Course_Title__c != NULL AND Unauthenticated_Owner__c = :u.ID AND RecordTypeId =:TRAINING_RECORD_TYPE_ID order by Date__c DESC];
         }
         catch (exception e){
             System.debug('getUserTrainingForms - '+e.getMessage());

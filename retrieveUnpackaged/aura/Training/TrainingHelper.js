@@ -119,6 +119,8 @@
         component.set("v.recordId",undefined);
         component.set("v.savingTraining",false);
         
+        
+        
         var sessionId = component.get("v.sessionID");
         var isNewPCRequest = component.get("v.isNewPCRequest");
         console.log('isNewPCRequest '+isNewPCRequest);
@@ -128,6 +130,9 @@
             	"sourceCmpUniqueId" : "newPCTraingRecSuccess",            
         	});
         	cmpEvent.fire();
+            var navCmp = component.find("NavDiv");
+        $A.util.addClass(navCmp, 'slds-hide');
+            $A.util.removeClass(navCmp, 'slds-show');
         }
         else if(sessionId!=undefined){  
             component.set("v.pageMode",'showRecords');
@@ -213,7 +218,20 @@
                    { 
                        var editCmp = component.find("editDiv");
                        $A.util.removeClass(editCmp, 'slds-hide');
-                   }, 900);
+                   }, 1000);
+
+    },
+    initHideDiv: function(component) {
+        var navCmp = component.find("navDiv");
+        $A.util.addClass(navCmp, 'slds-hide');
+
+    },
+    initShowDiv: function(component) {
+        setTimeout(function()
+                   { 
+                       var navCmp = component.find("navDiv");
+                       $A.util.removeClass(navCmp, 'slds-hide');
+                   }, 1000);
 
     }
 })

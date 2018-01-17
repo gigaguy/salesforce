@@ -43,8 +43,102 @@ public class FormPageController {
     }
     
     @AuraEnabled
-    public static Forms__c insertNewForms(string sID, string rtID, String formOption){
+    public static Forms__c insertNewForms(string sID, string rtID, string siteUserID, string apiUserID, string formOption){
 
+        /*string rtName = '';
+        if(formOption!=null && formOption!='' && rtID=='Purchase Card'){
+            rtName = 'Purchase_Card';
+        }else{
+			rtName = [select id, developerName from recordtype where id = :rtID limit 1].developerName;            
+        }        
+        Forms__c existingForm;
+        User u;
+        try{
+            u = [select id, Name, Supervisor__c from User where Session_Token__c = :sID];     */       
+            /*existingForm = [select id, Approval_step__c, AWL_Phone_Number__c, User_Supervisor__c from Forms__c where RecordTypeId = :rtID and Unauthenticated_Owner__c = :u.ID and Approval_Step__c != 'Approved' order by CreatedDate DESC limit 1];
+            if (existingForm != null) return existingForm;*/
+        /*}
+        catch (exception ex){
+        }
+        try{
+            
+            //no existing form
+            if (u != null){
+                Forms__c nf = new Forms__c();
+                
+                nf.put('Unauthenticated_Owner__c', u.id);
+                if(rtName != 'SF_182') nf.put('User_Supervisor__c', u.Supervisor__c);
+                // Pre populate user detials for the purchase card form
+                if(rtName != null && (rtName == 'Purchase_Card')){                    
+                    prePopulatePruchaseCardDetails(nf, u,formOption);                    
+                    if(formOption!=null){
+						nf.put('Purchase_Card_Request_Type__c',formOption);                        
+                    }
+                }else{
+                    nf.put('RecordTypeId', rtID);
+                }                                
+                nf.put('Quantity__c', 1);
+                insert nf;
+                System.debug('newForms'+nf);
+                return nf;
+            }
+        }
+        catch(DMLException ex){
+           AuraHandledException e = new AuraHandledException(ex.getMessage() + ' - ' + string.valueOf(ex.getLineNumber()));
+            system.debug(ex.getMessage());
+           throw e;
+        }
+        return null; */
+        
+        /*System.debug('Starting insertNewForms');
+        string rtName;
+
+        if(formOption!=null && formOption!='' && rtID=='Purchase Card'){
+            rtName = 'Purchase_Card';
+        }else{
+            rtName = [select id, developerName from recordtype where id = :rtID limit 1].developerName;            
+        }    
+        
+        Forms__c existingForm;
+        User u;
+        try{
+            u = [select id, Name, Supervisor__c from User where Session_Token__c = :sID];
+            /*existingForm = [select id, Approval_step__c, AWL_Phone_Number__c, User_Supervisor__c from Forms__c where RecordTypeId = :rtID and Unauthenticated_Owner__c = :u.ID and Approval_Step__c != 'Approved' order by CreatedDate DESC limit 1];
+if (existingForm != null) return existingForm;*/
+        /*}catch (exception ex){
+            System.debug('Insert of user in insertNewFroms() failed. Exception: ' + ex.getMessage());
+        }
+        try{
+            //no existing form
+            if (u != null){
+                Forms__c nf = new Forms__c();
+                nf.put('Unauthenticated_Owner__c', u.id);
+                if(rtName != 'SF_182') nf.put('User_Supervisor__c', u.Supervisor__c);
+                if(rtName != null && (rtName == 'Purchase_Card')){                    
+                    prePopulatePruchaseCardDetails(nf, u,formOption);                    
+                    if(formOption!=null){
+                        nf.put('Purchase_Card_Request_Type__c',formOption);                        
+                    }
+                }else{
+                    nf.put('RecordTypeId', rtID);
+                }
+                
+                nf.put('Quantity__c', 1);
+                // LS 2017/11/19: Set Owner to "API" user
+                //nf.put('OwnerId', apiUserID);
+                insert nf;
+                // LS 2017/11/19: Add FormShare for force.com site user to new form record
+                UtilityMethods.addFormShare(String.ValueOf(nf.Id), siteUserID);
+                System.debug('newForms'+nf);
+                return nf;
+            }
+        }catch(DMLException ex){
+            AuraHandledException e = new AuraHandledException(ex.getMessage() + ' - ' + string.valueOf(ex.getLineNumber()));
+            system.debug('DMLExcetion thrown: ' + ex.getMessage());
+            throw e;
+        }
+        return null;*/
+        
         string rtName = '';
         if(formOption!=null && formOption!='' && rtID=='Purchase Card'){
             rtName = 'Purchase_Card';
@@ -88,7 +182,8 @@ public class FormPageController {
             system.debug(ex.getMessage());
            throw e;
         }
-        return null;        
+        return null; 
+        
     }
     
     @AuraEnabled
@@ -129,6 +224,12 @@ public class FormPageController {
             //req1.setSubmitterId('00535000000VAA9');
             req1.setSubmitterID(u.ID);
             Approval.ProcessResult result = Approval.process(req1);
+            
+            //Trellis 1.16.18
+            //Forms__c form = [select id from forms__c where id =: formId limit 1];
+           // form.Approval_Step__c = 'ALL';
+            
+          //  update form;
             if (result.IsSuccess()) message = 'Submitted';
             return message;
         }

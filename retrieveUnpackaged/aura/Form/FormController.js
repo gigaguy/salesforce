@@ -20,20 +20,32 @@
         var formName = event.currentTarget.name;
         console.log('The formName is = ' + formName);
         component.set("v.formOption", null); 
-        if(formName != undefined && formName =='Purchase Card'){            
+        if(formName != undefined && formName =='Purchase Card'){   
+            console.log("line 24");
             formID = "Purchase Card" //formName;// can not depend on 
 	        console.log('formName '+formName);
             component.set("v.backupFormId",formID);
             component.set("v.backUpFormName",formName);            
             component.set("v.forceSelectFormOption",true);            
-        }else{            
-			helper.openFormModal(component, event,formID,formName,'');            
+        }else{      
+            console.log("line 31");
+            console.log("formid: "+formID);
+            console.log("formName: "+formName);
+            //ts 1-16-18
+			//helper.openFormModal(component, event,formID,formName,'');  
+            helper.openFormModal(component, event,formID,formName,'');
         }  
         
     },
-    viewFormJS : function(component, event, helper){        
+    viewFormJS : function(component, event, helper){   
+        //ts.1.16.18
+        console.log("in Form viewFormsJS");
         var formID = event.currentTarget.id;
-        var formName = event.currentTarget.name;        
+        var formName = event.currentTarget.name;     
+        
+        //ts.1.16.18
+        console.log("in Form LINE-41: "+formID);
+        
         if (formName === "BAP Provisioning") {
             var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
         	var hrefEmail = "BAP_Admins@epa.gov";
@@ -75,6 +87,8 @@
         $A.enqueueAction(action);
     },
     viewExistingForms : function(component, event, helper){
+        //ts.1.16.18
+        console.log("in Form viewExistingForms");
         var formID = event.currentTarget.id;
         component.set("v.selectedFormId", formID);
         
@@ -107,16 +121,18 @@
 		
 	},
     saveOnly : function(component, event, helper){
+        //ts.1.16.18
+        console.log("in Form saveOnly");
         
         component.set("v.isSaveFired", true);
         console.log('in c.saveOnly');
-          try {
+        try {
             component.find("edit").get("e.recordSave").fire();
-              console.log('no error');
-          }
-          catch (e) {
+            console.log('no error');
+        }
+        catch (e) {
             console.log(e);
-          }
+        }
         
         /*component.find("edit").recordSave($A.getCallback(function(saveResult) {
             // NOTE: If you want a specific behavior(an action or UI behavior) when this action is successful 
@@ -157,13 +173,22 @@
         $A.enqueueAction(action);
     },
 	saveAndSubmit : function(component, event, helper){
+        //ts.1.16.18
+        console.log("in Form saveAndSubmit");
         helper.saveAndSubmit(component, event);
+        component.set("v.preventAdditionalSaveEvent",false);
 	},
 	openModal2: function(component, event, helper) {
+        //ts.1.16.18
+        console.log("in Form openModal2");
         component.set("v.isOpen", true);
         component.set("v.modalName", "");
+        component.set("v.preventAdditionalSaveEvent",false);
     },
     closeModal: function(component, event, helper) {
+        //ts.1.16.18
+        console.log("in Form closeModal");
+        component.set("v.preventAdditionalSaveEvent",false);
         component.set("v.message", null);
         component.set("v.approvalSuccess", null);
         component.set("v.isOpen", false);
@@ -173,7 +198,37 @@
         component.set("v.formOption", null); 
         component.set("v.trainingPageMode", "showRecords");
     },
-	handleSaveSuccess : function(component, event, helper){
+    handleSaveSuccess : function(component, event, helper){
+        console.log("In handleSaveSuccess method in Form");
+        var preventMethodBool = component.get("v.preventAdditionalSaveEvent");
+        console.log("preventMethodBool: "+preventMethodBool);
+        var formName = component.get("v.backUpFormName");
+        if(preventMethodBool == false)
+        {   
+            console.log("205: ");
+            if(formName == 'Purchase Card')
+            {
+                component.set("v.preventAdditionalSaveEvent",true);
+                var action = component.get("c.addTrainingRecords");          
+                $A.enqueueAction(action);
+            }
+            else
+            {
+                var isSaveFired = component.get("v.isSaveFired");
+                if(isSaveFired){
+                    console.log('Forms handleSaveSuccess Done.');
+                    component.set("v.isOpen", false);
+                    component.set("v.modalName", "");
+                    component.set("v.message", "Your Form was saved");
+                    component.set("v.backupFormId",null); 
+                    component.set("v.newFormId", null);
+                    component.set("v.formOption", null); 
+                    component.set("v.preventAdditionalSaveEvent",false);
+                }
+                component.set("v.isSaveFired",false);
+            }
+        }
+        /*tsherman 1-16-18
         var isSaveFired = component.get("v.isSaveFired");
         if(isSaveFired){
 			console.log('Forms handleSaveSuccess Done.');
@@ -183,8 +238,9 @@
 	        component.set("v.backupFormId",null); 
             component.set("v.newFormId", null);
             component.set("v.formOption", null); 
+            component.set("v.preventAdditionalSaveEvent",false);
         }
-		component.set("v.isSaveFired",false);        
+		component.set("v.isSaveFired",false);   */     
 	},
     cancelCreationModal : function(component, event, helper){
     	component.set("v.message", null);
@@ -195,6 +251,7 @@
         component.set("v.isSaveFired",false);
         component.set("v.newFormId", null);
         component.set("v.formOption", null); 
+        component.set("v.preventAdditionalSaveEvent",false);
         component.set("v.trainingPageMode", "showRecords");
         
         var action = component.get("c.deleteForm");
@@ -237,6 +294,7 @@
                 component.set("v.modalName", "");
                 component.set("v.backupFormId",null);
                 component.set("v.newFormId", null);
+                component.set("v.preventAdditionalSaveEvent",false);
                 component.set("v.trainingPageMode", "showRecords");
             }
             else if(state === 'ERROR'){
@@ -347,7 +405,7 @@
 	},
     handleFormSelEvent : function(component, event, helper) {
         //var target = event.getSource().getLocalId();
-    	//console.log(target.get()); 
+    	//console.log(target.get()); 
         console.log('handleFormSelEvent');
         component.set("v.forceSelectFormOption",false);
         var isCancelled = event.getParam("isCancelled");
@@ -359,7 +417,8 @@
 			var formId = component.get("v.backupFormId");
 	        var formName = component.get("v.backUpFormName");
             //helper.getFormIntroduction(component, event,formOption);
-            console.log('This is were it was called');
+            console.log('This is were it was called line 384');
+            console.log("line 385: "+formId);
     	    helper.openFormModal(component, event,formId,formName,formOption);            
         }                
     },
@@ -369,47 +428,39 @@
     },
     addTrainingRecords: function(component, event, helper) {
         //t.s. 1.15.18
-        console.log('372'+ component.get("v.backupFormId"));
-         var tempId = component.get("v.recordId");
-		component.set("v.tFormId",tempId);
+        console.log('372'+ component.get("v.newFormId"));
+
         document.getElementById('newFrmDiv').hidden = "hidden";
         component.set("v.trainingPageMode", "newPurchaseCard");
-        component.set("v.pageStatus", "viewMyTrainings");        
+        component.set("v.pageStatus", "viewMyTrainings");      
         console.log('== '+component.get("v.trainingPageMode"));
     },
 	handleTrainingBackEvent: function(component, event, helper) {
-        console.log("378");
-        //tshermanb1.15.18
-        console.log("line 379t: "+event.currentTarget.id);
+        //tsherman 1.15.18
+        console.log("line 410: "+component.get("v.newForm.Id"));
         var newFormDiv = document.getElementById('newFrmDiv');
         if(newFormDiv!=undefined){
 			newFormDiv.hidden = "";            
         }        console.log("382");
         var sourceCmpUniqueId = event.getParam("sourceCmpUniqueId");
-        
-        component.set("v.trainingPageMode", null);
-        component.set("v.pageStatus", null);
-        
+
         if(sourceCmpUniqueId=='newPCTraingRecSuccess'){
             // Now save main form            
-            console.log("390");
+            console.log("before saveAndSubmit helper");
             helper.saveAndSubmit(component, event);
-            console.log("392");
+            console.log("after saveAndSubmit helper");
         }
-        component.set("v.pageStatus", "viewFormTypes");
-        console.log("395");
+        component.set("v.preventAdditionalSaveEvent",false);
     },
     
     onSaveSuccessTraining : function(component, event, helper){
-        var currentForm = component.get("v.formOption");
-        var targetForm1 = component.get("v.pcOptionPurchaseCard");
-        var targetForm2 = component.get("v.pcOptionConvenienceCheck");
-
-        var action = component.get("c.addTrainingRecords");  
-        console.log('onSaveSuccessTraining: '+component.get("v.recordId"));//is empty?
-        
-        //if(currentForm == targetForm1 || currentForm == targetForm2)
+        var preventMethodBool = component.get("v.preventAdditionalSaveEvent");
+        var formName = component.get("v.backUpFormName");
+        console.log("437: "+formName);
+        if(preventMethodBool == false && formName == 'Purchase Card')
         {
+            component.set("v.preventAdditionalSaveEvent",true);
+            var action = component.get("c.addTrainingRecords");          
             $A.enqueueAction(action);
         }
     }

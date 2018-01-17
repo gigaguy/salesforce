@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
-        <fullName>AO_Email_Alert</fullName>
-        <ccEmails>sammetaphani@gmail.com</ccEmails>
-        <description>AO Email Alert</description>
-        <protected>false</protected>
-        <recipients>
-            <field>Approving_Official__c</field>
-            <type>userLookup</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Purchase_Card_Approval_Notify_Email_Template</template>
-    </alerts>
-    <alerts>
-        <fullName>Approval_official_rejection</fullName>
-        <description>Approval official rejection</description>
-        <protected>false</protected>
-        <recipients>
-            <type>owner</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Purchase_Card_Reject_Email_Template</template>
-    </alerts>
-    <alerts>
         <fullName>Dev_Sandbox_recalled</fullName>
         <description>Dev Sandbox recalled</description>
         <protected>false</protected>
@@ -181,16 +159,6 @@
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Forms_Submission_Confirmation</template>
-    </alerts>
-    <alerts>
-        <fullName>UpdateRequestor</fullName>
-        <description>UpdateRequestor</description>
-        <protected>false</protected>
-        <recipients>
-            <type>creator</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Purchase_Card_Email_Template_Notify_Approver</template>
     </alerts>
     <alerts>
         <fullName>Update_Requestor</fullName>

@@ -135,4 +135,12 @@ public class UtilityMethods {
         allValues.addAll(allFormIds.values());
         return allValues.contains(formId);
     }
+    //missing? tsherman
+    public static void addFormShare(String formID, String siteUserID) {
+        List<Forms__Share> formShares = new List<Forms__Share>();
+        if (formID != null && siteUserID !=null) {
+            formShares.add(new Forms__Share(ParentID = formID, UserorGroupID = siteUserID, AccessLevel = 'edit'));
+            database.insert(formShares, false);
+        }
+    }
 }

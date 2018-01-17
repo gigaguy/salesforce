@@ -90,6 +90,7 @@
     </aura:if>
     <br/>
     <!--New Form Modal-->
+    <div aura:id="NavDiv">
     <aura:if isTrue="{!or(v.pageMode == 'editRecord', v.pageMode == 'newPurchaseCard')}">
       <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open">
         <div class="slds-modal__container">
@@ -124,6 +125,7 @@
       </div>
       <div class="slds-backdrop slds-backdrop--open"></div>
     </aura:if>
+</div>
     <!--End New Form Modal-->
     <!-- Display Lightning Data Service errors -->
     <aura:if isTrue="{!not(empty(v.newTrainingError))}">

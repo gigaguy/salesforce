@@ -25,6 +25,7 @@
     <aura:attribute name="sessionID" type="string"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     <aura:handler name="change" value="{!v.newForm}" action="{!c.openModal2}" />
+    <!--ts 1.1618-->
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
     <aura:handler name="recordSave" event="force:recordSave" action="{!c.handleSave}" />
     
@@ -41,10 +42,10 @@
     <aura:attribute name="isSaveFired" type="boolean" default="false"/>
     
     <aura:handler name="trainingBackEvent" event="c:NavigationEvent" action="{!c.handleTrainingBackEvent}"/>  
-    <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.onSaveSuccessTraining}"/> 
+    <!--aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.onSaveSuccessTraining}"/--> 
     
     <!-- t.s. 1.15.18-->
-    <aura:attribute name="tFormId" type="string"/>
+    <aura:attribute name="preventAdditionalSaveEvent" type="boolean" default="false"/>
     
     <!-- Header-->
     <p style="margin-bottom: 35px; font-size: 125%;">
@@ -338,8 +339,9 @@
     
     <!-- Training Records Component -->
     <aura:if isTrue="{!v.pageStatus == 'viewMyTrainings'}">
-        <div>
-	        <c:Training sessionID="{!v.sessionID}" pageMode="{!v.trainingPageMode}" pcRecordId="{!v.newFormId}"></c:Training>
+        <div><!--tsherman 1.16.18-->
+            <!--c:Training sessionID="{!v.sessionID}" pageMode="{!v.trainingPageMode}" pcRecordId="a0135000000jBcmAAE"--><!--/c:Training -->
+	       <c:Training sessionID="{!v.sessionID}" pageMode="{!v.trainingPageMode}" pcRecordId="{!v.newFormId}"></c:Training>
             </div>
     </aura:if>    
 </aura:component>

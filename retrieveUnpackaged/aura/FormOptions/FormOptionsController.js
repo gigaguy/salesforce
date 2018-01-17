@@ -1,6 +1,6 @@
 ({    
     doInit : function(component, event, helper) {
-        
+        console.log("FormOptionsController is called where line 3");
         var formTypeId = component.get("v.formTypeId");		        
         if(formTypeId!=undefined && formTypeId!=null){
             
@@ -42,6 +42,7 @@
             alert('Please select an option.');
         }
         else{
+            console.log("FormOptionsController line 45");
 			var cmpEvent = component.getEvent("formOptionSelEvent");
 			cmpEvent.setParams({
     	        "formOption" : selectedOption,

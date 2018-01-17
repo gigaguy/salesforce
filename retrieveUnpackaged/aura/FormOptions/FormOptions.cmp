@@ -1,4 +1,4 @@
-<aura:component controller="FormPageController">
+<aura:component controller="FormPageController" >
     <aura:attribute name="formTypeId" type="String" />
     <aura:attribute name="formTypeOptions" type="String[]"/>
     

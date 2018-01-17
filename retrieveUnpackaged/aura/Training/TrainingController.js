@@ -3,6 +3,9 @@
         console.log('Training doInit: '+component.get("v.pcRecordId"));
         console.log('Training doInit: '+component.get("v.recordId"));
         
+        var navCmp = component.find("NavDiv");
+        $A.util.addClass(navCmp, 'slds-show');
+        $A.util.removeClass(navCmp, 'slds-hide');
         helper.initHide(component);
         
 		var pcRecordId = component.get("v.pcRecordId");        
@@ -36,7 +39,7 @@
             }
         }else{
             // Alert attachment is mandatory
-            console.log("ERROR LINE 35 in saveTraining Method");
+            console.log("ERROR in saveTraining Method");
             //component.set("v.recordError","Please select an attachemnt.");            
             //component.set("v.recordError","Please select an attachemnt.");            
         }                		

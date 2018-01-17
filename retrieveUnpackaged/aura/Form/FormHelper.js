@@ -82,8 +82,8 @@
 
         component.set("v.selectedFormId", formID);
         component.set("v.selectedFormName", formName);
-        
-        
+        console.log("hhelp.js line 85: "+formOption);
+        console.log('in formHelper 86: '+formID);        
         var action = component.get("c.insertNewForms");
         action.setParams({
             "sID" : component.get("v.sessionID"),
@@ -92,7 +92,7 @@
             "apiUserID" : component.get("v.apiUserID"),
             "formOption" : formOption
         });
-        
+        console.log("95");
         action.setCallback(this,function(resp){
             var state = resp.getState();
             if(state === 'SUCCESS'){
@@ -101,6 +101,7 @@
                    component.set("v.formOption", formOption); 
                     //Download Form introduction text if applicabl
                    this.getFormIntroduction(component, event,formOption);
+                    console.log("103");
                 }
                 var formObj = resp.getReturnValue();
                 component.set("v.newForm", formObj);
@@ -111,6 +112,7 @@
             }
             else if(state === 'ERROR'){
                 component.set("v.newFormId", null);
+                console.log("115 Error");
                 var errors = resp.getError();
                 for(var i = 0 ;i < errors.length;i++){
                     console.log(errors[i].message);
@@ -326,7 +328,14 @@
         console.log("helper.saveAndSubmit function called");
 
         component.set("v.isSaveFired", true);
-        component.find("edit").get("e.recordSave").fire();        
+        try{
+            component.find("edit").get("e.recordSave").fire();      
+            console.log("no error in saveAndSubmit save before submission");
+        }
+        catch(ex)
+        {
+            console.log(ex);
+        }
         // Temporary checking for modals to allow submitting from new form or view form
         var formID;
         if (component.get("v.modalName") == 'viewForm') {
@@ -341,7 +350,7 @@
             recordTypeId=formObj.RecordTypeId;
         }
         console.log('recordTypeId '+recordTypeId);
-        
+        console.log('formID: '+formID);
         var action = component.get("c.submitForApproval");
         action.setParams({
             "formID": formID,
@@ -357,6 +366,36 @@
             
             if(state === 'SUCCESS'){
                 component.set("v.message", resp.getReturnValue());
+                console.log("362: "+component.get("v.sessionID"));
+                var a = component.get("c.findExistingForms");
+                a.setParams({
+                    "sID" : component.get("v.sessionID")
+                });
+                a.setCallback(this,function(resp){
+                    console.log('in action');
+                    var state = resp.getState();
+                    console.log('state: ' +state);
+                    if(state === 'SUCCESS'){
+                        console.log("refresh existing forms");
+                        component.set("v.oldForms", resp.getReturnValue());
+                        component.set("v.pageStatus", "viewMyForms");
+                        component.set("v.trainingPageMode", null);
+                        component.set("v.isOpen", false);
+                        component.set("v.modalName", "");
+                        component.set("v.backupFormId",null); 
+                        component.set("v.newFormId", null);
+                        component.set("v.formOption", null);
+                        // Can call Training form here
+                    }
+                    else if(state === 'ERROR'){
+                        console.log("ERROR");
+                        var errors = resp.getError();
+                        for(var i = 0 ;i < errors.length;i++){
+                            console.log(errors[i].message);
+                        }
+                    }
+                });
+                $A.enqueueAction(a);  
             }
             else if(state === 'ERROR'){
                 var errors = resp.getError();
@@ -368,30 +407,10 @@
         $A.enqueueAction(action);
         
         // Needed to update display of forms, sets display to "viewMyForms" for feedback to user that it was submitted
-        var action2 = component.get("c.findExistingForms");
-        action2.setParams({
-            "sID" : component.get("v.sessionID")
-        });
-        action.setCallback(this,function(resp){
-            console.log('in action');
-            var state = resp.getState();
-            console.log('state: ' +state);
-            if(state === 'SUCCESS'){
-                component.set("v.mySavedForms", resp.getReturnValue());
-                component.set("v.pageStatus", "viewMyForms");
-                // Can call Training form here
-            }
-            else if(state === 'ERROR'){
-                var errors = resp.getError();
-                for(var i = 0 ;i < errors.length;i++){
-                    console.log(errors[i].message);
-                }
-            }
-        });
-        $A.enqueueAction(action2); 
+
         
-        /*t.s. 1.15.18
-         var action = component.get("c.findExistingForms");
+        //t.s. 1.15.18 disabled
+        /* var action = component.get("c.findExistingForms");
         action.setParams({
             "sID" : component.get("v.sessionID")
         });
@@ -411,8 +430,8 @@
                 }
             }
         });
-        $A.enqueueAction(action);  
-         */
+        $A.enqueueAction(action);  */
+         
     },
 
     //Renambed because of conflicts.
