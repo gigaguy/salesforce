@@ -421,7 +421,7 @@
         <label>Topic</label>
         <lookupFilter>
             <active>true</active>
-            <booleanFilter>(1 AND 2) OR (3 AND 4)</booleanFilter>
+            <booleanFilter>(1 AND 2) OR (3 AND 4) OR (5 AND 6) OR (7 AND 8)</booleanFilter>
             <filterItems>
                 <field>$Source.RecordTypeId</field>
                 <operation>equals</operation>
@@ -441,6 +441,26 @@
                 <field>Topic__c.RecordTypeId</field>
                 <operation>equals</operation>
                 <value>Bristol Bay</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>WOTUS Recommendations</value>
+            </filterItems>
+            <filterItems>
+                <field>Topic__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>WOTUS Recommendations</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Waters of the US – Step 0</value>
+            </filterItems>
+            <filterItems>
+                <field>Topic__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Waters of the US – Step 0</value>
             </filterItems>
             <isOptional>true</isOptional>
         </lookupFilter>
@@ -464,23 +484,22 @@
         <columns>Extracted_Text__c</columns>
         <columns>Response__c</columns>
         <filterScope>Everything</filterScope>
-        <filters>
-            <field>Topic__c</field>
-            <operation>equals</operation>
-            <value>13.6</value>
-        </filters>
         <label>All Waters of the US</label>
     </listViews>
     <listViews>
         <fullName>All_Bristol_Bay</fullName>
+        <columns>Notes__c</columns>
         <columns>NAME</columns>
-        <columns>Submission_Number__c</columns>
-        <columns>Topic_Name__c</columns>
+        <columns>Topic__c</columns>
+        <columns>Extracted_Text__c</columns>
         <columns>Commenter_Category__c</columns>
         <columns>Snippet_Status__c</columns>
-        <columns>Extracted_Text__c</columns>
-        <columns>Response__c</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>Snippet_Status__c</field>
+            <operation>equals</operation>
+            <value>Ready for Agency Review</value>
+        </filters>
         <filters>
             <field>RECORDTYPE</field>
             <operation>equals</operation>
@@ -489,9 +508,47 @@
         <label>All Bristol Bay</label>
     </listViews>
     <listViews>
+        <fullName>All_WOTUS_Recommendation_Snippets</fullName>
+        <columns>Topic__c</columns>
+        <columns>NAME</columns>
+        <columns>Document_Number__c</columns>
+        <columns>PDF_Page__c</columns>
+        <columns>Commenter_Category__c</columns>
+        <columns>Agency_Name__c</columns>
+        <columns>Snippet_Status__c</columns>
+        <columns>Extracted_Text__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Snippet__c.WOTUS_Recommendations</value>
+        </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operation>equals</operation>
+            <value>7.0</value>
+        </filters>
+        <filters>
+            <field>Snippet_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Snippet Entered</value>
+        </filters>
+        <label>All WOTUS Recommendations Snippets</label>
+    </listViews>
+    <listViews>
         <fullName>Waters_of_the_US</fullName>
         <columns>NAME</columns>
-        <filterScope>Mine</filterScope>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Topic__c</field>
+            <operation>equals</operation>
+            <value>7.</value>
+        </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operation>notEqual</operation>
+            <value>17.</value>
+        </filters>
         <label>Waters of the US</label>
     </listViews>
     <nameField>
@@ -578,12 +635,269 @@
                 <fullName>Snippet Needs Edits</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Snippet Read by Agency</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>WOTUS_Recommendations</fullName>
+        <active>true</active>
+        <description>to host recommendations people made on what EPA should do for Step 2</description>
+        <label>WOTUS Recommendations</label>
+        <picklistValues>
+            <picklist>Comment_Status__c</picklist>
+            <values>
+                <fullName>Addressed in Essay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comment Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Agency Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Entered</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Snippet Entry Verified</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relevant_Essays__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Snippet_Status__c</picklist>
+            <values>
+                <fullName>Agency Response Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Agency Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Captured in Summary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Entered</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Snippet Entry Verified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Needs Edits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Read by Agency</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
     </recordTypes>
     <recordTypes>
         <fullName>Waters_of_the_US</fullName>
         <active>true</active>
         <label>Waters of the US</label>
+        <picklistValues>
+            <picklist>Comment_Status__c</picklist>
+            <values>
+                <fullName>Addressed in Essay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comment Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Agency Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Entered</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Snippet Entry Verified</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relevant_Essays__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Snippet_Status__c</picklist>
+            <values>
+                <fullName>Agency Response Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Agency Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Captured in Summary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Entered</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Snippet Entry Verified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Needs Edits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Read by Agency</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Waters_of_the_US_Step_0</fullName>
+        <active>true</active>
+        <label>Waters of the US – Step 0</label>
         <picklistValues>
             <picklist>Comment_Status__c</picklist>
             <values>

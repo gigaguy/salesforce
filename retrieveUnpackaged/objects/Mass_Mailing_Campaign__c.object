@@ -130,8 +130,9 @@
         <columns>OBJECT_ID</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>Docket_Count__c</field>
+            <field>RECORDTYPE</field>
             <operation>equals</operation>
+            <value>Mass_Mailing_Campaign__c.Waters_of_the_US</value>
         </filters>
         <label>All</label>
     </listViews>
@@ -167,9 +168,57 @@
         </picklistValues>
     </recordTypes>
     <recordTypes>
+        <fullName>WOTUS_Recommendations</fullName>
+        <active>true</active>
+        <label>WOTUS Recommendations</label>
+        <picklistValues>
+            <picklist>Pro_Cons__c</picklist>
+            <values>
+                <fullName>Negative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Undetermined</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
         <fullName>Waters_of_the_US</fullName>
         <active>true</active>
         <label>Waters of the US</label>
+        <picklistValues>
+            <picklist>Pro_Cons__c</picklist>
+            <values>
+                <fullName>Negative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Undetermined</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Waters_of_the_US_Step_0</fullName>
+        <active>true</active>
+        <label>Waters of the US – Step 0</label>
         <picklistValues>
             <picklist>Pro_Cons__c</picklist>
             <values>

@@ -1,4 +1,4 @@
-<apex:page controller="FormPrintableTypeOne" showHeader="false" title="EPA - WebForms PDF" cache="false" applyHtmlTag="false" action="{!validateOrRedirect}" renderAs="PDF">
+<apex:page controller="FormPrintableTypeOne" showHeader="false" title="EPA - WebForms PDF" cache="false" applyHtmlTag="false" applyBodyTag="false" action="{!validateOrRedirect}" renderAs="PDF">
     <head>
     <!-- Default Salesforce styles -->
     <link class="user" href="/sCSS/40.0/sprites/1498159010000/Theme3/default/gc/zen-componentsCompatible.css" rel="stylesheet" type="text/css" />

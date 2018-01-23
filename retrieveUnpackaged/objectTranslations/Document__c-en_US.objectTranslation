@@ -50,6 +50,10 @@
         <name>Alternate_Project_Officer_Email__c</name>
     </fields>
     <fields>
+        <label><!-- Alternate Project Officer Name --></label>
+        <name>Alternate_Project_Officer_Name__c</name>
+    </fields>
+    <fields>
         <label><!-- Alternate Project Officer Phone --></label>
         <name>Alternate_Project_Officer_Phone__c</name>
     </fields>
@@ -61,6 +65,10 @@
     <fields>
         <label><!-- Alternate Work Assignment Manager Email --></label>
         <name>Alternate_Work_Assignment_Manager_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Alternate Work Assignment Manager Name --></label>
+        <name>Alternate_Work_Assignment_Manager_Name__c</name>
     </fields>
     <fields>
         <label><!-- Alternate Work Assignment Manager Phone --></label>
@@ -237,6 +245,10 @@
         <name>Bankcard_Holder_Email__c</name>
     </fields>
     <fields>
+        <label><!-- Bankcard Holder Name --></label>
+        <name>Bankcard_Holder_Name__c</name>
+    </fields>
+    <fields>
         <label><!-- Bankcard Holder Phone --></label>
         <name>Bankcard_Holder_Phone__c</name>
     </fields>
@@ -273,6 +285,23 @@
     <fields>
         <label><!-- DCN --></label>
         <name>DCN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Preparer Email --></label>
+        <name>Document_Preparer_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Preparer Name --></label>
+        <name>Document_Preparer_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Preparer Phone --></label>
+        <name>Document_Preparer_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Preparer --></label>
+        <name>Document_Preparer__c</name>
+        <relationshipLabel><!-- Documents (Document Preparer) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Document Type Number --></label>
@@ -6351,6 +6380,10 @@
         <name>Project_Officer_Email__c</name>
     </fields>
     <fields>
+        <label><!-- Project Officer Name --></label>
+        <name>Project_Officer_Name__c</name>
+    </fields>
+    <fields>
         <label><!-- Project Officer Phone --></label>
         <name>Project_Officer_Phone__c</name>
     </fields>
@@ -6371,6 +6404,18 @@
     <fields>
         <label><!-- Record Type Code --></label>
         <name>Record_Type_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requester Email --></label>
+        <name>Requester_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requester Name --></label>
+        <name>Requester_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requester Phone --></label>
+        <name>Requester_Phone__c</name>
     </fields>
     <fields>
         <label><!-- Requester --></label>
@@ -6411,10 +6456,6 @@
         <picklistValues>
             <masterLabel>LDCM0000 - DCFUEL Database -Maintenance</masterLabel>
             <translation><!-- LDCM0000 - DCFUEL Database -Maintenance --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LDCMIC00</masterLabel>
-            <translation><!-- LDCMIC00 --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>LDCMSC00 - DCFUEL Database - Maintenance - Security</masterLabel>
@@ -6501,76 +6542,24 @@
             <translation><!-- LRSP0000 - EPA - Moderated Transaction System - Preliminary Design --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>LSLMIABS - Desktop Computer Services and Seat Management</masterLabel>
-            <translation><!-- LSLMIABS - Desktop Computer Services and Seat Management --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LSLMIABS - End-User Systems &amp; Support - General Products (not cover by other codes)</masterLabel>
-            <translation><!-- LSLMIABS - End-User Systems &amp; Support - General Products (not cover by other codes) --></translation>
-        </picklistValues>
-        <picklistValues>
             <masterLabel>LSLMIABS - WCF - Desktop Costs</masterLabel>
             <translation><!-- LSLMIABS - WCF - Desktop Costs --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>LSLMIABS - WCF - End-User Systems &amp; Support</masterLabel>
-            <translation><!-- LSLMIABS - WCF - End-User Systems &amp; Support --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LSLMIBBS - Network (Data and Voice)</masterLabel>
-            <translation><!-- LSLMIBBS - Network (Data and Voice) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LSLMIBBS - Networks (Data and Voice)</masterLabel>
-            <translation><!-- LSLMIBBS - Networks (Data and Voice) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LSLMIBBS - Telecommunications System &amp; Support</masterLabel>
-            <translation><!-- LSLMIBBS - Telecommunications System &amp; Support --></translation>
+            <masterLabel>LSLMIABZ</masterLabel>
+            <translation><!-- LSLMIABZ --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>LSLMIBBS - WCF - Network Costs</masterLabel>
             <translation><!-- LSLMIBBS - WCF - Network Costs --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>LSLMIBBS - WCF - Telecommunications System &amp; Support</masterLabel>
-            <translation><!-- LSLMIBBS - WCF - Telecommunications System &amp; Support --></translation>
-        </picklistValues>
-        <picklistValues>
             <masterLabel>LSLMICBS - Data Centers</masterLabel>
             <translation><!-- LSLMICBS - Data Centers --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>LSLMICBS - Mainframes/Servers Services &amp; Support</masterLabel>
-            <translation><!-- LSLMICBS - Mainframes/Servers Services &amp; Support --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LSLMICBS - WCF - Mainframe/Servers Services &amp; Support</masterLabel>
-            <translation><!-- LSLMICBS - WCF - Mainframe/Servers Services &amp; Support --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LSLMSCBS - WCF - Desktop Costs - Security</masterLabel>
-            <translation><!-- LSLMSCBS - WCF - Desktop Costs - Security --></translation>
-        </picklistValues>
-        <picklistValues>
             <masterLabel>LSLMSCBS - WCF - End-User - Security</masterLabel>
             <translation><!-- LSLMSCBS - WCF - End-User - Security --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LSLMSCBS - WCF - End-User Systems &amp; Support - Security</masterLabel>
-            <translation><!-- LSLMSCBS - WCF - End-User Systems &amp; Support - Security --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LSLMSCBS - WCF - Mainframe/Servers Services &amp; Support - Security</masterLabel>
-            <translation><!-- LSLMSCBS - WCF - Mainframe/Servers Services &amp; Support - Security --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LSLMSCBS - WCF - Network Costs - Security</masterLabel>
-            <translation><!-- LSLMSCBS - WCF - Network Costs - Security --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LSLMSCBS - WCF - Telecommunications System &amp; Support - Security</masterLabel>
-            <translation><!-- LSLMSCBS - WCF - Telecommunications System &amp; Support - Security --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>LSMM0000 - Best Workplaces for Commuters Database</masterLabel>
@@ -6653,40 +6642,36 @@
             <translation><!-- LVGD0000 - EV - GHG - Development --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>LVGD0000 - EV-GHG - Development</masterLabel>
-            <translation><!-- LVGD0000 - EV-GHG - Development --></translation>
-        </picklistValues>
-        <picklistValues>
             <masterLabel>LVGM0000 - EV - GHG - Maintenance</masterLabel>
             <translation><!-- LVGM0000 - EV - GHG - Maintenance --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LVGM0000 - EV-GHG - Maintenance</masterLabel>
-            <translation><!-- LVGM0000 - EV-GHG - Maintenance --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>LVGMSC00 - EV - GHG - Maintenance - Security</masterLabel>
             <translation><!-- LVGMSC00 - EV - GHG - Maintenance - Security --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>LVGMSC00 - EV-GHG - Maintenance - Security</masterLabel>
-            <translation><!-- LVGMSC00 - EV-GHG - Maintenance - Security --></translation>
-        </picklistValues>
-        <picklistValues>
             <masterLabel>LVGP0000 - EV - GHG - Preliminary Design</masterLabel>
             <translation><!-- LVGP0000 - EV - GHG - Preliminary Design --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>LVGP0000 - EV-GHG - Preliminary Design</masterLabel>
-            <translation><!-- LVGP0000 - EV-GHG - Preliminary Design --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>LVRD0000 - VERIFY - Development</masterLabel>
             <translation><!-- LVRD0000 - VERIFY - Development --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>LVRD00M0</masterLabel>
+            <translation><!-- LVRD00M0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LVRDSCM0</masterLabel>
+            <translation><!-- LVRDSCM0 --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>LVRM0000 - VERIFY - Maintenance</masterLabel>
             <translation><!-- LVRM0000 - VERIFY - Maintenance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LVRM00M0</masterLabel>
+            <translation><!-- LVRM00M0 --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>LVRMIC00</masterLabel>
@@ -6701,6 +6686,10 @@
             <translation><!-- LVRP0000 - VERIFY - Preliminary Design --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>LVRP00M0</masterLabel>
+            <translation><!-- LVRP00M0 --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>ME275600</masterLabel>
             <translation><!-- ME275600 --></translation>
         </picklistValues>
@@ -6711,6 +6700,10 @@
         <picklistValues>
             <masterLabel>MN275600</masterLabel>
             <translation><!-- MN275600 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QM - Motor Vehicle and Engine Compliance</masterLabel>
+            <translation><!-- QM - Motor Vehicle and Engine Compliance --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -7927,12 +7920,12 @@
             <translation><!-- 56CC - HEAVY DUTY HIGHWAY &amp; NON-ROAD PROGRAM SUPPORT --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>56CF - FUELS COMPLIANCE DATA</masterLabel>
-            <translation><!-- 56CF - FUELS COMPLIANCE DATA --></translation>
+            <masterLabel>56CF - FUELS COMPLIANCE POLICY</masterLabel>
+            <translation><!-- 56CF - FUELS COMPLIANCE POLICY --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>56CG - FUELS COMPLIANCE POLICY</masterLabel>
-            <translation><!-- 56CG - FUELS COMPLIANCE POLICY --></translation>
+            <masterLabel>56CG - FUELS COMPLIANCE DATA</masterLabel>
+            <translation><!-- 56CG - FUELS COMPLIANCE DATA --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>56D - TESTING AND ADVANCED TECHNOLOGY DIVISION</masterLabel>
@@ -7961,6 +7954,10 @@
         <picklistValues>
             <masterLabel>56D7 - ADVANCED TESTING SERVICES</masterLabel>
             <translation><!-- 56D7 - ADVANCED TESTING SERVICES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>56D8 - NCAT</masterLabel>
+            <translation><!-- 56D8 - NCAT --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>56D9 - AUTOMATION OF COMPLIANCE SYSTEMS</masterLabel>
@@ -8027,20 +8024,16 @@
             <translation><!-- 56F - TRANSPORTATION AND CLIMATE DIVISION --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>56F0X04 - RW89923674</masterLabel>
-            <translation><!-- 56F0X04 - RW89923674 --></translation>
-        </picklistValues>
-        <picklistValues>
             <masterLabel>56F1 - ADMINISTRATION/MGMT</masterLabel>
             <translation><!-- 56F1 - ADMINISTRATION/MGMT --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>56FA - Vehicle Trends</masterLabel>
-            <translation><!-- 56FA - Vehicle Trends --></translation>
+            <masterLabel>56FA - CLIMATE ANALYSIS AND STRATEGY CENTER</masterLabel>
+            <translation><!-- 56FA - CLIMATE ANALYSIS AND STRATEGY CENTER --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>56FC - INNOVATIVE STRATEGIES GROUP</masterLabel>
-            <translation><!-- 56FC - INNOVATIVE STRATEGIES GROUP --></translation>
+            <masterLabel>56FC - NATIONAL CLEAN DIESEL CAMPAIGN</masterLabel>
+            <translation><!-- 56FC - NATIONAL CLEAN DIESEL CAMPAIGN --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>56FF - FACA: MOBILE SOURCE TECH REVIEW SUBCOMMITTEE</masterLabel>
@@ -8055,12 +8048,12 @@
             <translation><!-- 56FH - STATE REGULATORY SUPPORT --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>56FM - Climate Economics Modeling</masterLabel>
-            <translation><!-- 56FM - Climate Economics Modeling --></translation>
+            <masterLabel>56FM - CLIMATE ECONOMICS MODELING</masterLabel>
+            <translation><!-- 56FM - CLIMATE ECONOMICS MODELING --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>56FT - Technical Analysis</masterLabel>
-            <translation><!-- 56FT - Technical Analysis --></translation>
+            <masterLabel>56FT - TECHNOLOGY ASSESSMENT PROGRAMS</masterLabel>
+            <translation><!-- 56FT - TECHNOLOGY ASSESSMENT PROGRAMS --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>56H - ASSESSMENT AND STANDARDS DIVISIONS</masterLabel>
@@ -8075,8 +8068,8 @@
             <translation><!-- 56H2 - HEAVY-DUTY ONROAD CENTER --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>56H3 - NONROAD CENTER</masterLabel>
-            <translation><!-- 56H3 - NONROAD CENTER --></translation>
+            <masterLabel>56H3 - LARGE MARINE AND AVIATION CENTER</masterLabel>
+            <translation><!-- 56H3 - LARGE MARINE AND AVIATION CENTER --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>56H4 - LIGHT-DUTY ONROAD CENTER</masterLabel>
@@ -8095,6 +8088,10 @@
             <translation><!-- 56H7 - FUELS --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>56H8 - DATA AND TESTING CENTER</masterLabel>
+            <translation><!-- 56H8 - DATA AND TESTING CENTER --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>56XX - FUNDS NOT ALLOCATED</masterLabel>
             <translation><!-- 56XX - FUNDS NOT ALLOCATED --></translation>
         </picklistValues>
@@ -8102,6 +8099,10 @@
     <fields>
         <label><!-- Work Assignment Manager Email --></label>
         <name>Work_Assignment_Manager_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Assignment Manager Name --></label>
+        <name>Work_Assignment_Manager_Name__c</name>
     </fields>
     <fields>
         <label><!-- Work Assignment Manager Phone --></label>
@@ -8318,7 +8319,19 @@
         <name>Contract_Number_NoSpecChar</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- Please exclude special characters from Grant Number --></errorMessage>
+        <name>Grant_Number_NoSpecChar</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please exclude special characters from IA Number --></errorMessage>
+        <name>IA_Number_NoSpecChar</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- DCN must be exactly 10 digits --></errorMessage>
         <name>Ten_Digit_DCN</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please exclude special characters from Work Assignment/TDD Number --></errorMessage>
+        <name>WATDD_Number_NoSpecChar</name>
     </validationRules>
 </CustomObjectTranslation>

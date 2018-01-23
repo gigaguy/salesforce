@@ -176,6 +176,7 @@
         <columns>Topic_Name__c</columns>
         <columns>Summary_of_Comments_on_this_Topic__c</columns>
         <columns>Agency_Comment_Response__c</columns>
+        <columns>RECORDTYPE</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -185,6 +186,7 @@
         <columns>Topic_Name__c</columns>
         <columns>Summary_of_Comments_on_this_Topic__c</columns>
         <columns>Topic_Response_Status__c</columns>
+        <columns>LAST_ACTIVITY</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>RECORDTYPE</field>
@@ -238,9 +240,79 @@
         </picklistValues>
     </recordTypes>
     <recordTypes>
+        <fullName>WOTUS_Recommendations</fullName>
+        <active>true</active>
+        <label>WOTUS Recommendations</label>
+        <picklistValues>
+            <picklist>Comment_Summary_status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Topic_Response_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
         <fullName>Waters_of_the_US</fullName>
         <active>true</active>
         <label>Waters of the US</label>
+        <picklistValues>
+            <picklist>Comment_Summary_status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Topic_Response_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Waters_of_the_US_Step_0</fullName>
+        <active>true</active>
+        <label>Waters of the US – Step 0</label>
         <picklistValues>
             <picklist>Comment_Summary_status__c</picklist>
             <values>

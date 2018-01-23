@@ -15,24 +15,24 @@ public class AuthLanding {
         // Check for user identification from WAM headers and confirm it is coming from WAM server
         if (headers.containsKey('uid') 
             && (headers.get('Shib-Identity-Provider') == 'https://idp.epa.gov/' || headers.get('Shib-Identity-Provider') == 'https://idpstg.epa.gov/')
-            //&& headers.get('X-Forwarded-Host') == 'oeiodstadev.epa.gov'
+            //&& headers.get('X-Forwarded-Host') == 'oeiodstadev.epa.gov'   
             // Disabled 8/24/2017 to accomadate different EPA subdomains for other environments and changing WAM values
             ) 
             { UID = headers.get('uid'); }
         else if (headers.containsKey('AUTH_USER')
-            && (headers.get('Shib-Identity-Provider') == 'https://idp.epa.gov/' || headers.get('Shib-Identity-Provider') == 'https://idpstg.epa.gov/')
+            && (headers.get('Shib-Identity-Provider') == 'https://idp.epa.gov/' || headers.get('Shib-Identity-Provider') == 'https://idpstg.epa.gov/') 
             //&& headers.get('X-Forwarded-Host') == 'oeiodstadev.epa.gov'
             // Disabled 8/24/2017 to accomadate different EPA subdomains for other environments and changing WAM values
             ) 
             { UID = headers.get('AUTH_USER'); }    
         else if (headers.containsKey('REMOTE_USER')
-            && (headers.get('Shib-Identity-Provider') == 'https://idp.epa.gov/' || headers.get('Shib-Identity-Provider') == 'https://idpstg.epa.gov/')
+            && (headers.get('Shib-Identity-Provider') == 'https://idp.epa.gov/' || headers.get('Shib-Identity-Provider') == 'https://idpstg.epa.gov/') 
             //&& headers.get('X-Forwarded-Host') == 'oeiodstadev.epa.gov'
             // Disabled 8/24/2017 to accomadate different EPA subdomains for other environments and changing WAM values
             ) 
             { UID = headers.get('REMOTE_USER'); } 
 
-        // Manual override URL parameter for admin testing, removed when deployed to production
+        // Manual override URL parameter for testing, will be removed once deployed
         // if (params.containsKey('UID')) uId = params.get('UID');
         
         // Set any found user identification to lowercase for comparison to user object
@@ -45,8 +45,8 @@ public class AuthLanding {
         // Log Header & Parameters
         UtilityMethods.logHeaders();
         // End Log Header & Parameters
-        */        
-
+        */   
+        
         // If user identification is present
         if (UID != '') {
             //find contact/user

@@ -27,6 +27,19 @@ public class FormPrintableTypeOne_Test {
         controller.valid = true;
         controller.validateOrRedirect();
         controller.valid = false;
-        controller.validateOrRedirect();  
+        controller.validateOrRedirect();
+        
+        System.currentPageReference().getParameters().put('sID', 'internalSysUser');  
+        controller.valid = true;
+        controller.validateOrRedirect();    
+    }
+
+    @isTest
+    static void testControllerInternalUser(){
+ 
+        Test.setCurrentPageReference(new PageReference('Page.FormPage'));
+        System.currentPageReference().getParameters().put('sID', 'internalSysUser');
+       
+        FormPrintableTypeOne controller = new FormPrintableTypeOne();
     }
 }

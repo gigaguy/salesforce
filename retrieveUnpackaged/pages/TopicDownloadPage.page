@@ -1,0 +1,558 @@
+<apex:page applyHtmlTag="true" applyBodyTag="true" showHeader="true" contentType="application/msword#TopicData.doc" controller="TopicDownloadController">
+   <apex:variable var="counter" value="{!1}" /> 
+   <apex:variable var="relatedRefferences" value=""/>         
+    <html> 
+    <head> 
+     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />   
+     <style>   
+       body 
+{ 
+font-family: "Times New Roman"; 
+font-size: 12pt;
+margin-left: 0px;         
+margin-right: 0px;
+}         
+p.TopicMain, li.TopicMain, div.TopicMain
+    {mso-style-name:"Main Topic";
+    mso-style-unhide:no;
+    mso-style-qformat:yes;
+    mso-style-link:"Main Topic Char";
+    mso-margin-top-alt:auto;
+    margin-right:0in;
+    mso-margin-bottom-alt:auto;
+    margin-left:0in;
+    mso-pagination:widow-orphan;
+    mso-outline-level:1;
+    font-size:24.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    mso-font-kerning:18.0pt;
+    font-weight:bold;}
+p.SubTopic, li.SubTopic, div.SubTopic
+    {mso-style-name:"Sub Topic";
+    mso-style-unhide:no;
+    mso-style-qformat:yes;
+    mso-style-link:"Sub Topic Char";
+    mso-margin-top-alt:auto;
+    margin-right:0in;
+    mso-margin-bottom-alt:auto;
+    margin-left:0in;
+    mso-pagination:widow-orphan;
+    mso-outline-level:2;
+    font-size:18.0pt;
+    mso-bidi-font-size:12.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    mso-bidi-font-weight:normal;}
+span.TopicMainChar
+    {mso-style-name:"Main Topic Char";
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-link:"Main Topic";
+    mso-ansi-font-size:24.0pt;
+    mso-bidi-font-size:24.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    mso-font-kerning:18.0pt;
+    font-weight:bold;}
+p.SummaryOfComments, li.SummaryOfComments, div.SummaryOfComments
+    {mso-style-name:"Summary Of Comments";
+    mso-style-unhide:no;
+    mso-style-qformat:yes;
+    mso-margin-top-alt:auto;
+    margin-right:0in;
+    mso-margin-bottom-alt:auto;
+    margin-left:0.5in;
+    mso-pagination:widow-orphan;
+    mso-outline-level:3;
+    font-size:12.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    text-decoration:underline;
+    text-underline:single;}
+span.SubTopicChar
+    {mso-style-name:"Sub Topic Char";
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-link:"Sub Topic";
+    mso-ansi-font-size:18.0pt;
+    mso-bidi-font-size:12.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    mso-bidi-font-weight:normal;}
+p.AgencyResponse, li.AgencyResponse, div.AgencyResponse
+    {mso-style-name:"Agency Response";
+    mso-style-unhide:no;
+    mso-style-qformat:yes;
+    mso-style-link:"Agency Response Char";
+    mso-margin-top-alt:auto;
+    margin-right:0in;
+    mso-margin-bottom-alt:auto;
+    margin-left:0.5in;
+    mso-pagination:widow-orphan;
+    mso-outline-level:3;
+    font-size:12.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    text-decoration:underline;
+    text-underline:single;}
+span.NormalWebChar
+    {mso-style-name:"Normal \(Web\) Char";
+    mso-style-noshow:yes;
+    mso-style-priority:99;
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-link:"Normal \(Web\)";
+    mso-ansi-font-size:12.0pt;
+    mso-bidi-font-size:12.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;}
+span.SummaryOfCommentsChar
+    {mso-style-name:"Summary Of Comments Char";
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-parent:"Normal \(Web\) Char";
+    mso-style-link:"Summary Of Comments";
+    mso-ansi-font-size:12.0pt;
+    mso-bidi-font-size:12.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    text-decoration:underline;
+    text-underline:single;}
+p.SnippetTitle, li.SnippetTitle, div.SnippetTitle
+    {mso-style-name:"Snippet Title";
+    mso-style-unhide:no;
+    mso-style-qformat:yes;
+    mso-style-link:"Snippet Title Char";
+    mso-margin-top-alt:auto;
+    margin-right:0in;
+    mso-margin-bottom-alt:auto;
+    margin-left:1.0in;
+    mso-pagination:widow-orphan;
+    mso-outline-level:4;
+    font-size:12.0pt;
+    mso-bidi-font-size:10.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    text-decoration:underline;
+    text-underline:single;}
+span.AgencyResponseChar
+    {mso-style-name:"Agency Response Char";
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-link:"Agency Response";
+    mso-ansi-font-size:12.0pt;
+    mso-bidi-font-size:12.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    text-decoration:underline;
+    text-underline:single;}
+p.SpecificComments, li.SpecificComments, div.SpecificComments
+    {mso-style-name:"Specific Comments";
+    mso-style-unhide:no;
+    mso-style-qformat:yes;
+    mso-style-link:"Specific Comments Char";
+    mso-margin-top-alt:auto;
+    margin-right:0in;
+    mso-margin-bottom-alt:auto;
+    margin-left:0.5in;
+    mso-pagination:widow-orphan;
+    mso-outline-level:3;
+    font-size:12.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    text-decoration:underline;
+    text-underline:single;}
+span.SnippetTitleChar
+    {mso-style-name:"Snippet Title Char";
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-link:"Snippet Title";
+    mso-ansi-font-size:12.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    text-decoration:underline;
+    text-underline:single;}
+p.SnippetComment, li.SnippetComment, div.SnippetComment
+    {mso-style-name:"Snippet Comment";
+    mso-style-unhide:yes;
+    mso-style-qformat:yes;
+    mso-style-link:"Snippet Comment Char";
+    mso-margin-top-alt:auto;
+    margin-right:0in;
+    mso-margin-bottom-alt:auto;
+    margin-left:1.0in;
+    mso-pagination:widow-orphan;
+    mso-outline-level:5;
+    font-size:12.0pt;
+    mso-bidi-font-size:7.5pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    text-decoration:underline;
+    text-underline:single;}
+span.SpecificCommentsChar
+    {mso-style-name:"Specific Comments Char";
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-link:"Specific Comments";
+    mso-ansi-font-size:12.0pt;
+    mso-bidi-font-size:12.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    text-decoration:underline;
+    text-underline:single;}
+p.SnippetNotes, li.SnippetNotes, div.SnippetNotes
+    {mso-style-name:"Snippet Notes";
+    mso-style-unhide:no;
+    mso-style-qformat:yes;
+    mso-style-parent:"Normal \(Web\)";
+    mso-style-link:"Snippet Notes Char";
+    mso-margin-top-alt:auto;
+    margin-right:0in;
+    mso-margin-bottom-alt:auto;
+    margin-left:1.0in;
+    mso-pagination:widow-orphan;
+    mso-outline-level:5;
+    font-size:12.0pt;
+    mso-bidi-font-size:7.5pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    text-decoration:underline;
+    text-underline:single;}
+span.SnippetCommentChar
+    {mso-style-name:"Snippet Comment Char";
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-link:"Snippet Comment";
+    mso-bidi-font-size:7.5pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    text-decoration:underline;
+    text-underline:single;}
+p.SnippetResponse, li.SnippetResponse, div.SnippetResponse
+    {mso-style-name:"Snippet Response";
+    mso-style-unhide:no;
+    mso-style-qformat:yes;
+    mso-style-link:"Snippet Response Char";
+    mso-margin-top-alt:auto;
+    margin-right:0in;
+    mso-margin-bottom-alt:auto;
+    margin-left:1.0in;
+    mso-pagination:widow-orphan;
+    mso-outline-level:5;
+    font-size:12.0pt;
+    mso-bidi-font-size:12.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    text-decoration:underline;
+    text-underline:single;}
+span.SnippetNotesChar
+    {mso-style-name:"Snippet Notes Char";
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-parent:"Normal \(Web\) Char";
+    mso-style-link:"Snippet Notes";
+    mso-ansi-font-size:12.0pt;
+    mso-bidi-font-size:7.5pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    text-decoration:underline;
+    text-underline:single;}
+p.References, li.References, div.References
+    {mso-style-name:References;
+    mso-style-unhide:no;
+    mso-style-qformat:yes;
+    mso-style-link:"References Char";
+    mso-margin-top-alt:auto;
+    margin-right:0in;
+    mso-margin-bottom-alt:auto;
+    margin-left:0.5in;
+    mso-pagination:widow-orphan;
+    mso-outline-level:3;
+    font-size:12.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    text-decoration:underline;
+    text-underline:single;}
+span.SnippetResponseChar
+    {mso-style-name:"Snippet Response Char";
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-link:"Snippet Response";
+    mso-bidi-font-size:12.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    text-decoration:underline;
+    text-underline:single;}
+span.ReferencesChar
+    {mso-style-name:"References Char";
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-parent:"Normal \(Web\) Char";
+    mso-style-link:References;
+    mso-ansi-font-size:12.0pt;
+    mso-bidi-font-size:12.0pt;
+    font-family:"Times New Roman",serif;
+    mso-fareast-font-family:"Times New Roman";
+    mso-fareast-theme-font:minor-fareast;
+    font-weight:bold;
+    text-decoration:underline;
+    text-underline:single;}
+p.SnippetCommentDetails, li.SnippetCommentDetails, div.SnippetCommentDetails
+    {
+        mso-style-name:"Snippet Comment Details";
+        mso-style-unhide:no;
+        mso-style-qformat:yes;
+        mso-style-link:"Snippet Comment Details Char";
+        mso-margin-top-alt:auto;
+        margin-right:0in;
+        mso-margin-bottom-alt:auto;
+        margin-left:0.5in;
+        mso-pagination:widow-orphan;
+        font-size:11.0pt;
+        font-family:"Times New Roman",serif;
+        mso-fareast-font-family:"Times New Roman";
+    }
+span.SnippetCommentDetailsChar
+    {mso-style-name:"Snippet Comment Details Char";
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-link:"Snippet Comment Details";
+}
+         
+p.SummaryOfCommentsDetails, li.SummaryOfCommentsDetails, div.SummaryOfCommentsDetails
+    {
+        mso-style-name:"Summary Of Comments Details";
+        mso-style-unhide:no;
+        mso-style-qformat:yes;
+        mso-style-link:"Summary Of Comments Details";
+        mso-margin-top-alt:auto;
+        margin-right:0in;
+        mso-margin-bottom-alt:auto;
+        margin-left:0.5in;
+        mso-pagination:widow-orphan;
+        font-size:11.0pt;
+        font-family:"Times New Roman",serif;
+        mso-fareast-font-family:"Times New Roman";
+    }
+span.SummaryOfCommentsDetails
+    {mso-style-name:"Summary Of Comments Details";
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-link:"Summary Of Comments Details";
+}  
+         
+p.AgencyResponseDetails, li.AgencyResponseDetails, div.AgencyResponseDetails
+    {
+        mso-style-name:"Agency Response Details";
+        mso-style-unhide:no;
+        mso-style-qformat:yes;
+        mso-style-link:"Agency Response Details";
+        mso-margin-top-alt:auto;
+        margin-right:0in;
+        mso-margin-bottom-alt:auto;
+        margin-left:0.5in;
+        mso-pagination:widow-orphan;
+        font-size:11.0pt;
+        font-family:"Times New Roman",serif;
+        mso-fareast-font-family:"Times New Roman";
+    }
+span.AgencyResponseDetails
+    {mso-style-name:"Agency Response Details";
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-link:"Agency Response Details";
+}  
+
+p.SnippetNotesDetails, li.SnippetNotesDetails, div.SnippetNotesDetails
+    {
+        mso-style-name:"Snippet Notes Details";
+        mso-style-unhide:no;
+        mso-style-qformat:yes;
+        mso-style-link:"Snippet Notes Details";
+        mso-margin-top-alt:auto;
+        margin-right:0in;
+        mso-margin-bottom-alt:auto;
+        margin-left:0.5in;
+        mso-pagination:widow-orphan;
+        font-size:11.0pt;
+        font-family:"Times New Roman",serif;
+        mso-fareast-font-family:"Times New Roman";
+    }
+span.SnippetNotesDetails
+    {mso-style-name:"Snippet Notes Details";
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-link:"Snippet Notes Details";
+}
+
+p.SnippetResponseDetails, li.SnippetResponseDetails, div.SnippetResponseDetails
+    {
+        mso-style-name:"Snippet Response Details";
+        mso-style-unhide:no;
+        mso-style-qformat:yes;
+        mso-style-link:"Snippet Response Details";
+        mso-margin-top-alt:auto;
+        margin-right:0in;
+        mso-margin-bottom-alt:auto;
+        margin-left:0.5in;
+        mso-pagination:widow-orphan;
+        font-size:11.0pt;
+        font-family:"Times New Roman",serif;
+        mso-fareast-font-family:"Times New Roman";
+    }
+span.SnippetResponseDetails
+    {mso-style-name:"Snippet Response Details";
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-link:"Snippet Response Details";
+}
+
+p.ReferencesDetails, li.ReferencesDetails, div.ReferencesDetails
+    {
+        mso-style-name:"References Details";
+        mso-style-unhide:no;
+        mso-style-qformat:yes;
+        mso-style-link:"SReferences Details";
+        mso-margin-top-alt:auto;
+        margin-right:0in;
+        mso-margin-bottom-alt:auto;
+        margin-left:0.5in;
+        mso-pagination:widow-orphan;
+        font-size:11.0pt;
+        font-family:"Times New Roman",serif;
+        mso-fareast-font-family:"Times New Roman";
+    }
+span.ReferencesDetails
+    {mso-style-name:"References Details";
+    mso-style-unhide:no;
+    mso-style-locked:yes;
+    mso-style-link:"References Details";
+}  
+@page Section1 {mso-footer:f1;}
+div.Section1{page:Section1;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter{
+         margin:0in;
+         margin-bottom:.0001pt;
+         mso-pagination:widow-orphan;
+         tab-stops:center 3.0in right 6.0in;
+         }         
+
+     </style>
+   </head>
+   <body>
+   <div class="Section1">
+   <apex:outputPanel >
+       <div>
+       <apex:variable var="counter" value="{!1}" />
+       <p class="TopicMain"> Topic {!mainTopicDisplayName}</p>       
+       <apex:repeat value="{!mapTopics}" var="mapKey">
+           <apex:repeat value="{!mapTopics[mapKey]}" var="topicWrapper" >                                                                
+               <p class="SubTopic">{!topicWrapper.topicName}</p>               
+               <apex:outputPanel rendered="{!expSummOfComm}">
+                                         
+                       <p class="SummaryOfComments"><u>Summary of Comments</u></p>
+                       <div class="SummaryOfCommentsDetails">
+                           <apex:outputText value="{!topicWrapper.summComments}" escape="false" style="margin-left:0.5in"/>
+                       </div>
+
+               </apex:outputPanel>
+               
+               <apex:outputPanel rendered="{!expAgencyResp}">
+                   <div >
+                       <p class="AgencyResponse"><u>Agency Response</u></p>
+                       <div class="AgencyResponseDetails">
+                           <apex:outputText value="{!topicWrapper.agencyResponse}" escape="false" style="margin-left:0.5in"/>
+                       </div>
+                   </div>
+               </apex:outputPanel>
+               <div >
+                    <p class="SpecificComments"><u>Specific Comments</u></p>
+               </div>
+                   <!-- Loop through the snippets -->                   
+                   <apex:variable var="relatedRefferences" value=""/>
+                   <apex:repeat value="{!topicWrapper.snippets}" var="snippet">                                                                        
+                       <div>                           
+                           <p class="SnippetTitle">
+                           <!--{!snippet.tName}.{!counter}&nbsp;&nbsp;--><u>{!snippet.agencyName}&nbsp;(Doc. #{!snippet.submissionNumber}, p. {!snippet.pdfPage})</u>
+                           </p>
+                       
+                           <apex:outputPanel rendered="{!expComm}">
+                           <p class="SnippetComment"><u>Comment</u></p>
+                           <div class="SnippetCommentDetails">{!snippet.extractedText}</div>
+                           </apex:outputPanel>
+                           
+                           <apex:outputPanel rendered="{!expNotes}">
+                           <p class="SnippetNotes"><u>Notes</u></p>
+                           <div class="SnippetNotesDetails">{!snippet.notes}</div>
+                           </apex:outputPanel>
+                           
+                           <apex:outputPanel rendered="{!expResp}">
+                           <p class="SnippetResponse"><u>Response</u></p>
+                           <div class="SnippetResponseDetails">{!snippet.snippetResponse}</div>
+                           </apex:outputPanel>
+                           
+                           <apex:outputPanel rendered="{!LEN(snippet.references)>0}">
+                            <apex:variable var="relatedRefferences" value="{!relatedRefferences + '<br/>' + snippet.references}" />
+                           </apex:outputPanel>
+                       </div>
+                       <apex:variable var="counter" value="{!counter+1}"/>
+                   </apex:repeat> 
+                    <!-- Load all these snippet references -->
+                    <div>
+                        <p class="References"><u>References</u></p>
+                        <p class="ReferencesDetails">
+                            <apex:outputText value="{!relatedRefferences}" escape="false" style="margin-left:0.5in"/>
+                        </p>
+                    </div>
+           </apex:repeat>
+       </apex:repeat>
+      </div>
+   </apex:outputPanel>
+   <div style="mso-element:footer" id="f1">
+       <p class="MsoFooter">
+        <span style='mso-tab-count:2'></span>
+        <span style='mso-field-code:" PAGE "'></span>
+       </p>
+   </div>
+   </div>
+</body>
+</html> 
+ </apex:page>

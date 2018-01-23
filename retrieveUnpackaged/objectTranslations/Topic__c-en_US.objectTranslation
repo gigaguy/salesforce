@@ -67,13 +67,25 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
+    <quickActions>
+        <label><!-- Download --></label>
+        <name>Download</name>
+    </quickActions>
     <recordTypes>
         <label><!-- Bristol Bay --></label>
         <name>Bristol_Bay</name>
     </recordTypes>
     <recordTypes>
+        <label><!-- WOTUS Recommendations --></label>
+        <name>WOTUS_Recommendations</name>
+    </recordTypes>
+    <recordTypes>
         <label><!-- Waters of the US --></label>
         <name>Waters_of_the_US</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Waters of the US – Step 0 --></label>
+        <name>Waters_of_the_US_Step_0</name>
     </recordTypes>
     <startsWith>Consonant</startsWith>
     <validationRules>

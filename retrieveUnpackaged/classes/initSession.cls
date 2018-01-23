@@ -3,7 +3,7 @@ public class initSession {
     public id uID {get;set;}
     public map<string, string> headers;
     public map<string, string> params;
-
+   
     private user u;
 
     public initSession(){
@@ -19,7 +19,7 @@ public class initSession {
         headers = ApexPages.currentPage().getHeaders();
         params = ApexPages.currentPage().getParameters();
         
-        // 9/21/2017 - Larry Spackman - Disabled for deployment to Production because HeaderLogs custom object not being deployed
+        // 2017/09/21 - Larry Spackman - Disabled for deployment to Production because HeaderLogs custom object not being deployed
         /*
         // Log Header & Parameters
         UtilityMethods.logHeaders();
@@ -41,6 +41,9 @@ public class initSession {
                 
                 update u;
                 
+                // LS 2017/11/17: Temporary method to share all records with Forms Site Guest User for this logging in type-1 user
+                //shareRecords(u);
+                
                 // Redirect user to the form page with the new session ID set
                 //PageReference newPR = new PageReference('https://oeiodsta-oeiodstadev.cs33.force.com/FormPage');
                 PageReference newPR = new PageReference(Forms_URL__c.getValues('Form URL').URL__c);
@@ -52,9 +55,9 @@ public class initSession {
         return null;
     } // End onLoad()
 
-    private User findUser(){
+    private User findUser() {
         User u = [select id from User where Session_Token__c = :sID limit 1];
         return u;
-    }
+    } // End findUser()
     
 }

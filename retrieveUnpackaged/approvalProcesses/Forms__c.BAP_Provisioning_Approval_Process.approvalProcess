@@ -14,6 +14,8 @@
         <field>LastModifiedBy</field>
         <field>Name__c</field>
         <field>Quantity__c</field>
+        <field>Authorization_Reason__c</field>
+        <field>Role__c</field>
     </approvalPageFields>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
@@ -61,10 +63,14 @@
         <criteriaItems>
             <field>Forms__c.Form_Type__c</field>
             <operation>notEqual</operation>
-            <value>Developer Sandbox,Developer Pro Sandbox</value>
+            <value>Developer Sandbox,Developer Pro Sandbox,Full Sandbox,Full User Count,Starter User Count</value>
         </criteriaItems>
     </entryCriteria>
     <finalApprovalActions>
+        <action>
+            <name>BAP_Final_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
         <action>
             <name>BAP_Provisioning_Request_Completed</name>
             <type>Alert</type>
@@ -77,6 +83,10 @@
     <finalApprovalRecordLock>true</finalApprovalRecordLock>
     <finalRejectionActions>
         <action>
+            <name>BAP_Final_Rejection</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
             <name>Sandbox_Rejection_Notification_Alert</name>
             <type>Alert</type>
         </action>
@@ -87,6 +97,10 @@
     </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <initialSubmissionActions>
+        <action>
+            <name>BAP_Request_Submitted_Step</name>
+            <type>FieldUpdate</type>
+        </action>
         <action>
             <name>Status_Update_to_Submitted_for_Approval</name>
             <type>FieldUpdate</type>

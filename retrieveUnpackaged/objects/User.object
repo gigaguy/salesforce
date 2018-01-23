@@ -212,6 +212,15 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>QA_Manager__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>ORD-111 BAP form</description>
+        <externalId>false</externalId>
+        <label>QA Manager</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>SUPV_CODE_DESCR__c</fullName>
         <externalId>false</externalId>
         <label>Supervisor Type</label>
@@ -348,6 +357,26 @@
             <value>1</value>
         </filters>
         <label>Active Users</label>
+    </listViews>
+    <listViews>
+        <fullName>Active_Users_with_IDs</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.SAML_SUBJECT</columns>
+        <columns>PASTA_Person_ID__c</columns>
+        <columns>LAN_ID__c</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Active Users with IDs</label>
     </listViews>
     <listViews>
         <fullName>AdminUsers</fullName>

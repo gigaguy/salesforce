@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Cost-Share Contribution</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Cost-Share Contributions</value>
+    </caseValues>
+    <fields>
+        <label><!-- $ Amount --></label>
+        <name>Cash_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contribution Date --></label>
+        <name>Contribution_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost-Share Review --></label>
+        <name>Cost_Share_Review__c</name>
+        <relationshipLabel><!-- Cost-Share Contributions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- DCN --></label>
+        <name>DCN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- FY-Qtr --></label>
+        <name>FY_Qtr__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fund --></label>
+        <name>Fund__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Kind Amount --></label>
+        <name>In_Kind_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master Project ID --></label>
+        <name>Master_Project_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-Federal Sponsor --></label>
+        <name>Non_Federal_Sponsor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Obligated To --></label>
+        <name>Obligated_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org --></label>
+        <name>Org__c</name>
+    </fields>
+    <fields>
+        <label><!-- PRC --></label>
+        <name>PRC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+    </fields>
+    <layouts>
+        <layout>Cash Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Project Details --></label>
+            <section>Project Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>In Kind Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Project Details --></label>
+            <section>Project Details</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Cash Contribution --></label>
+        <name>Cash_Contribution</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- In Kind Contribution --></label>
+        <name>In_Kind_Contribution</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

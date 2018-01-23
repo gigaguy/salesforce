@@ -95,7 +95,7 @@
 .THIS .select {
     width: 90%;
     background: url("/resource/1502991134000/ddArrow") no-repeat right #fff;
-    background-size: 17px;
+    background-size: 13.5px;
     background-color:  rgb(255, 255, 255);
 	border-bottom-color: rgb(216, 221, 230);
 	border-bottom-left-radius:4px;
@@ -265,4 +265,25 @@
 
 .THIS .slds-button_destructive .label {
     color: white !important;
+}
+
+.THIS .invisible {
+    display: none;
+}
+
+.THIS .lookup__header {
+    display: none;
+}
+
+.THIS .lookup__footer {
+    display: none;
+}
+
+.THIS .divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+.THIS .required{
+    color: red !important;
 }

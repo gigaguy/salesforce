@@ -1,11 +1,9 @@
 <apex:page controller="AuthLanding" action="{!onLoad}" showheader="false" sidebar="false" cache="false">
 
-    <div style="margin-left: 20px;">
-    
+  <div style="margin-left: 20px;">
     <p>
-  		Under testing
+        Your session may have timed out. Please log in again.
     </p>
-      
   </div>
     
 </apex:page>

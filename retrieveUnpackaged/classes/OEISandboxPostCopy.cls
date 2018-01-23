@@ -14,28 +14,15 @@ global class OEISandboxPostCopy implements SandboxPostCopy {
         System.debug( 'Sandbox ID: ' + context.sandboxId() );
         System.debug( 'Sandbox Name: ' + context.sandboxName() );
 
-            
-        User u;
-        try {
-       /*
-        * Get ETL user ID
-        */
-            u = [ SELECT id,name,email FROM User WHERE name='BAP ETL' ];   
-            
-            System.debug( 'user sandbox email: ' + u.email );
-            
-            u.email = u.email.replace('@example.com', '').replace('=', '@');
-            
-            System.debug( 'user reverted email: ' + u.email );
-        /*
-        * Update user
-        */    
-            update u;
+        
+        List<User> UserList = [SELECT id, email FROM User WHERE name in ('Roy King','BAP ETL')];       
+                      
+        for(User u : UserList){
+            u.Email = u.Email.replace('@example.com', '').replace('=', '@');         
         }
-        catch (exception ex){
-            System.debug('ETL Update Failed');
+        
+        if(!UserList.isEmpty()){
+            update UserList;            
         }
-    
-    
-    }
+   }
 }

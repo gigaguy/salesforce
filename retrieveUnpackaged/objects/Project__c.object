@@ -68,31 +68,500 @@
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>56A</fullName>
+                    <fullName>56A - IO-DC</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>56C</fullName>
+                    <fullName>56C - CD</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>56D</fullName>
+                    <fullName>56D - TATD</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>56E</fullName>
+                    <fullName>56E - IO-AA</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>56F</fullName>
+                    <fullName>56F - TCD</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>56H</fullName>
+                    <fullName>56H - ASD</fullName>
                     <default>false</default>
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Application_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Received Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Area_of_Concern__c</fullName>
+        <externalId>false</externalId>
+        <label>Area of Concern</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>St. Louis River, MN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Torch Lake, MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Deer Lake</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Manistique River, MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Menominee River, WI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fox River/Green Bay, WI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sheboygan River, WI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Milwaukee Estuary, WI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Waukegon Harbor, IL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Grand Calumet River/Indiana Harbor Canal, IN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kalamazoo River, MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Muskegon Lake, MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>White Lake, MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Saginaw River, MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>St. Mary&apos;s River, MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>St. Clair River, MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Clinton River, MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rouge River, MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>River Raisin, MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Maumee River, OH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Black River, OH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cuyahoga River, OH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ashtabula River, OH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Buffalo River, NY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Detroit River, MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Presque Isle Bay, PA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Eighteenmile Creek, NY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rochester Embayment, NY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Oswego River, NY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>St. Lawrence River, NY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Niagara River, NY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>All AOCs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Applicable</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Closeout_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Closeout Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Financial_Summary_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Financial Summary Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Fiscal_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Fiscal Year</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Location City</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Location State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AZ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ID</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>KS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>KY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ME</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NJ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ND</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TX</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GU</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PW</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VI</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Master_Project_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Master Project ID</label>
+        <length>16</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Project_Code__c</fullName>
@@ -118,6 +587,16 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Project_Status_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Status Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Project__c</fullName>
         <externalId>false</externalId>
         <label>Project</label>
@@ -141,9 +620,31 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Sub_Task_Name__c</fullName>
         <externalId>false</externalId>
-        <formula>TEXT(Sub_Task_code__c) &amp; &quot; - &quot; &amp;  Sub_Task__c</formula>
+        <formula>Sub_Task_code__c &amp; &quot; - &quot; &amp;  Sub_Task__c</formula>
         <label>Sub-Task Name</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -155,7 +656,7 @@
         <fullName>Sub_Task__c</fullName>
         <externalId>false</externalId>
         <label>Sub-Task</label>
-        <length>80</length>
+        <length>180</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -166,52 +667,12 @@
         <fullName>Sub_Task_code__c</fullName>
         <externalId>false</externalId>
         <label>Sub-Task Code</label>
+        <length>2</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>1</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>2</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>3</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>4</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>5</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>6</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>7</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>8</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>-</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Task_Name__c</fullName>
@@ -246,7 +707,12 @@
         <filters>
             <field>AHRC__c</field>
             <operation>equals</operation>
-            <value>56H,56H - ASD</value>
+            <value>56H - ASD</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
         </filters>
         <label>ASD Projects</label>
     </listViews>
@@ -257,6 +723,7 @@
         <columns>Project_Name__c</columns>
         <columns>Task_Name__c</columns>
         <columns>Sub_Task_Name__c</columns>
+        <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -270,7 +737,17 @@
         <filters>
             <field>AHRC__c</field>
             <operation>equals</operation>
-            <value>56C,56C - CD</value>
+            <value>56C - CD</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filters>
+        <filters>
+            <field>Project_Code__c</field>
+            <operation>equals</operation>
+            <value>9065</value>
         </filters>
         <label>CD Projects</label>
     </listViews>
@@ -284,7 +761,12 @@
         <filters>
             <field>AHRC__c</field>
             <operation>equals</operation>
-            <value>56E,56E - IO-AA</value>
+            <value>56E - IO-AA</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
         </filters>
         <label>IO-AA Projects</label>
     </listViews>
@@ -298,7 +780,12 @@
         <filters>
             <field>AHRC__c</field>
             <operation>equals</operation>
-            <value>56A,56A - IO-DC</value>
+            <value>56A - IO-DC</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
         </filters>
         <label>IO-DC Projects</label>
     </listViews>
@@ -308,11 +795,17 @@
         <columns>Task_Name__c</columns>
         <columns>Project_Name__c</columns>
         <columns>Sub_Task_Name__c</columns>
+        <columns>AHRC__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>AHRC__c</field>
             <operation>equals</operation>
-            <value>56D,56D - TATD</value>
+            <value>56D - TATD</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
         </filters>
         <label>TATD Projects</label>
     </listViews>
@@ -326,7 +819,12 @@
         <filters>
             <field>AHRC__c</field>
             <operation>equals</operation>
-            <value>56F,56F - TCD</value>
+            <value>56F - TCD</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
         </filters>
         <label>TCD Projects</label>
     </listViews>
@@ -341,23 +839,28 @@
         <customTabListAdditionalFields>Project_Name__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Sub_Task_Name__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>AHRC__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>Task_code__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Project_Name__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Sub_Task_Name__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>AHRC__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Task_code__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Project_Name__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Sub_Task_Name__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>AHRC__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Status__c</lookupPhoneDialogsAdditionalFields>
         <searchFilterFields>NAME</searchFilterFields>
         <searchFilterFields>Task_code__c</searchFilterFields>
         <searchFilterFields>Project_Name__c</searchFilterFields>
         <searchFilterFields>Sub_Task_Name__c</searchFilterFields>
         <searchFilterFields>AHRC__c</searchFilterFields>
+        <searchFilterFields>Status__c</searchFilterFields>
         <searchResultsAdditionalFields>Task_code__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Project_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Sub_Task_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>AHRC__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <validationRules>

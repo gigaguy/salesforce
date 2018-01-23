@@ -2,9 +2,9 @@
 <SamlSsoConfig xmlns="http://soap.sforce.com/2006/04/metadata">
     <identityLocation>SubjectNameId</identityLocation>
     <identityMapping>FederationId</identityMapping>
-    <issuer>https://idp.epa.gov/</issuer>
+    <issuer>https://idp.epa.gov//</issuer>
     <loginUrl>https://idp.epa.gov/ad_only/</loginUrl>
-    <name>EPA Login</name>
+    <name>EPA Login AD</name>
     <oauthTokenEndpoint>https://epaoei.my.salesforce.com/services/oauth2/token?so=00Dt0000000GzSF</oauthTokenEndpoint>
     <redirectBinding>true</redirectBinding>
     <requestSignatureMethod>1</requestSignatureMethod>

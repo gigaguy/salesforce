@@ -52,4 +52,18 @@
             System.assert(existingPortalUser.fax == randFax);
         }
     }
+    
+    @IsTest(SeeAllData=true) static void testSaveB() {
+          User currentUser = [select id, title, firstname, lastname, email, userType, phone, mobilephone, fax, street, city, state, postalcode, country
+                                FROM User WHERE userType = 'Guest' limit 1];
+            system.debug('current user: '+currentUser);
+
+              System.runAs(currentUser) {
+              
+              try{  MyProfilePageController controller = new MyProfilePageController();          }
+              catch (exception e){}
+
+
+        }
+    }
 }

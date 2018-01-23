@@ -31,11 +31,15 @@
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>relatedListApiName</name>
-                <value>ProcessSteps</value>
+                <value>CombinedAttachments</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>relatedListComponentOverride</name>
+                <value>NONE</value>
             </componentInstanceProperties>
             <componentName>force:relatedListSingleContainer</componentName>
         </componentInstances>
-        <name>facet-acccf4c0-91dc-41a2-80ee-9f4c9a7e20da</name>
+        <name>facet-0746be06-3e89-416d-9b58-5bf5f6705fa3</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -57,11 +61,11 @@
         <componentInstances>
             <componentInstanceProperties>
                 <name>body</name>
-                <value>facet-acccf4c0-91dc-41a2-80ee-9f4c9a7e20da</value>
+                <value>facet-0746be06-3e89-416d-9b58-5bf5f6705fa3</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>title</name>
-                <value>Approval</value>
+                <value>Attachments</value>
             </componentInstanceProperties>
             <componentName>flexipage:tab</componentName>
         </componentInstances>
@@ -71,12 +75,27 @@
     <flexiPageRegions>
         <componentInstances>
             <componentInstanceProperties>
+                <name>parentFieldApiName</name>
+                <value>Forms__c.Id</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>relatedListApiName</name>
+                <value>ProcessSteps</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>relatedListComponentOverride</name>
+                <value>NONE</value>
+            </componentInstanceProperties>
+            <componentName>force:relatedListSingleContainer</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
                 <name>decorate</name>
                 <value>true</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>richTextValue</name>
-                <value>For help using EPA-100 please contact: &amp;nbsp;&lt;a href=&quot;mailto:McNeal.Detha@epa.gov?subject=BAP%20Forms%20EPA-100%20Support&quot; target=&quot;_blank&quot;&gt;McNeal.Detha@epa.gov&lt;/a&gt;</value>
+                <value>For help using EPA-100 please contact: &lt;a href=&quot;mailto:McNeal.Detha@epa.gov?subject=BAP%20Forms%20EPA-100%20Support&quot; target=&quot;_blank&quot;&gt;McNeal.Detha@epa.gov&lt;/a&gt;</value>
             </componentInstanceProperties>
             <componentName>flexipage:richText</componentName>
         </componentInstances>

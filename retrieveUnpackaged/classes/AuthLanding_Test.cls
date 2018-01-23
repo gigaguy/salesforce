@@ -15,7 +15,7 @@ public class AuthLanding_Test {
         System.currentPageReference().getParameters().put('uID', 'unAuth1');
         system.currentPageReference().getHeaders().put('uid', 'unAuth1');
         
-        system.currentPageReference().getHeaders().put('Shib-Identity-Provider', 'https://idp.epa.gov/');
+        system.currentPageReference().getHeaders().put('Shib-Identity-Provider', 'https://idpstg.epa.gov/');
         system.currentPageReference().getHeaders().put('X-Forwarded-Host', 'oeiodstadev.epa.gov');
         controller = new AuthLanding();
         system.currentPageReference().getHeaders().remove('uid');

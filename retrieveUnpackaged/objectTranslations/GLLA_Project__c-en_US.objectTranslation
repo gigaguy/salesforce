@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Project</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Projects</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Federal Cost Share --></label>
+        <name>Actual_Federal_Cost_Share__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual NFS Cost Share Contribution --></label>
+        <name>Actual_NFS_Cost_Share_Contribution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Total Amount --></label>
+        <name>Actual_Total_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Received Date --></label>
+        <name>Application_Received_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Area of Concern --></label>
+        <name>Area_of_Concern__c</name>
+        <picklistValues>
+            <masterLabel>All AOCs</masterLabel>
+            <translation><!-- All AOCs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ashtabula River, OH</masterLabel>
+            <translation><!-- Ashtabula River, OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Black River, OH</masterLabel>
+            <translation><!-- Black River, OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Buffalo River, NY</masterLabel>
+            <translation><!-- Buffalo River, NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinton River, MI</masterLabel>
+            <translation><!-- Clinton River, MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cuyahoga River, OH</masterLabel>
+            <translation><!-- Cuyahoga River, OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deer Lake</masterLabel>
+            <translation><!-- Deer Lake --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Detroit River, MI</masterLabel>
+            <translation><!-- Detroit River, MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eighteenmile Creek, NY</masterLabel>
+            <translation><!-- Eighteenmile Creek, NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fox River/Green Bay, WI</masterLabel>
+            <translation><!-- Fox River/Green Bay, WI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grand Calumet River/Indiana Harbor Canal, IN</masterLabel>
+            <translation><!-- Grand Calumet River/Indiana Harbor Canal, IN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kalamazoo River, MI</masterLabel>
+            <translation><!-- Kalamazoo River, MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manistique River, MI</masterLabel>
+            <translation><!-- Manistique River, MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maumee River, OH</masterLabel>
+            <translation><!-- Maumee River, OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Menominee River, WI</masterLabel>
+            <translation><!-- Menominee River, WI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Milwaukee Estuary, WI</masterLabel>
+            <translation><!-- Milwaukee Estuary, WI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Muskegon Lake, MI</masterLabel>
+            <translation><!-- Muskegon Lake, MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Niagara River, NY</masterLabel>
+            <translation><!-- Niagara River, NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oswego River, NY</masterLabel>
+            <translation><!-- Oswego River, NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Presque Isle Bay, PA</masterLabel>
+            <translation><!-- Presque Isle Bay, PA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>River Raisin, MI</masterLabel>
+            <translation><!-- River Raisin, MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rochester Embayment, NY</masterLabel>
+            <translation><!-- Rochester Embayment, NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rouge River, MI</masterLabel>
+            <translation><!-- Rouge River, MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saginaw River, MI</masterLabel>
+            <translation><!-- Saginaw River, MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sheboygan River, WI</masterLabel>
+            <translation><!-- Sheboygan River, WI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>St. Clair River, MI</masterLabel>
+            <translation><!-- St. Clair River, MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>St. Lawrence River, NY</masterLabel>
+            <translation><!-- St. Lawrence River, NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>St. Louis River, MN</masterLabel>
+            <translation><!-- St. Louis River, MN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>St. Mary&apos;s River, MI</masterLabel>
+            <translation><!-- St. Mary&apos;s River, MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Torch Lake, MI</masterLabel>
+            <translation><!-- Torch Lake, MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waukegon Harbor, IL</masterLabel>
+            <translation><!-- Waukegon Harbor, IL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>White Lake, MI</masterLabel>
+            <translation><!-- White Lake, MI --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cash Contributions --></label>
+        <name>Cash_Contributions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closeout Date --></label>
+        <name>Closeout_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Federal Cost Share --></label>
+        <name>Estimated_Federal_Cost_Share__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated NFS Cost Share --></label>
+        <name>Estimated_NFS_Cost_Share__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Total Amount --></label>
+        <name>Estimated_Total_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Summary Comments --></label>
+        <name>Financial_Summary_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fiscal Year --></label>
+        <name>Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Kind Contributions --></label>
+        <name>In_Kind_Contributions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location City --></label>
+        <name>Location_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location State --></label>
+        <name>Location_State__c</name>
+        <picklistValues>
+            <masterLabel>AK</masterLabel>
+            <translation><!-- AK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AL</masterLabel>
+            <translation><!-- AL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AR</masterLabel>
+            <translation><!-- AR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AS</masterLabel>
+            <translation><!-- AS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AZ</masterLabel>
+            <translation><!-- AZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CO</masterLabel>
+            <translation><!-- CO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CT</masterLabel>
+            <translation><!-- CT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DC</masterLabel>
+            <translation><!-- DC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DE</masterLabel>
+            <translation><!-- DE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FL</masterLabel>
+            <translation><!-- FL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FM</masterLabel>
+            <translation><!-- FM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GA</masterLabel>
+            <translation><!-- GA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GU</masterLabel>
+            <translation><!-- GU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HI</masterLabel>
+            <translation><!-- HI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA</masterLabel>
+            <translation><!-- IA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ID</masterLabel>
+            <translation><!-- ID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL</masterLabel>
+            <translation><!-- IL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IN</masterLabel>
+            <translation><!-- IN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KS</masterLabel>
+            <translation><!-- KS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KY</masterLabel>
+            <translation><!-- KY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA</masterLabel>
+            <translation><!-- LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA</masterLabel>
+            <translation><!-- MA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MD</masterLabel>
+            <translation><!-- MD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ME</masterLabel>
+            <translation><!-- ME --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MH</masterLabel>
+            <translation><!-- MH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MI</masterLabel>
+            <translation><!-- MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MN</masterLabel>
+            <translation><!-- MN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MO</masterLabel>
+            <translation><!-- MO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MP</masterLabel>
+            <translation><!-- MP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MS</masterLabel>
+            <translation><!-- MS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT</masterLabel>
+            <translation><!-- MT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NC</masterLabel>
+            <translation><!-- NC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ND</masterLabel>
+            <translation><!-- ND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NE</masterLabel>
+            <translation><!-- NE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NH</masterLabel>
+            <translation><!-- NH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NJ</masterLabel>
+            <translation><!-- NJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM</masterLabel>
+            <translation><!-- NM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NV</masterLabel>
+            <translation><!-- NV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NY</masterLabel>
+            <translation><!-- NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OH</masterLabel>
+            <translation><!-- OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK</masterLabel>
+            <translation><!-- OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OR</masterLabel>
+            <translation><!-- OR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA</masterLabel>
+            <translation><!-- PA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PR</masterLabel>
+            <translation><!-- PR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PW</masterLabel>
+            <translation><!-- PW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RI</masterLabel>
+            <translation><!-- RI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SC</masterLabel>
+            <translation><!-- SC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SD</masterLabel>
+            <translation><!-- SD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TN</masterLabel>
+            <translation><!-- TN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX</masterLabel>
+            <translation><!-- TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UT</masterLabel>
+            <translation><!-- UT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VA</masterLabel>
+            <translation><!-- VA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VI</masterLabel>
+            <translation><!-- VI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VT</masterLabel>
+            <translation><!-- VT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WA</masterLabel>
+            <translation><!-- WA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WI</masterLabel>
+            <translation><!-- WI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WV</masterLabel>
+            <translation><!-- WV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WY</masterLabel>
+            <translation><!-- WY --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Master Project ID --></label>
+        <name>Master_Project_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- NFS Cost Share Balance --></label>
+        <name>NFS_Cost_Share_Balance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Agreement Total --></label>
+        <name>Project_Agreement_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Status Comments --></label>
+        <name>Project_Status_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Status --></label>
+        <name>Project_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Project Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Summary --></label>
+            <section>Financial Summary</section>
+        </sections>
+        <sections>
+            <label><!-- General Information --></label>
+            <section>General Information</section>
+        </sections>
+        <sections>
+            <label><!-- Project Status --></label>
+            <section>Project Status</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
