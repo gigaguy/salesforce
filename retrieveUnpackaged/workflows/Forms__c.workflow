@@ -81,6 +81,29 @@
         <template>unfiled$public/Notify_Pending_Action_Purchase_Card</template>
     </alerts>
     <alerts>
+        <fullName>Purchase_Card_Approved_Notice_to_PC_Team_for_Action</fullName>
+        <description>Purchase Card Approved Notice to PC Team for Action</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>creed.suzette2@epa.gov</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lyles.dianne2@epa.gov</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>misty.grooms2@csra.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nathaniel.villforth3@csra.com.epa</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Purchase_Card_Team_Action_Needed</template>
+    </alerts>
+    <alerts>
         <fullName>Reject_Request</fullName>
         <description>Reject Request</description>
         <protected>false</protected>
