@@ -7,7 +7,6 @@
     <tab>standard-Account</tab>
     <tab>standard-report</tab>
     <tab>standard-Dashboard</tab>
-    <tab>standard-Feed</tab>
     <tab>standard-home</tab>
     <tab>TQB_Bulletin_Board__c</tab>
     <tab>TQB_Letter_of_Intent__c</tab>
