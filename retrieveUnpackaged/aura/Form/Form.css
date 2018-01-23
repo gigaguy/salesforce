@@ -1,0 +1,289 @@
+.THIS div{
+	padding-bottom:2px;
+}
+
+.THIS .slds-has-divider_top{
+    border-top: 0px;
+}
+
+.THIS div.blank{
+	 border-top: 0px;
+     padding-left: 1.2rem;
+}
+
+.THIS input.input{
+    width: 90%;
+    background-color:
+	rgb(255, 255, 255);
+	border-bottom-color: rgb(216, 221, 230);
+	border-bottom-left-radius:4px;
+	border-bottom-right-radius:4px;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-image-outset:0px;
+	border-image-repeat:stretch;
+    border-image-slice:100%;
+    border-image-source:none;
+    border-image-width:1;
+    border-left-color:rgb(216, 221, 230);
+    border-left-style:solid;
+    border-left-width:1px;
+    border-right-color:rgb(216, 221, 230);
+    border-right-style:solid;
+    border-right-width:1px;
+    border-top-color:rgb(216, 221, 230);
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    border-top-style:solid;
+    border-top-width:1px;
+    box-sizing:border-box;
+    color:rgb(22, 50, 92);
+    cursor:auto;
+    display:inline-block;
+    font-family:"Salesforce Sans", Arial, sans-serif;
+    font-size:13px;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant-caps:normal;
+    font-variant-ligatures:normal;
+    font-variant-numeric:normal;
+    font-weight:normal;
+    height:32px;
+    hyphens:manual;
+    letter-spacing:normal;
+    line-height:30px;
+    margin-bottom:0px;
+    margin-left:0px;
+    margin-right:0px;
+    margin-top:0px;
+    min-height:30px;
+    overflow-wrap:break-word;
+    padding-bottom:0px;
+    padding-left:12px;
+    padding-right:16px;
+    padding-top:0px;
+    text-align:start;
+    text-indent:0px;
+    text-rendering:auto;
+    text-shadow:none;
+    text-size-adjust:100%;
+    text-transform:none;
+    transition-delay:0s, 0s;
+    transition-duration:0.1s, 0.1s;
+    transition-property:border, background-color;
+    transition-timing-function:linear, linear;
+    user-select:text;
+    visibility:visible;
+    word-spacing:0px;
+    word-wrap:break-word;
+    writing-mode:horizontal-tb;
+    -webkit-appearance:none;
+    -webkit-box-direction:normal;
+    -webkit-rtl-ordering:logical;
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+    -webkit-border-image:none;
+}
+
+.THIS legend{
+    color: rgb(22, 50, 92);
+}
+
+.THIS input[type="checkbox"]{
+    width: 7%;
+}
+
+.THIS .select {
+    width: 90%;
+    background: url("/resource/1502991134000/ddArrow") no-repeat right #fff;
+    background-size: 13.5px;
+    background-color:  rgb(255, 255, 255);
+	border-bottom-color: rgb(216, 221, 230);
+	border-bottom-left-radius:4px;
+	border-bottom-right-radius:4px;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-image-outset:0px;
+	border-image-repeat:stretch;
+    border-image-slice:100%;
+    border-image-source:none;
+    border-image-width:1;
+    border-left-color:rgb(216, 221, 230);
+    border-left-style:solid;
+    border-left-width:1px;
+    border-right-color:rgb(216, 221, 230);
+    border-right-style:solid;
+    border-right-width:1px;
+    border-top-color:rgb(216, 221, 230);
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    border-top-style:solid;
+    border-top-width:1px;
+    box-sizing:border-box;
+    color:rgb(22, 50, 92);
+    cursor:auto;
+    display:inline-block;
+    font-family:"Salesforce Sans", Arial, sans-serif;
+    font-size:13px;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant-caps:normal;
+    font-variant-ligatures:normal;
+    font-variant-numeric:normal;
+    font-weight:normal;
+    height:auto;
+    hyphens:manual;
+    letter-spacing:normal;
+    line-height:30px;
+    margin-bottom:0px;
+    margin-left:0px;
+    margin-right:0px;
+    margin-top:0px;
+    min-height:30px;
+    overflow-wrap:break-word;
+    padding-bottom:0px;
+    padding-left:12px;
+    padding-right:16px;
+    padding-top:0px;
+    size:5;
+    text-align:start;
+    text-indent:0px;
+    text-rendering:auto;
+    text-shadow:none;
+    text-size-adjust:100%;
+    text-transform:none;
+    transition-delay:0s, 0s;
+    transition-duration:0.1s, 0.1s;
+    transition-property:border, background-color;
+    transition-timing-function:linear, linear;
+    user-select:text;
+    visibility:visible;
+    word-spacing:0px;
+    word-wrap:break-word;
+    writing-mode:horizontal-tb;
+    -webkit-appearance:none;
+    -webkit-box-direction:normal;
+    -webkit-rtl-ordering:logical;
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+    -webkit-border-image:none;
+}
+
+.THIS label{
+    display: block;
+}
+
+.THIS a.timePicker-openIcon{
+    background: none;
+}
+
+.THIS textarea{
+    width: 100%;
+    height: 75px;
+    background-color:rgb(255, 255, 255);
+    border-bottom-color:rgb(216, 221, 230);
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    border-image-outset:0px;
+    border-image-repeat:stretch;
+    border-image-slice:100%;
+    border-image-source:none;
+    border-image-width:1;
+    border-left-color:rgb(216, 221, 230);
+    border-left-style:solid;
+    border-left-width:1px;
+    border-right-color:rgb(216, 221, 230);
+    border-right-style:solid;
+    border-right-width:1px;
+    border-top-color:rgb(216, 221, 230);
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    border-top-style:solid;
+    border-top-width:1px;
+    box-sizing:border-box;
+    color:rgb(22, 50, 92);
+    cursor:auto;
+    display:inline-block;
+    flex-direction:column;
+    font-family:"Salesforce Sans", Arial, sans-serif;
+    font-size:13px;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant-caps:normal;
+    font-variant-ligatures:normal;
+    font-variant-numeric:normal;
+    font-weight:normal;
+    hyphens:manual;
+    letter-spacing:normal;
+    line-height:19.5px;
+    margin-bottom:0px;
+    margin-left:0px;
+    margin-right:0px;
+    margin-top:0px;
+    overflow-wrap:break-word;
+    overflow-x:auto;
+    overflow-y:auto;
+    padding-bottom:12px;
+    padding-left:12px;
+    padding-right:12px;
+    padding-top:12px;
+    resize:vertical;
+    text-align:start;
+    text-indent:0px;
+    text-rendering:auto;
+    text-shadow:none;
+    text-size-adjust:100%;
+    text-transform:none;
+    transition-delay:0s, 0s;
+    transition-duration:0.1s, 0.1s;
+    transition-property:border, background-color;
+    transition-timing-function:linear, linear;
+    user-select:text;
+    visibility:visible;
+    white-space:pre-wrap;
+    word-spacing:0px;
+    word-wrap:break-word;
+    writing-mode:horizontal-tb;
+    -webkit-appearance:none;
+    -webkit-box-direction:normal;
+    -webkit-rtl-ordering:logical;
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+    -webkit-border-image:none;
+}
+
+.THIS .floatLeft {
+    float: left;
+}
+
+.THIS .slds-button {
+    margin-right: 10px;
+}
+
+.THIS .slds-button_success .label {
+    color: white !important;
+}
+
+.THIS .slds-button_destructive .label {
+    color: white !important;
+}
+
+.THIS .invisible {
+    display: none;
+}
+
+.THIS .lookup__header {
+    display: none;
+}
+
+.THIS .lookup__footer {
+    display: none;
+}
+
+.THIS .divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+.THIS .required{
+    color: red !important;
+}

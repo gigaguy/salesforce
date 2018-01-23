@@ -1,0 +1,2359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Form</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Forms</value>
+    </caseValues>
+    <fields>
+        <label><!-- AWL Phone Number --></label>
+        <name>AWL_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>A_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- A. New Member Enrollment --></label>
+        <name>A__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action Information --></label>
+        <name>Action_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Additional Reviewer --></label>
+        <name>Additional_Reviewer__c</name>
+        <relationshipLabel><!-- Forms (Additional Reviewer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- After Award Documentation --></label>
+        <name>After_Award_Documentation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agency, Subelement, Submitting Office # --></label>
+        <name>Agency_subelement_submitting_office__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applicant Name --></label>
+        <name>Applicant_Name_Last_First_MI2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Select Training Official Routing Options --></label>
+        <name>Approval_Routing_Options__c</name>
+        <picklistValues>
+            <masterLabel>Ann Arbor</masterLabel>
+            <translation><!-- Ann Arbor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cincinnati</masterLabel>
+            <translation><!-- Cincinnati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ Office of Human Resources</masterLabel>
+            <translation><!-- HQ Office of Human Resources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OIG</masterLabel>
+            <translation><!-- OIG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1</masterLabel>
+            <translation><!-- Region 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10</masterLabel>
+            <translation><!-- Region 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2</masterLabel>
+            <translation><!-- Region 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3</masterLabel>
+            <translation><!-- Region 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4</masterLabel>
+            <translation><!-- Region 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5</masterLabel>
+            <translation><!-- Region 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6</masterLabel>
+            <translation><!-- Region 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7</masterLabel>
+            <translation><!-- Region 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8</masterLabel>
+            <translation><!-- Region 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9</masterLabel>
+            <translation><!-- Region 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Research Triangle Park</masterLabel>
+            <translation><!-- Research Triangle Park --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Step --></label>
+        <name>Approval_Step__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approver 2 --></label>
+        <name>Approver_2__c</name>
+        <relationshipLabel><!-- Forms (Approver 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Authorization Reason --></label>
+        <name>Authorization_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Application</masterLabel>
+            <translation><!-- Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organizational Allocation</masterLabel>
+            <translation><!-- Organizational Allocation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Role</masterLabel>
+            <translation><!-- Role --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Autopopulated Employee ID # --></label>
+        <name>Autopopulated_Employee_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>B_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extra Hour Donation --></label>
+        <name>B_Extra_Hour_Donation__c</name>
+    </fields>
+    <fields>
+        <label><!-- B. Donate Hours (no waiver needed) --></label>
+        <name>B__c</name>
+    </fields>
+    <fields>
+        <label><!-- Before Award Documentation --></label>
+        <name>Before_Award_Documentation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Beginning Date of Development Activity --></label>
+        <name>Beginning_Date_of_Development_Activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Instructions --></label>
+        <name>Billing_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Books &amp; Materials --></label>
+        <name>Books_Materials__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comment --></label>
+        <name>C_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>C_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours Donated --></label>
+        <name>C_Hours_Donated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason --></label>
+        <name>C_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Enter reason in Comment field below:</masterLabel>
+            <translation><!-- Enter reason in Comment field below: --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I am a family member of the recipient and I wish to donate leave.</masterLabel>
+            <translation><!-- I am a family member of the recipient and I wish to donate leave. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>There is insufficient donated leave to carry the leave recipient through the period of the medical emergency.</masterLabel>
+            <translation><!-- There is insufficient donated leave to carry the leave recipient through the period of the medical emergency. --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- C. Donate Hours (waiver needed) --></label>
+        <name>C__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card Holder&apos;s Email --></label>
+        <name>Card_Holder_s_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card Holder’s Phone Number --></label>
+        <name>Card_Holder_s_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Continue In Service Agreement Signature --></label>
+        <name>Continue_In_Service_Agreement_Signature__c</name>
+    </fields>
+    <fields>
+        <help><!-- Clicking the &quot;Continue In Service Agreement Signature&quot; checkbox will sign this section upon saving the form. --></help>
+        <label><!-- Continue In Service Digital Signature --></label>
+        <name>Continue_In_Service_Digital_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Continued Service Agreement Expiration --></label>
+        <name>Continued_Service_Agreement_Expiration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Continued Service Agreement Expires: --></label>
+        <name>Continued_Service_Agreement_Expires__c</name>
+    </fields>
+    <fields>
+        <label><!-- Continued Service Agreement Inst &amp; Calc --></label>
+        <name>Continued_Service_Agreement_Inst_Calc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Continued Service Agreement --></label>
+        <name>Continued_Service_Agreement__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract Actions: --></label>
+        <name>Contract_Actions__c</name>
+        <picklistValues>
+            <masterLabel>Contract</masterLabel>
+            <translation><!-- Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delivery Order</masterLabel>
+            <translation><!-- Delivery Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Simplified Acquisition</masterLabel>
+            <translation><!-- Simplified Acquisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Task Order</masterLabel>
+            <translation><!-- Task Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work Assignment</masterLabel>
+            <translation><!-- Work Assignment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contractor --></label>
+        <name>Contractor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Course Number Code --></label>
+        <name>Course_Number_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Course Title --></label>
+        <name>Course_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Approver --></label>
+        <name>Current_Approver__c</name>
+        <relationshipLabel><!-- Forms (Current Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>D_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours Donated --></label>
+        <name>D_Hours_Donated__c</name>
+    </fields>
+    <fields>
+        <label><!-- D. Donate to specific Person --></label>
+        <name>D__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 A/L Hours --></label>
+        <name>Date_1_A_L_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 End Date/Time --></label>
+        <name>Date_1_End_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 S/L Hours --></label>
+        <name>Date_1_S_L_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 Start Date/Time --></label>
+        <name>Date_1_Start_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 Total Work Hours --></label>
+        <name>Date_1_Total_Work_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 A/L Hours --></label>
+        <name>Date_2_A_L_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 End Date/Time --></label>
+        <name>Date_2_End_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 S/L Hours --></label>
+        <name>Date_2_S_L_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 Start Date/Time --></label>
+        <name>Date_2_Start_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 Total Work Hours --></label>
+        <name>Date_2_Total_Work_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the Changeset to deploy --></help>
+        <label><!-- Deployment Changset Name --></label>
+        <name>Deployment_Changset_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Target sandbox for the deployment --></help>
+        <label><!-- Deployment Destination --></label>
+        <name>Deployment_Destination__c</name>
+        <picklistValues>
+            <masterLabel>BAPIntegration</masterLabel>
+            <translation><!-- BAPIntegration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPAFull</masterLabel>
+            <translation><!-- EPAFull --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Production</masterLabel>
+            <translation><!-- Production --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Populates from the Deployment Source Sandbox Picklist --></help>
+        <label><!-- Deployment Source Sandbox Name --></label>
+        <name>Deployment_Source_Sandbox_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Source sandbox for the deployment --></help>
+        <label><!-- Deployment Source Sandbox --></label>
+        <name>Deployment_Source_Sandbox__c</name>
+        <relationshipLabel><!-- Forms --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Developed in accordance with: --></label>
+        <name>Developed_in_accordance_with_1__c</name>
+        <picklistValues>
+            <masterLabel>Other (provide details in &quot;Other Details&quot;)</masterLabel>
+            <translation><!-- Other (provide details in &quot;Other Details&quot;) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R-2</masterLabel>
+            <translation><!-- R-2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R-2 and R-5</masterLabel>
+            <translation><!-- R-2 and R-5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Developed in accordance with: --></label>
+        <name>Developed_in_accordance_with_2__c</name>
+        <picklistValues>
+            <masterLabel>Other (provide details in &quot;Other Details&quot;)</masterLabel>
+            <translation><!-- Other (provide details in &quot;Other Details&quot;) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R-5</masterLabel>
+            <translation><!-- R-5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Developed in accordance with: --></label>
+        <name>Developed_in_accordance_with_3__c</name>
+        <picklistValues>
+            <masterLabel>Other (provide details in &quot;&quot;Other Details&quot;&quot;)&quot;</masterLabel>
+            <translation><!-- Other (provide details in &quot;&quot;Other Details&quot;&quot;)&quot; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R-2</masterLabel>
+            <translation><!-- R-2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R-2 and R-5</masterLabel>
+            <translation><!-- R-2 and R-5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Developed in accordance with: --></label>
+        <name>Developed_in_accordance_with_4__c</name>
+        <picklistValues>
+            <masterLabel>Documentation developed pre-award.</masterLabel>
+            <translation><!-- Documentation developed pre-award. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Documentation identified in Statement of Work or Performance Work Statement (proved section number in &quot;Other Details&quot;).</masterLabel>
+            <translation><!-- Documentation identified in Statement of Work or Performance Work Statement (proved section number in &quot;Other Details&quot;). --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Documentation will be identified in individual Statements of Work or Performance Work Statement.</masterLabel>
+            <translation><!-- Documentation will be identified in individual Statements of Work or Performance Work Statement. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other (provide details in &quot;Other Details&quot;).</masterLabel>
+            <translation><!-- Other (provide details in &quot;Other Details&quot;). --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R-5</masterLabel>
+            <translation><!-- R-5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supplement to Programmatic QA Project Plan (provide name in &quot;Other Details&quot;).</masterLabel>
+            <translation><!-- Supplement to Programmatic QA Project Plan (provide name in &quot;Other Details&quot;). --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Direct Appropriation / Fund --></label>
+        <name>Direct_Appropriation_Fund__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direct Cost Total --></label>
+        <name>Direct_Cost_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Doc / Purchase Order / Requisition # --></label>
+        <name>Doc_Purchase_Order_Requisition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Documentation Requirements --></label>
+        <name>Documentation_Requirements__c</name>
+    </fields>
+    <fields>
+        <label><!-- EHRI Employee Number --></label>
+        <name>EHRI_Employee_Number2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours Donated --></label>
+        <name>E_Hours_Donated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>E_Use_or_Lose__c</name>
+    </fields>
+    <fields>
+        <label><!-- E. Use or Lose --></label>
+        <name>E__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Date --></label>
+        <name>Effective_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Clicking the &quot;Employee&apos;s Signature&quot; checkbox will sign this section upon saving the form. --></help>
+        <label><!-- Employee Digital Signature --></label>
+        <name>Employee_Digital_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee ID No --></label>
+        <name>Employee_ID_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee Location --></label>
+        <name>Employee_Location__c</name>
+        <picklistValues>
+            <masterLabel>Ann Arbor</masterLabel>
+            <translation><!-- Ann Arbor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cincinnati</masterLabel>
+            <translation><!-- Cincinnati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Las Vegas</masterLabel>
+            <translation><!-- Las Vegas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Program Manager/Headquarters</masterLabel>
+            <translation><!-- National Program Manager/Headquarters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTP</masterLabel>
+            <translation><!-- RTP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1</masterLabel>
+            <translation><!-- Region 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10</masterLabel>
+            <translation><!-- Region 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2</masterLabel>
+            <translation><!-- Region 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3</masterLabel>
+            <translation><!-- Region 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4</masterLabel>
+            <translation><!-- Region 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5</masterLabel>
+            <translation><!-- Region 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6</masterLabel>
+            <translation><!-- Region 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7</masterLabel>
+            <translation><!-- Region 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8</masterLabel>
+            <translation><!-- Region 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9</masterLabel>
+            <translation><!-- Region 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Employee Name: --></label>
+        <name>Employee_Name_SF_182__c</name>
+    </fields>
+    <fields>
+        <help><!-- Clicking this box digitally dates and signs this form. --></help>
+        <label><!-- Employee&apos;s Signature --></label>
+        <name>Employee_s_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ending Date of Development Activity: --></label>
+        <name>Ending_Date_of_Development_Activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Escalate to Chief Learning Officer --></label>
+        <name>Escalate_to_Chief_Learning_Officer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Award $ --></label>
+        <name>Estimated_Award__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated End Date --></label>
+        <name>Estimated_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Start Date --></label>
+        <name>Estimated_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Evaluation Factor --></label>
+        <name>Evaluation_Factor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exists --></label>
+        <name>Exists__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Submission Date --></label>
+        <name>Expected_Submission_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expire Date --></label>
+        <name>Expire_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>F_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- F. Withdraw --></label>
+        <name>F__c</name>
+    </fields>
+    <fields>
+        <label><!-- Finalize Approval Reassignment --></label>
+        <name>Finalize_Approval_Reassignment__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name_3160__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Owner --></label>
+        <name>Form_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Record Name --></label>
+        <name>Form_Record_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Status --></label>
+        <name>Form_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted for Approval</masterLabel>
+            <translation><!-- Submitted for Approval --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Form Type Name --></label>
+        <name>Form_Type_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Type --></label>
+        <name>Form_Type__c</name>
+        <picklistValues>
+            <masterLabel>Code Storage MB</masterLabel>
+            <translation><!-- Code Storage MB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom Object</masterLabel>
+            <translation><!-- Custom Object --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Storage MB</masterLabel>
+            <translation><!-- Data Storage MB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deployment</masterLabel>
+            <translation><!-- Deployment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Developer Pro Sandbox</masterLabel>
+            <translation><!-- Developer Pro Sandbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Developer Sandbox</masterLabel>
+            <translation><!-- Developer Sandbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Files Storage MB</masterLabel>
+            <translation><!-- Files Storage MB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Sandbox</masterLabel>
+            <translation><!-- Full Sandbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full User Count</masterLabel>
+            <translation><!-- Full User Count --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Starter User Count</masterLabel>
+            <translation><!-- Starter User Count --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Furnish Invoice to --></label>
+        <name>Furnish_Invoice_to__c</name>
+        <picklistValues>
+            <masterLabel>No Cost Training</masterLabel>
+            <translation><!-- No Cost Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchase Card Transaction (Select Card Holder)</masterLabel>
+            <translation><!-- Purchase Card Transaction (Select Card Holder) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USEPA Cincinnati Finance Center</masterLabel>
+            <translation><!-- USEPA Cincinnati Finance Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USEPA RTP Finance Center</masterLabel>
+            <translation><!-- USEPA RTP Finance Center --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Grade --></label>
+        <name>Grade__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Org Code --></label>
+        <name>HR_Org_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Organization --></label>
+        <lookupFilter>
+            <errorMessage><!-- The HR Org doesn&apos;t exist. --></errorMessage>
+        </lookupFilter>
+        <name>HR_Organization__c</name>
+        <relationshipLabel><!-- Forms --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ID Number --></label>
+        <name>ID_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- If yes, please describe: --></label>
+        <name>If_yes_please_describe__c</name>
+    </fields>
+    <fields>
+        <label><!-- Immediate Supervisor&apos;s Digital Signature --></label>
+        <name>Immediate_Supervisor_s_Digital_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Immediate Supervisor&apos;s Signature --></label>
+        <name>Immediate_Supervisor_s_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Indirect Appropriation / Fund --></label>
+        <name>Indirect_Appropriation_Fund__c</name>
+    </fields>
+    <fields>
+        <label><!-- Indirect Cost Total --></label>
+        <name>Indirect_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instructions --></label>
+        <name>Instructions_ORD111__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Approval Reassignment --></label>
+        <name>Last_Approval_Reassignment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name_3160__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead QA Organization --></label>
+        <name>Lead_QA_Organization__c</name>
+    </fields>
+    <fields>
+        <label><!-- Click here to view instructions: --></label>
+        <name>LeaveBankInstructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location of Training Site --></label>
+        <name>Location_of_Training_Site__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name and Mailing Address of Vendor --></label>
+        <name>Name_and_Address_of_Vendor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name of Course or Development Activity --></label>
+        <name>Name_of_Course_or_Development_Activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Program --></label>
+        <name>National_Program__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-Government Contribution Cost --></label>
+        <name>Non_Government_Contribution_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-contract Actions: --></label>
+        <name>Non_contract_Actions__c</name>
+        <picklistValues>
+            <masterLabel>CRADA/MTA</masterLabel>
+            <translation><!-- CRADA/MTA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cooperative Agreement</masterLabel>
+            <translation><!-- Cooperative Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Funds In</masterLabel>
+            <translation><!-- Funds In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Funds Out</masterLabel>
+            <translation><!-- Funds Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grant</masterLabel>
+            <translation><!-- Grant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interagency Agreement</masterLabel>
+            <translation><!-- Interagency Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intramural</masterLabel>
+            <translation><!-- Intramural --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Note: --></label>
+        <name>Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Office Telephone --></label>
+        <name>Office_Telephone2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization Allocation --></label>
+        <name>Organization_Allocation__c</name>
+        <relationshipLabel><!-- Forms (Organization Allocation) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Organization Mailing Address --></label>
+        <name>Organization_Mailing_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization --></label>
+        <name>Organization__c</name>
+        <picklistValues>
+            <masterLabel>Ann Arbor</masterLabel>
+            <translation><!-- Ann Arbor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cincinnati</masterLabel>
+            <translation><!-- Cincinnati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Las Vegas</masterLabel>
+            <translation><!-- Las Vegas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OA</masterLabel>
+            <translation><!-- OA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OAR</masterLabel>
+            <translation><!-- OAR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OARM</masterLabel>
+            <translation><!-- OARM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCFO</masterLabel>
+            <translation><!-- OCFO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCSPP</masterLabel>
+            <translation><!-- OCSPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OECA</masterLabel>
+            <translation><!-- OECA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEI</masterLabel>
+            <translation><!-- OEI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGC</masterLabel>
+            <translation><!-- OGC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OIG</masterLabel>
+            <translation><!-- OIG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OITA</masterLabel>
+            <translation><!-- OITA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OLEM</masterLabel>
+            <translation><!-- OLEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORD</masterLabel>
+            <translation><!-- ORD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OW</masterLabel>
+            <translation><!-- OW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTP</masterLabel>
+            <translation><!-- RTP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1</masterLabel>
+            <translation><!-- Region 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10</masterLabel>
+            <translation><!-- Region 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2</masterLabel>
+            <translation><!-- Region 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3</masterLabel>
+            <translation><!-- Region 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4</masterLabel>
+            <translation><!-- Region 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5</masterLabel>
+            <translation><!-- Region 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6</masterLabel>
+            <translation><!-- Region 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7</masterLabel>
+            <translation><!-- Region 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8</masterLabel>
+            <translation><!-- Region 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9</masterLabel>
+            <translation><!-- Region 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Originator --></label>
+        <name>Originator_ORD111__c</name>
+    </fields>
+    <fields>
+        <label><!-- Originator --></label>
+        <name>Originator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Description --></label>
+        <name>Other_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Details --></label>
+        <name>Other_Details_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Details --></label>
+        <name>Other_Details_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Details --></label>
+        <name>Other_Details_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Details --></label>
+        <name>Other_Details_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Participating Organization(s) --></label>
+        <name>Participating_Organization_s__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay Plan --></label>
+        <name>Pay_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Per diem --></label>
+        <name>Per_diem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Position Level --></label>
+        <name>Position_Level__c</name>
+        <picklistValues>
+            <masterLabel>Executive</masterLabel>
+            <translation><!-- Executive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manager</masterLabel>
+            <translation><!-- Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-supervisory</masterLabel>
+            <translation><!-- Non-supervisory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supervisory</masterLabel>
+            <translation><!-- Supervisory --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Position Title --></label>
+        <name>Position_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prepare Form As Person Other Than Self --></label>
+        <name>Prepare_Form_for__c</name>
+        <relationshipLabel><!-- Forms (Prepare Form for:) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Printable View --></label>
+        <name>Printable_View__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processing Date --></label>
+        <name>Processing_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Type(s): --></label>
+        <name>Project_Type_s__c</name>
+        <picklistValues>
+            <masterLabel>Decision Support Tools</masterLabel>
+            <translation><!-- Decision Support Tools --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental Measurements</masterLabel>
+            <translation><!-- Environmental Measurements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental Technology</masterLabel>
+            <translation><!-- Environmental Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Informatics</masterLabel>
+            <translation><!-- Informatics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Models\Applications</masterLabel>
+            <translation><!-- Models\Applications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other (use &quot;Other Description&quot; field)</masterLabel>
+            <translation><!-- Other (use &quot;Other Description&quot; field) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Use of Existing Data</masterLabel>
+            <translation><!-- Use of Existing Data --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- QA Approval Date --></label>
+        <name>QA_Approval_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- QA Category --></label>
+        <name>QA_Category__c</name>
+        <picklistValues>
+            <masterLabel>A</masterLabel>
+            <translation><!-- A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B</masterLabel>
+            <translation><!-- B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>To Be Specified in Individual Actions</masterLabel>
+            <translation><!-- To Be Specified in Individual Actions --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- QA Documentation Options: --></label>
+        <name>QA_Documentation_Options__c</name>
+    </fields>
+    <fields>
+        <label><!-- QA Documentation: --></label>
+        <name>QA_Documentation__c</name>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revision of Existing</masterLabel>
+            <translation><!-- Revision of Existing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- ORD-111 --></help>
+        <label><!-- QA Manager --></label>
+        <lookupFilter>
+            <errorMessage><!-- User not found in QA Manager list. --></errorMessage>
+            <informationalMessage><!-- Notice! This user is not designated as a QA Manager. --></informationalMessage>
+        </lookupFilter>
+        <name>QA_Manager__c</name>
+        <relationshipLabel><!-- Forms (QA Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- QA Tracking Number --></label>
+        <name>QA_Tracking_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee ID No. --></label>
+        <name>Recipient_Employee_ID_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recipient Name --></label>
+        <name>Recipient_Name__c</name>
+        <relationshipLabel><!-- Forms (Recipient Name) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Organization --></label>
+        <name>Recipient_Organization__c</name>
+        <picklistValues>
+            <masterLabel>Ann Arbor</masterLabel>
+            <translation><!-- Ann Arbor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cincinnati</masterLabel>
+            <translation><!-- Cincinnati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Las Vegas</masterLabel>
+            <translation><!-- Las Vegas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OA</masterLabel>
+            <translation><!-- OA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OAR</masterLabel>
+            <translation><!-- OAR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OARM</masterLabel>
+            <translation><!-- OARM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCFO</masterLabel>
+            <translation><!-- OCFO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCSPP</masterLabel>
+            <translation><!-- OCSPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OECA</masterLabel>
+            <translation><!-- OECA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEI</masterLabel>
+            <translation><!-- OEI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGC</masterLabel>
+            <translation><!-- OGC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OIG</masterLabel>
+            <translation><!-- OIG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OITA</masterLabel>
+            <translation><!-- OITA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OLEM</masterLabel>
+            <translation><!-- OLEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORD</masterLabel>
+            <translation><!-- ORD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OW</masterLabel>
+            <translation><!-- OW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTP</masterLabel>
+            <translation><!-- RTP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1</masterLabel>
+            <translation><!-- Region 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10</masterLabel>
+            <translation><!-- Region 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2</masterLabel>
+            <translation><!-- Region 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3</masterLabel>
+            <translation><!-- Region 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4</masterLabel>
+            <translation><!-- Region 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5</masterLabel>
+            <translation><!-- Region 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6</masterLabel>
+            <translation><!-- Region 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7</masterLabel>
+            <translation><!-- Region 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8</masterLabel>
+            <translation><!-- Region 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9</masterLabel>
+            <translation><!-- Region 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Work Phone No. --></label>
+        <name>Recipient_Work_Phone_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Application Name --></label>
+        <name>Related_Application_Name__c</name>
+        <relationshipLabel><!-- Forms --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Request Status --></label>
+        <name>Request_Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancellation</masterLabel>
+            <translation><!-- Cancellation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Correction</masterLabel>
+            <translation><!-- Correction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donation (Member)</masterLabel>
+            <translation><!-- Donation (Member) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donation (Non-Member)</masterLabel>
+            <translation><!-- Donation (Non-Member) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initial</masterLabel>
+            <translation><!-- Initial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Employee</masterLabel>
+            <translation><!-- New Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open Season</masterLabel>
+            <translation><!-- Open Season --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resubmission</masterLabel>
+            <translation><!-- Resubmission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawal</masterLabel>
+            <translation><!-- Withdrawal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Response: --></label>
+        <name>Response_1__c</name>
+        <picklistValues>
+            <masterLabel>No (If no, go directly to &quot;Signatures&quot; Section.)</masterLabel>
+            <translation><!-- No (If no, go directly to &quot;Signatures&quot; Section.) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Response: --></label>
+        <name>Response_2__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Response: --></label>
+        <name>Response_3__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>FCO</masterLabel>
+            <translation><!-- FCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health &amp; Safety Officer</masterLabel>
+            <translation><!-- Health &amp; Safety Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT Approver</masterLabel>
+            <translation><!-- IT Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Section 508 Compliance Approver</masterLabel>
+            <translation><!-- Section 508 Compliance Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supervisor</masterLabel>
+            <translation><!-- Supervisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TimeKeeper</masterLabel>
+            <translation><!-- TimeKeeper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training Officer</masterLabel>
+            <translation><!-- Training Officer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SF-182 Override Instructions --></label>
+        <name>SF_182_Override_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- SF-182 Prepare For checker --></label>
+        <name>SF_182_Prepare_For_checker__c</name>
+    </fields>
+    <fields>
+        <label><!-- SandboxURL --></label>
+        <name>SandboxURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Select Card Holder --></label>
+        <name>Select_Card_Holder__c</name>
+        <relationshipLabel><!-- Forms (Select Card Holder) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- 1. Select Documentation Type --></label>
+        <name>Select_Documentation_Type_1__c</name>
+        <picklistValues>
+            <masterLabel>Combined documentation &amp; application (QA/QC) to contract&apos;s single project</masterLabel>
+            <translation><!-- Combined documentation &amp; application (QA/QC) to contract&apos;s single project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Documentation of an organization’s Quality System</masterLabel>
+            <translation><!-- Documentation of an organization’s Quality System --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 3. Select Documentation Type --></label>
+        <name>Select_Documentation_Type_3__c</name>
+        <picklistValues>
+            <masterLabel>Combined documentation &amp; application (QA/QC) to contract&apos;s single project</masterLabel>
+            <translation><!-- Combined documentation &amp; application (QA/QC) to contract&apos;s single project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Documentation of an organization’s Quality System</masterLabel>
+            <translation><!-- Documentation of an organization’s Quality System --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Series --></label>
+        <name>Series__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Comments --></label>
+        <name>Special_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special accommodation needed? --></label>
+        <name>Special_accommodation_needed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step --></label>
+        <name>Step__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submitted on Behalf Of --></label>
+        <name>Submitted_on_Behalf_Of__c</name>
+        <relationshipLabel><!-- Forms --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Target Date --></label>
+        <name>Target_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter the person to activate as supervisor, timekeeper, etc. --></help>
+        <label><!-- Person --></label>
+        <name>Technical_Contact__c</name>
+        <relationshipLabel><!-- Forms (Technical Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title_QA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- To Be Prepared --></label>
+        <name>To_Be_Prepared__c</name>
+    </fields>
+    <fields>
+        <label><!-- Training Accreditation Indicator --></label>
+        <name>Training_Accreditation_Indicator__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training Credit Type Code --></label>
+        <name>Training_Credit_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>01 Semester Hours</masterLabel>
+            <translation><!-- 01 Semester Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02 Quarter Hours</masterLabel>
+            <translation><!-- 02 Quarter Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03 Continuing Education Unit</masterLabel>
+            <translation><!-- 03 Continuing Education Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04 Not Applicable</masterLabel>
+            <translation><!-- 04 Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05 CEP - OIG 24 HR Reg</masterLabel>
+            <translation><!-- 05 CEP - OIG 24 HR Reg --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training Credit --></label>
+        <name>Training_Credit__c</name>
+        <picklistValues>
+            <masterLabel>0 credit</masterLabel>
+            <translation><!-- 0 credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 credit</masterLabel>
+            <translation><!-- 1 credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 credits</masterLabel>
+            <translation><!-- 2 credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 credits</masterLabel>
+            <translation><!-- 3 credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 credits</masterLabel>
+            <translation><!-- 4 credits --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training Delivery Type Code --></label>
+        <name>Training_Delivery_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>01 Traditional Classroom</masterLabel>
+            <translation><!-- 01 Traditional Classroom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02 On the Job</masterLabel>
+            <translation><!-- 02 On the Job --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03 Technology Based</masterLabel>
+            <translation><!-- 03 Technology Based --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04 Conference/Workshop</masterLabel>
+            <translation><!-- 04 Conference/Workshop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05 Blended</masterLabel>
+            <translation><!-- 05 Blended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06 Correspondence</masterLabel>
+            <translation><!-- 06 Correspondence --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training Designation Type Code --></label>
+        <name>Training_Designation_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>01 Undergraduate Credit</masterLabel>
+            <translation><!-- 01 Undergraduate Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02 Graduate Credit</masterLabel>
+            <translation><!-- 02 Graduate Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03 Continuing Education Unit</masterLabel>
+            <translation><!-- 03 Continuing Education Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04 Post Graduate Credit</masterLabel>
+            <translation><!-- 04 Post Graduate Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05 Not Applicable</masterLabel>
+            <translation><!-- 05 Not Applicable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training Duty Hours --></label>
+        <name>Training_Duty_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Training End Date --></label>
+        <name>Training_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Training Non-Duty Hours --></label>
+        <name>Training_Non_Duty_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Training Objective --></label>
+        <name>Training_Objective__c</name>
+    </fields>
+    <fields>
+        <label><!-- Training Purpose Type --></label>
+        <name>Training_Purpose_Type__c</name>
+        <picklistValues>
+            <masterLabel>01 Program/Mission</masterLabel>
+            <translation><!-- 01 Program/Mission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02 New Work Assignment</masterLabel>
+            <translation><!-- 02 New Work Assignment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03 Improve Present Performance</masterLabel>
+            <translation><!-- 03 Improve Present Performance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04 Future Staffing Needs</masterLabel>
+            <translation><!-- 04 Future Staffing Needs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05 Develop Unavailable Skill</masterLabel>
+            <translation><!-- 05 Develop Unavailable Skill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06 Retention</masterLabel>
+            <translation><!-- 06 Retention --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training Source Type Code --></label>
+        <name>Training_Source_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>01 Government Internal</masterLabel>
+            <translation><!-- 01 Government Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02 Government External</masterLabel>
+            <translation><!-- 02 Government External --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03 Non-government</masterLabel>
+            <translation><!-- 03 Non-government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04 Government State/Local</masterLabel>
+            <translation><!-- 04 Government State/Local --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05 Foreign Governments and Orgs</masterLabel>
+            <translation><!-- 05 Foreign Governments and Orgs --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training Start Date --></label>
+        <name>Training_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Training Sub Type Code --></label>
+        <name>Training_Sub_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>01-Legal</masterLabel>
+            <translation><!-- 01-Legal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02-Medical &amp; Health</masterLabel>
+            <translation><!-- 02-Medical &amp; Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03-Scientific</masterLabel>
+            <translation><!-- 03-Scientific --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04-Engineering &amp; Architecture</masterLabel>
+            <translation><!-- 04-Engineering &amp; Architecture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05-Human Resources</masterLabel>
+            <translation><!-- 05-Human Resources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06-Budget/Finance Business Admin.</masterLabel>
+            <translation><!-- 06-Budget/Finance Business Admin. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>07-Planning &amp; Analysis</masterLabel>
+            <translation><!-- 07-Planning &amp; Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>08-Information Technology</masterLabel>
+            <translation><!-- 08-Information Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>09-Project Management</masterLabel>
+            <translation><!-- 09-Project Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10-Acquisition</masterLabel>
+            <translation><!-- 10-Acquisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11-Logistic Specialty</masterLabel>
+            <translation><!-- 11-Logistic Specialty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12-Security</masterLabel>
+            <translation><!-- 12-Security --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13-Clerical (non-supervisory clerical/admin)</masterLabel>
+            <translation><!-- 13-Clerical (non-supervisory clerical/admin) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14-Trade &amp; Craft</masterLabel>
+            <translation><!-- 14-Trade &amp; Craft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15-Foreign Affairs</masterLabel>
+            <translation><!-- 15-Foreign Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16-Leadership/Manager/Communications</masterLabel>
+            <translation><!-- 16-Leadership/Manager/Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20-Pre-supervisory Program</masterLabel>
+            <translation><!-- 20-Pre-supervisory Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21-Supervisory Program</masterLabel>
+            <translation><!-- 21-Supervisory Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>22-Management Program</masterLabel>
+            <translation><!-- 22-Management Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>23-Leadership Development Program</masterLabel>
+            <translation><!-- 23-Leadership Development Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24-SES Candidate Development Program</masterLabel>
+            <translation><!-- 24-SES Candidate Development Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25-Executive Development</masterLabel>
+            <translation><!-- 25-Executive Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>26-Mentoring Program</masterLabel>
+            <translation><!-- 26-Mentoring Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>27-Coaching Program</masterLabel>
+            <translation><!-- 27-Coaching Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>32-Mandated Training</masterLabel>
+            <translation><!-- 32-Mandated Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>34-Leadership Skills</masterLabel>
+            <translation><!-- 34-Leadership Skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>35-Internal Agency Program</masterLabel>
+            <translation><!-- 35-Internal Agency Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>36-Technical Skills</masterLabel>
+            <translation><!-- 36-Technical Skills --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training Type Code --></label>
+        <name>Training_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>01 Training Program Area (Technical)</masterLabel>
+            <translation><!-- 01 Training Program Area (Technical) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02 Development Training Area (Cross-functional)</masterLabel>
+            <translation><!-- 02 Development Training Area (Cross-functional) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03 Basic Training Area (Orientation etc)</masterLabel>
+            <translation><!-- 03 Basic Training Area (Orientation etc) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training or Course Credit Hours --></label>
+        <name>Training_or_course_credit_hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tuition and Fees --></label>
+        <name>Tuition_and_Fees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type-1 Owner Contact --></label>
+        <name>Type_1_Owner_Contact__c</name>
+        <relationshipLabel><!-- Forms (Type-1 Owner Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type of Action --></label>
+        <name>Type_of_Action__c</name>
+        <picklistValues>
+            <masterLabel>Existing with Significant Modification to Work</masterLabel>
+            <translation><!-- Existing with Significant Modification to Work --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type of Appointment --></label>
+        <name>Type_of_Appointment__c</name>
+        <picklistValues>
+            <masterLabel>10 Career (Permanent)</masterLabel>
+            <translation><!-- 10 Career (Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15 Career-Conditional (Permanent)</masterLabel>
+            <translation><!-- 15 Career-Conditional (Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20 Nonpermanent (Competitive Service)</masterLabel>
+            <translation><!-- 20 Nonpermanent (Competitive Service) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30 Schedule A (Permanent)</masterLabel>
+            <translation><!-- 30 Schedule A (Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>32 Schedule B (Permanent)</masterLabel>
+            <translation><!-- 32 Schedule B (Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>35 Schedule D (Permanent)</masterLabel>
+            <translation><!-- 35 Schedule D (Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>36 Executive (Permanent)</masterLabel>
+            <translation><!-- 36 Executive (Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>38 Other (Permanent)</masterLabel>
+            <translation><!-- 38 Other (Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>40 Schedule A (Nonpermanent)</masterLabel>
+            <translation><!-- 40 Schedule A (Nonpermanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>42 Schedule B (Nonpermanent)</masterLabel>
+            <translation><!-- 42 Schedule B (Nonpermanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>44 Schedule C (Nonpermanent</masterLabel>
+            <translation><!-- 44 Schedule C (Nonpermanent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>45 Schedule D (Nonpermanent)</masterLabel>
+            <translation><!-- 45 Schedule D (Nonpermanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>46 Executive (Nonpermanent)</masterLabel>
+            <translation><!-- 46 Executive (Nonpermanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>48 Other (Nonpermanent)</masterLabel>
+            <translation><!-- 48 Other (Nonpermanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 Career (Senior Exec Permanent)</masterLabel>
+            <translation><!-- 50 Career (Senior Exec Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>55 Noncareer (Senior Exec Permanent)</masterLabel>
+            <translation><!-- 55 Noncareer (Senior Exec Permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60 Limited Term (Nonpermanent)</masterLabel>
+            <translation><!-- 60 Limited Term (Nonpermanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>65 Limited Emergency (Nonpermanent)</masterLabel>
+            <translation><!-- 65 Limited Emergency (Nonpermanent) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type-1 Owner --></label>
+        <name>Unauthenticated_Owner__c</name>
+        <relationshipLabel><!-- Forms (Type-1 Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Owner Email --></label>
+        <name>Unlicensed_Owner_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Funding Official --></label>
+        <name>User_Funding_Official__c</name>
+        <relationshipLabel><!-- Forms (User Funding Official) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User Supervisor 2 --></label>
+        <name>User_Supervisor_2__c</name>
+        <relationshipLabel><!-- Forms (User Supervisor 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User Supervisor --></label>
+        <name>User_Supervisor__c</name>
+        <relationshipLabel><!-- Forms (User Supervisor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User Time Keeper --></label>
+        <name>User_Time_Keeper__c</name>
+        <relationshipLabel><!-- Forms (User Time Keeper) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User Training Officer --></label>
+        <name>User_Training_Officer__c</name>
+        <relationshipLabel><!-- Forms (User Training Officer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Vehicle # --></label>
+        <name>Vehicle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Email Address --></label>
+        <name>Vendor_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Telephone Number --></label>
+        <name>Vendor_Telephone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Waiver Authorized Signature --></label>
+        <name>Waiver_Authorized_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Waiver Authorized Digital Signature --></label>
+        <name>Waiver_Digital_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Description --></label>
+        <name>Work_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Email Address --></label>
+        <name>Work_Email_Address2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Phone No --></label>
+        <name>Work_Phone_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2. QA Project Plan --></label>
+        <name>X2_QA_Project_Plan__c</name>
+        <picklistValues>
+            <masterLabel>Application of QA and QC activities to the single project covered by the contract</masterLabel>
+            <translation><!-- Application of QA and QC activities to the single project covered by the contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Programmatic QA Project Plan</masterLabel>
+            <translation><!-- Programmatic QA Project Plan --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 2. --></label>
+        <name>X2_SF_182__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3. --></label>
+        <name>X3_SF_182__c</name>
+    </fields>
+    <fields>
+        <label><!-- 4. --></label>
+        <name>X4_SF_182__c</name>
+    </fields>
+    <fields>
+        <label><!-- 4. Select Application Documentation Type --></label>
+        <name>X4_Select_Documentation_Type__c</name>
+        <picklistValues>
+            <masterLabel>Documentation of the application of QA and QC activities to applicable project(s).</masterLabel>
+            <translation><!-- Documentation of the application of QA and QC activities to applicable project(s). --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Existing documentation of the application of QA and QC activities will be used (give details below).</masterLabel>
+            <translation><!-- Existing documentation of the application of QA and QC activities will be used (give details below). --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Programmatic QA Project Plan with supplements for each specific project.</masterLabel>
+            <translation><!-- Programmatic QA Project Plan with supplements for each specific project. --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Example: 12-34-5678 --></help>
+        <label><!-- 8 Digit Station Symbol --></label>
+        <name>X8_Digit_Station_Symbol__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Approval Supervisors --></label>
+        <name>of_Approval_Supervisors__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 1. --></label>
+        <name>x1_SF_182__c</name>
+    </fields>
+    <layouts>
+        <layout>BAP Provisioning Layout</layout>
+        <sections>
+            <label><!-- Auditing --></label>
+            <section>Auditing</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deployments --></label>
+            <section>Deployments</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- User Activations --></label>
+            <section>User Activations</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>EPA-100</layout>
+        <sections>
+            <label><!-- AWL Details --></label>
+            <section>AWL Details</section>
+        </sections>
+        <sections>
+            <label><!-- AWL Planned Work Date(s) and Schedule --></label>
+            <section>AWL Planned Work Date(s) and Schedule</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Employee&apos;s Signature --></label>
+            <section>Employee&apos;s Signature</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>EPA-100 Admin View</layout>
+        <sections>
+            <label><!-- AWL Details --></label>
+            <section>AWL Details</section>
+        </sections>
+        <sections>
+            <label><!-- AWL Planned Work Date(s) and Schedule --></label>
+            <section>AWL Planned Work Date(s) and Schedule</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Employee&apos;s Signature --></label>
+            <section>Employee&apos;s Signature</section>
+        </sections>
+        <sections>
+            <label><!-- Instructions --></label>
+            <section>Instructions</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>EPA-3160-6v5</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- I. Information About You --></label>
+            <section>I. Information About You</section>
+        </sections>
+        <sections>
+            <label><!-- II. Type of Contribution. Check all the boxes that apply --></label>
+            <section>II. Type of Contribution. Check all the boxes that apply</section>
+        </sections>
+        <sections>
+            <label><!-- III. Internal Use Only --></label>
+            <section>III. Internal Use Only</section>
+        </sections>
+        <sections>
+            <label><!-- Leave Bank Election Form --></label>
+            <section>Leave Bank Election Form</section>
+        </sections>
+        <sections>
+            <label><!-- Leave Bank Election Form - General Instructions --></label>
+            <section>Leave Bank Election Form - General Instructions</section>
+        </sections>
+        <sections>
+            <label><!-- Leave Recipient Information (Donated to a Specific Person) --></label>
+            <section>Leave Recipient Information (Donated to a Specific Person)</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Sig Section (title not shown) --></label>
+            <section>Sig Section (title not shown)</section>
+        </sections>
+        <sections>
+            <label><!-- Type of Contribution Spacer --></label>
+            <section>Type of Contribution Spacer</section>
+        </sections>
+        <sections>
+            <label><!-- Type of Contribution Spacer 1 --></label>
+            <section>Type of Contribution Spacer 1</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>ORD-111</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Form Approval Routing --></label>
+            <section>Form Approval Routing</section>
+        </sections>
+        <sections>
+            <label><!-- I. Type of Action --></label>
+            <section>I. Type of Action</section>
+        </sections>
+        <sections>
+            <label><!-- II. General Information --></label>
+            <section>II. General Information</section>
+        </sections>
+        <sections>
+            <label><!-- III. Status of QA Documentation --></label>
+            <section>III. Status of QA Documentation</section>
+        </sections>
+        <sections>
+            <label><!-- IV. QA Documentation --></label>
+            <section>IV. QA Documentation</section>
+        </sections>
+        <sections>
+            <label><!-- ORD Quality Assurance Review Form (QARF) --></label>
+            <section>ORD Quality Assurance Review Form (QARF)</section>
+        </sections>
+        <sections>
+            <label><!-- Printable View --></label>
+            <section>Printable View</section>
+        </sections>
+        <sections>
+            <label><!-- QARF Spacer 1 --></label>
+            <section>QARF Spacer 1</section>
+        </sections>
+        <sections>
+            <label><!-- Spacer3 --></label>
+            <section>Spacer3</section>
+        </sections>
+        <sections>
+            <label><!-- Spacer5 --></label>
+            <section>Spacer5</section>
+        </sections>
+        <sections>
+            <label><!-- Spacer6 --></label>
+            <section>Spacer6</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+        <sections>
+            <label><!-- V. Incorporation of Requirements into Extramural Documentation --></label>
+            <section>V. Incorporation of Requirements into Extramural Documentation</section>
+        </sections>
+        <sections>
+            <label><!-- VI. Form Originator&apos;s Signature --></label>
+            <section>VI. Form Originator&apos;s Signature</section>
+        </sections>
+        <sections>
+            <label><!-- action spacer --></label>
+            <section>action spacer</section>
+        </sections>
+        <sections>
+            <label><!-- response --></label>
+            <section>response</section>
+        </sections>
+        <sections>
+            <label><!-- spacer --></label>
+            <section>spacer</section>
+        </sections>
+        <sections>
+            <label><!-- spacer1 --></label>
+            <section>spacer1</section>
+        </sections>
+        <sections>
+            <label><!-- spacer2 --></label>
+            <section>spacer2</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SF-182</layout>
+        <sections>
+            <label><!-- Approval Options --></label>
+            <section>Approval Options</section>
+        </sections>
+        <sections>
+            <label><!-- Blank --></label>
+            <section>Blank</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE (Sign Below) --></label>
+            <section>EMPLOYEE&apos;S AGREEMENT TO CONTINUE IN SERVICE (Sign Below)</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Header --></label>
+            <section>Header</section>
+        </sections>
+        <sections>
+            <label><!-- Override Form Approvers --></label>
+            <section>Override Form Approvers</section>
+        </sections>
+        <sections>
+            <label><!-- Override Form Approvers Spacer --></label>
+            <section>Override Form Approvers Spacer</section>
+        </sections>
+        <sections>
+            <label><!-- Section A - Spacer 1 --></label>
+            <section>Section A - Spacer 1</section>
+        </sections>
+        <sections>
+            <label><!-- Section A - Spacer 2 --></label>
+            <section>Section A - Spacer 2</section>
+        </sections>
+        <sections>
+            <label><!-- Section A - Spacer 3 --></label>
+            <section>Section A - Spacer 3</section>
+        </sections>
+        <sections>
+            <label><!-- Section A - TRAINEE INFORMATION --></label>
+            <section>Section A - TRAINEE INFORMATION</section>
+        </sections>
+        <sections>
+            <label><!-- Section B - TRAINEE COURSE DATA --></label>
+            <section>Section B - TRAINEE COURSE DATA</section>
+        </sections>
+        <sections>
+            <label><!-- Section C - COST AND BILLING INFORMATION --></label>
+            <section>Section C - COST AND BILLING INFORMATION</section>
+        </sections>
+        <sections>
+            <label><!-- Section C Spacer --></label>
+            <section>Section C Spacer</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- BAP Provisioning --></label>
+        <name>BAP_Provisioning</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- EPA-3160-6v5 --></label>
+        <name>EPA3160_6v5</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- EPA-100 --></label>
+        <name>EPA_100</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- EPA-3160-6v5_old_delete --></label>
+        <name>EPA_3160_6v5_old_delete</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- ORD-111 --></label>
+        <name>ORD_111</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SF-182 --></label>
+        <name>SF_182</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- If Authorization Reason &quot;Organization Allocation&quot; is selected, the Organization Allocation field must be completed. --></errorMessage>
+        <name>Authorization_Org_Allocation_Reason_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Authorization Reason &quot;Role&quot; is chosen, Role field must be completed. --></errorMessage>
+        <name>Authorization_Role_Reason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a valid deployment destination --></errorMessage>
+        <name>Deploy_Destination_valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Form is being prepared for person other than self, &quot;Continued Service Agreement Signature&quot; field cannot be checked. --></errorMessage>
+        <name>SF182_CSA_and_prepareForOther</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Form is being prepared for person other than self, &quot;Continued Service Agreement Signature&quot; field cannot be checked. --></errorMessage>
+        <name>SF182_CSA_and_prepareForOther_Top</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &quot;Select Card Holder&quot; field must be blank unless the invoice is furnished to &quot;Purchase Card Transaction&quot; --></errorMessage>
+        <name>SF_182_Card_Holder_Lookup_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &quot;Select Card Holder&quot; field must be blank unless the invoice is furnished to &quot;Purchase Card Transaction&quot; --></errorMessage>
+        <name>SF_182_Card_Holder_Lookup_Null_top</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &quot;Select Card Holder&quot; field is required if the invoice is furnished to &quot;Purchase Card Transaction&quot; --></errorMessage>
+        <name>SF_182_Card_Holder_Lookup_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &quot;Select Card Holder&quot; field is required if the invoice is furnished to &quot;Purchase Card Transaction&quot; --></errorMessage>
+        <name>SF_182_Card_Holder_Lookup_Required_top</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Vendor Email Address is not a valid email address. --></errorMessage>
+        <name>SF_182_Invalid_Email_Address</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a vaild source --></errorMessage>
+        <name>Source_deployment_valid</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Printable_View --></label>
+        <name>Printable_View</name>
+    </webLinks>
+</CustomObjectTranslation>

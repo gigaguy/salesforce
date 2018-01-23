@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Cost-Share Review</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Cost-Share Reviews</value>
+    </caseValues>
+    <fields>
+        <label><!-- Agreement --></label>
+        <name>Agreement__c</name>
+        <relationshipLabel><!-- Cost-Share Reviews --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cash Contributions --></label>
+        <name>Cash_Contributions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost-Share Review Status --></label>
+        <name>Cost_Share_Review_Status__c</name>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Review</masterLabel>
+            <translation><!-- Ready for Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted for Final Notification</masterLabel>
+            <translation><!-- Submitted for Final Notification --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date of Review --></label>
+        <name>Date_of_Review__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fiscal Year --></label>
+        <name>Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- GLLA Finance Lead --></label>
+        <name>GLLA_Finance_Lead__c</name>
+        <relationshipLabel><!-- Cost-Share Reviews (GLLA Finance Lead) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- In Kind Contributions --></label>
+        <name>In_Kind_Contributions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master Project ID --></label>
+        <name>Master_Project_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- ORC GLLA Finance Contact --></label>
+        <name>ORC_GLLA_Finance_Contact__c</name>
+        <relationshipLabel><!-- Cost-Share Reviews (ORC GLLA Finance Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Organization code --></label>
+        <name>Organization_code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Title --></label>
+        <name>Project_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Qtr --></label>
+        <name>Qtr__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RR Branch Chief --></label>
+        <name>RR_Branch_Chief__c</name>
+        <relationshipLabel><!-- Cost-Share Reviews (RR Branch Chief) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- RR Section Chief --></label>
+        <name>RR_Section_Chief__c</name>
+        <relationshipLabel><!-- Cost-Share Reviews (RR Section Chief) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Review End Date --></label>
+        <name>Review_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Review Start Date --></label>
+        <name>Review_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site/Project Code --></label>
+        <name>Site_Project_Code__c</name>
+    </fields>
+    <layouts>
+        <layout>Quarterly Review Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- NFS Contributions Summary --></label>
+            <section>NFS Contributions Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Project Agreement --></label>
+            <section>Project Agreement</section>
+        </sections>
+        <sections>
+            <label><!-- Review Details --></label>
+            <section>Review Details</section>
+        </sections>
+        <sections>
+            <label><!-- Reviewers and Approvers --></label>
+            <section>Reviewers and Approvers</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

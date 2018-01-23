@@ -61,20 +61,286 @@
     <enableFeeds>true</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
-        <fullName>ManagerId</fullName>
-        <trackFeedHistory>true</trackFeedHistory>
-        <type>Hierarchy</type>
+        <fullName>Agree_To_Rules_of_Behavior__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Agree To Rules of Behavior</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>sAMAccountName__c</fullName>
-        <description>primary key to AD file</description>
-        <externalId>true</externalId>
-        <label>sAMAccountName</label>
+        <fullName>Building__c</fullName>
+        <externalId>false</externalId>
+        <label>Building</label>
         <length>50</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Funding_Official__c</fullName>
+        <description>Used for WebForms approval process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for WebForms approval process</inlineHelpText>
+        <label>Funding Official</label>
+        <relationshipName>Funding_Official</relationshipName>
+        <restrictedAdminField>false</restrictedAdminField>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>Grade__c</fullName>
+        <externalId>false</externalId>
+        <label>Grade</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HR_Org__c</fullName>
+        <externalId>false</externalId>
+        <label>HR Org</label>
+        <length>8</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LAN_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>LAN ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mail_Stop__c</fullName>
+        <externalId>false</externalId>
+        <label>Mail Stop</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ManagerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>Occ_Series__c</fullName>
+        <externalId>false</externalId>
+        <label>Occupational Series</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PASTA_Person_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>PASTA Person ID</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pay_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>Pay Plan</label>
+        <length>8</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Person_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Person Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Employee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contractor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>External</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Position_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Position Title</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Preferred_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Preferred Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>QA_Manager__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>ORD-111 BAP form</description>
+        <externalId>false</externalId>
+        <label>QA Manager</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SUPV_CODE_DESCR__c</fullName>
+        <externalId>false</externalId>
+        <label>Supervisor Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Session_Environment__c</fullName>
+        <externalId>false</externalId>
+        <label>Session Environment</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Session_IP__c</fullName>
+        <externalId>false</externalId>
+        <label>Session IP</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Session_Timestamp__c</fullName>
+        <externalId>false</externalId>
+        <label>Session Timestamp</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Session_Token__c</fullName>
+        <externalId>false</externalId>
+        <label>Session Token</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature__c</fullName>
+        <externalId>false</externalId>
+        <label>Signature</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Step__c</fullName>
+        <externalId>false</externalId>
+        <label>Step</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supervisor_2__c</fullName>
+        <description>Used for WebForms approval process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for WebForms approval process</inlineHelpText>
+        <label>Supervisor 2</label>
+        <relationshipName>Supervisor_2</relationshipName>
+        <restrictedAdminField>false</restrictedAdminField>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>Supervisor__c</fullName>
+        <description>Used for WebForms approval process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for WebForms approval process</inlineHelpText>
+        <label>Supervisor</label>
+        <relationshipName>Supervisor</relationshipName>
+        <restrictedAdminField>false</restrictedAdminField>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>Supervisors__c</fullName>
+        <externalId>false</externalId>
+        <label>Supervisors</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_Keeper__c</fullName>
+        <description>Used for WebForms approval process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for WebForms approval process</inlineHelpText>
+        <label>Time Keeper</label>
+        <relationshipName>Time_Keeper</relationshipName>
+        <restrictedAdminField>false</restrictedAdminField>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>Training_Officer__c</fullName>
+        <description>Used for WebForms approval process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for WebForms approval process</inlineHelpText>
+        <label>Training Officer</label>
+        <relationshipName>Training_Officer</relationshipName>
+        <restrictedAdminField>false</restrictedAdminField>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
     </fields>
     <listViews>
         <fullName>ActiveUsers</fullName>
@@ -91,6 +357,26 @@
             <value>1</value>
         </filters>
         <label>Active Users</label>
+    </listViews>
+    <listViews>
+        <fullName>Active_Users_with_IDs</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.SAML_SUBJECT</columns>
+        <columns>PASTA_Person_ID__c</columns>
+        <columns>LAN_ID__c</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Active Users with IDs</label>
     </listViews>
     <listViews>
         <fullName>AdminUsers</fullName>
