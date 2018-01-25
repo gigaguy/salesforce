@@ -79,17 +79,19 @@
         <label>Approvers</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Approving_Official__c</field>
+                <behavior>Readonly</behavior>
+                <field>Approver_Information__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Division_Director_Manager__c</field>
+                <behavior>Readonly</behavior>
+                <field>User_Supervisor__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>User_Supervisor_2__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>

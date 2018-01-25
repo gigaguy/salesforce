@@ -11,6 +11,7 @@
     <tab>Forms__c</tab>
     <tab>Fill_Print</tab>
     <tab>Edit_My_Approvers</tab>
+    <tab>standard-report</tab>
     <tab>standard-Contact</tab>
     <tab>standard-Account</tab>
     <tab>Instructions__c</tab>

@@ -166,6 +166,17 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Approver_Information__c</fullName>
+        <defaultValue>&quot;The User Supervisor field should be the Approving Official for the request. The User Supervisor 2 field will be used for the Division Director/Manager. To update these approvers, please go back to the Forms Page and select the Edit My Approvers option.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Approver Information</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Approving_Official__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -2256,6 +2267,19 @@
             <value>Processed</value>
         </filters>
         <label>Completed Purchase Card Actions</label>
+    </listViews>
+    <listViews>
+        <fullName>Records_from_Data_Migration</fullName>
+        <columns>NAME</columns>
+        <columns>Cardholder_AO_Name__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>equals</operation>
+            <value>BAP ETL</value>
+        </filters>
+        <label>Records from Data Migration</label>
     </listViews>
     <nameField>
         <displayFormat>{00000}</displayFormat>
