@@ -187,6 +187,10 @@ public class FormsTriggerHandler {
     public static void createFormShares(Set<id> mainIds){
         isFirstTimeAfter = false;
         
+        //unlock record on submittal
+        forms__c[] formList = [select id from forms__c where id in :mainIds];
+        Approval.UnlockResult[] formUnlocks = Approval.Unlock(formList, false);
+        
         List<ProcessInstance> processInstances = [SELECT Id, (SELECT Id, ActorID,TargetObjectId, isPending, StepStatus, Comments FROM StepsAndWorkitems) FROM ProcessInstance where TargetObjectId in :mainIds];
         system.debug('pis: ' + processInstances);
         Map<id, List<id>> formIdToPeopleIds = new Map<id, List<id>>();
