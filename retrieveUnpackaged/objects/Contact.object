@@ -520,8 +520,14 @@
         <columns>CORE.USERS.LAST_NAME</columns>
         <filterScope>Everything</filterScope>
         <filters>
+            <field>FULL_NAME</field>
+            <operation>contains</operation>
+            <value>Steven</value>
+        </filters>
+        <filters>
             <field>ACCOUNT.NAME</field>
             <operation>contains</operation>
+            <value>r07</value>
         </filters>
         <label>All Contacts</label>
     </listViews>
