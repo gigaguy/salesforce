@@ -44,7 +44,8 @@
         var formName = event.currentTarget.name;     
         
         //ts.1.16.18
-        console.log("in Form LINE-41: "+formID);
+        console.log("The formId = " + formID);
+        console.log("The formName = " + formName);
         
         if (formName === "BAP Provisioning") {
             var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
