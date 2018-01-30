@@ -175,6 +175,19 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Organization_Nickname__c</fullName>
+        <description>Local or unofficial organization name (as opposed to the Organization Name and Description that come from the Federal Personnel and Payroll System (FPPS).  This may be a nickname or shortened name used within a region or program office.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Unofficial name, or nickname, of the organization used locally, e.g., within a region or program office</inlineHelpText>
+        <label>Organization Nickname</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
