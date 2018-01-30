@@ -289,6 +289,11 @@
             <operation>contains</operation>
             <value>permit</value>
         </filters>
+        <filters>
+            <field>ACCOUNT.NAME</field>
+            <operation>contains</operation>
+            <value>R07</value>
+        </filters>
         <label>All Organizations</label>
     </listViews>
     <listViews>
@@ -322,6 +327,16 @@
             <field>ACCOUNT.RECORDTYPE</field>
             <operation>equals</operation>
             <value>Account.HR_Org</value>
+        </filters>
+        <filters>
+            <field>ACCOUNT.NAME</field>
+            <operation>contains</operation>
+            <value>R07</value>
+        </filters>
+        <filters>
+            <field>ACCOUNT.NAME</field>
+            <operation>contains</operation>
+            <value>OPM</value>
         </filters>
         <label>HR Orgs</label>
     </listViews>
