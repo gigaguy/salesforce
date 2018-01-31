@@ -2738,6 +2738,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Forms__c.Sandbox_Last_Refreshed__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Forms__c.Select_Card_Holder__c</field>
         <readable>false</readable>
     </fieldPermissions>

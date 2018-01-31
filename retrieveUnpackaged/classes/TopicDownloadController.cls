@@ -168,7 +168,7 @@ public class TopicDownloadController {
 			Topic__c topic = topics[0];
             List<Topic__c> relatedTopicIds = TopicDownloadController.getAllRelatedTopics(topic.Topic_Number__c);
        	 	result.put('topic', topic);
-			result.put('snippets', [select Name,Topic__r.Name,Submission__r.Commenter_Name__c,Submission__r.Letter_Type__c,Submission__r.Submission_Number__c,Submission__r.Agency_Name__c,Snippet_Status__c from Snippet__c where Topic__c in :relatedTopicIds]);            
+            result.put('snippets', [select Name,Topic__r.Name,Submission__r.Commenter_Name__c,Submission__r.Letter_Type__c,Submission__r.Submission_Number__c,Submission__r.Agency_Name__c,Snippet_Status__c from Snippet__c where Topic__c in :relatedTopicIds]);          
         }
         return result;
     }
@@ -187,7 +187,13 @@ public class TopicDownloadController {
             Integer rightPageNumber = Integer.valueOf(pageNumber-1);
             Set<String> setSelectedIds = new Set<String>(selectedRecords);
         	Integer offSet = (rightPageNumber * NUMBER_OF_RECORDS_TO_RETURN);
-			List<Topic__c> topics = [select Name,Topic_Number__c from Topic__c where id = :topicId];    	    
+			List<Topic__c> topics = [select Name,Topic_Number__c from Topic__c where id = :topicId];
+            List<Topic__c> currentTopic = [select Name,Topic_Number__c, RecordTypeId from Topic__c where id = :topicId LIMIT 1];
+            String currentTopicsRecordTypeID = '';
+            for(Topic__c t : currentTopic){
+            	currentTopicsRecordTypeID = t.RecordTypeId;
+                system.debug('Record Type Name is: ' + currentTopicsRecordTypeID);
+            }
         	//System.debug(offSet + ' AND >> ' + NUMBER_OF_RECORDS_TO_RETURN);
 	        if(topics.size() > 0){
     	        Topic__c topic = topics[0];
@@ -201,20 +207,20 @@ public class TopicDownloadController {
 					System.debug(pageNumber + ' AND with agency Name ' + offSet + ' isSearchFlow '+ likePattern);
 	                //Snippet Status added to query - Quinton Hill 12/28/2017
                     allSnips = [select Name,Snippet_Status__c,Submission_Number__c,PDF_Page__c,Extracted_Text__c,Notes__c,Response__c,Related_Reference__c,Topic__r.Name,Topic__r.Topic_Name__c,Topic__r.Summary_of_Comments_on_this_Topic__c,Topic__r.Agency_Comment_Response__c,Submission__r.Commenter_Name__c,Submission__r.Letter_Type__c,Submission__r.Submission_Number__c,Submission__r.Agency_Name__c 
-                            from Snippet__c where Topic__c in :relatedTopicIds AND 
+                            from Snippet__c where Topic__c in :relatedTopicIds AND Topic__r.RecordTypeId = :currentTopicsRecordTypeID AND 
                             (NAME LIKE :likePattern OR Topic__r.Name LIKE :likePattern OR Submission__r.Submission_Number__c LIKE :likePattern OR Submission__r.Commenter_Name__c LIKE :likePattern  OR Submission__r.Agency_Name__c LIKE :likePattern OR Snippet_Status__c LIKE :likePattern)
                             ORDER BY Topic__c LIMIT :NUMBER_OF_RECORDS_TO_RETURN OFFSET :offSet];
                     //Get max records with this search
                     //Snippet Status added to query - Quinton Hill 12/28/2017
-                    allMatchedRecordIds = new List<Id>(new Map<Id,Snippet__c>([select Id from Snippet__c where Topic__c in :relatedTopicIds AND 
+                    allMatchedRecordIds = new List<Id>(new Map<Id,Snippet__c>([select Id from Snippet__c where Topic__c in :relatedTopicIds AND Topic__r.RecordTypeId = :currentTopicsRecordTypeID AND 
                             (NAME LIKE :likePattern OR Topic__r.Name LIKE :likePattern OR Submission__r.Submission_Number__c LIKE :likePattern OR Submission__r.Commenter_Name__c LIKE :likePattern OR Submission__r.Agency_Name__c LIKE :likePattern OR Snippet_Status__c LIKE :likePattern)]).keySet());
             	}else{
                 	//Snippet Status added to query - Quinton Hill 12/28/2017
                     allSnips = [select Name,Snippet_Status__c,Submission_Number__c,PDF_Page__c,Extracted_Text__c,Notes__c,Response__c,Related_Reference__c,Topic__r.Name,Topic__r.Topic_Name__c,Topic__r.Summary_of_Comments_on_this_Topic__c,Topic__r.Agency_Comment_Response__c,Submission__r.Commenter_Name__c,Submission__r.Letter_Type__c,Submission__r.Submission_Number__c,Submission__r.Agency_Name__c 
-                            from Snippet__c where Topic__c in :relatedTopicIds ORDER BY Topic__c 
+                            from Snippet__c where Topic__c in :relatedTopicIds AND Topic__r.RecordTypeId = :currentTopicsRecordTypeID ORDER BY Topic__c 
                             LIMIT :NUMBER_OF_RECORDS_TO_RETURN OFFSET :offSet];
                     //Get max records with this search
-                    allMatchedRecordIds = new List<Id>(new Map<Id,Snippet__c>([select Id from Snippet__c where Topic__c in :relatedTopicIds]).keySet());
+                    allMatchedRecordIds = new List<Id>(new Map<Id,Snippet__c>([select Id from Snippet__c where Topic__c in :relatedTopicIds AND Topic__r.RecordTypeId = :currentTopicsRecordTypeID]).keySet());
 	            }
     	        for(Snippet__c snp : allSnips){
         	    	snippetsWrapper.add(TopicDownloadController.createSnippetWrappers(snp,isAllSelected,setSelectedIds,null));
