@@ -175,6 +175,21 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Org_Chart_Report_To__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>List direct report for purposes of creating an organizational chart.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List direct report for purposes of creating an organizational chart.</inlineHelpText>
+        <label>Org Chart Report To</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Organizations</relationshipLabel>
+        <relationshipName>Organizations</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Organization_Nickname__c</fullName>
         <description>Local or unofficial organization name (as opposed to the Organization Name and Description that come from the Federal Personnel and Payroll System (FPPS). This may be a nickname or shortened name used within a region or program office.</description>
         <externalId>false</externalId>
@@ -291,17 +306,8 @@
     <listViews>
         <fullName>AllAccounts</fullName>
         <columns>ACCOUNT.NAME</columns>
-        <columns>ACCOUNT.ADDRESS1_STATE</columns>
-        <columns>ACCOUNT.PHONE1</columns>
-        <columns>ACCOUNT.TYPE</columns>
-        <columns>CORE.USERS.FIRST_NAME</columns>
-        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>Organization_Nickname__c</columns>
         <filterScope>Everything</filterScope>
-        <filters>
-            <field>Short_Description__c</field>
-            <operation>contains</operation>
-            <value>permit</value>
-        </filters>
         <filters>
             <field>ACCOUNT.NAME</field>
             <operation>contains</operation>

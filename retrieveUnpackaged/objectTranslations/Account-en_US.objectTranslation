@@ -466,6 +466,12 @@
         <name>Deleted__c</name>
     </fields>
     <fields>
+        <help><!-- List direct report for purposes of creating an organizational chart. --></help>
+        <label><!-- Org Chart Report To --></label>
+        <name>Org_Chart_Report_To__c</name>
+        <relationshipLabel><!-- Organizations --></relationshipLabel>
+    </fields>
+    <fields>
         <help><!-- Unofficial name, or nickname, of the organization used locally, e.g., within a region or program office --></help>
         <label><!-- Organization Nickname --></label>
         <name>Organization_Nickname__c</name>
