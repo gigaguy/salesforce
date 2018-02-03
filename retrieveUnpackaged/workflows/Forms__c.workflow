@@ -71,6 +71,17 @@
         <template>unfiled$public/BAP_Forms_Approved_Form</template>
     </alerts>
     <alerts>
+        <fullName>FCO_App_Submission_Confirmation</fullName>
+        <description>FCO App Submission Confirmation</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Unauthenticated_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/FCO_App_Submission_Confirmation</template>
+    </alerts>
+    <alerts>
         <fullName>Final_Approval_Email</fullName>
         <description>Final Approval Email</description>
         <protected>false</protected>
@@ -398,6 +409,15 @@ IF(NOT(ISBLANK(FCO__c)),&quot;FCO Approval&quot;,
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_Dup_Reviewer</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting Duplication Reviewer Approval&quot;</formula>
+        <name>Approval Step - Sent to Dup Reviewer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Escalated_Apprvr</fullName>
         <field>Approval_Step__c</field>
         <formula>IF(  
@@ -410,6 +430,15 @@ OR(
 &quot;Awaiting Sharon Riding&apos;s Approval (Escalated Approver)&quot;,
 &quot;&quot; )</formula>
         <name>Approval Step - Sent to Escalated Apprvr</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_Final_Approvers</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting Final Approval&quot;</formula>
+        <name>Approval Step - Sent to Final Approvers</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
         <protected>false</protected>
@@ -437,9 +466,9 @@ OR(
         <fullName>Approval_Step_Sent_to_Next_Approver3</fullName>
         <description>ORD-111 checks for Additional Reviewer</description>
         <field>Approval_Step__c</field>
-        <formula>IF( ISBLANK( Additional_Reviewer__c ) , 
-&quot;Awaiting Additional Reviewer Approval&quot;, 
-&quot;Awaiting QA Manager Approval&quot;)</formula>
+        <formula>IF( ISBLANK( Additional_Reviewer__c ) ,
+&quot;Awaiting QA Manager Approval&quot;, 
+&quot;Awaiting Additional Reviewer Approval&quot;)</formula>
         <name>Approval Step - Sent to Next Approver3</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
@@ -472,6 +501,15 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_OB</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting OB Approval&quot;</formula>
+        <name>Approval Step - Sent to OB</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Approval_Step_Sent_to_QA_Manager</fullName>
         <field>Approval_Step__c</field>
         <formula>&quot;Awaiting QA Manager Approval&quot;</formula>
@@ -485,6 +523,33 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
         <field>Approval_Step__c</field>
         <formula>&quot;Awaiting &quot;&amp; TEXT( Approval_Routing_Options__c ) &amp;&quot; Queue Approval&quot;</formula>
         <name>Approval Step - Sent to Queue Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_SBO</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting SBO Approval&quot;</formula>
+        <name>Approval Step - Sent to SBO</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_SITL_Group</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting SITL Group Approval&quot;</formula>
+        <name>Approval Step - Sent to SITL Group</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_SITL_Reviewer</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting SITL Approval&quot;</formula>
+        <name>Approval Step - Sent to SITL Reviewer</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
         <protected>false</protected>
@@ -508,15 +573,6 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
         <operation>Formula</operation>
         <protected>false</protected>
         <reevaluateOnChange>true</reevaluateOnChange>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Leave_Bank_Coordinator_Signature</fullName>
-        <field>Local_Leave_Bank_Coordinator_Signature__c</field>
-        <literalValue>1</literalValue>
-        <name>Leave Bank Coordinator Signature</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Literal</operation>
-        <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Manager_Signature</fullName>

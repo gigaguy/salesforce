@@ -257,10 +257,6 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Local_Leave_Bank_Coordinator_Signature__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Waiver_Authorized_Signature__c</field>
             </layoutItems>
             <layoutItems>
@@ -271,15 +267,31 @@
                 <behavior>Edit</behavior>
                 <field>Effective_Date__c</field>
             </layoutItems>
+            <layoutItems>
+                <emptySpace>true</emptySpace>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Finalize_Approval_Reassignment__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Leave_Bank_Coordinator_Digital_Signature__c</field>
+                <field>Waiver_Digital_Signature__c</field>
+            </layoutItems>
+            <layoutItems>
+                <emptySpace>true</emptySpace>
+            </layoutItems>
+            <layoutItems>
+                <emptySpace>true</emptySpace>
+            </layoutItems>
+            <layoutItems>
+                <emptySpace>true</emptySpace>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Waiver_Digital_Signature__c</field>
+                <field>Last_Approval_Reassignment__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

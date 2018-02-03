@@ -18,6 +18,8 @@ public without sharing class FormPageController  {
             formNames.add('SF-182');
             formNames.add('ORD-111');
             formNames.add('EPA-3160-6v5');
+            formNames.add('FCO Appointment');
+            formNames.add('Application Approval');
         }
         return [select id, Name, Description from RecordType where sObjectType = 'Forms__c' and IsActive = true and Name in :formNames];
     }
@@ -125,6 +127,29 @@ public without sharing class FormPageController  {
         }
     }
 
+    @AuraEnabled
+    public static string recallApproval(ID formID, string sID){
+        String message = 'Recall Failed';
+        try{
+            system.debug(formId);
+            Approval.ProcessWorkItemRequest pwr = new Approval.ProcessWorkItemRequest();
+            ProcessInstance x = [select id, status from ProcessInstance where TargetObjectID=:formID AND status='pending' limit 1];
+            ProcessInstanceWorkItem xItem = [select id from ProcessInstanceWorkItem where ProcessInstanceID=:x.id limit 1];
+            
+            pwr.setWorkItemId(xItem.id);
+            pwr.setAction('Removed');              
+                            
+            // Execute process request
+            Approval.ProcessResult result = Approval.process(pwr);   
+            if (result.IsSuccess()) message = 'Approval Request Recalled';
+            return message;
+        }
+        catch(exception ex){
+            message = string.valueof(ex);
+            return message;
+        }
+    }
+    
     @AuraEnabled
     public static List<BAP_Fill_and_Print_List__mdt> getFandP_FormRTs(){
                 

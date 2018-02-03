@@ -84,6 +84,16 @@
         <externalId>false</externalId>
         <inlineHelpText>Used for WebForms approval process</inlineHelpText>
         <label>Funding Official</label>
+        <lookupFilter>
+            <active>false</active>
+            <errorMessage>Unable to find matching FCO.</errorMessage>
+            <filterItems>
+                <field>User.Is_FCO__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
         <relationshipName>Funding_Official</relationshipName>
         <restrictedAdminField>false</restrictedAdminField>
         <trackFeedHistory>false</trackFeedHistory>

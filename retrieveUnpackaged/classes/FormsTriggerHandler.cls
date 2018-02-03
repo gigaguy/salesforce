@@ -1,5 +1,6 @@
 public class FormsTriggerHandler {
-    public static Boolean isFirstTime = true;
+    public static Boolean isFirstTime = true;   //used in BeforeUpdate
+    public static Boolean isFirstTimeAfter = true;   //used in AfterUpdate
     
     public void beforeInsert(List<Forms__c> forms){
         for (forms__c form : forms){
@@ -24,6 +25,8 @@ public class FormsTriggerHandler {
     }
     
     public void beforeUpdate(Map<id,Forms__c> formMap){
+        if(isFirstTime){
+        isFirstTime = false;
         updateFormLookups(formMap.values(), false);
         
         // (sf-182 / ord-111 processes -- set form owner to person prepared for and then clear Prepare For field
@@ -35,13 +38,16 @@ public class FormsTriggerHandler {
                     user u = [select id, LAN_ID__c from user where LAN_ID__c = :c.LAN_ID__c limit 1];                    
                     if (form.Unauthenticated_Owner__c == null){
                         form.ownerid = u.id;}                    
-                    else {form.Unauthenticated_Owner__c = u.id;}
-                    
+                    else {form.Unauthenticated_Owner__c = u.id;                          
+                        }
+                    //update Type 1 Owner Contact    
+                    form.Type_1_Owner_Contact__c = c.id;
                     //remove value
                     form.Prepare_Form_for__c = null;
                       }
-              }
+               }
           }
+        }
     }
     
     private void updateFormLookups(List<Forms__c> forms, boolean onInsert){
@@ -159,9 +165,10 @@ public class FormsTriggerHandler {
     }
     
     public void afterUpdate(Map<id,Forms__c> formMap){
-        if(isFirstTime){
-        isFirstTime = false;
+        if(isFirstTimeAfter){
+        isFirstTimeAfter = false;
         system.debug('in after update');
+        system.debug('isFirstTimeAfter: '+isFirstTimeAfter);
         //get sf-182 record type
             Id rtID = Schema.SObjectType.Forms__c.getRecordTypeInfosByName().get('SF-182').getRecordTypeId();
             system.debug('sf-182 rt: '+rtID);
@@ -170,8 +177,7 @@ public class FormsTriggerHandler {
                 if(form.Approval_Step__c != 'Approved'){
                     system.debug('approval step does not equal approved');
                     createFormShares(formMap.keyset());
-                  }
-
+                  }                
             }
         }
     }
@@ -179,6 +185,12 @@ public class FormsTriggerHandler {
     @future
     // Shares Form record with Approvers
     public static void createFormShares(Set<id> mainIds){
+        isFirstTimeAfter = false;
+        
+        //unlock record on submittal
+        forms__c[] formList = [select id from forms__c where id in :mainIds];
+        Approval.UnlockResult[] formUnlocks = Approval.Unlock(formList, false);
+        
         List<ProcessInstance> processInstances = [SELECT Id, (SELECT Id, ActorID,TargetObjectId, isPending, StepStatus, Comments FROM StepsAndWorkitems) FROM ProcessInstance where TargetObjectId in :mainIds];
         system.debug('pis: ' + processInstances);
         Map<id, List<id>> formIdToPeopleIds = new Map<id, List<id>>();
@@ -213,6 +225,89 @@ public class FormsTriggerHandler {
         }
         
         database.insert(formShares, false);
-    }
-    
+        
+        //Approver reassigned
+            List<forms__c> forms = [select id, name, Approval_Step__c, Form_Type_Name__c, Unauthenticated_Owner__c, Finalize_Approval_Reassignment__c 
+            FROM forms__c WHERE id in :mainIds];
+            
+            for(forms__c form : forms){    
+            
+        if(form.Finalize_Approval_Reassignment__c && form.Approval_Step__c != null){   
+            ProcessInstanceWorkItem Pitem = [SELECT ActorID, OriginalActorId 
+            FROM ProcessInstanceWorkItem
+            WHERE ProcessInstance.Status = 'Pending' AND ProcessInstance.TargetObjectId = :form.ID limit 1];
+            system.debug('Pitem: '+Pitem);
+            
+          if(Pitem.ActorID != Pitem.OriginalActorId) { 
+            string lanID = [select lan_id__c from user where id = :form.Unauthenticated_Owner__c limit 1].lan_id__c;
+            contact ct = [select id, email from contact where lan_id__c = :lanID limit 1];
+            
+            Schema.SObjectType actorToken = Pitem.ActorID.getSObjectType();            
+            string drActor = actorToken .getDescribe().getName();
+
+            Schema.SObjectType oActorToken = Pitem.OriginalActorID.getSObjectType();            
+            string drOActor = oActorToken.getDescribe().getName();
+            
+            system.debug('actor desc: '+drActor);
+            system.debug('Orig actor desc: '+drOActor);
+            
+            string oldApproverName;
+            string newApproverName;
+            
+            if(drActor == 'User'){
+            user newApprover = [Select id, email, firstname, lastname From User Where ID = :Pitem.ActorID Limit 1];
+            newApproverName = newApprover.FirstName+' '+newApprover.LastName;
+            }
+            else {
+            group newApprover = [Select id, name from group where id = :Pitem.ActorID limit 1];
+            newApproverName = newApprover.Name;
+            }
+            
+            if(drOActor == 'User'){
+            user oldApprover = [Select id, email, firstname, lastname From User Where ID = :Pitem.OriginalActorId Limit 1]; 
+            oldApproverName = oldApprover.FirstName+' '+oldApprover.LastName;
+            }
+            else {
+            group oldApprover = [Select id, name from group where id = :Pitem.OriginalActorId limit 1];
+            oldApproverName = oldApprover.Name;
+            }
+            
+            string timeNow;
+            if(system.now().minute() < 10){
+               timeNow = system.now().hour()+':0'+system.now().minute(); 
+                }
+             else {timeNow = system.now().hour()+':'+system.now().minute();} 
+        
+            form.Finalize_Approval_Reassignment__c = false;
+            form.Last_Approval_Reassignment__c = 'Reassigned from ' + oldApproverName + ' to ' +
+                 newApproverName +' on ' + 
+                 system.now().month()+'/'+system.now().day()+'/'+system.now().year() + ' at ' +
+                 timeNow;
+                
+            update form;
+            
+            //send notification email to originator            
+            string[] toAddress = new String[] {ct.email};
+            
+            Messaging.reserveSingleEmailCapacity(2);
+            Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();          
+            mail.setSenderDisplayName('BAP Approval Notification');            
+            ID templateId = [Select id from EmailTemplate where name = 'Notify Form Owner Approver Reassigned' limit 1].id;
+            mail.setWhatId(form.id);
+            mail.setTargetObjectId(ct.id);
+            mail.setTemplateID(templateId);
+            mail.setToAddresses(toAddress);
+            mail.setSaveAsActivity(false);
+            Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail }); 
+            
+           }     //END  if ActorID != OriginalActorId    
+               else {form.Finalize_Approval_Reassignment__c = false;
+                      update form;}       
+         }     // END if Finalize_Approval_Reassignment__c is checked AND form was submitted
+         if(form.Finalize_Approval_Reassignment__c && form.Approval_Step__c == null){
+             form.Finalize_Approval_Reassignment__c = false;
+             update form;
+             }
+      }    //END forms__c loop
+   }    //END createFormShares method
 }

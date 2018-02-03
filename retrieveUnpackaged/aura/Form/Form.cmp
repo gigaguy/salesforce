@@ -362,7 +362,9 @@
                       </aura:set></aura:if>
                   <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveStay}" />
            		  <ui:button class="slds-button slds-button_success" label="Submit" press="{!c.confirmSubmit}" /> 
-                <aura:set attribute="else"><ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.closeModal}" />
+                <aura:set attribute="else">
+                    <ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.closeModal}" />
+                    <ui:button class="slds-button slds-button--neutral floatLeft" label="Recall Approval Request" press="{!c.approvalRecall}" />
                   <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
                   <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral" label="Show Attachments" press="{!c.showAttachments}" /></aura:if> 
                 </aura:set>

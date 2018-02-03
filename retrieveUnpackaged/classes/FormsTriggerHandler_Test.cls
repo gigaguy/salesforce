@@ -50,11 +50,11 @@ public class FormsTriggerHandler_Test {
         
         
         update form;
-        system.assertEquals(u3.ID, [select User_Supervisor__c from Forms__c where id = :form.ID].User_Supervisor__c);
+        system.assertEquals(u2.ID, [select User_Supervisor__c from Forms__c where id = :form.ID].User_Supervisor__c);
         
-    }
+    }  
 
-@isTest(seeAllData=true)
+    @isTest(seeAllData=true)
     static void testTriggerB(){
         
         //Insert Test Data        
@@ -112,9 +112,9 @@ public class FormsTriggerHandler_Test {
         
        
         update form;
-        system.assertEquals(u3.ID, [select User_Supervisor__c from Forms__c where id = :form.ID].User_Supervisor__c);
+        system.assertEquals(u2.ID, [select User_Supervisor__c from Forms__c where id = :form.ID].User_Supervisor__c);
         
-    }
+    }   
 
     @isTest
     static void testTriggerC(){
@@ -143,7 +143,7 @@ public class FormsTriggerHandler_Test {
         update form;
         system.assertEquals(null, [select User_Supervisor__c from Forms__c where id = :form.ID].User_Supervisor__c);
         
-    }
+    }    
     
     @isTest
     static void testTriggerD(){
@@ -188,6 +188,209 @@ public class FormsTriggerHandler_Test {
         Forms__c formLicUser = new Forms__c(RecordtypeId = [select id from RecordType where sObjectType = 'Forms__c' and DeveloperName = 'SF_182'].ID);
         try{insert formLicUser;}catch (Exception e){}
         
-    }
+    }   
+
+    @isTest
+    static void testTriggerE(){
+        insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = true); // checkbox from "Contact Approvers" Custom Setting
+        
+                //Insert Test Data        
+            Profile p = [select id, name from profile where name = 'Forms Profile'];        
+                
+            User u = new User(FirstName='Bob', LastName='Smith', Lan_ID__c = 'thetest', profileID=p.id, Username='test@fake.ccc', 
+                  email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
+                  LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');
+            insert u;
+    
+            contact c = new contact(FirstName='Bob', LastName='Smith', Lan_ID__c = 'thetest');
+            insert c;
+            
+                    
+        Forms__c form = new Forms__c(Unauthenticated_Owner__c = u.Id, approval_step__c = 'Form Prepared for you by test', RecordtypeId = [select id from RecordType where sObjectType = 'Forms__c' and DeveloperName = 'SF_182'].ID);
+        insert form;
+        Approval.ProcessSubmitRequest req1 = new Approval.ProcessSubmitRequest();
+
+        // Submit the approval request for the account
+        try{Approval.ProcessResult result = Approval.process(req1);}catch (Exception e){}
+        
+        form.approval_step__c = 'Form Prepared for you by test';
+        form.Unauthenticated_Owner__c = null;
+        update form;
+        system.assertEquals(null, [select User_Supervisor__c from Forms__c where id = :form.ID].User_Supervisor__c);
+        
+    }   
+    
+    @isTest
+    static void testTriggerF(){
+        insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = true); // checkbox from "Contact Approvers" Custom Setting
+        
+                //Insert Test Data        
+            Profile p = [select id, name from profile where name = 'Forms Profile'];        
+                
+            User u = new User(FirstName='Bob', LastName='Smith', lan_ID__c='smith123', profileID=p.id, Username='test@fake.ccc', 
+                  email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
+                  LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');
+            insert u;
+    
+            User u2 = new User(FirstName='Dave', LastName='Jones', profileID=p.id, Username='test2@fake.ccc', 
+                  email='test@fake.ccc', Alias='testU2', CommunityNickname='testU2', TimeZoneSidKey= 'America/Los_Angeles',
+                  LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');
+            insert u2;
+            
+            User u4 = new User(FirstName='Jeff', LastName='Daves', profileID=p.id, Username='test4@fake.ccc', 
+                  email='test@fake.ccc', Alias='testU4', CommunityNickname='testU4', TimeZoneSidKey= 'America/Los_Angeles',
+                  LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');
+            insert u4;
+            
+           Account a = new account (name='acme');
+        insert a;
+        Contact c = new contact (lastname ='smith', accountid=a.id, lan_id__c='smith123', email='test@fake.ccc');
+        Contact c2 = new contact (lastname ='jones', accountid=a.id, lan_id__c='jones123', email='test@fake.ccc');
+        insert c;
+        insert c2;
+        
+        u.Supervisor__c = u2.ID;
+        u.lan_id__c = c.lan_id__c;
+        update u;
+        c.Supervisor__c = u2.ID;
+        update c;        
+        
+        user u3 = [select id from user limit 1];
+        
+            
+        Forms__c form = new Forms__c(Unauthenticated_Owner__c = u.Id, RecordtypeId = [select id from RecordType where sObjectType = 'Forms__c' and DeveloperName = 'EPA_100'].ID);
+        insert form;
+        
+        Approval.ProcessSubmitRequest req1 = new Approval.ProcessSubmitRequest();
+        req1.setComments('Submitting request for approval.');
+        req1.setObjectId(form.id);
+        
+        // Submit the approval request for the Form 
+        Approval.ProcessResult result = Approval.process(req1);
+                
+
+        req1.setNextApproverIds(new Id[] {u4.id});
+                
+        form.Finalize_Approval_Reassignment__c = true;
+        update form;
+       
+    }    
+
+@isTest
+    static void testTriggerG(){
+        insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = true); // checkbox from "Contact Approvers" Custom Setting
+        
+                //Insert Test Data        
+            Profile p = [select id, name from profile where name = 'Forms Profile'];        
+                
+            User u = new User(FirstName='Bob', LastName='Smith', lan_ID__c='smith123', profileID=p.id, Username='test@fake.ccc', 
+                  email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
+                  LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');
+            insert u;
+    
+            User u2 = new User(FirstName='Dave', LastName='Jones', profileID=p.id, Username='test2@fake.ccc', 
+                  email='test@fake.ccc', Alias='testU2', CommunityNickname='testU2', TimeZoneSidKey= 'America/Los_Angeles',
+                  LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');
+            insert u2;
+            
+           Account a = new account (name='acme');
+        insert a;
+        Contact c = new contact (lastname ='smith', accountid=a.id, lan_id__c='smith123', email='test@fake.ccc');
+        Contact c2 = new contact (lastname ='jones', accountid=a.id, lan_id__c='jones123');
+        insert c;
+        insert c2;
+        
+        u.Supervisor__c = u2.ID;
+        u.lan_id__c = c.lan_id__c;
+        update u;
+        c.Supervisor__c = u2.ID;
+        update c;        
+        
+        user u3 = [select id from user limit 1];
+        
+            
+        Forms__c form = new Forms__c(Unauthenticated_Owner__c = u.Id, RecordtypeId = [select id from RecordType where sObjectType = 'Forms__c' and DeveloperName = 'EPA_100'].ID);
+        insert form;
+        
+        Approval.ProcessSubmitRequest req1 = new Approval.ProcessSubmitRequest();
+        req1.setComments('Submitting request for approval.');
+        req1.setObjectId(form.id);
+        
+        // Submit the approval request for the Form 
+        Approval.ProcessResult result = Approval.process(req1);
+        update form;
+               
+        id aGroup = [select id from group limit 1].id;
+        id bGroup = [select id from group where id != :aGroup limit 1].id;
+    
+        ProcessInstanceWorkItem Pitem = [SELECT ActorID, OriginalActorId 
+            FROM ProcessInstanceWorkItem
+            WHERE ProcessInstance.TargetObjectId = :form.ID limit 1];
+        
+        Pitem.ActorID = aGroup;
+        Pitem.OriginalActorId = bGroup;
+        update Pitem;
+    
+        form.Finalize_Approval_Reassignment__c = true;
+        update form;
+       
+    }    
+
+    @isTest
+    static void testTriggerH(){
+        insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = true); // checkbox from "Contact Approvers" Custom Setting
+        
+                //Insert Test Data        
+            Profile p = [select id, name from profile where name = 'Forms Profile'];        
+                
+            User u = new User(FirstName='Bob', LastName='Smith', lan_ID__c='smith123', profileID=p.id, Username='test@fake.ccc', 
+                  email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
+                  LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');
+            insert u;
+    
+            User u2 = new User(FirstName='Dave', LastName='Jones', profileID=p.id, Username='test2@fake.ccc', 
+                  email='test@fake.ccc', Alias='testU2', CommunityNickname='testU2', TimeZoneSidKey= 'America/Los_Angeles',
+                  LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');
+            insert u2;
+            
+           Account a = new account (name='acme');
+        insert a;
+        Contact c = new contact (lastname ='smith', accountid=a.id, lan_id__c='smith123', email='test@fake.ccc');
+        Contact c2 = new contact (lastname ='jones', accountid=a.id, lan_id__c='jones123');
+        insert c;
+        insert c2;
+        
+        u.Supervisor__c = u2.ID;
+        u.lan_id__c = c.lan_id__c;
+        update u;
+        c.Supervisor__c = u2.ID;
+        update c;        
+        
+        user u3 = [select id from user limit 1];
+        
+            
+        Forms__c form = new Forms__c(Unauthenticated_Owner__c = u.Id, RecordtypeId = [select id from RecordType where sObjectType = 'Forms__c' and DeveloperName = 'EPA_100'].ID);
+        insert form;
+        
+        Approval.ProcessSubmitRequest req1 = new Approval.ProcessSubmitRequest();
+        req1.setComments('Submitting request for approval.');
+        req1.setObjectId(form.id);
+        
+        // Submit the approval request for the Form 
+        Approval.ProcessResult result = Approval.process(req1);
+        update form;
+               
+        ProcessInstanceWorkItem Pitem = [SELECT ActorID, OriginalActorId 
+            FROM ProcessInstanceWorkItem
+            WHERE ProcessInstance.TargetObjectId = :form.ID limit 1];
+        
+        Pitem.ActorID = u2.id;
+        Pitem.OriginalActorId = u3.id;
+        update Pitem;
+    
+        form.Finalize_Approval_Reassignment__c = true;
+        update form;
+             
+    } 
 
 }

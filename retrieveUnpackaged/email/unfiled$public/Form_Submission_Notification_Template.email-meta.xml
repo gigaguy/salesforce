@@ -5,10 +5,11 @@
     <encodingKey>ISO-8859-1</encodingKey>
     <name>Form Submission Notification Template</name>
     <style>none</style>
-    <subject>A Form Has Been Submitted For Your Approval</subject>
+    <subject>A Form Has Been Submitted For Your Approval From {!Forms__c.Form_Owner__c} - Record ID: {!Forms__c.Form_Record_Name__c}</subject>
     <textOnly>The Form {!Forms__c.RecordType} has been submitted for your approval by {!Forms__c.Form_Owner__c}.
 
-Record ID: {!Forms__c.Form_Record_Name__c}
-{!ApprovalRequest.Internal_URL}</textOnly>
+To access, review, and approve the form use this link:  {!Forms__c.Link}
+
+Record ID: {!Forms__c.Form_Record_Name__c}</textOnly>
     <type>custom</type>
 </EmailTemplate>

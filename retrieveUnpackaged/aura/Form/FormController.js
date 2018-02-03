@@ -18,6 +18,59 @@
         helper.setSiteUserID(component);
         helper.setAPIUserID(component);
     },
+    approvalRecall : function(component, event, helper) {  // recalls Form from approval
+    	console.log('in approvalRecall');
+        
+        	var formID = component.get("v.viewFormID");
+        	console.log('formID: '+ formID);
+        
+            var action = component.get("c.recallApproval");
+            action.setParams({
+                "formID": formID,
+                "sID" : component.get("v.sessionID")
+            });
+            action.setCallback(this,function(resp){
+                console.log('in approvalSubmit action');
+                var state = resp.getState();
+                console.log('state: ' +state);
+                if(state === 'SUCCESS'){
+                    component.set("v.message", resp.getReturnValue());
+                    component.set("v.viewTheModal", false);
+                    component.set("v.hasAttachments", false);
+        			component.set("v.addAttachments", false);
+                    component.set("v.onSubmit", false)
+                }
+                else if(state === 'ERROR'){
+                    var errors = resp.getError();
+                    for(var i = 0 ;i < errors.length;i++){
+                        console.log(errors[i].message);
+                    }
+                }
+            });
+            $A.enqueueAction(action);  
+        
+        // Update display to "viewMyForms"
+        var action = component.get("c.findExistingForms");
+        action.setParams({
+			"sID" : component.get("v.sessionID")
+        });
+        action.setCallback(this,function(resp){
+			console.log('in approvalSubmit action2');
+            var state = resp.getState();
+            console.log('state: ' +state);
+            if(state === 'SUCCESS'){
+                component.set("v.mySavedForms", resp.getReturnValue());  // returned list of user's Saved Forms
+                component.set("v.pageStatus", "viewMyForms");  // shows user list of Saved Forms
+            }
+            else if(state === 'ERROR'){
+                var errors = resp.getError();
+                for(var i = 0 ;i < errors.length;i++){
+                    console.log(errors[i].message);
+                }
+            }
+        });
+        $A.enqueueAction(action);
+    },
     approvalSubmit : function(component, event, helper) {  // submits Form for approval
 		console.log('in approvalSubmit');
 
@@ -214,6 +267,7 @@
         console.log('in copyForm');
         component.set("v.onSubmit", false);
         component.set("v.isCopy", true);
+        component.set("v.isNew", false);
         
         var formID = event.currentTarget.id;
         var formName = event.currentTarget.name;
@@ -308,8 +362,8 @@
         	var hrefEmail = "To be determined";
         }
         else if (formName === "ORD-111") {
-            var hrefInfo = "https://intranet.ord.epa.gov/sites/default/files/media/qa/ORDQARFinstructions073008.pdf";
-        	var hrefEmail = "ORDQARFinstructions073008.pdf";
+            var hrefInfo = "https://epaoei--oeiodsta--c.cs33.visual.force.com/resource/1514583669000/ORD_111_QARF_Instructions?isdtp=p1";
+        	var hrefEmail = "ORD-111 QARF Instructions.pdf";
         }
         else if (formName === "PRIAv5") {
             var hrefInfo = "";
@@ -318,6 +372,14 @@
         else if (formName === "SF-182") {
             var hrefInfo = "https://usepa.sharepoint.com/sites/OARM_Community/EPAU/SitePages/Training%20Officers%20&%20Coordinators.aspx";
         	var hrefEmail = "Here";
+        }
+        else if (formName === "FCO Appointment") {
+            var hrefInfo = "";
+        	var hrefEmail = "";
+        }
+        else if (formName === "Application Approval") {
+            var hrefInfo = "mailto:McMahon.Ethan@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+        	var hrefEmail = "McMahon.Ethan@epa.gov";
         }
         else {
             var hrefInfo = "mailto:McNeal.Detha@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
@@ -363,7 +425,7 @@
                                               
                     );
                 
-                helper.hide(component,event);
+                helper.hide(component,event);	 
             }
             else if(state === 'ERROR'){
                 var errors = resp.getError();

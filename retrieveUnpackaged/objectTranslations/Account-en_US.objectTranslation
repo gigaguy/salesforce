@@ -378,12 +378,12 @@
     </fields>
     <fields>
         <caseValues>
-            <plural>false</plural>
-            <value>Organization Type</value>
-        </caseValues>
-        <caseValues>
             <plural>true</plural>
             <value>Organization Types</value>
+        </caseValues>
+        <caseValues>
+            <plural>false</plural>
+            <value>Organization Type</value>
         </caseValues>
         <name>account_type</name>
         <startsWith>Vowel</startsWith>
@@ -464,6 +464,12 @@
     <fields>
         <label><!-- Deleted --></label>
         <name>Deleted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies approver for Application Approval form based on submitter&apos;s region/organization. --></help>
+        <label><!-- Senior IT Leader --></label>
+        <name>Senior_IT_Leader__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Short Description --></label>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
-    <active>true</active>
+    <active>false</active>
     <allowRecall>true</allowRecall>
     <allowedSubmitters>
         <type>creator</type>
@@ -510,13 +510,13 @@
         <allowDelegate>true</allowDelegate>
         <assignedApprover>
             <approver>
-                <name>king.roy@epa.gov</name>
+                <name>ridings.sharon2@epa.gov</name>
                 <type>user</type>
             </approver>
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
         <entryCriteria>
-            <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+            <booleanFilter>1 OR 2 OR 3</booleanFilter>
             <criteriaItems>
                 <field>Forms__c.Escalate_to_Chief_Learning_Officer__c</field>
                 <operation>equals</operation>
@@ -529,11 +529,6 @@
             </criteriaItems>
             <criteriaItems>
                 <field>Forms__c.Direct_Cost_Total__c</field>
-                <operation>greaterThan</operation>
-                <value>25000</value>
-            </criteriaItems>
-            <criteriaItems>
-                <field>Forms__c.Indirect_Total__c</field>
                 <operation>greaterThan</operation>
                 <value>25000</value>
             </criteriaItems>

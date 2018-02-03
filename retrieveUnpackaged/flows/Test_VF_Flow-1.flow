@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>Test VF Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Test VF Flow</label>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Find_Contact</name>
+        <label>Find Contact</label>
+        <locationX>445</locationX>
+        <locationY>159</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Results</targetReference>
+        </connector>
+        <filters>
+            <field>Name</field>
+            <operator>StartsWith</operator>
+            <value>
+                <elementReference>enteredName</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
+        <outputAssignments>
+            <assignToReference>FoundID</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>FoundName</assignToReference>
+            <field>Name</field>
+        </outputAssignments>
+    </recordLookups>
+    <screens>
+        <name>Get_name</name>
+        <label>Get name</label>
+        <locationX>233</locationX>
+        <locationY>162</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Find_Contact</targetReference>
+        </connector>
+        <fields>
+            <name>desc</name>
+            <fieldText>Enter a name below to search for a Contact.  This is a &quot;starts with&quot; search...</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Enter_Name</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>enteredName</elementReference>
+            </defaultValue>
+            <fieldText>Enter Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+    </screens>
+    <screens>
+        <name>Results</name>
+        <label>Results</label>
+        <locationX>654</locationX>
+        <locationY>165</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>desc2</name>
+            <fieldText>Here are the search results:</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Search_Name</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>enteredName</elementReference>
+            </defaultValue>
+            <fieldText>Search Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>NameFound</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>FoundName</elementReference>
+            </defaultValue>
+            <fieldText>Name Found</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>ID_Found</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>FoundID</elementReference>
+            </defaultValue>
+            <fieldText>ID Found</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+    </screens>
+    <startElementReference>Get_name</startElementReference>
+    <variables>
+        <name>enteredName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FoundID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FoundName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

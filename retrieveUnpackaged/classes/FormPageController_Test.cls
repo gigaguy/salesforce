@@ -79,6 +79,7 @@ public class FormPageController_Test {
         FormPageController.getSiteUserID();
         FormPageController.getAPIUserID();
         FormPageController.removeFormShare(xform.ID, uSU.id);
+        FormPageController.recallApproval(form.ID, '123ABC');
                 
     }
     
@@ -159,5 +160,31 @@ public class FormPageController_Test {
             FormPageController.getListOfFiles(formID); 
             
       }
+      
+      @isTest
+        static void testApprovalRecall(){
+            insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
+            
+            User u = [select id from User where isActive = true limit 1];
+            User u2 = [select id from User where isActive = true and PRofile.Name = 'System Administrator' and id != :u.id limit 1];
+            u.Lan_ID__c = 'thetest';
+            u.Session_Token__c = '123ABC';
+            u.Supervisor__c = u2.id;
+            u.Supervisor_2__c = u2.id;
+            update u;
+                       
+            contact c = new contact(FirstName='Bob', LastName='Smith', Lan_ID__c = 'thetest');
+            insert c;
+         
+            Forms__c testForm = new Forms__c();
+            testForm.RecordTypeID = [select id from RecordType where name = 'EPA-100' limit 1].id;
+            testForm.Unauthenticated_Owner__c = u.Id;
+            insert testForm;
+            
+            id formID = testForm.id;
+            
+            FormPageController.submitForApproval(formID, '123ABC');
+            FormPageController.recallApproval(formID, '123ABC');
+      }      
       
 }
