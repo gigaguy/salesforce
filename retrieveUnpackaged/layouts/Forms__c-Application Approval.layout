@@ -44,6 +44,17 @@
                 <behavior>Readonly</behavior>
                 <field>Organization_1__c</field>
             </layoutItems>
+            <layoutItems>
+                <emptySpace>true</emptySpace>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Office_or_Region2__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Organization_2__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -80,15 +91,15 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Sub_Function__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Business_Area__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Line_of_Business__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Sub_Function__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
@@ -195,6 +206,10 @@
         <layoutColumns>
             <layoutItems>
                 <emptySpace>true</emptySpace>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Approver_1__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>

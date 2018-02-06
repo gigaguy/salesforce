@@ -2042,6 +2042,11 @@
     </fields>
     <fields>
         <label><!-- Office or Region --></label>
+        <name>Office_or_Region2__c</name>
+        <relationshipLabel><!-- Forms (Office or Region) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Office or Region --></label>
         <name>Office_or_Region__c</name>
         <picklistValues>
             <masterLabel>AO</masterLabel>
@@ -2139,6 +2144,10 @@
     <fields>
         <label><!-- Organization --></label>
         <name>Organization_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization --></label>
+        <name>Organization_2__c</name>
     </fields>
     <fields>
         <label><!-- Organization Mailing Address --></label>

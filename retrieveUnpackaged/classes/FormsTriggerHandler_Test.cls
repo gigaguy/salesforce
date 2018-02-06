@@ -85,6 +85,7 @@ public class FormsTriggerHandler_Test {
         
         u.Supervisor__c = u2.ID;
         u.lan_id__c = c.lan_id__c;
+        u.delegatedapproverid = u2.id;
         update u;
         c.Supervisor__c = u2.ID;
         update c;        
@@ -392,5 +393,62 @@ public class FormsTriggerHandler_Test {
         update form;
              
     } 
+    
+@isTest
+    static void testTriggerI(){
+        insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = true); // checkbox from "Contact Approvers" Custom Setting
+        
+                //Insert Test Data        
+            Profile p = [select id, name from profile where name = 'Forms Profile'];        
+                
+            User u = new User(FirstName='Bob', LastName='Smith', lan_ID__c='smith123', profileID=p.id, Username='test@fake.ccc', 
+                  email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
+                  LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');
+            insert u;
+    
+            User u2 = new User(FirstName='Dave', LastName='Jones', profileID=p.id, Username='test2@fake.ccc', 
+                  email='test@fake.ccc', Alias='testU2', CommunityNickname='testU2', TimeZoneSidKey= 'America/Los_Angeles',
+                  LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');
+            insert u2;
+            
+            User u4 = new User(FirstName='Jeff', LastName='Daves', profileID=p.id, Username='test4@fake.ccc', 
+                  email='test@fake.ccc', Alias='testU4', CommunityNickname='testU4', TimeZoneSidKey= 'America/Los_Angeles',
+                  LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');
+            insert u4;
+            
+           Account a = new account (name='acme');
+        insert a;
+        Contact c = new contact (lastname ='smith', accountid=a.id, lan_id__c='smith123', email='test@fake.ccc');
+        Contact c2 = new contact (lastname ='jones', accountid=a.id, lan_id__c='jones123', email='test@fake.ccc');
+        insert c;
+        insert c2;
+        
+        u.Supervisor__c = u2.ID;
+        u.lan_id__c = c.lan_id__c;
+        update u;
+        c.Supervisor__c = u2.ID;
+        update c;        
+        
+        user u3 = [select id from user limit 1];
+        
+            
+        Forms__c form = new Forms__c(Unauthenticated_Owner__c = u.Id, RecordtypeId = [select id from RecordType where sObjectType = 'Forms__c' and DeveloperName = 'EPA_100'].ID);
+        insert form;
+        
+        Approval.ProcessSubmitRequest req1 = new Approval.ProcessSubmitRequest();
+        req1.setComments('Submitting request for approval.');
+        req1.setObjectId(form.id);
+        
+        // Submit the approval request for the Form 
+        Approval.ProcessResult result = Approval.process(req1);
+                
+
+        req1.setNextApproverIds(new Id[] {u4.id});
+                
+        form.Finalize_Approval_Reassignment__c = true;
+        form.Approval_Step__c = null;
+        update form;
+       
+    }    
 
 }

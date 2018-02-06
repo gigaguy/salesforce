@@ -186,6 +186,7 @@ public class FormsTriggerHandler {
     // Shares Form record with Approvers
     public static void createFormShares(Set<id> mainIds){
         isFirstTimeAfter = false;
+        id delAppID;
         
         //unlock record on submittal
         forms__c[] formList = [select id from forms__c where id in :mainIds];
@@ -215,6 +216,14 @@ public class FormsTriggerHandler {
             for (id personID: formIdToPeopleIds.get(formId)){
                 formIDs.add(formID);
                 personIds.add(personID);
+                //get delegated approver
+                try{
+                delAppID = [select id, DelegatedApproverID from user where id = :personID limit 1].DelegatedApproverID;
+                    }
+                catch(exception e){system.debug(e);}
+                    if(delAppID != null){
+                    personIds.add(delAppID);
+                    }
             }
         }
         

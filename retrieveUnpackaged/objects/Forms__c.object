@@ -5147,6 +5147,36 @@ Prepare_Form_for__r.Phone
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Office_or_Region2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Application Approval</description>
+        <externalId>false</externalId>
+        <label>Office or Region</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 AND 2</booleanFilter>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>HR_Org</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.ParentId</field>
+                <operation>equals</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Forms (Office or Region)</relationshipLabel>
+        <relationshipName>Forms1yt744</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Office_or_Region__c</fullName>
         <description>Application Approval</description>
         <externalId>false</externalId>
@@ -5257,6 +5287,7 @@ Prepare_Form_for__r.Phone
     </fields>
     <fields>
         <fullName>Organization_1__c</fullName>
+        <description>Application Approval</description>
         <externalId>false</externalId>
         <formula>CASE(Office_or_Region__c, 
 &apos;AO&apos;, &apos;OFC OF ADMINISTRATOR&apos;,
@@ -5283,6 +5314,19 @@ Prepare_Form_for__r.Phone
 &apos;R09&apos;, &apos;REGION 9&apos;,
 &apos;R10&apos;, &apos;REGION 10&apos;,
 &apos;[This field will populate after save.]&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Organization</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Organization_2__c</fullName>
+        <description>Application Approval</description>
+        <externalId>false</externalId>
+        <formula>Office_or_Region2__r.Short_Description__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Organization</label>
         <required>false</required>
