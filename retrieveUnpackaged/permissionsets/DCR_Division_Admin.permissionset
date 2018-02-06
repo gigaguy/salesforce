@@ -177,6 +177,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>OrgHierarchyCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ProfilePageController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -198,6 +202,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SiteRegisterControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TestOrgHierarchy</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>UserNode</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1018,6 +1030,11 @@ Manage Document entries (delete rights)</description>
     <fieldPermissions>
         <editable>false</editable>
         <field>Contact.LeadSource</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Local_Supervisor__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4340,6 +4357,10 @@ Manage Document entries (delete rights)</description>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>OrgHierarchy</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>PrintableView</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
@@ -4609,6 +4630,10 @@ Manage Document entries (delete rights)</description>
     </tabSettings>
     <tabSettings>
         <tab>Mass_Mailing_Campaign__c</tab>
+        <visibility>None</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Org_Chart</tab>
         <visibility>None</visibility>
     </tabSettings>
     <tabSettings>
