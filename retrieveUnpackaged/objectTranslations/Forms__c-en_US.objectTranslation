@@ -41,6 +41,10 @@
             <translation><!-- OSC --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Purchase Cardholder</masterLabel>
+            <translation><!-- Purchase Cardholder --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>SACO</masterLabel>
             <translation><!-- SACO --></translation>
         </picklistValues>
@@ -62,8 +66,17 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Approval Process Alert --></label>
+        <name>Approval_Process_Alert__c</name>
+    </fields>
+    <fields>
         <label><!-- Approval Step --></label>
         <name>Approval_Step__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approver 1 --></label>
+        <name>Approver_1__c</name>
+        <relationshipLabel><!-- Forms (Approver 1) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Approver 2 --></label>
@@ -113,7 +126,8 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Business Justification --></label>
+        <help><!-- Business justification for requesting a new card or check (Mission Critical). --></help>
+        <label><!-- Business Justification for New Card\Chck --></label>
         <name>Business_Justification__c</name>
     </fields>
     <fields>
@@ -380,8 +394,16 @@
         <name>Employee_s_Signature__c</name>
     </fields>
     <fields>
+        <label><!-- Enter Approval Process --></label>
+        <name>Enter_Approval_Process__c</name>
+    </fields>
+    <fields>
         <label><!-- Expire Date --></label>
         <name>Expire_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Files attached to Trainings? --></label>
+        <name>Files_attached_to_Trainings__c</name>
     </fields>
     <fields>
         <label><!-- Form Owner --></label>
@@ -466,6 +488,10 @@
             <masterLabel>Starter User Count</masterLabel>
             <translation><!-- Starter User Count --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- GSA SmartPay Training Has Attachment? --></label>
+        <name>GSA_SmartPay_Training_Has_Attachment__c</name>
     </fields>
     <fields>
         <label><!-- HR Org Code --></label>
@@ -847,6 +873,14 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- PCard Training Has Attachment? --></label>
+        <name>PCard_Training_Has_Attachment__c</name>
+    </fields>
+    <fields>
+        <label><!-- PNET Training Has Attachment? --></label>
+        <name>PNET_Training_Has_Attachment__c</name>
+    </fields>
+    <fields>
         <label><!-- Pass/Fail --></label>
         <name>Pass_Fail__c</name>
         <picklistValues>
@@ -1095,16 +1129,16 @@
     <layouts>
         <layout>Cancellation of Card/Check</layout>
         <sections>
-            <label><!-- Approvers --></label>
-            <section>Approvers</section>
-        </sections>
-        <sections>
             <label><!-- Comments --></label>
             <section>Comments</section>
         </sections>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
         </sections>
         <sections>
             <label><!-- Request for Cancellation of Purchase Card and/or Convenience Checks. --></label>
@@ -1117,10 +1151,6 @@
     </layouts>
     <layouts>
         <layout>Change Cardholder AO</layout>
-        <sections>
-            <label><!-- Approvers --></label>
-            <section>Approvers</section>
-        </sections>
         <sections>
             <label><!-- Cardholder AO Request --></label>
             <section>Cardholder AO Request</section>
@@ -1138,16 +1168,16 @@
             <section>List of affected cardholder(s)</section>
         </sections>
         <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
+        </sections>
+        <sections>
             <label><!-- Requestor Information --></label>
             <section>Requestor Information</section>
         </sections>
     </layouts>
     <layouts>
         <layout>Change Contact Info on Card/Check</layout>
-        <sections>
-            <label><!-- Approvers --></label>
-            <section>Approvers</section>
-        </sections>
         <sections>
             <label><!-- Comments --></label>
             <section>Comments</section>
@@ -1161,16 +1191,16 @@
             <section>Custom Links</section>
         </sections>
         <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
+        </sections>
+        <sections>
             <label><!-- Requestor Information --></label>
             <section>Requestor Information</section>
         </sections>
     </layouts>
     <layouts>
         <layout>Change Monthly Limit of Card/Check</layout>
-        <sections>
-            <label><!-- Approvers --></label>
-            <section>Approvers</section>
-        </sections>
         <sections>
             <label><!-- Cardholder 1 --></label>
             <section>Cardholder 1</section>
@@ -1212,6 +1242,10 @@
             <section>Custom Links</section>
         </sections>
         <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
+        </sections>
+        <sections>
             <label><!-- Request for Monthly Limit Increase/Decrease Details --></label>
             <section>Request for Monthly Limit Increase/Decrease Details</section>
         </sections>
@@ -1223,16 +1257,16 @@
     <layouts>
         <layout>Change Name on Card/Check</layout>
         <sections>
-            <label><!-- Approvers --></label>
-            <section>Approvers</section>
-        </sections>
-        <sections>
             <label><!-- Comments --></label>
             <section>Comments</section>
         </sections>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
         </sections>
         <sections>
             <label><!-- Request for Name Change on Purchase Card and/or Convenience Checks --></label>
@@ -1300,10 +1334,6 @@
     <layouts>
         <layout>New Approving Official  (AO)</layout>
         <sections>
-            <label><!-- Approvers --></label>
-            <section>Approvers</section>
-        </sections>
-        <sections>
             <label><!-- Cardholder(s) --></label>
             <section>Cardholder(s)</section>
         </sections>
@@ -1314,6 +1344,10 @@
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
         </sections>
         <sections>
             <label><!-- Request for a New Approving Official (AO)  Account  Set-Up --></label>
@@ -1327,16 +1361,16 @@
     <layouts>
         <layout>New Convenience Check</layout>
         <sections>
-            <label><!-- Approvers --></label>
-            <section>Approvers</section>
-        </sections>
-        <sections>
             <label><!-- Comments --></label>
             <section>Comments</section>
         </sections>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
         </sections>
         <sections>
             <label><!-- Request for Convenience Checks --></label>
@@ -1350,16 +1384,16 @@
     <layouts>
         <layout>Purchase Card</layout>
         <sections>
-            <label><!-- Approvers --></label>
-            <section>Approvers</section>
-        </sections>
-        <sections>
             <label><!-- Comments --></label>
             <section>Comments</section>
         </sections>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
         </sections>
         <sections>
             <label><!-- Purchase Card Instructions --></label>
@@ -1388,16 +1422,16 @@
     <layouts>
         <layout>Temporary Closure/Reactivation of Card/Check</layout>
         <sections>
-            <label><!-- Approvers --></label>
-            <section>Approvers</section>
-        </sections>
-        <sections>
             <label><!-- Comments --></label>
             <section>Comments</section>
         </sections>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
         </sections>
         <sections>
             <label><!-- Requestor Information --></label>

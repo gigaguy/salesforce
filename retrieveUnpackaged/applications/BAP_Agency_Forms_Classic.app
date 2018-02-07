@@ -7,4 +7,5 @@
     <tab>Fill_Print</tab>
     <tab>Edit_My_Approvers</tab>
     <tab>standard-Contact</tab>
+    <tab>Line_Item__c</tab>
 </CustomApplication>

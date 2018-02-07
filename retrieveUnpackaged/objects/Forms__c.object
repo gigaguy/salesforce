@@ -139,8 +139,22 @@
                     <fullName>TO</fullName>
                     <default>false</default>
                 </value>
+                <value>
+                    <fullName>Purchase Cardholder</fullName>
+                    <default>false</default>
+                </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Approval_Process_Alert__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Process Alert</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
     </fields>
     <fields>
         <fullName>Approval_Step__c</fullName>
@@ -152,6 +166,18 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approver_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Approver 1</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Approver_2__c</fullName>
@@ -167,7 +193,7 @@
     </fields>
     <fields>
         <fullName>Approver_Information__c</fullName>
-        <defaultValue>&quot;The User Supervisor field should be the Approving Official for the request. The User Supervisor 2 field will be used for the Division Director/Manager. To update these approvers, please go back to the Forms Page and select the Edit My Approvers option.&quot;</defaultValue>
+        <defaultValue>&quot;Approver 1 is the Immediate Supervisor or Team Lead. Approver 2 is the Division Director or Second Line Manager.&quot;</defaultValue>
         <externalId>false</externalId>
         <label>Approver Information</label>
         <length>32768</length>
@@ -253,7 +279,8 @@
     <fields>
         <fullName>Business_Justification__c</fullName>
         <externalId>false</externalId>
-        <label>Business Justification</label>
+        <inlineHelpText>Business justification for requesting a new card or check (Mission Critical).</inlineHelpText>
+        <label>Business Justification for New Card\Chck</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -922,6 +949,15 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Enter_Approval_Process__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Enter Approval Process</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Expire_Date__c</fullName>
         <externalId>false</externalId>
         <label>Expire Date</label>
@@ -929,6 +965,15 @@
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Files_attached_to_Trainings__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Files attached to Trainings?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Form_Owner__c</fullName>
@@ -1064,6 +1109,15 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>GSA_SmartPay_Training_Has_Attachment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>GSA SmartPay Training Has Attachment?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>HR_Org_Code__c</fullName>
@@ -1662,6 +1716,24 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>PCard_Training_Has_Attachment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>PCard Training Has Attachment?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PNET_Training_Has_Attachment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>PNET Training Has Attachment?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Pass_Fail__c</fullName>
@@ -2655,6 +2727,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Purchase Cardholder</fullName>
+                <default>true</default>
+            </values>
+            <values>
                 <fullName>SACO</fullName>
                 <default>false</default>
             </values>
@@ -2991,6 +3067,10 @@
             <values>
                 <fullName>OSC</fullName>
                 <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Cardholder</fullName>
+                <default>true</default>
             </values>
             <values>
                 <fullName>SACO</fullName>
@@ -3335,6 +3415,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Purchase Cardholder</fullName>
+                <default>true</default>
+            </values>
+            <values>
                 <fullName>SACO</fullName>
                 <default>false</default>
             </values>
@@ -3675,6 +3759,10 @@
             <values>
                 <fullName>OSC</fullName>
                 <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Cardholder</fullName>
+                <default>true</default>
             </values>
             <values>
                 <fullName>SACO</fullName>
@@ -4019,6 +4107,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Purchase Cardholder</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>SACO</fullName>
                 <default>false</default>
             </values>
@@ -4358,6 +4450,10 @@
             </values>
             <values>
                 <fullName>OSC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Cardholder</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -5019,6 +5115,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Purchase Cardholder</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>SACO</fullName>
                 <default>false</default>
             </values>
@@ -5360,6 +5460,10 @@
             <values>
                 <fullName>OSC</fullName>
                 <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Cardholder</fullName>
+                <default>true</default>
             </values>
             <values>
                 <fullName>SACO</fullName>
@@ -5704,6 +5808,10 @@
             <values>
                 <fullName>OSC</fullName>
                 <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Cardholder</fullName>
+                <default>true</default>
             </values>
             <values>
                 <fullName>SACO</fullName>

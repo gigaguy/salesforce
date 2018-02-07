@@ -11,10 +11,10 @@
     <tab>Forms__c</tab>
     <tab>Fill_Print</tab>
     <tab>Edit_My_Approvers</tab>
+    <tab>Line_Item__c</tab>
     <tab>standard-report</tab>
     <tab>standard-Contact</tab>
     <tab>standard-Account</tab>
-    <tab>Instructions__c</tab>
     <uiType>Lightning</uiType>
     <utilityBar>BAP_Agency_Forms_UtilityBar</utilityBar>
 </CustomApplication>
