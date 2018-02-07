@@ -9,7 +9,7 @@ public class FormsTriggerHandler {
             if(form.Unauthenticated_Owner__c == null){ 
                 form.Unauthenticated_Owner__c = userInfo.getUserID();
               }
-            form.Originator_ORD111__c = form.Form_Owner__c;
+            form.Originator_Type1__c = form.Form_Owner__c;
             
             //find and set Type-1 Owner Contact  
             try{ 

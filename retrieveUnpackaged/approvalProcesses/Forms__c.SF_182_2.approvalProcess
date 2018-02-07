@@ -553,7 +553,7 @@
             </criteriaItems>
             <criteriaItems>
                 <field>Forms__c.Training_Start_Date__c</field>
-                <operation>lessOrEqual</operation>
+                <operation>lessThan</operation>
                 <value>TODAY</value>
             </criteriaItems>
             <criteriaItems>

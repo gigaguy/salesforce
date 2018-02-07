@@ -31,13 +31,14 @@ public without sharing class FormPageController  {
         try{
             u = [select id, Name, Supervisor__c from User where Session_Token__c = :sID];
             
-            return [select id, Name, Form_Type_Name__c, Approval_Step__c, CreatedDate, LastModifiedDate, AWL_Phone_Number__c, User_Supervisor__c from Forms__c where Unauthenticated_Owner__c = :u.ID order by CreatedDate DESC];
+            return [select id, Name, Form_Type_Name__c, Approval_Step__c, CreatedDate, LastModifiedDate, AWL_Phone_Number__c, User_Supervisor__c, Originator_Type1__c from Forms__c where Unauthenticated_Owner__c = :u.ID OR Originator_Type1__c = :u.name order by CreatedDate DESC];
+        
         }
         catch (exception e){}
         
         return null;
     }
-    
+     
     @AuraEnabled
     public static Forms__c viewForm(string formID, string siteUserID) {
         UtilityMethods.addFormShare(formID, siteUserID);
