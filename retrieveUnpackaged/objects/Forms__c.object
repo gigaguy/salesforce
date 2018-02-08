@@ -4287,6 +4287,42 @@ Prepare_Form_for__r.Email
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>SF182_HQ_Office_of_HR_Past_Due_Training</fullName>
+        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Form_Owner__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Approval_Routing_Options__c</columns>
+        <columns>Training_Start_Date__c</columns>
+        <columns>Approval_Step__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Forms__c.SF_182</value>
+        </filters>
+        <filters>
+            <field>Training_Start_Date__c</field>
+            <operation>lessThan</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Approval_Step__c</field>
+            <operation>notEqual</operation>
+            <value>Approved</value>
+        </filters>
+        <filters>
+            <field>Approval_Step__c</field>
+            <operation>notEqual</operation>
+            <value>Rejected</value>
+        </filters>
+        <label>SF182-HQ Office of HR-Past Due Training</label>
+        <sharedTo>
+            <group>SF_182_HQ_Office_of_Human_Resources</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>SF182_HQ_Office_of_Human_Resources_Forms</fullName>
         <booleanFilter>1 OR 2 OR 3</booleanFilter>
         <columns>NAME</columns>
