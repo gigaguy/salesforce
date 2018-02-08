@@ -34,7 +34,7 @@
         </approvalActions>
         <assignedApprover>
             <approver>
-                <name>User_Supervisor__c</name>
+                <name>Approver_1__c</name>
                 <type>relatedUserField</type>
             </approver>
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
@@ -57,20 +57,12 @@
         </approvalActions>
         <assignedApprover>
             <approver>
-                <name>User_Supervisor_2__c</name>
+                <name>Approver_2__c</name>
                 <type>relatedUserField</type>
             </approver>
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
         <description>Division Director/Manager approval step</description>
-        <entryCriteria>
-            <criteriaItems>
-                <field>Forms__c.Approval_Step__c</field>
-                <operation>equals</operation>
-                <value>1</value>
-            </criteriaItems>
-        </entryCriteria>
-        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
         <label>Division Director/Manager</label>
         <name>Division_Director_Manager</name>
         <rejectBehavior>

@@ -9,6 +9,16 @@
         <value>Line Items</value>
     </caseValues>
     <fields>
+        <label><!-- Approver 1 --></label>
+        <name>Approver_1__c</name>
+        <relationshipLabel><!-- Line Items (Approver 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Approver 2 --></label>
+        <name>Approver_2__c</name>
+        <relationshipLabel><!-- Line Items (Approver 2) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- CLPs --></label>
         <name>CLPs__c</name>
     </fields>
@@ -96,5 +106,9 @@
         <label><!-- Training --></label>
         <name>Training</name>
     </recordTypes>
+    <sharingReasons>
+        <label><!-- ShareTrainingRecord --></label>
+        <name>ShareTrainingRecord</name>
+    </sharingReasons>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

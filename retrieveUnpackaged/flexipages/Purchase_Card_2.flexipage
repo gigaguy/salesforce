@@ -66,6 +66,17 @@
     <flexiPageRegions>
         <componentInstances>
             <componentInstanceProperties>
+                <name>decorate</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>richTextValue</name>
+                <value>&lt;b&gt;Please select each training record below and update with required information and attach the training certificate.&lt;/b&gt;</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:richText</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
                 <name>parentFieldApiName</name>
                 <value>Forms__c.Id</value>
             </componentInstanceProperties>
