@@ -28,6 +28,11 @@
     <aura:attribute name="uploadFiles" type="Object[]"/>
     <aura:attribute name="fileList" type="ContentVersion[]"/>
     
+    <aura:attribute name="rtLineItemEnabled" type="boolean" default="false" />
+    <aura:attribute name="addLineItem" type="boolean" default="false" />
+    <aura:attribute name="lineItemList" type="Line_Item__c[]"/>
+    <aura:attribute name="hasLineItems" type="boolean" default="false" />
+    
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
     <aura:handler name="recordSave" event="force:recordSave" action="{!c.handleSave}" />
@@ -347,13 +352,67 @@
      					<br/>
               	</div>
              </aura:if>
-            <!--end add attachments-->
+            <!--end add attachments-->           
+            
+            <!--line items list-->
+              <aura:if isTrue="{!v.hasLineItems}">
+             	<table style="border: 1px solid lightgray;">
+                    <col width="1"/>
+                    <col width="250"/>
+                    <col width="70"/>
+                	<tr style="background-color: #0070d2; border: 1px solid lightgray;">         
+                        <td colspan="5" style="color: white; padding: 5px 5px 5px 15px; border: 1px solid lightgray;">
+                            Line Items  
+                        </td>
+                	</tr>
+                    <tr style="background-color: white; border: 1px solid lightgray;">
+                        <td style="color: white; border: 0px solid white;">                           
+                        </td>
+                        <td style="color: black; text-shadow: 0px 0px 0px #000000; padding: 3px 1px 1px 10px; border: 1px solid lightgray; text-align: left;">
+                            LINE ITEM ID
+                        </td>
+                        <td style="color: black; text-shadow: 0px 0px 0px #000000; padding: 1px; border: 1px solid lightgray; text-align: center;">
+                            LINE ITEM NAME
+                        </td>
+                        <td style="color: black; text-shadow: 0px 0px 0px #000000; padding: 1px; border: 1px solid lightgray; text-align: center;">
+                            DATE ADDED
+                        </td>
+                    </tr>
+           			<aura:iteration var="litem" items="{!v.lineItemList}">
+                      <tr style="background-color: white; border: 1px solid lightgray;">
+                        <td style="color: black; border: 0px solid #0070d2; text-align: center;">
+                            <a href="{!'/servlet/servlet.FileDownload?file='+attach.Id}" target="_blank">
+                                <button style="color: black;">View</button>
+                            </a>  
+                          <div class="divider"/>
+                            <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">
+                            <button id="{!litem.Id}" onclick="{!c.deleteAttachment}">Del</button>
+                            </aura:if>
+                        </td>
+                        <td style="color: black; padding: 1px 1px 1px 5px; border: 1px solid lightgray; text-align: left;">
+                            {!litem.Name}
+                        </td>
+                        <td style="color: black; padding: 1px 1px 1px 5px; border: 1px solid lightgray; text-align: left;">
+                            {!litem.Item_Name_li__c}
+                        </td>  
+                        <td style="color: black; padding: 1px 1px 1px 5px; border: 0px solid #0070d2; text-align: center;">                         
+                           <ui:outputDateTime timezone="America/New_York" value="{!litem.CreatedDate}"/>
+                        </td>
+                      </tr>
+                    </aura:iteration>                  
+                </table> 
+                  <br/>
+              </aura:if>
+            <!--end line items list--> 
 
               <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">
                   <aura:if isTrue="{!v.isNew || v.isCopy}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.confirmCancelCreationModal}" />
                     <aura:set attribute="else"><ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.confirmCloseModal}" /></aura:set>
                   </aura:if>  
                   <aura:if isTrue="{!and(v.isNew == false, v.isCopy == false)}"><ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmFormDelete}" /></aura:if> 
+                  
+                  <aura:if isTrue="{!v.rtLineItemEnabled}"><ui:button class="slds-button slds-button--neutral" label="Line Items" press="{!c.addLineItem}" /></aura:if>
+                  
                   <aura:if isTrue="{!v.isNew || v.isCopy}">
                   	<ui:button class="slds-button slds-button--neutral" label="Save to Enable Attachments" press="{!c.enableAttachments}" />			
                   <aura:set attribute="else">

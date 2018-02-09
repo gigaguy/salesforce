@@ -257,7 +257,7 @@ public without sharing class FormPageController  {
     
     @AuraEnabled
     public static string getSiteUserID() {
-        return UtilityMethods.getAnyUserID('Forms', 'Site Guest User');
+        return UtilityMethods.getAnyUserID('EPA BAP Forms', 'Site Guest User');
     }
     
     @AuraEnabled
@@ -268,6 +268,20 @@ public without sharing class FormPageController  {
     @AuraEnabled
     public static void removeFormShare(string formID, string siteUserID) {
         UtilityMethods.removeFormShare(formID, siteUserID);
+    }
+    
+    @AuraEnabled
+    public static List<Line_Item__c> getListOfLineItems(String formID, string formName) {        
+        
+        if(formName == 'EPA-100'){
+            return [select id, Name, Item_Name_li__c  from Line_Item__c where Related_Form_li__c = :formID order by CreatedDate DESC];        
+        }
+        else if(formName == 'PCOR'){
+            return [select id, Name, Part_Number_li__c, Item_Price_li__c, Item_Quantity_li__c, Item_Description_li__c, Line_Total_Price_li__c from Line_Item__c where Related_Form_li__c = :formID order by CreatedDate DESC];
+        }
+        else {
+            return [select id, Name from Line_Item__c where Related_Form_li__c = :formID order by CreatedDate DESC];
+        }
     }
      
 }

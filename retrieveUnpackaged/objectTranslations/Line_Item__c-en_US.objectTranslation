@@ -13,6 +13,10 @@
         <name>Item_Description_li__c</name>
     </fields>
     <fields>
+        <label><!-- Item Name --></label>
+        <name>Item_Name_li__c</name>
+    </fields>
+    <fields>
         <label><!-- Item Price --></label>
         <name>Item_Price_li__c</name>
     </fields>
@@ -34,11 +38,33 @@
         <relationshipLabel><!-- Line Items --></relationshipLabel>
     </fields>
     <layouts>
+        <layout>EPA-100 Line Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
         <layout>Line Item Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
     </layouts>
+    <layouts>
+        <layout>PCOR Line Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Form - EPA-100 Line Item --></label>
+        <name>Form_EPA_100_Line_Item</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Form - PCOR Line Item --></label>
+        <name>Form_PCOR_Line_Item</name>
+    </recordTypes>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

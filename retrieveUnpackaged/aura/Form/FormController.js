@@ -18,9 +18,29 @@
         helper.setSiteUserID(component);
         helper.setAPIUserID(component);
     },
+    addLineItem : function(component, event, helper) {   // enables line items to be entered
+    	console.log('in addLineItem');
+        
+        component.set("v.addLineItem", true);
+        try {
+           	component.get('v.theModal').get("e.recordSave").fire();
+            console.log('no error');
+          	}
+        catch (e) {
+            console.log(e);
+          }
+        
+        var formID = component.get("v.viewFormID"); 
+          console.log('formID: ' + formID);
+        
+        helper.getLineItemList(component, formID);
+        //var a = component.get("c.??");
+        //$A.enqueueAction(a);
+        
+    },
     approvalRecall : function(component, event, helper) {  // recalls Form from approval
     	console.log('in approvalRecall');
-        
+            
         	var formID = component.get("v.viewFormID");
         	console.log('formID: '+ formID);
         
@@ -337,6 +357,7 @@
     createTheModal: function(component, event, helper) {   // creates theModal component
         console.log('in createTheModal');
         component.set("v.onSubmit", false);
+        component.set("v.rtLineItemEnabled",false);
         
         var isNew = component.get("v.isNew");
         console.log('isNew: ' + isNew);
@@ -360,6 +381,7 @@
         else if (formName === "EPA-PCOR") {
             var hrefInfo = "";
         	var hrefEmail = "To be determined";
+            component.set("v.rtLineItemEnabled", true);
         }
         else if (formName === "ORD-111") {
             var hrefInfo = "https://epaoei--oeiodsta--c.cs33.visual.force.com/resource/1514583669000/ORD_111_QARF_Instructions?isdtp=p1";
@@ -380,6 +402,11 @@
         else if (formName === "Application Approval") {
             var hrefInfo = "mailto:McMahon.Ethan@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
         	var hrefEmail = "McMahon.Ethan@epa.gov";
+        }
+        else if (formName === "EPA-100") {
+            var hrefInfo = "mailto:McNeal.Detha@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
+       	 	var hrefEmail = "McNeal.Detha@epa.gov";
+            component.set("v.rtLineItemEnabled", true);
         }
         else {
             var hrefInfo = "mailto:McNeal.Detha@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";

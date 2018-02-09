@@ -79,7 +79,36 @@
             }
         });
      $A.enqueueAction(action);
+        
 	},
+    getLineItemList : function(component, formID){   // gets list of Line Items related Form record
+		console.log('in helper.getLineItemList');
+        console.log('FormName: '+component.get("v.viewFormName"));
+        	var formName = component.get("v.viewFormName");
+        
+        console.log('formID: ' + formID);     
+       		var action = component.get("c.getListOfLineItems");
+        	action.setParams({
+			"formID" : formID,
+            "formName" : formName
+        });
+        action.setCallback(this, function(response){
+            var name = response.getState();
+            console.log('getting line items list');
+            console.log('name ' + name);
+            console.log('return value: ' + response.getReturnValue().length);
+            if (name === "SUCCESS" && response.getReturnValue().length > 0) {
+            
+                component.set("v.lineItemList", response.getReturnValue());
+                component.set("v.hasLineItems", true);
+             }
+            else {
+                component.set("v.message", null);
+            }
+        });
+     $A.enqueueAction(action);
+        
+    },
     uploadHelper: function(component, event) {  // part of attachment upload process
         console.log('in helper.uploadHelper');
         

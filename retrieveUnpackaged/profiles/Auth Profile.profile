@@ -3927,6 +3927,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Line_Item__c.Item_Name_li__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Line_Item__c.Item_Price_li__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -4732,6 +4737,14 @@
         <layout>Line_Item__c-Line Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Line_Item__c-Line Item Layout</layout>
+        <recordType>Line_Item__c.Form_EPA_100_Line_Item</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Line_Item__c-Line Item Layout</layout>
+        <recordType>Line_Item__c.Form_PCOR_Line_Item</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Macro-Macro Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -5083,6 +5096,16 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Idea.InternalIdeasIdeaRecordType</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Line_Item__c.Form_EPA_100_Line_Item</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Line_Item__c.Form_PCOR_Line_Item</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <tabVisibilities>

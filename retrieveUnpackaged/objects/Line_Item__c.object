@@ -64,6 +64,17 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Item_Name_li__c</fullName>
+        <externalId>false</externalId>
+        <label>Item Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Item_Price_li__c</fullName>
         <description>Line Item Test</description>
         <externalId>false</externalId>
@@ -135,11 +146,22 @@
     </listViews>
     <nameField>
         <displayFormat>{00000}</displayFormat>
-        <label>Line Item Record Number</label>
+        <label>Item ID</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Line Items</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Form_EPA_100_Line_Item</fullName>
+        <active>true</active>
+        <label>Form - EPA-100 Line Item</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Form_PCOR_Line_Item</fullName>
+        <active>true</active>
+        <label>Form - PCOR Line Item</label>
+    </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>
