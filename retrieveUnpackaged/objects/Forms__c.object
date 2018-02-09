@@ -608,6 +608,7 @@
     </fields>
     <fields>
         <fullName>Cardholder_AO_Display_Name__c</fullName>
+        <defaultValue>$User.FirstName + &quot; &quot; +  $User.LastName</defaultValue>
         <description>Cardholder/AP display name on the card.</description>
         <externalId>false</externalId>
         <label>Cardholder/AO Display Name</label>
@@ -702,6 +703,7 @@
     </fields>
     <fields>
         <fullName>City__c</fullName>
+        <defaultValue>$User.City</defaultValue>
         <description>city</description>
         <externalId>false</externalId>
         <label>City</label>
@@ -907,6 +909,7 @@
     </fields>
     <fields>
         <fullName>EIN__c</fullName>
+        <defaultValue>$User.EmployeeNumber</defaultValue>
         <externalId>false</externalId>
         <label>EIN</label>
         <length>20</length>
@@ -918,6 +921,7 @@
     </fields>
     <fields>
         <fullName>Email_Address__c</fullName>
+        <defaultValue>$User.Email</defaultValue>
         <externalId>false</externalId>
         <label>Email Address</label>
         <required>false</required>
@@ -1514,6 +1518,7 @@
     </fields>
     <fields>
         <fullName>Mail_Code__c</fullName>
+        <defaultValue>$User.Mail_Stop__c</defaultValue>
         <externalId>false</externalId>
         <label>Mail Code</label>
         <length>255</length>
@@ -1525,6 +1530,7 @@
     </fields>
     <fields>
         <fullName>Mailing_Address__c</fullName>
+        <defaultValue>$User.Street</defaultValue>
         <externalId>false</externalId>
         <label>Mailing Address</label>
         <length>5000</length>
@@ -1957,6 +1963,17 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Region_Office_Divison__c</fullName>
+        <externalId>false</externalId>
+        <formula>Cardholder_AO_Name__r.Account.Name</formula>
+        <label>Region/Office/Divison</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Region__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -2075,6 +2092,7 @@
     </fields>
     <fields>
         <fullName>State__c</fullName>
+        <defaultValue>$User.State</defaultValue>
         <externalId>false</externalId>
         <label>State</label>
         <length>15</length>
@@ -2122,6 +2140,7 @@
     </fields>
     <fields>
         <fullName>Telephone_Number__c</fullName>
+        <defaultValue>$User.Phone</defaultValue>
         <externalId>false</externalId>
         <label>Telephone Number</label>
         <required>false</required>
@@ -2223,9 +2242,10 @@
     </fields>
     <fields>
         <fullName>Zip__c</fullName>
+        <defaultValue>$User.PostalCode</defaultValue>
         <externalId>false</externalId>
         <label>Zip</label>
-        <length>6</length>
+        <length>10</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -7085,6 +7105,14 @@ Monthly_Purchase_Limit__c &lt;&gt; 7000,
 Single_Purchase_Limit__c  &lt;&gt; 3500
 )</errorConditionFormula>
         <errorMessage>Only Contracting Officers (CO), Simplified Acquisition Contracting Officers (SACO), and Training Officers (TO) Account Types may have a Monthly or Single Purchase Limit other than the default of $7,000 Monthly or $3,500 Single Purchase.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Request_is_for_Rule</fullName>
+        <active>true</active>
+        <description>If the request is for other, Cardholder field cannot be blank.</description>
+        <errorConditionFormula>ISPICKVAL(Request_is_for__c ,  &quot;Other&quot;) &amp;&amp;  ISBLANK(Cardholder_AO_Name__c)</errorConditionFormula>
+        <errorDisplayField>Cardholder_AO_Name__c</errorDisplayField>
+        <errorMessage>If this request is for someone else, please enter that person in the Cardholder AO Name field.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Service_Comp_Date_MM_YYYY_Format</fullName>

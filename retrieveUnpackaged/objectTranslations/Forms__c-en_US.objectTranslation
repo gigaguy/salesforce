@@ -990,6 +990,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Region/Office/Divison --></label>
+        <name>Region_Office_Divison__c</name>
+    </fields>
+    <fields>
         <label><!-- Region --></label>
         <name>Region__c</name>
         <relationshipLabel><!-- Forms (Region) --></relationshipLabel>
@@ -1521,6 +1525,10 @@
     <validationRules>
         <errorMessage><!-- Only Contracting Officers (CO), Simplified Acquisition Contracting Officers (SACO), and Training Officers (TO) Account Types may have a Monthly or Single Purchase Limit other than the default of $7,000 Monthly or $3,500 Single Purchase. --></errorMessage>
         <name>Purchase_Card_Limit_Validation_Top</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If this request is for someone else, please enter that person in the Cardholder AO Name field. --></errorMessage>
+        <name>Request_is_for_Rule</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- Please enter the date in a MM/YYYY format --></errorMessage>

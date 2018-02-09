@@ -13,10 +13,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Cardholder_AO_Name__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Cardholder_AO_Display_Name__c</field>
             </layoutItems>
             <layoutItems>
@@ -36,6 +32,9 @@
                 <field>Service_Comp_Date_MM_YYYY__c</field>
             </layoutItems>
             <layoutItems>
+                <emptySpace>true</emptySpace>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Request_is_for__c</field>
             </layoutItems>
@@ -47,7 +46,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>HR_Org_Code__c</field>
+                <field>Region_Office_Divison__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -68,6 +67,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Zip__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Cardholder_AO_Name__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -100,13 +103,13 @@
         <label>Cardholder AO Request</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Cardholder_AO_From__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Cardholder_AO_To__c</field>
             </layoutItems>
         </layoutColumns>
@@ -119,7 +122,7 @@
         <label>List of affected cardholder(s)</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Cardholder_1__c</field>
             </layoutItems>
             <layoutItems>

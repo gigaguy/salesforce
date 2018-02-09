@@ -35,7 +35,7 @@
             <type>contactLookup</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Purchase_Card_Email_Template_Approved_Confirmation</template>
+        <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Email_Template_Approved_Confirmation</template>
     </alerts>
     <alerts>
         <fullName>Final_Approval_Email</fullName>
@@ -78,7 +78,7 @@
             <type>userLookup</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Notify_Pending_Action_Purchase_Card</template>
+        <template>Purchase_Card_Provisioning_Templates/Notify_Pending_Action_Purchase_Card</template>
     </alerts>
     <alerts>
         <fullName>Purchase_Card_Approved_Notice_to_PC_Team_for_Action</fullName>
@@ -101,7 +101,7 @@
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Purchase_Card_Team_Action_Needed</template>
+        <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Team_Action_Needed</template>
     </alerts>
     <alerts>
         <fullName>Reject_Request</fullName>
@@ -111,7 +111,7 @@
             <type>owner</type>
         </recipients>
         <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Purchase_Card_Email_Template_Rejected_Confirmation</template>
+        <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Email_Template_Rejected_Confirmation</template>
     </alerts>
     <alerts>
         <fullName>Sandbox_Approved_Jira_Alert</fullName>
@@ -182,26 +182,6 @@
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Forms_Submission_Confirmation</template>
-    </alerts>
-    <alerts>
-        <fullName>Update_Requestor</fullName>
-        <description>Update Requestor</description>
-        <protected>false</protected>
-        <recipients>
-            <type>creator</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Purchase_Card_Approval_Confirmation</template>
-    </alerts>
-    <alerts>
-        <fullName>Update_Requestor_2</fullName>
-        <description>Update Requestor</description>
-        <protected>false</protected>
-        <recipients>
-            <type>creator</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Purchase_Card_Approval_Confirmation</template>
     </alerts>
     <fieldUpdates>
         <fullName>Approval_Step_Approved</fullName>
@@ -310,16 +290,6 @@
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>Send_to_Purchase_Card_Queue</fullName>
-        <field>OwnerId</field>
-        <lookupValue>New_Purchase_Card_Actions</lookupValue>
-        <lookupValueType>Queue</lookupValueType>
-        <name>Send to Purchase Card Queue</name>
-        <notifyAssignee>true</notifyAssignee>
-        <operation>LookupValue</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
         <fullName>Status_Update_to_Submitted_for_Approval</fullName>
         <description>Update to submitted for approval</description>
         <field>Form_Status__c</field>
@@ -354,54 +324,6 @@
         <name>Status Updated to Rejected</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>UpdateAOApprovalStep</fullName>
-        <description>Update approval official approval step value.</description>
-        <field>Approval_Step__c</field>
-        <formula>&quot;1&quot;</formula>
-        <name>UpdateAOApprovalStep</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>UpdateApprovalStep0</fullName>
-        <description>Update approval step value to 0</description>
-        <field>Approval_Step__c</field>
-        <formula>&apos;0&apos;</formula>
-        <name>UpdateApprovalStep0</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>UpdateApprovalStep10</fullName>
-        <field>Approval_Step__c</field>
-        <formula>&quot;0&quot;</formula>
-        <name>UpdateApprovalStep0</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>UpdateApprovalStep_0</fullName>
-        <field>Approval_Step__c</field>
-        <formula>&quot;0&quot;</formula>
-        <name>UpdateApprovalStep0</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>UpdateManagerApprovalStep</fullName>
-        <description>update approval step value.</description>
-        <field>Approval_Step__c</field>
-        <formula>&quot;2&quot;</formula>
-        <name>UpdateManagerApprovalStep</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
         <protected>false</protected>
     </fieldUpdates>
     <rules>

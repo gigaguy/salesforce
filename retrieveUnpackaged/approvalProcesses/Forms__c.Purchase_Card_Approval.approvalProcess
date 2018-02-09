@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <active>false</active>
     <allowRecall>false</allowRecall>
     <allowedSubmitters>
@@ -21,7 +21,7 @@
                 <type>FieldUpdate</type>
             </action>
             <action>
-                <name>UpdateAOApprovalStep</name>
+                <name xsi:nil="true"/>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -40,7 +40,7 @@
         <allowDelegate>false</allowDelegate>
         <approvalActions>
             <action>
-                <name>UpdateManagerApprovalStep</name>
+                <name xsi:nil="true"/>
                 <type>FieldUpdate</type>
             </action>
         </approvalActions>
@@ -66,7 +66,7 @@
         </rejectBehavior>
     </approvalStep>
     <description>Purchase Card request approval process.</description>
-    <emailTemplate>unfiled$public/Purchase_Card_Email_Template_Notify_Approver</emailTemplate>
+    <emailTemplate>Purchase_Card_Provisioning_Templates/Purchase_Card_Email_Template_Notify_Approver</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
         <formula>AND(ISBLANK(Approval_Step__c), OR(
@@ -91,11 +91,11 @@ CONTAINS( RecordType.Name, &apos;Change-Suspension of Card/Check&apos;)
             <type>Alert</type>
         </action>
         <action>
-            <name>Send_to_Purchase_Card_Queue</name>
+            <name>Status_Updated_to_Approved</name>
             <type>FieldUpdate</type>
         </action>
         <action>
-            <name>Status_Updated_to_Approved</name>
+            <name xsi:nil="true"/>
             <type>FieldUpdate</type>
         </action>
     </finalApprovalActions>

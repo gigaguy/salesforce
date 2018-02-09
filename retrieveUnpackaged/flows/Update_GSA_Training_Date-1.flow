@@ -1,61 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionCalls>
-        <processMetadataValues>
-            <name>apexSelection</name>
-            <value>
-                <stringValue>Update Training Date</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>myRule_1_A1</name>
-        <label>Update Training Date</label>
-        <locationX>100</locationX>
-        <locationY>200</locationY>
-        <actionName>TrainingController</actionName>
-        <actionType>apex</actionType>
-        <inputParameters>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>uIds</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>maxOccurs</name>
-                <value>
-                    <numberValue>1.0</numberValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>objectType</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
-            <name>uIds</name>
-            <value>
-                <elementReference>myVariable_current.Unauthenticated_Owner__c</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
     <assignments>
         <name>myVariable_waitStartTimeAssignment</name>
         <label>myVariable_waitStartTimeAssignment</label>
@@ -91,13 +35,13 @@
                 <processMetadataValues>
                     <name>inputDataType</name>
                     <value>
-                        <stringValue>ID</stringValue>
+                        <stringValue>String</stringValue>
                     </value>
                 </processMetadataValues>
                 <processMetadataValues>
                     <name>leftHandSideType</name>
                     <value>
-                        <stringValue>ID</stringValue>
+                        <stringValue>String</stringValue>
                     </value>
                 </processMetadataValues>
                 <processMetadataValues>
@@ -109,13 +53,13 @@
                 <processMetadataValues>
                     <name>rightHandSideType</name>
                     <value>
-                        <stringValue>ID</stringValue>
+                        <stringValue>String</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>myVariable_current.RecordType.Id</leftValueReference>
+                <leftValueReference>myVariable_current.RecordType.DeveloperName</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>012350000004fFSAAY</stringValue>
+                    <stringValue>Training</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -143,25 +87,21 @@
                         <stringValue>Picklist</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>myVariable_current.PC_Course_Title__c</leftValueReference>
+                <leftValueReference>myVariable_current.Course_Title__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>GSA SmartPay Purchase Card Training</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>myRule_1_A1</targetReference>
-            </connector>
-            <label>PC GSA Training</label>
+            <label>GSA Training</label>
         </rules>
     </decisions>
-    <description>GSA SmartPay Purchase Card Training taken date.</description>
-    <interviewLabel>Update_PC_GSA_training_date-7_InterviewLabel</interviewLabel>
-    <label>Update PC GSA training date</label>
+    <interviewLabel>Update_GSA_Training_Date-1_InterviewLabel</interviewLabel>
+    <label>Update GSA Training Date</label>
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
-            <stringValue>Forms__c</stringValue>
+            <stringValue>Line_Item__c</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -190,7 +130,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>Forms__c</objectType>
+        <objectType>Line_Item__c</objectType>
     </variables>
     <variables>
         <name>myVariable_old</name>
@@ -198,7 +138,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Forms__c</objectType>
+        <objectType>Line_Item__c</objectType>
     </variables>
     <variables>
         <name>myVariable_waitStartTimeVariable</name>

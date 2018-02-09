@@ -155,6 +155,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>PCformEnterApprovalProcess_Test</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ProfilePageController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -1800,6 +1804,11 @@
         <editable>true</editable>
         <field>Forms__c.Reason_for_Temporary_Closure__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forms__c.Region_Office_Divison__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
