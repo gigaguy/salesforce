@@ -74448,7 +74448,7 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
     </validationRules>
     <validationRules>
         <fullName>WATDD_Number_NoSpecChar</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>NOT(REGEX(  Work_Assignment_TDD_Number__c ,&quot;^[a-z A-Z 0-9]*$&quot;))</errorConditionFormula>
         <errorDisplayField>Work_Assignment_TDD_Number__c</errorDisplayField>
         <errorMessage>Please exclude special characters from Work Assignment/TDD Number</errorMessage>
