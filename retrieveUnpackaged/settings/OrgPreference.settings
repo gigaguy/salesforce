@@ -5,11 +5,19 @@
         <settingValue>false</settingValue>
     </preferences>
     <preferences>
+        <settingName>DeleteMonitoringDataEnabled</settingName>
+        <settingValue>false</settingValue>
+    </preferences>
+    <preferences>
         <settingName>SendThroughGmailPref</settingName>
         <settingValue>false</settingValue>
     </preferences>
     <preferences>
         <settingName>LoginForensicsEnabled</settingName>
+        <settingValue>false</settingValue>
+    </preferences>
+    <preferences>
+        <settingName>ReportDataCaptureEnabled</settingName>
         <settingValue>false</settingValue>
     </preferences>
     <preferences>
@@ -43,6 +51,10 @@
     <preferences>
         <settingName>HstsSitesCommunities</settingName>
         <settingValue>true</settingValue>
+    </preferences>
+    <preferences>
+        <settingName>RedirectionWarning</settingName>
+        <settingValue>false</settingValue>
     </preferences>
     <preferences>
         <settingName>PathAssistantsEnabled</settingName>
@@ -131,5 +143,13 @@
     <preferences>
         <settingName>SelfSetPasswordInApi</settingName>
         <settingValue>true</settingValue>
+    </preferences>
+    <preferences>
+        <settingName>VerifyOn2faRegistration</settingName>
+        <settingValue>true</settingValue>
+    </preferences>
+    <preferences>
+        <settingName>VerifyOnEmailChange</settingName>
+        <settingValue>false</settingValue>
     </preferences>
 </OrgPreferenceSettings>

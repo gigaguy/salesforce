@@ -4216,6 +4216,7 @@ Prepare_Form_for__r.Email
         <label>SF182-Ann Arbor</label>
         <sharedTo>
             <group>SF_182_Ann_Arbor</group>
+            <group>SF_182_HQ_Office_of_Human_Resources</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -4234,6 +4235,7 @@ Prepare_Form_for__r.Email
         <label>SF182-Cincinnati</label>
         <sharedTo>
             <group>SF_182_Cincinnati</group>
+            <group>SF_182_HQ_Office_of_Human_Resources</group>
         </sharedTo>
     </listViews>
     <listViews>
@@ -4288,7 +4290,7 @@ Prepare_Form_for__r.Email
     </listViews>
     <listViews>
         <fullName>SF182_HQ_Office_of_HR_Past_Due_Training</fullName>
-        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
         <columns>NAME</columns>
         <columns>RECORDTYPE</columns>
         <columns>Form_Owner__c</columns>
@@ -4316,6 +4318,10 @@ Prepare_Form_for__r.Email
             <field>Approval_Step__c</field>
             <operation>notEqual</operation>
             <value>Rejected</value>
+        </filters>
+        <filters>
+            <field>Approval_Step__c</field>
+            <operation>notEqual</operation>
         </filters>
         <label>SF182-HQ Office of HR-Past Due Training</label>
         <sharedTo>
@@ -4385,6 +4391,7 @@ Prepare_Form_for__r.Email
         </filters>
         <label>SF182-Region 1</label>
         <sharedTo>
+            <group>SF_182_HQ_Office_of_Human_Resources</group>
             <group>SF_182_Region_1</group>
         </sharedTo>
     </listViews>
@@ -4403,6 +4410,7 @@ Prepare_Form_for__r.Email
         </filters>
         <label>SF182-Region 2</label>
         <sharedTo>
+            <group>SF_182_HQ_Office_of_Human_Resources</group>
             <group>SF_182_Region_2</group>
         </sharedTo>
     </listViews>
@@ -4421,6 +4429,7 @@ Prepare_Form_for__r.Email
         </filters>
         <label>SF182-Region 3</label>
         <sharedTo>
+            <group>SF_182_HQ_Office_of_Human_Resources</group>
             <group>SF_182_Region_3</group>
         </sharedTo>
     </listViews>
@@ -4439,6 +4448,7 @@ Prepare_Form_for__r.Email
         </filters>
         <label>SF182-Region 4</label>
         <sharedTo>
+            <group>SF_182_HQ_Office_of_Human_Resources</group>
             <group>SF_182_Region_4</group>
         </sharedTo>
     </listViews>
@@ -4457,6 +4467,7 @@ Prepare_Form_for__r.Email
         </filters>
         <label>SF182-Region 5</label>
         <sharedTo>
+            <group>SF_182_HQ_Office_of_Human_Resources</group>
             <group>SF_182_Region_5</group>
         </sharedTo>
     </listViews>
@@ -4475,6 +4486,7 @@ Prepare_Form_for__r.Email
         </filters>
         <label>SF182-Region 6</label>
         <sharedTo>
+            <group>SF_182_HQ_Office_of_Human_Resources</group>
             <group>SF_182_Region_6</group>
         </sharedTo>
     </listViews>
@@ -4493,6 +4505,7 @@ Prepare_Form_for__r.Email
         </filters>
         <label>SF182-Region 7</label>
         <sharedTo>
+            <group>SF_182_HQ_Office_of_Human_Resources</group>
             <group>SF_182_Region_7</group>
         </sharedTo>
     </listViews>
@@ -4511,6 +4524,7 @@ Prepare_Form_for__r.Email
         </filters>
         <label>SF182-Region 8</label>
         <sharedTo>
+            <group>SF_182_HQ_Office_of_Human_Resources</group>
             <group>SF_182_Region_8</group>
         </sharedTo>
     </listViews>
@@ -4548,6 +4562,7 @@ Prepare_Form_for__r.Email
         </filters>
         <label>SF182-Research Triangle Park</label>
         <sharedTo>
+            <group>SF_182_HQ_Office_of_Human_Resources</group>
             <group>SF_182_Research_Triangle_Park</group>
         </sharedTo>
     </listViews>
@@ -4566,6 +4581,7 @@ Prepare_Form_for__r.Email
         </filters>
         <label>SF-182-OIG</label>
         <sharedTo>
+            <group>SF_182_HQ_Office_of_Human_Resources</group>
             <group>SF_182_OIG</group>
         </sharedTo>
     </listViews>
