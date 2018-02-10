@@ -274,14 +274,22 @@ public without sharing class FormPageController  {
     public static List<Line_Item__c> getListOfLineItems(String formID, string formName) {        
         
         if(formName == 'EPA-100'){
-            return [select id, Name, Item_Name_li__c  from Line_Item__c where Related_Form_li__c = :formID order by CreatedDate DESC];        
+            return [select id, Name, Item_Name__c, CreatedDate, RecordTypeId from Line_Item__c where Related_Form__c = :formID order by CreatedDate DESC];        
         }
         else if(formName == 'PCOR'){
-            return [select id, Name, Part_Number_li__c, Item_Price_li__c, Item_Quantity_li__c, Item_Description_li__c, Line_Total_Price_li__c from Line_Item__c where Related_Form_li__c = :formID order by CreatedDate DESC];
+            return [select id, Name, Part_Number__c, Item_Price__c, Item_Quantity__c, Item_Description__c, Line_Total_Price__c, CreatedDate, RecordTypeId from Line_Item__c where Related_Form__c = :formID order by CreatedDate DESC];
         }
         else {
-            return [select id, Name from Line_Item__c where Related_Form_li__c = :formID order by CreatedDate DESC];
+            return [select id, Name, CreatedDate, RecordTypeId from Line_Item__c where Related_Form__c = :formID order by CreatedDate DESC];
         }
-    }
-     
+    }   
+    
+    @AuraEnabled
+    public static List<string> getLineItemDisplayFields(String rtID) {  
+    
+        string displayFields = [select description from recordtype where id = :rtID limit 1].description;
+        
+        return displayFields.split(',');
+        
+    } 
 }

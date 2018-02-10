@@ -87,7 +87,9 @@
         	var formName = component.get("v.viewFormName");
         
         console.log('formID: ' + formID);     
-       		var action = component.get("c.getListOfLineItems");
+       		
+          //get list line item records
+        	var action = component.get("c.getListOfLineItems");
         	action.setParams({
 			"formID" : formID,
             "formName" : formName
@@ -98,9 +100,14 @@
             console.log('name ' + name);
             console.log('return value: ' + response.getReturnValue().length);
             if (name === "SUCCESS" && response.getReturnValue().length > 0) {
-            
                 component.set("v.lineItemList", response.getReturnValue());
                 component.set("v.hasLineItems", true);
+              
+            var respList = response.getReturnValue();
+            var rtID = respList[0].RecordTypeId;
+                console.log('rtID: '+rtID);    
+           
+                this.getDisplayFields(component, rtID);
              }
             else {
                 component.set("v.message", null);
@@ -108,6 +115,36 @@
         });
      $A.enqueueAction(action);
         
+    },
+    getDisplayFields : function(component, rtID){   // gets list of Line Item display fields
+		console.log('in helper.getDisplayFields');
+            //get list of fields to display
+          	
+       		var action = component.get("c.getLineItemDisplayFields");
+        	action.setParams({
+			"rtID" : rtID,    
+        });
+        
+     action.setCallback(this, function(response){
+            var name = response.getState();
+            console.log('getting line item display field list');
+            console.log('name ' + name);
+            console.log('return value: ' + response.getReturnValue().length);
+            if (name === "SUCCESS" && response.getReturnValue().length > 0) {
+            
+                component.set("v.displayFields", response.getReturnValue());
+                console.log('resp: '+component.get("v.displayFields"));
+                var fields = response.getReturnValue();
+                component.set("v.displayOne", fields[0]);
+                component.set("v.displayTwo", fields[1]);
+                component.set("v.displayThree", fields[2]);
+             }
+            else {
+                component.set("v.message", null);
+            }
+        });
+     $A.enqueueAction(action);            
+      
     },
     uploadHelper: function(component, event) {  // part of attachment upload process
         console.log('in helper.uploadHelper');

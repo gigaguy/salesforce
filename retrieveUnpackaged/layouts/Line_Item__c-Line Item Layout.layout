@@ -16,19 +16,19 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Part_Number_li__c</field>
+                <field>Part_Number__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Item_Description_li__c</field>
+                <field>Item_Description__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Related_Form_li__c</field>
+                <field>Related_Form__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Item_Name_li__c</field>
+                <field>Item_Name__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -41,15 +41,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Item_Quantity_li__c</field>
+                <field>Item_Quantity__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Item_Price_li__c</field>
+                <field>Item_Price__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Line_Total_Price_li__c</field>
+                <field>Line_Total_Price__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>

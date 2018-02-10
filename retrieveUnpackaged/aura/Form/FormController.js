@@ -22,14 +22,14 @@
     	console.log('in addLineItem');
         
         component.set("v.addLineItem", true);
-        try {
+ /*       try {
            	component.get('v.theModal').get("e.recordSave").fire();
             console.log('no error');
           	}
         catch (e) {
             console.log(e);
           }
-        
+   */     
         var formID = component.get("v.viewFormID"); 
           console.log('formID: ' + formID);
         
@@ -339,6 +339,23 @@
                            }
                                );   
     },
+ /*   createLineItemComp: function(component, event, helper) {  //creates upload attachment component
+        console.log('in createAttachComp');
+        
+        $A.createComponent('lightning:input',
+                           {
+                               'aura:id':'fileUploadCmp', 
+                               onchange:component.getReference("c.handleFilesChange"), 
+                               type:'file', 
+                               name:'fileUploadCmp',
+                               label:'Upload Attachment', 
+                               multiple:'false',
+                           },
+                           function(fileUploadCmp) {
+                               component.set("v.fileUploadCmp", fileUploadCmp);
+                           }
+                          );   
+    },    */
     createNewForm: function(component, event, helper) {  // opens theModal when user hits "New Form" button
    		console.log('in createNewForm');
         

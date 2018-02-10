@@ -52,7 +52,7 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>Item_Description_li__c</fullName>
+        <fullName>Item_Description__c</fullName>
         <description>Line Item Test</description>
         <externalId>false</externalId>
         <label>Item Description</label>
@@ -64,7 +64,7 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Item_Name_li__c</fullName>
+        <fullName>Item_Name__c</fullName>
         <externalId>false</externalId>
         <label>Item Name</label>
         <length>255</length>
@@ -75,7 +75,7 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Item_Price_li__c</fullName>
+        <fullName>Item_Price__c</fullName>
         <description>Line Item Test</description>
         <externalId>false</externalId>
         <label>Item Price</label>
@@ -87,7 +87,7 @@
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>Item_Quantity_li__c</fullName>
+        <fullName>Item_Quantity__c</fullName>
         <description>Line Item Test</description>
         <externalId>false</externalId>
         <label>Item Quantity</label>
@@ -100,9 +100,9 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Line_Total_Price_li__c</fullName>
+        <fullName>Line_Total_Price__c</fullName>
         <externalId>false</externalId>
-        <formula>Item_Quantity_li__c * Item_Price_li__c</formula>
+        <formula>Item_Quantity__c * Item_Price__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Line Total Price</label>
         <precision>18</precision>
@@ -113,7 +113,7 @@
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>Part_Number_li__c</fullName>
+        <fullName>Part_Number__c</fullName>
         <description>Line Item Test</description>
         <externalId>false</externalId>
         <label>Part Number</label>
@@ -125,7 +125,7 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Related_Form_li__c</fullName>
+        <fullName>Related_Form__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>Line Item Test</description>
         <externalId>false</externalId>
@@ -155,6 +155,7 @@
     <recordTypes>
         <fullName>Form_EPA_100_Line_Item</fullName>
         <active>true</active>
+        <description>Name, Item_Name__c, CreatedDate</description>
         <label>Form - EPA-100 Line Item</label>
     </recordTypes>
     <recordTypes>

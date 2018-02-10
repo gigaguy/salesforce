@@ -3922,37 +3922,37 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Line_Item__c.Item_Description_li__c</field>
+        <field>Line_Item__c.Item_Description__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Line_Item__c.Item_Name_li__c</field>
+        <field>Line_Item__c.Item_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Line_Item__c.Item_Price_li__c</field>
+        <field>Line_Item__c.Item_Price__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Line_Item__c.Item_Quantity_li__c</field>
+        <field>Line_Item__c.Item_Quantity__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Line_Item__c.Line_Total_Price_li__c</field>
+        <field>Line_Item__c.Line_Total_Price__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Line_Item__c.Part_Number_li__c</field>
+        <field>Line_Item__c.Part_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Line_Item__c.Related_Form_li__c</field>
+        <field>Line_Item__c.Related_Form__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5415,6 +5415,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewPublicReports</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewRoles</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
