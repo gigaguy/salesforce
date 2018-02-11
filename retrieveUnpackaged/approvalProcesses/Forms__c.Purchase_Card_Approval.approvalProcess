@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
     <active>false</active>
     <allowRecall>false</allowRecall>
     <allowedSubmitters>
@@ -20,10 +20,6 @@
                 <name>Approval_Step_Sent_to_DD</name>
                 <type>FieldUpdate</type>
             </action>
-            <action>
-                <name xsi:nil="true"/>
-                <type>FieldUpdate</type>
-            </action>
         </approvalActions>
         <assignedApprover>
             <approver>
@@ -38,12 +34,6 @@
     </approvalStep>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
-        <approvalActions>
-            <action>
-                <name xsi:nil="true"/>
-                <type>FieldUpdate</type>
-            </action>
-        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>Division_Director_Manager__c</name>
@@ -92,10 +82,6 @@ CONTAINS( RecordType.Name, &apos;Change-Suspension of Card/Check&apos;)
         </action>
         <action>
             <name>Status_Updated_to_Approved</name>
-            <type>FieldUpdate</type>
-        </action>
-        <action>
-            <name xsi:nil="true"/>
             <type>FieldUpdate</type>
         </action>
     </finalApprovalActions>

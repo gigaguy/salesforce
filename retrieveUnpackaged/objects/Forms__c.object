@@ -1164,11 +1164,21 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>I_Agree_with_Terms__c</fullName>
+        <fullName>I_Agree_with_Terms_Approver_1__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <inlineHelpText>Please check this box to indicate you agree with the terms listed above.</inlineHelpText>
-        <label>I Agree with Terms</label>
+        <label>I Agree with Terms (Approver 1)</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>I_Agree_with_Terms_Approver_2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Please check this box to indicate you agree with the terms listed above.</inlineHelpText>
+        <label>I Agree with Terms (Approver 2)</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -2719,7 +2729,7 @@
     <recordTypes>
         <fullName>Cancellation_Check_or_Card</fullName>
         <active>true</active>
-        <label>Cancellation-Check or Card</label>
+        <label>Purchase Card: Cancellation Check or Card</label>
         <picklistValues>
             <picklist>Account_Type__c</picklist>
             <values>
@@ -2827,6 +2837,10 @@
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -3061,7 +3075,7 @@
     <recordTypes>
         <fullName>Change_Cardholder_AO</fullName>
         <active>true</active>
-        <label>Change-Cardholder AO</label>
+        <label>Purchase Card: Change Cardholder AO</label>
         <picklistValues>
             <picklist>Account_Type__c</picklist>
             <values>
@@ -3407,7 +3421,7 @@
     <recordTypes>
         <fullName>Change_Contact_Information</fullName>
         <active>true</active>
-        <label>Change-Contact Information</label>
+        <label>Purchase Card: Change Contact Information</label>
         <picklistValues>
             <picklist>Account_Type__c</picklist>
             <values>
@@ -3753,7 +3767,7 @@
     <recordTypes>
         <fullName>Change_Monthly_Limit</fullName>
         <active>true</active>
-        <label>Change-Monthly Limit</label>
+        <label>Purchase Card: Change Monthly Limit</label>
         <picklistValues>
             <picklist>Account_Type__c</picklist>
             <values>
@@ -4099,7 +4113,7 @@
     <recordTypes>
         <fullName>Change_Name_Name_on_CardCheck</fullName>
         <active>true</active>
-        <label>Change-Name on Card/Check</label>
+        <label>Purchase Card: Change Name on Card/Check</label>
         <picklistValues>
             <picklist>Account_Type__c</picklist>
             <values>
@@ -4445,7 +4459,7 @@
     <recordTypes>
         <fullName>Change_Suspension_of_cardcheck</fullName>
         <active>true</active>
-        <label>Change-Suspension of Card/Check</label>
+        <label>Purchase Card: Change Suspension of Card/Check</label>
         <picklistValues>
             <picklist>Account_Type__c</picklist>
             <values>
@@ -5107,7 +5121,7 @@
     <recordTypes>
         <fullName>New_Approving_Official_AO</fullName>
         <active>true</active>
-        <label>New-Approving Official (AO)</label>
+        <label>Purchase Card: New Approving Official (AO)</label>
         <picklistValues>
             <picklist>Account_Type__c</picklist>
             <values>
@@ -5454,7 +5468,7 @@
         <fullName>New_Convenience_Check</fullName>
         <active>true</active>
         <description>Request for new Convenience Check</description>
-        <label>New-Convenience Check</label>
+        <label>Purchase Card: New Convenience Check</label>
         <picklistValues>
             <picklist>Account_Type__c</picklist>
             <values>
@@ -5801,8 +5815,8 @@
         <fullName>Purchase_Card</fullName>
         <active>true</active>
         <compactLayoutAssignment>Purchase_Card</compactLayoutAssignment>
-        <description>Request for New Purchase Card (Workflow), Changes to Existing Purchase Card, or Upload Purchase Card Training Certifications</description>
-        <label>Purchase Card</label>
+        <description>Request for New Purchase Card</description>
+        <label>Purchase Card: New Purchase Card</label>
         <picklistValues>
             <picklist>Account_Type__c</picklist>
             <values>
@@ -5910,6 +5924,10 @@
             <picklist>Form_Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
                 <default>false</default>
             </values>
             <values>

@@ -58,9 +58,9 @@
 ||
 
 (
-[Forms__c].RecordType.Name = &quot;Purchase Card&quot; ||
-[Forms__c].RecordType.Name = &quot;New-Convenience Check&quot; ||
-[Forms__c].RecordType.Name = &quot;New-Approving Official (AO)&quot;
+[Forms__c].RecordType.Name = &quot;Purchase Card: New Purchase Card&quot; ||
+[Forms__c].RecordType.Name = &quot;Purchase Card: New Convenience Check&quot; ||
+[Forms__c].RecordType.Name = &quot;Purchase Card: New Approving Official (AO)&quot;
 )</stringValue>
             </value>
         </processMetadataValues>
@@ -75,9 +75,9 @@
 ||
 
 (
-{!myVariable_current.RecordType.Name} = &quot;Purchase Card&quot; ||
-{!myVariable_current.RecordType.Name} = &quot;New-Convenience Check&quot; ||
-{!myVariable_current.RecordType.Name} = &quot;New-Approving Official (AO)&quot;
+{!myVariable_current.RecordType.Name} = &quot;Purchase Card: New Purchase Card&quot; ||
+{!myVariable_current.RecordType.Name} = &quot;Purchase Card: New Convenience Check&quot; ||
+{!myVariable_current.RecordType.Name} = &quot;Purchase Card: New Approving Official (AO)&quot;
 )</expression>
     </formulas>
     <interviewLabel>Auto_Create_PC_Training_Records-4_InterviewLabel</interviewLabel>

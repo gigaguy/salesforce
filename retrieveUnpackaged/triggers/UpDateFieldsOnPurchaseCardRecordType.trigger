@@ -6,20 +6,21 @@ trigger UpDateFieldsOnPurchaseCardRecordType on Forms__c (before insert, before 
             System.debug('a.Cardholder_AO_Name__c was not null.');
             Contact myContact = [SELECT Name, Phone, Email, Employee_Number__c, Mail_Stop__c, MailingStreet, MailingCity, MailingState, MailingPostalCode FROM Contact WHERE Id = :a.Cardholder_AO_Name__c];
             //update the fields with the information from that contact
+            
             a.Cardholder_AO_Display_Name__c = myContact.Name;
-            a.Telephone_Number__c = myContact.Phone;
-            a.Email_Address__c = myContact.Email;
-            a.EIN__c = myContact.Employee_Number__c;
-            a.Mailing_Address__c = myContact.MailingStreet;
-            a.Mail_Code__c = myContact.Mail_Stop__c;
-            a.City__c = myContact.MailingCity;
-            a.State__c = myContact.MailingState;
-            a.Zip__c = myContact.MailingPostalCode;
+            if(myContact.Phone != null && a.Telephone_Number__c == null){a.Telephone_Number__c = myContact.Phone;}
+            if(myContact.Email != null && a.Email_Address__c == null){a.Email_Address__c = myContact.Email;}
+            if(myContact.Employee_Number__c != null && a.EIN__c == null){a.EIN__c = myContact.Employee_Number__c;}
+            if(myContact.MailingStreet != null && a.Mailing_Address__c ==null){a.Mailing_Address__c = myContact.MailingStreet;}
+            if(myContact.Mail_Stop__c != null && a.Mail_Code__c == null){a.Mail_Code__c = myContact.Mail_Stop__c;}
+            if(myContact.MailingCity != null && a.City__c == null){a.City__c = myContact.MailingCity;}
+            if(myContact.MailingState != null && a.State__c == null){a.State__c = myContact.MailingState;}
+            if(myContact.MailingPostalCode != null && a.Zip__c == null){a.Zip__c = myContact.MailingPostalCode;}
             
         }else{
             //Get the user name
             System.debug('the Name__c = ' + a.Cardholder_AO_Display_Name__c);
-			Contact myContact = [SELECT Id FROM Contact WHERE Name = :a.Cardholder_AO_Display_Name__c];            
+			Contact myContact = [SELECT Id FROM Contact WHERE Email = :a.Email_Address__c];            
             //Fill the Cardholder_AO_Name__c withe
             a.Cardholder_AO_Name__c = myContact.Id;
         }

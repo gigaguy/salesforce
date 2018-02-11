@@ -34,6 +34,12 @@
             <field>Cardholder_AO_Name__c</field>
             <type>contactLookup</type>
         </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
         <senderType>CurrentUser</senderType>
         <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Email_Template_Approved_Confirmation</template>
     </alerts>
@@ -85,28 +91,74 @@
         <description>Purchase Card Approved Notice to PC Team for Action</description>
         <protected>false</protected>
         <recipients>
-            <recipient>creed.suzette2@epa.gov</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>lyles.dianne2@epa.gov</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>misty.grooms2@csra.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>nathaniel.villforth3@csra.com.epa</recipient>
-            <type>user</type>
+            <recipient>Purchase_Card_Team</recipient>
+            <type>group</type>
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Team_Action_Needed</template>
     </alerts>
     <alerts>
+        <fullName>Purchase_Card_Approver_1_Approved_Notification</fullName>
+        <description>Purchase Card Approver 1 Approved Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Cardholder_AO_Name__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Approved_by_Approver_1</template>
+    </alerts>
+    <alerts>
+        <fullName>Purchase_Card_Approver_2_Approved_Notification</fullName>
+        <description>Purchase Card Approver 2 Approved Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Cardholder_AO_Name__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Approved_by_Approver_2</template>
+    </alerts>
+    <alerts>
+        <fullName>Purchase_Card_Team_Action_Completion_Notification</fullName>
+        <description>Purchase Card Team Action Completion Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Cardholder_AO_Name__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Team_Action_Completed_Notification</template>
+    </alerts>
+    <alerts>
         <fullName>Reject_Request</fullName>
         <description>Reject Request</description>
         <protected>false</protected>
+        <recipients>
+            <field>Cardholder_AO_Name__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
         <recipients>
             <type>owner</type>
         </recipients>
@@ -343,6 +395,20 @@
             <value>New-Convenience Check,New-Approving Official (AO),Change-Cardholder AO,Change-Name on Card/Check,Change-Contact Information,Change-Suspension of Card/Check,Change-Monthly Limit,Cancellation-Check or Card,Purchase Card</value>
         </criteriaItems>
         <description>sends email notification to Assigned to and Approving Official for purchase card provisioning when the assigned to is entered</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Purchase Card Team Action Completed Notification</fullName>
+        <actions>
+            <name>Purchase_Card_Team_Action_Completion_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Forms__c.Form_Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
 </Workflow>

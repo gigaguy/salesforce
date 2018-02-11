@@ -1,6 +1,6 @@
 trigger PCformEnterApprovalProcess on Forms__c (before update) {
     
-    ID pcRecordTypeID = Schema.SObjectType.Forms__c.getRecordTypeInfosByName().get('Purchase Card').getRecordTypeId();
+    ID pcRecordTypeID = Schema.SObjectType.Forms__c.getRecordTypeInfosByName().get('Purchase Card: New Purchase Card').getRecordTypeId();
     Forms__c previousForm;
     Map<Id,Boolean> lineItemMap1 = new Map<Id, Boolean>();
     List<Line_Item__c> lineItemList;

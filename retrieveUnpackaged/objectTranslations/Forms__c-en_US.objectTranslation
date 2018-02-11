@@ -507,8 +507,13 @@
     </fields>
     <fields>
         <help><!-- Please check this box to indicate you agree with the terms listed above. --></help>
-        <label><!-- I Agree with Terms --></label>
-        <name>I_Agree_with_Terms__c</name>
+        <label><!-- I Agree with Terms (Approver 1) --></label>
+        <name>I_Agree_with_Terms_Approver_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please check this box to indicate you agree with the terms listed above. --></help>
+        <label><!-- I Agree with Terms (Approver 2) --></label>
+        <name>I_Agree_with_Terms_Approver_2__c</name>
     </fields>
     <fields>
         <label><!-- Immediate Supervisor&apos;s Digital Signature --></label>
@@ -1282,6 +1287,29 @@
         </sections>
     </layouts>
     <layouts>
+        <layout>Change Suspension of Card/Check</layout>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
+        </sections>
+        <sections>
+            <label><!-- Requestor Information --></label>
+            <section>Requestor Information</section>
+        </sections>
+        <sections>
+            <label><!-- Temporary Closure/Reactivation Details --></label>
+            <section>Temporary Closure/Reactivation Details</section>
+        </sections>
+    </layouts>
+    <layouts>
         <layout>EPA-100</layout>
         <sections>
             <label><!-- AWL Details --></label>
@@ -1424,29 +1452,6 @@
         </sections>
     </layouts>
     <layouts>
-        <layout>Temporary Closure/Reactivation of Card/Check</layout>
-        <sections>
-            <label><!-- Comments --></label>
-            <section>Comments</section>
-        </sections>
-        <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
-        </sections>
-        <sections>
-            <label><!-- Purchase Card Approving Officials --></label>
-            <section>Purchase Card Approving Officials</section>
-        </sections>
-        <sections>
-            <label><!-- Requestor Information --></label>
-            <section>Requestor Information</section>
-        </sections>
-        <sections>
-            <label><!-- Temporary Closure/Reactivation Details --></label>
-            <section>Temporary Closure/Reactivation Details</section>
-        </sections>
-    </layouts>
-    <layouts>
         <layout>Training</layout>
         <sections>
             <label><!-- Custom Links --></label>
@@ -1458,27 +1463,27 @@
         <name>BAP_Provisioning</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- Cancellation-Check or Card --></label>
+        <label><!-- Purchase Card: Cancellation Check or Card --></label>
         <name>Cancellation_Check_or_Card</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- Change-Cardholder AO --></label>
+        <label><!-- Purchase Card: Change Cardholder AO --></label>
         <name>Change_Cardholder_AO</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- Change-Contact Information --></label>
+        <label><!-- Purchase Card: Change Contact Information --></label>
         <name>Change_Contact_Information</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- Change-Monthly Limit --></label>
+        <label><!-- Purchase Card: Change Monthly Limit --></label>
         <name>Change_Monthly_Limit</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- Change-Name on Card/Check --></label>
+        <label><!-- Purchase Card: Change Name on Card/Check --></label>
         <name>Change_Name_Name_on_CardCheck</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- Change-Suspension of Card/Check --></label>
+        <label><!-- Purchase Card: Change Suspension of Card/Check --></label>
         <name>Change_Suspension_of_cardcheck</name>
     </recordTypes>
     <recordTypes>
@@ -1486,15 +1491,15 @@
         <name>EPA_100</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- New-Approving Official (AO) --></label>
+        <label><!-- Purchase Card: New Approving Official (AO) --></label>
         <name>New_Approving_Official_AO</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- New-Convenience Check --></label>
+        <label><!-- Purchase Card: New Convenience Check --></label>
         <name>New_Convenience_Check</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- Purchase Card --></label>
+        <label><!-- Purchase Card: New Purchase Card --></label>
         <name>Purchase_Card</name>
     </recordTypes>
     <recordTypes>

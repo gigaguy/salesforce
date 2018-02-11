@@ -183,28 +183,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Pass_Fail__c</fullName>
-        <externalId>false</externalId>
-        <label>Pass/Fail</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>P</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>F</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Related_Form__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -232,7 +210,6 @@
         <columns>Course_Title__c</columns>
         <columns>Completion_Date__c</columns>
         <columns>Location__c</columns>
-        <columns>Pass_Fail__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Current_User_View__c</field>
@@ -279,17 +256,6 @@
             </values>
             <values>
                 <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Pass_Fail__c</picklist>
-            <values>
-                <fullName>F</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>P</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
