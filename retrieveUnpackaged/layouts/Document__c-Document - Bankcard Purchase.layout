@@ -79,13 +79,17 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Vendor__c</field>
+                <field>Requester__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Bankcard_Holder__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Vendor__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
