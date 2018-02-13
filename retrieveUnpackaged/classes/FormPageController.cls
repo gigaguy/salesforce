@@ -292,4 +292,23 @@ public without sharing class FormPageController  {
         return displayFields.split(',');
         
     } 
+    
+    @AuraEnabled
+    public static List<Line_Item__c> getLineItemDataFields(String d1, string d2, string d3, String formID) { 
+    
+     string soql = 'select id, '+d1+', '+d2+', '+d3+' from Line_Item__c where Related_Form__c = :formID';
+     List<Line_Item__c> interim = Database.query(soql);
+     
+     for(line_item__c litem : interim) {
+        litem.display1__c = (string)string.valueof(litem.get(d1));
+        litem.display2__c = (string)string.valueof(litem.get(d2));
+        litem.display3__c = (string)string.valueof(litem.get(d3));
+        update litem; 
+     }
+     
+     List<Line_Item__c> displayData = [select id, display1__c, display2__c, display3__c from line_item__c where Related_Form__c = :formID]; 
+        return displayData;
+        
+    }     
+    
 }

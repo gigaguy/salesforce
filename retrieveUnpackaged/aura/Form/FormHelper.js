@@ -135,16 +135,80 @@
                 component.set("v.displayFields", response.getReturnValue());
                 console.log('resp: '+component.get("v.displayFields"));
                 var fields = response.getReturnValue();
-                component.set("v.displayOne", fields[0]);
-                component.set("v.displayTwo", fields[1]);
-                component.set("v.displayThree", fields[2]);
+                component.set("v.displayOne", fields[0].trim());
+                component.set("v.displayTwo", fields[1].trim());
+                component.set("v.displayThree", fields[2].trim());
+                
+				var dataFieldList = []; 
+                for(var i=0; i<3; i++) {           
+                    switch(fields[i].trim()) {
+                        case "Contact":
+                            dataFieldList[i]="contact__c"; 
+                            break; 
+                        case 'Item Description':
+                           dataFieldList[i]="Item_Description__c";
+                             break; 
+                        case "Item Name":
+                            dataFieldList[i]='Item_Name__c';
+                             break; 
+                        case "Item Price":
+                            dataFieldList[i]='Item_Price__c';
+                             break; 
+                        case "Item Quantity":
+                            dataFieldList[i]='Item_Quantity__c';
+                             break; 
+                        case "Line Total Price":
+                            dataFieldList[i]='Line_Total_Price__c';
+                             break; 
+                        case 'Part Number':
+                           dataFieldList[i]='Part_Number__c';
+                           break; 
+                        default:
+                            dataFieldList[i]='Name';                           
+                    }  
+                } //end for loops  
+                var d1 = dataFieldList[0];
+                var d2 = dataFieldList[1];
+                var d3 = dataFieldList[2];
+                
+                this.getDisplayData(component, d1, d2, d3);
              }
             else {
                 component.set("v.message", null);
             }
         });
-     $A.enqueueAction(action);            
-      
+     $A.enqueueAction(action);               	
+        
+    },
+    getDisplayData: function(component, d1, d2, d3) {
+        console.log('in helper.getDisplayData');
+        
+        var formID = component.get("v.viewFormID");
+        var action = component.get("c.getLineItemDataFields");
+        	action.setParams({
+				"d1" : d1,
+                "d2" : d2,
+                "d3" : d3,
+            	"formID" : formID
+        });
+        
+     action.setCallback(this, function(response){
+            var name = response.getState();
+            console.log('getting line item display data list');
+            console.log('name ' + name);
+            console.log('return value: ' + response.getReturnValue().length);
+            if (name === "SUCCESS" && response.getReturnValue().length > 0) {
+            
+                component.set("v.displayData", response.getReturnValue());
+        //        console.log('resp: '+component.get("v.displayData"));
+               
+             }
+            else {
+                component.set("v.message", null);
+            }
+        });
+     $A.enqueueAction(action);
+        
     },
     uploadHelper: function(component, event) {  // part of attachment upload process
         console.log('in helper.uploadHelper');

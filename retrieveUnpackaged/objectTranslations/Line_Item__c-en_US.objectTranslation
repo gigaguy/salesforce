@@ -9,6 +9,23 @@
         <value>Line Items</value>
     </caseValues>
     <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Display1 --></label>
+        <name>Display1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display2 --></label>
+        <name>Display2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display3 --></label>
+        <name>Display3__c</name>
+    </fields>
+    <fields>
         <label><!-- Item Description --></label>
         <name>Item_Description__c</name>
     </fields>

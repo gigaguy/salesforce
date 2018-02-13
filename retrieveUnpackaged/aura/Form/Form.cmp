@@ -36,6 +36,7 @@
     <aura:attribute name="displayOne" type="string"/>
     <aura:attribute name="displayTwo" type="string"/>
     <aura:attribute name="displayThree" type="string"/>
+    <aura:attribute name="displayData" type="Line_Item__c[]"/>  
     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
@@ -275,12 +276,12 @@
           <div class="slds-modal__footer">
             
             <!--line items list-->
-              john {!v.hasLineItems}
               <aura:if isTrue="{!v.hasLineItems}">
              	<table style="border: 1px solid lightgray;">
                     <col width="1"/>
-                    <col width="250"/>
-                    <col width="70"/>
+                    <col width="100"/>
+                    <col width="100"/>
+                    <col width="100"/>
                 	<tr style="background-color: #0070d2; border: 1px solid lightgray;">         
                         <td colspan="5" style="color: white; padding: 5px 5px 5px 15px; border: 1px solid lightgray;">
                             Line Items  
@@ -293,10 +294,13 @@
                             {!v.displayOne}
                         </td>
                         <td style="color: black; text-shadow: 0px 0px 0px #000000; padding: 1px; border: 1px solid lightgray; text-align: center;">
-                            DATE ADDED
+                            {!v.displayTwo}
+                        </td>
+                        <td style="color: black; text-shadow: 0px 0px 0px #000000; padding: 1px; border: 1px solid lightgray; text-align: center;">
+                            {!v.displayThree}
                         </td>
                     </tr>
-           			<aura:iteration var="litem" items="{!v.lineItemList}">
+           			<aura:iteration var="litem" items="{!v.displayData}">
                       <tr style="background-color: white; border: 1px solid lightgray;">
                         <td style="color: black; border: 0px solid #0070d2; text-align: center;">
                             <a href="{!'/servlet/servlet.FileDownload?file='+litem.Id}" target="_blank">
@@ -307,12 +311,18 @@
                             <button id="{!litem.Id}" onclick="{!c.deleteAttachment}">Del</button>
                             </aura:if>
                         </td>
-                        <td style="color: black; padding: 1px 1px 1px 5px; border: 1px solid lightgray; text-align: left;">
-                            {!litem.Name}
+                        <td style="color: black; padding: 1px 1px 1px 5px; border: 1px solid lightgray; text-align: left;">                         
+                            {!litem.Display1__c} 
                         </td>
-                        <td style="color: black; padding: 1px 1px 1px 5px; border: 0px solid #0070d2; text-align: center;">                         
-                           <ui:outputDateTime timezone="America/New_York" value="{!litem.CreatedDate}"/>
+                        <td style="color: black; padding: 1px 1px 1px 5px; border: 1px solid lightgray; text-align: left;">                         
+                            {!litem.Display2__c} 
                         </td>
+                        <td style="color: black; padding: 1px 1px 1px 5px; border: 1px solid lightgray; text-align: left;">                         
+                            {!litem.Display3__c} 
+                        </td>  
+                    <!--    <td style="color: black; padding: 1px 1px 1px 5px; border: 0px solid #0070d2; text-align: center;">                         
+                           <ui:outputDateTime timezone="America/New_York" value="{!litem.CreatedDate}"/>  
+                        </td>  -->
                       </tr>
                     </aura:iteration>                   
                 </table> 

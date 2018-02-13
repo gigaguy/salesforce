@@ -3922,6 +3922,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Line_Item__c.Contact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Line_Item__c.Display1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Line_Item__c.Display2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Line_Item__c.Display3__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Line_Item__c.Item_Description__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4702,7 +4722,7 @@
         <recordType>Forms__c.EPA_1900_8a_old</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Forms__c-EPA-PCOR</layout>
+        <layout>Forms__c-EPA-PCOR-LItest</layout>
         <recordType>Forms__c.EPA_PCOR</recordType>
     </layoutAssignments>
     <layoutAssignments>
