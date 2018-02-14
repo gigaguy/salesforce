@@ -307,8 +307,22 @@ public without sharing class FormPageController  {
      }
      
      List<Line_Item__c> displayData = [select id, display1__c, display2__c, display3__c from line_item__c where Related_Form__c = :formID]; 
-        return displayData;
-        
+        return displayData;       
     }     
+
+    @AuraEnabled
+    public static Line_Item__c getLineItem(ID liID) { 
+            String soql = UtilityMethods.getCreatableFieldsSOQL('Line_Item__c','id=\''+liID+'\'');
+            Line_Item__c l = (Line_Item__c )Database.query(soql);
     
+    return l;
+    }
+    
+    @AuraEnabled
+    public static string deleteLineItem(ID liID, string sID){
+        delete [select id from Line_Item__c where ID = :liID];
+        
+        return 'Line Item Deleted - Form ';
+    }
+        
 }
