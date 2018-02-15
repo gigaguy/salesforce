@@ -324,5 +324,46 @@ public without sharing class FormPageController  {
         
         return 'Line Item Deleted - Form ';
     }
+
+    @AuraEnabled
+    public static Line_Item__c insertLineItem(string sID, string formName, string formID, string siteUserID, string apiUserID){
+        system.debug('Starting insertLineItem');
+        
+        string rtName;
+        if(formName == 'EPA-PCOR'){rtName='Form_PCOR_Line_Item';}
+        else if(formName == 'EPA-100'){rtName='Form_EPA_100_Line_Item';}
+  //      else if(formName == 'TCTO'){rtName='Form_TCTO_Line_Item';}       
+        
+        string rtID = [select id from recordtype where developerName = :rtName limit 1].id;
+        
+        User u;
+        try{
+            u = [select id, Name, Supervisor__c from User where Session_Token__c = :sID];
+         }
+           catch (exception ex){
+           }
+           
+        try{
+            if (u != null){
+                Line_Item__c nli = new Line_Item__c();
+      //          nf.put('Unauthenticated_Owner__c', u.id);
+      //          if(rtName != 'SF_182') nf.put('User_Supervisor__c', u.Supervisor__c);
+                nli.put('RecordTypeId', rtID);
+                nli.put('Related_Form__c', formID);
+                nli.put('OwnerId', apiUserID);
+                insert nli;
+                // LS 2017/11/19: Add FormShare for force.com site user to new form record
+           //     UtilityMethods.addFormShare(String.ValueOf(nf.Id), siteUserID);
+                System.debug('newLineItems'+nli);
+                return nli;
+            }
+        }
+        catch(DMLException ex){
+           AuraHandledException e = new AuraHandledException(ex.getMessage() + ' - ' + string.valueOf(ex.getLineNumber()));
+            system.debug(ex.getMessage());
+           throw e;
+        }
+        return null;        
+    }
         
 }

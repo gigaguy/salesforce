@@ -1172,6 +1172,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Forms__c.Anticipated_Annual_Maintenance_Costs__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Forms__c.Anticipated_Development_Costs__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1218,6 +1223,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Forms__c.Application_Objective__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forms__c.Application_Owner__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1303,11 +1313,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Forms__c.Branch__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Forms__c.Breadth_of_Use__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1946,6 +1951,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Forms__c.Expected_User_Organizations__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Forms__c.Expire_Date__c</field>
         <readable>true</readable>
@@ -2503,6 +2513,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Forms__c.MI__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forms__c.Management_POC__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3282,6 +3297,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Forms__c.Scope_of_Use__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Forms__c.Secondary_Email_Address__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3452,7 +3472,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Forms__c.Similar_Applications__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Forms__c.Software_Package_to_be_Purchased__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Forms__c.Sources_Searched__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

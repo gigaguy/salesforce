@@ -40,6 +40,7 @@
     <aura:attribute name="savedLineItem" type="Line_Item__c"/>
     <aura:attribute name="showLineItem" type="boolean" default="false"/>
     <aura:attribute name="viewLineItemID" type="Id"/>
+    <aura:attribute name="viewLineItemList" type="boolean" default="false"/>
     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
@@ -313,7 +314,7 @@
                       <tr style="background-color: white; border: 1px solid lightgray;">
                         <td style="color: black; border: 0px solid #0070d2; text-align: center;">
                           
-                           <button id="{!litem.Id}" onclick="{!c.viewLineItem}">View</button>   
+                           <button id="{!litem.Id}" onclick="{!c.viewLineItemJS}">View</button>   
                             
                    <!--       <div class="divider"/>
                             <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">
@@ -426,8 +427,15 @@
             
             <!-- CLOSE/CANCEL BUTTONS -->
             <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">
-            <aura:if isTrue="{!v.isNew || v.isCopy}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.confirmCancelCreationModal}" />
-              <aura:set attribute="else"><ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.confirmCloseModal}" /></aura:set>
+            <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; v.showLineItem == false}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.confirmCancelCreationModal}" />
+              <aura:set attribute="else">
+                <aura:if isTrue="{!v.showLineItem}">  
+                  <ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.confirmCloseLineItemModal}" />
+                   <aura:set attribute="else">
+                     <ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.confirmCloseModal}" />
+                   </aura:set>
+                </aura:if>
+              </aura:set>
             </aura:if>  
                 
             <!-- DELETE BUTTONS -->
@@ -435,9 +443,19 @@
             <aura:if isTrue="{!v.showLineItem}"><ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmLineItemDelete}" /></aura:if> 
             
             <!-- LINE ITEM BUTTONS -->    
-            <aura:if isTrue="{!v.rtLineItemEnabled &amp;&amp; v.addLineItem==false}"><ui:button class="slds-button slds-button--neutral" label="Line Items" press="{!c.addLineItem}" /></aura:if>
-            <aura:if isTrue="{!v.showLineItem==false &amp;&amp; v.addLineItem}"><ui:button class="slds-button slds-button--neutral" label="Hide Line Items" press="{!c.hideLineItem}" /></aura:if>    
+            <aura:if isTrue="{!v.rtLineItemEnabled &amp;&amp; v.viewLineItemList==false}">
+                <ui:button label="View Line Items" press="{!c.viewLineItemList}" class="slds-button slds-button--neutral" />
+            </aura:if>
+            
+            <aura:if isTrue="{!v.showLineItem==false &amp;&amp; v.viewLineItemList}">
+                <ui:button label="Hide Line Items" press="{!c.hideLineItem}" class="slds-button slds-button--neutral" />
+            </aura:if>
+            
+            <aura:if isTrue="{!v.showLineItem==false &amp;&amp; v.viewLineItemList}">
+                <ui:button label="Create New Line Items" press="{!c.createNewLineItem}" class="slds-button slds-button--neutral" />
+            </aura:if>    
                 
+            
             <!-- ATTACHMENT BUTTONS -->
             <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; v.showLineItem==false}">
               <ui:button class="slds-button slds-button--neutral" label="Save to Enable Attachments" press="{!c.enableAttachments}" />			

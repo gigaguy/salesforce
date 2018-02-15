@@ -18,26 +18,6 @@
         helper.setSiteUserID(component);
         helper.setAPIUserID(component);
     },
-    addLineItem : function(component, event, helper) {   // enables line items to be entered
-    	console.log('in addLineItem');
-        
-        component.set("v.addLineItem", true);
- /*       try {
-           	component.get('v.theModal').get("e.recordSave").fire();
-            console.log('no error');
-          	}
-        catch (e) {
-            console.log(e);
-          }
-   */     
-        var formID = component.get("v.viewFormID"); 
-          console.log('formID: ' + formID);
-        
-        helper.getLineItemList(component, formID);
-        //var a = component.get("c.??");
-        //$A.enqueueAction(a);
-        
-    },
     approvalRecall : function(component, event, helper) {  // recalls Form from approval
     	console.log('in approvalRecall');
             
@@ -244,9 +224,23 @@
         }
         else {
             //cancel
-        }
-        
+        }       
 	},
+    confirmCloseLineItemModal : function(component, event) {
+        console.log('in confirmCloseLineItemModal');
+    
+    var resp = confirm("Are you sure you want to close this line item?\nYou will lose any unsaved changes.");
+        
+        if(resp === true){
+            component.set("v.showLineItem", false);
+            
+            var a = component.get("c.createTheModal");
+            $A.enqueueAction(a);
+        }
+        else {
+            //cancel
+        }           
+    },
     confirmFormDelete : function(component, event) {
         console.log('in confirmFormDelete');
         
@@ -355,24 +349,7 @@
                                component.set("v.fileUploadCmp", fileUploadCmp);
                            }
                                );   
-    },
-    createLineItemComp: function(component, event, helper) {  //creates upload attachment component
-        console.log('in createLineItemComp');
-        
-        $A.createComponent('lightning:input',
-                           {
-                               'aura:id':'fileUploadCmp', 
-                               onchange:component.getReference("c.handleFilesChange"), 
-                               type:'file', 
-                               name:'fileUploadCmp',
-                               label:'Upload Attachment', 
-                               multiple:'false',
-                           },
-                           function(fileUploadCmp) {
-                               component.set("v.fileUploadCmp", fileUploadCmp);
-                           }
-                          );   
-    },    
+    },   
     createNewForm: function(component, event, helper) {  // opens theModal when user hits "New Form" button
    		console.log('in createNewForm');
         
@@ -387,6 +364,57 @@
         
         var a = component.get("c.createTheModal");
         $A.enqueueAction(a);
+    },
+    createNewLineItem : function(component, event, helper) {   // inserts new line item for editing
+        console.log('in createNewLineItem');
+        
+        //save form so changes not lost
+   /*     try {
+            component.get('v.theModal').get("e.recordSave").fire();
+            console.log('no error');
+        }
+        catch (e) {
+            console.log(e);
+        }   */
+        
+        component.set("v.hasLineItems", false);
+        
+        var formID = component.get("v.viewFormID"); 
+        console.log('formID: ' + formID);
+        var formName = component.get("v.viewFormName");
+        console.log('formName: '+formName);
+        
+        var action = component.get("c.insertLineItem");
+        action.setParams({
+			"sID" : component.get("v.sessionID"),
+            "formID" : formID,
+            "formName" : formName,
+            "siteUserID" : component.get("v.siteUserID"),
+            "apiUserID" : component.get("v.apiUserID")
+        });
+        action.setCallback(this,function(resp){
+			console.log('in createNewLineItem action');
+            var state = resp.getState();
+            console.log('state: ' +state);
+            if(state === 'SUCCESS'){
+                component.set("v.savedLineItem", resp.getReturnValue());  // returned new line item
+                component.set("v.viewLineItemID", component.get("v.savedLineItem.Id"));      
+                              
+                component.set("v.message", null);
+                component.set("v.showLineItem", true);
+                
+                var a = component.get("c.createTheModal");
+        			$A.enqueueAction(a);
+            }
+            else if(state === 'ERROR'){
+                var errors = resp.getError();
+                for(var i = 0 ;i < errors.length;i++){
+                    console.log(errors[i].message);
+                }
+            }
+        });
+        $A.enqueueAction(action); 
+        
     },
     createTheModal: function(component, event, helper) {   // creates theModal component
         console.log('in createTheModal');
@@ -552,9 +580,10 @@
          console.log('in createTheModal for Line Item');
         
         var liID = component.get("v.viewLineItemID")
+        console.log('liID: '+liID);
     		 $A.createComponent('force:recordEdit',
                       {
-                        'aura:id': 'theModal',
+                        'aura:id' : 'theModal',
                         'recordId': liID
                        },
                       function(theModal){
@@ -802,7 +831,7 @@
         console.log('in hideLineItem');
         
         component.set("v.showLineItem", false);
-        component.set("v.addLineItem", false);
+        component.set("v.viewLineItemList", false);
         component.set("v.hasLineItems", false);
         
     },
@@ -866,7 +895,7 @@
         component.set("v.message", null);
 		component.set("v.pageStatus", "viewFormTypes");  // shows user list of Available Workflow and Fill&Print Forms
 	},
-    viewLineItem : function(component, event, helper){
+    viewLineItemJS : function(component, event, helper){
     	console.log('in viewLineItem');
         var liID = event.currentTarget.id; 
         component.set("v.viewLineItemID", liID);
@@ -895,6 +924,16 @@
             }
         });
         $A.enqueueAction(action); 
+    },
+    viewLineItemList : function(component, event, helper) {   // enables line items to be entered
+    	console.log('in viewLineItemList');
+               
+        component.set("v.viewLineItemList", true);
+        var formID = component.get("v.viewFormID"); 
+          console.log('formID: ' + formID);
+        
+        helper.getLineItemList(component, formID);
+        
     },
     viewMyForms : function(component, event, helper){  // gets list of user's existing Form records, adds to "v.mySavedForms"
         console.log('in viewMyForms');

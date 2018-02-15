@@ -86,6 +86,10 @@
         <name>Allowance_Holder__c</name>
     </fields>
     <fields>
+        <label><!-- Anticipated Annual Maintenance Costs --></label>
+        <name>Anticipated_Annual_Maintenance_Costs__c</name>
+    </fields>
+    <fields>
         <label><!-- Anticipated Development Costs --></label>
         <name>Anticipated_Development_Costs__c</name>
     </fields>
@@ -124,6 +128,11 @@
     <fields>
         <label><!-- Application Objective --></label>
         <name>Application_Objective__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Owner --></label>
+        <name>Application_Owner__c</name>
+        <relationshipLabel><!-- Forms (Application Owner) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Application Platform --></label>
@@ -312,26 +321,11 @@
         <name>Branch__c</name>
     </fields>
     <fields>
-        <label><!-- Breadth of Use --></label>
-        <name>Breadth_of_Use__c</name>
-        <picklistValues>
-            <masterLabel>Agency-wide</masterLabel>
-            <translation><!-- Agency-wide --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Several Offices or Regions</masterLabel>
-            <translation><!-- Several Offices or Regions --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Single Office or Region</masterLabel>
-            <translation><!-- Single Office or Region --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
         <label><!-- Budget Office(Printed Name) --></label>
         <name>Budget_Office_Printed_Name__c</name>
     </fields>
     <fields>
+        <help><!-- Select an EPA Business Reference Model Business Area --></help>
         <label><!-- Business Area --></label>
         <name>Business_Area__c</name>
         <picklistValues>
@@ -1286,6 +1280,102 @@
         <name>Expected_Submission_Date__c</name>
     </fields>
     <fields>
+        <label><!-- Expected User Organizations --></label>
+        <name>Expected_User_Organizations__c</name>
+        <picklistValues>
+            <masterLabel>AO</masterLabel>
+            <translation><!-- AO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OAR</masterLabel>
+            <translation><!-- OAR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OARM</masterLabel>
+            <translation><!-- OARM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCFO</masterLabel>
+            <translation><!-- OCFO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCSPP</masterLabel>
+            <translation><!-- OCSPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OECA</masterLabel>
+            <translation><!-- OECA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEI</masterLabel>
+            <translation><!-- OEI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OGC</masterLabel>
+            <translation><!-- OGC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OIG</masterLabel>
+            <translation><!-- OIG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OITA</masterLabel>
+            <translation><!-- OITA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OLEM</masterLabel>
+            <translation><!-- OLEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORD</masterLabel>
+            <translation><!-- ORD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OW</masterLabel>
+            <translation><!-- OW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R01</masterLabel>
+            <translation><!-- R01 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R02</masterLabel>
+            <translation><!-- R02 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R03</masterLabel>
+            <translation><!-- R03 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R04</masterLabel>
+            <translation><!-- R04 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R05</masterLabel>
+            <translation><!-- R05 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R06</masterLabel>
+            <translation><!-- R06 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R07</masterLabel>
+            <translation><!-- R07 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R08</masterLabel>
+            <translation><!-- R08 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R09</masterLabel>
+            <translation><!-- R09 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R10</masterLabel>
+            <translation><!-- R10 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Expire Date --></label>
         <name>Expire_Date__c</name>
     </fields>
@@ -1805,6 +1895,7 @@
         <name>Line_Total_Price_9__c</name>
     </fields>
     <fields>
+        <help><!-- Pick an EPA Business Reference Model Line of Business based on the Business Area selected above --></help>
         <label><!-- Line of Business --></label>
         <name>Line_of_Business__c</name>
         <picklistValues>
@@ -1951,6 +2042,11 @@
     <fields>
         <label><!-- MI --></label>
         <name>MI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Management POC --></label>
+        <name>Management_POC__c</name>
+        <relationshipLabel><!-- Forms (Management POC) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- First/Last Name --></label>
@@ -3160,6 +3256,7 @@
         <name>Related_EPA_Systems__c</name>
     </fields>
     <fields>
+        <help><!-- Indicate whether this application is replacing another application.  If it is, remember to identify what it is replacing in the &quot;If Replacing, Specify&quot; field. --></help>
         <label><!-- Replacing --></label>
         <name>Replacing__c</name>
         <picklistValues>
@@ -3307,6 +3404,22 @@
     <fields>
         <label><!-- Safety, Health and Envi(printed name) --></label>
         <name>Safety_Health_and_Envi_printed_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scope of Use --></label>
+        <name>Scope_of_Use__c</name>
+        <picklistValues>
+            <masterLabel>Agency-wide</masterLabel>
+            <translation><!-- Agency-wide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Several Offices or Regions</masterLabel>
+            <translation><!-- Several Offices or Regions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Office or Region</masterLabel>
+            <translation><!-- Single Office or Region --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Secondary Email Address --></label>
@@ -3467,8 +3580,30 @@
         <name>Signature__c</name>
     </fields>
     <fields>
+        <help><!-- Applications that are similar to this application --></help>
+        <label><!-- Similar Applications --></label>
+        <name>Similar_Applications__c</name>
+    </fields>
+    <fields>
         <label><!-- Software Package to be Purchased --></label>
         <name>Software_Package_to_be_Purchased__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sources you have searched in order to determine whether a similar application exists --></help>
+        <label><!-- Sources Searched --></label>
+        <name>Sources_Searched__c</name>
+        <picklistValues>
+            <masterLabel>ADC</masterLabel>
+            <translation><!-- ADC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RCS</masterLabel>
+            <translation><!-- RCS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>READ</masterLabel>
+            <translation><!-- READ --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Special Comments --></label>
@@ -3483,6 +3618,7 @@
         <name>Step__c</name>
     </fields>
     <fields>
+        <help><!-- Pick an EPA Business Reference Model Sub-Function based on the Line of Business selected above --></help>
         <label><!-- Sub-Function --></label>
         <name>Sub_Function__c</name>
         <picklistValues>
@@ -4576,48 +4712,24 @@
     <layouts>
         <layout>Application Approval</layout>
         <sections>
-            <label><!-- Approval Info --></label>
-            <section>Approval Info</section>
-        </sections>
-        <sections>
-            <label><!-- Business Context --></label>
-            <section>Business Context</section>
-        </sections>
-        <sections>
-            <label><!-- Business Context Spacer --></label>
-            <section>Business Context Spacer</section>
-        </sections>
-        <sections>
-            <label><!-- Business Context Spacer2 --></label>
-            <section>Business Context Spacer2</section>
+            <label><!-- Application Identification --></label>
+            <section>Application Identification</section>
         </sections>
         <sections>
             <label><!-- Comments --></label>
             <section>Comments</section>
         </sections>
         <sections>
+            <label><!-- Context --></label>
+            <section>Context</section>
+        </sections>
+        <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Identification --></label>
-            <section>Identification</section>
-        </sections>
-        <sections>
-            <label><!-- Identification Spacer --></label>
-            <section>Identification Spacer</section>
-        </sections>
-        <sections>
-            <label><!-- Identification Spacer2 --></label>
-            <section>Identification Spacer2</section>
-        </sections>
-        <sections>
             <label><!-- Scope --></label>
             <section>Scope</section>
-        </sections>
-        <sections>
-            <label><!-- Technical Context --></label>
-            <section>Technical Context</section>
         </sections>
     </layouts>
     <layouts>
