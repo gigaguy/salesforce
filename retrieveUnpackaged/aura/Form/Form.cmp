@@ -31,16 +31,17 @@
     <aura:attribute name="rtLineItemEnabled" type="boolean" default="false" />
     <aura:attribute name="addLineItem" type="boolean" default="false" />
     <aura:attribute name="lineItemList" type="Line_Item__c[]"/>
-    <aura:attribute name="hasLineItems" type="boolean" default="false" />
     <aura:attribute name="displayFields" type="List"/>
     <aura:attribute name="displayOne" type="string"/>
     <aura:attribute name="displayTwo" type="string"/>
     <aura:attribute name="displayThree" type="string"/>
     <aura:attribute name="displayData" type="Line_Item__c[]"/>
-    <aura:attribute name="savedLineItem" type="Line_Item__c"/>
+    <aura:attribute name="theLineItem" type="Line_Item__c"/>
     <aura:attribute name="showLineItem" type="boolean" default="false"/>
     <aura:attribute name="viewLineItemID" type="Id"/>
     <aura:attribute name="viewLineItemList" type="boolean" default="false"/>
+    <aura:attribute name="savedLineItem" type="boolean" default="false"/>
+    <aura:attribute name="newLineItem" type="boolean" default="false"/>
     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
@@ -267,7 +268,20 @@
                </h3> 
              
                 <aura:set attribute="else">
-                  <h2 id="header99" class="slds-text-heading--medium">Line Item Detail</h2>
+                  <aura:if isTrue="{!v.message == null}">
+                    <aura:if isTrue="{!v.savedLineItem}">
+                      <h2 id="header99" class="slds-text-heading--medium">Line Item Detail</h2>
+                        <aura:set attribute="else">
+                        <h2 id="header99" class="slds-text-heading--medium">Line Item Detail - Not Saved</h2>
+                        </aura:set>
+                     </aura:if>
+                    </aura:if>
+                    <aura:if isTrue="{!v.message == 'Form Saved | '}">
+                        <h2 id="header99" class="slds-text-heading--medium">Line Item Saved</h2>
+                      <aura:set attribute="else">
+                       <h2 id="header99" class="slds-text-heading--medium">{!v.message}</h2>
+                   </aura:set>
+				  </aura:if>
             	</aura:set>
               </aura:if>
           </div>
@@ -286,7 +300,7 @@
           <div class="slds-modal__footer">
             
             <!--line items list-->
-              <aura:if isTrue="{!v.hasLineItems}">
+              <aura:if isTrue="{!v.viewLineItemList}">
              	<table style="border: 1px solid lightgray;">
                     <col width="1"/>
                     <col width="100"/>
@@ -335,6 +349,11 @@
                         </td>  -->
                       </tr>
                     </aura:iteration>                   
+                  <tr style="background-color: white; border: 1px solid lightgray;"> 
+                  	<td colspan="5" style="color: white; padding: 5px 5px 5px 15px; border: 1px solid lightgray;">
+                      <ui:button label="Create New Line Item" press="{!c.createNewLineItem}" class="slds-button slds-button--neutral" />  
+                    </td>
+                  </tr>
                 </table> 
                   <br/>
               </aura:if>
@@ -395,8 +414,8 @@
                         <td style="color: black; padding: 1px 1px 1px 5px; border: 1px solid lightgray; text-align: left;">
                             {!file.Title}
                         </td>
-                        <td style="color: black; padding: 1px 1px 1px 5px; border: 0px solid #0070d2; text-align: center;">                         
-                           <ui:outputDateTime timezone="America/New_York" value="{!file.CreatedDate}"/>
+                        <td style="color: black; padding: 1px 1px 1px 5px; border: 0px solid #0070d2; text-align: center;">
+                              <ui:outputDateTime timezone="America/New_York" value="{!file.CreatedDate}"/>
                         </td>
                       </tr>
                     </aura:iteration>                    
@@ -447,14 +466,9 @@
                 <ui:button label="View Line Items" press="{!c.viewLineItemList}" class="slds-button slds-button--neutral" />
             </aura:if>
             
-            <aura:if isTrue="{!v.showLineItem==false &amp;&amp; v.viewLineItemList}">
+            <aura:if isTrue="{!and(v.showLineItem==false, v.viewLineItemList)}">
                 <ui:button label="Hide Line Items" press="{!c.hideLineItem}" class="slds-button slds-button--neutral" />
             </aura:if>
-            
-            <aura:if isTrue="{!v.showLineItem==false &amp;&amp; v.viewLineItemList}">
-                <ui:button label="Create New Line Items" press="{!c.createNewLineItem}" class="slds-button slds-button--neutral" />
-            </aura:if>    
-                
             
             <!-- ATTACHMENT BUTTONS -->
             <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; v.showLineItem==false}">

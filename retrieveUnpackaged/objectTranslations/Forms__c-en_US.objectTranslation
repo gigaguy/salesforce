@@ -1019,6 +1019,10 @@
         <name>Description_of_Interface__c</name>
     </fields>
     <fields>
+        <label><!-- Destination --></label>
+        <name>Destination__c</name>
+    </fields>
+    <fields>
         <label><!-- Developed in accordance with: --></label>
         <name>Developed_in_accordance_with_1__c</name>
         <picklistValues>
@@ -2887,29 +2891,12 @@
         <name>Previous_Negotiated_Due_Date_4__c</name>
     </fields>
     <fields>
-        <label><!-- Primary Email Address --></label>
-        <name>Primary_Email_Address__c</name>
-    </fields>
-    <fields>
         <label><!-- Primary Function Code --></label>
         <name>Primary_Function_Code__c</name>
     </fields>
     <fields>
         <label><!-- Primary Function Name --></label>
         <name>Primary_Function_Name__c</name>
-    </fields>
-    <fields>
-        <label><!-- Primary Name --></label>
-        <name>Primary_Name__c</name>
-        <relationshipLabel><!-- Forms (Primary Name) --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Primary Organization --></label>
-        <name>Primary_Organization__c</name>
-    </fields>
-    <fields>
-        <label><!-- Primary Telephone --></label>
-        <name>Primary_Telephone__c</name>
     </fields>
     <fields>
         <label><!-- Primary or Alternate --></label>
@@ -3422,29 +3409,12 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Secondary Email Address --></label>
-        <name>Secondary_Email_Address__c</name>
-    </fields>
-    <fields>
         <label><!-- Secondary Function Code --></label>
         <name>Secondary_Function_Code__c</name>
     </fields>
     <fields>
         <label><!-- Secondary Function Name --></label>
         <name>Secondary_Function_Name__c</name>
-    </fields>
-    <fields>
-        <label><!-- Secondary Name --></label>
-        <name>Secondary_Name__c</name>
-        <relationshipLabel><!-- Forms (Secondary Name) --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Secondary Organization --></label>
-        <name>Secondary_Organization__c</name>
-    </fields>
-    <fields>
-        <label><!-- Secondary Telephone --></label>
-        <name>Secondary_Telephone__c</name>
     </fields>
     <fields>
         <label><!-- Security Management Div (Printed Name) --></label>
@@ -4036,6 +4006,26 @@
         <name>Support_Email__c</name>
     </fields>
     <fields>
+        <label><!-- TCTO Request Type --></label>
+        <name>TCTO_Request_Type__c</name>
+        <picklistValues>
+            <masterLabel>Earned Hours Approved</masterLabel>
+            <translation><!-- Earned Hours Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Earned Hours Request</masterLabel>
+            <translation><!-- Earned Hours Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposed Hours Approved</masterLabel>
+            <translation><!-- Proposed Hours Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposed Hours Request</masterLabel>
+            <translation><!-- Proposed Hours Request --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Thank You --></label>
         <name>Thank_You__c</name>
     </fields>
@@ -4393,6 +4383,14 @@
         <name>Transit_Parking_Printed_Name__c</name>
     </fields>
     <fields>
+        <label><!-- Travel End Date --></label>
+        <name>Travel_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Travel Start Date --></label>
+        <name>Travel_Start_Date__c</name>
+    </fields>
+    <fields>
         <label><!-- Tuition and Fees --></label>
         <name>Tuition_and_Fees__c</name>
     </fields>
@@ -4714,6 +4712,10 @@
         <sections>
             <label><!-- Application Identification --></label>
             <section>Application Identification</section>
+        </sections>
+        <sections>
+            <label><!-- Approvers --></label>
+            <section>Approvers</section>
         </sections>
         <sections>
             <label><!-- Comments --></label>
@@ -5375,6 +5377,25 @@
             <section>reassignment</section>
         </sections>
     </layouts>
+    <layouts>
+        <layout>TCTO Request</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- TCTO Request Information --></label>
+            <section>TCTO Request Information</section>
+        </sections>
+        <sections>
+            <label><!-- Travel Comp Time Off (TCTO) Request Form --></label>
+            <section>Travel Comp Time Off (TCTO) Request Form</section>
+        </sections>
+    </layouts>
     <recordTypes>
         <label><!-- Application Approval --></label>
         <name>Application_Approval</name>
@@ -5418,6 +5439,10 @@
     <recordTypes>
         <label><!-- SF-182 --></label>
         <name>SF_182</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- TCTO Request --></label>
+        <name>TCTO_Request</name>
     </recordTypes>
     <startsWith>Consonant</startsWith>
     <validationRules>

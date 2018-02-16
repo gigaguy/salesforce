@@ -87,7 +87,10 @@
         	var formName = component.get("v.viewFormName");
         
         console.log('formID: ' + formID);     
-       		
+       	//clear any previous data
+       	component.set("v.displayData", null);
+        component.set("v.lineItemList", null);
+        
           //get list line item records
         	var action = component.get("c.getListOfLineItems");
         	action.setParams({
@@ -101,7 +104,7 @@
             console.log('return value: ' + response.getReturnValue().length);
             if (name === "SUCCESS" && response.getReturnValue().length > 0) {
                 component.set("v.lineItemList", response.getReturnValue());
-                component.set("v.hasLineItems", true);
+                component.set("v.viewLineItemList", true);
               
             var respList = response.getReturnValue();
             var rtID = respList[0].RecordTypeId;
@@ -110,7 +113,7 @@
                 this.getDisplayFields(component, rtID);
              }
             else {
-                component.set("v.message", null);
+                component.set("v.message", null);                
             }
         });
      $A.enqueueAction(action);
@@ -162,6 +165,15 @@
                              break; 
                         case 'Part Number':
                            dataFieldList[i]='Part_Number__c';
+                           break; 
+                        case 'Date':
+                           dataFieldList[i]='Date__c';
+                           break; 
+                        case 'Travel Time (Start)':
+                           dataFieldList[i]='Travel_Time_Start__c';
+                           break; 
+                        case 'Travel Time (End)':
+                           dataFieldList[i]='Travel_Time_End__c';
                            break; 
                         default:
                             dataFieldList[i]='Name';                           

@@ -20,6 +20,7 @@ public without sharing class FormPageController  {
             formNames.add('EPA-3160-6v5');
             formNames.add('FCO Appointment');
             formNames.add('Application Approval');
+            formNames.add('TCTO-Request');
         }
         return [select id, Name, Description from RecordType where sObjectType = 'Forms__c' and IsActive = true and Name in :formNames];
     }
@@ -332,7 +333,7 @@ public without sharing class FormPageController  {
         string rtName;
         if(formName == 'EPA-PCOR'){rtName='Form_PCOR_Line_Item';}
         else if(formName == 'EPA-100'){rtName='Form_EPA_100_Line_Item';}
-  //      else if(formName == 'TCTO'){rtName='Form_TCTO_Line_Item';}       
+        else if(formName == 'TCTO Request'){rtName='Proposed_Hours';}       
         
         string rtID = [select id from recordtype where developerName = :rtName limit 1].id;
         

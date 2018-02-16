@@ -132,6 +132,7 @@
           console.log('viewTheModal: '+component.get("v.viewTheModal"));
         component.set("v.hasAttachments", false);
         component.set("v.addAttachments", false);
+        component.set("v.viewLineItemList", false);
     	
         var action = component.get("c.deleteForm");
         action.setParams({
@@ -162,6 +163,7 @@
           console.log('viewTheModal: '+component.get("v.viewTheModal"));
         component.set("v.hasAttachments", false);
         component.set("v.addAttachments", false);
+        component.set("v.viewLineItemList", false);
 
         // LS 2017/11/19: Added additional action below to remove FormShare on close of modal, there may be a better place or way to do this
         var removeShareAction = component.get("c.removeFormShare");
@@ -233,6 +235,7 @@
         
         if(resp === true){
             component.set("v.showLineItem", false);
+            component.set("v.message", null);
             
             var a = component.get("c.createTheModal");
             $A.enqueueAction(a);
@@ -377,7 +380,7 @@
             console.log(e);
         }   */
         
-        component.set("v.hasLineItems", false);
+        component.set("v.viewLineItemList", false);
         
         var formID = component.get("v.viewFormID"); 
         console.log('formID: ' + formID);
@@ -397,9 +400,11 @@
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
-                component.set("v.savedLineItem", resp.getReturnValue());  // returned new line item
-                component.set("v.viewLineItemID", component.get("v.savedLineItem.Id"));      
-                              
+                component.set("v.theLineItem", resp.getReturnValue());  // returned new line item
+                component.set("v.viewLineItemID", component.get("v.theLineItem.Id"));      
+                component.set("v.savedLineItem", false);
+                component.set("v.newLineItem", true);
+                
                 component.set("v.message", null);
                 component.set("v.showLineItem", true);
                 
@@ -682,7 +687,7 @@
     deleteLineItemJS : function(component, event, helper){
     	console.log('in deleteLineItemJS');
         
-        component.set("v.hasLineItems", false);
+        component.set("v.viewLineItemList", false);
         component.set("v.addLineItem", false);
         
         var liID = component.get("v.viewLineItemID");
@@ -699,6 +704,7 @@
             if(state === 'SUCCESS'){
                 component.set("v.message", resp.getReturnValue());
                 component.set("v.showLineItem", false);
+                component.set("v.lineItemList", null);
           		
           		var a = component.get("c.createTheModal");
         		$A.enqueueAction(a); 
@@ -800,12 +806,12 @@
                 console.log('viewTheModal: '+component.get("v.viewTheModal"));                
             
             console.log('onSubmit: '+component.get("v.onSubmit"));
-            if (component.get("v.onSubmit") == false){
-                component.set("v.message", "Form Saved | ");
+             
+             if (component.get("v.onSubmit") == false){
                 component.set("v.isNew", false);
                 component.set("v.isCopy", false);
-                component.set("v.message", "Form Saved | ");
-                
+                 if(component.get("v.showLineItem")==false){component.set("v.message", "Form Saved | ");}
+                 else {component.set("v.message", "Line Item Saved");}
                 var a = component.get('c.createTheModal');  
                 $A.enqueueAction(a);
               }
@@ -832,7 +838,6 @@
         
         component.set("v.showLineItem", false);
         component.set("v.viewLineItemList", false);
-        component.set("v.hasLineItems", false);
         
     },
     saveAndSubmit : function(component, event, helper){   // saves Form and submits for approval
@@ -909,9 +914,12 @@
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
-                component.set("v.savedLineItem", resp.getReturnValue());  // returned line item
+                component.set("v.theLineItem", resp.getReturnValue());  // returned line item
                 component.set("v.message", null);
                 component.set("v.showLineItem", true);
+                component.set("v.savedLineItem", true);
+                component.set("v.newLineItem", false);
+                component.set("v.viewLineItemList", false);
                 
                 var a = component.get("c.createTheModal");
         			$A.enqueueAction(a);
