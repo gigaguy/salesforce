@@ -538,6 +538,17 @@
         <label>My Contacts</label>
     </listViews>
     <listViews>
+        <fullName>huang</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <label>huang</label>
+    </listViews>
+    <listViews>
         <fullName>pugliese_suzzette</fullName>
         <columns>FULL_NAME</columns>
         <columns>ACCOUNT.NAME</columns>
