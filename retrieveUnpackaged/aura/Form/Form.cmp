@@ -42,6 +42,7 @@
     <aura:attribute name="viewLineItemList" type="boolean" default="false"/>
     <aura:attribute name="savedLineItem" type="boolean" default="false"/>
     <aura:attribute name="newLineItem" type="boolean" default="false"/>
+    <aura:attribute name="nextCheck" type="boolean" default="false"/>
     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
@@ -231,6 +232,7 @@
         <div class="slds-modal__container">
           <!--BOX HEADER-->
           <div class="slds-modal__header">
+            <aura:if isTrue="{!v.showLineItem==false}"> 
               <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">
                   <aura:if isTrue="{!v.isNew || v.isCopy}"><button class="slds-button slds-modal__close slds-button--icon-inverse" title="Cancel" onclick="{!c.confirmCancelCreationModal}">
                           X
@@ -245,9 +247,9 @@
                           X
                         <span class="slds-assistive-text">Close</span>
                         </button></aura:set>
-              </aura:if> 
-              
-        <aura:if isTrue="{!v.showLineItem==false}"> 
+                </aura:if> 
+             
+        
               <h2 id="header99" class="slds-text-heading--medium">
                 Status:
                 <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Recalled',v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c}">
@@ -267,8 +269,19 @@
 			      <aura:if isTrue="{!v.viewFormName=='SF-182'}"><br/>For help using {!v.viewFormName} please contact your Training Officer.<br/>Employees will find their Training Officer <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>            
                </h3> 
              
-                <aura:set attribute="else">
-                  <aura:if isTrue="{!v.message == null}">
+               <aura:set attribute="else">
+                   <aura:if isTrue="!v.newLineItem">
+                 		<button title="Cancel" onclick="{!c.confirmCancelLineItemModal}" class="slds-button slds-modal__close slds-button--icon-inverse" >
+                            X  <span class="slds-assistive-text">Cancel</span>
+                        </button>
+                     <aura:set attribute="else">
+                       		<button title="Close" onclick="{!c.confirmCloseLineItemModal}" class="slds-button slds-modal__close slds-button--icon-inverse" >
+                                 X  <span class="slds-assistive-text">Close</span>
+                       	    </button>
+                     </aura:set>    
+                   </aura:if>
+                   
+                   <aura:if isTrue="{!v.message == null}">
                     <aura:if isTrue="{!v.savedLineItem}">
                       <h2 id="header99" class="slds-text-heading--medium">Line Item Detail</h2>
                         <aura:set attribute="else">
@@ -446,11 +459,17 @@
             
             <!-- CLOSE/CANCEL BUTTONS -->
             <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">
-            <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; v.showLineItem == false}"><ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.confirmCancelCreationModal}" />
+            <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; v.showLineItem == false}">
+                <ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.confirmCancelCreationModal}" />
               <aura:set attribute="else">
-                <aura:if isTrue="{!v.showLineItem}">  
+                <aura:if isTrue="{!v.showLineItem}">                     
+                    <aura:if isTrue="{!v.savedLineItem}">
                   <ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.confirmCloseLineItemModal}" />
                    <aura:set attribute="else">
+                        <ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.confirmCancelLineItemModal}" />
+                        </aura:set>
+                    </aura:if>                  
+                    <aura:set attribute="else">
                      <ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.confirmCloseModal}" />
                    </aura:set>
                 </aura:if>
@@ -459,7 +478,7 @@
                 
             <!-- DELETE BUTTONS -->
             <aura:if isTrue="{!v.isNew == false &amp;&amp; v.isCopy == false &amp;&amp; v.showLineItem==false}"><ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmFormDelete}" /></aura:if> 
-            <aura:if isTrue="{!v.showLineItem}"><ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmLineItemDelete}" /></aura:if> 
+            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.savedLineItem}"><ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmLineItemDelete}" /></aura:if> 
             
             <!-- LINE ITEM BUTTONS -->    
             <aura:if isTrue="{!v.rtLineItemEnabled &amp;&amp; v.viewLineItemList==false}">
@@ -479,7 +498,22 @@
             </aura:set></aura:if>
                 
             <!-- SAVE/SUBMIT BUTTONS -->
-            <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveStay}" />
+            <aura:if isTrue="{!v.viewFormName == 'TCTO Request' &amp;&amp; v.nextCheck==false &amp;&amp; v.showLineItem}" >
+            	<ui:button class="slds-button slds-button--neutral" label="Save &amp; Next" press="{!c.saveNext}" />
+               <aura:set attribute="else">
+                   <aura:if isTrue="{!v.viewFormName == 'TCTO Request' &amp;&amp; v.nextCheck &amp;&amp; v.showLineItem}" >
+               		<ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveLineItem}" />
+                      <aura:set attribute="else">
+                       <aura:if isTrue="{!v.showLineItem}">
+                          <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveLineItem}" />
+                           <aura:set attribute="else">
+                          <ui:button class="slds-button slds-button--neutral" label="Save" press="{!c.saveStay}" />
+                           </aura:set>
+                          </aura:if>
+               </aura:set>
+                </aura:if>
+                </aura:set>
+            </aura:if>
             <aura:if isTrue="{!v.showLineItem==false}"><ui:button class="slds-button slds-button_success" label="Submit" press="{!c.confirmSubmit}" /></aura:if> 
                 
               <!-- BUTTONS FOR SUBMITTED/APPROVED FORMS --> 

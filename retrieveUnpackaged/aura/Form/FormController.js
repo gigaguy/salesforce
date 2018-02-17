@@ -155,6 +155,40 @@
         });
         $A.enqueueAction(action);
 	},
+    cancelLineItemModal : function(component, event, helper){ // Closes and deletes temp Line Item if user hits "cancel" button 
+        													  // Once Line Item is saved by user, the "cancel" button is no longer available
+    	console.log('in cancelLineItemModal'); 
+        component.set("v.message", null);
+        component.set("v.viewTheModal", false);
+          console.log('viewTheModal: '+component.get("v.viewTheModal"));
+  //      component.set("v.hasAttachments", false);
+        component.set("v.addAttachments", false);
+  //      component.set("v.viewLineItemList", false);
+    	
+        var action = component.get("c.deleteLineItem");
+        action.setParams({
+            "liID":component.get("v.theLineItem.Id"),
+			"sID" : component.get("v.sessionID")
+        });
+        action.setCallback(this,function(resp){
+			console.log('in cancelLineItemModal action');
+            var state = resp.getState();
+            console.log('state: ' +state);
+            if(state === 'SUCCESS'){
+                component.set("v.message", '');
+                component.set("v.showLineItem", false);
+                var a = component.get("c.createTheModal");
+        			$A.enqueueAction(a); 
+            }
+            else if(state === 'ERROR'){
+                var errors = resp.getError();
+                for(var i = 0 ;i < errors.length;i++){
+                    console.log(errors[i].message);
+                }
+            }
+        });
+        $A.enqueueAction(action);
+	},
     closeModal: function(component, event, helper) {  // closes theModal
         console.log('in closeModal');    
            
@@ -163,7 +197,7 @@
           console.log('viewTheModal: '+component.get("v.viewTheModal"));
         component.set("v.hasAttachments", false);
         component.set("v.addAttachments", false);
-        component.set("v.viewLineItemList", false);
+        
 
         // LS 2017/11/19: Added additional action below to remove FormShare on close of modal, there may be a better place or way to do this
         var removeShareAction = component.get("c.removeFormShare");
@@ -215,12 +249,33 @@
         }
         $A.enqueueAction(action);
 	},
+    confirmCancelLineItemModal : function(component, event) {  
+        console.log('in confirmCancelLineItemModal');
+        
+		var resp = confirm("Are you sure you want to close this Line Item?\nYou will lose any unsaved changes.");
+        var action;
+        var liID = component.get("v.theLineItem.Id");
+        console.log('liID: '+liID);
+        
+        if(resp === true){          
+            component.set("v.viewLineItemList", true);
+            action = component.get("c.cancelLineItemModal");
+            action.setParams({
+            "liID": liID,
+        });
+        	}
+        else {action = component.get("c.viewFormJS");  //is this needed?  I think can be nothing like in confirmCloseModal
+            action.setParams({"formID": formID,});                       
+        }
+        $A.enqueueAction(action);
+	},
     confirmCloseModal : function(component, event) {
         console.log('in confirmCloseModal');
         
 		var resp = confirm("Are you sure you want to close this form?\nYou will lose any unsaved changes.");
         
         if(resp === true){
+            component.set("v.viewLineItemList", false);
             var a = component.get("c.closeModal");
             $A.enqueueAction(a);
         }
@@ -236,6 +291,7 @@
         if(resp === true){
             component.set("v.showLineItem", false);
             component.set("v.message", null);
+            component.set("v.viewLineItemList", true);
             
             var a = component.get("c.createTheModal");
             $A.enqueueAction(a);
@@ -372,13 +428,13 @@
         console.log('in createNewLineItem');
         
         //save form so changes not lost
-   /*     try {
+        try {
             component.get('v.theModal').get("e.recordSave").fire();
             console.log('no error');
         }
         catch (e) {
             console.log(e);
-        }   */
+        }   
         
         component.set("v.viewLineItemList", false);
         
@@ -436,6 +492,10 @@
         console.log('formID: ' + formID);
 		var formName = component.get("v.viewFormName");        
         console.log('formName: ' + formName);
+        var liName = "Line Item";
+            if(component.get("v.viewFormName")=="TCTO Request"){
+                liName = "Time Entry";
+            }    
         
         if (formName === "BAP Provisioning") {
             var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
@@ -477,6 +537,11 @@
         else if (formName === "EPA-100") {
             var hrefInfo = "mailto:McNeal.Detha@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
        	 	var hrefEmail = "McNeal.Detha@epa.gov";
+            component.set("v.rtLineItemEnabled", true);
+        }
+        else if (formName === "TCTO Request") {
+            var hrefInfo = "mailto:jjenkins@innovateteam.com?subject=Help%20request%3A%20%20"+formName+"%20Form";
+       	 	var hrefEmail = "jjenkins@innovateteam.com";
             component.set("v.rtLineItemEnabled", true);
         }
         else {
@@ -854,6 +919,40 @@
             console.log(e);
           }   
 	},
+    saveLineItem : function(component, event, helper){        // saves Form, closes modal, goes back to Form
+        console.log('in c.saveNext');
+        console.log('viewTheModal: ' + component.get("v.viewTheModal"));
+        
+        try {
+            	component.get('v.theModal').get("e.recordSave").fire();
+                console.log('no error');
+          	}
+          catch (e) {
+            console.log(e);
+          }
+        
+        component.set("v.showLineItem",false);
+        var a = component.get("c.createTheModal");
+        $A.enqueueAction(a);
+        
+    },
+    saveNext : function(component, event, helper){        // saves Form, creates next Line Item record
+        console.log('in c.saveNext');
+        console.log('viewTheModal: ' + component.get("v.viewTheModal"));
+        
+        try {
+            	component.get('v.theModal').get("e.recordSave").fire();
+                console.log('no error');
+          	}
+          catch (e) {
+            console.log(e);
+          }
+        
+        component.set("v.nextCheck",true);
+        var a = component.get("c.createNewLineItem");
+        $A.enqueueAction(a);
+        
+    },
     saveStay : function(component, event, helper){        // saves Form, does not close modal
         console.log('in c.saveStay');
         console.log('viewTheModal: ' + component.get("v.viewTheModal"));

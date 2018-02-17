@@ -435,6 +435,18 @@
         <relationshipLabel><!-- Line Items --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Travel Comp Time Applicable --></label>
+        <name>Travel_Comp_Time_Applicable__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Travel Time (End) --></label>
         <name>Travel_Time_End__c</name>
         <picklistValues>
@@ -844,6 +856,10 @@
         <sections>
             <label><!-- Proposed Hours --></label>
             <section>Proposed Hours</section>
+        </sections>
+        <sections>
+            <label><!-- Will you earn Travel Comp time on this day? --></label>
+            <section>Will you earn Travel Comp time on this day?</section>
         </sections>
     </layouts>
     <recordTypes>

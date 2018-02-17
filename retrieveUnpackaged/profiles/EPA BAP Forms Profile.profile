@@ -1171,9 +1171,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Forms__c.Anticipated_Annual_Maintenance_Costs__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -1226,9 +1226,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Forms__c.Application_Owner__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -1956,9 +1956,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Forms__c.Expected_User_Organizations__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -2521,9 +2521,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Forms__c.Management_POC__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -3436,9 +3436,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Forms__c.Similar_Applications__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -3446,9 +3446,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Forms__c.Sources_Searched__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -4008,6 +4008,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Line_Item__c.Related_Form__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Line_Item__c.Travel_Comp_Time_Applicable__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4756,10 +4761,6 @@
         <recordType>Forms__c.BAP_Provisioning</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.TCTO_Request</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Forms__c-EPA-100</layout>
         <recordType>Forms__c.EPA_100</recordType>
     </layoutAssignments>
@@ -4796,6 +4797,10 @@
         <recordType>Forms__c.SF_182</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Forms__c-TCTO Request</layout>
+        <recordType>Forms__c.TCTO_Request</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Global-Global Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4819,12 +4824,12 @@
         <layout>Line_Item__c-Line Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Line_Item__c-Line Item Layout</layout>
-        <recordType>Line_Item__c.Proposed_Hours</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Line_Item__c-PCOR Line Item Layout</layout>
         <recordType>Line_Item__c.Form_PCOR_Line_Item</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Line_Item__c-Proposed Hours Layout</layout>
+        <recordType>Line_Item__c.Proposed_Hours</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Macro-Macro Layout</layout>
@@ -5143,7 +5148,7 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Forms__c.Application_Approval</recordType>
-        <visible>false</visible>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>

@@ -78,8 +78,11 @@
     <fields>
         <fullName>Day__c</fullName>
         <externalId>false</externalId>
-        <formula>CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monday&quot;, 2, &quot;Tuesday&quot;, 3, 
-&quot;Wednesday&quot;, 4, &quot;Thursday&quot;, 5, &quot;Friday&quot;, 6, &quot;Saturday&quot;,&quot;Error&quot;)</formula>
+        <formula>IF(ISBLANK(Date__c),
+&quot;[This field will populate after save.]&quot;,
+CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monday&quot;, 2, &quot;Tuesday&quot;, 3, 
+&quot;Wednesday&quot;, 4, &quot;Thursday&quot;, 5, &quot;Friday&quot;, 6, &quot;Saturday&quot;,&quot;Error&quot;)
+)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Day</label>
         <required>false</required>
@@ -612,6 +615,30 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Travel_Comp_Time_Applicable__c</fullName>
+        <description>TCTO</description>
+        <externalId>false</externalId>
+        <label>Travel Comp Time Applicable</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Travel_Time_End__c</fullName>
@@ -1401,6 +1428,17 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Travel_Comp_Time_Applicable__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Travel_Time_End__c</picklist>
             <values>
                 <fullName>1%3A00 PM</fullName>
@@ -2139,6 +2177,17 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Travel_Comp_Time_Applicable__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Travel_Time_End__c</picklist>
             <values>
                 <fullName>1%3A00 PM</fullName>
@@ -2508,7 +2557,7 @@
     <recordTypes>
         <fullName>Proposed_Hours</fullName>
         <active>true</active>
-        <description>Date, Travel Time (Start), Travel Time (End)</description>
+        <description>Day, Travel Time (Start), Travel Time (End)</description>
         <label>Proposed Hours</label>
         <picklistValues>
             <picklist>Normal_Workday_End_Time__c</picklist>
@@ -2873,6 +2922,17 @@
             </values>
             <values>
                 <fullName>9%3A45 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Travel_Comp_Time_Applicable__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

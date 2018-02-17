@@ -4012,6 +4012,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Line_Item__c.Travel_Comp_Time_Applicable__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Line_Item__c.Travel_Time_End__c</field>
         <readable>true</readable>
     </fieldPermissions>

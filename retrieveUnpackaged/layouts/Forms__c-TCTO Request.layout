@@ -11,7 +11,7 @@
         <label>Travel Comp Time Off (TCTO) Request Form</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>TCTO_Request_Type__c</field>
             </layoutItems>
             <layoutItems>
@@ -112,6 +112,10 @@
             <sortOrder>3</sortOrder>
         </platformActionListItems>
     </platformActionList>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Line_Item__c.Related_Form__c</relatedList>
+    </relatedLists>
     <relatedLists>
         <fields>CreatedDate</fields>
         <fields>StepStatus</fields>

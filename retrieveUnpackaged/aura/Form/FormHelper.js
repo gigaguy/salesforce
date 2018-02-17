@@ -166,8 +166,8 @@
                         case 'Part Number':
                            dataFieldList[i]='Part_Number__c';
                            break; 
-                        case 'Date':
-                           dataFieldList[i]='Date__c';
+                        case 'Day':
+                           dataFieldList[i]='Day__c';
                            break; 
                         case 'Travel Time (Start)':
                            dataFieldList[i]='Travel_Time_Start__c';

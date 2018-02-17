@@ -20,7 +20,7 @@ public without sharing class FormPageController  {
             formNames.add('EPA-3160-6v5');
             formNames.add('FCO Appointment');
             formNames.add('Application Approval');
-            formNames.add('TCTO-Request');
+            formNames.add('TCTO Request');
         }
         return [select id, Name, Description from RecordType where sObjectType = 'Forms__c' and IsActive = true and Name in :formNames];
     }
