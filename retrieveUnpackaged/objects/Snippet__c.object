@@ -485,6 +485,11 @@
         <columns>Response__c</columns>
         <columns>RECORDTYPE</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Snippet__c.Waters_of_the_US</value>
+        </filters>
         <label>All Waters of the US</label>
     </listViews>
     <listViews>

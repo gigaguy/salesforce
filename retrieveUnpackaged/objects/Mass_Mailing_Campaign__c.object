@@ -136,6 +136,22 @@
         </filters>
         <label>All</label>
     </listViews>
+    <listViews>
+        <fullName>All_1b</fullName>
+        <columns>NAME</columns>
+        <columns>Sponsoring_Entity__c</columns>
+        <columns>Pro_Cons__c</columns>
+        <columns>Docket_Count__c</columns>
+        <columns>Mass_Mailing_Campaign_Content__c</columns>
+        <columns>OBJECT_ID</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Mass_Mailing_Campaign__c.Waters_of_the_US_Step_0</value>
+        </filters>
+        <label>All WOTUS Step 0</label>
+    </listViews>
     <nameField>
         <label>Mass Mailing Campaign Name</label>
         <trackHistory>false</trackHistory>

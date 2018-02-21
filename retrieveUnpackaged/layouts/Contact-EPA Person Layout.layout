@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>DisableCustomerPortal</excludeButtons>
     <excludeButtons>DisablePartnerPortal</excludeButtons>
     <excludeButtons>DisablePrmSuperUser</excludeButtons>
     <excludeButtons>EnablePrmSuperUser</excludeButtons>
-    <excludeButtons>RequestUseSfdc</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -111,13 +109,17 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Mail_Stop__c</field>
+                <field>Room__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>MailingAddress</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Mail_Stop__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -227,19 +229,14 @@
             <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>SendEmail</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>7</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>FeedItem.TextPost</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>8</sortOrder>
+            <sortOrder>7</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>FeedItem.ContentPost</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>9</sortOrder>
+            <sortOrder>8</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedContent>

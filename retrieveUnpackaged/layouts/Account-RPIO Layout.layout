@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
+    <excludeButtons>DataDotComAccountInsights</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>DisableCustomerPortalAccount</excludeButtons>
     <excludeButtons>DisablePartnerPortalAccount</excludeButtons>
     <excludeButtons>IncludeOffline</excludeButtons>
@@ -27,6 +28,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>ParentId</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Long_Name__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -127,24 +132,19 @@
             <sortOrder>4</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>SendEmail</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>5</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>FeedItem.ContentNote</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>6</sortOrder>
+            <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>FeedItem.TextPost</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>7</sortOrder>
+            <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>FeedItem.ContentPost</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>8</sortOrder>
+            <sortOrder>7</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedLists>
@@ -163,7 +163,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hr0000002B05c</masterLabel>
+        <masterLabel>00ht0000002LKTw</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

@@ -138,7 +138,7 @@
         <fullName>Occ_Series__c</fullName>
         <externalId>false</externalId>
         <label>Occupational Series</label>
-        <length>4</length>
+        <length>100</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
@@ -219,6 +219,16 @@
         <label>QA Manager</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Room__c</fullName>
+        <externalId>false</externalId>
+        <label>Room</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>SUPV_CODE_DESCR__c</fullName>

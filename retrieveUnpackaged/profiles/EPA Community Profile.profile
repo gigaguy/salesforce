@@ -342,6 +342,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Long_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.NumberOfEmployees</field>
         <readable>true</readable>
@@ -1140,6 +1145,11 @@
         <editable>true</editable>
         <field>Contact.ReportsToId</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Room__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -4234,6 +4244,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>User.QA_Manager__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>User.Room__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
