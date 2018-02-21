@@ -329,10 +329,12 @@
             action.setParams({
             "liID": liID,
         });
+            $A.enqueueAction(action);
         	}
+        
         else { //cancel   
           }
-        $A.enqueueAction(action);
+        
     },
     confirmSubmit : function(component, event) { 
         console.log('in confirmSubmit');
@@ -491,11 +493,7 @@
         var formID = component.get("v.viewFormID");
         console.log('formID: ' + formID);
 		var formName = component.get("v.viewFormName");        
-        console.log('formName: ' + formName);
-        var liName = "Line Item";
-            if(component.get("v.viewFormName")=="TCTO Request"){
-                liName = "Time Entry";
-            }    
+        console.log('formName: ' + formName);   
         
         if (formName === "BAP Provisioning") {
             var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
@@ -771,8 +769,20 @@
                 component.set("v.showLineItem", false);
                 component.set("v.lineItemList", null);
           		
-          		var a = component.get("c.createTheModal");
-        		$A.enqueueAction(a); 
+                
+                var action2 = component.get("c.viewLineItemList");
+        action2.setCallback(this, function(response){
+            if (name === "SUCCESS") {var a = component.get("c.createTheModal");
+                                     $A.enqueueAction(a);}
+            else {
+                component.set("v.message", null);
+            }
+        });
+     	$A.enqueueAction(action2); 
+                
+                
+      //    		var a = component.get("c.createTheModal");
+      //  		$A.enqueueAction(a); 
             }
             else if(state === 'ERROR'){
                 var errors = resp.getError();
@@ -932,9 +942,16 @@
           }
         
         component.set("v.showLineItem",false);
-        var a = component.get("c.createTheModal");
-        $A.enqueueAction(a);
-        
+        var action = component.get("c.viewLineItemList");
+        action.setCallback(this, function(response){
+            if (name === "SUCCESS") {var a = component.get("c.createTheModal");
+                                     $A.enqueueAction(a);}
+            else {
+                component.set("v.message", null);
+            }
+        });
+     	$A.enqueueAction(action); 
+               
     },
     saveNext : function(component, event, helper){        // saves Form, creates next Line Item record
         console.log('in c.saveNext');

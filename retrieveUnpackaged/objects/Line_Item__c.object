@@ -52,6 +52,18 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <fullName>Contact_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.FirstName +&quot; &quot;+ Contact__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>for testing only</description>
@@ -117,6 +129,28 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
         <fullName>Display3__c</fullName>
         <externalId>false</externalId>
         <label>Display3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display4__c</fullName>
+        <externalId>false</externalId>
+        <label>Display4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display5__c</fullName>
+        <externalId>false</externalId>
+        <label>Display5</label>
         <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1059,7 +1093,7 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
     <recordTypes>
         <fullName>Form_EPA_100_Line_Item</fullName>
         <active>true</active>
-        <description>Name, Item Name, Item Description</description>
+        <description>Name, Item_Name__c, Item_Description__c, Item_Price__c, Contact_Name__c</description>
         <label>Form - EPA-100 Line Item</label>
         <picklistValues>
             <picklist>Normal_Workday_End_Time__c</picklist>
@@ -1808,7 +1842,7 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
     <recordTypes>
         <fullName>Form_PCOR_Line_Item</fullName>
         <active>true</active>
-        <description>Item Description, Part Number, Line Total Price</description>
+        <description>Item_Description__c, Part_Number__c, Line_Total_Price__c</description>
         <label>Form - PCOR Line Item</label>
         <picklistValues>
             <picklist>Normal_Workday_End_Time__c</picklist>
@@ -2557,7 +2591,7 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
     <recordTypes>
         <fullName>Proposed_Hours</fullName>
         <active>true</active>
-        <description>Day, Travel Time (Start), Travel Time (End)</description>
+        <description>Day__c, Travel_Time_Start__c, Travel_Time_End__c</description>
         <label>Proposed Hours</label>
         <picklistValues>
             <picklist>Normal_Workday_End_Time__c</picklist>

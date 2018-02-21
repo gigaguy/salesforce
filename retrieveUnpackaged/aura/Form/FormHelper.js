@@ -132,58 +132,25 @@
             var name = response.getState();
             console.log('getting line item display field list');
             console.log('name ' + name);
-            console.log('return value: ' + response.getReturnValue().length);
-            if (name === "SUCCESS" && response.getReturnValue().length > 0) {
             
-                component.set("v.displayFields", response.getReturnValue());
-                console.log('resp: '+component.get("v.displayFields"));
+            if (name === "SUCCESS" && response.getReturnValue().length > 0) {
+			  console.log('return value: ' + response.getReturnValue().length);
+                
                 var fields = response.getReturnValue();
+                var fieldsSize = fields.length;
+                console.log("fieldsSize: "+fieldsSize);
+                
                 component.set("v.displayOne", fields[0].trim());
-                component.set("v.displayTwo", fields[1].trim());
-                component.set("v.displayThree", fields[2].trim());
+                if(fieldsSize>1){component.set("v.displayTwo", fields[1].trim());}
+                if(fieldsSize>2){component.set("v.displayThree", fields[2].trim());}
+                if(fieldsSize>3){component.set("v.displayFour", fields[3].trim());}
+                if(fieldsSize>4){component.set("v.displayFive", fields[4].trim());}
                 
-				var dataFieldList = []; 
-                for(var i=0; i<3; i++) {           
-                    switch(fields[i].trim()) {
-                        case "Contact":
-                            dataFieldList[i]="contact__c"; 
-                            break; 
-                        case 'Item Description':
-                           dataFieldList[i]="Item_Description__c";
-                             break; 
-                        case "Item Name":
-                            dataFieldList[i]='Item_Name__c';
-                             break; 
-                        case "Item Price":
-                            dataFieldList[i]='Item_Price__c';
-                             break; 
-                        case "Item Quantity":
-                            dataFieldList[i]='Item_Quantity__c';
-                             break; 
-                        case "Line Total Price":
-                            dataFieldList[i]='Line_Total_Price__c';
-                             break; 
-                        case 'Part Number':
-                           dataFieldList[i]='Part_Number__c';
-                           break; 
-                        case 'Day':
-                           dataFieldList[i]='Day__c';
-                           break; 
-                        case 'Travel Time (Start)':
-                           dataFieldList[i]='Travel_Time_Start__c';
-                           break; 
-                        case 'Travel Time (End)':
-                           dataFieldList[i]='Travel_Time_End__c';
-                           break; 
-                        default:
-                            dataFieldList[i]='Name';                           
-                    }  
-                } //end for loops  
-                var d1 = dataFieldList[0];
-                var d2 = dataFieldList[1];
-                var d3 = dataFieldList[2];
-                
-                this.getDisplayData(component, d1, d2, d3);
+                var displayFields = [];
+                for(var i=0;i<fieldsSize;i++){
+                    displayFields[i] = fields[i].trim();
+                }
+                this.getDisplayData(component, displayFields);
              }
             else {
                 component.set("v.message", null);
@@ -192,28 +159,40 @@
      $A.enqueueAction(action);               	
         
     },
-    getDisplayData: function(component, d1, d2, d3) {
+    getDisplayData: function(component, displayFields) {
         console.log('in helper.getDisplayData');
         
+        var d1;
+        var d2;
+        var d3;
+        var d4;
+        var d5;
+         d1 = displayFields[0];
+         if(displayFields.length>=2){d2=displayFields[1];}
+         if(displayFields.length>=3){d3=displayFields[2];}
+         if(displayFields.length>=4){d4=displayFields[3];}
+		 if(displayFields.length>=5){d5=displayFields[4];}        
         var formID = component.get("v.viewFormID");
         var action = component.get("c.getLineItemDataFields");
         	action.setParams({
 				"d1" : d1,
                 "d2" : d2,
                 "d3" : d3,
+                "d4" : d4,
+                "d5" : d5,
             	"formID" : formID
         });
         
      action.setCallback(this, function(response){
             var name = response.getState();
             console.log('getting line item display data list');
-            console.log('name ' + name);
-            console.log('return value: ' + response.getReturnValue().length);
+            console.log('name ' + name);  
+         
             if (name === "SUCCESS" && response.getReturnValue().length > 0) {
-            
+            console.log('return value: ' + response.getReturnValue().length);
                 component.set("v.displayData", response.getReturnValue());
-        //        console.log('resp: '+component.get("v.displayData"));
-               
+                component.set("v.displayFieldsCount", displayFields.length);
+                component.set("v.displayCols", displayFields.length+1);               
              }
             else {
                 component.set("v.message", null);

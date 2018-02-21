@@ -295,19 +295,40 @@ public without sharing class FormPageController  {
     } 
     
     @AuraEnabled
-    public static List<Line_Item__c> getLineItemDataFields(String d1, string d2, string d3, String formID) { 
+    public static List<Line_Item__c> getLineItemDataFields(String d1, string d2, string d3, string d4, string d5, String formID) { 
     
-     string soql = 'select id, '+d1+', '+d2+', '+d3+' from Line_Item__c where Related_Form__c = :formID';
+     string soql = 'select id, '+d1;
+       if(d5!=null){soql = soql +', '+d2+', '+d3+', '+d4+', '+d5;}
+         else if(d4!=null){soql = soql +', '+d2+', '+d3+', '+d4;}
+         else if(d3!=null){soql = soql +', '+d2+', '+d3;}
+         else if(d2!=null){soql = soql +', '+d2;}
+       soql = soql + ' from Line_Item__c where Related_Form__c = :formID';
      List<Line_Item__c> interim = Database.query(soql);
      
      for(line_item__c litem : interim) {
         litem.display1__c = (string)string.valueof(litem.get(d1));
-        litem.display2__c = (string)string.valueof(litem.get(d2));
-        litem.display3__c = (string)string.valueof(litem.get(d3));
+        if(d5!=null){
+            litem.display2__c = (string)string.valueof(litem.get(d2));
+            litem.display3__c = (string)string.valueof(litem.get(d3));
+            litem.display4__c = (string)string.valueof(litem.get(d4));
+            litem.display5__c = (string)string.valueof(litem.get(d5));
+          }
+          else if(d4!=null){
+            litem.display2__c = (string)string.valueof(litem.get(d2));
+            litem.display3__c = (string)string.valueof(litem.get(d3));
+            litem.display4__c = (string)string.valueof(litem.get(d4));
+          }
+          else if(d3!=null){
+            litem.display2__c = (string)string.valueof(litem.get(d2));
+            litem.display3__c = (string)string.valueof(litem.get(d3));
+          }
+          else if(d2!=null){
+            litem.display2__c = (string)string.valueof(litem.get(d2));
+          }        
         update litem; 
      }
      
-     List<Line_Item__c> displayData = [select id, display1__c, display2__c, display3__c from line_item__c where Related_Form__c = :formID]; 
+     List<Line_Item__c> displayData = [select id, display1__c, display2__c, display3__c, display4__c, display5__c from line_item__c where Related_Form__c = :formID]; 
         return displayData;       
     }     
 

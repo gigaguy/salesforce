@@ -2027,6 +2027,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Forms__c.Form_Approval_Year_and_Month__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Forms__c.Form_Owner__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3932,6 +3937,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Line_Item__c.Contact_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Line_Item__c.Contact__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3958,6 +3968,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Line_Item__c.Display3__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Line_Item__c.Display4__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Line_Item__c.Display5__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4750,55 +4770,55 @@
         <layout>FeedItem-Feed Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
+        <layout>Forms__c-Application Approval</layout>
+        <recordType>Forms__c.Application_Approval</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.Application_Approval</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Forms__c-BAP Provisioning Layout</layout>
         <recordType>Forms__c.BAP_Provisioning</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.EPA3110_1</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.EPA3160_6v5</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.EPA_PCOR</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.FCO_Appointment</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.ORD_111</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.PRIAv5</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.SF_182</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Layout</layout>
-        <recordType>Forms__c.TCTO_Request</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Forms__c-EPA-100</layout>
         <recordType>Forms__c.EPA_100</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Forms__c-EPA-3110-1</layout>
+        <recordType>Forms__c.EPA3110_1</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-EPA-3160-6v5</layout>
+        <recordType>Forms__c.EPA3160_6v5</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Forms__c-EPA-PCOR</layout>
         <recordType>Forms__c.EPA_1900_8a_old</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-EPA-PCOR</layout>
+        <recordType>Forms__c.EPA_PCOR</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-FCO Appointment</layout>
+        <recordType>Forms__c.FCO_Appointment</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-ORD-111</layout>
+        <recordType>Forms__c.ORD_111</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-PRIAv5</layout>
+        <recordType>Forms__c.PRIAv5</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-SF-182</layout>
+        <recordType>Forms__c.SF_182</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Forms__c-TCTO Request</layout>
+        <recordType>Forms__c.TCTO_Request</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Global-Global Layout</layout>

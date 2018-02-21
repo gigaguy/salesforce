@@ -3324,6 +3324,17 @@ TEXT(Training_End_Date__c))</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Form_Approval_Year_and_Month__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATE(YEAR(DATEVALUE(LastModifiedDate)),MONTH(DATEVALUE(LastModifiedDate)),1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Form Approval Year and Month</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Form_Owner__c</fullName>
         <description>PRIAv5</description>
         <externalId>false</externalId>
