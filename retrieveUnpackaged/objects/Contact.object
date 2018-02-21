@@ -221,6 +221,27 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>GSA_SmartPay_Training_Date__c</fullName>
+        <description>GSA SmartPay Purchase Card training taken date.</description>
+        <externalId>false</externalId>
+        <label>GSA SmartPay Training Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>GSA_SmartPay_Training_Expiry_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+AND(Month(  GSA_SmartPay_Training_Date__c )=2,Day(GSA_SmartPay_Training_Date__c)=29),
+DATE(YEAR(GSA_SmartPay_Training_Date__c) + 2, Month(GSA_SmartPay_Training_Date__c),Day(GSA_SmartPay_Training_Date__c)-1),
+DATE(YEAR(GSA_SmartPay_Training_Date__c) + 2, Month(GSA_SmartPay_Training_Date__c),Day(GSA_SmartPay_Training_Date__c))
+)</formula>
+        <label>GSA SmartPay Training Expiry Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Grade__c</fullName>
         <externalId>false</externalId>
         <label>Grade</label>
