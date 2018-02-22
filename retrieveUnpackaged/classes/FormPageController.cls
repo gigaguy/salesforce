@@ -287,15 +287,33 @@ public without sharing class FormPageController  {
     
     @AuraEnabled
     public static List<string> getLineItemDisplayFields(String rtID) {  
-    
-        string displayFields = [select description from recordtype where id = :rtID limit 1].description;
+        // get map of Line Item fields
+        String objType='Line_Item__c';
+        Map<String, Schema.SObjectType> schemaMap = Schema.getGlobalDescribe();
+        Schema.SObjectType leadSchema = schemaMap.get(objType);
+        Map<String, Schema.SObjectField> fieldMap = leadSchema.getDescribe().fields.getMap();
+                
+        string apiNames = [select description from recordtype where id = :rtID limit 1].description;
+        list<string> apiList = apiNames.split(',');
+        string fieldLabel;
+        list<string> displayFields = new list<string>();
+        for(string fieldApi : apiList){
+            fieldLabel = fieldMap.get(fieldApi.trim()).getDescribe().getLabel();
+            displayFields.add(fieldLabel);
+        }
         
-        return displayFields.split(',');
+        return displayFields;
         
-    } 
+    }
     
     @AuraEnabled
-    public static List<Line_Item__c> getLineItemDataFields(String d1, string d2, string d3, string d4, string d5, String formID) { 
+    public static List<string> getLineItemDataFields(String rtID) {     
+        string dataFields = [select description from recordtype where id = :rtID limit 1].description;      
+        return dataFields .split(',');        
+    }  
+    
+    @AuraEnabled
+    public static List<Line_Item__c> getLineItemData(String d1, string d2, string d3, string d4, string d5, String formID) { 
     
      string soql = 'select id, '+d1;
        if(d5!=null){soql = soql +', '+d2+', '+d3+', '+d4+', '+d5;}

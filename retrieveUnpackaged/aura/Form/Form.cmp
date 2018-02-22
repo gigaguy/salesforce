@@ -39,6 +39,8 @@
     <aura:attribute name="displayData" type="Line_Item__c[]"/>
     <aura:attribute name="displayFieldsCount" type="integer"/>
     <aura:attribute name="displayCols" type="integer"/>
+    <aura:attribute name="lineItemCount" type="integer"/>
+    <aura:attribute name="lineItemHash" type="integer"/>
     <aura:attribute name="theLineItem" type="Line_Item__c"/>
     <aura:attribute name="showLineItem" type="boolean" default="false"/>
     <aura:attribute name="viewLineItemID" type="Id"/>
@@ -271,7 +273,7 @@
                   <aura:if isTrue="{!v.viewFormName=='ORD-111'}"><br/>For instructions using {!v.viewFormName} please click here: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>
 			      <aura:if isTrue="{!v.viewFormName=='SF-182'}"><br/>For help using {!v.viewFormName} please contact your Training Officer.<br/>Employees will find their Training Officer <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>            
                </h3> 
-             
+                
                <aura:set attribute="else">
                    <aura:if isTrue="!v.newLineItem">
                  		<button title="Cancel" onclick="{!c.confirmCancelLineItemModal}" class="slds-button slds-modal__close slds-button--icon-inverse" >
@@ -312,7 +314,7 @@
                   </aura:set>
               </aura:if>
           </div>
-          <!--BOX FOOTER-->
+          <!--BOX FOOTER 1-->
           <div class="slds-modal__footer">
             
             <!--line items list-->
@@ -326,16 +328,23 @@
                     <col width="100"/>
                 	<tr style="background-color: #0070d2; border: 1px solid lightgray;">         
                         <td colspan="{!v.displayCols}" style="color: white; padding: 5px 5px 5px 15px; border: 1px solid lightgray;">
-                            Line Items  
+                            Line Items 
                         </td>
                 	</tr>
                     <tr style="background-color: white; border: 1px solid lightgray;">
-                        <td style="color: black; border: 0px solid #0070d2; text-align: center;">                           
-                            <button style="font-size : 18px; padding: 0px 10px 0px 10px;" onclick="{!c.createNewLineItem}">&#43;</button>
-                        </td>
-                        <td style="color: black; text-shadow: 0px 0px 0px #000000; padding: 3px 1px 1px 10px; border: 1px solid lightgray; text-align: center;">
+                        <aura:if isTrue="{!v.displayFieldsCount>0}">
+                            <td style="color: black; border: 0px solid #0070d2; text-align: center;">                           
+                                <button style="font-size : 18px; padding: 0px 10px 0px 10px;" onclick="{!c.createNewLineItem}">&#43;</button>
+                            </td></aura:if>
+                  		  <aura:if isTrue="{!(v.displayFieldsCount==0 || v.displayFieldsCount==null) &amp;&amp; v.displayFieldsCount!=undefined}">
+                          	  <td style="color: black; border: 0px solid #0070d2; text-align: left;">   
+                                <ui:button label="Create New Line Item" press="{!c.createNewLineItem}" class="slds-button slds-button-neutral" /> 
+                              </td>
+                          </aura:if>
+                                                  
+                        <aura:if isTrue="{!v.displayFieldsCount>0}"><td style="color: black; text-shadow: 0px 0px 0px #000000; padding: 3px 1px 1px 10px; border: 1px solid lightgray; text-align: center;">
                             {!v.displayOne}	
-                        </td>
+                        </td></aura:if>
                         <aura:if isTrue="{!v.displayFieldsCount>1}"><td style="color: black; text-shadow: 0px 0px 0px #000000; padding: 1px; border: 1px solid lightgray; text-align: center;">
                             {!v.displayTwo}
                         </td></aura:if>
@@ -349,11 +358,11 @@
                             {!v.displayFive}
                         </td></aura:if>
                     </tr>
-           			<aura:iteration var="litem" items="{!v.displayData}">
+           			<aura:iteration var="litem" items="{!v.displayData}" indexVar="litemCount">
                       <tr style="background-color: white; border: 1px solid lightgray;">
                         <td style="color: black; border: 0px solid #0070d2; text-align: center;">
                           
-                           <button id="{!litem.Id}" onclick="{!c.viewLineItemJS}">View</button>   
+                           <button id="{!litem.Id}" onclick="{!c.viewLineItemJS}" data-count="{!litemCount}">View</button>   
                             
                    <!--       <div class="divider"/>
                             <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">
@@ -495,7 +504,7 @@
             <aura:if isTrue="{!v.isNew == false &amp;&amp; v.isCopy == false &amp;&amp; v.showLineItem==false}"><ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmFormDelete}" /></aura:if> 
             <aura:if isTrue="{!v.showLineItem &amp;&amp; v.savedLineItem}"><ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmLineItemDelete}" /></aura:if> 
             
-            <!-- LINE ITEM BUTTONS -->    
+            <!-- LINE ITEM BUTTONS -->  
             <aura:if isTrue="{!v.rtLineItemEnabled &amp;&amp; v.viewLineItemList==false}">
                 <ui:button label="View Line Items" press="{!c.viewLineItemList}" class="slds-button slds-button--neutral" />
             </aura:if>
@@ -504,6 +513,13 @@
                 <ui:button label="Hide Line Items" press="{!c.hideLineItem}" class="slds-button slds-button--neutral" />
             </aura:if>
             
+            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemHash!=0}">
+                <ui:button label="Previous Line Item" press="{!c.prevLineItem}" class="slds-button slds-button--neutral" />
+            </aura:if>  
+            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemHash!=v.lineItemCount-1}">
+                <ui:button label="Next Line Item" press="{!c.nextLineItem}" class="slds-button slds-button--neutral" />
+            </aura:if>        
+                
             <!-- ATTACHMENT BUTTONS -->
             <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; v.showLineItem==false}">
               <ui:button class="slds-button slds-button--neutral" label="Save to Enable Attachments" press="{!c.enableAttachments}" />			
@@ -530,11 +546,21 @@
                 <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral" label="Show Attachments" press="{!c.showAttachments}" /></aura:if> 
               </aura:set>
             </aura:if>
-          </div>          
+          </div>  
+          <!--End BOX FOOTER 1-->
+    	  
+          <!--BOX FOOTER 2-->
+            <!-- future 2nd footer for buttons (likely form buttons like save, delete, submit etc...)
+          <div class="slds-modal__footer">
+			  
+              
+          </div>  -->
+          <!--End BOX FOOTER 2-->    
         </div>
       </div>
       <div class="slds-backdrop slds-backdrop--open"></div>
     </aura:if>
+            
     <!--End The Modal-->
     
 </aura:component>

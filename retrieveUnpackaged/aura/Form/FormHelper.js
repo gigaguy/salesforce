@@ -105,7 +105,7 @@
             if (name === "SUCCESS" && response.getReturnValue().length > 0) {
                 component.set("v.lineItemList", response.getReturnValue());
                 component.set("v.viewLineItemList", true);
-              
+                component.set("v.lineItemCount", response.getReturnValue().length);
             var respList = response.getReturnValue();
             var rtID = respList[0].RecordTypeId;
                 console.log('rtID: '+rtID);    
@@ -150,7 +150,7 @@
                 for(var i=0;i<fieldsSize;i++){
                     displayFields[i] = fields[i].trim();
                 }
-                this.getDisplayData(component, displayFields);
+                this.getDisplayData(component, rtID);
              }
             else {
                 component.set("v.message", null);
@@ -159,21 +159,29 @@
      $A.enqueueAction(action);               	
         
     },
-    getDisplayData: function(component, displayFields) {
+    getDisplayData: function(component, rtID) {
         console.log('in helper.getDisplayData');
         
+        var descList = component.get("c.getLineItemDataFields");
+        descList.setParams({"rtID" : rtID});
+        descList.setCallback(this, function(resp){var state = resp.getState();
+                                                  if (state === "SUCCESS"){
+        var displayFields = resp.getReturnValue();                                                                                                    
+        component.set("v.displayFieldsCount", displayFields.length);
+        component.set("v.displayCols", displayFields.length+1); 
         var d1;
         var d2;
         var d3;
         var d4;
         var d5;
-         d1 = displayFields[0];
-         if(displayFields.length>=2){d2=displayFields[1];}
-         if(displayFields.length>=3){d3=displayFields[2];}
-         if(displayFields.length>=4){d4=displayFields[3];}
-		 if(displayFields.length>=5){d5=displayFields[4];}        
-        var formID = component.get("v.viewFormID");
-        var action = component.get("c.getLineItemDataFields");
+         d1 = displayFields[0].trim();  
+         if(displayFields.length>=2){d2=displayFields[1].trim();}
+         if(displayFields.length>=3){d3=displayFields[2].trim();}
+         if(displayFields.length>=4){d4=displayFields[3].trim();}
+		 if(displayFields.length>=5){d5=displayFields[4].trim();}                                                
+		var formID = component.get("v.viewFormID");
+
+        var action = component.get("c.getLineItemData");
         	action.setParams({
 				"d1" : d1,
                 "d2" : d2,
@@ -183,22 +191,25 @@
             	"formID" : formID
         });
         
-     action.setCallback(this, function(response){
-            var name = response.getState();
-            console.log('getting line item display data list');
-            console.log('name ' + name);  
-         
-            if (name === "SUCCESS" && response.getReturnValue().length > 0) {
-            console.log('return value: ' + response.getReturnValue().length);
-                component.set("v.displayData", response.getReturnValue());
-                component.set("v.displayFieldsCount", displayFields.length);
-                component.set("v.displayCols", displayFields.length+1);               
-             }
-            else {
-                component.set("v.message", null);
-            }
-        });
-     $A.enqueueAction(action);
+                 action.setCallback(this, function(response){
+                        var name = response.getState();
+                        console.log('getting line item display data list');
+                        console.log('name ' + name);  
+                     
+                        if (name === "SUCCESS" && response.getReturnValue().length > 0) {
+                        console.log('return value: ' + response.getReturnValue().length);
+                            component.set("v.displayData", response.getReturnValue());                                                            
+                         }
+                        else {
+                            console.log('error: '+response.getError());
+                            component.set("v.message", null);
+                        }
+                    });
+                 $A.enqueueAction(action);                                              
+  			}
+              else {console.log('error: '+resp.getError());}
+               });
+        $A.enqueueAction(descList);
         
     },
     uploadHelper: function(component, event) {  // part of attachment upload process

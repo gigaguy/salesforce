@@ -197,7 +197,9 @@
           console.log('viewTheModal: '+component.get("v.viewTheModal"));
         component.set("v.hasAttachments", false);
         component.set("v.addAttachments", false);
-        
+        component.set("v.rtLineItemEnabled",false);
+        component.set("v.viewLineItemList", false);
+        component.set("v.displayFieldsCount", 0);
 
         // LS 2017/11/19: Added additional action below to remove FormShare on close of modal, there may be a better place or way to do this
         var removeShareAction = component.get("c.removeFormShare");
@@ -275,7 +277,6 @@
 		var resp = confirm("Are you sure you want to close this form?\nYou will lose any unsaved changes.");
         
         if(resp === true){
-            component.set("v.viewLineItemList", false);
             var a = component.get("c.closeModal");
             $A.enqueueAction(a);
         }
@@ -308,6 +309,7 @@
         var formID = component.get("v.viewFormID");
         
         if(resp === true){
+            component.set("v.rtLineItemEnabled",false);
             action = component.get("c.deleteFormJS");
             action.setParams({
             "formID": formID,
@@ -482,7 +484,6 @@
     createTheModal: function(component, event, helper) {   // creates theModal component
         console.log('in createTheModal');
         component.set("v.onSubmit", false);
-        component.set("v.rtLineItemEnabled",false);
         
         var showLineItem = component.get("v.showLineItem");
         console.log('showLineItem: '+showLineItem);
@@ -1016,10 +1017,28 @@
         component.set("v.message", null);
 		component.set("v.pageStatus", "viewFormTypes");  // shows user list of Available Workflow and Fill&Print Forms
 	},
+    nextLineItem : function(component, event, helper) {
+        console.log('in nextLineItem');
+        
+        component.set("v.lineItemHash", component.get("v.lineItemHash")+1);
+        var liHash = component.get("v.lineItemHash");
+        var liID = component.get("v.displayData[liHash]").Id;
+        console.log('liID: '+liID);
+    },
+    prevLineItem : function(component, event, helper) {
+        console.log('in prevLineItem');
+        
+    },
     viewLineItemJS : function(component, event, helper){
     	console.log('in viewLineItem');
+        
         var liID = event.currentTarget.id; 
         component.set("v.viewLineItemID", liID);
+        console.log('liID: '+liID);
+        var liCount = event.currentTarget.dataset.count;
+        component.set("v.lineItemHash", parseInt(liCount));
+  //      var firstID = component.get("v.displayData[0]");
+  //      console.log('1029: '+firstID.Id);
         
         var action = component.get("c.getLineItem");
         action.setParams({
@@ -1030,6 +1049,7 @@
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
+                component.set("v.themodal", null);
                 component.set("v.theLineItem", resp.getReturnValue());  // returned line item
                 component.set("v.message", null);
                 component.set("v.showLineItem", true);
