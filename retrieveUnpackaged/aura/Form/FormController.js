@@ -914,6 +914,7 @@
         
         component.set("v.showLineItem", false);
         component.set("v.viewLineItemList", false);
+        component.set("v.sortField","Display1__c");
         
     },
     saveAndSubmit : function(component, event, helper){   // saves Form and submits for approval
@@ -1020,14 +1021,108 @@
     nextLineItem : function(component, event, helper) {
         console.log('in nextLineItem');
         
-        component.set("v.lineItemHash", component.get("v.lineItemHash")+1);
-        var liHash = component.get("v.lineItemHash");
-        var liID = component.get("v.displayData[liHash]").Id;
+        component.set("v.lineItemIndex", component.get("v.lineItemIndex")+1);
+        var liIndex = component.get("v.lineItemIndex");
+
+        var liID = component.get("v.displayData["+liIndex+"]").Id; 
+        component.set("v.viewLineItemID", liID);
         console.log('liID: '+liID);
+        
+        var action = component.get("c.getLineItem");
+        action.setParams({
+			"liID" : liID
+        });
+        action.setCallback(this,function(resp){
+			console.log('in viewLineItem action');
+            var state = resp.getState();
+            console.log('state: ' +state);
+            if(state === 'SUCCESS'){
+                component.set("v.themodal", null);
+                component.set("v.theLineItem", resp.getReturnValue());  // returned line item
+                component.set("v.message", null);
+                component.set("v.showLineItem", true);
+                component.set("v.savedLineItem", true);
+                component.set("v.newLineItem", false);
+                component.set("v.viewLineItemList", false);
+                
+                var a = component.get("c.createTheModal");
+        			$A.enqueueAction(a);
+            }
+            else if(state === 'ERROR'){
+                var errors = resp.getError();
+                for(var i = 0 ;i < errors.length;i++){
+                    console.log(errors[i].message);
+                }
+            }
+        });
+        $A.enqueueAction(action); 
     },
     prevLineItem : function(component, event, helper) {
         console.log('in prevLineItem');
         
+        component.set("v.lineItemIndex", component.get("v.lineItemIndex")-1);
+        var liIndex = component.get("v.lineItemIndex");
+
+        var liID = component.get("v.displayData["+liIndex+"]").Id; 
+        component.set("v.viewLineItemID", liID);
+        console.log('liID: '+liID);
+        
+        var action = component.get("c.getLineItem");
+        action.setParams({
+			"liID" : liID
+        });
+        action.setCallback(this,function(resp){
+			console.log('in viewLineItem action');
+            var state = resp.getState();
+            console.log('state: ' +state);
+            if(state === 'SUCCESS'){
+                component.set("v.themodal", null);
+                component.set("v.theLineItem", resp.getReturnValue());  // returned line item
+                component.set("v.message", null);
+                component.set("v.showLineItem", true);
+                component.set("v.savedLineItem", true);
+                component.set("v.newLineItem", false);
+                component.set("v.viewLineItemList", false);
+                
+                var a = component.get("c.createTheModal");
+        			$A.enqueueAction(a);
+            }
+            else if(state === 'ERROR'){
+                var errors = resp.getError();
+                for(var i = 0 ;i < errors.length;i++){
+                    console.log(errors[i].message);
+                }
+            }
+        });
+        $A.enqueueAction(action); 
+        
+    },
+    lineItemSortOne : function(component, event, helper){
+        console.log('in lineItemSortOne');
+        var field = "Display1__c";
+        helper.lineItemSortBy(component, field);
+        
+    },
+    lineItemSortTwo : function(component, event, helper){
+        console.log('in lineItemSortTwo');
+        var field = "Display2__c";
+        helper.lineItemSortBy(component, field);
+
+    },
+    lineItemSortThree : function(component, event, helper){
+        console.log('in lineItemSortThree');
+        var field = "Display3__c";
+        helper.lineItemSortBy(component, field);
+    },
+    lineItemSortFour : function(component, event, helper){
+        console.log('in lineItemSortThree');
+        var field = "Display4__c";
+        helper.lineItemSortBy(component, field);
+    },
+    lineItemSortFive : function(component, event, helper){
+        console.log('in lineItemSortThree');
+        var field = "Display5__c";
+        helper.lineItemSortBy(component, field);
     },
     viewLineItemJS : function(component, event, helper){
     	console.log('in viewLineItem');
@@ -1036,9 +1131,7 @@
         component.set("v.viewLineItemID", liID);
         console.log('liID: '+liID);
         var liCount = event.currentTarget.dataset.count;
-        component.set("v.lineItemHash", parseInt(liCount));
-  //      var firstID = component.get("v.displayData[0]");
-  //      console.log('1029: '+firstID.Id);
+        component.set("v.lineItemIndex", parseInt(liCount));
         
         var action = component.get("c.getLineItem");
         action.setParams({

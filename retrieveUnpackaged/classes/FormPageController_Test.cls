@@ -187,4 +187,56 @@ public class FormPageController_Test {
             FormPageController.recallApproval(formID, '123ABC');
       }      
       
+       @isTest
+        static void testLineItems(){
+        
+            String rtID = [Select Id From RecordType Where SobjectType = 'Line_Item__c' limit 1].Id;
+ //           Line_Item__c litem = new Line_Item__c (recordtypeid = rtID);
+  //          insert litem;
+            insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
+         User u = [select id from User where isActive = true limit 1];
+        User u2 = [select id from User where isActive = true and PRofile.Name = 'System Administrator' and id != :u.id limit 1];
+        u.Session_Token__c = '123ABC';
+        u.Supervisor__c = u2.id;
+        u.Supervisor_2__c = u2.id;
+        u.Lan_ID__c = 'thetest';
+        update u;
+
+        //siteUser
+        User uSU = [select id from User where isActive = true AND id != :u.id AND id != :u2.id limit 1];
+        
+        //apiUser
+        User uAU = [select id from User where isActive = true AND id != :u.id AND id != :u2.id AND id != :uSU.id limit 1];
+
+        contact c = new contact(FirstName='Bob', LastName='Smith', Lan_ID__c = 'thetest');
+        insert c;
+        Forms__c theForm = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' ORDER BY createddate limit 1].ID, uSU.id, uAU.id);
+            
+            Line_Item__c litem = FormPageController.insertLineItem('123ABC', 'EPA-100', theForm.ID, uSU.ID, uAU.ID);
+
+            String d1 = 'Name';
+            string d2 = 'Item_Name__c';
+            string d3 = 'Item_Description__c';
+            string d4 = 'Item_Price__c';
+            string d5 = 'Contact_Name__c';
+            List<Line_Item__c> litems = FormPageController.getLineItemData(d1, d2, d3, d4, d5, theForm.ID);
+            
+            d5 = null;
+            litems = FormPageController.getLineItemData(d1, d2, d3, d4, d5, theForm.ID);
+            
+            d4 = null;
+            litems = FormPageController.getLineItemData(d1, d2, d3, d4, d5, theForm.ID);
+            
+            d3 = null;
+            litems = FormPageController.getLineItemData(d1, d2, d3, d4, d5, theForm.ID);
+            
+            d2 = null;
+            litems = FormPageController.getLineItemData(d1, d2, d3, d4, d5, theForm.ID);
+            
+            List<string> displays = FormPageController.getLineItemDisplayFields(rtID);
+            List<string> datas = FormPageController.getLineItemDataFields(rtID);
+            Line_Item__c litem2 = FormPageController.getLineItem(litem.ID);
+            string msg =  FormPageController.deleteLineItem(litem.ID, 'x');
+        }
+      
 }

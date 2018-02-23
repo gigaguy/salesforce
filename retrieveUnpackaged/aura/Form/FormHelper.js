@@ -198,7 +198,20 @@
                      
                         if (name === "SUCCESS" && response.getReturnValue().length > 0) {
                         console.log('return value: ' + response.getReturnValue().length);
-                            component.set("v.displayData", response.getReturnValue());                                                            
+                      //      component.set("v.displayData", response.getReturnValue());
+                            var field = "Display1__c";
+            				var sortAsc = component.get("v.sortAsc");
+                            var records = response.getReturnValue();
+                            var sortField = component.get("v.sortField");
+                            sortAsc = field == sortField? !sortAsc: true;
+                             records.sort(function(a,b){
+                                var t1 = a[field] == b[field],
+                                    t2 = a[field] > b[field];
+                                return t1? 0: (sortAsc?-1:1)*(t2?-1:1);
+                            });
+                            component.set("v.sortAsc", sortAsc);
+                            component.set("v.sortField", field);
+                            component.set("v.displayData", records);
                          }
                         else {
                             console.log('error: '+response.getError());
@@ -211,6 +224,22 @@
                });
         $A.enqueueAction(descList);
         
+    },
+    lineItemSortBy : function(component, field){
+        console.log('in helper.lineItemSortBy');
+        
+        var sortAsc = component.get("v.sortAsc");
+        var records = component.get("v.displayData");
+		var sortField = component.get("v.sortField");
+        sortAsc = field == sortField? !sortAsc: true;
+         records.sort(function(a,b){
+            var t1 = a[field] == b[field],
+                t2 = a[field] > b[field];
+            return t1? 0: (sortAsc?-1:1)*(t2?-1:1);
+        });
+        component.set("v.sortAsc", sortAsc);
+        component.set("v.sortField", field);
+        component.set("v.displayData", records);
     },
     uploadHelper: function(component, event) {  // part of attachment upload process
         console.log('in helper.uploadHelper');

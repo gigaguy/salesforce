@@ -274,7 +274,7 @@ public without sharing class FormPageController  {
     @AuraEnabled
     public static List<Line_Item__c> getListOfLineItems(String formID, string formName) {        
         
-        if(formName == 'EPA-100'){
+     /*   if(formName == 'EPA-100'){
             return [select id, Name, Item_Name__c, CreatedDate, RecordTypeId from Line_Item__c where Related_Form__c = :formID order by CreatedDate DESC];        
         }
         else if(formName == 'PCOR'){
@@ -282,7 +282,10 @@ public without sharing class FormPageController  {
         }
         else {
             return [select id, Name, CreatedDate, RecordTypeId from Line_Item__c where Related_Form__c = :formID order by CreatedDate DESC];
-        }
+        }  */
+        
+        return [select id, RecordTypeId from Line_Item__c where Related_Form__c = :formID order by CreatedDate DESC];
+        
     }   
     
     @AuraEnabled

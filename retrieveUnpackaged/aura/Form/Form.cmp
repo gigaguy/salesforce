@@ -40,7 +40,7 @@
     <aura:attribute name="displayFieldsCount" type="integer"/>
     <aura:attribute name="displayCols" type="integer"/>
     <aura:attribute name="lineItemCount" type="integer"/>
-    <aura:attribute name="lineItemHash" type="integer"/>
+    <aura:attribute name="lineItemIndex" type="integer"/>
     <aura:attribute name="theLineItem" type="Line_Item__c"/>
     <aura:attribute name="showLineItem" type="boolean" default="false"/>
     <aura:attribute name="viewLineItemID" type="Id"/>
@@ -48,6 +48,8 @@
     <aura:attribute name="savedLineItem" type="boolean" default="false"/>
     <aura:attribute name="newLineItem" type="boolean" default="false"/>
     <aura:attribute name="nextCheck" type="boolean" default="false"/>
+    <aura:attribute name="sortAsc" type="boolean" default="true"/>
+    <aura:attribute name="sortField" type="string"/>
     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
@@ -342,20 +344,20 @@
                               </td>
                           </aura:if>
                                                   
-                        <aura:if isTrue="{!v.displayFieldsCount>0}"><td style="color: black; text-shadow: 0px 0px 0px #000000; padding: 3px 1px 1px 10px; border: 1px solid lightgray; text-align: center;">
-                            {!v.displayOne}	
+                        <aura:if isTrue="{!v.displayFieldsCount>0}"><td onclick="{!c.lineItemSortOne}" style="text-decoration: underline; color: black; text-shadow: 0px 0px 0px #000000; padding: 1px; border: 1px solid lightgray; text-align: center;">
+                            {!v.displayOne}<aura:if isTrue="{!v.sortField == 'Display1__c'}"><aura:if isTrue="{!v.sortAsc}">&nbsp;&#9660;<aura:set attribute="else">&nbsp;&#9650;</aura:set></aura:if></aura:if>
                         </td></aura:if>
-                        <aura:if isTrue="{!v.displayFieldsCount>1}"><td style="color: black; text-shadow: 0px 0px 0px #000000; padding: 1px; border: 1px solid lightgray; text-align: center;">
-                            {!v.displayTwo}
+                        <aura:if isTrue="{!v.displayFieldsCount>1}"><td onclick="{!c.lineItemSortTwo}" style="text-decoration: underline; color: black; text-shadow: 0px 0px 0px #000000; padding: 1px; border: 1px solid lightgray; text-align: center;">
+                            {!v.displayTwo}<aura:if isTrue="{!v.sortField == 'Display2__c'}"><aura:if isTrue="{!v.sortAsc}">&nbsp;&#9660;<aura:set attribute="else">&nbsp;&#9650;</aura:set></aura:if></aura:if>
                         </td></aura:if>
-                        <aura:if isTrue="{!v.displayFieldsCount>2}"><td style="color: black; text-shadow: 0px 0px 0px #000000; padding: 1px; border: 1px solid lightgray; text-align: center;">
-                            {!v.displayThree}
+                        <aura:if isTrue="{!v.displayFieldsCount>2}"><td onclick="{!c.lineItemSortThree}" style="text-decoration: underline; color: black; text-shadow: 0px 0px 0px #000000; padding: 1px; border: 1px solid lightgray; text-align: center;">
+                            {!v.displayThree}<aura:if isTrue="{!v.sortField == 'Display3__c'}"><aura:if isTrue="{!v.sortAsc}">&nbsp;&#9660;<aura:set attribute="else">&nbsp;&#9650;</aura:set></aura:if></aura:if>
                         </td></aura:if>
-                        <aura:if isTrue="{!v.displayFieldsCount>3}"><td style="color: black; text-shadow: 0px 0px 0px #000000; padding: 1px; border: 1px solid lightgray; text-align: center;">
-                            {!v.displayFour}
+                        <aura:if isTrue="{!v.displayFieldsCount>3}"><td onclick="{!c.lineItemSortFour}" style="text-decoration: underline; color: black; text-shadow: 0px 0px 0px #000000; padding: 1px; border: 1px solid lightgray; text-align: center;">
+                            {!v.displayFour}<aura:if isTrue="{!v.sortField == 'Display4__c'}"><aura:if isTrue="{!v.sortAsc}">&nbsp;&#9660;<aura:set attribute="else">&nbsp;&#9650;</aura:set></aura:if></aura:if>
                         </td></aura:if>
-                        <aura:if isTrue="{!v.displayFieldsCount>4}"><td style="color: black; text-shadow: 0px 0px 0px #000000; padding: 1px; border: 1px solid lightgray; text-align: center;">
-                            {!v.displayFive}
+                        <aura:if isTrue="{!v.displayFieldsCount>4}"><td onclick="{!c.lineItemSortFive}" style="text-decoration: underline; color: black; text-shadow: 0px 0px 0px #000000; padding: 1px; border: 1px solid lightgray; text-align: center;">
+                            {!v.displayFive}<aura:if isTrue="{!v.sortField == 'Display5__c'}"><aura:if isTrue="{!v.sortAsc}">&nbsp;&#9660;<aura:set attribute="else">&nbsp;&#9650;</aura:set></aura:if></aura:if>
                         </td></aura:if>
                     </tr>
            			<aura:iteration var="litem" items="{!v.displayData}" indexVar="litemCount">
@@ -513,10 +515,10 @@
                 <ui:button label="Hide Line Items" press="{!c.hideLineItem}" class="slds-button slds-button--neutral" />
             </aura:if>
             
-            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemHash!=0}">
+            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=0}">
                 <ui:button label="Previous Line Item" press="{!c.prevLineItem}" class="slds-button slds-button--neutral" />
             </aura:if>  
-            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemHash!=v.lineItemCount-1}">
+            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=v.lineItemCount-1}">
                 <ui:button label="Next Line Item" press="{!c.nextLineItem}" class="slds-button slds-button--neutral" />
             </aura:if>        
                 
