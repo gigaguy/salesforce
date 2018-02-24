@@ -4323,27 +4323,27 @@
         <recordType>Account.General_Accounts</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Account-FRS Layout</layout>
+        <layout>Account-FRS Readonly Layout</layout>
         <recordType>Account.FRS</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Account-HR Org Layout</layout>
+        <layout>Account-HR Org Readonly Layout</layout>
         <recordType>Account.HR_Org</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Account-RPIO Layout</layout>
+        <layout>Account-RPIO Readonly Layout</layout>
         <recordType>Account.Office</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Account-RPIO Layout</layout>
+        <layout>Account-RPIO Readonly Layout</layout>
         <recordType>Account.RPIO</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Account-RPIO Layout</layout>
+        <layout>Account-RPIO Readonly Layout</layout>
         <recordType>Account.Region</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Account-RPIO Layout</layout>
+        <layout>Account-RPIO Readonly Layout</layout>
         <recordType>Account.State</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -4395,7 +4395,7 @@
         <recordType>Contact.General_Contacts</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Contact-EPA Person Layout</layout>
+        <layout>Contact-EPA Person Readonly Layout</layout>
         <recordType>Contact.EPA_Person</recordType>
     </layoutAssignments>
     <layoutAssignments>
