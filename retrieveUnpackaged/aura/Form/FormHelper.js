@@ -113,7 +113,8 @@
                 this.getDisplayFields(component, rtID);
              }
             else {
-                component.set("v.message", null);                
+                component.set("v.message", null);      
+                component.set("v.displayFieldsCount", 0);
             }
         });
      $A.enqueueAction(action);
@@ -166,8 +167,8 @@
         descList.setParams({"rtID" : rtID});
         descList.setCallback(this, function(resp){var state = resp.getState();
                                                   if (state === "SUCCESS"){
-        var displayFields = resp.getReturnValue();                                                                                                    
-        component.set("v.displayFieldsCount", displayFields.length);
+        var displayFields = resp.getReturnValue();                                                     
+        component.set("v.displayFieldsCount", displayFields.length);                                    
         component.set("v.displayCols", displayFields.length+1); 
         var d1;
         var d2;
@@ -200,10 +201,10 @@
                         console.log('return value: ' + response.getReturnValue().length);
                       //      component.set("v.displayData", response.getReturnValue());
                             var field = "Display1__c";
-            				var sortAsc = component.get("v.sortAsc");
+            				var sortAsc = true;
                             var records = response.getReturnValue();
                             var sortField = component.get("v.sortField");
-                            sortAsc = field == sortField? !sortAsc: true;
+                      //      sortAsc = field == sortField? !sortAsc: true;
                              records.sort(function(a,b){
                                 var t1 = a[field] == b[field],
                                     t2 = a[field] > b[field];

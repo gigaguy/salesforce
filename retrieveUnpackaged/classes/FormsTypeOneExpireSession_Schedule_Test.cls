@@ -6,7 +6,7 @@ public class FormsTypeOneExpireSession_Schedule_Test {
         
         insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
         
-        Profile p = [select id, name from profile where name = 'Forms Profile'];        
+        Profile p = [select id, name from profile where name = 'EPA BAP Forms Profile'];        
         
         string datestring = '2016-11-22 16:47:07';
         User u = new User(Session_Timestamp__c = datetime.valueof(dateString), FirstName='Bob', LastName='Smith', lan_ID__c='smith123', profileID=p.id, Username='test@fake.ccc', 

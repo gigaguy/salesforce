@@ -274,16 +274,6 @@ public without sharing class FormPageController  {
     @AuraEnabled
     public static List<Line_Item__c> getListOfLineItems(String formID, string formName) {        
         
-     /*   if(formName == 'EPA-100'){
-            return [select id, Name, Item_Name__c, CreatedDate, RecordTypeId from Line_Item__c where Related_Form__c = :formID order by CreatedDate DESC];        
-        }
-        else if(formName == 'PCOR'){
-            return [select id, Name, Part_Number__c, Item_Price__c, Item_Quantity__c, Item_Description__c, Line_Total_Price__c, CreatedDate, RecordTypeId from Line_Item__c where Related_Form__c = :formID order by CreatedDate DESC];
-        }
-        else {
-            return [select id, Name, CreatedDate, RecordTypeId from Line_Item__c where Related_Form__c = :formID order by CreatedDate DESC];
-        }  */
-        
         return [select id, RecordTypeId from Line_Item__c where Related_Form__c = :formID order by CreatedDate DESC];
         
     }   
@@ -372,12 +362,11 @@ public without sharing class FormPageController  {
     public static Line_Item__c insertLineItem(string sID, string formName, string formID, string siteUserID, string apiUserID){
         system.debug('Starting insertLineItem');
         
-        string rtName;
-        if(formName == 'EPA-PCOR'){rtName='Form_PCOR_Line_Item';}
-        else if(formName == 'EPA-100'){rtName='Form_EPA_100_Line_Item';}
-        else if(formName == 'TCTO Request'){rtName='Proposed_Hours';}       
-        
-        string rtID = [select id from recordtype where developerName = :rtName limit 1].id;
+        string formAPIname = [select id,developername from recordtype where name = :formName limit 1].developername;
+        string rtSearch = '%'+formAPIname+'%'; 
+
+        string rtID = [select id, developername, name, sObjectType from recordtype where sObjectType = 'Line_Item__c' and name like :rtSearch limit 1].id;   
+
         
         User u;
         try{
@@ -389,14 +378,11 @@ public without sharing class FormPageController  {
         try{
             if (u != null){
                 Line_Item__c nli = new Line_Item__c();
-      //          nf.put('Unauthenticated_Owner__c', u.id);
-      //          if(rtName != 'SF_182') nf.put('User_Supervisor__c', u.Supervisor__c);
+    
                 nli.put('RecordTypeId', rtID);
                 nli.put('Related_Form__c', formID);
                 nli.put('OwnerId', apiUserID);
                 insert nli;
-                // LS 2017/11/19: Add FormShare for force.com site user to new form record
-           //     UtilityMethods.addFormShare(String.ValueOf(nf.Id), siteUserID);
                 System.debug('newLineItems'+nli);
                 return nli;
             }

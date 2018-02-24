@@ -481,9 +481,39 @@
      					<br/>
               	</div>
              </aura:if>
-            <!--end add attachments-->           
+            <!--end add attachments-->    
+                
+            <!-- ATTACHMENT BUTTONS -->
+            <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; v.showLineItem==false}">
+              <ui:button class="slds-button slds-button--neutral" label="Save to Enable Attachments" press="{!c.enableAttachments}" />			
+                <aura:set attribute="else">
+                  <aura:if isTrue="{!v.hasAttachments || v.addAttachments}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
+                  <aura:if isTrue="{!v.hasAttachments==false &amp;&amp; v.addAttachments==false &amp;&amp; v.showLineItem==false}"><ui:button class="slds-button slds-button--neutral" label="Show/Add Attachments" press="{!c.showAttachments}" /></aura:if> 
+            </aura:set></aura:if>
+              
+            <!-- LINE ITEM BUTTONS -->  
+            <aura:if isTrue="{!v.rtLineItemEnabled &amp;&amp; v.viewLineItemList==false}">
+                <ui:button label="View Line Items" press="{!c.viewLineItemList}" class="slds-button slds-button--neutral" />
+            </aura:if>
             
-            <!-- CLOSE/CANCEL BUTTONS -->
+            <aura:if isTrue="{!and(v.showLineItem==false, v.viewLineItemList)}">
+                <ui:button label="Hide Line Items" press="{!c.hideLineItem}" class="slds-button slds-button--neutral" />
+            </aura:if>
+             
+            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=0 &amp;&amp; v.lineItemIndex!=undefined}">
+                <ui:button label="Previous Line Item" press="{!c.prevLineItem}" class="slds-button slds-button--neutral" />
+            </aura:if>  
+            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=v.lineItemCount-1 &amp;&amp; v.lineItemIndex!=undefined}">
+                <ui:button label="Next Line Item" press="{!c.nextLineItem}" class="slds-button slds-button--neutral" />
+            </aura:if> 
+            
+          </div>  
+          <!--End BOX FOOTER 1-->
+    	  
+          <!--BOX FOOTER 2-->
+           
+          <div class="slds-modal__footer">
+			  <!-- CLOSE/CANCEL BUTTONS -->
             <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">
             <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; v.showLineItem == false}">
                 <ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.confirmCancelCreationModal}" />
@@ -505,30 +535,6 @@
             <!-- DELETE BUTTONS -->
             <aura:if isTrue="{!v.isNew == false &amp;&amp; v.isCopy == false &amp;&amp; v.showLineItem==false}"><ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmFormDelete}" /></aura:if> 
             <aura:if isTrue="{!v.showLineItem &amp;&amp; v.savedLineItem}"><ui:button class="slds-button slds-button_destructive floatLeft" label="Delete" press="{!c.confirmLineItemDelete}" /></aura:if> 
-            
-            <!-- LINE ITEM BUTTONS -->  
-            <aura:if isTrue="{!v.rtLineItemEnabled &amp;&amp; v.viewLineItemList==false}">
-                <ui:button label="View Line Items" press="{!c.viewLineItemList}" class="slds-button slds-button--neutral" />
-            </aura:if>
-            
-            <aura:if isTrue="{!and(v.showLineItem==false, v.viewLineItemList)}">
-                <ui:button label="Hide Line Items" press="{!c.hideLineItem}" class="slds-button slds-button--neutral" />
-            </aura:if>
-            
-            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=0}">
-                <ui:button label="Previous Line Item" press="{!c.prevLineItem}" class="slds-button slds-button--neutral" />
-            </aura:if>  
-            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=v.lineItemCount-1}">
-                <ui:button label="Next Line Item" press="{!c.nextLineItem}" class="slds-button slds-button--neutral" />
-            </aura:if>        
-                
-            <!-- ATTACHMENT BUTTONS -->
-            <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; v.showLineItem==false}">
-              <ui:button class="slds-button slds-button--neutral" label="Save to Enable Attachments" press="{!c.enableAttachments}" />			
-                <aura:set attribute="else">
-                  <aura:if isTrue="{!v.hasAttachments || v.addAttachments}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
-                  <aura:if isTrue="{!v.hasAttachments==false &amp;&amp; v.addAttachments==false &amp;&amp; v.showLineItem==false}"><ui:button class="slds-button slds-button--neutral" label="Show/Add Attachments" press="{!c.showAttachments}" /></aura:if> 
-            </aura:set></aura:if>
                 
             <!-- SAVE/SUBMIT BUTTONS -->
             <aura:if isTrue="{!v.showLineItem}" >
@@ -548,15 +554,8 @@
                 <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral" label="Show Attachments" press="{!c.showAttachments}" /></aura:if> 
               </aura:set>
             </aura:if>
-          </div>  
-          <!--End BOX FOOTER 1-->
-    	  
-          <!--BOX FOOTER 2-->
-            <!-- future 2nd footer for buttons (likely form buttons like save, delete, submit etc...)
-          <div class="slds-modal__footer">
-			  
               
-          </div>  -->
+          </div>  
           <!--End BOX FOOTER 2-->    
         </div>
       </div>

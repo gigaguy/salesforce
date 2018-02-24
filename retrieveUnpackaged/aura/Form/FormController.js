@@ -133,6 +133,7 @@
         component.set("v.hasAttachments", false);
         component.set("v.addAttachments", false);
         component.set("v.viewLineItemList", false);
+        component.set("v.showLineItem", false);
     	
         var action = component.get("c.deleteForm");
         action.setParams({
@@ -200,6 +201,7 @@
         component.set("v.rtLineItemEnabled",false);
         component.set("v.viewLineItemList", false);
         component.set("v.displayFieldsCount", 0);
+        component.set("v.showLineItem", false);
 
         // LS 2017/11/19: Added additional action below to remove FormShare on close of modal, there may be a better place or way to do this
         var removeShareAction = component.get("c.removeFormShare");
@@ -647,7 +649,6 @@
       }
     else {  // showLineItem is true
          console.log('in createTheModal for Line Item');
-        
         var liID = component.get("v.viewLineItemID")
         console.log('liID: '+liID);
     		 $A.createComponent('force:recordEdit',
@@ -696,6 +697,9 @@
         
         component.set("v.hasAttachments", false);
         component.set("v.addAttachments", false);
+        component.set("v.showLineItem", false);
+        component.set("v.viewLineItemList", false);
+        component.set("v.showLineItem", false);
  
         var formID = component.get("v.viewFormID");
         console.log(formID);
@@ -914,7 +918,7 @@
         
         component.set("v.showLineItem", false);
         component.set("v.viewLineItemList", false);
-        component.set("v.sortField","Display1__c");
+   //     component.set("v.sortField","Display1__c");
         
     },
     saveAndSubmit : function(component, event, helper){   // saves Form and submits for approval
@@ -1164,7 +1168,7 @@
     },
     viewLineItemList : function(component, event, helper) {   // enables line items to be entered
     	console.log('in viewLineItemList');
-               
+        component.set("v.displayFieldsCount", undefined);       
         component.set("v.viewLineItemList", true);
         var formID = component.get("v.viewFormID"); 
           console.log('formID: ' + formID);

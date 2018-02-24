@@ -845,6 +845,13 @@
         </sections>
     </layouts>
     <layouts>
+        <layout>ORD-111 Line Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
         <layout>PCOR Line Item Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
@@ -879,12 +886,16 @@
         <name>Form_EPA_100_Line_Item</name>
     </recordTypes>
     <recordTypes>
+        <label><!-- Form - ORD-111 Line Item --></label>
+        <name>Form_ORD_111_Line_Item</name>
+    </recordTypes>
+    <recordTypes>
         <label><!-- Form - PCOR Line Item --></label>
         <name>Form_PCOR_Line_Item</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- Proposed Hours --></label>
-        <name>Proposed_Hours</name>
+        <label><!-- Form - TCTO Request Line Item --></label>
+        <name>Form_TCTO_Request_Line_Item</name>
     </recordTypes>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

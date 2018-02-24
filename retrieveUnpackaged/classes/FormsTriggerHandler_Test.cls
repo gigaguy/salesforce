@@ -6,7 +6,7 @@ public class FormsTriggerHandler_Test {
         insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
         
         //Insert Test Data        
-            Profile p = [select id, name from profile where name = 'Forms Profile'];        
+            Profile p = [select id, name from profile where name = 'EPA BAP Forms Profile'];        
                 
             User u = new User(FirstName='Bob', LastName='Smith', lan_ID__c='smith123', profileID=p.id, Username='test@fake.ccc', 
                   email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
@@ -58,7 +58,7 @@ public class FormsTriggerHandler_Test {
     static void testTriggerB(){
         
         //Insert Test Data        
-            Profile p = [select id, name from profile where name = 'Forms Profile'];        
+            Profile p = [select id, name from profile where name = 'EPA BAP Forms Profile'];        
                 
             User u = new User(FirstName='Bob', LastName='Smith', profileID=p.id, Username='test@fake.ccc', 
                   email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
@@ -122,7 +122,7 @@ public class FormsTriggerHandler_Test {
         insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = true); // checkbox from "Contact Approvers" Custom Setting
         
                 //Insert Test Data        
-            Profile p = [select id, name from profile where name = 'Forms Profile'];        
+            Profile p = [select id, name from profile where name = 'EPA BAP Forms Profile'];        
                 
             User u = new User(FirstName='Bob', LastName='Smith', Lan_ID__c = 'thetest', profileID=p.id, Username='test@fake.ccc', 
                   email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
@@ -151,7 +151,7 @@ public class FormsTriggerHandler_Test {
         insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
         
                 //Insert Test Data        
-            Profile p = [select id, name from profile where name = 'Forms Profile'];        
+            Profile p = [select id, name from profile where name = 'EPA BAP Forms Profile'];        
             
             User uMgr = new User(FirstName='Rob', LastName='Jones', Lan_ID__c = 'thetest1', profileID=p.id, Username='test1@fake.ccc', 
                   email='test@fake.ccc', Alias='testU1', CommunityNickname='testU1', TimeZoneSidKey= 'America/Los_Angeles',
@@ -196,7 +196,7 @@ public class FormsTriggerHandler_Test {
         insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = true); // checkbox from "Contact Approvers" Custom Setting
         
                 //Insert Test Data        
-            Profile p = [select id, name from profile where name = 'Forms Profile'];        
+            Profile p = [select id, name from profile where name = 'EPA BAP Forms Profile'];        
                 
             User u = new User(FirstName='Bob', LastName='Smith', Lan_ID__c = 'thetest', profileID=p.id, Username='test@fake.ccc', 
                   email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
@@ -226,7 +226,7 @@ public class FormsTriggerHandler_Test {
         insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = true); // checkbox from "Contact Approvers" Custom Setting
         
                 //Insert Test Data        
-            Profile p = [select id, name from profile where name = 'Forms Profile'];        
+            Profile p = [select id, name from profile where name = 'EPA BAP Forms Profile'];        
                 
             User u = new User(FirstName='Bob', LastName='Smith', lan_ID__c='smith123', profileID=p.id, Username='test@fake.ccc', 
                   email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
@@ -282,7 +282,7 @@ public class FormsTriggerHandler_Test {
         insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = true); // checkbox from "Contact Approvers" Custom Setting
         
                 //Insert Test Data        
-            Profile p = [select id, name from profile where name = 'Forms Profile'];        
+            Profile p = [select id, name from profile where name = 'EPA BAP Forms Profile'];        
                 
             User u = new User(FirstName='Bob', LastName='Smith', lan_ID__c='smith123', profileID=p.id, Username='test@fake.ccc', 
                   email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
@@ -342,7 +342,7 @@ public class FormsTriggerHandler_Test {
         insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = true); // checkbox from "Contact Approvers" Custom Setting
         
                 //Insert Test Data        
-            Profile p = [select id, name from profile where name = 'Forms Profile'];        
+            Profile p = [select id, name from profile where name = 'EPA BAP Forms Profile'];        
                 
             User u = new User(FirstName='Bob', LastName='Smith', lan_ID__c='smith123', profileID=p.id, Username='test@fake.ccc', 
                   email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
@@ -399,7 +399,7 @@ public class FormsTriggerHandler_Test {
         insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = true); // checkbox from "Contact Approvers" Custom Setting
         
                 //Insert Test Data        
-            Profile p = [select id, name from profile where name = 'Forms Profile'];        
+            Profile p = [select id, name from profile where name = 'EPA BAP Forms Profile'];        
                 
             User u = new User(FirstName='Bob', LastName='Smith', lan_ID__c='smith123', profileID=p.id, Username='test@fake.ccc', 
                   email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
