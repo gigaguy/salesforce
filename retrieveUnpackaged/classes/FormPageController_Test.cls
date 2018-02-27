@@ -57,7 +57,7 @@ public class FormPageController_Test {
             catch(exception ex){
                 system.debug(ex.getMessage());  
               }
-        
+        String supportInfo = FormPageController.formSupportInfo(string.valueof(xForm.ID), 'EPA-100');
         Forms__c yform;
         try{
             yform = FormPageController.insertNewForms('xyz', [select id from RecordType where name = 'EPA-100' limit 1].ID, uSU.id, uAU.id);
@@ -210,7 +210,9 @@ public class FormPageController_Test {
 
         contact c = new contact(FirstName='Bob', LastName='Smith', Lan_ID__c = 'thetest');
         insert c;
-        Forms__c theForm = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' ORDER BY createddate limit 1].ID, uSU.id, uAU.id);
+        Forms__c theForm = FormPageController.insertNewForms('123ABC', [select id, developerName from RecordType where sObjectType = 'Forms__c' ORDER BY createddate limit 1].ID, uSU.id, uAU.id);
+            
+            List<Line_Item__c> liList = FormPageController.getListOfLineItems(theForm.ID, 'formName');
             
             Line_Item__c litem = FormPageController.insertLineItem('123ABC', 'EPA-100', theForm.ID, uSU.ID, uAU.ID);
 

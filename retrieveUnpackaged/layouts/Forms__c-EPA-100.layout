@@ -22,6 +22,10 @@
                 <behavior>Readonly</behavior>
                 <field>Form_Owner__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Support_EPA_100__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsTopToBottom</style>

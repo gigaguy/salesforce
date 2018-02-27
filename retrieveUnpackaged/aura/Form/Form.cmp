@@ -9,6 +9,7 @@
     <aura:attribute name="hrefEmail" type="string"/>
     <aura:attribute name="viewFormID" type="Id"/>
     <aura:attribute name="viewFormName" type="string"/>
+    <aura:attribute name="viewFormSupport" type="string"/>
     <aura:attribute name="theModal" type="Forms__c"/>
     <aura:attribute name="newForm" type="Forms__c"/>
     <aura:attribute name="mySavedForms" type="Forms__c[]"/>
@@ -271,9 +272,7 @@
               </h2>   
               
                <h3>                    
-                  <aura:if isTrue="{!and(v.viewFormName!='ORD-111',v.viewFormName!='SF-182')}"><br/>For help using {!v.viewFormName} please contact: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>
-                  <aura:if isTrue="{!v.viewFormName=='ORD-111'}"><br/>For instructions using {!v.viewFormName} please click here: <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>
-			      <aura:if isTrue="{!v.viewFormName=='SF-182'}"><br/>For help using {!v.viewFormName} please contact your Training Officer.<br/>Employees will find their Training Officer <a href="{!v.hrefInfo}" target="_blank">{!v.hrefEmail}</a></aura:if>            
+                  For help using {!v.viewFormName} please use <a href="{!v.viewFormSupport}" target="_blank">{!v.viewFormSupport}</a> for support.               
                </h3> 
                 
                <aura:set attribute="else">

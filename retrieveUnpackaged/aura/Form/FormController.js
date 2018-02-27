@@ -498,6 +498,17 @@
 		var formName = component.get("v.viewFormName");        
         console.log('formName: ' + formName);   
         
+        
+            
+        
+        //set Form Record Types that are able to add Line Items    
+        if (formName === "EPA-100") {
+            component.set("v.rtLineItemEnabled", true);
+        }
+        else if (formName === "TCTO Request") {
+            component.set("v.rtLineItemEnabled", true);
+        }    
+        /*    
         if (formName === "BAP Provisioning") {
             var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
         	var hrefEmail = "BAP_Admins@epa.gov";
@@ -549,8 +560,11 @@
             var hrefInfo = "mailto:McNeal.Detha@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
        	 	var hrefEmail = "McNeal.Detha@epa.gov";
         }
+        
         component.set("v.hrefInfo", hrefInfo);
         component.set("v.hrefEmail", hrefEmail);
+        */
+            
         component.set("v.fileName", "No File Selected..");
         component.set("v.largeFile", false);    
             
@@ -574,6 +588,9 @@
                 component.set("v.viewFormID", component.get("v.newForm.Id"));
                 formID = component.get("v.newForm.Id");
                 console.log('formID: '+formID);
+                
+                //Get Support link info
+		        helper.getSupportInfo(component, formID, formName);
                 
                 $A.createComponent('force:recordEdit',
                   {

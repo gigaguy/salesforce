@@ -4006,8 +4006,40 @@
         <name>Supervisor_Name__c</name>
     </fields>
     <fields>
+        <label><!-- Support Application Approval --></label>
+        <name>Support_Application_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support BAP Provisioning --></label>
+        <name>Support_BAP_Provisioning__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support EPA-100 --></label>
+        <name>Support_EPA_100__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support EPA-3160-6v5 --></label>
+        <name>Support_EPA_3160_6v5__c</name>
+    </fields>
+    <fields>
         <label><!-- Support Email --></label>
         <name>Support_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support FCO Appointment --></label>
+        <name>Support_FCO_Appointment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support ORD-111 --></label>
+        <name>Support_ORD_111__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support SF-182 --></label>
+        <name>Support_SF_182__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support TCTO Request --></label>
+        <name>Support_TCTO_Request__c</name>
     </fields>
     <fields>
         <label><!-- TCTO Request Type --></label>
@@ -5413,16 +5445,16 @@
         <name>EPA3110_1</name>
     </recordTypes>
     <recordTypes>
-        <label><!-- EPA-3160-6v5 --></label>
-        <name>EPA3160_6v5</name>
-    </recordTypes>
-    <recordTypes>
         <label><!-- EPA-100 --></label>
         <name>EPA_100</name>
     </recordTypes>
     <recordTypes>
         <label><!-- EPA-1900-8a (old) --></label>
         <name>EPA_1900_8a_old</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- EPA-3160-6v5 --></label>
+        <name>EPA_3160_6v5</name>
     </recordTypes>
     <recordTypes>
         <label><!-- EPA-PCOR --></label>

@@ -226,6 +226,38 @@
         $A.enqueueAction(descList);
         
     },
+    getSupportInfo : function(component, formID, formName){
+        console.log('in helper.getSupportInfo');
+        console.log('formID: '+formID);
+        console.log('formName: '+formName);
+        
+        	var action = component.get("c.formSupportInfo");
+        action.setParams({
+            formID : formID,
+            formName : formName
+        });
+        
+        action.setCallback(this, function(response){
+                        var name = response.getState();
+                        console.log('getting support info');
+                        console.log('name ' + name);  
+                     
+            if (name === "SUCCESS" && response.getReturnValue().length > 0) {
+                console.log('no error');
+                component.set("v.viewFormSupport", response.getReturnValue());
+            	}
+            else {console.log('error: '+response.getError());
+                 let errors = response.getError();
+					let message = 'Unknown error'; // Default error message
+					// Retrieve the error message sent by the server
+					if (errors && Array.isArray(errors) && errors.length > 0) {
+				      message = errors[0].message;
+                        }
+                        // Display the message
+                        console.error(message);}
+            });
+        $A.enqueueAction(action);
+    },
     lineItemSortBy : function(component, field){
         console.log('in helper.lineItemSortBy');
         

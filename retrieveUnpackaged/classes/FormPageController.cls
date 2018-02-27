@@ -394,5 +394,20 @@ public without sharing class FormPageController  {
         }
         return null;        
     }
+    
+    @AuraEnabled
+    public static string formSupportInfo(string formID, string formName){
+        
+        system.debug('formName received: '+formName);
+        formName = formName.replaceAll('[\\s-]+','_');
+        formName = 'Support_'+formName+'__c';
+        system.debug('formName full: '+formName);
+        string soql = 'select '+ formName;
+        soql = soql + ' from Forms__c where id = :formID limit 1';
+        list<forms__c> formsList = Database.query(soql);
+        forms__c theForm = formsList[0];
+        string supportInfo = (string)string.valueof(theForm.get(formName));
+        return supportInfo;
+    }
         
 }
