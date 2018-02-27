@@ -10351,7 +10351,12 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
         <filters>
             <field>AHRC__c</field>
             <operation>equals</operation>
-            <value>56E,56E - IO-AA</value>
+            <value>56E - IO-AA</value>
+        </filters>
+        <filters>
+            <field>BBFY_EBFY__c</field>
+            <operation>equals</operation>
+            <value>2018/2019</value>
         </filters>
         <label>IO-AA - Documents</label>
     </listViews>
