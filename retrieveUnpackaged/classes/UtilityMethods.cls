@@ -57,12 +57,37 @@ public class UtilityMethods {
             formShares.add(new Forms__Share(ParentID = formID, UserorGroupID = siteUserID, AccessLevel = 'edit'));
             database.insert(formShares, false);
         }
+        //create sharing for related Line Items
+        list<line_item__c> litems = new list<line_item__c>();
+        try{litems = [select id from line_item__c where related_Form__c = :formID];}
+          catch(exception e){system.debug('No related Line Items.');}
+        if(litems.size()>0){
+          list<line_item__Share> lineShares = new list<line_item__Share>();
+          for(line_item__c litem : litems){
+          lineShares.add(new line_item__Share(ParentID = litem.id, userorGroupID = siteUserID, AccessLevel = 'edit'));
+          }
+        database.insert(lineShares, false);
+      }
     }
     
     public static void removeFormShare(String formID, String siteUserID) {  
         if (formID != null && siteUserID !=null) {
             Forms__Share formShare = [select id from Forms__Share where ParentID = :formID AND UserorGroupID = :siteUserID AND AccessLevel = 'edit'];
-            database.delete(formShare, false);
+          database.delete(formShare, false);
+        }
+        //remove sharing for related Line Items
+        if (formID != null && siteUserID != null) {
+            list<line_item__c> litems = new list<line_item__c>();
+             try{litems = [select id from line_item__c where related_Form__c = :formID];}
+              catch(exception e){system.debug('No related Line Items.');} 
+             if(litems.size()>0){
+              list<line_item__Share> lineShares = new list<line_item__Share>();
+               list<id> litemIDs = new list<id>();
+               for(line_item__c litem : litems){litemIDs.add(litem.id);}
+              lineShares = [select id from line_item__Share where ParentID in :litemIDs AND userorGroupID = :siteUserID AND AccessLevel = 'edit'];
+              
+            database.delete(lineShares, false);   
+            }
         }
     }
     

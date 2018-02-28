@@ -75,7 +75,6 @@ public class FormPageController_Test {
         FormPageController.saveForm(form, '123ABC');
         FormPageController.saveForm(yform, '123ABC');
         FormPageController.deleteForm(form.ID, '123ABC');
-        FormPageController.getFandP_FormRTs();
         FormPageController.getSiteUserID();
         FormPageController.getAPIUserID();
         FormPageController.removeFormShare(xform.ID, uSU.id);

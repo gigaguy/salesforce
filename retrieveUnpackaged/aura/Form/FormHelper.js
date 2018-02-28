@@ -2,18 +2,6 @@
     MAX_FILE_SIZE: 4500000, //Max file size 4.5 MB 
     CHUNK_SIZE: 750000,      //Chunk Max size 750Kb 
     
-    getFandP_Forms : function(component){     // gets list of available Fill&Print Forms
-        console.log('in helper.getFandP_Forms');
-    	var action = component.get("c.getFandP_FormRTs");
-       
-        action.setCallback(this, function(response){
-            var name = response.getState();
-            if (name === "SUCCESS") {
-                component.set("v.FandP_forms", response.getReturnValue());
-            }
-        });
-     $A.enqueueAction(action);
-	},
     show: function (cmp, event) {     // shows Lightning spinner
         console.log('in helper.show');
         
@@ -27,6 +15,36 @@
         var spinner = cmp.find("mySpinner");
         $A.util.removeClass(spinner, "slds-show");
         $A.util.addClass(spinner, "slds-hide");
+    },
+    checkLineItemEnabled : function(component, formName){    //checks if Form RT is Line Item Enabled
+    	console.log('in helper.checkLineItemEnabled');
+        
+        var action = component.get("c.isLineItemEnabled");
+        	action.setParams({
+			"formName" : formName
+        });
+        action.setCallback(this, function(response){
+            var name = response.getState();
+            console.log('checking if line item enabled');
+            console.log('name ' + name);
+            console.log('response ' + response.getReturnValue());
+            if (name === "SUCCESS") {
+                var resp = response.getReturnValue();
+                if(resp==='notEnabled'){
+                component.set("v.rtLineItemEnabled", false);
+                }
+                else {
+                    component.set("v.rtLineItemEnabled", true);
+                    var rtID = resp;
+                    this.getDisplayFields(component, rtID);
+                }
+             }
+            else {
+                component.set("v.rtLineItemEnabled", false);
+            }
+        });
+     $A.enqueueAction(action);
+        
     },
     getAttachList : function(component, formID){   // gets list of attachments on Form record
 		console.log('in helper.getAttachList');
@@ -110,7 +128,7 @@
             var rtID = respList[0].RecordTypeId;
                 console.log('rtID: '+rtID);    
            
-                this.getDisplayFields(component, rtID);
+                this.getDisplayData(component, rtID);
              }
             else {
                 component.set("v.message", null);      
@@ -124,6 +142,7 @@
 		console.log('in helper.getDisplayFields');
             //get list of fields to display
           	
+        console.log('rtID: '+rtID);
        		var action = component.get("c.getLineItemDisplayFields");
         	action.setParams({
 			"rtID" : rtID,    
@@ -140,8 +159,15 @@
                 var fields = response.getReturnValue();
                 var fieldsSize = fields.length;
                 console.log("fieldsSize: "+fieldsSize);
+                console.log("john: "+fields[fieldsSize-1].trim());
+                if(fields[fieldsSize-1].trim()=='No Create'){
+                    component.set("v.lineItemNoCreate", true);
+                	fieldsSize=fieldsSize-1;
+                }
+                  else {component.set("v.lineItemNoCreate", false);}
                 
-                component.set("v.displayOne", fields[0].trim());
+                
+                component.set("v.displayOne", fields[0].trim()); console.log('display1: '+component.get("v.displayOne"));
                 if(fieldsSize>1){component.set("v.displayTwo", fields[1].trim());}
                 if(fieldsSize>2){component.set("v.displayThree", fields[2].trim());}
                 if(fieldsSize>3){component.set("v.displayFour", fields[3].trim());}
@@ -151,7 +177,7 @@
                 for(var i=0;i<fieldsSize;i++){
                     displayFields[i] = fields[i].trim();
                 }
-                this.getDisplayData(component, rtID);
+       //         this.getDisplayData(component, rtID);
              }
             else {
                 component.set("v.message", null);
@@ -162,26 +188,31 @@
     },
     getDisplayData: function(component, rtID) {
         console.log('in helper.getDisplayData');
+        console.log('rtID: '+rtID);
         
         var descList = component.get("c.getLineItemDataFields");
         descList.setParams({"rtID" : rtID});
         descList.setCallback(this, function(resp){var state = resp.getState();
-                                                  if (state === "SUCCESS"){
-        var displayFields = resp.getReturnValue();                                                     
-        component.set("v.displayFieldsCount", displayFields.length);                                    
-        component.set("v.displayCols", displayFields.length+1); 
+                 if (state === "SUCCESS"){
+        var displayFields = resp.getReturnValue();     
+        var fieldsSize = displayFields.length;
+                     if(displayFields[fieldsSize-1].trim()=='No Create'){
+                         fieldsSize=fieldsSize-1;
+                     }
+                     component.set("v.displayFieldsCount", fieldsSize);   console.log('displayfieldscount: '+fieldsSize);                                 
+        component.set("v.displayCols", fieldsSize+1); 
         var d1;
         var d2;
         var d3;
         var d4;
         var d5;
-         d1 = displayFields[0].trim();  
-         if(displayFields.length>=2){d2=displayFields[1].trim();}
-         if(displayFields.length>=3){d3=displayFields[2].trim();}
-         if(displayFields.length>=4){d4=displayFields[3].trim();}
-		 if(displayFields.length>=5){d5=displayFields[4].trim();}                                                
+                     d1 = displayFields[0].trim();  console.log('d1: '+d1);
+         if(fieldsSize>=2){d2=displayFields[1].trim();console.log('d2: '+d2);}
+         if(fieldsSize>=3){d3=displayFields[2].trim();console.log('d3: '+d3);}
+         if(fieldsSize>=4){d4=displayFields[3].trim();console.log('d4: '+d4);}
+		 if(fieldsSize>=5){d5=displayFields[4].trim();console.log('d5: '+d5);}                                                
 		var formID = component.get("v.viewFormID");
-
+                     console.log('formID: '+formID);
         var action = component.get("c.getLineItemData");
         	action.setParams({
 				"d1" : d1,

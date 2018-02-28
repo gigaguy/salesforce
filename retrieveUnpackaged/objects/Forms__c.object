@@ -1879,7 +1879,7 @@ TEXT(Continued_Service_Agreement_Expiration__c))</formula>
         <defaultValue>false</defaultValue>
         <description>EPA3160-6v5</description>
         <externalId>false</externalId>
-        <label>D. Donate to specific Person</label>
+        <label>D. Donate to Specific Person</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -9458,7 +9458,7 @@ User_Supervisor__r.FirstName &amp;&quot; &quot;&amp; User_Supervisor__r.LastName
     </fields>
     <fields>
         <fullName>Support_SF_182__c</fullName>
-        <defaultValue>&quot;https://usepa.sharepoint.com/sites/OARM_Community/EPAU/SitePages/Training%20Officers%20&amp;%20Coordinators.aspx&quot;</defaultValue>
+        <defaultValue>&quot;https://usepa.sharepoint.com/sites/OARM_Community/EPAU/SitePages/&quot;+BR()+&quot;Training%20Officers%20&amp;%20Coordinators.aspx&quot;</defaultValue>
         <description>SF-182</description>
         <externalId>false</externalId>
         <label>Support SF-182</label>

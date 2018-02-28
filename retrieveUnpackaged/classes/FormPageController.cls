@@ -153,13 +153,6 @@ public without sharing class FormPageController  {
     }
     
     @AuraEnabled
-    public static List<BAP_Fill_and_Print_List__mdt> getFandP_FormRTs(){
-                
-          return [select Label, Description__c, File_Url__c from BAP_Fill_and_Print_List__mdt ORDER BY Label ASC];
-          
-    }
-    
-    @AuraEnabled
     public static Id uploadFile(String FormID, String fileName, String base64Data, String contentType) { 
      //   base64Data = EncodingUtil.urlDecode(base64Data, 'UTF-8');
         Attachment a = new Attachment();
@@ -272,6 +265,17 @@ public without sharing class FormPageController  {
     }
     
     @AuraEnabled
+    public static string isLineItemEnabled(string formName){
+        string qName = 'Form - '+formName+' Line Item';
+        string liRT = 'notEnabled';
+        
+        try{liRT = [select id, name from recordtype where sObjectType = 'Line_Item__c' and IsActive = true and Name = :qName limit 1].id;}
+        catch(exception e){system.debug('notEnabled');}
+        
+        return liRT;
+    }
+    
+    @AuraEnabled
     public static List<Line_Item__c> getListOfLineItems(String formID, string formName) {        
         
         return [select id, RecordTypeId from Line_Item__c where Related_Form__c = :formID order by CreatedDate DESC];
@@ -291,8 +295,10 @@ public without sharing class FormPageController  {
         string fieldLabel;
         list<string> displayFields = new list<string>();
         for(string fieldApi : apiList){
+            if(fieldAPI.trim()!='No Create'){
             fieldLabel = fieldMap.get(fieldApi.trim()).getDescribe().getLabel();
-            displayFields.add(fieldLabel);
+            displayFields.add(fieldLabel);}
+            else{displayFields.add('No Create');}
         }
         
         return displayFields;

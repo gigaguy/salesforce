@@ -4884,10 +4884,6 @@
         <layout>Line_Item__c-Line Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Line_Item__c-PCOR Line Item Layout</layout>
-        <recordType>Line_Item__c.Form_PCOR_Line_Item</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Line_Item__c-Proposed Hours Layout</layout>
         <recordType>Line_Item__c.Form_TCTO_Request_Line_Item</recordType>
     </layoutAssignments>
@@ -5012,6 +5008,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>Idea</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Line_Item__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -5303,17 +5308,13 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
+        <personAccountDefault>true</personAccountDefault>
         <recordType>Line_Item__c.Form_EPA_100_Line_Item</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Line_Item__c.Form_ORD_111_Line_Item</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Line_Item__c.Form_PCOR_Line_Item</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

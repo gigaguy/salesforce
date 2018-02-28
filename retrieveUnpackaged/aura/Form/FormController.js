@@ -12,7 +12,6 @@
             }
         });
         $A.enqueueAction(action);
-        helper.getFandP_Forms(component);
      
         //  set siteUserID and apiUserID for temp record sharing
         helper.setSiteUserID(component);
@@ -426,6 +425,7 @@
         component.set("v.isNew", true);
         component.set("v.viewFormID", formID); 
         component.set("v.viewFormName", formName);
+        component.set("v.rtLineItemEnabled", false);
         
         var a = component.get("c.createTheModal");
         $A.enqueueAction(a);
@@ -498,72 +498,17 @@
 		var formName = component.get("v.viewFormName");        
         console.log('formName: ' + formName);   
         
+        //check if Form Record Type is enabled to add Line Items
+ 		helper.checkLineItemEnabled(component, formName, formID);           
         
-            
-        
-        //set Form Record Types that are able to add Line Items    
+/*        //set Form Record Types that are able to add Line Items    
         if (formName === "EPA-100") {
             component.set("v.rtLineItemEnabled", true);
         }
         else if (formName === "TCTO Request") {
             component.set("v.rtLineItemEnabled", true);
         }    
-        /*    
-        if (formName === "BAP Provisioning") {
-            var hrefInfo = "mailto:BAP_Admins@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
-        	var hrefEmail = "BAP_Admins@epa.gov";
-        }
-        else if (formName === "EPA-3110-1") {
-            var hrefInfo = "";
-        	var hrefEmail = "David Ack";
-        }
-        else if (formName === "EPA-3160-6v5") {
-            var hrefInfo = "mailto:OHRLeaveQuestions@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
-        	var hrefEmail = "OHRLeaveQuestions@epa.gov";
-        }
-        else if (formName === "EPA-PCOR") {
-            var hrefInfo = "";
-        	var hrefEmail = "To be determined";
-            component.set("v.rtLineItemEnabled", true);
-        }
-        else if (formName === "ORD-111") {
-            var hrefInfo = "https://epaoei--oeiodsta--c.cs33.visual.force.com/resource/1514583669000/ORD_111_QARF_Instructions?isdtp=p1";
-        	var hrefEmail = "ORD-111 QARF Instructions.pdf";
-        }
-        else if (formName === "PRIAv5") {
-            var hrefInfo = "";
-        	var hrefEmail = "Nicole Williams, Hamaad Syed, and Patrick Dobak";
-        }
-        else if (formName === "SF-182") {
-            var hrefInfo = "https://usepa.sharepoint.com/sites/OARM_Community/EPAU/SitePages/Training%20Officers%20&%20Coordinators.aspx";
-        	var hrefEmail = "Here";
-        }
-        else if (formName === "FCO Appointment") {
-            var hrefInfo = "";
-        	var hrefEmail = "";
-        }
-        else if (formName === "Application Approval") {
-            var hrefInfo = "mailto:McMahon.Ethan@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
-        	var hrefEmail = "McMahon.Ethan@epa.gov";
-        }
-        else if (formName === "EPA-100") {
-            var hrefInfo = "mailto:McNeal.Detha@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
-       	 	var hrefEmail = "McNeal.Detha@epa.gov";
-            component.set("v.rtLineItemEnabled", true);
-        }
-        else if (formName === "TCTO Request") {
-            var hrefInfo = "mailto:jjenkins@innovateteam.com?subject=Help%20request%3A%20%20"+formName+"%20Form";
-       	 	var hrefEmail = "jjenkins@innovateteam.com";
-            component.set("v.rtLineItemEnabled", true);
-        }
-        else {
-            var hrefInfo = "mailto:McNeal.Detha@epa.gov?subject=Help%20request%3A%20%20"+formName+"%20Form";
-       	 	var hrefEmail = "McNeal.Detha@epa.gov";
-        }
-        
-        component.set("v.hrefInfo", hrefInfo);
-        component.set("v.hrefEmail", hrefEmail);
-        */
+*/
             
         component.set("v.fileName", "No File Selected..");
         component.set("v.largeFile", false);    
@@ -849,6 +794,20 @@
         var a = component.get("c.showAttachments");
         $A.enqueueAction(a);
     },
+    enableLineItems: function(component, event, helper) {    // saves Form before allowing Line Items
+    	console.log('in enableLineItems');
+        
+        try {
+           	component.get('v.theModal').get("e.recordSave").fire();
+            console.log('no error');
+          	}
+        catch (e) {
+            console.log(e);
+          }
+        
+        var a = component.get("c.viewLineItemList");
+        $A.enqueueAction(a);
+    },
     handleFilesChange: function(component, event, helper) {  // runs when user selects file for attachment upload
         console.log('in handleFilesChange');      
         
@@ -1029,6 +988,7 @@
         component.set("v.viewFormID", formID); 
         component.set("v.viewFormName", formName);
         component.set("v.isCopy", false);
+        component.set("v.rtLineItemEnabled", false);
         
         var a = component.get("c.createTheModal");
         $A.enqueueAction(a);

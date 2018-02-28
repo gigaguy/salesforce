@@ -4885,10 +4885,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Line_Item__c-Line Item Layout</layout>
-        <recordType>Line_Item__c.Form_PCOR_Line_Item</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Line_Item__c-Line Item Layout</layout>
         <recordType>Line_Item__c.Form_TCTO_Request_Line_Item</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -5264,11 +5260,6 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Line_Item__c.Form_ORD_111_Line_Item</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Line_Item__c.Form_PCOR_Line_Item</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

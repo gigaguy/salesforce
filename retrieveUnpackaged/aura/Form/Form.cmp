@@ -51,6 +51,7 @@
     <aura:attribute name="nextCheck" type="boolean" default="false"/>
     <aura:attribute name="sortAsc" type="boolean" default="true"/>
     <aura:attribute name="sortField" type="string"/>
+    <aura:attribute name="lineItemNoCreate" type="boolean" default="true"/>
     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
@@ -126,52 +127,6 @@
     <!--End Form List-->
     
     <br/>
-    
-    <!--View Fill & Print Forms List-->
-    <aura:if isTrue="{!v.pageStatus == 'viewFormTypes'}">
-    <div style="">   
-    <table style="border: 1px solid black;">
-    	<tr style="background-color: #0070d2; border: 1px solid black;">
-        	<td colspan="3" style="color: white; padding: 5px; border: 1px solid lightgray;">
-                FILL &amp; PRINT FORMS BY NUMBER &nbsp; &nbsp; <img src="{!$Resource.PDFLogo}"></img>
-            </td>
-        </tr>
-        <tr style="background-color: white; border: 1px solid black;">
-        	<td colspan="3" style="color: white; padding: 1px; border: 1px solid lightgray;">
-            	&nbsp;
-            </td>
-        </tr>
-        <tr style="background-color: #0070d2; border: 1px solid black;">
-        	<td style="width: 12%; color: white; padding: 5px; border: 1px solid lightgray;">
-            	
-            </td>
-            <td style="width: 30%; color: white; padding: 5px; border: 1px solid lightgray;">
-            	FORM NUMBER
-            </td>
-            <td style="color: white; padding: 5px; border: 1px solid lightgray;">
-            	FORM NAME
-            </td>
-        </tr>
-        <aura:iteration var="FPforms" items="{!v.FandP_forms}">  
-            <tr style="background-color: white; border: 1px solid lightgray;">
-                <td style="color: black; padding: 5px; border: 1px solid lightgray; text-align: center;">
-                <a href="{!FPforms.File_Url__c}" target="_blank">
-                    <button style="color: black;">Download</button>
-               	</a>  
-                </td>
-                <td style="color: black; padding: 5px; border: 1px solid lightgray;">
-                	{!FPforms.Label}
-                </td>
-                <td style="color: black; padding: 5px; border: 1px solid lightgray;">
-                	{!FPforms.Description__c}
-                </td>
-            </tr>
-        </aura:iteration>
-    </table>
-        <br/><br/>
-    </div>
-    </aura:if> 
-    <!--End Fill and Print Forms List-->
     
     <!--View My Forms List-->
     <aura:if isTrue="{!v.pageStatus == 'viewMyForms'}">
@@ -335,9 +290,11 @@
                     <tr style="background-color: white; border: 1px solid lightgray;">
                         <aura:if isTrue="{!v.displayFieldsCount>0}">
                             <td style="color: black; border: 0px solid #0070d2; text-align: center;">                           
-                                <button style="font-size : 18px; padding: 0px 10px 0px 10px;" onclick="{!c.createNewLineItem}">&#43;</button>
+                                <aura:if isTrue="{!v.lineItemNoCreate==false}">
+                                <button style="font-size : 18px; padding: 0px 10px 0px 10px;" onclick="{!c.createNewLineItem}">&#43;</button>   		
+                                </aura:if>  
                             </td></aura:if>
-                  		  <aura:if isTrue="{!(v.displayFieldsCount==0 || v.displayFieldsCount==null) &amp;&amp; v.displayFieldsCount!=undefined}">
+                  		  <aura:if isTrue="{!(v.displayFieldsCount==0 || v.displayFieldsCount==null) &amp;&amp; v.displayFieldsCount!=undefined &amp;&amp; v.lineItemNoCreate==false}">
                           	  <td style="color: black; border: 0px solid #0070d2; text-align: left;">   
                                 <ui:button label="Create New Line Item" press="{!c.createNewLineItem}" class="slds-button slds-button-neutral" /> 
                               </td>
@@ -490,9 +447,14 @@
                   <aura:if isTrue="{!v.hasAttachments==false &amp;&amp; v.addAttachments==false &amp;&amp; v.showLineItem==false}"><ui:button class="slds-button slds-button--neutral" label="Show/Add Attachments" press="{!c.showAttachments}" /></aura:if> 
             </aura:set></aura:if>
               
-            <!-- LINE ITEM BUTTONS -->  
+            <!-- LINE ITEM BUTTONS -->
             <aura:if isTrue="{!v.rtLineItemEnabled &amp;&amp; v.viewLineItemList==false}">
-                <ui:button label="View Line Items" press="{!c.viewLineItemList}" class="slds-button slds-button--neutral" />
+              <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; v.showLineItem==false &amp;&amp; v.lineItemNoCreate==false}">  
+            	  <ui:button class="slds-button slds-button--neutral" label="Save to Enable Line Items" press="{!c.enableLineItems}" />
+                <aura:set attribute="else">
+                	<ui:button label="View Line Items" press="{!c.viewLineItemList}" class="slds-button slds-button--neutral" />
+            	</aura:set>
+              </aura:if>
             </aura:if>
             
             <aura:if isTrue="{!and(v.showLineItem==false, v.viewLineItemList)}">
