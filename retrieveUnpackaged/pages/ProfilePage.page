@@ -111,12 +111,12 @@
                     <apex:pageblocksectionitem rendered="{!useContact == true}">
                         <apex:outputlabel value="Funding Official" />
                         <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!fundID}" syncManualEntry="false" />
-                    </apex:pageblocksectionitem>
-                    
+                    </apex:pageblocksectionitem>            
                     
                     <apex:pageblocksectionitem >
                         <div style="text-align: center;">
-                            Not able to find a supervisor or timekeeper in the lookups? <a href="mailto:BAP-Request@epa.gov?subject=BAP Approver%20Activation%20Request&body=Please%20include%20approver%27s%20name%20and%20role%20%28supervisor%2C%20time%20keeper%2C%20training%20officer%20or%20other%29%20in%20this%20email%20request">Click here to email BAP-Request@epa.gov to request their activation</a>  (Contact the <a href="mailto:Shepitka.Jeanne@epa.gov?subject=BAP Approver%20Activation%20Request&body=Please%20include%20FCO%27s%20name%20in%20this%20email%20request"> Office of Budget </a> to have Funding Officials added.)
+
+                            If you’ve selected the supervisors, timekeeper, and training officer that you need, please click Save to set them as your defaults.  If you didn’t find the person you need in the list available for one of them, please click Cancel and then click on New Form next to “BAP Provisioning” to request addition of the person as an active user in the Business Automation Platform.  <a href="https://usepa.sharepoint.com/sites/oei_Community/BAP/SiteAssets/SitePages/Documentation/Brief%20Instructions%20for%20the%20BAP%20Provisioning%20Form.docx" target="_blank">Here are instructions</a> if you need them.  (Contact the <a href="mailto:Shepitka.Jeanne@epa.gov?subject=BAP approver Activation Request&body=Please include FCO's name in this email request">Office of Budget</a> to have Funding Officials added.)
                         </div>
                     </apex:pageblocksectionitem>
                 </apex:pageBlockSection>

@@ -336,9 +336,20 @@
         	}
         
         else { //cancel   
-          }
-        
+          }       
     },
+    confirmRecall : function(component, event) { 
+        console.log('in confirmRecall');
+        
+		var resp = confirm("Are you sure you want to recall the approval for this form?");
+        if(resp === true){
+            var a = component.get("c.approvalRecall");
+                $A.enqueueAction(a);
+              }
+        else {
+             //cancel
+          }           
+	},
     confirmSubmit : function(component, event) { 
         console.log('in confirmSubmit');
         
@@ -489,6 +500,7 @@
         
         var showLineItem = component.get("v.showLineItem");
         console.log('showLineItem: '+showLineItem);
+        console.log('viewlineitemlist: '+component.get("v.viewLineItemList"));
         
         if (showLineItem!=true) {
         var isNew = component.get("v.isNew");
@@ -734,11 +746,11 @@
             if(state === 'SUCCESS'){
                 component.set("v.message", resp.getReturnValue());
                 component.set("v.showLineItem", false);
-                component.set("v.lineItemList", null);
-          		
+                component.set("v.lineItemList", null);          		
                 
                 var action2 = component.get("c.viewLineItemList");
         action2.setCallback(this, function(response){
+            var name = response.getState();
             if (name === "SUCCESS") {var a = component.get("c.createTheModal");
                                      $A.enqueueAction(a);}
             else {
@@ -748,8 +760,8 @@
      	$A.enqueueAction(action2); 
                 
                 
-      //    		var a = component.get("c.createTheModal");
-      //  		$A.enqueueAction(a); 
+       //   		var a = component.get("c.createTheModal");
+       // 		$A.enqueueAction(a); 
             }
             else if(state === 'ERROR'){
                 var errors = resp.getError();
@@ -798,15 +810,13 @@
     	console.log('in enableLineItems');
         
         try {
-           	component.get('v.theModal').get("e.recordSave").fire();
+           	component.set("v.enablingLineItems", true);
+            component.get('v.theModal').get("e.recordSave").fire();
             console.log('no error');
           	}
         catch (e) {
             console.log(e);
           }
-        
-        var a = component.get("c.viewLineItemList");
-        $A.enqueueAction(a);
     },
     handleFilesChange: function(component, event, helper) {  // runs when user selects file for attachment upload
         console.log('in handleFilesChange');      
@@ -878,6 +888,39 @@
             }
         
         component.set("v.saveAndClose", false);
+        //if enabling line items
+        if(component.get("v.enablingLineItems")){
+            var a = component.get("c.viewLineItemList");
+        	$A.enqueueAction(a);
+        }
+        
+        //if save/closing line items
+        if(component.get("v.saveClosingLineItem")){
+            console.log('save success for save/closing line item');
+            component.set("v.showLineItem",false);
+            component.set("v.newLineItem",false);
+            component.set("v.saveClosingLineItem", false);
+            component.set("v.viewLineItemList", true);
+            var action = component.get("c.viewLineItemList");
+            action.setCallback(this, function(response){
+                if (name === "SUCCESS") {
+                    var a = component.get("c.createTheModal");
+                    $A.enqueueAction(a);}
+                else {
+                    component.set("v.message", null);
+                }
+            });
+            $A.enqueueAction(action); 
+        }
+        
+        //if save/nexting line item
+        if(component.get("v.saveNextingLineItem")){
+            console.log('save success for save/nexting line item');
+            component.set("v.nextCheck",true);
+        	component.set("v.saveNextingLineItem", true);
+            var a = component.get("c.createNewLineItem");
+       	   $A.enqueueAction(a);
+        }
         
 	},
     hideAttachments : function(component, event, helper) { // hides list of attachments when user hits "hide attachments" button
@@ -906,33 +949,27 @@
         try {
             component.get("v.theModal").get("e.recordSave").fire();
             console.log('no error');
+             component.set("v.rtLineItemEnabled",false);
+             component.set("v.viewLineItemList", false);
+             component.set("v.displayFieldsCount", 0);
+             component.set("v.showLineItem", false);
      	  	}
           catch (e) {
             console.log(e);
           }   
 	},
     saveLineItem : function(component, event, helper){        // saves Form, closes modal, goes back to Form
-        console.log('in c.saveNext');
+        console.log('in c.saveLineItem');
         console.log('viewTheModal: ' + component.get("v.viewTheModal"));
         
         try {
+            	component.set("v.saveClosingLineItem", true);
             	component.get('v.theModal').get("e.recordSave").fire();
                 console.log('no error');
           	}
           catch (e) {
             console.log(e);
           }
-        
-        component.set("v.showLineItem",false);
-        var action = component.get("c.viewLineItemList");
-        action.setCallback(this, function(response){
-            if (name === "SUCCESS") {var a = component.get("c.createTheModal");
-                                     $A.enqueueAction(a);}
-            else {
-                component.set("v.message", null);
-            }
-        });
-     	$A.enqueueAction(action); 
                
     },
     saveNext : function(component, event, helper){        // saves Form, creates next Line Item record
@@ -940,16 +977,13 @@
         console.log('viewTheModal: ' + component.get("v.viewTheModal"));
         
         try {
+            	component.set("v.saveNextingLineItem", true);
             	component.get('v.theModal').get("e.recordSave").fire();
                 console.log('no error');
           	}
           catch (e) {
             console.log(e);
           }
-        
-        component.set("v.nextCheck",true);
-        var a = component.get("c.createNewLineItem");
-        $A.enqueueAction(a);
         
     },
     saveStay : function(component, event, helper){        // saves Form, does not close modal

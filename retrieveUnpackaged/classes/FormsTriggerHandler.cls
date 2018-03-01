@@ -192,6 +192,7 @@ public class FormsTriggerHandler {
         forms__c[] formList = [select id from forms__c where id in :mainIds];
         Approval.UnlockResult[] formUnlocks = Approval.Unlock(formList, false);
         
+        //gets approval process info for Form(s)
         List<ProcessInstance> processInstances = [SELECT Id, (SELECT Id, ActorID,TargetObjectId, isPending, StepStatus, Comments FROM StepsAndWorkitems) FROM ProcessInstance where TargetObjectId in :mainIds];
         system.debug('pis: ' + processInstances);
         Map<id, List<id>> formIdToPeopleIds = new Map<id, List<id>>();
@@ -227,13 +228,26 @@ public class FormsTriggerHandler {
             }
         }
         
+        //shares form(s) with approvers
         List<Forms__Share> formShares = new List<Forms__Share>();
         for (Integer i = 0; i < formIds.size();i++){
-            formShares.add(new Forms__Share(ParentID = formIds[i], UserorGroupID = personids[i], AccessLevel = 'edit'));
-            
-        }
-        
+              formShares.add(new Forms__Share(ParentID = formIds[i], UserorGroupID = personids[i], AccessLevel = 'edit'));
+          }
         database.insert(formShares, false);
+        
+        //shares line item(s) with approvers
+        list<line_item__c> litems = new list<line_item__c>();
+        list<line_item__Share> lineShares = new list<line_item__Share>();
+        for (Integer b = 0; b < formIds.size();b++){
+             try{litems = [select id from line_item__c where related_Form__c = :formIds[b]];}
+             catch(exception e){system.debug('No related Line Items.');}
+             if(litems.size()>0){
+                 for(line_item__c litem : litems){
+                 lineShares.add(new line_item__Share(ParentID = litem.id, userorGroupID = personids[b], AccessLevel = 'edit'));         
+             }            
+           }
+         }   
+        database.insert(lineShares, false);
         
         //Approver reassigned
             List<forms__c> forms = [select id, name, Approval_Step__c, Form_Type_Name__c, Unauthenticated_Owner__c, Finalize_Approval_Reassignment__c 
