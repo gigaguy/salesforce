@@ -114,6 +114,10 @@
     </platformActionList>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Date__c</fields>
+        <fields>Item_Description__c</fields>
+        <fields>Item_Name__c</fields>
+        <fields>Item_Price__c</fields>
         <relatedList>Line_Item__c.Related_Form__c</relatedList>
     </relatedLists>
     <relatedLists>

@@ -10,13 +10,14 @@
     <aura:attribute name="viewFormID" type="Id"/>
     <aura:attribute name="viewFormName" type="string"/>
     <aura:attribute name="viewFormSupport" type="string"/>
-    <aura:attribute name="theModal" type="Forms__c"/>
+    <aura:attribute name="theModal" type="Object"/>
     <aura:attribute name="newForm" type="Forms__c"/>
     <aura:attribute name="mySavedForms" type="Forms__c[]"/>
     <aura:attribute name="message" type="string" />
     <aura:attribute name="sessionID" type="string"/>
     <aura:attribute name="siteUserID" type="string"/>
     <aura:attribute name="apiUserID" type="string"/>
+    <aura:attribute name="enableAttachments" type="boolean" default="false"/>
     <aura:attribute name="hasAttachments" type="boolean" default="false"/>
     <aura:attribute name="addAttachments" type="boolean" default="false"/>
     <aura:attribute name="attachList" type="Attachment[]"/>
@@ -74,17 +75,19 @@
     </p>
     <!--End Header-->
     
-    <!--Message-->
-    <aura:if isTrue="{!and(v.message != '', v.message != null)}">
-    	<div class="slds-page-header" role="banner" style="margin-bottom: 20px; margin-top: -20px; text-align: center;">
-            <div class="slds-grid">
-                <div class="slds-col">
-                    <p class="slds-text-heading--label">{!v.message}</p>
+        <!--Message-->
+    <!--  Don't believe this is ever used.............
+	    <aura:if isTrue="{!and(v.message != '', v.message != null)}">
+            <div class="slds-page-header" role="banner" style="margin-bottom: 20px; margin-top: -20px; text-align: center;">
+                <div class="slds-grid">
+                    <div class="slds-col">
+                        <p class="slds-text-heading *2 dashes here* label">{!v.message}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </aura:if>    
-    <!--End Message-->
+        </aura:if>    
+     -->
+        <!--End Message-->
 
     <!--View Form Types List-->
     <aura:if isTrue="{!v.pageStatus == 'viewFormTypes'}">
@@ -456,12 +459,15 @@
             <!--end add attachments-->    
                 
             <!-- ATTACHMENT BUTTONS -->
-            <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; v.showLineItem==false}">
+              <!--       <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; v.showLineItem==false}"> -->
+              <aura:if isTrue="{!v.isNew || v.isCopy}">
               <ui:button class="slds-button slds-button--neutral" label="Save to Enable Attachments" press="{!c.enableAttachments}" />			
                 <aura:set attribute="else">
+                <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">  
                   <aura:if isTrue="{!v.hasAttachments || v.addAttachments}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
                   <aura:if isTrue="{!v.hasAttachments==false &amp;&amp; v.addAttachments==false &amp;&amp; v.showLineItem==false}"><ui:button class="slds-button slds-button--neutral" label="Show/Add Attachments" press="{!c.showAttachments}" /></aura:if> 
-            </aura:set></aura:if>
+                  </aura:if> 
+               </aura:set></aura:if>
               
             <!-- LINE ITEM BUTTONS -->
             <aura:if isTrue="{!v.rtLineItemEnabled &amp;&amp; v.viewLineItemList==false &amp;&amp; v.showLineItem==false}">
@@ -474,7 +480,7 @@
                 </aura:set>
               </aura:if>
             </aura:if>
-            
+           
             <aura:if isTrue="{!and(v.showLineItem==false, v.viewLineItemList)}">
                 <ui:button label="Hide Line Items" press="{!c.hideLineItem}" class="slds-button slds-button--neutral" />
             </aura:if>
@@ -528,9 +534,11 @@
               <!-- BUTTONS FOR SUBMITTED/APPROVED FORMS --> 
               <aura:set attribute="else">
                 <ui:button class="slds-button slds-button--neutral floatLeft" label="Close" press="{!c.closeModal}" />
-                <ui:button class="slds-button slds-button--neutral floatLeft" label="Recall Approval Request" press="{!c.confirmRecall}" />
-                <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
-                <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral" label="Show Attachments" press="{!c.showAttachments}" /></aura:if> 
+                  <aura:if isTrue="{!v.showLineItem==false}">
+                	<ui:button class="slds-button slds-button--neutral floatLeft" label="Recall Approval Request" press="{!c.confirmRecall}" />          
+                    <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
+                    <aura:if isTrue="{!and(v.hasAttachments==false, v.addAttachments==false)}"><ui:button class="slds-button slds-button--neutral" label="Show Attachments" press="{!c.showAttachments}" /></aura:if> 
+                  </aura:if>
               </aura:set>
             </aura:if>
               

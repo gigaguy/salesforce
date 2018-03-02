@@ -273,7 +273,7 @@
                         console.log('getting support info');
                         console.log('name ' + name);  
                      
-            if (name === "SUCCESS" && response.getReturnValue().length > 0) {
+            if (name === "SUCCESS") {
                 console.log('no error');
                 component.set("v.viewFormSupport", response.getReturnValue());
             	}

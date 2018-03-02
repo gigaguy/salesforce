@@ -1842,7 +1842,7 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
     <recordTypes>
         <fullName>Form_ORD_111_Line_Item</fullName>
         <active>true</active>
-        <description>Name, Item_Name__c, Item_Description__c, Item_Price__c, Contact_Name__c</description>
+        <description>Name, Item_Name__c, Item_Description__c, Item_Price__c, Contact_Name__c, No Create</description>
         <label>Form - ORD-111 Line Item</label>
         <picklistValues>
             <picklist>Normal_Workday_End_Time__c</picklist>

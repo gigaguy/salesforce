@@ -46,9 +46,7 @@ public class FormPageController_Test {
         insert testForm;
               
         Forms__c form = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' ORDER BY createddate limit 1].ID, uSU.id, uAU.id);     
- //       form = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' limit 1].ID);
-        
-  //      Forms__c xform = FormPageController.insertNewForms('123ABC', [select id from RecordType where name = 'EPA-100' limit 1].ID);
+
           Forms__c xform;
     
         try{
@@ -189,9 +187,11 @@ public class FormPageController_Test {
        @isTest
         static void testLineItems(){
         
+        string liRT = FormPageController.isLineItemEnabled('EPA-100');
+        liRT = FormPageController.isLineItemEnabled('fake');
+        
             String rtID = [Select Id From RecordType Where SobjectType = 'Line_Item__c' limit 1].Id;
- //           Line_Item__c litem = new Line_Item__c (recordtypeid = rtID);
-  //          insert litem;
+
             insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
          User u = [select id from User where isActive = true limit 1];
         User u2 = [select id from User where isActive = true and PRofile.Name = 'System Administrator' and id != :u.id limit 1];
@@ -216,10 +216,10 @@ public class FormPageController_Test {
             Line_Item__c litem = FormPageController.insertLineItem('123ABC', 'EPA-100', theForm.ID, uSU.ID, uAU.ID);
 
             String d1 = 'Name';
-            string d2 = 'Item_Name__c';
-            string d3 = 'Item_Description__c';
-            string d4 = 'Item_Price__c';
-            string d5 = 'Contact_Name__c';
+            string d2 = 'CreatedByID';
+            string d3 = 'LastModifiedById';
+            string d4 = 'OwnerID';
+            string d5 = 'RecordTypeID';
             List<Line_Item__c> litems = FormPageController.getLineItemData(d1, d2, d3, d4, d5, theForm.ID);
             
             d5 = null;

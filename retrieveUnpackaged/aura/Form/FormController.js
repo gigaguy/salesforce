@@ -177,6 +177,11 @@
             if(state === 'SUCCESS'){
                 component.set("v.message", '');
                 component.set("v.showLineItem", false);
+                component.set("v.newLineItem", false);
+                
+                var formID = component.get("v.viewFormID");
+                helper.getLineItemList(component, formID);
+                
                 var a = component.get("c.createTheModal");
         			$A.enqueueAction(a); 
             }
@@ -477,10 +482,8 @@
                 component.set("v.viewLineItemID", component.get("v.theLineItem.Id"));      
                 component.set("v.savedLineItem", false);
                 component.set("v.newLineItem", true);
-                
                 component.set("v.message", null);
                 component.set("v.showLineItem", true);
-                
                 var a = component.get("c.createTheModal");
         			$A.enqueueAction(a);
             }
@@ -512,15 +515,6 @@
         
         //check if Form Record Type is enabled to add Line Items
  		helper.checkLineItemEnabled(component, formName, formID);           
-        
-/*        //set Form Record Types that are able to add Line Items    
-        if (formName === "EPA-100") {
-            component.set("v.rtLineItemEnabled", true);
-        }
-        else if (formName === "TCTO Request") {
-            component.set("v.rtLineItemEnabled", true);
-        }    
-*/
             
         component.set("v.fileName", "No File Selected..");
         component.set("v.largeFile", false);    
@@ -594,6 +588,10 @@
                 if(state === 'SUCCESS'){
                     console.log('formID: '+formID);
                     component.set("v.newForm", resp.getReturnValue());
+                    
+                    //Get Support link info
+			        helper.getSupportInfo(component, formID, formName);
+                    
                     $A.createComponent('force:recordEdit',
                       {
                         'aura:id': 'theModal',
@@ -796,15 +794,14 @@
     	console.log('in enableAttachments');
         
         try {
+            component.set("v.enableAttachments", true);
            	component.get('v.theModal').get("e.recordSave").fire();
             console.log('no error');
           	}
         catch (e) {
             console.log(e);
           }
-        
-        var a = component.get("c.showAttachments");
-        $A.enqueueAction(a);
+
     },
     enableLineItems: function(component, event, helper) {    // saves Form before allowing Line Items
     	console.log('in enableLineItems');
@@ -888,8 +885,17 @@
             }
         
         component.set("v.saveAndClose", false);
+        
+        //if enabling attachments
+        if(component.get("v.enableAttachments")){
+            component.set("v.enableAttachments", false);            
+            var a = component.get("c.showAttachments");
+            $A.enqueueAction(a);
+         }
+        
         //if enabling line items
         if(component.get("v.enablingLineItems")){
+            component.set("v.enablingLineItems", false);
             var a = component.get("c.viewLineItemList");
         	$A.enqueueAction(a);
         }
@@ -897,6 +903,7 @@
         //if save/closing line items
         if(component.get("v.saveClosingLineItem")){
             console.log('save success for save/closing line item');
+            component.set("v.saveClosingLineItem", false);
             component.set("v.showLineItem",false);
             component.set("v.newLineItem",false);
             component.set("v.saveClosingLineItem", false);
@@ -916,6 +923,7 @@
         //if save/nexting line item
         if(component.get("v.saveNextingLineItem")){
             console.log('save success for save/nexting line item');
+            component.set("v.saveNextingLineItem", false);
             component.set("v.nextCheck",true);
         	component.set("v.saveNextingLineItem", true);
             var a = component.get("c.createNewLineItem");
@@ -1036,9 +1044,10 @@
     nextLineItem : function(component, event, helper) {
         console.log('in nextLineItem');
         
+        component.set("v.viewTheModal", false);
         component.set("v.lineItemIndex", component.get("v.lineItemIndex")+1);
         var liIndex = component.get("v.lineItemIndex");
-
+        
         var liID = component.get("v.displayData["+liIndex+"]").Id; 
         component.set("v.viewLineItemID", liID);
         console.log('liID: '+liID);
@@ -1052,7 +1061,6 @@
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
-                component.set("v.themodal", null);
                 component.set("v.theLineItem", resp.getReturnValue());  // returned line item
                 component.set("v.message", null);
                 component.set("v.showLineItem", true);
@@ -1075,6 +1083,7 @@
     prevLineItem : function(component, event, helper) {
         console.log('in prevLineItem');
         
+        component.set("v.viewTheModal", false);
         component.set("v.lineItemIndex", component.get("v.lineItemIndex")-1);
         var liIndex = component.get("v.lineItemIndex");
 
@@ -1091,7 +1100,6 @@
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
-                component.set("v.themodal", null);
                 component.set("v.theLineItem", resp.getReturnValue());  // returned line item
                 component.set("v.message", null);
                 component.set("v.showLineItem", true);
@@ -1142,6 +1150,7 @@
     viewLineItemJS : function(component, event, helper){
     	console.log('in viewLineItem');
         
+        component.set("v.viewTheModal", false);
         var liID = event.currentTarget.id; 
         component.set("v.viewLineItemID", liID);
         console.log('liID: '+liID);
@@ -1157,13 +1166,19 @@
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
-                component.set("v.themodal", null);
                 component.set("v.theLineItem", resp.getReturnValue());  // returned line item
                 component.set("v.message", null);
                 component.set("v.showLineItem", true);
                 component.set("v.savedLineItem", true);
                 component.set("v.newLineItem", false);
                 component.set("v.viewLineItemList", false);
+                
+                if(component.get("v.hasAttachments")==true){
+                    component.set("v.hasAttachments", false);
+                    component.set("v.addAttachments", false);
+                    component.set("v.fileName", "No File Selected..");
+                    component.set("v.largeFile", false);
+                  }
                 
                 var a = component.get("c.createTheModal");
         			$A.enqueueAction(a);
@@ -1183,7 +1198,7 @@
         component.set("v.viewLineItemList", true);
         var formID = component.get("v.viewFormID"); 
           console.log('formID: ' + formID);
-        
+
         helper.getLineItemList(component, formID);
         
     },

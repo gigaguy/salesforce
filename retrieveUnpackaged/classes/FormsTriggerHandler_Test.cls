@@ -98,6 +98,8 @@ public class FormsTriggerHandler_Test {
         
         Forms__c form = new Forms__c(Unauthenticated_Owner__c = u.Id, RecordtypeId = [select id from RecordType where sObjectType = 'Forms__c' and DeveloperName = 'EPA_100'].ID);
         insert form;
+        Line_Item__c litem = new Line_Item__c(related_Form__c = form.id);
+        insert litem;
         system.assertEquals(u2.ID, [select User_Supervisor__c from Forms__c where id = :form.ID].User_Supervisor__c);
         form.Unauthenticated_Owner__c = u2.id;
         
