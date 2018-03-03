@@ -10,7 +10,7 @@ public class UtilityMethods_Test {
         ApexPages.currentPage().getHeaders().put('User-Agent', 'chrome'); 
         
          //Insert Test Data        
-            Profile p = [select id, name from profile where name = 'Forms Profile']; 
+            Profile p = [select id, name from profile where name = 'EPA BAP Forms Profile']; 
          User u = new User(FirstName='Bob', LastName='Smith', lan_ID__c='smith123', profileID=p.id, Username='test@fake.ccc', 
                   email='test@fake.ccc', Alias='testU', CommunityNickname='testU', TimeZoneSidKey= 'America/Los_Angeles',
                   LocaleSidKey='en_US', EmailEncodingKey='UTF-8', LanguageLocaleKey='en_US');

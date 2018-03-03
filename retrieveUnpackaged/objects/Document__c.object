@@ -10503,7 +10503,7 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
         <filters>
             <field>RECORDTYPE</field>
             <operation>equals</operation>
-            <value>Document__c.Document,Document__c.Document_Contract,Document__c.Document_Grant,Document__c.Document_IA,Document__c.Document_Other</value>
+            <value>Document__c.Document_Travel</value>
         </filters>
         <filters>
             <field>AHRC__c</field>

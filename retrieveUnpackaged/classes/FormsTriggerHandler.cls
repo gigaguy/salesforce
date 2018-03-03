@@ -9,7 +9,7 @@ public class FormsTriggerHandler {
             if(form.Unauthenticated_Owner__c == null){ 
                 form.Unauthenticated_Owner__c = userInfo.getUserID();
               }
-            form.Originator_ORD111__c = form.Form_Owner__c;
+            form.Originator_Type1__c = form.Form_Owner__c;
             
             //find and set Type-1 Owner Contact  
             try{ 
@@ -33,7 +33,7 @@ public class FormsTriggerHandler {
         for (forms__c form : formMap.values()) {
     
             if (form.Approval_Step__c != null) {
-                if (form.Prepare_Form_for__c != null && String.valueOf(form.Approval_Step__c).startsWith('Form Prepared for you by')) {
+                if (form.Prepare_Form_for__c != null && String.valueOf(form.Approval_Step__c).startsWith('Form Prepared for')) {
                     contact c = [select id, LAN_ID__c from contact where id = :form.prepare_Form_for__c limit 1];
                     user u = [select id, LAN_ID__c from user where LAN_ID__c = :c.LAN_ID__c limit 1];                    
                     if (form.Unauthenticated_Owner__c == null){
@@ -186,11 +186,14 @@ public class FormsTriggerHandler {
     // Shares Form record with Approvers
     public static void createFormShares(Set<id> mainIds){
         isFirstTimeAfter = false;
+        id delAppID;
         
         //unlock record on submittal
-        forms__c[] formList = [select id from forms__c where id in :mainIds];
+        forms__c[] formList = [select id, Approval_Step__c from forms__c where id in :mainIds AND Approval_Step__c != 'Approved'];
+     
         Approval.UnlockResult[] formUnlocks = Approval.Unlock(formList, false);
         
+        //gets approval process info for Form(s)
         List<ProcessInstance> processInstances = [SELECT Id, (SELECT Id, ActorID,TargetObjectId, isPending, StepStatus, Comments FROM StepsAndWorkitems) FROM ProcessInstance where TargetObjectId in :mainIds];
         system.debug('pis: ' + processInstances);
         Map<id, List<id>> formIdToPeopleIds = new Map<id, List<id>>();
@@ -215,24 +218,45 @@ public class FormsTriggerHandler {
             for (id personID: formIdToPeopleIds.get(formId)){
                 formIDs.add(formID);
                 personIds.add(personID);
+                //get delegated approver
+                try{
+                delAppID = [select id, DelegatedApproverID from user where id = :personID limit 1].DelegatedApproverID;
+                    }
+                catch(exception e){system.debug(e);}
+                    if(delAppID != null){
+                    personIds.add(delAppID);
+                    }
             }
         }
         
+        //shares form(s) with approvers
         List<Forms__Share> formShares = new List<Forms__Share>();
         for (Integer i = 0; i < formIds.size();i++){
-            formShares.add(new Forms__Share(ParentID = formIds[i], UserorGroupID = personids[i], AccessLevel = 'edit'));
-            
-        }
-        
+              formShares.add(new Forms__Share(ParentID = formIds[i], UserorGroupID = personids[i], AccessLevel = 'edit'));
+          }
         database.insert(formShares, false);
         
+        //shares line item(s) with approvers
+        list<line_item__c> litems = new list<line_item__c>();
+        list<line_item__Share> lineShares = new list<line_item__Share>();
+        for (Integer b = 0; b < formIds.size();b++){
+             try{litems = [select id from line_item__c where related_Form__c = :formIds[b]];}
+             catch(exception e){system.debug('No related Line Items.');}
+             if(litems.size()>0){
+                 for(line_item__c litem : litems){
+                 lineShares.add(new line_item__Share(ParentID = litem.id, userorGroupID = personids[b], AccessLevel = 'edit'));         
+             }            
+           }
+         }   
+        database.insert(lineShares, false);
+        
         //Approver reassigned
-            List<forms__c> forms = [select id, name, Form_Type_Name__c, Unauthenticated_Owner__c, Finalize_Approval_Reassignment__c 
+            List<forms__c> forms = [select id, name, Approval_Step__c, Form_Type_Name__c, Unauthenticated_Owner__c, Finalize_Approval_Reassignment__c 
             FROM forms__c WHERE id in :mainIds];
             
             for(forms__c form : forms){    
             
-        if(form.Finalize_Approval_Reassignment__c){   
+        if(form.Finalize_Approval_Reassignment__c && form.Approval_Step__c != null){   
             ProcessInstanceWorkItem Pitem = [SELECT ActorID, OriginalActorId 
             FROM ProcessInstanceWorkItem
             WHERE ProcessInstance.Status = 'Pending' AND ProcessInstance.TargetObjectId = :form.ID limit 1];
@@ -303,7 +327,11 @@ public class FormsTriggerHandler {
            }     //END  if ActorID != OriginalActorId    
                else {form.Finalize_Approval_Reassignment__c = false;
                       update form;}       
-         }     // END if Finalize_Approval_Reassignment__c is checked
+         }     // END if Finalize_Approval_Reassignment__c is checked AND form was submitted
+         if(form.Finalize_Approval_Reassignment__c && form.Approval_Step__c == null){
+             form.Finalize_Approval_Reassignment__c = false;
+             update form;
+             }
       }    //END forms__c loop
    }    //END createFormShares method
 }

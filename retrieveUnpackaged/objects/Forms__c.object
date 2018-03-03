@@ -2198,6 +2198,18 @@ Prepare_Form_for__r.Phone
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Originator_Type1__c</fullName>
+        <description>not currently used -- FormsTriggerHandler will populate this field for new forms with original person filling out form and keep that value.  &quot;Originator__c&quot; is formula that copies &quot;Form_Owner__c&quot; as it changes.</description>
+        <externalId>false</externalId>
+        <label>Originator</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Originator__c</fullName>
         <description>ORD-111</description>
         <externalId>false</externalId>
@@ -3104,6 +3116,61 @@ Prepare_Form_for__r.Step__c ))</formula>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Support_BAP_Provisioning__c</fullName>
+        <defaultValue>&quot;mailto:BAP_Admins@epa.gov&quot;</defaultValue>
+        <description>BAP Provisioning</description>
+        <externalId>false</externalId>
+        <label>Support BAP Provisioning</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Support_EPA_100__c</fullName>
+        <defaultValue>&quot;mailto:McNeal.Detha@epa.gov&quot;</defaultValue>
+        <description>EPA-100</description>
+        <externalId>false</externalId>
+        <label>Support EPA-100</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Support_EPA_3160_6v5__c</fullName>
+        <defaultValue>&quot;mailto:OHRLeaveQuestions@epa.gov&quot;</defaultValue>
+        <description>EPA-3160-6v5</description>
+        <externalId>false</externalId>
+        <label>Support EPA-3160-6v5</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Support_ORD_111__c</fullName>
+        <defaultValue>&quot;https://epaoei--c.na21.visual.force.com/resource/1515007760000/ORD_111_QARF_Instructions&quot;</defaultValue>
+        <description>ORD-111</description>
+        <externalId>false</externalId>
+        <label>Support ORD-111</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Support_SF_182__c</fullName>
+        <defaultValue>&quot;https://usepa.sharepoint.com/sites/OARM_Community/EPAU/SitePages/&quot;+BR()+&quot;Training%20Officers%20&amp;%20Coordinators.aspx&quot;</defaultValue>
+        <description>SF-182</description>
+        <externalId>false</externalId>
+        <label>Support SF-182</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>Target_Date__c</fullName>

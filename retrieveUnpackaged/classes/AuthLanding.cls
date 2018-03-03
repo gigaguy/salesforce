@@ -33,7 +33,7 @@ public class AuthLanding {
             { UID = headers.get('REMOTE_USER'); } 
 
         // Manual override URL parameter for testing, will be removed once deployed
-        // if (params.containsKey('UID')) uId = params.get('UID');
+         if (params.containsKey('UID')) uId = params.get('UID');
         
         // Set any found user identification to lowercase for comparison to user object
         UID = UID.toLowerCase();

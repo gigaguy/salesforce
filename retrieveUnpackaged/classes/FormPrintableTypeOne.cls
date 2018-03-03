@@ -2,10 +2,14 @@ public class FormPrintableTypeOne {
     public string sID {get;set;}
     public boolean valid {get;set;}
     public id uID {get;set;}
+    public Id recordId {get; set;}
+    public Forms__c record {get;set;}
 
     public string fID {get;set;}
 
-    public FormPrintableTypeOne () {
+    public FormPrintableTypeOne(ApexPages.StandardController stdController) {
+        this.recordId = stdController.getId();
+        this.record = (Forms__c)stdController.getRecord();  
 
         // Get session ID from URL parameters
         sID = UtilityMethods.getSessionID();
@@ -41,5 +45,5 @@ public class FormPrintableTypeOne {
         }
         else { return null; }       
     }
-        
+    
 }

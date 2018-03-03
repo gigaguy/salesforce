@@ -14,11 +14,13 @@ public without sharing class FormPageController  {
             
             formNames.add(ps.label.removeStart('BAPForms User - '));
             //hardcoding form RTs for all users
-            formNames.add('BAP Provisioning');
             formNames.add('EPA-100');
             formNames.add('SF-182');
             formNames.add('ORD-111');
             formNames.add('EPA-3160-6v5');
+            formNames.add('FCO Appointment');
+            formNames.add('Application Approval');
+            formNames.add('TCTO Request');
         }
         return [select id, Name, Description from RecordType where sObjectType = 'Forms__c' and IsActive = true and Name in :formNames];
     }
@@ -30,13 +32,14 @@ public without sharing class FormPageController  {
         try{
             u = [select id, Name, Supervisor__c from User where Session_Token__c = :sID];
             
-            return [select id, Name, Form_Type_Name__c, Approval_Step__c, CreatedDate, LastModifiedDate, AWL_Phone_Number__c, User_Supervisor__c from Forms__c where Unauthenticated_Owner__c = :u.ID order by CreatedDate DESC];
+            return [select id, Name, Form_Type_Name__c, Approval_Step__c, CreatedDate, LastModifiedDate, AWL_Phone_Number__c, User_Supervisor__c, Originator_Type1__c from Forms__c where Unauthenticated_Owner__c = :u.ID OR Originator_Type1__c = :u.name order by CreatedDate DESC];
+        
         }
         catch (exception e){}
         
         return null;
     }
-    
+     
     @AuraEnabled
     public static Forms__c viewForm(string formID, string siteUserID) {
         UtilityMethods.addFormShare(formID, siteUserID);
@@ -85,6 +88,12 @@ public without sharing class FormPageController  {
     
     @AuraEnabled
     public static string deleteForm(ID formID, string sID){
+        
+        //find any related Line Items and delete
+        list<line_item__c> litems = [select id from line_item__c where related_form__c = :formID];
+        delete litems;
+        
+        //delete form
         delete [select id from Forms__c where ID = :formID];
         
         return 'Form Deleted';
@@ -127,10 +136,26 @@ public without sharing class FormPageController  {
     }
 
     @AuraEnabled
-    public static List<BAP_Fill_and_Print_List__mdt> getFandP_FormRTs(){
-                
-          return [select Label, Description__c, File_Url__c from BAP_Fill_and_Print_List__mdt ORDER BY Label ASC];
-          
+    public static string recallApproval(ID formID, string sID){
+        String message = 'Recall Failed';
+        try{
+            system.debug(formId);
+            Approval.ProcessWorkItemRequest pwr = new Approval.ProcessWorkItemRequest();
+            ProcessInstance x = [select id, status from ProcessInstance where TargetObjectID=:formID AND status='pending' limit 1];
+            ProcessInstanceWorkItem xItem = [select id from ProcessInstanceWorkItem where ProcessInstanceID=:x.id limit 1];
+            
+            pwr.setWorkItemId(xItem.id);
+            pwr.setAction('Removed');              
+                            
+            // Execute process request
+            Approval.ProcessResult result = Approval.process(pwr);   
+            if (result.IsSuccess()) message = 'Approval Request Recalled';
+            return message;
+        }
+        catch(exception ex){
+            message = string.valueof(ex);
+            return message;
+        }
     }
     
     @AuraEnabled
@@ -232,7 +257,7 @@ public without sharing class FormPageController  {
     
     @AuraEnabled
     public static string getSiteUserID() {
-        return UtilityMethods.getAnyUserID('Forms', 'Site Guest User');
+        return UtilityMethods.getAnyUserID('EPA BAP Forms', 'Site Guest User');
     }
     
     @AuraEnabled
@@ -244,5 +269,157 @@ public without sharing class FormPageController  {
     public static void removeFormShare(string formID, string siteUserID) {
         UtilityMethods.removeFormShare(formID, siteUserID);
     }
+    
+    @AuraEnabled
+    public static string isLineItemEnabled(string formName){
+        string qName = 'Form - '+formName+' Line Item';
+        string liRT = 'notEnabled';
+        
+        try{liRT = [select id, name from recordtype where sObjectType = 'Line_Item__c' and IsActive = true and Name = :qName limit 1].id;}
+        catch(exception e){system.debug('notEnabled');}
+        
+        return liRT;
+    }
+    
+    @AuraEnabled
+    public static List<Line_Item__c> getListOfLineItems(String formID, string formName) {        
+        
+        return [select id, RecordTypeId from Line_Item__c where Related_Form__c = :formID order by CreatedDate DESC];
+        
+    }   
+    
+    @AuraEnabled
+    public static List<string> getLineItemDisplayFields(String rtID) {  
+        // get map of Line Item fields
+        String objType='Line_Item__c';
+        Map<String, Schema.SObjectType> schemaMap = Schema.getGlobalDescribe();
+        Schema.SObjectType leadSchema = schemaMap.get(objType);
+        Map<String, Schema.SObjectField> fieldMap = leadSchema.getDescribe().fields.getMap();
+                
+        string apiNames = [select description from recordtype where id = :rtID limit 1].description;
+        list<string> apiList = apiNames.split(',');
+        string fieldLabel;
+        list<string> displayFields = new list<string>();
+        for(string fieldApi : apiList){
+            if(fieldAPI.trim()!='No Create'){
+            fieldLabel = fieldMap.get(fieldApi.trim()).getDescribe().getLabel();
+            displayFields.add(fieldLabel);}
+            else{displayFields.add('No Create');}
+        }
+        
+        return displayFields;
+        
+    }
+    
+    @AuraEnabled
+    public static List<string> getLineItemDataFields(String rtID) {     
+        string dataFields = [select description from recordtype where id = :rtID limit 1].description;      
+        return dataFields .split(',');        
+    }  
+    
+    @AuraEnabled
+    public static List<Line_Item__c> getLineItemData(String d1, string d2, string d3, string d4, string d5, String formID) { 
+    
+     string soql = 'select id, '+d1;
+       if(d5!=null){soql = soql +', '+d2+', '+d3+', '+d4+', '+d5;}
+         else if(d4!=null){soql = soql +', '+d2+', '+d3+', '+d4;}
+         else if(d3!=null){soql = soql +', '+d2+', '+d3;}
+         else if(d2!=null){soql = soql +', '+d2;}
+       soql = soql + ' from Line_Item__c where Related_Form__c = :formID';
+     List<Line_Item__c> interim = Database.query(soql);
      
+     for(line_item__c litem : interim) {
+        litem.display1__c = (string)string.valueof(litem.get(d1));
+        if(d5!=null){
+            litem.display2__c = (string)string.valueof(litem.get(d2));
+            litem.display3__c = (string)string.valueof(litem.get(d3));
+            litem.display4__c = (string)string.valueof(litem.get(d4));
+            litem.display5__c = (string)string.valueof(litem.get(d5));
+          }
+          else if(d4!=null){
+            litem.display2__c = (string)string.valueof(litem.get(d2));
+            litem.display3__c = (string)string.valueof(litem.get(d3));
+            litem.display4__c = (string)string.valueof(litem.get(d4));
+          }
+          else if(d3!=null){
+            litem.display2__c = (string)string.valueof(litem.get(d2));
+            litem.display3__c = (string)string.valueof(litem.get(d3));
+          }
+          else if(d2!=null){
+            litem.display2__c = (string)string.valueof(litem.get(d2));
+          }        
+        update litem; 
+     }
+     
+     List<Line_Item__c> displayData = [select id, display1__c, display2__c, display3__c, display4__c, display5__c from line_item__c where Related_Form__c = :formID]; 
+        return displayData;       
+    }     
+
+    @AuraEnabled
+    public static Line_Item__c getLineItem(ID liID) { 
+            String soql = UtilityMethods.getCreatableFieldsSOQL('Line_Item__c','id=\''+liID+'\'');
+            Line_Item__c l = (Line_Item__c )Database.query(soql);
+    
+    return l;
+    }
+    
+    @AuraEnabled
+    public static string deleteLineItem(ID liID, string sID){
+        delete [select id from Line_Item__c where ID = :liID];
+        
+        return 'Line Item Deleted - Form ';
+    }
+
+    @AuraEnabled
+    public static Line_Item__c insertLineItem(string sID, string formName, string formID, string siteUserID, string apiUserID){
+        system.debug('Starting insertLineItem');
+        
+        string formAPIname = [select id,developername from recordtype where name = :formName limit 1].developername;
+        string rtSearch = '%'+formAPIname+'%'; 
+
+        string rtID = [select id, developername, name, sObjectType from recordtype where sObjectType = 'Line_Item__c' and name like :rtSearch limit 1].id;   
+
+        
+        User u;
+        try{
+            u = [select id, Name, Supervisor__c from User where Session_Token__c = :sID];
+         }
+           catch (exception ex){
+           }
+           
+        try{
+            if (u != null){
+                Line_Item__c nli = new Line_Item__c();
+    
+                nli.put('RecordTypeId', rtID);
+                nli.put('Related_Form__c', formID);
+                nli.put('OwnerId', apiUserID);
+                insert nli;
+                System.debug('newLineItems'+nli);
+                return nli;
+            }
+        }
+        catch(DMLException ex){
+           AuraHandledException e = new AuraHandledException(ex.getMessage() + ' - ' + string.valueOf(ex.getLineNumber()));
+            system.debug(ex.getMessage());
+           throw e;
+        }
+        return null;        
+    }
+    
+    @AuraEnabled
+    public static string formSupportInfo(string formID, string formName){
+        
+        system.debug('formName received: '+formName);
+        formName = formName.replaceAll('[\\s-]+','_');
+        formName = 'Support_'+formName+'__c';
+        system.debug('formName full: '+formName);
+        string soql = 'select '+ formName;
+        soql = soql + ' from Forms__c where id = :formID limit 1';
+        list<forms__c> formsList = Database.query(soql);
+        forms__c theForm = formsList[0];
+        string supportInfo = (string)string.valueof(theForm.get(formName));
+        return supportInfo;
+    }
+        
 }

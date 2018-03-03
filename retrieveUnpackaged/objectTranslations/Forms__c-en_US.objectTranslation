@@ -958,6 +958,10 @@
     </fields>
     <fields>
         <label><!-- Originator --></label>
+        <name>Originator_Type1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Originator --></label>
         <name>Originator__c</name>
     </fields>
     <fields>
@@ -1431,6 +1435,26 @@
         <label><!-- Submitted on Behalf Of --></label>
         <name>Submitted_on_Behalf_Of__c</name>
         <relationshipLabel><!-- Forms --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Support BAP Provisioning --></label>
+        <name>Support_BAP_Provisioning__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support EPA-100 --></label>
+        <name>Support_EPA_100__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support EPA-3160-6v5 --></label>
+        <name>Support_EPA_3160_6v5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support ORD-111 --></label>
+        <name>Support_ORD_111__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support SF-182 --></label>
+        <name>Support_SF_182__c</name>
     </fields>
     <fields>
         <label><!-- Target Date --></label>

@@ -111,29 +111,27 @@
                     <apex:pageblocksectionitem rendered="{!useContact == true}">
                         <apex:outputlabel value="Funding Official" />
                         <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!fundID}" syncManualEntry="false" />
-                    </apex:pageblocksectionitem>
+                    </apex:pageblocksectionitem>            
                     
-                    <apex:pageblocksectionitem rendered="{!useContact != true}">
-                        <apex:outputlabel value="Training Officer" />
-                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!u.Training_Officer__c}" syncManualEntry="false" />
-                    </apex:pageblocksectionitem>
-                    <apex:pageblocksectionitem rendered="{!useContact == true}">
-                        <apex:outputlabel value="Training Officer" />
-                        <c:Autocomplete sobject="User" whereClause="IsActive = true" labelfield="Name" valuefield="Id" targetfield="{!trainID}" syncManualEntry="false" />
-                    </apex:pageblocksectionitem>
                     <apex:pageblocksectionitem >
                         <div style="text-align: center;">
-                            If you’ve selected the supervisors, timekeeper, and training officer that you need, please click Save to set them as your defaults.  If you didn’t find the person you need in the list available for one of them, please click Cancel and then click on New Form next to “BAP Provisioning” to request addition of the person as an active user in the Business Automation Platform.  <a href="https://usepa.sharepoint.com/sites/oei_Community/BAP/SiteAssets/SitePages/Documentation/Brief%20Instructions%20for%20the%20BAP%20Provisioning%20Form.docx">Here are instructions</a> if you need them.  (Contact the <a href="mailto:Shepitka.Jeanne@epa.gov?subject=BAP approver Activation Request&body=Please include FCO's name in this email request">Office of Budget</a> to have Funding Officials added.)
+
+                            If you’ve selected the supervisors, timekeeper, and training officer that you need, please click Save to set them as your defaults.  If you didn’t find the person you need in the list available for one of them, please click Cancel and then click on New Form next to “BAP Provisioning” to request addition of the person as an active user in the Business Automation Platform.  <a href="https://usepa.sharepoint.com/sites/oei_Community/BAP/SiteAssets/SitePages/Documentation/Brief%20Instructions%20for%20the%20BAP%20Provisioning%20Form.docx" target="_blank">Here are instructions</a> if you need them.  (Contact the <a href="mailto:Shepitka.Jeanne@epa.gov?subject=BAP approver Activation Request&body=Please include FCO's name in this email request">Office of Budget</a> to have Funding Officials added.)
                         </div>
                     </apex:pageblocksectionitem>
                 </apex:pageBlockSection>
                 
-                <div style="text-align: center; padding-top: 20px;">
+              <div  style="text-align: center; padding-top: 20px;">
+                <apex:outputPanel rendered="{!t1User == true}">
                     <apex:commandbutton value="Cancel" action="{!cancel}" />
-                    &nbsp;
+                    &nbsp;   
                     <apex:commandbutton value="Save" action="{!save}" />
-                </div>
-                
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!t1User == false}">
+                    <apex:commandbutton value="Save" action="{!save}" />
+                </apex:outputPanel>
+              </div>                  
+                                
             </apex:pageblock>
         </apex:form>   
         <apex:form rendered="{!valid == false}">

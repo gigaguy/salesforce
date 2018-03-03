@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Contact_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.FirstName +&quot; &quot;+ Contact__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>for testing only</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Line Items</relationshipLabel>
+        <relationshipName>Line_Itemsory333</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date__c</fullName>
+        <description>TCTO Request</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Day__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Date__c),
+&quot;[This field will populate after save.]&quot;,
+CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monday&quot;, 2, &quot;Tuesday&quot;, 3, 
+&quot;Wednesday&quot;, 4, &quot;Thursday&quot;, 5, &quot;Friday&quot;, 6, &quot;Saturday&quot;,&quot;Error&quot;)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Day</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display1__c</fullName>
+        <externalId>false</externalId>
+        <label>Display1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display2__c</fullName>
+        <externalId>false</externalId>
+        <label>Display2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display3__c</fullName>
+        <externalId>false</externalId>
+        <label>Display3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display4__c</fullName>
+        <externalId>false</externalId>
+        <label>Display4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display5__c</fullName>
+        <externalId>false</externalId>
+        <label>Display5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Description__c</fullName>
+        <description>Line Item Test</description>
+        <externalId>false</externalId>
+        <label>Item Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Item Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Price__c</fullName>
+        <description>Line Item Test</description>
+        <externalId>false</externalId>
+        <label>Item Price</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Related_Form__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Line Item Test</description>
+        <externalId>false</externalId>
+        <label>Related Form</label>
+        <referenceTo>Forms__c</referenceTo>
+        <relationshipLabel>Line Items</relationshipLabel>
+        <relationshipName>Line_Itemsxx3</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Line Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>LI-{000000}</displayFormat>
+        <label>Line Item Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Line Items</pluralLabel>
+    <recordTypes>
+        <fullName>Form_EPA_100_Line_Item</fullName>
+        <active>false</active>
+        <description>Name, Item_Name__c, Item_Description__c, Item_Price__c, Date__c</description>
+        <label>Form - EPA-100 Line Item</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sample_Record_Type</fullName>
+        <active>true</active>
+        <description>For Testing V3</description>
+        <label>Sample Record Type</label>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+</CustomObject>
