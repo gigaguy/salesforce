@@ -4884,6 +4884,10 @@
         <layout>Line_Item__c-Line Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Line_Item__c-Line Item Layout</layout>
+        <recordType>Line_Item__c.fake</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Line_Item__c-ORD-111 Line Item Layout</layout>
         <recordType>Line_Item__c.Form_ORD_111_Line_Item</recordType>
     </layoutAssignments>
@@ -5267,20 +5271,25 @@
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
+        <default>false</default>
         <recordType>Line_Item__c.Form_EPA_100_Line_Item</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>false</default>
+        <default>true</default>
+        <personAccountDefault>true</personAccountDefault>
         <recordType>Line_Item__c.Form_ORD_111_Line_Item</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Line_Item__c.Form_TCTO_Request_Line_Item</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Line_Item__c.fake</recordType>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Edit_My_Approvers</tab>

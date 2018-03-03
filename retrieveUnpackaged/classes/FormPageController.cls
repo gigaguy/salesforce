@@ -88,6 +88,12 @@ public without sharing class FormPageController  {
     
     @AuraEnabled
     public static string deleteForm(ID formID, string sID){
+        
+        //find any related Line Items and delete
+        list<line_item__c> litems = [select id from line_item__c where related_form__c = :formID];
+        delete litems;
+        
+        //delete form
         delete [select id from Forms__c where ID = :formID];
         
         return 'Form Deleted';

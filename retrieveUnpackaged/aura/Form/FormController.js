@@ -38,6 +38,9 @@
                     component.set("v.hasAttachments", false);
         			component.set("v.addAttachments", false);
                     component.set("v.onSubmit", false)
+                    component.set("v.viewLineItemList", false);
+        			component.set("v.showLineItem", false);
+                    
                 }
                 else if(state === 'ERROR'){
                     var errors = resp.getError();
@@ -91,6 +94,8 @@
                     component.set("v.hasAttachments", false);
         			component.set("v.addAttachments", false);
                     component.set("v.onSubmit", false)
+                    component.set("v.viewLineItemList", false);
+        			component.set("v.showLineItem", false);
                 }
                 else if(state === 'ERROR'){
                     var errors = resp.getError();
@@ -194,6 +199,18 @@
         });
         $A.enqueueAction(action);
 	},
+    closeLineItemModal : function(component, event) {
+        console.log('in closeLineItemModal');
+    
+            component.set("v.showLineItem", false);
+            component.set("v.message", null);
+            component.set("v.viewLineItemList", true);
+            
+            var a = component.get("c.createTheModal");
+            $A.enqueueAction(a);
+        
+               
+    },
     closeModal: function(component, event, helper) {  // closes theModal
         console.log('in closeModal');    
            
@@ -271,11 +288,11 @@
             action.setParams({
             "liID": liID,
         });
-        	}
-        else {action = component.get("c.viewFormJS");  //is this needed?  I think can be nothing like in confirmCloseModal
-            action.setParams({"formID": formID,});                       
+        	$A.enqueueAction(action);
+          }
+        
+        else {//no action
         }
-        $A.enqueueAction(action);
 	},
     confirmCloseModal : function(component, event) {
         console.log('in confirmCloseModal');
@@ -458,7 +475,14 @@
             console.log(e);
         }   
         
-        component.set("v.viewLineItemList", false);
+        //hide attachment component in case it is open
+            component.set("v.hasAttachments", false);
+            component.set("v.addAttachments", false);
+            component.set("v.fileName", "No File Selected..");
+            component.set("v.largeFile", false);
+        
+        //close line item list
+	        component.set("v.viewLineItemList", false);
         
         var formID = component.get("v.viewFormID"); 
         console.log('formID: ' + formID);
@@ -925,7 +949,7 @@
             console.log('save success for save/nexting line item');
             component.set("v.saveNextingLineItem", false);
             component.set("v.nextCheck",true);
-        	component.set("v.saveNextingLineItem", true);
+        	component.set("v.saveNextingLineItem", false);
             var a = component.get("c.createNewLineItem");
        	   $A.enqueueAction(a);
         }

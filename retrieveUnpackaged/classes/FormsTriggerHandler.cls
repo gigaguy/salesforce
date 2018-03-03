@@ -33,7 +33,7 @@ public class FormsTriggerHandler {
         for (forms__c form : formMap.values()) {
     
             if (form.Approval_Step__c != null) {
-                if (form.Prepare_Form_for__c != null && String.valueOf(form.Approval_Step__c).startsWith('Form Prepared for you by')) {
+                if (form.Prepare_Form_for__c != null && String.valueOf(form.Approval_Step__c).startsWith('Form Prepared for')) {
                     contact c = [select id, LAN_ID__c from contact where id = :form.prepare_Form_for__c limit 1];
                     user u = [select id, LAN_ID__c from user where LAN_ID__c = :c.LAN_ID__c limit 1];                    
                     if (form.Unauthenticated_Owner__c == null){
@@ -189,7 +189,8 @@ public class FormsTriggerHandler {
         id delAppID;
         
         //unlock record on submittal
-        forms__c[] formList = [select id from forms__c where id in :mainIds];
+        forms__c[] formList = [select id, Approval_Step__c from forms__c where id in :mainIds AND Approval_Step__c != 'Approved'];
+     
         Approval.UnlockResult[] formUnlocks = Approval.Unlock(formList, false);
         
         //gets approval process info for Form(s)

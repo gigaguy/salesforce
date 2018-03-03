@@ -159,7 +159,7 @@
                 var fields = response.getReturnValue();
                 var fieldsSize = fields.length;
                 console.log("fieldsSize: "+fieldsSize);
-                console.log("john: "+fields[fieldsSize-1].trim());
+                console.log("last field returned: "+fields[fieldsSize-1].trim());
                 if(fields[fieldsSize-1].trim()=='No Create'){
                     component.set("v.lineItemNoCreate", true);
                 	fieldsSize=fieldsSize-1;
