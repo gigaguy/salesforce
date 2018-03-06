@@ -206,6 +206,10 @@ Type_1_Owner_Contact__r.FirstName &amp;&quot; &quot;&amp; Type_1_Owner_Contact__
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
+                    <fullName>HQ Office of Human Resources</fullName>
+                    <default>false</default>
+                </value>
+                <value>
                     <fullName>Region 1</fullName>
                     <default>false</default>
                 </value>
@@ -259,10 +263,6 @@ Type_1_Owner_Contact__r.FirstName &amp;&quot; &quot;&amp; Type_1_Owner_Contact__
                 </value>
                 <value>
                     <fullName>Research Triangle Park</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>HQ Office of Human Resources</fullName>
                     <default>false</default>
                 </value>
             </valueSetDefinition>
@@ -2189,6 +2189,7 @@ Prepare_Form_for__r.Phone
         <fullName>Originator_ORD111__c</fullName>
         <description>ORD-111</description>
         <externalId>false</externalId>
+        <inlineHelpText>(Old) Stores originator for Forms BEFORE 3/2/2018. This is the person that created the form and originated it for someone else</inlineHelpText>
         <label>Originator</label>
         <length>100</length>
         <required>false</required>
@@ -2199,8 +2200,9 @@ Prepare_Form_for__r.Phone
     </fields>
     <fields>
         <fullName>Originator_Type1__c</fullName>
-        <description>not currently used -- FormsTriggerHandler will populate this field for new forms with original person filling out form and keep that value.  &quot;Originator__c&quot; is formula that copies &quot;Form_Owner__c&quot; as it changes.</description>
+        <description>FormsTriggerHandler will populate this field for new forms with original person filling out form and keep that value.  &quot;Originator__c&quot; is formula that copies &quot;Form_Owner__c&quot; as it changes.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Stores originator for Forms AFTER 3/2/2018. This is the person that created the form and originated it for someone else</inlineHelpText>
         <label>Originator</label>
         <length>100</length>
         <required>false</required>

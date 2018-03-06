@@ -236,8 +236,8 @@
         <fullName>Approval_Step_Prepared_As</fullName>
         <field>Approval_Step__c</field>
         <formula>IF( ISBLANK( Unauthenticated_Owner__c ), 
-&quot;Form Prepared for you by &quot; &amp;  CreatedBy.FirstName &amp;&quot; &quot;&amp; CreatedBy.LastName &amp;&quot; - Not Submitted&quot;, 
-&quot;Form Prepared for you by &quot; &amp; Unauthenticated_Owner__r.FirstName &amp;&quot; &quot;&amp; Unauthenticated_Owner__r.LastName &amp;&quot; - Not Submitted&quot;)</formula>
+&quot;Form Prepared for &quot; &amp; Prepare_Form_for__r.FirstName  &amp; &quot; &quot; &amp; Prepare_Form_for__r.LastName &amp; &quot; by &quot; &amp;  CreatedBy.FirstName &amp;&quot; &quot;&amp; CreatedBy.LastName &amp;&quot; - Not Submitted&quot;, 
+&quot;Form Prepared for &quot; &amp; Prepare_Form_for__r.FirstName  &amp; &quot; &quot; &amp; Prepare_Form_for__r.LastName &amp; &quot; by &quot; &amp; Unauthenticated_Owner__r.FirstName &amp;&quot; &quot;&amp; Unauthenticated_Owner__r.LastName &amp;&quot; - Not Submitted&quot;)</formula>
         <name>Approval Step - Prepared As</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>

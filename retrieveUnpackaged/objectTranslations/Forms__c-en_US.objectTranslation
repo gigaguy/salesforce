@@ -953,10 +953,12 @@
         </picklistValues>
     </fields>
     <fields>
+        <help><!-- (Old) Stores originator for Forms BEFORE 3/2/2018. This is the person that created the form and originated it for someone else --></help>
         <label><!-- Originator --></label>
         <name>Originator_ORD111__c</name>
     </fields>
     <fields>
+        <help><!-- Stores originator for Forms AFTER 3/2/2018. This is the person that created the form and originated it for someone else --></help>
         <label><!-- Originator --></label>
         <name>Originator_Type1__c</name>
     </fields>
