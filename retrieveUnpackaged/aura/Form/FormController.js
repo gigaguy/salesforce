@@ -138,6 +138,7 @@
         component.set("v.addAttachments", false);
         component.set("v.viewLineItemList", false);
         component.set("v.showLineItem", false);
+        component.set("v.trySubmit", false);
     	
         var action = component.get("c.deleteForm");
         action.setParams({
@@ -401,7 +402,7 @@
         var formName = event.currentTarget.name;
         console.log('form being copied ID: '+formID);
         component.set("v.message", null);
-
+        console.log('sid: '+component.get("v.sessionID"));
         component.set("v.viewFormName", formName);
         
 		var action = component.get("c.cloneForm");
@@ -468,6 +469,7 @@
         
         //save form so changes not lost
         try {
+            component.set("v.trySubmit", false);
             component.get('v.theModal').get("e.recordSave").fire();
             console.log('no error');
         }
@@ -696,6 +698,7 @@
         component.set("v.showLineItem", false);
         component.set("v.viewLineItemList", false);
         component.set("v.showLineItem", false);
+        component.set("v.trySubmit", false);
  
         var formID = component.get("v.viewFormID");
         console.log(formID);
@@ -798,6 +801,7 @@
         console.log('in doSave');
         
         //save form in case of issue with attachment upload
+        component.set("v.trySubmit", false);
         component.set("v.saveAndClose", true);
         console.log('saveAndClose: '+component.get("v.saveAndClose"));
         try {
@@ -817,8 +821,10 @@
     enableAttachments: function(component, event, helper) {    // saves Form before allowing attachments
     	console.log('in enableAttachments');
         
+        component.set("v.trySubmit", false);
         try {
             component.set("v.enableAttachments", true);
+            component.set("v.trySubmit", false);
            	component.get('v.theModal').get("e.recordSave").fire();
             console.log('no error');
           	}
@@ -829,9 +835,10 @@
     },
     enableLineItems: function(component, event, helper) {    // saves Form before allowing Line Items
     	console.log('in enableLineItems');
-        
+                
         try {
            	component.set("v.enablingLineItems", true);
+            component.set("v.trySubmit", false);
             component.get('v.theModal').get("e.recordSave").fire();
             console.log('no error');
           	}
@@ -864,6 +871,11 @@
 	},
 	handleSaveSuccess : function(component, event, helper){  //this runs after successful save, "handleSave" runs at beginning of Save process        
         console.log('in handleSaveSuccess');
+        
+        if(component.get("v.trySubmit")==true){
+         	component.set("v.trySubmit", false);
+            component.set("v.onSubmit", true);
+          }
         
         // Update display of forms
         var action = component.get("c.findExistingForms");
@@ -974,7 +986,7 @@
     },
     saveAndSubmit : function(component, event, helper){   // saves Form and submits for approval
         console.log('in saveAndSubmit');
-        component.set("v.onSubmit", true);
+        component.set("v.trySubmit", true);
         component.set("v.isCopy", false);
                
         //Save the form
@@ -996,6 +1008,7 @@
         
         try {
             	component.set("v.saveClosingLineItem", true);
+            	component.set("v.trySubmit", false);
             	component.get('v.theModal').get("e.recordSave").fire();
                 console.log('no error');
           	}
@@ -1004,7 +1017,7 @@
           }
                
     },
-    saveNext : function(component, event, helper){        // saves Form, creates next Line Item record
+    saveNext : function(component, event, helper){        // saves current Line Item, creates next Line Item record
         console.log('in c.saveNext');
         console.log('viewTheModal: ' + component.get("v.viewTheModal"));
         
@@ -1022,6 +1035,7 @@
         console.log('in c.saveStay');
         console.log('viewTheModal: ' + component.get("v.viewTheModal"));
         
+        component.set("v.trySubmit", false);
         try {
             	component.get('v.theModal').get("e.recordSave").fire();
                 console.log('no error');

@@ -200,11 +200,20 @@ public without sharing class FormPageController  {
     }
     
     @AuraEnabled
-    public static Forms__c cloneForm(ID FormID) { 
+    public static Forms__c cloneForm(String sID, ID FormID) {
+    
+        User u;
+        try{
+            u = [select id, Name, Supervisor__c from User where Session_Token__c = :sID];            
+          }
+        catch (exception ex){system.debug('error: '+ex);
+        }
+     
             String soql = UtilityMethods.getCreatableFieldsSOQL('forms__c','id=\''+FormID+'\'');
             forms__c f = (forms__c)Database.query(soql);
             forms__c f2 = f.clone(false, true);
-            insert f2;    
+            f2.put('Unauthenticated_Owner__c', u.id);
+            insert f2;   
 
             return f2;
     }
