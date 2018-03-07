@@ -14,6 +14,7 @@ public without sharing class FormPageController  {
             
             formNames.add(ps.label.removeStart('BAPForms User - '));
             //hardcoding form RTs for all users
+            formNames.add('BAP Provisioning');
             formNames.add('EPA-100');
             formNames.add('SF-182');
             formNames.add('ORD-111');

@@ -4510,7 +4510,7 @@
         <recordType>Cost_Share_Contribution__c.Cash_Contribution</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Cost_Share_Contribution__c-Cash Layout</layout>
+        <layout>Cost_Share_Contribution__c-In Kind Layout</layout>
         <recordType>Cost_Share_Contribution__c.In_Kind_Contribution</recordType>
     </layoutAssignments>
     <layoutAssignments>
