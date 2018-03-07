@@ -310,10 +310,11 @@ public without sharing class FormPageController  {
         string fieldLabel;
         list<string> displayFields = new list<string>();
         for(string fieldApi : apiList){
-            if(fieldAPI.trim()!='No Create'){
+            if(fieldAPI.trim()!='No Create' && fieldAPI.trim()!='For Testing'){
             fieldLabel = fieldMap.get(fieldApi.trim()).getDescribe().getLabel();
             displayFields.add(fieldLabel);}
-            else{displayFields.add('No Create');}
+            else if(fieldAPI.trim()=='No Create') {displayFields.add('No Create');}
+            else {displayFields.add('ID');}
         }
         
         return displayFields;

@@ -2589,10 +2589,10 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
         </picklistValues>
     </recordTypes>
     <recordTypes>
-        <fullName>Form_TCTO_Request_Line_Item</fullName>
+        <fullName>Form_Sample_Record_Type_Line_Item</fullName>
         <active>true</active>
-        <description>Date__c, Travel_Comp_Time_Applicable__c, Day__c, Travel_Time_Start__c, Travel_Time_End__c</description>
-        <label>Form - TCTO Request Line Item</label>
+        <description>For Testing</description>
+        <label>Form - Sample Record Type Line Item</label>
         <picklistValues>
             <picklist>Normal_Workday_End_Time__c</picklist>
             <values>
@@ -3338,9 +3338,10 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
         </picklistValues>
     </recordTypes>
     <recordTypes>
-        <fullName>fake</fullName>
+        <fullName>Form_TCTO_Request_Line_Item</fullName>
         <active>true</active>
-        <label>fake</label>
+        <description>Date__c, Travel_Comp_Time_Applicable__c, Day__c, Travel_Time_Start__c, Travel_Time_End__c</description>
+        <label>Form - TCTO Request Line Item</label>
         <picklistValues>
             <picklist>Normal_Workday_End_Time__c</picklist>
             <values>

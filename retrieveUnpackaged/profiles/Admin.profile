@@ -3536,6 +3536,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Forms__c.Support_Sample_Record_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Forms__c.Support_TCTO_Request__c</field>
         <readable>true</readable>
@@ -4821,6 +4826,10 @@
         <recordType>Forms__c.BAP_Provisioning</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Forms__c-EPA-100</layout>
+        <recordType>Forms__c.Sample_Record_Type</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Forms__c-EPA-100 Admin View</layout>
         <recordType>Forms__c.EPA_100</recordType>
     </layoutAssignments>
@@ -4885,7 +4894,7 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Line_Item__c-Line Item Layout</layout>
-        <recordType>Line_Item__c.fake</recordType>
+        <recordType>Line_Item__c.Form_Sample_Record_Type_Line_Item</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Line_Item__c-Proposed Hours Layout</layout>
@@ -5455,6 +5464,11 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
+        <recordType>Forms__c.Sample_Record_Type</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
         <recordType>Forms__c.TCTO_Request</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
@@ -5474,14 +5488,14 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Line_Item__c.Form_Sample_Record_Type_Line_Item</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
         <default>false</default>
         <recordType>Line_Item__c.Form_TCTO_Request_Line_Item</recordType>
         <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>Line_Item__c.fake</recordType>
-        <visible>true</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Edit_My_Approvers</tab>

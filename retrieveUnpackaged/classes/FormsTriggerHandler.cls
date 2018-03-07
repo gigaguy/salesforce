@@ -189,7 +189,13 @@ public class FormsTriggerHandler {
         id delAppID;
         
         //unlock record on submittal
-        forms__c[] formList = [select id, Approval_Step__c from forms__c where id in :mainIds AND Approval_Step__c != 'Approved'];
+        list<string> formTypes = new list<string>();
+        formTypes.add('SF-182');
+        formTypes.add('EPA-100');
+        formTypes.add('ORD-111');
+        formTypes.add('EPA-3160-6v5');
+        
+        forms__c[] formList = [select id, Approval_Step__c, Form_Type_Name__c from forms__c where id in :mainIds AND Approval_Step__c != 'Approved' AND Form_Type_Name__c in :formTypes];
      
         Approval.UnlockResult[] formUnlocks = Approval.Unlock(formList, false);
         

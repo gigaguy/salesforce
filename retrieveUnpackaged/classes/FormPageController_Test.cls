@@ -50,15 +50,15 @@ public class FormPageController_Test {
           Forms__c xform;
     
         try{
-            xform = FormPageController.insertNewForms('123ABC', [select id from RecordType where name = 'EPA-100' limit 1].ID, uSU.id, uAU.id);
+            xform = FormPageController.insertNewForms('123ABC', [select id from RecordType where name = 'Sample Record Type' limit 1].ID, uSU.id, uAU.id);
             }
             catch(exception ex){
                 system.debug(ex.getMessage());  
               }
-        String supportInfo = FormPageController.formSupportInfo(string.valueof(xForm.ID), 'EPA-100');
+        String supportInfo = FormPageController.formSupportInfo(string.valueof(xForm.ID), 'Sample Record Type');
         Forms__c yform;
         try{
-            yform = FormPageController.insertNewForms('xyz', [select id from RecordType where name = 'EPA-100' limit 1].ID, uSU.id, uAU.id);
+            yform = FormPageController.insertNewForms('xyz', [select id from RecordType where name = 'Sample Record Type' limit 1].ID, uSU.id, uAU.id);
             }
              catch(exception ex){
             system.debug(ex.getMessage());  
@@ -109,6 +109,7 @@ public class FormPageController_Test {
             
             User u = [select id from User where isActive = true limit 1];
             u.Lan_ID__c = 'thetest';
+            u.Session_Token__c = '123abc';
             update u;
     
             contact c = new contact(FirstName='Bob', LastName='Smith', Lan_ID__c = 'thetest');
@@ -129,7 +130,8 @@ public class FormPageController_Test {
             FormPageController.getListOfAttachments(formID);
             FormPageController.deleteFormAttachment(attID);
             
-            FormPageController.cloneForm(formID);
+            string sID = '123abc';
+            FormPageController.cloneForm(sID,FormID);
             id attChunkid;
             FormPageController.saveChunk(formID,'att',base64Data,contentType,'');
             id att2 = FormPageController.saveTheFile(formID,'att',base64Data,contentType);
@@ -174,7 +176,7 @@ public class FormPageController_Test {
             insert c;
          
             Forms__c testForm = new Forms__c();
-            testForm.RecordTypeID = [select id from RecordType where name = 'EPA-100' limit 1].id;
+            testForm.RecordTypeID = [select id from RecordType where name = 'Sample Record Type' limit 1].id;
             testForm.Unauthenticated_Owner__c = u.Id;
             insert testForm;
             
@@ -187,10 +189,9 @@ public class FormPageController_Test {
        @isTest
         static void testLineItems(){
         
-        string liRT = FormPageController.isLineItemEnabled('EPA-100');
-        liRT = FormPageController.isLineItemEnabled('fake');
+          String liRT = FormPageController.isLineItemEnabled('Sample Record Type');
         
-            String rtID = [Select Id From RecordType Where SobjectType = 'Line_Item__c' limit 1].Id;
+          String rtID = [Select Id, developername From RecordType Where developername = 'Form_Sample_Record_Type_Line_Item'].Id;
 
             insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
          User u = [select id from User where isActive = true limit 1];
@@ -213,7 +214,7 @@ public class FormPageController_Test {
             
             List<Line_Item__c> liList = FormPageController.getListOfLineItems(theForm.ID, 'formName');
             
-            Line_Item__c litem = FormPageController.insertLineItem('123ABC', 'EPA-100', theForm.ID, uSU.ID, uAU.ID);
+            Line_Item__c litem = FormPageController.insertLineItem('123ABC', 'Sample Record Type', theForm.ID, uSU.ID, uAU.ID);
 
             String d1 = 'Name';
             string d2 = 'CreatedByID';
@@ -238,6 +239,11 @@ public class FormPageController_Test {
             List<string> datas = FormPageController.getLineItemDataFields(rtID);
             Line_Item__c litem2 = FormPageController.getLineItem(litem.ID);
             string msg =  FormPageController.deleteLineItem(litem.ID, 'x');
+            
+            Line_Item__c litem3 = new Line_Item__c (recordtypeid = rtID, related_Form__c = theForm.id);
+            insert litem3;
+            UtilityMethods.addFormShare(theForm.ID, uSU.id);
+            UtilityMethods.removeFormShare(theForm.ID, uSU.id);
         }
       
 }
