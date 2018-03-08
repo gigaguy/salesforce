@@ -12,7 +12,9 @@
             }
         });
         $A.enqueueAction(action);
-     
+     	
+        helper.getFandP_Forms(component);
+        
         //  set siteUserID and apiUserID for temp record sharing
         helper.setSiteUserID(component);
         helper.setAPIUserID(component);
@@ -1053,6 +1055,17 @@
         
         helper.getAttachList(component, formID);
         	component.set("v.addAttachments", true); 
+     	var a = component.get("c.createAttachComp");
+        $A.enqueueAction(a);
+    },
+    showLineItemAttachments: function(component, event, helper) {  // shows list of attachments when user hits "show/add attachments" button
+        console.log('in showLineItemAttachments');
+        
+        var formID = component.get("v.viewLineItemID"); 
+          console.log('formID: ' + formID);
+        
+        helper.getAttachList(component, formID);
+        	component.set("v.addLineItemAttachments", true); 
      	var a = component.get("c.createAttachComp");
         $A.enqueueAction(a);
     },

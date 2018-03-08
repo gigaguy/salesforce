@@ -149,13 +149,20 @@ public without sharing class FormPageController  {
                             
             // Execute process request
             Approval.ProcessResult result = Approval.process(pwr);   
-            if (result.IsSuccess()) message = 'Approval Request Recalled';
+            if (result.IsSuccess()){
+                 message = 'Approval Request Recalled';
+                 UtilityMethods.removeAllFormShares(formID);}
             return message;
         }
         catch(exception ex){
             message = string.valueof(ex);
             return message;
         }
+    }
+    
+    @AuraEnabled
+    public static List<BAP_Fill_and_Print_List__mdt> getFandP_FormRTs(){
+        return [select Label, Description__c, File_Url__c from BAP_Fill_and_Print_List__mdt ORDER BY Label ASC];
     }
     
     @AuraEnabled

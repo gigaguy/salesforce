@@ -2,6 +2,19 @@
     MAX_FILE_SIZE: 4500000, //Max file size 4.5 MB 
     CHUNK_SIZE: 750000,      //Chunk Max size 750Kb 
     
+    getFandP_Forms : function(component){   // gets list of available Fill&Pring Forms
+        console.log('in helper.getFandP_Forms');
+        var action = component.get("c.getFandP_FormRTs");
+       
+        action.setCallback(this, function(response){
+            var name = response.getState();
+            if (name === "SUCCESS") {
+                component.set("v.FandP_forms", response.getReturnValue());
+            }
+        });
+     $A.enqueueAction(action);
+    },
+    
     show: function (cmp, event) {     // shows Lightning spinner
         console.log('in helper.show');
         
