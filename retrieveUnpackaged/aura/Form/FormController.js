@@ -12,6 +12,7 @@
             }
         });
         $A.enqueueAction(action);
+        helper.getFandP_Forms(component);
      
         //  set siteUserID and apiUserID for temp record sharing
         helper.setSiteUserID(component);

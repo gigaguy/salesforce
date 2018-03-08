@@ -534,6 +534,11 @@
             <operation>contains</operation>
             <value>OTAQ</value>
         </filters>
+        <filters>
+            <field>CONTACT.FIRST_NAME</field>
+            <operation>equals</operation>
+            <value>Philip</value>
+        </filters>
         <label>All Contacts</label>
     </listViews>
     <listViews>

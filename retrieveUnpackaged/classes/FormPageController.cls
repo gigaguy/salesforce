@@ -135,7 +135,12 @@ public without sharing class FormPageController  {
             return message;
         }
     }
-
+    
+    @AuraEnabled
+    public static List<BAP_Fill_and_Print_List__mdt> getFandP_FormRT() {
+          return [select Label, Description__c, File_Url__c from BAP_Fill_and_Print_List__mdt ORDER BY Label ASC];
+    }
+    
     @AuraEnabled
     public static string recallApproval(ID formID, string sID){
         String message = 'Recall Failed';
