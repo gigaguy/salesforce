@@ -1732,6 +1732,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Forms__c.Date_Time_Format_Instructions__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Forms__c.Date_Transit_Parking_Subsidy_Parking__c</field>
         <readable>false</readable>
     </fieldPermissions>

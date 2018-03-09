@@ -1733,6 +1733,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Forms__c.Date_Time_Format_Instructions__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Forms__c.Date_Transit_Parking_Subsidy_Parking__c</field>
         <readable>true</readable>
     </fieldPermissions>

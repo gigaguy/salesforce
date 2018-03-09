@@ -372,9 +372,14 @@
         console.log('in helper.uploadInChunk');
         
         // call the apex method 'saveChunk'
-    //    var formID = component.get("v.parentId");
-        var formID = component.get("v.viewFormID");
-        console.log('formID: ' + formID);
+        var formID;
+        if(component.get("v.addAttachments")==true){ 
+            formID = component.get("v.viewFormID");
+           }
+         else if(component.get("v.addLineItemAttachments")==true){  
+             formID = component.get("v.viewLineItemID");
+           }
+            console.log('formID: ' + formID);
         var getchunk = fileContents.substring(startPosition, endPosition);
         var action = component.get("c.saveChunk");
         action.setParams({

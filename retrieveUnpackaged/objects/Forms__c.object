@@ -2270,6 +2270,18 @@ TEXT(Continued_Service_Agreement_Expiration__c))</formula>
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Date_Time_Format_Instructions__c</fullName>
+        <defaultValue>&quot;Please click into each date or time entry field and select a value. All dates entered should be in MM/DD/YYYY format and all time entered should be in HH:MM AM/PM format.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Date &amp; Time Format Instructions</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Date_Transit_Parking_Subsidy_Parking__c</fullName>
         <description>EPA-3110-1</description>
         <externalId>false</externalId>

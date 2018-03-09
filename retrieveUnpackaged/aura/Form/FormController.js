@@ -31,7 +31,7 @@
                 "sID" : component.get("v.sessionID")
             });
             action.setCallback(this,function(resp){
-                console.log('in approvalSubmit action');
+                console.log('in approvalRecall action');
                 var state = resp.getState();
                 console.log('state: ' +state);
                 if(state === 'SUCCESS'){
@@ -39,7 +39,10 @@
                     component.set("v.viewTheModal", false);
                     component.set("v.hasAttachments", false);
         			component.set("v.addAttachments", false);
-                    component.set("v.onSubmit", false)
+                    component.set("v.onSubmit", false);
+                    component.set("v.trySubmit", false);
+                    component.set("v.submittedForm", false);
+                    	console.log('submittedForm is False');
                     component.set("v.viewLineItemList", false);
         			component.set("v.showLineItem", false);
                     
@@ -59,7 +62,7 @@
 			"sID" : component.get("v.sessionID")
         });
         action.setCallback(this,function(resp){
-			console.log('in approvalSubmit action2');
+			console.log('in approvalRecall action2');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
@@ -95,7 +98,10 @@
                     component.set("v.viewTheModal", false);
                     component.set("v.hasAttachments", false);
         			component.set("v.addAttachments", false);
-                    component.set("v.onSubmit", false)
+                    component.set("v.onSubmit", false);
+                    component.set("v.trySubmit", false);
+                    component.set("v.submittedForm", true);
+                    	console.log('submittedForm is True');
                     component.set("v.viewLineItemList", false);
         			component.set("v.showLineItem", false);
                 }
@@ -319,6 +325,11 @@
             component.set("v.showLineItem", false);
             component.set("v.message", null);
             component.set("v.viewLineItemList", true);
+	        component.set("v.hasAttachments", false);
+            component.set("v.addAttachments", false);
+            component.set("v.addLineItemAttachments", false);
+            component.set("v.fileName", "No File Selected..");
+            component.set("v.largeFile", false);            
             
             var a = component.get("c.createTheModal");
             $A.enqueueAction(a);
@@ -616,6 +627,23 @@
                 if(state === 'SUCCESS'){
                     console.log('formID: '+formID);
                     component.set("v.newForm", resp.getReturnValue());
+                    	var approvalStatus = component.get("v.newForm.Approval_Step__c");
+                    	console.log('approvalStatus: '+approvalStatus);
+                    	if(approvalStatus===undefined) 
+                        	{
+                             component.set("v.submittedForm", false);
+                             console.log('submittedForm is False');
+                           }
+                         else if(approvalStatus==='Recalled' || approvalStatus==='Rejected' || approvalStatus.indexOf('Form Prepared')>-1)
+                         	{
+			                    console.log('jtest = '+approvalStatus.indexOf('Form Prepared')); 
+                             component.set("v.submittedForm", false);
+                             console.log('submittedForm is False');
+                         	}
+                    	 else{
+                              component.set("v.submittedForm", true);
+                              console.log('submittedForm is True');
+                         	}
                     
                     //Get Support link info
 			        helper.getSupportInfo(component, formID, formName);
@@ -974,6 +1002,7 @@
         
         component.set("v.hasAttachments", false);
         component.set("v.addAttachments", false);
+        component.set("v.addLineItemAttachments", false);
         component.set("v.fileName", "No File Selected..");
         component.set("v.largeFile", false);
         
