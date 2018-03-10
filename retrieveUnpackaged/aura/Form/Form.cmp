@@ -84,7 +84,7 @@
             <div class="slds-page-header" role="banner" style="margin-bottom: 20px; margin-top: -20px; text-align: center;">
                 <div class="slds-grid">
                     <div class="slds-col">
-                        <p class="slds-text-heading *2 dashes here* label">{!v.message}</p>
+                        <p class="slds-text-heading--label">{!v.message}</p>
                     </div>
                 </div>
             </div>
@@ -269,7 +269,7 @@
                 <h2 id="header99" class="slds-text-heading--medium">
                  Status:
                 <aura:if isTrue="{!v.submittedForm==false}">
-                	Not Submitted
+                	{!v.message}Not Submitted
                     <aura:set attribute="else">
                           Submitted &nbsp; | &nbsp; {!v.newForm.Approval_Step__c}
                     </aura:set>
@@ -427,11 +427,7 @@
                         <td style="color: black; border: 0px solid #0070d2; text-align: center;">
                           
                            <button id="{!litem.Id}" onclick="{!c.viewLineItemJS}" data-count="{!litemCount}">View</button>   
-                            
-                   <!--       <div class="divider"/>
-                            <aura:if isTrue="{!v.submittedForm==false}">
-                            <button id="{!litem.Id}" onclick="{!c.deleteAttachment}">Del</button>
-                            </aura:if>  -->
+ 
                         </td>
                         <td style="color: black; padding: 1px 1px 1px 5px; border: 1px solid lightgray; text-align: center;">                         
                             {!litem.Display1__c} 
@@ -468,7 +464,7 @@
                     <col width="70"/>
                 	<tr style="background-color: #0070d2; border: 1px solid lightgray;">         
                         <td colspan="5" style="color: white; padding: 5px 5px 5px 15px; border: 1px solid lightgray;">
-                            Attachments  
+                            Attachments 
                         </td>
                 	</tr>
                     <tr style="background-color: white; border: 1px solid lightgray;">
@@ -504,13 +500,8 @@
                       <tr style="background-color: white; border: 1px solid lightgray;">
                         <td style="color: black; border: 0px solid #0070d2; text-align: center;">
                             <a href="{!'/sfc/servlet.shepherd/version/download/'+file.Id}" target="_blank">
-                     <!--           <button style="color: black;">View</button>     -->
                                 <button style="color: black;">Download</button>
                             </a>  
-                    <!--      <div class="divider"/>
-                            <aura:if isTrue="{!v.submittedForm==false}">
-                            <button id="{!file.Id}" onclick="{!c.deleteAttachment}">Del</button>
-                            </aura:if>       -->
                         </td>
                         <td style="color: black; padding: 1px 1px 1px 5px; border: 1px solid lightgray; text-align: left;">
                             {!file.Title}
@@ -523,11 +514,11 @@
                 </table> 
                   <br/>
                    	<aura:set attribute="else">	                  
-                      <aura:if isTrue="{!v.addAttachments &amp;&amp; v.submittedForm &amp;&amp; v.addAttachments}">
+                      <aura:if isTrue="{!v.submittedForm &amp;&amp; (v.addAttachments || v.addLineItemAttachments)}">
                         <table style="border: 1px solid lightgray;">
                             <tr style="background-color: #0070d2; border: 1px solid lightgray;"> 
                           <td colspan="1" style="color: white; padding: 5px 5px 5px 15px; border: 1px solid lightgray;">
-                            Attachments 
+                            Attachments
                                 </td></tr>
                             <tr>
                           <td style="color: black; border: 0px solid #0070d2; text-align: center;">
@@ -566,16 +557,16 @@
               <ui:button class="slds-button slds-button--neutral" label="Save to Enable Attachments" press="{!c.enableAttachments}" />			
                 <aura:set attribute="else">
                 <aura:if isTrue="{!v.submittedForm==false}">  
-                  <aura:if isTrue="{!v.hasAttachments || v.addAttachments}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
+                  <aura:if isTrue="{!v.hasAttachments || v.addAttachments || v.addLineItemAttachments}"><ui:button label="Hide Attachments" press="{!c.hideAttachments}" class="slds-button slds-button--neutral" /></aura:if>
                   <aura:if isTrue="{!v.hasAttachments==false &amp;&amp; v.addAttachments==false &amp;&amp; v.showLineItem==false}">
-                      <ui:button label="Show/Add Form Attachments" press="{!c.showAttachments}" class="slds-button slds-button--neutral"/>
+                      <ui:button label="View/Add Form Attachments" press="{!c.showAttachments}" class="slds-button slds-button--neutral"/>
                     </aura:if> 
                     <aura:set attribute="else">
                       <aura:if isTrue="{!v.hasAttachments==false &amp;&amp; v.addAttachments==false &amp;&amp; v.showLineItem==false}">
-                    	<ui:button class="slds-button slds-button--neutral" label="Show Attachments" press="{!c.showAttachments}" />
+                    	<ui:button label="View Form Attachments" press="{!c.showAttachments}" class="slds-button slds-button--neutral" />
                       </aura:if>
-                      <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}">
-                        <ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" />
+  <!-- this could likely be only v.hasAttachments since it's in IF submittedform... -->   <aura:if isTrue="{!(v.hasAttachments || v.addAttachments || v.addLineItemAttachments)}">
+                        <ui:button label="Hide Attachments" press="{!c.hideAttachments}" class="slds-button slds-button--neutral"/>
                       </aura:if>
                     </aura:set>
                   </aura:if> 
@@ -585,7 +576,7 @@
 				<!-- For Submitted Forms  --><!--  
               <aura:if isTrue="{!v.hasAttachments==false &amp;&amp; v.addAttachments==false &amp;&amp; v.showLineItem==false}">
                   <aura:if isTrue="{!v.submittedForm==false}">
-                   <ui:button class="slds-button slds-button2dashesneutral" label="Show Attachments" press="{!c.showAttachments}" />
+                   <ui:button label="View Attachments" press="{!c.showAttachments}" class="slds-button slds-button2dashesneutral" />
                    </aura:if>
               </aura:if> 
               -->
@@ -596,8 +587,13 @@
             	  <ui:button class="slds-button slds-button--neutral" label="Save to Enable Line Items" press="{!c.enableLineItems}" />
                 <aura:set attribute="else">
                     <aura:if isTrue="{!v.isNew==false &amp;&amp; v.isCopy==false}">
-				     <ui:button label="View Line Items" press="{!c.viewLineItemList}" class="slds-button slds-button--neutral" />
-            		</aura:if>
+                        <aura:if isTrue="{!v.submittedForm==false &amp;&amp; v.lineItemNoCreate==false}">
+                        <ui:button label="View/Add Line Items" press="{!c.viewLineItemList}" class="slds-button slds-button--neutral" />
+                            <aura:set attribute="else">
+                                <ui:button label="View Line Items" press="{!c.viewLineItemList}" class="slds-button slds-button--neutral" />
+                            </aura:set>
+                        </aura:if>
+                    </aura:if>
                 </aura:set>
               </aura:if>
             </aura:if>
@@ -606,8 +602,13 @@
                 <ui:button label="Hide Line Items" press="{!c.hideLineItem}" class="slds-button slds-button--neutral" />
             </aura:if>
             
-            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.savedLineItem}">
-                <ui:button label="Show/Add Line Item Attachments" press="{!c.showLineItemAttachments}" class="slds-button slds-button--neutral" />
+            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.savedLineItem &amp;&amp; v.addLineItemAttachments==false}">
+                <aura:if isTrue="{!v.submittedForm==false}">
+            	    <ui:button label="View/Add Line Item Attachments" press="{!c.showLineItemAttachments}" class="slds-button slds-button--neutral" />
+            	 <aura:set attribute="else">
+                    <ui:button label="View Line Item Attachments" press="{!c.showLineItemAttachments}" class="slds-button slds-button--neutral" />
+                 </aura:set>
+                </aura:if>
             </aura:if>  
               
             <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=0 &amp;&amp; v.lineItemIndex!=undefined &amp;&amp; v.savedLineItem}">

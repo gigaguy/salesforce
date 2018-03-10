@@ -695,8 +695,15 @@
     deleteAttachment : function(component, event, helper){
         console.log('in deleteAttachment');
         
-        var formID = component.get("v.viewFormID");
-          console.log('formID: '+formID);
+        var formID;
+         if(component.get("v.addAttachments")==true){ 
+              formID = component.get("v.viewFormID");
+             }
+           else if(component.get("v.addLineItemAttachments")==true){  
+               formID = component.get("v.viewLineItemID");
+             }
+        console.log('formID: '+formID);
+        
         var attID = event.currentTarget.id;
           console.log('attID: '+attID);
 		var action = component.get("c.deleteFormAttachment");
