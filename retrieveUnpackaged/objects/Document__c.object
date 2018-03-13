@@ -110,6 +110,14 @@
                     <default>false</default>
                 </value>
                 <value>
+                    <fullName>56E14</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>56EAG</fullName>
+                    <default>false</default>
+                </value>
+                <value>
                     <fullName>56F - TCD</fullName>
                     <default>false</default>
                 </value>
@@ -10095,6 +10103,51 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
                 </value>
             </valueSetDefinition>
             <valueSettings>
+                <controllingFieldValue>56EAG</controllingFieldValue>
+                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
+                <valueName>56EAG - CSC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>56EAG</controllingFieldValue>
+                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
+                <valueName>56EA - OTAQ WORKING CAPITAL FUND SERVICES</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>56EAG</controllingFieldValue>
+                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
+                <valueName>56EB - FIXED FACILITY OPERATIONS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>56EAG</controllingFieldValue>
+                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
+                <valueName>56EC - OFFICE SUPPORT/SERVICES</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>56EAG</controllingFieldValue>
+                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
+                <valueName>56E - DEPUTY OFFICE DIRECTOR, OTAQ</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>56EAG</controllingFieldValue>
+                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
+                <valueName>56ED - SAFETY, HEALTH AND ENVIRONMENTAL COMPLIANCE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>56EAG</controllingFieldValue>
+                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
+                <valueName>56EE - NVFEL TESTING SUPPORT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>56EAG</controllingFieldValue>
+                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
+                <valueName>56EF - QUALITY AND ENVIRONMENTAL MGMT SYSTEMS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>56EAG</controllingFieldValue>
+                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
+                <valueName>56EG - CSG ADMINISTRATIVE MANAGEMENT</valueName>
+            </valueSettings>
+            <valueSettings>
                 <controllingFieldValue>561</controllingFieldValue>
                 <controllingFieldValue>56C - CD</controllingFieldValue>
                 <valueName>5600EEN - E-Enterprise</valueName>
@@ -10241,59 +10294,28 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>56E - IO-AA</controllingFieldValue>
+                <controllingFieldValue>56E14</controllingFieldValue>
                 <valueName>56E14 - COS</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>56E - IO-AA</controllingFieldValue>
+                <controllingFieldValue>56E14</controllingFieldValue>
                 <valueName>56E1 - IMMEDIATE OFFICE</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>56E - IO-AA</controllingFieldValue>
+                <controllingFieldValue>56E14</controllingFieldValue>
                 <valueName>56E2 - COMMUNICATIONS</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>56E - IO-AA</controllingFieldValue>
+                <controllingFieldValue>56E14</controllingFieldValue>
                 <valueName>56E3 - HUMAN RESOURCES</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>56E - IO-AA</controllingFieldValue>
+                <controllingFieldValue>56E14</controllingFieldValue>
                 <valueName>56E4 - SPECIAL EMPHASIS PROGRAM</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
-                <valueName>56EAG - CSC</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
-                <valueName>56EA - OTAQ WORKING CAPITAL FUND SERVICES</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
-                <valueName>56EB - FIXED FACILITY OPERATIONS</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
-                <valueName>56EC - OFFICE SUPPORT/SERVICES</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
-                <valueName>56E - DEPUTY OFFICE DIRECTOR, OTAQ</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
-                <valueName>56ED - SAFETY, HEALTH AND ENVIRONMENTAL COMPLIANCE</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
-                <valueName>56EE - NVFEL TESTING SUPPORT</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
-                <valueName>56EF - QUALITY AND ENVIRONMENTAL MGMT SYSTEMS</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>56E - IO-AA</controllingFieldValue>
-                <valueName>56EG - CSG ADMINISTRATIVE MANAGEMENT</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>56F - TCD</controllingFieldValue>
@@ -57080,6 +57102,14 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
             </values>
             <values>
                 <fullName>56E - IO-AA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>56E14 - IO-AA COS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>56EAG - IO-AA CSC</fullName>
                 <default>false</default>
             </values>
             <values>

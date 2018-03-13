@@ -3,11 +3,11 @@
     <networkAccess/>
     <passwordPolicies>
         <complexity>SpecialCharacters</complexity>
-        <expiration>NinetyDays</expiration>
+        <expiration>SixtyDays</expiration>
         <historyRestriction>15</historyRestriction>
         <lockoutInterval>ThirtyMinutes</lockoutInterval>
         <maxLoginAttempts>ThreeAttempts</maxLoginAttempts>
-        <minimumPasswordLength>10</minimumPasswordLength>
+        <minimumPasswordLength>12</minimumPasswordLength>
         <minimumPasswordLifetime>false</minimumPasswordLifetime>
         <obscureSecretAnswer>true</obscureSecretAnswer>
         <questionRestriction>DoesNotContainPassword</questionRestriction>

@@ -4569,11 +4569,11 @@
         <layout>FeedItem-Feed Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Forms__c-BAP Provisioning Type 1 Layout</layout>
+        <layout>Forms__c-BAP Provisioning Admin Layout</layout>
+        <recordType>Forms__c.BAP_Provisioning</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Forms__c-BAP Provisioning Type 1 Layout</layout>
-        <recordType>Forms__c.BAP_Provisioning</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Forms__c-EPA-100</layout>
