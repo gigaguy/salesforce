@@ -138,26 +138,37 @@ public without sharing class FormPageController  {
     @AuraEnabled
     public static string recallApproval(ID formID, string sID){
         String message = 'Recall Failed';
+        Boolean allowRecall = true;
         try{
             system.debug(formId);
             Approval.ProcessWorkItemRequest pwr = new Approval.ProcessWorkItemRequest();
-            ProcessInstance x = [select id, status from ProcessInstance where TargetObjectID=:formID AND status='pending' limit 1];
+            ProcessInstance x = [select id, status, ProcessDefinitionID from ProcessInstance where TargetObjectID=:formID AND status='pending' limit 1];
             ProcessInstanceWorkItem xItem = [select id from ProcessInstanceWorkItem where ProcessInstanceID=:x.id limit 1];
-            
-            pwr.setWorkItemId(xItem.id);
-            pwr.setAction('Removed');              
-                            
-            // Execute process request
-            Approval.ProcessResult result = Approval.process(pwr);   
-            if (result.IsSuccess()){
-                 message = 'Approval Request Recalled';
-                 UtilityMethods.removeAllFormShares(formID);}
-            return message;
-        }
-        catch(exception ex){
-            message = string.valueof(ex);
-            return message;
-        }
+            ProcessDefinition Pdef = [select id, Description FROM ProcessDefinition Where ID=:x.ProcessDefinitionID limit 1];
+                if(pdef.Description !=null){
+                    if(pdef.Description.indexOf('No Recall')>-1){
+                          allowRecall = false;
+                        }
+                  }
+               if(allowRecall){
+                    pwr.setWorkItemId(xItem.id);
+                    pwr.setAction('Removed');              
+                                    
+                    // Execute process request
+                    Approval.ProcessResult result = Approval.process(pwr);   
+                    if (result.IsSuccess()){
+                         message = 'Approval Request Recalled';
+                         UtilityMethods.removeAllFormShares(formID);}
+                    return message;
+                }
+               else {message = 'Recall not allowed for this Form type.';
+                     return message;
+                 }
+              }
+            catch(exception ex){
+                message = string.valueof(ex);
+                return message;
+            }            
     }
     
     @AuraEnabled
@@ -220,8 +231,19 @@ public without sharing class FormPageController  {
             forms__c f = (forms__c)Database.query(soql);
             forms__c f2 = f.clone(false, true);
             f2.put('Unauthenticated_Owner__c', u.id);
-            insert f2;   
-
+            insert f2;
+            
+            //clone any related line items
+                list<line_item__c> litems = [select id from line_item__c where related_form__c = :formID];
+                for(line_item__c litem : litems){
+                    soql = UtilityMethods.getCreatableFieldsSOQL('line_item__c','id=\''+litem.id+'\'');
+                    line_item__c l = (line_item__c)Database.query(soql);
+                    line_item__c l2 = l.clone(false, true);
+                    l2.put('ownerid', u.id);
+                    l2.put('related_form__c', f2.id);
+                    insert l2;   
+                  }
+                  
             return f2;
     }
     

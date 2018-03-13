@@ -677,6 +677,12 @@
       }
     else {  // showLineItem is true
          console.log('in createTheModal for Line Item');
+        
+        //checks if line item list should be hidden
+        if(component.get("v.lineItemNav")){
+            	component.set("v.viewLineItemList", false);
+            	component.set("v.lineItemNav", false);
+        	}
         var liID = component.get("v.viewLineItemID")
         console.log('liID: '+liID);
     		 $A.createComponent('force:recordEdit',
@@ -1130,6 +1136,13 @@
 	},
     nextLineItem : function(component, event, helper) {
         console.log('in nextLineItem');
+        component.set("v.lineItemNav", true);
+        
+        //save line item
+          component.get('v.theModal').get("e.recordSave").fire();
+        //rebuild list after save
+          var a = component.get("c.viewLineItemList");
+          $A.enqueueAction(a);
         
         component.set("v.viewTheModal", false);
         component.set("v.lineItemIndex", component.get("v.lineItemIndex")+1);
@@ -1169,6 +1182,13 @@
     },
     prevLineItem : function(component, event, helper) {
         console.log('in prevLineItem');
+        component.set("v.lineItemNav", true);
+        
+        //save line item
+          component.get('v.theModal').get("e.recordSave").fire();
+        //rebuild list after save
+          var a = component.get("c.viewLineItemList");
+       	  $A.enqueueAction(a);
         
         component.set("v.viewTheModal", false);
         component.set("v.lineItemIndex", component.get("v.lineItemIndex")-1);
@@ -1205,7 +1225,6 @@
             }
         });
         $A.enqueueAction(action); 
-        
     },
     lineItemSortOne : function(component, event, helper){
         console.log('in lineItemSortOne');

@@ -59,6 +59,7 @@
     <aura:attribute name="enablingLineItems" type="boolean" default="false"/>
     <aura:attribute name="saveClosingLineItem" type="boolean" default="false"/>
     <aura:attribute name="saveNextingLineItem" type="boolean" default="false"/>
+    <aura:attribute name="lineItemNav" type="boolean" default="false"/>
     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
@@ -604,7 +605,7 @@
             
             <aura:if isTrue="{!v.showLineItem &amp;&amp; v.savedLineItem &amp;&amp; v.addLineItemAttachments==false}">
                 <aura:if isTrue="{!v.submittedForm==false}">
-            	    <ui:button label="View/Add Line Item Attachments" press="{!c.showLineItemAttachments}" class="slds-button slds-button--neutral" />
+            	    <ui:button label="View/Add Line Item Attachments" press="{!c.showLineItemAttachments}" class="slds-button slds-button--neutral floatLeft" />
             	 <aura:set attribute="else">
                     <ui:button label="View Line Item Attachments" press="{!c.showLineItemAttachments}" class="slds-button slds-button--neutral" />
                  </aura:set>
@@ -612,10 +613,10 @@
             </aura:if>  
               
             <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=0 &amp;&amp; v.lineItemIndex!=undefined &amp;&amp; v.savedLineItem}">
-                <ui:button label="Previous Line Item" press="{!c.prevLineItem}" class="slds-button slds-button--neutral" />
+                <ui:button label="Save &amp; Previous Line Item" press="{!c.prevLineItem}" class="slds-button slds-button--neutral" />
             </aura:if> 
             <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=v.lineItemCount-1 &amp;&amp; v.lineItemIndex!=undefined &amp;&amp; v.savedLineItem}">
-                <ui:button label="Next Line Item" press="{!c.nextLineItem}" class="slds-button slds-button--neutral" />
+                <ui:button label="Save &amp; Next Line Item" press="{!c.nextLineItem}" class="slds-button slds-button--neutral" />
             </aura:if> 
             
           </div>  
