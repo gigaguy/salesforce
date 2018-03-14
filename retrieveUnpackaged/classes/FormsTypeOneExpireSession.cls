@@ -26,7 +26,8 @@ global class FormsTypeOneExpireSession implements Database.Batchable<SObject> {
     global void execute(Database.BatchableContext context, List<Forms__c> forms) {
         List<String> formIDs = new List<String>();
         List<Forms__Share> formShares = new List<Forms__Share>();
-        string siteUserID = UtilityMethods.getAnyUserID('EPA BAP Forms', 'Site Guest User');
+        //string siteUserID = UtilityMethods.getAnyUserID('EPA BAP Forms', 'Site Guest User');
+        string siteUserID = [select id from User where FirstName = 'EPA BAP Forms' AND LastName = 'Site Guest User' limit 1].id;
         for (Forms__c form : forms) {
             formIDs.add(form.Id);
         }
