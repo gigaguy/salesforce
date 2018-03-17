@@ -108,20 +108,23 @@
     </compactLayouts>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
-    <enableHistory>false</enableHistory>
+    <enableHistory>true</enableHistory>
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>AccountId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
         <fullName>AssistantName</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>AssistantPhone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Authorization__c</fullName>
@@ -144,11 +147,13 @@
         <relationshipName>Contacts</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Birthdate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Building__c</fullName>
@@ -157,6 +162,7 @@
         <length>50</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -167,6 +173,7 @@
         <length>80</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -177,23 +184,28 @@
         <externalId>false</externalId>
         <label>Deleted</label>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Department</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>DoNotCall</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Email</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Employee_Number__c</fullName>
@@ -202,12 +214,14 @@
         <length>20</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Funding_Official__c</fullName>
@@ -218,7 +232,31 @@
         <relationshipName>Contact_Funding_Official</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>GSA_SmartPay_Training_Date__c</fullName>
+        <description>GSA SmartPay Purchase Card training taken date.</description>
+        <externalId>false</externalId>
+        <label>GSA SmartPay Training Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>GSA_SmartPay_Training_Expiry_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+AND(Month(  GSA_SmartPay_Training_Date__c )=2,Day(GSA_SmartPay_Training_Date__c)=29),
+DATE(YEAR(GSA_SmartPay_Training_Date__c) + 2, Month(GSA_SmartPay_Training_Date__c),Day(GSA_SmartPay_Training_Date__c)-1),
+DATE(YEAR(GSA_SmartPay_Training_Date__c) + 2, Month(GSA_SmartPay_Training_Date__c),Day(GSA_SmartPay_Training_Date__c))
+)</formula>
+        <label>GSA SmartPay Training Expiry Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Grade__c</fullName>
@@ -227,6 +265,7 @@
         <length>2</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -237,24 +276,29 @@
         <length>8</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>HasOptedOutOfEmail</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>HasOptedOutOfFax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>HomePhone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Jigsaw</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>LAN_ID__c</fullName>
@@ -263,6 +307,7 @@
         <length>50</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -275,6 +320,7 @@
     <fields>
         <fullName>LeadSource</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
@@ -284,20 +330,24 @@
         <length>50</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>MailingAddress</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>MobilePhone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Name</fullName>
         <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Occ_Series__c</fullName>
@@ -306,20 +356,24 @@
         <length>100</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>OtherAddress</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>OtherPhone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -330,6 +384,7 @@
         <required>false</required>
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
     </fields>
@@ -340,6 +395,7 @@
         <length>8</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -349,6 +405,7 @@
         <label>Person Type</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -372,6 +429,7 @@
     <fields>
         <fullName>Phone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Position_Title__c</fullName>
@@ -380,6 +438,7 @@
         <length>50</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -390,12 +449,14 @@
         <length>100</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>ReportsToId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -405,6 +466,7 @@
         <length>50</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -415,6 +477,7 @@
         <length>50</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -424,6 +487,7 @@
         <label>Status</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -447,6 +511,7 @@
         <length>2</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -459,6 +524,7 @@
         <relationshipName>Contact_Supervisor_2</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -470,6 +536,7 @@
         <relationshipName>Contact_Supervisor</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -479,6 +546,7 @@
         <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -491,11 +559,13 @@
         <relationshipName>Contact_Time_Keeper</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Title</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Training_Officer__c</fullName>
@@ -506,6 +576,7 @@
         <relationshipName>Contact_Training_Officer</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -517,6 +588,7 @@
         <relationshipName>Contacts</relationshipName>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <listViews>
@@ -586,6 +658,7 @@
         <label>pugliese, suzzette</label>
     </listViews>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
         <fullName>EPA_Person</fullName>
         <active>true</active>

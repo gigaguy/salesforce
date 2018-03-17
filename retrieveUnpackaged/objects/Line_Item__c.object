@@ -53,6 +53,50 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
+        <fullName>Approver_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Autopopulated from Purchase Card form in order to share the record</description>
+        <externalId>false</externalId>
+        <label>Approver 1</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Line_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Approver_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Autopopulated from Purchase Card form in order to share the record</description>
+        <externalId>false</externalId>
+        <label>Approver 2</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Line_Items1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CLPs__c</fullName>
+        <defaultValue>1</defaultValue>
+        <externalId>false</externalId>
+        <label>CLPs</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Completion Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Contact_Name__c</fullName>
         <externalId>false</externalId>
         <formula>Contact__r.FirstName +&quot; &quot;+ Contact__r.LastName</formula>
@@ -75,6 +119,40 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Course_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Course Title</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PCard Agency Supplemental Training</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PaymentNet (PNET)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GSA SmartPay Purchase Card Training</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Current_User_View__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( Employee__r.User__r.Id =  $User.Id, TRUE, FALSE)</formula>
+        <label>Current User View</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Date__c</fullName>
@@ -151,6 +229,18 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Employee__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Employee</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Line Items</relationshipLabel>
+        <relationshipName>Line_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Item_Description__c</fullName>
         <description>Line Item Test</description>
         <externalId>false</externalId>
@@ -183,6 +273,38 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>On-Line</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Other_Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Location</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Related_Form__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>Line Item Test</description>
@@ -201,6 +323,24 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
+    <listViews>
+        <fullName>My_Purchase_Card_Training</fullName>
+        <columns>NAME</columns>
+        <columns>Course_Title__c</columns>
+        <columns>Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Current_User_View__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Line_Item__c.Training</value>
+        </filters>
+        <label>My Purchase Card Training</label>
+    </listViews>
     <nameField>
         <displayFormat>LI-{000000}</displayFormat>
         <label>Line Item Name</label>
@@ -212,16 +352,103 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
         <active>false</active>
         <description>Name, Item_Name__c, Item_Description__c, Item_Price__c, Date__c</description>
         <label>Form - EPA-100 Line Item</label>
+        <picklistValues>
+            <picklist>Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Location__c</picklist>
+            <values>
+                <fullName>On-Line</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
     </recordTypes>
     <recordTypes>
         <fullName>Sample_Record_Type</fullName>
         <active>true</active>
         <description>For Testing V3</description>
         <label>Sample Record Type</label>
+        <picklistValues>
+            <picklist>Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Location__c</picklist>
+            <values>
+                <fullName>On-Line</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Training</fullName>
+        <active>true</active>
+        <label>Training</label>
+        <picklistValues>
+            <picklist>Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Location__c</picklist>
+            <values>
+                <fullName>On-Line</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
     </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
         <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>ShareTrainingRecord__c</fullName>
+        <label>ShareTrainingRecord</label>
+    </sharingReasons>
 </CustomObject>

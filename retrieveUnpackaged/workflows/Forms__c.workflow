@@ -92,6 +92,23 @@
         <template>unfiled$public/EPA_3160_6v5_Moving_to_Leave_Bank_Team</template>
     </alerts>
     <alerts>
+        <fullName>FinalApproval</fullName>
+        <description>FinalApproval</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Cardholder_AO_Name__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Email_Template_Approved_Confirmation</template>
+    </alerts>
+    <alerts>
         <fullName>Final_Approval_Email</fullName>
         <description>Final Approval Email</description>
         <protected>false</protected>
@@ -120,6 +137,21 @@
         <template>unfiled$public/Forms_Final_Rejection</template>
     </alerts>
     <alerts>
+        <fullName>Notify_Assigned_to_and_AO_for_Purchase_Card</fullName>
+        <description>Notify Assigned to and AO for Purchase Card</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Approver_1__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Assigned_to__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Purchase_Card_Provisioning_Templates/Notify_Pending_Action_Purchase_Card</template>
+    </alerts>
+    <alerts>
         <fullName>ORD_111_Submission_Confirmation</fullName>
         <description>ORD-111 Submission Confirmation (prepared for another user)</description>
         <protected>false</protected>
@@ -129,6 +161,101 @@
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/ORD_111_Forms_Submission_Confirm_submitted_by_other_person</template>
+    </alerts>
+    <alerts>
+        <fullName>Purchase_Card_Approved_Notice_to_PC_Team_for_Action</fullName>
+        <description>Purchase Card Approved Notice to PC Team for Action</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>creed.suzette2@epa.gov</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kristine.sisson2@csra.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lyles.dianne2@epa.gov</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>misty.grooms2@csra.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nathaniel.villforth3@csra.com.epa</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Team_Action_Needed</template>
+    </alerts>
+    <alerts>
+        <fullName>Purchase_Card_Approver_1_Approved_Notification</fullName>
+        <description>Purchase Card Approver 1 Approved Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Cardholder_AO_Name__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Approved_by_Approver_1</template>
+    </alerts>
+    <alerts>
+        <fullName>Purchase_Card_Approver_2_Approved_Notification</fullName>
+        <description>Purchase Card Approver 2 Approved Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Cardholder_AO_Name__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Approved_by_Approver_2</template>
+    </alerts>
+    <alerts>
+        <fullName>Purchase_Card_Team_Action_Completion_Notification</fullName>
+        <description>Purchase Card Team Action Completion Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Cardholder_AO_Name__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Team_Action_Completed_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Reject_Request</fullName>
+        <description>Reject Request</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Cardholder_AO_Name__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Email_Template_Rejected_Confirmation</template>
     </alerts>
     <alerts>
         <fullName>SF_182_Final_Approval_to_Funding_Official</fullName>
@@ -264,6 +391,24 @@
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_AO</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting AO Approval&quot;</formula>
+        <name>Approval Step - Sent to AO</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_DD</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting Division Director/Manager Approval&quot;</formula>
+        <name>Approval Step - Sent to DD</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Approval_Step_Sent_to_Escalated_Apprvr</fullName>
         <field>Approval_Step__c</field>
         <formula>IF(  
@@ -333,6 +478,16 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
 &quot;Awaiting Funding Official Approval&quot;), 
 &quot;Awaiting Next Approver&quot;)</formula>
         <name>Approval Step - Sent to Next Approver1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Step_Sent_to_PCM</fullName>
+        <description>approval step to send to the purchase card manager for review</description>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting Purchase Card Manager Approval&quot;</formula>
+        <name>Approval Step - Sent to PCM</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
         <protected>false</protected>
@@ -468,4 +623,43 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
         <operation>Literal</operation>
         <protected>false</protected>
     </fieldUpdates>
+    <rules>
+        <fullName>Purchase Card Assigned to Notification</fullName>
+        <actions>
+            <name>Notify_Assigned_to_and_AO_for_Purchase_Card</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <field>Forms__c.Assigned_to__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Forms__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Purchase Card: Cancellation Check or Card,Purchase Card: Change Cardholder AO,Purchase Card: Change Contact Information,Purchase Card: Change Monthly Limit,Purchase Card: Change Name on Card/Check,Purchase Card: Change Suspension of Card/Check</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Forms__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Purchase Card: New Approving Official (AO),Purchase Card: New Convenience Check,Purchase Card: New Purchase Card</value>
+        </criteriaItems>
+        <description>sends email notification to Assigned to and Approving Official for purchase card provisioning when the assigned to is entered</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Purchase Card Team Action Completed Notification</fullName>
+        <actions>
+            <name>Purchase_Card_Team_Action_Completion_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Forms__c.Form_Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
 </Workflow>

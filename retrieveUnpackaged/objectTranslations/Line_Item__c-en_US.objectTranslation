@@ -9,6 +9,24 @@
         <value>Line Items</value>
     </caseValues>
     <fields>
+        <label><!-- Approver 1 --></label>
+        <name>Approver_1__c</name>
+        <relationshipLabel><!-- Line Items (Approver 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Approver 2 --></label>
+        <name>Approver_2__c</name>
+        <relationshipLabel><!-- Line Items (Approver 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CLPs --></label>
+        <name>CLPs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completion Date --></label>
+        <name>Completion_Date__c</name>
+    </fields>
+    <fields>
         <label><!-- Contact Name --></label>
         <name>Contact_Name__c</name>
     </fields>
@@ -16,6 +34,26 @@
         <label><!-- Contact --></label>
         <name>Contact__c</name>
         <relationshipLabel><!-- Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Course Title --></label>
+        <name>Course_Title__c</name>
+        <picklistValues>
+            <masterLabel>GSA SmartPay Purchase Card Training</masterLabel>
+            <translation><!-- GSA SmartPay Purchase Card Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PCard Agency Supplemental Training</masterLabel>
+            <translation><!-- PCard Agency Supplemental Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PaymentNet (PNET)</masterLabel>
+            <translation><!-- PaymentNet (PNET) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Current User View --></label>
+        <name>Current_User_View__c</name>
     </fields>
     <fields>
         <label><!-- Date --></label>
@@ -46,6 +84,11 @@
         <name>Display5__c</name>
     </fields>
     <fields>
+        <label><!-- Employee --></label>
+        <name>Employee__c</name>
+        <relationshipLabel><!-- Line Items --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Item Description --></label>
         <name>Item_Description__c</name>
     </fields>
@@ -56,6 +99,22 @@
     <fields>
         <label><!-- Item Price --></label>
         <name>Item_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <picklistValues>
+            <masterLabel>On-Line</masterLabel>
+            <translation><!-- On-Line --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Other Location --></label>
+        <name>Other_Location__c</name>
     </fields>
     <fields>
         <label><!-- Related Form --></label>
@@ -76,6 +135,13 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
+    <layouts>
+        <layout>Training</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <recordTypes>
         <label><!-- Form - EPA-100 Line Item --></label>
         <name>Form_EPA_100_Line_Item</name>
@@ -84,5 +150,13 @@
         <label><!-- Sample Record Type --></label>
         <name>Sample_Record_Type</name>
     </recordTypes>
+    <recordTypes>
+        <label><!-- Training --></label>
+        <name>Training</name>
+    </recordTypes>
+    <sharingReasons>
+        <label><!-- ShareTrainingRecord --></label>
+        <name>ShareTrainingRecord</name>
+    </sharingReasons>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

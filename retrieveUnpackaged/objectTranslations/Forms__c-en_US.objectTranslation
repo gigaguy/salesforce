@@ -21,6 +21,59 @@
         <name>A__c</name>
     </fields>
     <fields>
+        <help><!-- account type --></help>
+        <label><!-- Account Type --></label>
+        <name>Account_Type__c</name>
+        <picklistValues>
+            <masterLabel>CO</masterLabel>
+            <translation><!-- CO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COOP</masterLabel>
+            <translation><!-- COOP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ERT</masterLabel>
+            <translation><!-- ERT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FSSI</masterLabel>
+            <translation><!-- FSSI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IMPREST ACCOUNT</masterLabel>
+            <translation><!-- IMPREST ACCOUNT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSC</masterLabel>
+            <translation><!-- OSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchase Cardholder</masterLabel>
+            <translation><!-- Purchase Cardholder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SACO</masterLabel>
+            <translation><!-- SACO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TA</masterLabel>
+            <translation><!-- TA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TO</masterLabel>
+            <translation><!-- TO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UPS</masterLabel>
+            <translation><!-- UPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UTIL</masterLabel>
+            <translation><!-- UTIL --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Action Information --></label>
         <name>Action_Information__c</name>
     </fields>
@@ -110,9 +163,35 @@
         <name>Approval_Step__c</name>
     </fields>
     <fields>
+        <label><!-- Approver 1 --></label>
+        <name>Approver_1__c</name>
+        <relationshipLabel><!-- Forms (Approver 1) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Approver 2 --></label>
         <name>Approver_2__c</name>
         <relationshipLabel><!-- Forms (Approver 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Approver Information --></label>
+        <name>Approver_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Are you replacing an existing AO? --></label>
+        <name>Are_you_replacing_an_existing_AO__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Assigned to --></label>
+        <name>Assigned_to__c</name>
+        <relationshipLabel><!-- Forms (Assigned to) --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Authorization Reason --></label>
@@ -163,6 +242,11 @@
         <name>Books_Materials__c</name>
     </fields>
     <fields>
+        <help><!-- Business justification for requesting a new card or check (Mission Critical). --></help>
+        <label><!-- Business Justification for New Card\Chck --></label>
+        <name>Business_Justification__c</name>
+    </fields>
+    <fields>
         <label><!-- Comment --></label>
         <name>C_Comment__c</name>
     </fields>
@@ -195,6 +279,22 @@
         <name>C__c</name>
     </fields>
     <fields>
+        <label><!-- Cancelling? --></label>
+        <name>Cancelling__c</name>
+        <picklistValues>
+            <masterLabel>Both</masterLabel>
+            <translation><!-- Both --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card</masterLabel>
+            <translation><!-- Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Check</masterLabel>
+            <translation><!-- Check --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Card Holder&apos;s Email --></label>
         <name>Card_Holder_s_Email__c</name>
     </fields>
@@ -203,12 +303,167 @@
         <name>Card_Holder_s_Phone_Number__c</name>
     </fields>
     <fields>
+        <label><!-- Cardholder 1 Existing Monthly Limit --></label>
+        <name>Cardholder_1_Existing_Monthly_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 1 Requested Monthly Limit --></label>
+        <name>Cardholder_1_Requested_Monthly_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 1 --></label>
+        <name>Cardholder_1__c</name>
+        <relationshipLabel><!-- Forms (Cardholder 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 2 Existing Monthly Limit --></label>
+        <name>Cardholder_2_Existing_Monthly_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 2 Requested Monthly Limit --></label>
+        <name>Cardholder_2_Requested_Monthly_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 2 --></label>
+        <name>Cardholder_2__c</name>
+        <relationshipLabel><!-- Forms (Cardholder 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 3 Existing Monthly Limit --></label>
+        <name>Cardholder_3_Existing_Monthly_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 3 Requested Monthly Limit --></label>
+        <name>Cardholder_3_Requested_Monthly_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 3 --></label>
+        <name>Cardholder_3__c</name>
+        <relationshipLabel><!-- Forms (Cardholder 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 4 Existing Monthly Limit --></label>
+        <name>Cardholder_4_Existing_Monthly_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 4 Requested Monthly Limit --></label>
+        <name>Cardholder_4_Requested_Monthly_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 4 --></label>
+        <name>Cardholder_4__c</name>
+        <relationshipLabel><!-- Forms (Cardholder 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 5 Existing Monthly Limit --></label>
+        <name>Cardholder_5_Existing_Monthly_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 5 Requested Monthly Limit --></label>
+        <name>Cardholder_5_Requested_Monthly_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 5 --></label>
+        <name>Cardholder_5__c</name>
+        <relationshipLabel><!-- Forms (Cardholder 5) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 6 Existing Monthly Limit --></label>
+        <name>Cardholder_6_Existing_Monthly_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 6 Requested Monthly Limit --></label>
+        <name>Cardholder_6_Requested_Monthly_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 6 --></label>
+        <name>Cardholder_6__c</name>
+        <relationshipLabel><!-- Forms (Cardholder 6) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 7 Existing Monthly Limit --></label>
+        <name>Cardholder_7_Existing_Monthly_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 7 Requested Monthly Limit --></label>
+        <name>Cardholder_7_Requested_Monthly_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 7 --></label>
+        <name>Cardholder_7__c</name>
+        <relationshipLabel><!-- Forms (Cardholder 7) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 8 Existing Monthly Limit --></label>
+        <name>Cardholder_8_Existing_Monthly_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 8 Requested Monthly Limit --></label>
+        <name>Cardholder_8_Requested_Monthly_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder 8 --></label>
+        <name>Cardholder_8__c</name>
+        <relationshipLabel><!-- Forms (Cardholder 8) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cardholder/AO Display Name --></label>
+        <name>Cardholder_AO_Display_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Approving Official to be relieved of responsibility for the identified cardholder(s). --></help>
+        <label><!-- Cardholder AO From --></label>
+        <name>Cardholder_AO_From__c</name>
+        <relationshipLabel><!-- Forms (Cardholder AO From) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the Cardholder/AO Name if this Request is for Other, otherwise if the Request is For Myself, leave this blank. --></help>
+        <label><!-- Cardholder/AO Name --></label>
+        <name>Cardholder_AO_Name__c</name>
+        <relationshipLabel><!-- Forms (Cardholder/AO Name) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Approving Official that will now assume responsibility for overight of the identified cardholder(s). --></help>
+        <label><!-- Cardholder AO To --></label>
+        <name>Cardholder_AO_To__c</name>
+        <relationshipLabel><!-- Forms (Cardholder AO To) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Change Name on Card/Check From --></label>
+        <name>Change_Name_on_Card_Check_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change Name on Card/Check To --></label>
+        <name>Change_Name_on_Card_Check_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check Request Type --></label>
+        <name>Check_Request_Type__c</name>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reorder</masterLabel>
+            <translation><!-- Reorder --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
         <label><!-- Comments --></label>
         <name>Comments_1__c</name>
     </fields>
     <fields>
         <label><!-- Comments --></label>
         <name>Comments_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Confirm that the AO is either the supervisor or one organizational (grade) level above the cardholder(s) that I/he/she will support. --></help>
+        <label><!-- Confirm AO (Supervisor or 1 Level Above) --></label>
+        <name>Confirm_AO_Supervisor__c</name>
     </fields>
     <fields>
         <label><!-- Continue In Service Agreement Signature --></label>
@@ -337,8 +592,16 @@
         <name>Date_2_Total_Work_Hours__c</name>
     </fields>
     <fields>
+        <label><!-- Date Card is to be Closed --></label>
+        <name>Date_Card_is_to_be_Closed__c</name>
+    </fields>
+    <fields>
         <label><!-- Date &amp; Time Format Instructions --></label>
         <name>Date_Time_Format_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date to Be Reactivated --></label>
+        <name>Date_to_Be_Reactivated__c</name>
     </fields>
     <fields>
         <help><!-- Name of the Changeset to deploy --></help>
@@ -470,6 +733,10 @@
         <name>EHRI_Employee_Number2__c</name>
     </fields>
     <fields>
+        <label><!-- EIN --></label>
+        <name>EIN__c</name>
+    </fields>
+    <fields>
         <label><!-- Hours Donated --></label>
         <name>E_Hours_Donated__c</name>
     </fields>
@@ -484,6 +751,10 @@
     <fields>
         <label><!-- Effective Date --></label>
         <name>Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Address --></label>
+        <name>Email_Address__c</name>
     </fields>
     <fields>
         <help><!-- Clicking the &quot;Employee&apos;s Signature&quot; checkbox will sign this section upon saving the form. --></help>
@@ -643,6 +914,10 @@
             <translation><!-- New --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Recalled</masterLabel>
             <translation><!-- Recalled --></translation>
         </picklistValues>
@@ -675,8 +950,8 @@
             <translation><!-- Data Storage MB --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Deployment</masterLabel>
-            <translation><!-- Deployment --></translation>
+            <masterLabel>Developer Pro Sandbox</masterLabel>
+            <translation><!-- Developer Pro Sandbox --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Developer Sandbox</masterLabel>
@@ -687,8 +962,16 @@
             <translation><!-- Files Storage MB --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Starter User</masterLabel>
-            <translation><!-- Starter User --></translation>
+            <masterLabel>Full Sandbox</masterLabel>
+            <translation><!-- Full Sandbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full User Count</masterLabel>
+            <translation><!-- Full User Count --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Starter User Count</masterLabel>
+            <translation><!-- Starter User Count --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -732,6 +1015,16 @@
         <name>ID_Number__c</name>
     </fields>
     <fields>
+        <help><!-- Please check this box to indicate you agree with the terms listed above. --></help>
+        <label><!-- I Agree with Terms (Approver 1) --></label>
+        <name>I_Agree_with_Terms_Approver_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please check this box to indicate you agree with the terms listed above. --></help>
+        <label><!-- I Agree with Terms (Approver 2) --></label>
+        <name>I_Agree_with_Terms_Approver_2__c</name>
+    </fields>
+    <fields>
         <label><!-- If yes, please describe: --></label>
         <name>If_yes_please_describe__c</name>
     </fields>
@@ -756,6 +1049,18 @@
         <name>Instructions_ORD111__c</name>
     </fields>
     <fields>
+        <label><!-- Instructions --></label>
+        <name>Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Justification for 8 or more cardholders --></label>
+        <name>Justification_for_8_or_more_cardholders__c</name>
+    </fields>
+    <fields>
+        <label><!-- Justification for Limit Change --></label>
+        <name>Justification_for_Limit_Change__c</name>
+    </fields>
+    <fields>
         <label><!-- Last Approval Reassignment --></label>
         <name>Last_Approval_Reassignment__c</name>
     </fields>
@@ -772,8 +1077,280 @@
         <name>LeaveBankInstructions__c</name>
     </fields>
     <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <picklistValues>
+            <masterLabel>ADA OK</masterLabel>
+            <translation><!-- ADA OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ANN ARBOR MI</masterLabel>
+            <translation><!-- ANN ARBOR MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ATHENS GA</masterLabel>
+            <translation><!-- ATHENS GA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BOISE ID</masterLabel>
+            <translation><!-- BOISE ID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BOSTON - REGION 1</masterLabel>
+            <translation><!-- BOSTON - REGION 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHICAGO IL</masterLabel>
+            <translation><!-- CHICAGO IL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHICAGO REGION 5</masterLabel>
+            <translation><!-- CHICAGO REGION 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CINCINNATI, OH</masterLabel>
+            <translation><!-- CINCINNATI, OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cincinnati OH</masterLabel>
+            <translation><!-- Cincinnati OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corvallis OR</masterLabel>
+            <translation><!-- Corvallis OR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DULUTH MN</masterLabel>
+            <translation><!-- DULUTH MN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Edison NJ</masterLabel>
+            <translation><!-- Edison NJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAI On-Line</masterLabel>
+            <translation><!-- FAI On-Line --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fort Meade, MD</masterLabel>
+            <translation><!-- Fort Meade, MD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GULF BREEZE FL</masterLabel>
+            <translation><!-- GULF BREEZE FL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ - CRYSTAL GATEWAY</masterLabel>
+            <translation><!-- HQ - CRYSTAL GATEWAY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ - CRYSTAL STATION</masterLabel>
+            <translation><!-- HQ - CRYSTAL STATION --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ - OCFO ONLY</masterLabel>
+            <translation><!-- HQ - OCFO ONLY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ - OFFICE OF WATER</masterLabel>
+            <translation><!-- HQ - OFFICE OF WATER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ - OSTRI- CRYSTAL GATEWAY</masterLabel>
+            <translation><!-- HQ - OSTRI- CRYSTAL GATEWAY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ - WIC 3N</masterLabel>
+            <translation><!-- HQ - WIC 3N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ CMM2 OPP</masterLabel>
+            <translation><!-- HQ CMM2 OPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ or Washington DC</masterLabel>
+            <translation><!-- HQ or Washington DC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HQ, CMM2, OPP</masterLabel>
+            <translation><!-- HQ, CMM2, OPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Las Vegas NV</masterLabel>
+            <translation><!-- Las Vegas NV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montgomery AL</masterLabel>
+            <translation><!-- Montgomery AL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NARRAGANSETT RI</masterLabel>
+            <translation><!-- NARRAGANSETT RI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Orleans, LA</masterLabel>
+            <translation><!-- New Orleans, LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPPT/EAD NETI 2138</masterLabel>
+            <translation><!-- OPPT/EAD NETI 2138 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On-Line Training</masterLabel>
+            <translation><!-- On-Line Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC Refresher On-Line</masterLabel>
+            <translation><!-- PC Refresher On-Line --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REGION 2</masterLabel>
+            <translation><!-- REGION 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REGION 3 - WELLINGING WV LAB</masterLabel>
+            <translation><!-- REGION 3 - WELLINGING WV LAB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REGION 6 - HOUSTON LAB</masterLabel>
+            <translation><!-- REGION 6 - HOUSTON LAB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTP NC</masterLabel>
+            <translation><!-- RTP NC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTP NC, NC</masterLabel>
+            <translation><!-- RTP NC, NC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1</masterLabel>
+            <translation><!-- Region 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 10</masterLabel>
+            <translation><!-- Region 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3</masterLabel>
+            <translation><!-- Region 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4</masterLabel>
+            <translation><!-- Region 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5</masterLabel>
+            <translation><!-- Region 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6</masterLabel>
+            <translation><!-- Region 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7</masterLabel>
+            <translation><!-- Region 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8</masterLabel>
+            <translation><!-- Region 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9</masterLabel>
+            <translation><!-- Region 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SHEPHARDSTOWN WV</masterLabel>
+            <translation><!-- SHEPHARDSTOWN WV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Juan PR</masterLabel>
+            <translation><!-- San Juan PR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shepherdstown WV</masterLabel>
+            <translation><!-- Shepherdstown WV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC</masterLabel>
+            <translation><!-- Washington DC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - 1310 L St.</masterLabel>
+            <translation><!-- Washington DC - 1310 L St. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - AR</masterLabel>
+            <translation><!-- Washington DC - AR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - AR North Room B-305</masterLabel>
+            <translation><!-- Washington DC - AR North Room B-305 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - AR South</masterLabel>
+            <translation><!-- Washington DC - AR South --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - CG</masterLabel>
+            <translation><!-- Washington DC - CG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - CM</masterLabel>
+            <translation><!-- Washington DC - CM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - CS</masterLabel>
+            <translation><!-- Washington DC - CS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - EE</masterLabel>
+            <translation><!-- Washington DC - EE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - OFFICE OF WATER</masterLabel>
+            <translation><!-- Washington DC - OFFICE OF WATER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - PY</masterLabel>
+            <translation><!-- Washington DC - PY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC - RRB</masterLabel>
+            <translation><!-- Washington DC - RRB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC OCFO</masterLabel>
+            <translation><!-- Washington DC OCFO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC, OAM ONLY</masterLabel>
+            <translation><!-- Washington DC, OAM ONLY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web-Based Training</masterLabel>
+            <translation><!-- Web-Based Training --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Location of Training Site --></label>
         <name>Location_of_Training_Site__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mail Code --></label>
+        <name>Mail_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mailing Address --></label>
+        <name>Mailing_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monthly Purchase Limit --></label>
+        <name>Monthly_Purchase_Limit__c</name>
     </fields>
     <fields>
         <label><!-- Name --></label>
@@ -790,6 +1367,46 @@
     <fields>
         <label><!-- National Program --></label>
         <name>National_Program__c</name>
+    </fields>
+    <fields>
+        <label><!-- New City --></label>
+        <name>New_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Divison --></label>
+        <name>New_Divison__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Email Address --></label>
+        <name>New_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Mail Code --></label>
+        <name>New_Mail_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Mailing Address --></label>
+        <name>New_Mailing_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Office --></label>
+        <name>New_Office__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Region --></label>
+        <name>New_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- New State --></label>
+        <name>New_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Telephone Number --></label>
+        <name>New_Telephone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Zip --></label>
+        <name>New_Zip__c</name>
     </fields>
     <fields>
         <label><!-- Non-Government Contribution Cost --></label>
@@ -1072,6 +1689,46 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Purchase Card Request Type --></label>
+        <name>Purchase_Card_Request_Type__c</name>
+        <picklistValues>
+            <masterLabel>Cancellation of Card or Check</masterLabel>
+            <translation><!-- Cancellation of Card or Check --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change Cardholder AO</masterLabel>
+            <translation><!-- Change Cardholder AO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change Contact Information</masterLabel>
+            <translation><!-- Change Contact Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change Monthly Limit</masterLabel>
+            <translation><!-- Change Monthly Limit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change Name on Card or Check</masterLabel>
+            <translation><!-- Change Name on Card or Check --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Approving Official (AO)</masterLabel>
+            <translation><!-- New Approving Official (AO) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Convenience Check</masterLabel>
+            <translation><!-- New Convenience Check --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Purchase Card</masterLabel>
+            <translation><!-- New Purchase Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspension of Card or Check</masterLabel>
+            <translation><!-- Suspension of Card or Check --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- QA Approval Date --></label>
         <name>QA_Approval_Date__c</name>
     </fields>
@@ -1124,6 +1781,54 @@
     <fields>
         <label><!-- Quantity --></label>
         <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for Cancelling Cardholder Account --></label>
+        <name>Reason_for_Cancelling_Cardholder_Account__c</name>
+        <picklistValues>
+            <masterLabel>Account(s) No Longer Needed</masterLabel>
+            <translation><!-- Account(s) No Longer Needed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lost of Misplace Card or Checks</masterLabel>
+            <translation><!-- Lost of Misplace Card or Checks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resigned/Terminated</masterLabel>
+            <translation><!-- Resigned/Terminated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retired</masterLabel>
+            <translation><!-- Retired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transferred</masterLabel>
+            <translation><!-- Transferred --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reason for Temporary Closure --></label>
+        <name>Reason_for_Temporary_Closure__c</name>
+        <picklistValues>
+            <masterLabel>Detailed to a New Job/Office</masterLabel>
+            <translation><!-- Detailed to a New Job/Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extended Sick Leave</masterLabel>
+            <translation><!-- Extended Sick Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leave of Absence</masterLabel>
+            <translation><!-- Leave of Absence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Employee ID No. --></label>
@@ -1251,6 +1956,10 @@
         <name>Recipient_Work_Phone_No__c</name>
     </fields>
     <fields>
+        <label><!-- Region/Office/Divison --></label>
+        <name>Region_Office_Divison__c</name>
+    </fields>
+    <fields>
         <label><!-- Related Application Name --></label>
         <name>Related_Application_Name__c</name>
         <relationshipLabel><!-- Forms --></relationshipLabel>
@@ -1293,6 +2002,18 @@
         <picklistValues>
             <masterLabel>Withdrawal</masterLabel>
             <translation><!-- Withdrawal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Request is for? --></label>
+        <name>Request_is_for__c</name>
+        <picklistValues>
+            <masterLabel>Myself</masterLabel>
+            <translation><!-- Myself --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -1426,12 +2147,25 @@
         <name>Series__c</name>
     </fields>
     <fields>
+        <help><!-- Please enter in your service comp date is the MM/YYYY format --></help>
+        <label><!-- Service Comp. Date (MM/YYYY) --></label>
+        <name>Service_Comp_Date_MM_YYYY__c</name>
+    </fields>
+    <fields>
+        <label><!-- Single Purchase Limit --></label>
+        <name>Single_Purchase_Limit__c</name>
+    </fields>
+    <fields>
         <label><!-- Special Comments --></label>
         <name>Special_Comments__c</name>
     </fields>
     <fields>
         <label><!-- Special accommodation needed? --></label>
         <name>Special_accommodation_needed__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
     </fields>
     <fields>
         <label><!-- Step --></label>
@@ -1471,6 +2205,10 @@
         <label><!-- Person --></label>
         <name>Technical_Contact__c</name>
         <relationshipLabel><!-- Forms (Technical Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Telephone Number --></label>
+        <name>Telephone_Number__c</name>
     </fields>
     <fields>
         <label><!-- Title --></label>
@@ -2021,6 +2759,10 @@
         <name>X8_Digit_Station_Symbol__c</name>
     </fields>
     <fields>
+        <label><!-- Zip --></label>
+        <name>Zip__c</name>
+    </fields>
+    <fields>
         <label><!-- Comments --></label>
         <name>comments__c</name>
     </fields>
@@ -2072,6 +2814,180 @@
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Cancellation of Card/Check</layout>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
+        </sections>
+        <sections>
+            <label><!-- Request for Cancellation of Purchase Card and/or Convenience Checks. --></label>
+            <section>Request for Cancellation of Purchase Card and/or Convenience Checks.</section>
+        </sections>
+        <sections>
+            <label><!-- Requestor Information --></label>
+            <section>Requestor Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Change Cardholder AO</layout>
+        <sections>
+            <label><!-- Cardholder AO Request --></label>
+            <section>Cardholder AO Request</section>
+        </sections>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- List of affected cardholder(s) --></label>
+            <section>List of affected cardholder(s)</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
+        </sections>
+        <sections>
+            <label><!-- Requestor Information --></label>
+            <section>Requestor Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Change Contact Info on Card/Check</layout>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Contact Information Change Details --></label>
+            <section>Contact Information Change Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
+        </sections>
+        <sections>
+            <label><!-- Requestor Information --></label>
+            <section>Requestor Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Change Monthly Limit of Card/Check</layout>
+        <sections>
+            <label><!-- Cardholder 1 --></label>
+            <section>Cardholder 1</section>
+        </sections>
+        <sections>
+            <label><!-- Cardholder 2 --></label>
+            <section>Cardholder 2</section>
+        </sections>
+        <sections>
+            <label><!-- Cardholder 3 --></label>
+            <section>Cardholder 3</section>
+        </sections>
+        <sections>
+            <label><!-- Cardholder 4 --></label>
+            <section>Cardholder 4</section>
+        </sections>
+        <sections>
+            <label><!-- Cardholder 5 --></label>
+            <section>Cardholder 5</section>
+        </sections>
+        <sections>
+            <label><!-- Cardholder 6 --></label>
+            <section>Cardholder 6</section>
+        </sections>
+        <sections>
+            <label><!-- Cardholder 7 --></label>
+            <section>Cardholder 7</section>
+        </sections>
+        <sections>
+            <label><!-- Cardholder 8 --></label>
+            <section>Cardholder 8</section>
+        </sections>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
+        </sections>
+        <sections>
+            <label><!-- Request for Monthly Limit Increase/Decrease Details --></label>
+            <section>Request for Monthly Limit Increase/Decrease Details</section>
+        </sections>
+        <sections>
+            <label><!-- Requestor Information --></label>
+            <section>Requestor Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Change Name on Card/Check</layout>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
+        </sections>
+        <sections>
+            <label><!-- Request for Name Change on Purchase Card and/or Convenience Checks --></label>
+            <section>Request for Name Change on Purchase Card and/or Convenience Checks</section>
+        </sections>
+        <sections>
+            <label><!-- Requestor Information --></label>
+            <section>Requestor Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Change Suspension of Card/Check</layout>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
+        </sections>
+        <sections>
+            <label><!-- Requestor Information --></label>
+            <section>Requestor Information</section>
+        </sections>
+        <sections>
+            <label><!-- Temporary Closure/Reactivation Details --></label>
+            <section>Temporary Closure/Reactivation Details</section>
         </sections>
     </layouts>
     <layouts>
@@ -2176,6 +3092,60 @@
         </sections>
     </layouts>
     <layouts>
+        <layout>New Approving Official  (AO)</layout>
+        <sections>
+            <label><!-- Cardholder(s) --></label>
+            <section>Cardholder(s)</section>
+        </sections>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
+        </sections>
+        <sections>
+            <label><!-- Request for a New Approving Official (AO)  Account  Set-Up --></label>
+            <section>Request for a New Approving Official (AO)  Account  Set-Up</section>
+        </sections>
+        <sections>
+            <label><!-- Requestor Information --></label>
+            <section>Requestor Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>New Convenience Check</layout>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Convenience Check Instructions --></label>
+            <section>Convenience Check Instructions</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
+        </sections>
+        <sections>
+            <label><!-- Request for Convenience Checks --></label>
+            <section>Request for Convenience Checks</section>
+        </sections>
+        <sections>
+            <label><!-- Requestor Information --></label>
+            <section>Requestor Information</section>
+        </sections>
+    </layouts>
+    <layouts>
         <layout>ORD-111</layout>
         <sections>
             <label><!-- Custom Links --></label>
@@ -2259,6 +3229,33 @@
         </sections>
     </layouts>
     <layouts>
+        <layout>Purchase Card</layout>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Approving Officials --></label>
+            <section>Purchase Card Approving Officials</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Card Instructions --></label>
+            <section>Purchase Card Instructions</section>
+        </sections>
+        <sections>
+            <label><!-- Request for Purchase Card --></label>
+            <section>Request for Purchase Card</section>
+        </sections>
+        <sections>
+            <label><!-- Requestor Information --></label>
+            <section>Requestor Information</section>
+        </sections>
+    </layouts>
+    <layouts>
         <layout>SF-182</layout>
         <sections>
             <label><!-- Approval Options --></label>
@@ -2330,6 +3327,30 @@
         <name>BAP_Provisioning</name>
     </recordTypes>
     <recordTypes>
+        <label><!-- Purchase Card: Cancellation Check or Card --></label>
+        <name>Cancellation_Check_or_Card</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Purchase Card: Change Cardholder AO --></label>
+        <name>Change_Cardholder_AO</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Purchase Card: Change Contact Information --></label>
+        <name>Change_Contact_Information</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Purchase Card: Change Monthly Limit --></label>
+        <name>Change_Monthly_Limit</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Purchase Card: Change Name on Card/Check --></label>
+        <name>Change_Name_Name_on_CardCheck</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Purchase Card: Change Suspension of Card/Check --></label>
+        <name>Change_Suspension_of_cardcheck</name>
+    </recordTypes>
+    <recordTypes>
         <label><!-- EPA-3160-6v5 --></label>
         <name>EPA3160_6v5</name>
     </recordTypes>
@@ -2342,8 +3363,20 @@
         <name>EPA_3160_6v5_old_delete</name>
     </recordTypes>
     <recordTypes>
+        <label><!-- Purchase Card: New Approving Official (AO) --></label>
+        <name>New_Approving_Official_AO</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Purchase Card: New Convenience Check --></label>
+        <name>New_Convenience_Check</name>
+    </recordTypes>
+    <recordTypes>
         <label><!-- ORD-111 --></label>
         <name>ORD_111</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Purchase Card: New Purchase Card --></label>
+        <name>Purchase_Card</name>
     </recordTypes>
     <recordTypes>
         <label><!-- SF-182 --></label>
@@ -2363,8 +3396,32 @@
         <name>Authorization_Role_Reason</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- Only Approvers can edit the Business Justification. --></errorMessage>
+        <name>Business_Justification_Editability_Rule</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Please enter a valid deployment destination --></errorMessage>
         <name>Deploy_Destination_valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Approver 1 may enter &quot;I Agree with Terms (Approver 1)&quot;. --></errorMessage>
+        <name>Purchase_Card_Instructions_Agree_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Approver 2 may enter &quot;I Agree with Terms (Approver 2)&quot;. --></errorMessage>
+        <name>Purchase_Card_Instructions_Agree_Rule2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Contracting Officers (CO), Simplified Acquisition Contracting Officers (SACO), and Training Officers (TO) Account Types may have a Monthly or Single Purchase Limit other than the default of $7,000 Monthly or $3,500 Single Purchase. --></errorMessage>
+        <name>Purchase_Card_Limit_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If this request is for someone else, please enter that person in the Cardholder AO Name field. --></errorMessage>
+        <name>Request_is_for_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Request is for? field cannot be blank. Please either select Myself or Other. --></errorMessage>
+        <name>Request_is_for_cannot_be_blank</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- If Form is being prepared for person other than self, &quot;Continued Service Agreement Signature&quot; field cannot be checked. --></errorMessage>
@@ -2393,6 +3450,10 @@
     <validationRules>
         <errorMessage><!-- Vendor Email Address is not a valid email address. --></errorMessage>
         <name>SF_182_Invalid_Email_Address</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the date in a MM/YYYY format --></errorMessage>
+        <name>Service_Comp_Date_MM_YYYY_Format</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- Please enter a vaild source --></errorMessage>

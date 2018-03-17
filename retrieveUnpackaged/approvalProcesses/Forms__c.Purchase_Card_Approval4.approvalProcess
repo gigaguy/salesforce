@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>allInternalUsers</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Cardholder_AO_Name__c</field>
+        <field>RecordType</field>
+        <field>Purchase_Card_Request_Type__c</field>
+        <field>Request_is_for__c</field>
+        <field>I_Agree_with_Terms_Approver_1__c</field>
+        <field>Business_Justification__c</field>
+        <field>I_Agree_with_Terms_Approver_2__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Step_Sent_to_DD</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>Purchase_Card_Approver_1_Approved_Notification</name>
+                <type>Alert</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>Approver_1__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Approval Official step</description>
+        <label>Approval Official</label>
+        <name>Approval_official</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Approver_2__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Division Director/Manager approval step</description>
+        <label>Division Director/Manager</label>
+        <name>Division_Director_Manager</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>Purchase Card request approval process for New AO or all Change requests.</description>
+    <emailTemplate>Purchase_Card_Provisioning_Templates/Purchase_Card_Email_Template_Notify_Approver</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Forms__c.RecordType</field>
+            <operation>equals</operation>
+            <value>Purchase Card: New Approving Official (AO),Purchase Card: Change Cardholder AO,Purchase Card: Change Name on Card/Check</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Forms__c.RecordType</field>
+            <operation>equals</operation>
+            <value>Purchase Card: Change Contact Information,Purchase Card: Change Suspension of Card/Check,Purchase Card: Change Monthly Limit,Purchase Card: Cancellation Check or Card</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approval_Step_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>FinalApproval</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Purchase_Card_Approved_Notice_to_PC_Team_for_Action</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Status_Updated_to_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Reject_Request</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Status_Updated_to_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Approval_Step_Sent_to_AO</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Purchase Card - New AO or Change</label>
+    <recallActions>
+        <action>
+            <name>Status_Updated_to_Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>
