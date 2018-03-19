@@ -5,7 +5,7 @@ trigger UpDateFieldsOnPurchaseCardRecordType on Forms__c (before insert, before 
     //Store Form Purchase Card RecordType in a map
     //****Do not change label for recordtype without updating line 8-16
     Map<ID,ID> formRtPcMap = new Map<ID,ID>();
-    for(RecordType RT: [select id, name from recordtype where name like '%Purchase%'])
+    for(RecordType RT: [select id, name from recordtype where name like 'Purchase Card:%'])
     {
         formRTPcMap.put(RT.Id, RT.Id);
     }
@@ -19,14 +19,54 @@ trigger UpDateFieldsOnPurchaseCardRecordType on Forms__c (before insert, before 
                 //update the fields with the information from that contact
                 
                 a.Cardholder_AO_Display_Name__c = myContact.Name;
-                if(myContact.Phone != null && a.Telephone_Number__c == null){a.Telephone_Number__c = myContact.Phone;}
-                if(myContact.Email != null && a.Email_Address__c == null){a.Email_Address__c = myContact.Email;}
-                if(myContact.Employee_Number__c != null && a.EIN__c == null){a.EIN__c = myContact.Employee_Number__c;}
-                if(myContact.MailingStreet != null && a.Mailing_Address__c ==null){a.Mailing_Address__c = myContact.MailingStreet;}
-                if(myContact.Mail_Stop__c != null && a.Mail_Code__c == null){a.Mail_Code__c = myContact.Mail_Stop__c;}
-                if(myContact.MailingCity != null && a.City__c == null){a.City__c = myContact.MailingCity;}
-                if(myContact.MailingState != null && a.State__c == null){a.State__c = myContact.MailingState;}
-                if(myContact.MailingPostalCode != null && a.Zip__c == null){a.Zip__c = myContact.MailingPostalCode;}
+
+                if(myContact.Phone != null){
+                    a.Telephone_Number__c = myContact.Phone;
+                }else{
+                    a.Telephone_Number__c = null;
+                }
+
+                if(myContact.Email != null){
+                    a.Email_Address__c = myContact.Email;
+                }else{
+                    a.Email_Address__c = null;
+                }
+
+                if(myContact.Employee_Number__c != null){
+                    a.EIN__c = myContact.Employee_Number__c;
+                }else{
+                    a.EIN__c = null;
+                }
+
+                if(myContact.MailingStreet != null){
+                    a.Mailing_Address__c = myContact.MailingStreet;
+                }else{
+                    a.Mailing_Address__c = null;
+                }
+
+                if(myContact.Mail_Stop__c != null){
+                    a.Mail_Code__c = myContact.Mail_Stop__c;
+                }else{
+                    a.Mail_Code__c = null;
+                }
+
+                if(myContact.MailingCity != null){
+                    a.City__c = myContact.MailingCity;
+                }else{
+                    a.City__c = null;
+                }
+
+                if(myContact.MailingState != null){
+                    a.State__c = myContact.MailingState;
+                }else{
+                    a.State__c = null;
+                }
+
+                if(myContact.MailingPostalCode != null){
+                    a.Zip__c = myContact.MailingPostalCode;
+                }else{
+                    a.Zip__c = null;
+                }
                 
             }else{
                 //Get the user name

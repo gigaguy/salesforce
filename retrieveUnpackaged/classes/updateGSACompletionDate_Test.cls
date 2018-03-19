@@ -13,6 +13,15 @@ public class updateGSACompletionDate_Test {
         testContact.RecordTypeId = Schema.SObjectType.Contact.getRecordTypeInfosByName().get('EPA Person').getRecordTypeId();
         testContact.Salutation = 'Prof.';
         testContact.LastName = 'Pudding';
+        testContact.FirstName = 'Bob'; 
+        testContact.Phone = '318-867-5309';
+        testContact.Email = 'bob.pudding@gd.com';
+        testContact.Employee_Number__c = '123';
+        testContact.Mail_Stop__c = 'this is mail stop';
+        testContact.MailingStreet = '123 Bob St.';
+        testContact.MailingCity = 'Bob City';
+        testContact.MailingState = 'TX';
+        testContact.MailingPostalCode = '71111';
         testContact.AccountId = testAccount.Id;
         testContact.User__c = UserInfo.getUserId();
         insert testContact;

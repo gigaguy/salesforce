@@ -171,19 +171,11 @@
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>kristine.sisson2@csra.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
             <recipient>lyles.dianne2@epa.gov</recipient>
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>misty.grooms2@csra.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>nathaniel.villforth3@csra.com.epa</recipient>
+            <recipient>robinson.latonya2@epa.gov</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>

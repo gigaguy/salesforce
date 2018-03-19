@@ -38,11 +38,7 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>EPA_100</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
+        <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>EPA_100</compactLayoutAssignment>
@@ -24112,7 +24108,7 @@ Prepare_Form_for__r.Email
         <fullName>Business_Justification_Editability_Rule</fullName>
         <active>true</active>
         <description>Only Approvers can edit the Business Justification.</description>
-        <errorConditionFormula>AND ($User.Id &lt;&gt; Approver_1__c , $User.Id &lt;&gt; Approver_2__c,  $User.ProfileId &lt;&gt; &quot;2F00et0000000UAI4&quot;, ISCHANGED( Business_Justification__c ))</errorConditionFormula>
+        <errorConditionFormula>AND ($User.Id &lt;&gt; Approver_1__c , $User.Id &lt;&gt; Approver_2__c,  $User.ProfileId &lt;&gt; &quot;00et0000000UAI4&quot;, ISCHANGED( Business_Justification__c ))</errorConditionFormula>
         <errorMessage>Only Approvers can edit the Business Justification.</errorMessage>
     </validationRules>
     <validationRules>
@@ -24128,7 +24124,7 @@ Prepare_Form_for__r.Email
         <active>true</active>
         <description>Only Approver 1 may enter &quot;I Agree with Terms (Approver 1)&quot;.</description>
         <errorConditionFormula>AND( 
-$User.Id &lt;&gt; Approver_1__c,  $Profile.Name &lt;&gt; &quot;System Administrator&quot;, ISCHANGED(I_Agree_with_Terms_Approver_1__c ))</errorConditionFormula>
+$User.Id &lt;&gt; Approver_1__c,  $User.ProfileId &lt;&gt; &quot;00et0000000UAI4&quot;, ISCHANGED(I_Agree_with_Terms_Approver_1__c ))</errorConditionFormula>
         <errorMessage>Only Approver 1 may enter &quot;I Agree with Terms (Approver 1)&quot;.</errorMessage>
     </validationRules>
     <validationRules>

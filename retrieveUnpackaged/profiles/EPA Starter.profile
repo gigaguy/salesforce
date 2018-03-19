@@ -2538,7 +2538,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Forms__c.EIN__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2563,7 +2563,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Forms__c.Email_Address__c</field>
         <readable>true</readable>
     </fieldPermissions>
