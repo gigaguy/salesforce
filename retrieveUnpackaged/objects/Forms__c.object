@@ -2239,26 +2239,10 @@ TEXT(Training_End_Date__c))</formula>
                 <sorted>false</sorted>
                 <value>
                     <fullName>Developer Sandbox</fullName>
-                    <default>true</default>
-                </value>
-                <value>
-                    <fullName>Developer Pro Sandbox</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>Full Sandbox</fullName>
                     <default>false</default>
                 </value>
                 <value>
                     <fullName>Custom Object</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>Full User Count</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>Starter User Count</fullName>
                     <default>false</default>
                 </value>
                 <value>
@@ -2276,6 +2260,14 @@ TEXT(Training_End_Date__c))</formula>
                 <value>
                     <fullName>Deployment</fullName>
                     <default>false</default>
+                </value>
+                <value>
+                    <fullName>Starter User</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Developer Pro Sandbox</fullName>
+                    <default>false</default>
                     <isActive>false</isActive>
                 </value>
                 <value>
@@ -2284,7 +2276,17 @@ TEXT(Training_End_Date__c))</formula>
                     <isActive>false</isActive>
                 </value>
                 <value>
-                    <fullName>Starter User</fullName>
+                    <fullName>Full Sandbox</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Full User Count</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Starter User Count</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
                 </value>
@@ -6211,12 +6213,20 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
+                <fullName>Deployment</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Developer Sandbox</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Files Storage MB</fullName>
                 <default>false</default>
+            </values>
+            <values>
+                <fullName>Starter User</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -7017,10 +7027,6 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Developer Pro Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Developer Sandbox</fullName>
                 <default>true</default>
             </values>
@@ -7029,15 +7035,7 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Full Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Full User Count</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Starter User Count</fullName>
+                <fullName>Starter User</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -8471,10 +8469,6 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Developer Pro Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Developer Sandbox</fullName>
                 <default>true</default>
             </values>
@@ -8483,15 +8477,7 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Full Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Full User Count</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Starter User Count</fullName>
+                <fullName>Starter User</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -9925,10 +9911,6 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Developer Pro Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Developer Sandbox</fullName>
                 <default>true</default>
             </values>
@@ -9937,15 +9919,7 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Full Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Full User Count</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Starter User Count</fullName>
+                <fullName>Starter User</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -11379,10 +11353,6 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Developer Pro Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Developer Sandbox</fullName>
                 <default>true</default>
             </values>
@@ -11391,15 +11361,7 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Full Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Full User Count</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Starter User Count</fullName>
+                <fullName>Starter User</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -12833,10 +12795,6 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Developer Pro Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Developer Sandbox</fullName>
                 <default>true</default>
             </values>
@@ -12845,15 +12803,7 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Full Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Full User Count</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Starter User Count</fullName>
+                <fullName>Starter User</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -14287,10 +14237,6 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Developer Pro Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Developer Sandbox</fullName>
                 <default>true</default>
             </values>
@@ -14299,15 +14245,7 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Full Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Full User Count</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Starter User Count</fullName>
+                <fullName>Starter User</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -18250,10 +18188,6 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Developer Pro Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Developer Sandbox</fullName>
                 <default>true</default>
             </values>
@@ -18262,15 +18196,7 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Full Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Full User Count</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Starter User Count</fullName>
+                <fullName>Starter User</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -19704,10 +19630,6 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Developer Pro Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Developer Sandbox</fullName>
                 <default>true</default>
             </values>
@@ -19716,15 +19638,7 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Full Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Full User Count</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Starter User Count</fullName>
+                <fullName>Starter User</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -21988,10 +21902,6 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Developer Pro Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Developer Sandbox</fullName>
                 <default>true</default>
             </values>
@@ -22000,15 +21910,7 @@ Prepare_Form_for__r.Email
                 <default>false</default>
             </values>
             <values>
-                <fullName>Full Sandbox</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Full User Count</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Starter User Count</fullName>
+                <fullName>Starter User</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -24132,7 +24034,7 @@ $User.Id &lt;&gt; Approver_1__c,  $User.ProfileId &lt;&gt; &quot;00et0000000UAI4
         <active>true</active>
         <description>Only Approver 2 may enter &quot;I Agree with Terms (Approver 2)&quot;.</description>
         <errorConditionFormula>AND( 
-$User.Id &lt;&gt; Approver_2__c, $Profile.Name &lt;&gt; &quot;System Administrator&quot;, ISCHANGED(I_Agree_with_Terms_Approver_2__c ))</errorConditionFormula>
+$User.Id &lt;&gt; Approver_2__c, $User.ProfileId &lt;&gt; &quot;00et0000000UAI4&quot;, ISCHANGED(I_Agree_with_Terms_Approver_2__c ))</errorConditionFormula>
         <errorMessage>Only Approver 2 may enter &quot;I Agree with Terms (Approver 2)&quot;.</errorMessage>
     </validationRules>
     <validationRules>
@@ -24146,7 +24048,8 @@ ISPICKVAL(Account_Type__c, &apos;OSC&apos;),
 ISPICKVAL(Account_Type__c, &apos;TA&apos;),
 ISPICKVAL(Account_Type__c, &apos;UTIL&apos;),
 ISPICKVAL(Account_Type__c, &apos;FSSI&apos;),
-ISPICKVAL(Account_Type__c, &apos;UPS&apos;)
+ISPICKVAL(Account_Type__c, &apos;UPS&apos;),
+ISPICKVAL(Account_Type__c, &apos;Purchase Cardholder&apos;)
 )
 
 &amp;&amp;
@@ -24168,7 +24071,7 @@ Single_Purchase_Limit__c  &lt;&gt; 3500
     </validationRules>
     <validationRules>
         <fullName>Request_is_for_cannot_be_blank</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>makes sure the end user does not set the Request is For? field to None</description>
         <errorConditionFormula>ISBLANK (Text( Request_is_for__c ))</errorConditionFormula>
         <errorDisplayField>Request_is_for__c</errorDisplayField>

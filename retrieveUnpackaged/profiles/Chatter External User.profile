@@ -5102,7 +5102,7 @@
         <recordType>Line_Item__c.Sample_Record_Type</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Line_Item__c-EPA-100 Line Item Layout</layout>
+        <layout>Line_Item__c-Training</layout>
         <recordType>Line_Item__c.Training</recordType>
     </layoutAssignments>
     <layoutAssignments>

@@ -9,7 +9,7 @@ trigger UpDateFieldsOnPurchaseCardRecordType on Forms__c (before insert, before 
     {
         formRTPcMap.put(RT.Id, RT.Id);
     }
-	for (Forms__c a : Trigger.new){
+    for (Forms__c a : Trigger.new){
         if(formRtPcMap.containsKey(a.RecordTypeId)) //3.6.18, If the recordtype is not the map, dont execute the loop
         {
             
