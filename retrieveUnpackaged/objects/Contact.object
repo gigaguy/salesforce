@@ -265,7 +265,7 @@ DATE(YEAR(GSA_SmartPay_Training_Date__c) + 2, Month(GSA_SmartPay_Training_Date__
         <length>2</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -307,7 +307,7 @@ DATE(YEAR(GSA_SmartPay_Training_Date__c) + 2, Month(GSA_SmartPay_Training_Date__
         <length>50</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -347,7 +347,7 @@ DATE(YEAR(GSA_SmartPay_Training_Date__c) + 2, Month(GSA_SmartPay_Training_Date__
     <fields>
         <fullName>Name</fullName>
         <trackFeedHistory>true</trackFeedHistory>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
     </fields>
     <fields>
         <fullName>Occ_Series__c</fullName>
@@ -428,8 +428,8 @@ DATE(YEAR(GSA_SmartPay_Training_Date__c) + 2, Month(GSA_SmartPay_Training_Date__
     </fields>
     <fields>
         <fullName>Phone</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
     </fields>
     <fields>
         <fullName>Position_Title__c</fullName>

@@ -5514,13 +5514,20 @@ Prepare_Form_for__r.Email
     <listViews>
         <fullName>All1</fullName>
         <columns>NAME</columns>
-        <columns>Name__c</columns>
         <columns>RECORDTYPE</columns>
+        <columns>Originator_ORD111__c</columns>
         <columns>Form_Owner__c</columns>
-        <columns>LAST_UPDATE</columns>
+        <columns>Training_Start_Date__c</columns>
+        <columns>Training_End_Date__c</columns>
+        <columns>Course_Title__c</columns>
+        <columns>Training_Objective__c</columns>
+        <columns>Direct_Cost_Total__c</columns>
         <columns>Approval_Step__c</columns>
+        <columns>User_Supervisor__c</columns>
+        <columns>User_Supervisor_2__c</columns>
+        <columns>LAST_UPDATE</columns>
         <filterScope>Everything</filterScope>
-        <label>All</label>
+        <label>Robyn&apos;s View</label>
     </listViews>
     <listViews>
         <fullName>BAPM_Approvers_Forms</fullName>
