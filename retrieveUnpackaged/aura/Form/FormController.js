@@ -1,5 +1,6 @@
 ({
     doInit : function(component, event, helper) {
+        
         var action = component.get("c.getFormRTs");
         action.setParams({
 			"sID" : component.get("v.sessionID"),
@@ -8,7 +9,17 @@
             console.log('in doInit action');
             var name = response.getState();
             if (name === "SUCCESS") {
-                component.set("v.forms", response.getReturnValue());
+                var formRTList = response.getReturnValue();
+                var y;
+                var newDesc;
+                for (y = 0; y < formRTList.length; y++){
+                    if(formRTList[y].Description.includes('(grid)')){
+                      newDesc = formRTList[y].Description.replace("(grid)", "");
+                      formRTList[y].Description = newDesc;
+                    }
+                }               
+                //component.set("v.forms", response.getReturnValue());                
+                component.set("v.forms", formRTList);
             }
         });
         $A.enqueueAction(action);
@@ -18,6 +29,28 @@
         //  set siteUserID and apiUserID for temp record sharing
         helper.setSiteUserID(component);
         helper.setAPIUserID(component);
+       
+        //get url parameters
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)); //You get the whole decoded URL of the page.
+        var sURLVariables = sPageURL.split('&'); //Split by & so that you get the key value pairs separately in a list        
+
+        var sParameterName;
+        var i;
+        var formID = 'none';
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('='); //to split the key from the value.
+            if (sParameterName[0] === 'formID') { 
+                formID=sParameterName[1];
+            }
+          }
+        console.log('formID: '+formID); 
+        if(formID!='none'){
+            component.set("v.isNew",false);
+            component.set("v.viewFormID", formID);
+            component.set("v.pageStatus", "viewMyForms");
+            helper.setFormName(component);
+           }
     },
     approvalRecall : function(component, event, helper) {  // recalls Form from approval
     	console.log('in approvalRecall');
@@ -878,9 +911,12 @@
     },
     enableLineItems: function(component, event, helper) {    // saves Form before allowing Line Items
     	console.log('in enableLineItems');
-                
+        
         try {
-           	component.set("v.enablingLineItems", true);
+            
+            if(component.get("v.gridEnabled"))
+	            {component.set("v.enablingLineItems", false);}
+             else{{component.set("v.enablingLineItems", true);}}
             component.set("v.trySubmit", false);
             component.get('v.theModal').get("e.recordSave").fire();
             console.log('no error');
@@ -888,6 +924,7 @@
         catch (e) {
             console.log(e);
           }
+            
     },
     handleFilesChange: function(component, event, helper) {  // runs when user selects file for attachment upload
         console.log('in handleFilesChange');      
@@ -1132,7 +1169,7 @@
         console.log('in viewFormTypes');
         
         component.set("v.message", null);
-		component.set("v.pageStatus", "viewFormTypes");  // shows user list of Available Workflow and Fill&Print Forms
+		component.set("v.pageStatus", "viewFormTypes");  // shows user list of Available Workflow Forms
 	},
     nextLineItem : function(component, event, helper) {
         console.log('in nextLineItem');

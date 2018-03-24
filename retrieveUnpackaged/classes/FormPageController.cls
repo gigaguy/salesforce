@@ -14,6 +14,7 @@ public without sharing class FormPageController  {
             
             formNames.add(ps.label.removeStart('BAPForms User - '));
             //hardcoding form RTs for all users
+            formNames.add('BAP Provisioning');
             formNames.add('EPA-100');
             formNames.add('SF-182');
             formNames.add('ORD-111');
@@ -312,9 +313,13 @@ public without sharing class FormPageController  {
     public static string isLineItemEnabled(string formName){
         string qName = 'Form - '+formName+' Line Item';
         string liRT = 'notEnabled';
-        
+                
         try{liRT = [select id, name from recordtype where sObjectType = 'Line_Item__c' and IsActive = true and Name = :qName limit 1].id;}
         catch(exception e){system.debug('notEnabled');}
+        
+        string formRTDesc = [select id, Description from recordtype where sObjectType = 'Forms__c' and name = :formName limit 1].Description;
+          if (formRTDesc.contains('grid')){liRT='grid';}        
+        
         
         return liRT;
     }
@@ -459,6 +464,17 @@ public without sharing class FormPageController  {
         forms__c theForm = formsList[0];
         string supportInfo = (string)string.valueof(theForm.get(formName));
         return supportInfo;
+    }
+    
+    @AuraEnabled
+    public static string getFormName(string formID, string sID){
+        
+        string formName = 'unauthorized';
+        
+        forms__c theForm = [select id, Form_Type_Name__c, Unauthenticated_Owner__c   from forms__c where id = :formID limit 1];
+        user u = [select id, Session_Token__c from user where Session_Token__c = :sID limit 1];
+        if(u.id == theForm.Unauthenticated_Owner__c){formName = theForm.Form_Type_Name__c;} 
+        return formName;
     }
         
 }

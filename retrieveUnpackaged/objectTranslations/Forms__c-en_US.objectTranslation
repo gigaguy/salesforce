@@ -1446,6 +1446,10 @@
         <name>Form_Owner__c</name>
     </fields>
     <fields>
+        <label><!-- Form Purpose --></label>
+        <name>Form_Purpose__c</name>
+    </fields>
+    <fields>
         <label><!-- Form Record Name --></label>
         <name>Form_Record_Name__c</name>
     </fields>
@@ -2061,7 +2065,7 @@
         <relationshipLabel><!-- Forms (Management POC) --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- First/Last Name --></label>
+        <label><!-- Name --></label>
         <name>Name__c</name>
     </fields>
     <fields>

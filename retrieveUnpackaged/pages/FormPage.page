@@ -13,6 +13,8 @@
         var instructions = {!instructions};
         var lanerror = {!lanerror};
         var noContact = {!noContact};
+        var formID = "{!formID}";
+        
         
         if(instructions==true && lanerror!=true && noContact!= true){
             window.addEventListener("DOMContentLoaded", function() {
@@ -25,7 +27,8 @@
         $Lightning.use("c:Forms", function() {
           $Lightning.createComponent("c:Form",
                 {"authenticated": valid,
-                "sessionID" : sID
+                "sessionID" : sID,
+                "formID" : formID
                 },
                   "lightning",
                   function(cmp) {

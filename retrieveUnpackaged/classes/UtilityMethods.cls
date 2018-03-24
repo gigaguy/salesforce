@@ -25,6 +25,12 @@ public class UtilityMethods {
         return userID;
     }
     
+    public static string getFormID() {
+        string formID;
+        formID = ApexPages.currentPage().getParameters().get('formID');
+        return formID;
+    }
+    
     public static string getUserName(String userID) {
         string userName;
         if (userID != null) {

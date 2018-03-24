@@ -46,6 +46,10 @@
                 if(resp==='notEnabled'){
                 component.set("v.rtLineItemEnabled", false);
                 }
+                else if (resp==='grid'){
+                    component.set("v.gridEnabled",true);
+                    component.set("v.rtLineItemEnabled", false);
+                }
                 else {
                     component.set("v.rtLineItemEnabled", true);
                     var rtID = resp;
@@ -453,6 +457,41 @@
             }
         });
      $A.enqueueAction(action);
+    },
+    setFormName : function(component) {
+        console.log('in helper.setFormName');
+        
+        var formID = component.get("v.viewFormID");
+        console.log('formID: ', formID);
+        var action = component.get("c.getFormName");
+        action.setParams({
+            "formID": formID,
+            "sID" : component.get("v.sessionID")
+        });
+         //set call back
+         action.setCallback(this, function(response) {
+            var state = response.getState();
+             console.log('response state: '+state);
+            if (state === "SUCCESS") {
+                var formName = response.getReturnValue();
+                console.log('helper received formName: '+formName);
+                
+                if(formName!='unauthorized'){
+                component.set("v.viewFormName", formName);                
+                var a = component.get("c.createTheModal");
+       			$A.enqueueAction(a); 
+                  }
+                else {alert('You do not have access to this Form.');
+                     var a = component.get("c.viewMyForms");
+                      $A.enqueueAction(a);
+                     }
+            }
+             else {var errors = response.getError();
+                console.log('error');
+             }
+         });
+        // enqueue the action
+        $A.enqueueAction(action);
     }
     
 })
