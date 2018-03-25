@@ -13,8 +13,9 @@
                 var y;
                 var newDesc;
                 for (y = 0; y < formRTList.length; y++){
-                    if(formRTList[y].Description.includes('(grid)')){
+                    if(formRTList[y].Description.includes('(grid)') || formRTList[y].Description.includes('(Grid)')){
                       newDesc = formRTList[y].Description.replace("(grid)", "");
+                      newDesc = formRTList[y].Description.replace("(Grid)", "");
                       formRTList[y].Description = newDesc;
                     }
                 }               
@@ -78,6 +79,7 @@
                     	console.log('submittedForm is False');
                     component.set("v.viewLineItemList", false);
         			component.set("v.showLineItem", false);
+                    component.set("v.gridEnabled", false);
                     
                 }
                 else if(state === 'ERROR'){
@@ -137,6 +139,7 @@
                     	console.log('submittedForm is True');
                     component.set("v.viewLineItemList", false);
         			component.set("v.showLineItem", false);
+                    component.set("v.gridEnabled", false);s
                 }
                 else if(state === 'ERROR'){
                     var errors = resp.getError();
@@ -180,6 +183,7 @@
         component.set("v.viewLineItemList", false);
         component.set("v.showLineItem", false);
         component.set("v.trySubmit", false);
+        component.set("v.gridEnabled", false);
     	
         var action = component.get("c.deleteForm");
         action.setParams({
@@ -265,6 +269,7 @@
         component.set("v.viewLineItemList", false);
         component.set("v.displayFieldsCount", 0);
         component.set("v.showLineItem", false);
+        component.set("v.gridEnabled", false);
 
         // LS 2017/11/19: Added additional action below to remove FormShare on close of modal, there may be a better place or way to do this
         var removeShareAction = component.get("c.removeFormShare");
@@ -775,6 +780,7 @@
         component.set("v.viewLineItemList", false);
         component.set("v.showLineItem", false);
         component.set("v.trySubmit", false);
+        component.set("v.gridEnabled", false);
  
         var formID = component.get("v.viewFormID");
         console.log(formID);
@@ -1078,6 +1084,7 @@
              component.set("v.viewLineItemList", false);
              component.set("v.displayFieldsCount", 0);
              component.set("v.showLineItem", false);
+             component.set("v.gridEnabled", false);
      	  	}
           catch (e) {
             console.log(e);

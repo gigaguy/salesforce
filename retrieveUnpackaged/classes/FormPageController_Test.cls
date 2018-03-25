@@ -72,7 +72,9 @@ public class FormPageController_Test {
         FormPageController.viewForm(testForm.ID, uSU.id);
         FormPageController.saveForm(form, '123ABC');
         FormPageController.saveForm(yform, '123ABC');
+        FormPageController.getFormName(form.ID, '123ABC');
         FormPageController.deleteForm(form.ID, '123ABC');
+        FormPageController.getFandP_FormRTs();
         FormPageController.getSiteUserID();
         FormPageController.getAPIUserID();
         FormPageController.removeFormShare(xform.ID, uSU.id);
@@ -171,6 +173,12 @@ public class FormPageController_Test {
             u.Supervisor__c = u2.id;
             u.Supervisor_2__c = u2.id;
             update u;
+            
+            //siteUser
+            User uSU = [select id from User where isActive = true AND id != :u.id AND id != :u2.id limit 1];
+        
+            //apiUser
+            User uAU = [select id from User where isActive = true AND id != :u.id AND id != :u2.id AND id != :uSU.id limit 1];
                        
             contact c = new contact(FirstName='Bob', LastName='Smith', Lan_ID__c = 'thetest');
             insert c;
@@ -181,6 +189,8 @@ public class FormPageController_Test {
             insert testForm;
             
             id formID = testForm.id;
+            
+            Line_Item__c litem = FormPageController.insertLineItem('123ABC', 'Sample Record Type', formID, uSU.ID, uAU.ID);
             
             FormPageController.submitForApproval(formID, '123ABC');
             FormPageController.recallApproval(formID, '123ABC');
@@ -244,6 +254,8 @@ public class FormPageController_Test {
             insert litem3;
             UtilityMethods.addFormShare(theForm.ID, uSU.id);
             UtilityMethods.removeFormShare(theForm.ID, uSU.id);
+            
+            FormPageController.cloneForm('123ABC',theForm.ID);
         }
       
 }

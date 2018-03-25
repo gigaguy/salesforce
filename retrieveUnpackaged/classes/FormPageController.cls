@@ -318,7 +318,7 @@ public without sharing class FormPageController  {
         catch(exception e){system.debug('notEnabled');}
         
         string formRTDesc = [select id, Description from recordtype where sObjectType = 'Forms__c' and name = :formName limit 1].Description;
-          if (formRTDesc.contains('grid')){liRT='grid';}        
+          if (formRTDesc.contains('grid') || formRTDesc.contains('Grid')){liRT='grid';}        
         
         
         return liRT;
