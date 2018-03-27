@@ -1353,6 +1353,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Cost_Share_Contribution__c.Federal_Amount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Cost_Share_Contribution__c.Fund__c</field>
         <readable>true</readable>
@@ -1388,6 +1393,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Cost_Share_Contribution__c.Project_Title__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Cost_Share_Contribution__c.Site__c</field>
         <readable>true</readable>
@@ -1406,6 +1416,11 @@
         <editable>true</editable>
         <field>Cost_Share_Review__c.Date_of_Review__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Cost_Share_Review__c.Federal_Contribution_Summary__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -1440,7 +1455,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Cost_Share_Review__c.Project_Title__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -3479,6 +3494,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>GLLA_Agreement__c.Federal_Contribution_Summary__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>GLLA_Agreement__c.Federal_Cost_Share_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3535,11 +3555,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>GLLA_Agreement__c.Project_Phase__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>GLLA_Agreement__c.Project_Title__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3646,6 +3661,11 @@
         <editable>false</editable>
         <field>GLLA_Project__c.Project_Agreement_Total__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>GLLA_Project__c.Project_End_Date__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -4951,6 +4971,10 @@
         <recordType>Cost_Share_Contribution__c.Cash_Contribution</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Cost_Share_Contribution__c-Cash Layout</layout>
+        <recordType>Cost_Share_Contribution__c.Federal</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Cost_Share_Contribution__c-In Kind Layout</layout>
         <recordType>Cost_Share_Contribution__c.In_Kind_Contribution</recordType>
     </layoutAssignments>
@@ -5805,6 +5829,11 @@
         <default>true</default>
         <recordType>Cost_Share_Contribution__c.Cash_Contribution</recordType>
         <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Cost_Share_Contribution__c.Federal</recordType>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>

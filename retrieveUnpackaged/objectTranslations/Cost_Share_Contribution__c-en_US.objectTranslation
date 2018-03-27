@@ -34,6 +34,10 @@
         <name>FY_Qtr__c</name>
     </fields>
     <fields>
+        <label><!-- Federal Amount --></label>
+        <name>Federal_Amount__c</name>
+    </fields>
+    <fields>
         <label><!-- Fund --></label>
         <name>Fund__c</name>
     </fields>
@@ -62,18 +66,37 @@
         <name>PRC__c</name>
     </fields>
     <fields>
+        <label><!-- Project Title --></label>
+        <name>Project_Title__c</name>
+    </fields>
+    <fields>
         <label><!-- Site --></label>
         <name>Site__c</name>
     </fields>
     <layouts>
         <layout>Cash Layout</layout>
         <sections>
+            <label><!-- Cost-Share Contribution Details --></label>
+            <section>Cost-Share Contribution Details</section>
+        </sections>
+        <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label><!-- Fields --></label>
-            <section>Fields</section>
+            <label><!-- Project Details --></label>
+            <section>Project Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Federal Layout</layout>
+        <sections>
+            <label><!-- Cost-Share Contribution Details --></label>
+            <section>Cost-Share Contribution Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
         </sections>
         <sections>
             <label><!-- Project Details --></label>
@@ -83,12 +106,12 @@
     <layouts>
         <layout>In Kind Layout</layout>
         <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
+            <label><!-- Cost-Share Contribution Details --></label>
+            <section>Cost-Share Contribution Details</section>
         </sections>
         <sections>
-            <label><!-- Fields --></label>
-            <section>Fields</section>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
         </sections>
         <sections>
             <label><!-- Project Details --></label>
@@ -98,6 +121,10 @@
     <recordTypes>
         <label><!-- Cash Contribution --></label>
         <name>Cash_Contribution</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Federal --></label>
+        <name>Federal</name>
     </recordTypes>
     <recordTypes>
         <label><!-- In Kind Contribution --></label>

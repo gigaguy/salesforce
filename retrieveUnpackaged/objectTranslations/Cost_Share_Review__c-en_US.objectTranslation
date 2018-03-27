@@ -38,6 +38,10 @@
         <name>Date_of_Review__c</name>
     </fields>
     <fields>
+        <label><!-- Federal Contribution Summary --></label>
+        <name>Federal_Contribution_Summary__c</name>
+    </fields>
+    <fields>
         <label><!-- Fiscal Year --></label>
         <name>Fiscal_Year__c</name>
     </fields>
@@ -109,6 +113,29 @@
         <label><!-- Site/Project Code --></label>
         <name>Site_Project_Code__c</name>
     </fields>
+    <layouts>
+        <layout>Cost-Share Review Layout</layout>
+        <sections>
+            <label><!-- Cost-Share Review Details --></label>
+            <section>Cost-Share Review Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- NFS Contributions Summary --></label>
+            <section>NFS Contributions Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Project Agreement --></label>
+            <section>Project Agreement</section>
+        </sections>
+        <sections>
+            <label><!-- Reviewers and Approvers --></label>
+            <section>Reviewers and Approvers</section>
+        </sections>
+    </layouts>
     <layouts>
         <layout>Quarterly Review Layout</layout>
         <sections>

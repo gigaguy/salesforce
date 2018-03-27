@@ -453,6 +453,10 @@
         <name>Project_Agreement_Total__c</name>
     </fields>
     <fields>
+        <label><!-- Project End Date --></label>
+        <name>Project_End_Date__c</name>
+    </fields>
+    <fields>
         <label><!-- Project Status Comments --></label>
         <name>Project_Status_Comments__c</name>
     </fields>
@@ -476,6 +480,25 @@
             <translation><!-- Withdrawn --></translation>
         </picklistValues>
     </fields>
+    <layouts>
+        <layout>GLLA Project Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Summary --></label>
+            <section>Financial Summary</section>
+        </sections>
+        <sections>
+            <label><!-- General Information --></label>
+            <section>General Information</section>
+        </sections>
+        <sections>
+            <label><!-- Project Status --></label>
+            <section>Project Status</section>
+        </sections>
+    </layouts>
     <layouts>
         <layout>Project Layout</layout>
         <sections>

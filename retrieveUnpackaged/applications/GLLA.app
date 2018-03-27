@@ -4,7 +4,7 @@
         <headerColor>#0070D2</headerColor>
     </brand>
     <formFactors>Large</formFactors>
-    <label>GLLA</label>
+    <label>GLLA Project Tracking Database</label>
     <navType>Standard</navType>
     <tab>GLLA_Project__c</tab>
     <tab>GLLA_Agreement__c</tab>

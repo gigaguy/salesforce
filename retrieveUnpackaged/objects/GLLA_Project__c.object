@@ -47,6 +47,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is used to store the GLLA Project details.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -254,7 +255,7 @@
         <externalId>false</externalId>
         <label>Cash Contributions</label>
         <summarizedField>GLLA_Agreement__c.Cash_Contributions__c</summarizedField>
-        <summaryForeignKey>GLLA_Agreement__c.Project__c</summaryForeignKey>
+        <summaryForeignKey>GLLA_Agreement__c.Project_Title__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -284,7 +285,7 @@
         <externalId>false</externalId>
         <label>Estimated Federal Cost Share</label>
         <summarizedField>GLLA_Agreement__c.Federal_Cost_Share_Amount__c</summarizedField>
-        <summaryForeignKey>GLLA_Agreement__c.Project__c</summaryForeignKey>
+        <summaryForeignKey>GLLA_Agreement__c.Project_Title__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -295,7 +296,7 @@
         <externalId>false</externalId>
         <label>Estimated NFS Cost Share</label>
         <summarizedField>GLLA_Agreement__c.NFS_Cost_Share_Amount__c</summarizedField>
-        <summaryForeignKey>GLLA_Agreement__c.Project__c</summaryForeignKey>
+        <summaryForeignKey>GLLA_Agreement__c.Project_Title__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -340,7 +341,7 @@
         <externalId>false</externalId>
         <label>In Kind Contributions</label>
         <summarizedField>GLLA_Agreement__c.In_Kind_Contributions__c</summarizedField>
-        <summaryForeignKey>GLLA_Agreement__c.Project__c</summaryForeignKey>
+        <summaryForeignKey>GLLA_Agreement__c.Project_Title__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -637,11 +638,20 @@
         <externalId>false</externalId>
         <label>Project Agreement Total</label>
         <summarizedField>GLLA_Agreement__c.Project_Agreement_Amount__c</summarizedField>
-        <summaryForeignKey>GLLA_Agreement__c.Project__c</summaryForeignKey>
+        <summaryForeignKey>GLLA_Agreement__c.Project_Title__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Project_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Project End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Project_Status_Comments__c</fullName>

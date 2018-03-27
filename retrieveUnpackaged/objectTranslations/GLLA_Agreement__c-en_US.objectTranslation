@@ -25,6 +25,10 @@
         <name>Date_Signed__c</name>
     </fields>
     <fields>
+        <label><!-- Federal Contribution Summary --></label>
+        <name>Federal_Contribution_Summary__c</name>
+    </fields>
+    <fields>
         <label><!-- Federal Cost Share Amount --></label>
         <name>Federal_Cost_Share_Amount__c</name>
     </fields>
@@ -97,6 +101,7 @@
     <fields>
         <label><!-- Project Title --></label>
         <name>Project_Title__c</name>
+        <relationshipLabel><!-- Agreements --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Project Type --></label>
@@ -109,11 +114,6 @@
             <masterLabel>Remediation</masterLabel>
             <translation><!-- Remediation --></translation>
         </picklistValues>
-    </fields>
-    <fields>
-        <label><!-- Project --></label>
-        <name>Project__c</name>
-        <relationshipLabel><!-- Agreements --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Site/Project Code --></label>

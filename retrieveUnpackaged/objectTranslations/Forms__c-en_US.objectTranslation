@@ -613,16 +613,16 @@
         <label><!-- Deployment Destination --></label>
         <name>Deployment_Destination__c</name>
         <picklistValues>
-            <masterLabel>BAPIntegration</masterLabel>
-            <translation><!-- BAPIntegration --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>EPAFull</masterLabel>
-            <translation><!-- EPAFull --></translation>
+            <masterLabel>Integrate</masterLabel>
+            <translation><!-- Integrate --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Production</masterLabel>
             <translation><!-- Production --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Staging</masterLabel>
+            <translation><!-- Staging --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -2783,6 +2783,10 @@
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Object --></label>
+            <section>Custom Object</section>
         </sections>
         <sections>
             <label><!-- Deployments --></label>

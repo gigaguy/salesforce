@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
@@ -47,6 +47,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is used to store the GLLA Cost-Share Review details</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -113,6 +114,16 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Federal_Contribution_Summary__c</fullName>
+        <externalId>false</externalId>
+        <label>Federal Contribution Summary</label>
+        <summarizedField>Cost_Share_Contribution__c.Federal_Amount__c</summarizedField>
+        <summaryForeignKey>Cost_Share_Contribution__c.Cost_Share_Review__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Fiscal_Year__c</fullName>
         <externalId>false</externalId>
         <label>Fiscal Year</label>
@@ -147,7 +158,7 @@
     <fields>
         <fullName>Master_Project_ID__c</fullName>
         <externalId>false</externalId>
-        <formula>Agreement__r.Project__r.Master_Project_ID__c</formula>
+        <formula>Agreement__r.Project_Title__r.Master_Project_ID__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Master Project ID</label>
         <required>false</required>
@@ -180,7 +191,7 @@
     <fields>
         <fullName>Project_Title__c</fullName>
         <externalId>false</externalId>
-        <formula>Agreement__r.Project_Title__c</formula>
+        <formula>HYPERLINK(&quot;/&quot; + Agreement__r.Project_Title__c,  Agreement__r.Project_Title__r.Name )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Project Title</label>
         <required>false</required>
@@ -271,6 +282,7 @@
     <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>
+        <columns>Project_Title__c</columns>
         <columns>Review_Start_Date__c</columns>
         <columns>Review_End_Date__c</columns>
         <columns>Cost_Share_Review_Status__c</columns>
@@ -284,7 +296,7 @@
     </nameField>
     <pluralLabel>Cost-Share Reviews</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>Project_Title__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields xsi:nil="true"/>
         <customTabListAdditionalFields>Review_Start_Date__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Review_End_Date__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Cost_Share_Review_Status__c</customTabListAdditionalFields>

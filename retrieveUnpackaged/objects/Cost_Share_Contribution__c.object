@@ -47,6 +47,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is used to store the GLLA Cash and In Kind Cost-Share Contribution details.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -123,6 +124,17 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Federal_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Federal Amount</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Fund__c</fullName>
         <externalId>false</externalId>
         <label>Fund</label>
@@ -147,7 +159,7 @@
     <fields>
         <fullName>Master_Project_ID__c</fullName>
         <externalId>false</externalId>
-        <formula>Cost_Share_Review__r.Agreement__r.Project__r.Master_Project_ID__c</formula>
+        <formula>Cost_Share_Review__r.Agreement__r.Project_Title__r.Master_Project_ID__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Master Project ID</label>
         <required>false</required>
@@ -204,6 +216,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Project_Title__c</fullName>
+        <externalId>false</externalId>
+        <formula>Hyperlink(&quot;/&quot; +  Cost_Share_Review__r.Agreement__r.Project_Title__c , Cost_Share_Review__r.Agreement__r.Project_Title__r.Name)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Site__c</fullName>
         <externalId>false</externalId>
         <label>Site</label>
@@ -218,6 +242,7 @@
     <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>
+        <columns>Project_Title__c</columns>
         <columns>Contribution_Date__c</columns>
         <columns>RECORDTYPE</columns>
         <columns>Cash_Amount__c</columns>
@@ -237,6 +262,206 @@
         <fullName>Cash_Contribution</fullName>
         <active>true</active>
         <label>Cash Contribution</label>
+        <picklistValues>
+            <picklist>Non_Federal_Sponsor_Picklist</picklist>
+            <values>
+                <fullName>Arkema Inc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ashtabula City Port Authority</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlantic Richfield Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BASF Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BP Products North America Inc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BP-Husky Refining LLC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bridgestone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Buffalo Niagara Riverkeeper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chevron USA Inc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>City of Sheboygan WI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>City of Waukegan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cleveland-Cuyahoga County Port</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consumers Energy Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>East Chicago Waterway Management District</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ford Motor Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraser Shipyards Inc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Freeport %E2%80%93 McMoran %28Phelps Dodge Corporation%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gary Sanitary District</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Honeywell International Inc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indiana Department of Environmental Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indiana Department of Natural Resources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legacy Refining Operations a series of Evergreen Resources Group LLC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michigan Department of Natural Resources and Environment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Milwaukee County Department of Parks Recreation and Culture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niagara County Soil %26 Water Conservation District</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Northern Indiana Public Service Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ohio Environmental Protection Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ottawa River Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phelps Dodge Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pilkington North America Inc%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pollution Risk Services LLC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sheboygan County</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State of Illinois</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State of Indiana</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State of Michigan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State of Minnesota</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State of New York</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State of Ohio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State of Wisconsin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sunoco Inc%2E %28R%26M%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tyco Fire Products LP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Steel Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Union Carbide Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WE Energies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wisconsin Department of Natural Resources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wisconsin Public Service Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XIK Corporation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Federal</fullName>
+        <active>true</active>
+        <label>Federal</label>
         <picklistValues>
             <picklist>Non_Federal_Sponsor_Picklist</picklist>
             <values>
