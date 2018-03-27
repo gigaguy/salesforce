@@ -545,8 +545,15 @@
               	<div align="left">
                     {!v.fileUploadCmp}   
                            <div class="slds-text-body_small slds-text-color_error">
-                               <aura:unescapedHtml value="{!v.fileName}" />  <aura:if isTrue="{!v.largeFile}"><a href="{!'/FileUpload?sid='+v.sessionID+'&amp;formID='+v.viewFormID}" target="_blank" onclick="{!c.hideAttachments}" style="color: black; text-decoration-line: underline;"> Large File Upload</a>
-                 		<br/></aura:if>
+                               <aura:unescapedHtml value="{!v.fileName}" />  
+                               <aura:if isTrue="{!v.largeFile}">
+                                   <aura:if isTrue="{!v.addLineItemAttachments==false}">
+                                     <a href="{!'/FileUpload?sid='+v.sessionID+'&amp;formID='+v.viewFormID}" target="_blank" onclick="{!c.hideAttachments}" style="color: black; text-decoration-line: underline;"> Large File Upload</a>
+									   <aura:set attribute="else">
+                                         <a href="{!'/FileUpload?sid='+v.sessionID+'&amp;formID='+v.viewLineItemID}" target="_blank" onclick="{!c.hideAttachments}" style="color: black; text-decoration-line: underline;"> Large File Upload</a>
+                                       </aura:set>        						
+                                   </aura:if>         		
+                         <br/></aura:if>
                     	   </div>
                          
                          <!--use aura:if for show-hide the loading spinner image--> 
@@ -566,7 +573,9 @@
               <ui:button label="Save to Enable Attachments" press="{!c.enableAttachments}" class="slds-button slds-button--neutral floatLeft"/>			
                 <aura:set attribute="else">
                 <aura:if isTrue="{!v.submittedForm==false}">  
-                  <aura:if isTrue="{!v.hasAttachments || v.addAttachments || v.addLineItemAttachments}"><ui:button label="Hide Attachments" press="{!c.hideAttachments}" class="slds-button slds-button--neutral floatLeft"/></aura:if>
+                  <aura:if isTrue="{!v.hasAttachments || v.addAttachments || v.addLineItemAttachments}">
+                      <ui:button label="Hide Attachments" press="{!c.hideAttachments}" class="slds-button slds-button--neutral floatLeft"/>
+                    </aura:if>
                   <aura:if isTrue="{!v.hasAttachments==false &amp;&amp; v.addAttachments==false &amp;&amp; v.showLineItem==false}">
                       <ui:button label="View/Add Form Attachments" press="{!c.showAttachments}" class="slds-button slds-button--neutral floatLeft"/>
                     </aura:if> 

@@ -139,7 +139,7 @@
                     	console.log('submittedForm is True');
                     component.set("v.viewLineItemList", false);
         			component.set("v.showLineItem", false);
-                    component.set("v.gridEnabled", false);s
+                    component.set("v.gridEnabled", false);
                 }
                 else if(state === 'ERROR'){
                     var errors = resp.getError();
@@ -162,6 +162,8 @@
             if(state === 'SUCCESS'){
                 component.set("v.mySavedForms", resp.getReturnValue());  // returned list of user's Saved Forms
                 component.set("v.pageStatus", "viewMyForms");  // shows user list of Saved Forms
+                component.set("v.submittedForm", false);
+                    	console.log('submittedForm is False');
             }
             else if(state === 'ERROR'){
                 var errors = resp.getError();
@@ -270,6 +272,7 @@
         component.set("v.displayFieldsCount", 0);
         component.set("v.showLineItem", false);
         component.set("v.gridEnabled", false);
+        component.set("v.submittedForm", false);  // Larry added 3/26, is this needed? We should probably reset all attributes when a modal is closed
 
         // LS 2017/11/19: Added additional action below to remove FormShare on close of modal, there may be a better place or way to do this
         var removeShareAction = component.get("c.removeFormShare");
@@ -1000,7 +1003,7 @@
                 var a = component.get('c.createTheModal');  
                 $A.enqueueAction(a);
               }
-                else if(component.get("V.onSubmit") == true){
+                else if(component.get("v.onSubmit") == true){
                     var a = component.get('c.approvalSubmit');  
                 	$A.enqueueAction(a);
                 }
@@ -1099,6 +1102,11 @@
             	component.set("v.trySubmit", false);
             	component.get('v.theModal').get("e.recordSave").fire();
                 console.log('no error');
+                component.set("v.hasAttachments", false);
+ 		        component.set("v.addAttachments", false);
+        		component.set("v.addLineItemAttachments", false);
+                component.set("v.fileName", "No File Selected..");
+                component.set("v.largeFile", false);
           	}
           catch (e) {
             console.log(e);
@@ -1108,11 +1116,19 @@
     saveNext : function(component, event, helper){        // saves current Line Item, creates next Line Item record
         console.log('in c.saveNext');
         console.log('viewTheModal: ' + component.get("v.viewTheModal"));
-        
+      
+        //close attachments in case list is open
+          component.set("v.hasAttachments", false);  
+          component.set("v.addAttachments", false);
+          component.set("v.addLineItemAttachments", false);
+          component.set("v.fileName", "No File Selected..");
+          component.set("v.largeFile", false);
+       
         try {
             	component.set("v.saveNextingLineItem", true);
             	component.get('v.theModal').get("e.recordSave").fire();
                 console.log('no error');
+            	
           	}
           catch (e) {
             console.log(e);
@@ -1182,12 +1198,19 @@
         console.log('in nextLineItem');
         component.set("v.lineItemNav", true);
         
+        //close attachments in case list is open
+          component.set("v.hasAttachments", false);  
+          component.set("v.addAttachments", false);
+          component.set("v.addLineItemAttachments", false);
+          component.set("v.fileName", "No File Selected..");
+          component.set("v.largeFile", false);
+        
         //save line item
           component.get('v.theModal').get("e.recordSave").fire();
         //rebuild list after save
-          var a = component.get("c.viewLineItemList");
+  /*        var a = component.get("c.viewLineItemList");
           $A.enqueueAction(a);
-        
+  */      
         component.set("v.viewTheModal", false);
         component.set("v.lineItemIndex", component.get("v.lineItemIndex")+1);
         var liIndex = component.get("v.lineItemIndex");
@@ -1222,18 +1245,25 @@
                 }
             }
         });
-        $A.enqueueAction(action); 
+        $A.enqueueAction(action);     
     },
     prevLineItem : function(component, event, helper) {
         console.log('in prevLineItem');
         component.set("v.lineItemNav", true);
         
+        //close attachments in case list is open
+          component.set("v.hasAttachments", false);  
+          component.set("v.addAttachments", false);
+          component.set("v.addLineItemAttachments", false);
+          component.set("v.fileName", "No File Selected..");
+          component.set("v.largeFile", false);
+        
         //save line item
           component.get('v.theModal').get("e.recordSave").fire();
         //rebuild list after save
-          var a = component.get("c.viewLineItemList");
+   /*       var a = component.get("c.viewLineItemList");
        	  $A.enqueueAction(a);
-        
+     */   
         component.set("v.viewTheModal", false);
         component.set("v.lineItemIndex", component.get("v.lineItemIndex")-1);
         var liIndex = component.get("v.lineItemIndex");
@@ -1300,6 +1330,13 @@
     viewLineItemJS : function(component, event, helper){
     	console.log('in viewLineItem');
         
+        //close attachments in case list is open
+          component.set("v.hasAttachments", false);  
+          component.set("v.addAttachments", false);
+          component.set("v.addLineItemAttachments", false);
+          component.set("v.fileName", "No File Selected..");
+          component.set("v.largeFile", false);
+        
         component.set("v.viewTheModal", false);
         var liID = event.currentTarget.id; 
         component.set("v.viewLineItemID", liID);
@@ -1344,6 +1381,7 @@
     },
     viewLineItemList : function(component, event, helper) {   // enables line items to be entered
     	console.log('in viewLineItemList');
+        
         component.set("v.displayFieldsCount", undefined);       
         component.set("v.viewLineItemList", true);
         var formID = component.get("v.viewFormID"); 
