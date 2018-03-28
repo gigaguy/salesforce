@@ -439,6 +439,9 @@ public without sharing class FormPageController  {
                 nli.put('Related_Form__c', formID);
                 nli.put('OwnerId', apiUserID);
                 insert nli;
+                
+                UtilityMethods.addFormShare(String.ValueOf(formID), siteUserID);
+                
                 System.debug('newLineItems'+nli);
                 return nli;
             }

@@ -583,7 +583,7 @@
                       <aura:if isTrue="{!v.hasAttachments==false &amp;&amp; v.addAttachments==false &amp;&amp; v.showLineItem==false}">
                     	<ui:button label="View Form Attachments" press="{!c.showAttachments}" class="slds-button slds-button--neutral floatLeft" />
                       </aura:if>
-  <!-- this could likely be only v.hasAttachments since it's in IF submittedform... -->   <aura:if isTrue="{!(v.hasAttachments || v.addAttachments || v.addLineItemAttachments)}">
+  					  <aura:if isTrue="{!(v.hasAttachments || v.addAttachments || v.addLineItemAttachments)}">
                         <ui:button label="Hide Attachments" press="{!c.hideAttachments}" class="slds-button slds-button--neutral floatLeft"/>
                       </aura:if>
                     </aura:set>
@@ -608,7 +608,7 @@
                         <aura:if isTrue="{!v.submittedForm==false &amp;&amp; v.lineItemNoCreate==false &amp;&amp; v.gridEnabled==false}">
                         <ui:button label="View/Add Line Items" press="{!c.viewLineItemList}" class="slds-button slds-button--neutral" />
                             <aura:set attribute="else">
-                              <aura:if isTrue="!v.gridEnabled == false">
+                              <aura:if isTrue="{!v.gridEnabled == false}">
                                 <ui:button label="View Line Items" press="{!c.viewLineItemList}" class="slds-button slds-button--neutral" />
                             <aura:set attribute="else">
                   <aura:if isTrue="{!v.gridEnabled}">
