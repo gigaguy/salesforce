@@ -18,7 +18,16 @@
             System.debug( 'user sandbox email: ' + u.email );            
             u.email = u.email.replace('@example.com', '').replace('=', '@');            
             System.debug( 'user reverted email: ' + u.email );
+        Test.startTest();
 
+        Test.testSandboxPostCopyScript(
+            new OEISandboxPostCopy(), // apex class to run
+            '00D1a000040BlpQ', // org id
+            '00D90000000KY45', // sandbox id
+            'My Sandbox' // sandbox name
+        );
+
+Test.stopTest();
         }
         catch (exception ex){
             System.debug('ETL Update Failed');
