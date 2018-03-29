@@ -150,6 +150,7 @@
             else {
                 component.set("v.message", null);      
                 component.set("v.displayFieldsCount", 0);
+                component.set("v.viewLineItemList", true);
             }
         });
      $A.enqueueAction(action);

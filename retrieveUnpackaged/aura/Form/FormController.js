@@ -527,8 +527,7 @@
     },
     createNewLineItem : function(component, event, helper) {   // inserts new line item for editing
         console.log('in createNewLineItem');
-        console.log('john-component.get("v.showLineItem": '+component.get("v.showLineItem"));
-      
+        
         //save form so changes not lost
         if(component.get("v.showLineItem")==false){
         try {
@@ -539,7 +538,7 @@
         catch (e) {
             console.log(e);
         }   }
-        console.log('here John');
+        
         //hide attachment component in case it is open
             component.set("v.hasAttachments", false);
             component.set("v.addAttachments", false);

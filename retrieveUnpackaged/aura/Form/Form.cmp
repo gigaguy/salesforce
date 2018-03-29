@@ -361,7 +361,7 @@
           <aura:if isTrue="{!v.hasAttachments || (v.viewLineItemList &amp;&amp; v.newLineItem==false) || v.submittedForm &amp;&amp; (v.addAttachments || v.addLineItemAttachments)}">
           <div class="slds-modal__footer">
             
-            <!--line items list-->
+            <!--line items list-->   
               <aura:if isTrue="{!v.viewLineItemList &amp;&amp; v.newLineItem==false}">
              	<table style="border: 1px solid lightgray;">
                     <col width="1"/>
@@ -708,7 +708,7 @@
       </div>
       <div class="slds-backdrop slds-backdrop--open"></div>
     </aura:if>
-            
+
     <!--End The Modal-->
     
 </aura:component>
