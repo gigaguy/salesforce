@@ -105,7 +105,8 @@
         <recipients>
             <type>owner</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>oarm-oam-purchase_card_team@epa.gov</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Email_Template_Approved_Confirmation</template>
     </alerts>
     <alerts>
@@ -148,7 +149,8 @@
             <field>Assigned_to__c</field>
             <type>userLookup</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>oarm-oam-purchase_card_team@epa.gov</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Purchase_Card_Provisioning_Templates/Notify_Pending_Action_Purchase_Card</template>
     </alerts>
     <alerts>
@@ -178,7 +180,8 @@
             <recipient>robinson.latonya2@epa.gov</recipient>
             <type>user</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>oarm-oam-purchase_card_team@epa.gov</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Team_Action_Needed</template>
     </alerts>
     <alerts>
@@ -195,7 +198,8 @@
         <recipients>
             <type>owner</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>oarm-oam-purchase_card_team@epa.gov</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Approved_by_Approver_1</template>
     </alerts>
     <alerts>
@@ -212,7 +216,8 @@
         <recipients>
             <type>owner</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>oarm-oam-purchase_card_team@epa.gov</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Approved_by_Approver_2</template>
     </alerts>
     <alerts>
@@ -229,7 +234,8 @@
         <recipients>
             <type>owner</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>oarm-oam-purchase_card_team@epa.gov</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Team_Action_Completed_Notification</template>
     </alerts>
     <alerts>
@@ -246,7 +252,8 @@
         <recipients>
             <type>owner</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>oarm-oam-purchase_card_team@epa.gov</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Purchase_Card_Provisioning_Templates/Purchase_Card_Email_Template_Rejected_Confirmation</template>
     </alerts>
     <alerts>

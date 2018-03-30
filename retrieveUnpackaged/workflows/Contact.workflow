@@ -8,7 +8,8 @@
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>oarm-oam-purchase_card_team@epa.gov</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Purchase_Card_Provisioning_Templates/X0_Day_GSA_Training_Reminder</template>
     </alerts>
     <alerts>
@@ -19,7 +20,8 @@
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>oarm-oam-purchase_card_team@epa.gov</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Purchase_Card_Provisioning_Templates/X14_Day_GSA_Training_Reminder</template>
     </alerts>
     <alerts>
@@ -30,7 +32,8 @@
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>oarm-oam-purchase_card_team@epa.gov</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Purchase_Card_Provisioning_Templates/X30_Day_GSA_Training_Reminder</template>
     </alerts>
     <alerts>
@@ -41,7 +44,8 @@
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>oarm-oam-purchase_card_team@epa.gov</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Purchase_Card_Provisioning_Templates/X7_Day_GSA_Training_Reminder</template>
     </alerts>
 </Workflow>

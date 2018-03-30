@@ -342,6 +342,17 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
         </filters>
         <label>My Purchase Card Training</label>
     </listViews>
+    <listViews>
+        <fullName>purchase_card_training</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OWNER.LAST_NAME</field>
+            <operation>contains</operation>
+            <value>rhoney</value>
+        </filters>
+        <label>purchase card training</label>
+    </listViews>
     <nameField>
         <displayFormat>LI-{000000}</displayFormat>
         <label>Line Item Name</label>

@@ -625,6 +625,17 @@ DATE(YEAR(GSA_SmartPay_Training_Date__c) + 2, Month(GSA_SmartPay_Training_Date__
         <label>My Contacts</label>
     </listViews>
     <listViews>
+        <fullName>RCU</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <label>RCU</label>
+    </listViews>
+    <listViews>
         <fullName>huang</fullName>
         <columns>FULL_NAME</columns>
         <columns>ACCOUNT.NAME</columns>
