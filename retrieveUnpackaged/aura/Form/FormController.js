@@ -683,7 +683,7 @@
                              component.set("v.submittedForm", false);
                              console.log('submittedForm is False');
                            }
-                         else if(approvalStatus==='Recalled' || approvalStatus==='Rejected' || approvalStatus.indexOf('Form Prepared')>-1)
+                         else if(approvalStatus==='Recalled' || approvalStatus==='Rejected' || approvalStatus.indexOf('Form Prepared')>-1 || approvalStatus==='Pending Earned Hours Entry')
                          	{
                              component.set("v.submittedForm", false);
                              console.log('submittedForm is False');
@@ -1185,10 +1185,8 @@
         
         helper.getAttachList(component, formID);
         
-        if(component.get("v.submittedForm")==false){
-        	component.set("v.addAttachments", true);
-          }
-     	
+        component.set("v.addAttachments", true);
+        
         var a = component.get("c.createAttachComp");
         $A.enqueueAction(a);
     },
@@ -1237,12 +1235,13 @@
           component.set("v.fileName", "No File Selected..");
           component.set("v.largeFile", false);
         
-        //save line item
+        //save line item if not a submitted form
+        if(component.get("v.submittedForm")==false){
           component.get("v.theModal").get("e.recordSave").fire();
-        //rebuild list after save
+        //rebuild list after save -- not needed?
   /*        var a = component.get("c.viewLineItemList");
           $A.enqueueAction(a);
-  */      
+  */      }
         component.set("v.viewTheModal", false);
         component.set("v.lineItemIndex", component.get("v.lineItemIndex")+1);
         var liIndex = component.get("v.lineItemIndex");
@@ -1290,12 +1289,13 @@
           component.set("v.fileName", "No File Selected..");
           component.set("v.largeFile", false);
         
-        //save line item
+        //save line item if not a submitted form
+        if(component.get("v.submittedForm")==false){
           component.get("v.theModal").get("e.recordSave").fire();
         //rebuild list after save
    /*       var a = component.get("c.viewLineItemList");
        	  $A.enqueueAction(a);
-     */   
+     */   }
         component.set("v.viewTheModal", false);
         component.set("v.lineItemIndex", component.get("v.lineItemIndex")-1);
         var liIndex = component.get("v.lineItemIndex");

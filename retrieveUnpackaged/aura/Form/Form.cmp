@@ -358,8 +358,9 @@
           <!--END BOX BODY-->  
             
           <!--BOX FOOTER 1-->
-          <aura:if isTrue="{!v.hasAttachments || (v.viewLineItemList &amp;&amp; v.newLineItem==false) || v.submittedForm &amp;&amp; (v.addAttachments || v.addLineItemAttachments)}">
-          <div class="slds-modal__footer">
+          <aura:if isTrue="{!v.hasAttachments || (v.viewLineItemList &amp;&amp; v.newLineItem==false) || v.submittedForm &amp;&amp; (v.addAttachments || v.addLineItemAttachments)}"> 
+ 
+            <div class="slds-modal__footer">
             
             <!--line items list-->   
               <aura:if isTrue="{!v.viewLineItemList &amp;&amp; v.newLineItem==false}">
@@ -514,7 +515,6 @@
                       </tr>
                     </aura:iteration>                    
                 </table> 
-                  
                    	<aura:set attribute="else">	                  
                       <aura:if isTrue="{!v.submittedForm &amp;&amp; (v.addAttachments || v.addLineItemAttachments)}">
                         <table style="border: 1px solid lightgray;">
@@ -634,13 +634,24 @@
                  </aura:set>
                 </aura:if>
             </aura:if>  
-              
+            
+            <aura:if isTrue="{!v.submittedForm}">  
+            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=0 &amp;&amp; v.lineItemIndex!=undefined &amp;&amp; v.savedLineItem}">
+                <ui:button label="Previous Line Item" press="{!c.prevLineItem}" class="slds-button slds-button--neutral" />
+            </aura:if> 
+            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=v.lineItemCount-1 &amp;&amp; v.lineItemIndex!=undefined &amp;&amp; v.savedLineItem}">
+                <ui:button label="Next Line Item" press="{!c.nextLineItem}" class="slds-button slds-button--neutral" />
+            </aura:if>
+                
+            <aura:set attribute="else">
             <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=0 &amp;&amp; v.lineItemIndex!=undefined &amp;&amp; v.savedLineItem}">
                 <ui:button label="Save &amp; Previous Line Item" press="{!c.prevLineItem}" class="slds-button slds-button--neutral" />
             </aura:if> 
             <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=v.lineItemCount-1 &amp;&amp; v.lineItemIndex!=undefined &amp;&amp; v.savedLineItem}">
                 <ui:button label="Save &amp; Next Line Item" press="{!c.nextLineItem}" class="slds-button slds-button--neutral" />
-            </aura:if> 
+            </aura:if>
+            </aura:set>    
+            </aura:if>    
             
           </div>  
           <!--End BOX FOOTER 2-->
