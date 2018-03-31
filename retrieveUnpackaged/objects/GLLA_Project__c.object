@@ -61,12 +61,12 @@
         <fullName>Actual_Federal_Cost_Share__c</fullName>
         <externalId>false</externalId>
         <label>Actual Federal Cost Share</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
+        <summarizedField>GLLA_Agreement__c.Federal_Contribution_Summary__c</summarizedField>
+        <summaryForeignKey>GLLA_Agreement__c.Project_Title__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Currency</type>
+        <type>Summary</type>
     </fields>
     <fields>
         <fullName>Actual_NFS_Cost_Share_Contribution__c</fullName>
@@ -84,7 +84,7 @@
     <fields>
         <fullName>Actual_Total_Amount__c</fullName>
         <externalId>false</externalId>
-        <formula>Actual_NFS_Cost_Share_Contribution__c +  Actual_Federal_Cost_Share__c</formula>
+        <formula>Actual_NFS_Cost_Share_Contribution__c  +  Actual_Federal_Cost_Share__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Actual Total Amount</label>
         <precision>18</precision>

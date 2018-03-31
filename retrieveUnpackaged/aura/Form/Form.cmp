@@ -1,5 +1,5 @@
 <aura:component controller="FormPageController" implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName">
-	<aura:attribute name="pageStatus" type="string" default="viewFormTypes"/>  
+    <aura:attribute name="pageStatus" type="string" default="viewFormTypes"/>  
     <aura:attribute name="forms" type="RecordType[]"/>  
     <aura:attribute name="FandP_forms" type="List"/>
     <aura:attribute name="viewTheModal" type="boolean" default="false"/>
@@ -20,8 +20,11 @@
     <aura:attribute name="enableAttachments" type="boolean" default="false"/>
     <aura:attribute name="hasAttachments" type="boolean" default="false"/>
     <aura:attribute name="addAttachments" type="boolean" default="false"/>
+    <aura:attribute name="addLineItemAttachments" type="boolean" default="false"/>
     <aura:attribute name="attachList" type="Attachment[]"/>
+    <aura:attribute name="trySubmit" type="boolean" default="false"/>
     <aura:attribute name="onSubmit" type="boolean" default="false"/>
+    <aura:attribute name="submittedForm" type="boolean" default="false"/>
     <aura:attribute name="saveAndClose" type="boolean" default="false"/>
     <aura:attribute name="showLoadingSpinner" type="boolean" default="false" />
     <aura:attribute name="fileName" type="String" default="No File Selected.." />
@@ -30,6 +33,7 @@
     <aura:attribute name="uploadFiles" type="Object[]"/>
     <aura:attribute name="fileList" type="ContentVersion[]"/>
     
+    <aura:attribute name="gridEnabled" type="boolean" default="false"/>
     <aura:attribute name="rtLineItemEnabled" type="boolean" default="false" />
     <aura:attribute name="addLineItem" type="boolean" default="false" />
     <aura:attribute name="lineItemList" type="Line_Item__c[]"/>
@@ -56,6 +60,7 @@
     <aura:attribute name="enablingLineItems" type="boolean" default="false"/>
     <aura:attribute name="saveClosingLineItem" type="boolean" default="false"/>
     <aura:attribute name="saveNextingLineItem" type="boolean" default="false"/>
+    <aura:attribute name="lineItemNav" type="boolean" default="false"/>
     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
@@ -81,7 +86,7 @@
             <div class="slds-page-header" role="banner" style="margin-bottom: 20px; margin-top: -20px; text-align: center;">
                 <div class="slds-grid">
                     <div class="slds-col">
-                        <p class="slds-text-heading *2 dashes here* label">{!v.message}</p>
+                        <p class="slds-text-heading--label">{!v.message}</p>
                     </div>
                 </div>
             </div>
@@ -247,7 +252,7 @@
           <!--BOX HEADER-->
           <div class="slds-modal__header">
             <aura:if isTrue="{!v.showLineItem==false}"> 
-              <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">
+              <aura:if isTrue="{!v.submittedForm==false}">
                   <aura:if isTrue="{!v.isNew || v.isCopy}"><button class="slds-button slds-modal__close slds-button--icon-inverse" title="Cancel" onclick="{!c.confirmCancelCreationModal}">
                           X
                         <span class="slds-assistive-text">Cancel</span>
@@ -262,11 +267,10 @@
                         <span class="slds-assistive-text">Close</span>
                         </button></aura:set>
                 </aura:if> 
-             
-        
-              <h2 id="header99" class="slds-text-heading--medium">
-                Status:
-                <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Recalled',v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c}">
+
+                <h2 id="header99" class="slds-text-heading--medium">
+                 Status:
+                <aura:if isTrue="{!v.submittedForm==false}">
                 	{!v.message}Not Submitted
                     <aura:set attribute="else">
                           Submitted &nbsp; | &nbsp; {!v.newForm.Approval_Step__c}
@@ -287,7 +291,7 @@
                             X  <span class="slds-assistive-text">Cancel</span>
                         </button>
                      <aura:set attribute="else">
-                         <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">
+                         <aura:if isTrue="{!v.submittedForm==false}">
                          	<aura:if isTrue="{!v.lineItemNoCreate==false}">
                              <button title="Close" onclick="{!c.confirmCloseLineItemModal}" class="slds-button slds-modal__close slds-button--icon-inverse" >
                                  X  <span class="slds-assistive-text">Close</span>
@@ -324,10 +328,11 @@
             	</aura:set>
               </aura:if>
           </div>
+            
           <!--BOX BODY-->
           <div class="slds-modal__content slds-p-around--medium" >
               <aura:if isTrue="{!v.showLineItem==false}">
-              <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">                 
+              <aura:if isTrue="{!v.submittedForm==false}">                 
                   <div aura:id="anchor">
                   {!v.theModal}
                  </div> 
@@ -338,9 +343,9 @@
               	
                   <aura:set attribute="else"> 
 				  	<aura:if isTrue="{!v.lineItemNoCreate 
-                                     || ((or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled') &amp;&amp; v.lineItemNoCreate) 
-                                     || ((or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled')==false)}">
-                       <force:recordview aura:id="view" recordId="{!v.viewLineItemID}" />
+                                     || (v.submittedForm==false &amp;&amp; v.lineItemNoCreate) 
+                                     || v.submittedForm}">
+                        <force:recordview aura:id="view" recordId="{!v.viewLineItemID}" />
                     <aura:set attribute="else">
                       <div aura:id="anchor">
        		              {!v.theModal}
@@ -350,10 +355,14 @@
                   </aura:set>
               </aura:if>
           </div>
-          <!--BOX FOOTER 1-->
-          <div class="slds-modal__footer">
+          <!--END BOX BODY-->  
             
-            <!--line items list-->
+          <!--BOX FOOTER 1-->
+          <aura:if isTrue="{!v.hasAttachments || (v.viewLineItemList &amp;&amp; v.newLineItem==false) || v.submittedForm &amp;&amp; (v.addAttachments || v.addLineItemAttachments)}"> 
+ 
+            <div class="slds-modal__footer">
+            
+            <!--line items list-->   
               <aura:if isTrue="{!v.viewLineItemList &amp;&amp; v.newLineItem==false}">
              	<table style="border: 1px solid lightgray;">
                     <col width="1"/>
@@ -369,11 +378,11 @@
                 	</tr>
                     <tr style="background-color: white; border: 1px solid lightgray;">
                         <aura:if isTrue="{!v.displayFieldsCount>0}">
-                            <td style="color: black; border: 0px solid #0070d2; text-align: center;">                           
-                                <aura:if isTrue="{!v.lineItemNoCreate==false &amp;&amp; (or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c != 'Approved') || v.newForm.Approval_Step__c == 'Recalled')}">
+                            <td style="color: black; border: 0px solid #0070d2; text-align: center;">             
+                                <aura:if isTrue="{!v.lineItemNoCreate==false &amp;&amp; v.submittedForm==false}">
                                 <button style="font-size : 18px; padding: 0px 10px 0px 10px;" onclick="{!c.createNewLineItem}">&#43;</button>   		
                                 <aura:set attribute="else">
-                                    <aura:if isTrue="{!(or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c != 'Approved') || v.newForm.Approval_Step__c == 'Recalled') &amp;&amp; v.lineItemNoCreate==false}">
+                                    <aura:if isTrue="{!v.submittedForm==false &amp;&amp; v.lineItemNoCreate==false}">
                                        No Line Items related to this Form
    									</aura:if>
                                  </aura:set>
@@ -385,7 +394,7 @@
                                    No Line Items related to this Form
                              	</td>
                                   <aura:set attribute="else">
-                                  	<aura:if isTrue="{!(or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c != 'Approved') || v.newForm.Approval_Step__c == 'Recalled')==false}">		
+                                  	<aura:if isTrue="{!v.submittedForm}">		
                                     	<td style="color: black; border: 0px solid #0070d2; text-align: center;">
                                           No Line Items related to this Form
                                         </td>
@@ -394,7 +403,7 @@
                               </aura:if>   
                           </aura:set>
                         </aura:if>
-                  		  <aura:if isTrue="{!(v.displayFieldsCount==0 || v.displayFieldsCount==null) &amp;&amp; v.displayFieldsCount!=undefined &amp;&amp; v.lineItemNoCreate==false &amp;&amp; (or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled')}">
+                  		  <aura:if isTrue="{!(v.displayFieldsCount==0 || v.displayFieldsCount==null) &amp;&amp; v.displayFieldsCount!=undefined &amp;&amp; v.lineItemNoCreate==false &amp;&amp; v.submittedForm==false}">
                           	  <td style="color: black; border: 0px solid #0070d2; text-align: left;">   
                                 <ui:button label="Create New Line Item" press="{!c.createNewLineItem}" class="slds-button slds-button-neutral" /> 
                               </td>
@@ -421,11 +430,7 @@
                         <td style="color: black; border: 0px solid #0070d2; text-align: center;">
                           
                            <button id="{!litem.Id}" onclick="{!c.viewLineItemJS}" data-count="{!litemCount}">View</button>   
-                            
-                   <!--       <div class="divider"/>
-                            <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">
-                            <button id="{!litem.Id}" onclick="{!c.deleteAttachment}">Del</button>
-                            </aura:if>  -->
+ 
                         </td>
                         <td style="color: black; padding: 1px 1px 1px 5px; border: 1px solid lightgray; text-align: center;">                         
                             {!litem.Display1__c} 
@@ -462,7 +467,7 @@
                     <col width="70"/>
                 	<tr style="background-color: #0070d2; border: 1px solid lightgray;">         
                         <td colspan="5" style="color: white; padding: 5px 5px 5px 15px; border: 1px solid lightgray;">
-                            Attachments  
+                            Attachments 
                         </td>
                 	</tr>
                     <tr style="background-color: white; border: 1px solid lightgray;">
@@ -482,7 +487,7 @@
                                 <button style="color: black;">View</button>
                             </a>  
                           <div class="divider"/>
-                            <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">
+                            <aura:if isTrue="{!v.submittedForm==false}">
                             <button id="{!attach.Id}" onclick="{!c.deleteAttachment}">Del</button>
                             </aura:if>
                         </td>
@@ -498,13 +503,8 @@
                       <tr style="background-color: white; border: 1px solid lightgray;">
                         <td style="color: black; border: 0px solid #0070d2; text-align: center;">
                             <a href="{!'/sfc/servlet.shepherd/version/download/'+file.Id}" target="_blank">
-                     <!--           <button style="color: black;">View</button>     -->
                                 <button style="color: black;">Download</button>
                             </a>  
-                    <!--      <div class="divider"/>
-                            <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">
-                            <button id="{!file.Id}" onclick="{!c.deleteAttachment}">Del</button>
-                            </aura:if>       -->
                         </td>
                         <td style="color: black; padding: 1px 1px 1px 5px; border: 1px solid lightgray; text-align: left;">
                             {!file.Title}
@@ -515,32 +515,45 @@
                       </tr>
                     </aura:iteration>                    
                 </table> 
-                  <br/>
                    	<aura:set attribute="else">	                  
-                      <aura:if isTrue="{!and(v.addAttachments, or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled')==false &amp;&amp; v.addAttachments}">
+                      <aura:if isTrue="{!v.submittedForm &amp;&amp; (v.addAttachments || v.addLineItemAttachments)}">
                         <table style="border: 1px solid lightgray;">
                             <tr style="background-color: #0070d2; border: 1px solid lightgray;"> 
                           <td colspan="1" style="color: white; padding: 5px 5px 5px 15px; border: 1px solid lightgray;">
-                            Attachments 
+                            Attachments
                                 </td></tr>
                             <tr>
                           <td style="color: black; border: 0px solid #0070d2; text-align: center;">
-                            No Attachments Related to this Form {!v.displayCols}
+                            No Attachments Related to this Form
                           </td>
                             </tr></table>
-                          <br/><br/>
+                          
                       </aura:if>
                </aura:set>  
               </aura:if>
-            <!--end attachments list-->  
+            <!--end attachments list-->        
+              </div>
+            </aura:if>  
+ 			<!--END BOX FOOTER 1-->
               
-            <!--add attachments-->
-              <aura:if isTrue="{!and(v.addAttachments, or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled')}">
+            <!--BOX FOOTER 2-->
+           
+          <div class="slds-modal__footer">  
+            
+              <!--add attachments-->
+              <aura:if isTrue="{!(v.addAttachments || v.addLineItemAttachments) &amp;&amp; v.submittedForm==false}">
               	<div align="left">
                     {!v.fileUploadCmp}   
                            <div class="slds-text-body_small slds-text-color_error">
-                               <aura:unescapedHtml value="{!v.fileName}" />  <aura:if isTrue="{!v.largeFile}"><a href="{!'/FileUpload?sid='+v.sessionID+'&amp;formID='+v.viewFormID}" target="_blank" onclick="{!c.hideAttachments}" style="color: black; text-decoration-line: underline;"> Large File Upload</a>
-                 		<br/></aura:if>
+                               <aura:unescapedHtml value="{!v.fileName}" />  
+                               <aura:if isTrue="{!v.largeFile}">
+                                   <aura:if isTrue="{!v.addLineItemAttachments==false}">
+                                     <a href="{!'/FileUpload?sid='+v.sessionID+'&amp;formID='+v.viewFormID}" target="_blank" onclick="{!c.hideAttachments}" style="color: black; text-decoration-line: underline;"> Large File Upload</a>
+									   <aura:set attribute="else">
+                                         <a href="{!'/FileUpload?sid='+v.sessionID+'&amp;formID='+v.viewLineItemID}" target="_blank" onclick="{!c.hideAttachments}" style="color: black; text-decoration-line: underline;"> Large File Upload</a>
+                                       </aura:set>        						
+                                   </aura:if>         		
+                         <br/></aura:if>
                     	   </div>
                          
                          <!--use aura:if for show-hide the loading spinner image--> 
@@ -557,19 +570,21 @@
             <!-- ATTACHMENT BUTTONS -->
               <!--       <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; v.showLineItem==false}"> -->
               <aura:if isTrue="{!v.isNew || v.isCopy}">
-              <ui:button class="slds-button slds-button--neutral" label="Save to Enable Attachments" press="{!c.enableAttachments}" />			
+              <ui:button label="Save to Enable Attachments" press="{!c.enableAttachments}" class="slds-button slds-button--neutral floatLeft"/>			
                 <aura:set attribute="else">
-                <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">  
-                  <aura:if isTrue="{!v.hasAttachments || v.addAttachments}"><ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" /></aura:if>
+                <aura:if isTrue="{!v.submittedForm==false}">  
+                  <aura:if isTrue="{!v.hasAttachments || v.addAttachments || v.addLineItemAttachments}">
+                      <ui:button label="Hide Attachments" press="{!c.hideAttachments}" class="slds-button slds-button--neutral floatLeft"/>
+                    </aura:if>
                   <aura:if isTrue="{!v.hasAttachments==false &amp;&amp; v.addAttachments==false &amp;&amp; v.showLineItem==false}">
-                      <ui:button label="Show/Add Attachments" press="{!c.showAttachments}" class="slds-button slds-button--neutral"/>
+                      <ui:button label="View/Add Form Attachments" press="{!c.showAttachments}" class="slds-button slds-button--neutral floatLeft"/>
                     </aura:if> 
                     <aura:set attribute="else">
                       <aura:if isTrue="{!v.hasAttachments==false &amp;&amp; v.addAttachments==false &amp;&amp; v.showLineItem==false}">
-                    	<ui:button class="slds-button slds-button--neutral" label="Show Attachments" press="{!c.showAttachments}" />
+                    	<ui:button label="View Form Attachments" press="{!c.showAttachments}" class="slds-button slds-button--neutral floatLeft" />
                       </aura:if>
-                      <aura:if isTrue="{!or(v.hasAttachments, v.addAttachments)}">
-                        <ui:button class="slds-button slds-button--neutral" label="Hide Attachments" press="{!c.hideAttachments}" />
+  					  <aura:if isTrue="{!(v.hasAttachments || v.addAttachments || v.addLineItemAttachments)}">
+                        <ui:button label="Hide Attachments" press="{!c.hideAttachments}" class="slds-button slds-button--neutral floatLeft"/>
                       </aura:if>
                     </aura:set>
                   </aura:if> 
@@ -578,20 +593,31 @@
               
 				<!-- For Submitted Forms  --><!--  
               <aura:if isTrue="{!v.hasAttachments==false &amp;&amp; v.addAttachments==false &amp;&amp; v.showLineItem==false}">
-                  <aura:if isTrue="{!or(v.newForm.Approval_Step__c != null,v.newForm.Approval_Step__c != 'Rejected',v.newForm.Approval_Step__c != 'Approved') || v.newForm.SF_182_Prepare_For_checker__c == false || v.newForm.Approval_Step__c != 'Recalled'}">
-                   <ui:button class="slds-button slds-button2dashesneutral" label="Show Attachments" press="{!c.showAttachments}" />
+                  <aura:if isTrue="{!v.submittedForm==false}">
+                   <ui:button label="View Attachments" press="{!c.showAttachments}" class="slds-button slds-button2dashesneutral floatLeft" />
                    </aura:if>
               </aura:if> 
               -->
-              
+             
             <!-- LINE ITEM BUTTONS -->
-            <aura:if isTrue="{!v.rtLineItemEnabled &amp;&amp; v.viewLineItemList==false &amp;&amp; v.showLineItem==false}">
-              <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; v.showLineItem==false &amp;&amp; v.lineItemNoCreate==false}">  
+            <aura:if isTrue="{!(v.rtLineItemEnabled || v.gridEnabled) &amp;&amp; v.viewLineItemList==false &amp;&amp; v.showLineItem==false}">
+              <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; ((v.showLineItem==false &amp;&amp; v.lineItemNoCreate==false) || v.gridEnabled)}">  
             	  <ui:button class="slds-button slds-button--neutral" label="Save to Enable Line Items" press="{!c.enableLineItems}" />
                 <aura:set attribute="else">
                     <aura:if isTrue="{!v.isNew==false &amp;&amp; v.isCopy==false}">
-				     <ui:button label="View Line Items" press="{!c.viewLineItemList}" class="slds-button slds-button--neutral" />
-            		</aura:if>
+                        <aura:if isTrue="{!v.submittedForm==false &amp;&amp; v.lineItemNoCreate==false &amp;&amp; v.gridEnabled==false}">
+                        <ui:button label="View/Add Line Items" press="{!c.viewLineItemList}" class="slds-button slds-button--neutral" />
+                            <aura:set attribute="else">
+                              <aura:if isTrue="{!v.gridEnabled == false}">
+                                <ui:button label="View Line Items" press="{!c.viewLineItemList}" class="slds-button slds-button--neutral" />
+                            <aura:set attribute="else">
+                  <aura:if isTrue="{!v.gridEnabled}">
+                    <a href="{!'/LineItemsGrid?sid='+v.sessionID+'&amp;formID='+v.viewFormID}" target="_self" style="color: black; text-decoration-line: underline;" onclick="{!c.closeModal}"> <ui:button label="Go To Line Item" /></a>
+                    </aura:if>
+                </aura:set></aura:if>
+                            </aura:set>
+                        </aura:if>
+                    </aura:if>
                 </aura:set>
               </aura:if>
             </aura:if>
@@ -599,22 +625,42 @@
             <aura:if isTrue="{!and(v.showLineItem==false, v.viewLineItemList)}">
                 <ui:button label="Hide Line Items" press="{!c.hideLineItem}" class="slds-button slds-button--neutral" />
             </aura:if>
-             
+            
+            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.savedLineItem &amp;&amp; v.addLineItemAttachments==false}">
+                <aura:if isTrue="{!v.submittedForm==false}">
+            	    <ui:button label="View/Add Line Item Attachments" press="{!c.showLineItemAttachments}" class="slds-button slds-button--neutral floatLeft" />
+            	 <aura:set attribute="else">
+                    <ui:button label="View Line Item Attachments" press="{!c.showLineItemAttachments}" class="slds-button slds-button--neutral" />
+                 </aura:set>
+                </aura:if>
+            </aura:if>  
+            
+            <aura:if isTrue="{!v.submittedForm}">  
             <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=0 &amp;&amp; v.lineItemIndex!=undefined &amp;&amp; v.savedLineItem}">
                 <ui:button label="Previous Line Item" press="{!c.prevLineItem}" class="slds-button slds-button--neutral" />
             </aura:if> 
             <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=v.lineItemCount-1 &amp;&amp; v.lineItemIndex!=undefined &amp;&amp; v.savedLineItem}">
                 <ui:button label="Next Line Item" press="{!c.nextLineItem}" class="slds-button slds-button--neutral" />
+            </aura:if>
+                
+            <aura:set attribute="else">
+            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=0 &amp;&amp; v.lineItemIndex!=undefined &amp;&amp; v.savedLineItem}">
+                <ui:button label="Save &amp; Previous Line Item" press="{!c.prevLineItem}" class="slds-button slds-button--neutral" />
             </aura:if> 
+            <aura:if isTrue="{!v.showLineItem &amp;&amp; v.lineItemIndex!=v.lineItemCount-1 &amp;&amp; v.lineItemIndex!=undefined &amp;&amp; v.savedLineItem}">
+                <ui:button label="Save &amp; Next Line Item" press="{!c.nextLineItem}" class="slds-button slds-button--neutral" />
+            </aura:if>
+            </aura:set>    
+            </aura:if>    
             
           </div>  
-          <!--End BOX FOOTER 1-->
+          <!--End BOX FOOTER 2-->
     	  
-          <!--BOX FOOTER 2-->
+          <!--BOX FOOTER 3-->
            
           <div class="slds-modal__footer">
 			  <!-- CLOSE/CANCEL BUTTONS -->
-            <aura:if isTrue="{!or(v.newForm.Approval_Step__c == null,v.newForm.Approval_Step__c == 'Rejected',v.newForm.Approval_Step__c == 'Approved') || v.newForm.SF_182_Prepare_For_checker__c || v.newForm.Approval_Step__c == 'Recalled'}">
+            <aura:if isTrue="{!v.submittedForm==false}">
             <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; v.showLineItem == false}">
                 <ui:button class="slds-button slds-button--neutral floatLeft" label="Cancel" press="{!c.confirmCancelCreationModal}" />
               <aura:set attribute="else">
@@ -668,12 +714,12 @@
             </aura:if>
               
           </div>  
-          <!--End BOX FOOTER 2-->    
+          <!--End BOX FOOTER 3-->    
         </div>
       </div>
       <div class="slds-backdrop slds-backdrop--open"></div>
     </aura:if>
-            
+
     <!--End The Modal-->
     
 </aura:component>

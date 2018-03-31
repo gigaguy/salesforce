@@ -19,7 +19,7 @@ public class FormsTypeOneExpireSession_Schedule_Test {
         Contact c = new contact (lastname ='smith', accountid=a.id, lan_id__c='smith123');
             insert c;    
      
-        Forms__c form = new Forms__c(Unauthenticated_Owner__c = u.Id, RecordtypeId = [select id from RecordType where sObjectType = 'Forms__c' and DeveloperName = 'EPA_100'].ID);
+        Forms__c form = new Forms__c(Unauthenticated_Owner__c = u.Id, RecordtypeId = [select id from RecordType where sObjectType = 'Forms__c' and DeveloperName = 'Sample_Record_Type'].ID);
         insert form;
         
         Test.StartTest();

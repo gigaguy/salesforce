@@ -1,5 +1,6 @@
 public class FormPageVFController { 
     public string sID {get;set;}
+    public string formID {get;set;}
     public boolean valid {get;set;}
     public boolean instructions {get;set;}
     public id uID {get;set;}
@@ -14,6 +15,7 @@ public class FormPageVFController {
         // Get session ID from URL parameters, get user ID from the matching session 
         sID = UtilityMethods.getSessionID();
         uID = UtilityMethods.getUserID(sID);
+        formID = UtilityMethods.getFormID();
         
         // Validate Session
         valid = UtilityMethods.validateSession(sID, uID);

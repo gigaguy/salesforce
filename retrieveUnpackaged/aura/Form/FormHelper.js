@@ -2,9 +2,9 @@
     MAX_FILE_SIZE: 4500000, //Max file size 4.5 MB 
     CHUNK_SIZE: 750000,      //Chunk Max size 750Kb 
     
-    getFandP_Forms : function(component){     // gets list of available Fill&Print Forms
+    getFandP_Forms : function(component){   // gets list of available Fill&Pring Forms
         console.log('in helper.getFandP_Forms');
-    	var action = component.get("c.getFandP_FormRT");
+        var action = component.get("c.getFandP_FormRTs");
        
         action.setCallback(this, function(response){
             var name = response.getState();
@@ -13,7 +13,8 @@
             }
         });
      $A.enqueueAction(action);
-	},
+    },
+    
     show: function (cmp, event) {     // shows Lightning spinner
         console.log('in helper.show');
         
@@ -44,6 +45,10 @@
                 var resp = response.getReturnValue();
                 if(resp==='notEnabled'){
                 component.set("v.rtLineItemEnabled", false);
+                }
+                else if (resp==='grid'){
+                    component.set("v.gridEnabled",true);
+                    component.set("v.rtLineItemEnabled", false);
                 }
                 else {
                     component.set("v.rtLineItemEnabled", true);
@@ -118,8 +123,8 @@
         
         console.log('formID: ' + formID);     
        	//clear any previous data
-       	component.set("v.displayData", null);
-        component.set("v.lineItemList", null);
+    //   	component.set("v.displayData", null);
+     //   component.set("v.lineItemList", null);
         
           //get list line item records
         	var action = component.get("c.getListOfLineItems");
@@ -145,6 +150,7 @@
             else {
                 component.set("v.message", null);      
                 component.set("v.displayFieldsCount", 0);
+                component.set("v.viewLineItemList", true);
             }
         });
      $A.enqueueAction(action);
@@ -170,8 +176,7 @@
                 
                 var fields = response.getReturnValue();
                 var fieldsSize = fields.length;
-                console.log("fieldsSize: "+fieldsSize);
-                console.log("last field returned: "+fields[fieldsSize-1].trim());
+              
                 if(fields[fieldsSize-1].trim()=='No Create'){
                     component.set("v.lineItemNoCreate", true);
                 	fieldsSize=fieldsSize-1;
@@ -371,9 +376,14 @@
         console.log('in helper.uploadInChunk');
         
         // call the apex method 'saveChunk'
-    //    var formID = component.get("v.parentId");
-        var formID = component.get("v.viewFormID");
-        console.log('formID: ' + formID);
+        var formID;
+        if(component.get("v.addAttachments")==true){ 
+            formID = component.get("v.viewFormID");
+           }
+         else if(component.get("v.addLineItemAttachments")==true){  
+             formID = component.get("v.viewLineItemID");
+           }
+            console.log('formID: ' + formID);
         var getchunk = fileContents.substring(startPosition, endPosition);
         var action = component.get("c.saveChunk");
         action.setParams({
@@ -447,6 +457,41 @@
             }
         });
      $A.enqueueAction(action);
+    },
+    setFormName : function(component) {
+        console.log('in helper.setFormName');
+        
+        var formID = component.get("v.viewFormID");
+        console.log('formID: ', formID);
+        var action = component.get("c.getFormName");
+        action.setParams({
+            "formID": formID,
+            "sID" : component.get("v.sessionID")
+        });
+         //set call back
+         action.setCallback(this, function(response) {
+            var state = response.getState();
+             console.log('response state: '+state);
+            if (state === "SUCCESS") {
+                var formName = response.getReturnValue();
+                console.log('helper received formName: '+formName);
+                
+                if(formName!='unauthorized'){
+                component.set("v.viewFormName", formName);                
+                var a = component.get("c.createTheModal");
+       			$A.enqueueAction(a); 
+                  }
+                else {alert('You do not have access to this Form.');
+                     var a = component.get("c.viewMyForms");
+                      $A.enqueueAction(a);
+                     }
+            }
+             else {var errors = response.getError();
+                console.log('error');
+             }
+         });
+        // enqueue the action
+        $A.enqueueAction(action);
     }
     
 })

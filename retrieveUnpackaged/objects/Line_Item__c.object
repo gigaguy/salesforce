@@ -347,9 +347,9 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
         <columns>NAME</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>OWNER.LAST_NAME</field>
-            <operation>contains</operation>
-            <value>rhoney</value>
+            <field>Employee__c</field>
+            <operation>equals</operation>
+            <value>Lee Ramadhin</value>
         </filters>
         <label>purchase card training</label>
     </listViews>
@@ -392,10 +392,42 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
         </picklistValues>
     </recordTypes>
     <recordTypes>
-        <fullName>Sample_Record_Type</fullName>
+        <fullName>Form_Sample_Record_Type_Line_Item</fullName>
+        <active>true</active>
+        <description>For Testing</description>
+        <label>Form - Sample Record Type Line Item</label>
+        <picklistValues>
+            <picklist>Course_Title__c</picklist>
+            <values>
+                <fullName>GSA SmartPay Purchase Card Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCard Agency Supplemental Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PaymentNet %28PNET%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Location__c</picklist>
+            <values>
+                <fullName>On-Line</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sample_Line_Item_Record_Type</fullName>
         <active>true</active>
         <description>For Testing V3</description>
-        <label>Sample Record Type</label>
+        <label>Sample Line Item Record Type</label>
         <picklistValues>
             <picklist>Course_Title__c</picklist>
             <values>

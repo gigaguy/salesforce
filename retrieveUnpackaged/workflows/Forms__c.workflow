@@ -68,6 +68,20 @@
         <template>unfiled$public/Dev_Sandbox_Request_Recall_Notification_Template</template>
     </alerts>
     <alerts>
+        <fullName>EPA_100_Submission_Confirmation</fullName>
+        <description>EPA-100 Submission Confirmation</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Unlicensed_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/EPA_100_Forms_Submission_Confirmation</template>
+    </alerts>
+    <alerts>
         <fullName>EPA_3160_6v5_Leave_Bank_Approved</fullName>
         <description>EPA-3160-6v5 Leave Bank Approved</description>
         <protected>false</protected>

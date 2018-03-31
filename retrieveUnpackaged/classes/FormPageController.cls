@@ -135,33 +135,46 @@ public without sharing class FormPageController  {
             return message;
         }
     }
-    
-    @AuraEnabled
-    public static List<BAP_Fill_and_Print_List__mdt> getFandP_FormRT() {
-          return [select Label, Description__c, File_Url__c from BAP_Fill_and_Print_List__mdt ORDER BY Label ASC];
-    }
-    
+
     @AuraEnabled
     public static string recallApproval(ID formID, string sID){
         String message = 'Recall Failed';
+        Boolean allowRecall = true;
         try{
             system.debug(formId);
             Approval.ProcessWorkItemRequest pwr = new Approval.ProcessWorkItemRequest();
-            ProcessInstance x = [select id, status from ProcessInstance where TargetObjectID=:formID AND status='pending' limit 1];
+            ProcessInstance x = [select id, status, ProcessDefinitionID from ProcessInstance where TargetObjectID=:formID AND status='pending' limit 1];
             ProcessInstanceWorkItem xItem = [select id from ProcessInstanceWorkItem where ProcessInstanceID=:x.id limit 1];
-            
-            pwr.setWorkItemId(xItem.id);
-            pwr.setAction('Removed');              
-                            
-            // Execute process request
-            Approval.ProcessResult result = Approval.process(pwr);   
-            if (result.IsSuccess()) message = 'Approval Request Recalled';
-            return message;
-        }
-        catch(exception ex){
-            message = string.valueof(ex);
-            return message;
-        }
+            ProcessDefinition Pdef = [select id, Description FROM ProcessDefinition Where ID=:x.ProcessDefinitionID limit 1];
+                if(pdef.Description !=null){
+                    if(pdef.Description.indexOf('No Recall')>-1){
+                          allowRecall = false;
+                        }
+                  }
+               if(allowRecall){
+                    pwr.setWorkItemId(xItem.id);
+                    pwr.setAction('Removed');              
+                                    
+                    // Execute process request
+                    Approval.ProcessResult result = Approval.process(pwr);   
+                    if (result.IsSuccess()){
+                         message = 'Approval Request Recalled';
+                         UtilityMethods.removeAllFormShares(formID);}
+                    return message;
+                }
+               else {message = 'Recall not allowed for this Form type.';
+                     return message;
+                 }
+              }
+            catch(exception ex){
+                message = string.valueof(ex);
+                return message;
+            }            
+    }
+    
+    @AuraEnabled
+    public static List<BAP_Fill_and_Print_List__mdt> getFandP_FormRTs(){
+        return [select Label, Description__c, File_Url__c from BAP_Fill_and_Print_List__mdt ORDER BY Label ASC];
     }
     
     @AuraEnabled
@@ -206,12 +219,32 @@ public without sharing class FormPageController  {
     }
     
     @AuraEnabled
-    public static Forms__c cloneForm(ID FormID) { 
+    public static Forms__c cloneForm(String sID, ID FormID) {
+    
+        User u;
+        try{
+            u = [select id, Name, Supervisor__c from User where Session_Token__c = :sID];            
+          }
+        catch (exception ex){system.debug('error: '+ex);
+        }
+     
             String soql = UtilityMethods.getCreatableFieldsSOQL('forms__c','id=\''+FormID+'\'');
             forms__c f = (forms__c)Database.query(soql);
             forms__c f2 = f.clone(false, true);
-            insert f2;    
-
+            f2.put('Unauthenticated_Owner__c', u.id);
+            insert f2;
+            
+            //clone any related line items
+                list<line_item__c> litems = [select id from line_item__c where related_form__c = :formID];
+                for(line_item__c litem : litems){
+                    soql = UtilityMethods.getCreatableFieldsSOQL('line_item__c','id=\''+litem.id+'\'');
+                    line_item__c l = (line_item__c)Database.query(soql);
+                    line_item__c l2 = l.clone(false, true);
+                    l2.put('ownerid', u.id);
+                    l2.put('related_form__c', f2.id);
+                    insert l2;   
+                  }
+                  
             return f2;
     }
     
@@ -280,9 +313,13 @@ public without sharing class FormPageController  {
     public static string isLineItemEnabled(string formName){
         string qName = 'Form - '+formName+' Line Item';
         string liRT = 'notEnabled';
-        
+                
         try{liRT = [select id, name from recordtype where sObjectType = 'Line_Item__c' and IsActive = true and Name = :qName limit 1].id;}
         catch(exception e){system.debug('notEnabled');}
+        
+        string formRTDesc = [select id, Description from recordtype where sObjectType = 'Forms__c' and name = :formName limit 1].Description;
+          if (formRTDesc.contains('grid') || formRTDesc.contains('Grid')){liRT='grid';}        
+        
         
         return liRT;
     }
@@ -307,10 +344,11 @@ public without sharing class FormPageController  {
         string fieldLabel;
         list<string> displayFields = new list<string>();
         for(string fieldApi : apiList){
-            if(fieldAPI.trim()!='No Create'){
+            if(fieldAPI.trim()!='No Create' && fieldAPI.trim()!='For Testing'){
             fieldLabel = fieldMap.get(fieldApi.trim()).getDescribe().getLabel();
             displayFields.add(fieldLabel);}
-            else{displayFields.add('No Create');}
+            else if(fieldAPI.trim()=='No Create') {displayFields.add('No Create');}
+            else {displayFields.add('ID');}
         }
         
         return displayFields;
@@ -401,6 +439,9 @@ public without sharing class FormPageController  {
                 nli.put('Related_Form__c', formID);
                 nli.put('OwnerId', apiUserID);
                 insert nli;
+                
+                UtilityMethods.addFormShare(String.ValueOf(formID), siteUserID);
+                
                 System.debug('newLineItems'+nli);
                 return nli;
             }
@@ -426,6 +467,17 @@ public without sharing class FormPageController  {
         forms__c theForm = formsList[0];
         string supportInfo = (string)string.valueof(theForm.get(formName));
         return supportInfo;
+    }
+    
+    @AuraEnabled
+    public static string getFormName(string formID, string sID){
+        
+        string formName = 'unauthorized';
+        
+        forms__c theForm = [select id, Form_Type_Name__c, Unauthenticated_Owner__c   from forms__c where id = :formID limit 1];
+        user u = [select id, Session_Token__c from user where Session_Token__c = :sID limit 1];
+        if(u.id == theForm.Unauthenticated_Owner__c){formName = theForm.Form_Type_Name__c;} 
+        return formName;
     }
         
 }

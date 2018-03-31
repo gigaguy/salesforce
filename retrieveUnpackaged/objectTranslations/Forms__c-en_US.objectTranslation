@@ -2189,6 +2189,10 @@
         <name>Support_SF_182__c</name>
     </fields>
     <fields>
+        <label><!-- Support Sample Record Type --></label>
+        <name>Support_Sample_Record_Type__c</name>
+    </fields>
+    <fields>
         <label><!-- Target Date --></label>
         <name>Target_Date__c</name>
     </fields>
@@ -3377,6 +3381,10 @@
     <recordTypes>
         <label><!-- SF-182 --></label>
         <name>SF_182</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Sample Record Type --></label>
+        <name>Sample_Record_Type</name>
     </recordTypes>
     <startsWith>Consonant</startsWith>
     <validationRules>

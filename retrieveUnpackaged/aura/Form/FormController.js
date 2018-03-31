@@ -1,5 +1,6 @@
 ({
     doInit : function(component, event, helper) {
+        
         var action = component.get("c.getFormRTs");
         action.setParams({
 			"sID" : component.get("v.sessionID"),
@@ -8,15 +9,49 @@
             console.log('in doInit action');
             var name = response.getState();
             if (name === "SUCCESS") {
-                component.set("v.forms", response.getReturnValue());
+                var formRTList = response.getReturnValue();
+                var y;
+                var newDesc;
+                for (y = 0; y < formRTList.length; y++){
+                    if(formRTList[y].Description.includes('(grid)') || formRTList[y].Description.includes('(Grid)')){
+                      newDesc = formRTList[y].Description.replace("(grid)", "");
+                      newDesc = formRTList[y].Description.replace("(Grid)", "");
+                      formRTList[y].Description = newDesc;
+                    }
+                }               
+                //component.set("v.forms", response.getReturnValue());                
+                component.set("v.forms", formRTList);
             }
         });
         $A.enqueueAction(action);
+     	
         helper.getFandP_Forms(component);
-     
+        
         //  set siteUserID and apiUserID for temp record sharing
         helper.setSiteUserID(component);
         helper.setAPIUserID(component);
+       
+        //get url parameters
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)); //You get the whole decoded URL of the page.
+        var sURLVariables = sPageURL.split('&'); //Split by & so that you get the key value pairs separately in a list        
+
+        var sParameterName;
+        var i;
+        var formID = 'none';
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('='); //to split the key from the value.
+            if (sParameterName[0] === 'formID') { 
+                formID=sParameterName[1];
+            }
+          }
+        console.log('formID: '+formID); 
+        if(formID!='none'){
+            component.set("v.isNew",false);
+            component.set("v.viewFormID", formID);
+            component.set("v.pageStatus", "viewMyForms");
+            helper.setFormName(component);
+           }
     },
     approvalRecall : function(component, event, helper) {  // recalls Form from approval
     	console.log('in approvalRecall');
@@ -30,7 +65,7 @@
                 "sID" : component.get("v.sessionID")
             });
             action.setCallback(this,function(resp){
-                console.log('in approvalSubmit action');
+                console.log('in approvalRecall action');
                 var state = resp.getState();
                 console.log('state: ' +state);
                 if(state === 'SUCCESS'){
@@ -38,7 +73,14 @@
                     component.set("v.viewTheModal", false);
                     component.set("v.hasAttachments", false);
         			component.set("v.addAttachments", false);
-                    component.set("v.onSubmit", false)
+                    component.set("v.onSubmit", false);
+                    component.set("v.trySubmit", false);
+                    component.set("v.submittedForm", false);
+                    	console.log('submittedForm is False');
+                    component.set("v.viewLineItemList", false);
+        			component.set("v.showLineItem", false);
+                    component.set("v.gridEnabled", false);
+                    
                 }
                 else if(state === 'ERROR'){
                     var errors = resp.getError();
@@ -55,7 +97,7 @@
 			"sID" : component.get("v.sessionID")
         });
         action.setCallback(this,function(resp){
-			console.log('in approvalSubmit action2');
+			console.log('in approvalRecall action2');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
@@ -91,7 +133,16 @@
                     component.set("v.viewTheModal", false);
                     component.set("v.hasAttachments", false);
         			component.set("v.addAttachments", false);
-                    component.set("v.onSubmit", false)
+                    component.set("v.onSubmit", false);
+                    component.set("v.trySubmit", false);
+                    component.set("v.submittedForm", true);
+                    	console.log('submittedForm is True');
+                    component.set("v.viewLineItemList", false);
+        			component.set("v.showLineItem", false);
+                    component.set("v.gridEnabled", false);
+                    //clear any previous data
+			       	 component.set("v.displayData", null);
+        			 component.set("v.lineItemList", null);
                 }
                 else if(state === 'ERROR'){
                     var errors = resp.getError();
@@ -114,6 +165,8 @@
             if(state === 'SUCCESS'){
                 component.set("v.mySavedForms", resp.getReturnValue());  // returned list of user's Saved Forms
                 component.set("v.pageStatus", "viewMyForms");  // shows user list of Saved Forms
+                component.set("v.submittedForm", false);
+                    	console.log('submittedForm is False');
             }
             else if(state === 'ERROR'){
                 var errors = resp.getError();
@@ -134,6 +187,8 @@
         component.set("v.addAttachments", false);
         component.set("v.viewLineItemList", false);
         component.set("v.showLineItem", false);
+        component.set("v.trySubmit", false);
+        component.set("v.gridEnabled", false);
     	
         var action = component.get("c.deleteForm");
         action.setParams({
@@ -201,6 +256,7 @@
             component.set("v.showLineItem", false);
             component.set("v.message", null);
             component.set("v.viewLineItemList", true);
+        	component.set("v.addLineItemAttachments", false);
             
             var a = component.get("c.createTheModal");
             $A.enqueueAction(a);
@@ -219,7 +275,13 @@
         component.set("v.viewLineItemList", false);
         component.set("v.displayFieldsCount", 0);
         component.set("v.showLineItem", false);
-
+        component.set("v.gridEnabled", false);
+        component.set("v.submittedForm", false);  // Larry added 3/26, is this needed? We should probably reset all attributes when a modal is closed
+		
+        //clear any previous data
+       	component.set("v.displayData", null);
+        component.set("v.lineItemList", null);
+        
         // LS 2017/11/19: Added additional action below to remove FormShare on close of modal, there may be a better place or way to do this
         var removeShareAction = component.get("c.removeFormShare");
         removeShareAction.setParams({
@@ -312,6 +374,11 @@
             component.set("v.showLineItem", false);
             component.set("v.message", null);
             component.set("v.viewLineItemList", true);
+	        component.set("v.hasAttachments", false);
+            component.set("v.addAttachments", false);
+            component.set("v.addLineItemAttachments", false);
+            component.set("v.fileName", "No File Selected..");
+            component.set("v.largeFile", false);            
             
             var a = component.get("c.createTheModal");
             $A.enqueueAction(a);
@@ -397,7 +464,7 @@
         var formName = event.currentTarget.name;
         console.log('form being copied ID: '+formID);
         component.set("v.message", null);
-
+        console.log('sid: '+component.get("v.sessionID"));
         component.set("v.viewFormName", formName);
         
 		var action = component.get("c.cloneForm");
@@ -463,13 +530,15 @@
         console.log('in createNewLineItem');
         
         //save form so changes not lost
+        if(component.get("v.showLineItem")==false){
         try {
-            component.get('v.theModal').get("e.recordSave").fire();
+            component.set("v.trySubmit", false);
+            component.get("v.theModal").get("e.recordSave").fire();
             console.log('no error');
         }
         catch (e) {
             console.log(e);
-        }   
+        }   }
         
         //hide attachment component in case it is open
             component.set("v.hasAttachments", false);
@@ -569,7 +638,7 @@
                     'recordId': formID
                    },
                   function(theModal){
-                    component.set('v.theModal', theModal); 
+                    component.set("v.theModal", theModal); 
                     component.set("v.viewTheModal", true);
                       console.log('viewTheModal: '+component.get("v.viewTheModal"));
                       console.log('in theModal function(createTheModal action) - formID: '+formID);
@@ -608,9 +677,32 @@
                 if(state === 'SUCCESS'){
                     console.log('formID: '+formID);
                     component.set("v.newForm", resp.getReturnValue());
+                    	var approvalStatus = component.get("v.newForm.Approval_Step__c");
+                    	console.log('approvalStatus: '+approvalStatus);
+                    	if(approvalStatus===undefined) 
+                        	{
+                             component.set("v.submittedForm", false);
+                             console.log('submittedForm is False');
+                           }
+                         else if(approvalStatus==='Recalled' || approvalStatus==='Rejected' || approvalStatus.indexOf('Form Prepared')>-1 || approvalStatus==='Pending Earned Hours Entry')
+                         	{
+                             component.set("v.submittedForm", false);
+                             console.log('submittedForm is False');
+                         	}
+                    	 else{
+                              component.set("v.submittedForm", true);
+                              console.log('submittedForm is True');
+                         	}
                     
                     //Get Support link info
 			        helper.getSupportInfo(component, formID, formName);
+                    
+                    //rebuild Line Item list if open
+                    if(component.get("v.viewLineItemList")){
+                        console.log('rebuilding line item list');
+                        var b = component.get("c.viewLineItemList");
+                        $A.enqueueAction(b);
+                    }
                     
                     $A.createComponent('force:recordEdit',
                       {
@@ -618,7 +710,7 @@
                         'recordId': formID
                        },
                       function(theModal){
-                        component.set('v.theModal', theModal); 
+                        component.set("v.theModal", theModal); 
                         component.set("v.viewTheModal", true);
                           console.log('viewTheModal: '+component.get("v.viewTheModal"));
                           console.log('in theModal function(createTheModal action) - formID: '+formID);
@@ -641,6 +733,12 @@
       }
     else {  // showLineItem is true
          console.log('in createTheModal for Line Item');
+        
+        //checks if line item list should be hidden
+        if(component.get("v.lineItemNav")){
+            	component.set("v.viewLineItemList", false);
+            	component.set("v.lineItemNav", false);
+        	}
         var liID = component.get("v.viewLineItemID")
         console.log('liID: '+liID);
     		 $A.createComponent('force:recordEdit',
@@ -649,7 +747,7 @@
                         'recordId': liID
                        },
                       function(theModal){
-                        component.set('v.theModal', theModal); 
+                        component.set("v.theModal", theModal); 
                         component.set("v.viewTheModal", true);
                           console.log('viewTheModal: '+component.get("v.viewTheModal"));                        
                        }                                                  
@@ -659,8 +757,15 @@
     deleteAttachment : function(component, event, helper){
         console.log('in deleteAttachment');
         
-        var formID = component.get("v.viewFormID");
-          console.log('formID: '+formID);
+        var formID;
+         if(component.get("v.addAttachments")==true){ 
+              formID = component.get("v.viewFormID");
+             }
+           else if(component.get("v.addLineItemAttachments")==true){  
+               formID = component.get("v.viewLineItemID");
+             }
+        console.log('formID: '+formID);
+        
         var attID = event.currentTarget.id;
           console.log('attID: '+attID);
 		var action = component.get("c.deleteFormAttachment");
@@ -692,6 +797,8 @@
         component.set("v.showLineItem", false);
         component.set("v.viewLineItemList", false);
         component.set("v.showLineItem", false);
+        component.set("v.trySubmit", false);
+        component.set("v.gridEnabled", false);
  
         var formID = component.get("v.viewFormID");
         console.log(formID);
@@ -794,6 +901,7 @@
         console.log('in doSave');
         
         //save form in case of issue with attachment upload
+        component.set("v.trySubmit", false);
         component.set("v.saveAndClose", true);
         console.log('saveAndClose: '+component.get("v.saveAndClose"));
         try {
@@ -813,9 +921,11 @@
     enableAttachments: function(component, event, helper) {    // saves Form before allowing attachments
     	console.log('in enableAttachments');
         
+        component.set("v.trySubmit", false);
         try {
             component.set("v.enableAttachments", true);
-           	component.get('v.theModal').get("e.recordSave").fire();
+            component.set("v.trySubmit", false);
+           	component.get("v.theModal").get("e.recordSave").fire();
             console.log('no error');
           	}
         catch (e) {
@@ -827,13 +937,18 @@
     	console.log('in enableLineItems');
         
         try {
-           	component.set("v.enablingLineItems", true);
-            component.get('v.theModal').get("e.recordSave").fire();
+            
+            if(component.get("v.gridEnabled"))
+	            {component.set("v.enablingLineItems", false);}
+             else{{component.set("v.enablingLineItems", true);}}
+            component.set("v.trySubmit", false);
+            component.get("v.theModal").get("e.recordSave").fire();
             console.log('no error');
           	}
         catch (e) {
             console.log(e);
           }
+            
     },
     handleFilesChange: function(component, event, helper) {  // runs when user selects file for attachment upload
         console.log('in handleFilesChange');      
@@ -860,6 +975,11 @@
 	},
 	handleSaveSuccess : function(component, event, helper){  //this runs after successful save, "handleSave" runs at beginning of Save process        
         console.log('in handleSaveSuccess');
+        
+        if(component.get("v.trySubmit")==true){
+         	component.set("v.trySubmit", false);
+            component.set("v.onSubmit", true);
+          }
         
         // Update display of forms
         var action = component.get("c.findExistingForms");
@@ -894,12 +1014,14 @@
                 component.set("v.isNew", false);
                 component.set("v.isCopy", false);
                  if(component.get("v.showLineItem")==false){component.set("v.message", "Form Saved | ");}
-                 else {component.set("v.message", "Line Item Saved");}
-                var a = component.get('c.createTheModal');  
+            //     else {component.set("v.message", "Line Item Saved");}
+                 if(component.get("v.saveNextingLineItem")==false){
+                var a = component.get("c.createTheModal");  
                 $A.enqueueAction(a);
+                 }
               }
-                else if(component.get("V.onSubmit") == true){
-                    var a = component.get('c.approvalSubmit');  
+                else if(component.get("v.onSubmit") == true){
+                    var a = component.get("c.approvalSubmit");  
                 	$A.enqueueAction(a);
                 }
             }
@@ -926,25 +1048,25 @@
             component.set("v.saveClosingLineItem", false);
             component.set("v.showLineItem",false);
             component.set("v.newLineItem",false);
-            component.set("v.saveClosingLineItem", false);
-            component.set("v.viewLineItemList", true);
+
             var action = component.get("c.viewLineItemList");
             action.setCallback(this, function(response){
-                if (name === "SUCCESS") {
+                if (response.getState() === "SUCCESS") {
+                    component.set("v.message", null);
                     var a = component.get("c.createTheModal");
                     $A.enqueueAction(a);}
                 else {
-                    component.set("v.message", null);
+                    console.log('error getting line item list');
                 }
             });
             $A.enqueueAction(action); 
         }
         
-        //if save/nexting line item
+        //if save/nexting line item (save and new)
         if(component.get("v.saveNextingLineItem")){
             console.log('save success for save/nexting line item');
             component.set("v.saveNextingLineItem", false);
-            component.set("v.nextCheck",true);
+    //        component.set("v.nextCheck",true);
         	component.set("v.saveNextingLineItem", false);
             var a = component.get("c.createNewLineItem");
        	   $A.enqueueAction(a);
@@ -954,9 +1076,18 @@
     hideAttachments : function(component, event, helper) { // hides list of attachments when user hits "hide attachments" button
         console.log('in hideAttachments');
         
+        console.log('v.hasAttachments: '+component.get("v.hasAttachments"));
         component.set("v.hasAttachments", false);
+        
+        console.log('v.addAtachments: '+component.get("v.addAttachments"));
         component.set("v.addAttachments", false);
+        
+        console.log('v.addLineItemAttachments: '+component.get("v.addLineItemAttachments"));
+        component.set("v.addLineItemAttachments", false);
+        
         component.set("v.fileName", "No File Selected..");
+        
+        console.log('v.largeFile: '+component.get("v.largeFile"));
         component.set("v.largeFile", false);
         
     },
@@ -965,12 +1096,16 @@
         
         component.set("v.showLineItem", false);
         component.set("v.viewLineItemList", false);
+        
+        //clear any previous data
+       	component.set("v.displayData", null);
+        component.set("v.lineItemList", null);
    //     component.set("v.sortField","Display1__c");
         
     },
     saveAndSubmit : function(component, event, helper){   // saves Form and submits for approval
         console.log('in saveAndSubmit');
-        component.set("v.onSubmit", true);
+        component.set("v.trySubmit", true);
         component.set("v.isCopy", false);
                
         //Save the form
@@ -981,6 +1116,7 @@
              component.set("v.viewLineItemList", false);
              component.set("v.displayFieldsCount", 0);
              component.set("v.showLineItem", false);
+             component.set("v.gridEnabled", false);
      	  	}
           catch (e) {
             console.log(e);
@@ -992,22 +1128,36 @@
         
         try {
             	component.set("v.saveClosingLineItem", true);
-            	component.get('v.theModal').get("e.recordSave").fire();
+            	component.set("v.trySubmit", false);
+            	component.get("v.theModal").get("e.recordSave").fire();
                 console.log('no error');
+                component.set("v.hasAttachments", false);
+ 		        component.set("v.addAttachments", false);
+        		component.set("v.addLineItemAttachments", false);
+                component.set("v.fileName", "No File Selected..");
+                component.set("v.largeFile", false);
           	}
           catch (e) {
             console.log(e);
           }
                
     },
-    saveNext : function(component, event, helper){        // saves Form, creates next Line Item record
+    saveNext : function(component, event, helper){        // saves current Line Item, creates next Line Item record
         console.log('in c.saveNext');
         console.log('viewTheModal: ' + component.get("v.viewTheModal"));
-        
+      
+        //close attachments in case list is open
+          component.set("v.hasAttachments", false);  
+          component.set("v.addAttachments", false);
+          component.set("v.addLineItemAttachments", false);
+          component.set("v.fileName", "No File Selected..");
+          component.set("v.largeFile", false);
+       
         try {
             	component.set("v.saveNextingLineItem", true);
-            	component.get('v.theModal').get("e.recordSave").fire();
+            	component.get("v.theModal").get("e.recordSave").fire();
                 console.log('no error');
+            	
           	}
           catch (e) {
             console.log(e);
@@ -1018,8 +1168,9 @@
         console.log('in c.saveStay');
         console.log('viewTheModal: ' + component.get("v.viewTheModal"));
         
+        component.set("v.trySubmit", false);
         try {
-            	component.get('v.theModal').get("e.recordSave").fire();
+            	component.get("v.theModal").get("e.recordSave").fire();
                 console.log('no error');
           	}
           catch (e) {
@@ -1034,7 +1185,20 @@
           console.log('formID: ' + formID);
         
         helper.getAttachList(component, formID);
-        	component.set("v.addAttachments", true); 
+        
+        component.set("v.addAttachments", true);
+        
+        var a = component.get("c.createAttachComp");
+        $A.enqueueAction(a);
+    },
+    showLineItemAttachments: function(component, event, helper) {  // shows list of attachments when user hits "show/add attachments" button
+        console.log('in showLineItemAttachments');
+        
+        var formID = component.get("v.viewLineItemID"); 
+          console.log('formID: ' + formID);
+        
+        helper.getAttachList(component, formID);
+        	component.set("v.addLineItemAttachments", true); 
      	var a = component.get("c.createAttachComp");
         $A.enqueueAction(a);
     },
@@ -1059,11 +1223,26 @@
         console.log('in viewFormTypes');
         
         component.set("v.message", null);
-		component.set("v.pageStatus", "viewFormTypes");  // shows user list of Available Workflow and Fill&Print Forms
+		component.set("v.pageStatus", "viewFormTypes");  // shows user list of Available Workflow Forms
 	},
     nextLineItem : function(component, event, helper) {
         console.log('in nextLineItem');
+        component.set("v.lineItemNav", true);
         
+        //close attachments in case list is open
+          component.set("v.hasAttachments", false);  
+          component.set("v.addAttachments", false);
+          component.set("v.addLineItemAttachments", false);
+          component.set("v.fileName", "No File Selected..");
+          component.set("v.largeFile", false);
+        
+        //save line item if not a submitted form
+        if(component.get("v.submittedForm")==false){
+          component.get("v.theModal").get("e.recordSave").fire();
+        //rebuild list after save -- not needed?
+  /*        var a = component.get("c.viewLineItemList");
+          $A.enqueueAction(a);
+  */      }
         component.set("v.viewTheModal", false);
         component.set("v.lineItemIndex", component.get("v.lineItemIndex")+1);
         var liIndex = component.get("v.lineItemIndex");
@@ -1077,12 +1256,12 @@
 			"liID" : liID
         });
         action.setCallback(this,function(resp){
-			console.log('in viewLineItem action');
+			console.log('in nextLineItem action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
                 component.set("v.theLineItem", resp.getReturnValue());  // returned line item
-                component.set("v.message", null);
+                component.set("v.message", "Line Item Detail");
                 component.set("v.showLineItem", true);
                 component.set("v.savedLineItem", true);
                 component.set("v.newLineItem", false);
@@ -1098,11 +1277,26 @@
                 }
             }
         });
-        $A.enqueueAction(action); 
+        $A.enqueueAction(action);     
     },
     prevLineItem : function(component, event, helper) {
         console.log('in prevLineItem');
+        component.set("v.lineItemNav", true);
         
+        //close attachments in case list is open
+          component.set("v.hasAttachments", false);  
+          component.set("v.addAttachments", false);
+          component.set("v.addLineItemAttachments", false);
+          component.set("v.fileName", "No File Selected..");
+          component.set("v.largeFile", false);
+        
+        //save line item if not a submitted form
+        if(component.get("v.submittedForm")==false){
+          component.get("v.theModal").get("e.recordSave").fire();
+        //rebuild list after save
+   /*       var a = component.get("c.viewLineItemList");
+       	  $A.enqueueAction(a);
+     */   }
         component.set("v.viewTheModal", false);
         component.set("v.lineItemIndex", component.get("v.lineItemIndex")-1);
         var liIndex = component.get("v.lineItemIndex");
@@ -1116,12 +1310,12 @@
 			"liID" : liID
         });
         action.setCallback(this,function(resp){
-			console.log('in viewLineItem action');
+			console.log('in prevLineItem action');
             var state = resp.getState();
             console.log('state: ' +state);
             if(state === 'SUCCESS'){
                 component.set("v.theLineItem", resp.getReturnValue());  // returned line item
-                component.set("v.message", null);
+                component.set("v.message", "Line Item Detail");
                 component.set("v.showLineItem", true);
                 component.set("v.savedLineItem", true);
                 component.set("v.newLineItem", false);
@@ -1138,7 +1332,6 @@
             }
         });
         $A.enqueueAction(action); 
-        
     },
     lineItemSortOne : function(component, event, helper){
         console.log('in lineItemSortOne');
@@ -1169,6 +1362,13 @@
     },
     viewLineItemJS : function(component, event, helper){
     	console.log('in viewLineItem');
+        
+        //close attachments in case list is open
+          component.set("v.hasAttachments", false);  
+          component.set("v.addAttachments", false);
+          component.set("v.addLineItemAttachments", false);
+          component.set("v.fileName", "No File Selected..");
+          component.set("v.largeFile", false);
         
         component.set("v.viewTheModal", false);
         var liID = event.currentTarget.id; 
@@ -1214,8 +1414,9 @@
     },
     viewLineItemList : function(component, event, helper) {   // enables line items to be entered
     	console.log('in viewLineItemList');
-        component.set("v.displayFieldsCount", undefined);       
-        component.set("v.viewLineItemList", true);
+        
+        component.set("v.displayFieldsCount", undefined);
+
         var formID = component.get("v.viewFormID"); 
           console.log('formID: ' + formID);
 

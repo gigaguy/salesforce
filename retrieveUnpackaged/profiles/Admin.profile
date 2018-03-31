@@ -3224,6 +3224,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Forms__c.Support_Sample_Record_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Forms__c.Target_Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3568,7 +3573,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>GLLA_Project__c.Actual_Federal_Cost_Share__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5036,6 +5041,10 @@
         <recordType>Forms__c.BAP_Provisioning</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Forms__c-BAP Provisioning Admin Layout</layout>
+        <recordType>Forms__c.Sample_Record_Type</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Forms__c-Cancellation of Card%2FCheck</layout>
         <recordType>Forms__c.Cancellation_Check_or_Card</recordType>
     </layoutAssignments>
@@ -5120,14 +5129,21 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Line_Item__c-EPA-100 Line Item Layout</layout>
-        <recordType>Line_Item__c.Sample_Record_Type</recordType>
+        <recordType>Line_Item__c.Sample_Line_Item_Record_Type</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Line_Item__c-Training</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Line_Item__c-Training</layout>
+        <recordType>Line_Item__c.Form_Sample_Record_Type_Line_Item</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Line_Item__c-Training</layout>
         <recordType>Line_Item__c.Training</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ListEmail-List Email Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Macro-Macro Layout</layout>
@@ -5883,6 +5899,7 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
+        <personAccountDefault>true</personAccountDefault>
         <recordType>Forms__c.BAP_Provisioning</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
@@ -5958,6 +5975,11 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
+        <recordType>Forms__c.Sample_Record_Type</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
         <recordType>GLLA_Agreement__c.Amendment</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
@@ -5973,7 +5995,12 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
-        <recordType>Line_Item__c.Sample_Record_Type</recordType>
+        <recordType>Line_Item__c.Form_Sample_Record_Type_Line_Item</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Line_Item__c.Sample_Line_Item_Record_Type</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

@@ -25,6 +25,12 @@ public class UtilityMethods {
         return userID;
     }
     
+    public static string getFormID() {
+        string formID;
+        formID = ApexPages.currentPage().getParameters().get('formID');
+        return formID;
+    }
+    
     public static string getUserName(String userID) {
         string userName;
         if (userID != null) {
@@ -90,6 +96,29 @@ public class UtilityMethods {
             }
         }
     }
+    
+    public static void removeAllFormShares(String formID) {
+        List<Forms__Share> formShares = new List<Forms__Share>();
+            try{
+            formShares = [select id, RowCause from Forms__Share where ParentID = :formID AND RowCause = 'Manual'];
+                database.delete(formShares, false);
+              }
+             catch(exception e){system.debug('No Form shares.');} 
+            
+            
+            list<line_item__c> litems = new list<line_item__c>();
+             try{litems = [select id from line_item__c where related_Form__c = :formID];}
+              catch(exception e){system.debug('No related Line Items.');} 
+             if(litems.size()>0){
+              list<line_item__Share> lineShares = new list<line_item__Share>();
+               list<id> litemIDs = new list<id>();
+               for(line_item__c litem : litems){litemIDs.add(litem.id);}
+              lineShares = [select id from line_item__Share where ParentID in :litemIDs AND RowCause = 'Manual'];
+              
+                    database.delete(lineShares, false);   
+              }
+    }
+    
     
     // 2017/09/21 - Larry Spackman - Disabled for deployment to Production because HeaderLogs custom object not being deployed
      /*
@@ -161,7 +190,7 @@ public class UtilityMethods {
         if (fMap != null){
             for (Schema.SObjectField ft : fMap.values()){ // loop through all field tokens (ft)
                 Schema.DescribeFieldResult fd = ft.getDescribe(); // describe each field (fd)
-                if (fd.isCreateable() && fd.getName()!='Approval_Step__c') //editable fields to be copied on cloned form
+                if (fd.isCreateable() && (fd.getName()!='Approval_Step__c' && fd.getName()!='Unauthenticated_Owner__c')) //editable fields to be copied on cloned form
                   {                    
                     selectFields.add(fd.getName());
                   }

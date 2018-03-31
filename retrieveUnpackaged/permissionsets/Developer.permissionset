@@ -3198,6 +3198,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Forms__c.Support_Sample_Record_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Forms__c.Target_Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -5132,6 +5137,10 @@
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
+        <recordType>Forms__c.Sample_Record_Type</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
         <recordType>GLLA_Agreement__c.Amendment</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
@@ -5144,7 +5153,11 @@
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <recordType>Line_Item__c.Sample_Record_Type</recordType>
+        <recordType>Line_Item__c.Form_Sample_Record_Type_Line_Item</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>Line_Item__c.Sample_Line_Item_Record_Type</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
