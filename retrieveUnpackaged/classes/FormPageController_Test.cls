@@ -199,7 +199,8 @@ public class FormPageController_Test {
        @isTest
         static void testLineItems(){
         
-          String liRT = FormPageController.isLineItemEnabled('Sample Record Type');
+          String liRT = FormPageController.isLineItemEnabled('no Record Type');
+          liRT = FormPageController.isLineItemEnabled('Sample Record Type');
         
           String rtID = [Select Id, developername From RecordType Where developername = 'Form_Sample_Record_Type_Line_Item'].Id;
 
@@ -224,7 +225,8 @@ public class FormPageController_Test {
             
             List<Line_Item__c> liList = FormPageController.getListOfLineItems(theForm.ID, 'formName');
             
-            Line_Item__c litem = FormPageController.insertLineItem('123ABC', 'Sample Record Type', theForm.ID, uSU.ID, uAU.ID);
+            Line_Item__c litem = FormPageController.insertLineItem('456def', 'Sample Record Type', theForm.ID, uSU.ID, uAU.ID);
+            litem = FormPageController.insertLineItem('123ABC', 'Sample Record Type', theForm.ID, uSU.ID, uAU.ID);
 
             String d1 = 'Name';
             string d2 = 'CreatedByID';

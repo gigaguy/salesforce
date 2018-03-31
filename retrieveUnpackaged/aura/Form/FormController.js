@@ -256,6 +256,7 @@
             component.set("v.showLineItem", false);
             component.set("v.message", null);
             component.set("v.viewLineItemList", true);
+        	component.set("v.addLineItemAttachments", false);
             
             var a = component.get("c.createTheModal");
             $A.enqueueAction(a);
