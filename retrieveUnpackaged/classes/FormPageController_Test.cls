@@ -50,7 +50,7 @@ public class FormPageController_Test {
           Forms__c xform;
     
         try{
-            xform = FormPageController.insertNewForms('123ABC', [select id from RecordType where name = 'Sample Record Type' limit 1].ID, uSU.id, uAU.id);
+            xform = FormPageController.insertNewForms('123ABC', [select id from RecordType where sObjectType = 'Forms__c' AND name = 'Sample Record Type' limit 1].ID, uSU.id, uAU.id);
             }
             catch(exception ex){
                 system.debug(ex.getMessage());  
@@ -58,7 +58,7 @@ public class FormPageController_Test {
         String supportInfo = FormPageController.formSupportInfo(string.valueof(xForm.ID), 'Sample Record Type');
         Forms__c yform;
         try{
-            yform = FormPageController.insertNewForms('xyz', [select id from RecordType where name = 'Sample Record Type' limit 1].ID, uSU.id, uAU.id);
+            yform = FormPageController.insertNewForms('xyz', [select id from RecordType where sObjectType = 'Forms__c' AND name = 'Sample Record Type' limit 1].ID, uSU.id, uAU.id);
             }
              catch(exception ex){
             system.debug(ex.getMessage());  
@@ -184,7 +184,7 @@ public class FormPageController_Test {
             insert c;
          
             Forms__c testForm = new Forms__c();
-            testForm.RecordTypeID = [select id from RecordType where name = 'Sample Record Type' limit 1].id;
+            testForm.RecordTypeID = [select id from RecordType where sObjectType = 'Forms__c' AND name = 'Sample Record Type' limit 1].id;
             testForm.Unauthenticated_Owner__c = u.Id;
             insert testForm;
             
@@ -202,7 +202,7 @@ public class FormPageController_Test {
           String liRT = FormPageController.isLineItemEnabled('no Record Type');
           liRT = FormPageController.isLineItemEnabled('Sample Record Type');
         
-          String rtID = [Select Id, developername From RecordType Where developername = 'Form_Sample_Record_Type_Line_Item'].Id;
+          String rtID = [Select Id, developername From RecordType Where sObjectType = 'Line_Item__c' AND developername = 'Form_Sample_Record_Type_Line_Item'].Id;
 
             insert new Contact_Approvers__c(name='Use Contact Fields', Use_Contact__c = false); // checkbox from "Contact Approvers" Custom Setting
          User u = [select id from User where isActive = true limit 1];
