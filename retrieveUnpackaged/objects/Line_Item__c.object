@@ -321,6 +321,10 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
     <label>Line Item</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Employee__c</columns>
+        <columns>Course_Title__c</columns>
+        <columns>Completion_Date__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -329,6 +333,7 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
         <columns>NAME</columns>
         <columns>Course_Title__c</columns>
         <columns>Completion_Date__c</columns>
+        <columns>Employee__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Current_User_View__c</field>
@@ -345,11 +350,14 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
     <listViews>
         <fullName>purchase_card_training</fullName>
         <columns>NAME</columns>
+        <columns>Employee__c</columns>
+        <columns>Course_Title__c</columns>
+        <columns>Completion_Date__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Employee__c</field>
             <operation>equals</operation>
-            <value>Lee Ramadhin</value>
+            <value>Joe James</value>
         </filters>
         <label>purchase card training</label>
     </listViews>
