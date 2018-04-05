@@ -184,6 +184,10 @@
         <label><!-- Docket Number --></label>
         <name>Docket_Number__c</name>
         <picklistValues>
+            <masterLabel>EPA-HQ-OW-2017-0010</masterLabel>
+            <translation><!-- EPA-HQ-OW-2017-0010 --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>EPA-HQ-OW-2017-0203</masterLabel>
             <translation><!-- EPA-HQ-OW-2017-0203 --></translation>
         </picklistValues>
@@ -533,6 +537,14 @@
             <translation><!-- Positive --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Positive Alternative 1</masterLabel>
+            <translation><!-- Positive Alternative 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Positive Alternative 2</masterLabel>
+            <translation><!-- Positive Alternative 2 --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Undetermined</masterLabel>
             <translation><!-- Undetermined --></translation>
         </picklistValues>
@@ -626,6 +638,10 @@
     <recordTypes>
         <label><!-- Bristol Bay --></label>
         <name>Bristol_Bay</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Missouri NNC Docket --></label>
+        <name>Missouri_NNC_Docket</name>
     </recordTypes>
     <recordTypes>
         <label><!-- WOTUS Recommendations --></label>

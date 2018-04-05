@@ -320,6 +320,10 @@
                     <fullName>EPA-HQ-OW-2017-0644</fullName>
                     <default>false</default>
                 </value>
+                <value>
+                    <fullName>EPA-HQ-OW-2017-0010</fullName>
+                    <default>false</default>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -763,6 +767,14 @@
                 </value>
                 <value>
                     <fullName>Undetermined</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Positive Alternative 1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Positive Alternative 2</fullName>
                     <default>false</default>
                 </value>
             </valueSetDefinition>
@@ -1390,6 +1402,548 @@
             </values>
             <values>
                 <fullName>Positive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Undetermined</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Submission_Status__c</picklist>
+            <values>
+                <fullName>Agency Ready</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initially Reviewed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Printed for Reading</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippets Entered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submission Entered</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Substantive__c</picklist>
+            <values>
+                <fullName>Maybe</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Missouri_NNC_Docket</fullName>
+        <active>true</active>
+        <description>Missouri Numeric Nutrient Criteria Docket</description>
+        <label>Missouri NNC Docket</label>
+        <picklistValues>
+            <picklist>Commenter_Category__c</picklist>
+            <values>
+                <fullName>Academia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Academia%2F Professional Societies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alaska NGOs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alaska Native Corporations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congressional Delegate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EPA Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Faith-Based Groups</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Government Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Public</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industry - Fisheries%2FFishing Tourism</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industry - Jewelry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industry - Mineral Extraction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industry - Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industry - Restaurant%2FFood Processing%2FFood Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industry - Tourism%2FOutdoor Recreation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local Government Agency%2FElected Official</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local NGO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mass Mailer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Environmental NGO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National NGO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Regulated Community - General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other NGOs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private Citizen - Environmental Justice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private Citizen - Expert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private Citizen - General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private Citizen - Watershed Visitors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Professional Society</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regulated Community - Agriculture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regulated Community - Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regulated Community - General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regulated Community - Local Communities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regulated Community - Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regulated Community - Resource Extraction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regulated Community - Transportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Government Agency%2FElected Official</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State%2FTribal Government Agency%2FElected Official</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State%2FTribal and Local Agency Association</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tribal Governments and Representatives</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Docket_Number__c</picklist>
+            <values>
+                <fullName>EPA-HQ-OW-2017-0010</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Geographic_Origin__c</picklist>
+            <values>
+                <fullName>AK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alaska %28not Bristol Bay%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bristol Bay Watershed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>International</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Islands%2FTerritories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ME</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Alaska Tribe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nushagak and Kvichak Watershed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tribe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Have_Snippets__c</picklist>
+            <values>
+                <fullName>Maybe</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Letter_Type__c</picklist>
+            <values>
+                <fullName>Duplicate Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duplicate Submission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mass Mailing Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Modified Mass Mailer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Hearing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Similar Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Similar Submission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supporting Document %28EPA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unique Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unique Submission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong docket</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Positive_Negative_Feedback__c</picklist>
+            <values>
+                <fullName>Negative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive Alternative 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive Alternative 2</fullName>
                 <default>false</default>
             </values>
             <values>

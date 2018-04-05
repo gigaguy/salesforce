@@ -5258,6 +5258,10 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Submission__c-WOTUS Submission Layout</layout>
+        <recordType>Submission__c.Missouri_NNC_Docket</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Submission__c-WOTUS Submission Layout</layout>
         <recordType>Submission__c.WOTUS_Recommendations</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -5887,6 +5891,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Submission__c.Bristol_Bay</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Submission__c.Missouri_NNC_Docket</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
