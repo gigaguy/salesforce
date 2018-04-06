@@ -184,6 +184,30 @@
         </picklistValues>
     </recordTypes>
     <recordTypes>
+        <fullName>Missouri_NNC_Docket</fullName>
+        <active>true</active>
+        <label>Missouri NNC Docket</label>
+        <picklistValues>
+            <picklist>Pro_Cons__c</picklist>
+            <values>
+                <fullName>Negative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Undetermined</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
         <fullName>WOTUS_Recommendations</fullName>
         <active>true</active>
         <label>WOTUS Recommendations</label>

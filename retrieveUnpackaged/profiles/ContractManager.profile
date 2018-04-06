@@ -5157,6 +5157,10 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Mass_Mailing_Campaign__c-Waters of the US Mass Mailing Campaign Layout</layout>
+        <recordType>Mass_Mailing_Campaign__c.Missouri_NNC_Docket</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Mass_Mailing_Campaign__c-Waters of the US Mass Mailing Campaign Layout</layout>
         <recordType>Mass_Mailing_Campaign__c.WOTUS_Recommendations</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -5227,6 +5231,10 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Snippet__c-WOTUS Snippet Layout</layout>
+        <recordType>Snippet__c.Missouri_NNC_Docket</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Snippet__c-WOTUS Snippet Layout</layout>
         <recordType>Snippet__c.WOTUS_Recommendations</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -5281,6 +5289,10 @@
     <layoutAssignments>
         <layout>Topic__c-Topic Layout</layout>
         <recordType>Topic__c.Bristol_Bay</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Topic__c-Topic Layout</layout>
+        <recordType>Topic__c.Missouri_NNC_Docket</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Topic__c-Topic Layout</layout>
@@ -5854,6 +5866,11 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
+        <recordType>Mass_Mailing_Campaign__c.Missouri_NNC_Docket</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
         <recordType>Mass_Mailing_Campaign__c.WOTUS_Recommendations</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
@@ -5870,6 +5887,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Snippet__c.Bristol_Bay</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Snippet__c.Missouri_NNC_Docket</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
@@ -5915,6 +5937,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Topic__c.Bristol_Bay</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Topic__c.Missouri_NNC_Docket</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

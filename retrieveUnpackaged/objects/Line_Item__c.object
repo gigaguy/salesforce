@@ -326,6 +326,11 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
         <columns>Course_Title__c</columns>
         <columns>Completion_Date__c</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>OWNER.LAST_NAME</field>
+            <operation>equals</operation>
+            <value>stevens</value>
+        </filters>
         <label>All</label>
     </listViews>
     <listViews>
@@ -357,7 +362,7 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
         <filters>
             <field>Employee__c</field>
             <operation>equals</operation>
-            <value>Joe James</value>
+            <value>Dianne Lyles</value>
         </filters>
         <label>purchase card training</label>
     </listViews>

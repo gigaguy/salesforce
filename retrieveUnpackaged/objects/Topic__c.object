@@ -240,6 +240,42 @@
         </picklistValues>
     </recordTypes>
     <recordTypes>
+        <fullName>Missouri_NNC_Docket</fullName>
+        <active>true</active>
+        <description>Missouri NNC Docket</description>
+        <label>Missouri NNC Docket</label>
+        <picklistValues>
+            <picklist>Comment_Summary_status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Topic_Response_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
         <fullName>WOTUS_Recommendations</fullName>
         <active>true</active>
         <label>WOTUS Recommendations</label>

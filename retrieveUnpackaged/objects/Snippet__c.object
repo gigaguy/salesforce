@@ -639,6 +639,137 @@
         </picklistValues>
     </recordTypes>
     <recordTypes>
+        <fullName>Missouri_NNC_Docket</fullName>
+        <active>true</active>
+        <description>Missouri NNC Docket</description>
+        <label>Missouri NNC Docket</label>
+        <picklistValues>
+            <picklist>Comment_Status__c</picklist>
+            <values>
+                <fullName>Addressed in Essay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comment Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Agency Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Entered</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Snippet Entry Verified</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relevant_Essays__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Snippet_Status__c</picklist>
+            <values>
+                <fullName>Agency Response Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agency Response Drafted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Agency Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Captured in Summary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Entered</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Snippet Entry Verified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Needs Edits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snippet Read by Agency</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
         <fullName>WOTUS_Recommendations</fullName>
         <active>true</active>
         <description>to host recommendations people made on what EPA should do for Step 2</description>

@@ -991,6 +991,24 @@
         </filters>
         <label>All Bristol Bay</label>
     </listViews>
+    <listViews>
+        <fullName>Gemma_test</fullName>
+        <columns>NAME</columns>
+        <columns>Submission_Number__c</columns>
+        <columns>Submission_Status__c</columns>
+        <columns>Agency_Name__c</columns>
+        <columns>Commenter_Category__c</columns>
+        <columns>Commenter_Name__c</columns>
+        <columns>Geographic_Origin__c</columns>
+        <columns>Submission_Link__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Submission__c.Missouri_NNC_Docket</value>
+        </filters>
+        <label>Missouri NNC Submissions</label>
+    </listViews>
     <nameField>
         <displayFormat>C-{000000}</displayFormat>
         <label>Submission ID</label>
