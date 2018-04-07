@@ -5936,6 +5936,10 @@ Prepare_Form_for__r.Email
             <operation>equals</operation>
             <value>Awaiting Region 4 Queue Approval</value>
         </filters>
+        <filters>
+            <field>Applicant_Name_Last_First_MI2__c</field>
+            <operation>equals</operation>
+        </filters>
         <label>SF182-Region 4</label>
         <sharedTo>
             <group>SF_182_HQ_Office_of_Human_Resources</group>
