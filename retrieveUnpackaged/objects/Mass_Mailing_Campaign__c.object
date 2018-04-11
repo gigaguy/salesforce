@@ -152,6 +152,18 @@
         </filters>
         <label>All WOTUS Step 0</label>
     </listViews>
+    <listViews>
+        <fullName>BB_Mass_Mailing_Campaigns</fullName>
+        <columns>NAME</columns>
+        <columns>Mass_Mailing_Campaign_Content__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Mass_Mailing_Campaign__c.Missouri_NNC_Docket</value>
+        </filters>
+        <label>MO Mass Mailing Campaigns</label>
+    </listViews>
     <nameField>
         <label>Mass Mailing Campaign Name</label>
         <trackHistory>false</trackHistory>

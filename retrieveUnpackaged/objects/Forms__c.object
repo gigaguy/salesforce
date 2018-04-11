@@ -5666,7 +5666,7 @@ Prepare_Form_for__r.Email
         <filters>
             <field>Form_Status__c</field>
             <operation>equals</operation>
-            <value>Approved</value>
+            <value>New,Submitted for Approval,Approved,Rejected,Recalled,Completed,Pending</value>
         </filters>
         <label>New Purchase Card Actions</label>
     </listViews>
