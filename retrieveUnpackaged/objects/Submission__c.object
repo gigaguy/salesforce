@@ -688,7 +688,7 @@
         <label>Mass Mailing Campaign</label>
         <lookupFilter>
             <active>true</active>
-            <booleanFilter>(1 AND 2) OR (3 AND 4) OR (5 AND 6) OR (7 AND 8)</booleanFilter>
+            <booleanFilter>(1 AND 2) OR (3 AND 4) OR (5 AND 6) OR (7 AND 8) OR (9 AND 10)</booleanFilter>
             <filterItems>
                 <field>$Source.RecordTypeId</field>
                 <operation>equals</operation>
@@ -728,6 +728,16 @@
                 <field>Mass_Mailing_Campaign__c.RecordTypeId</field>
                 <operation>equals</operation>
                 <value>Waters of the US – Step 0</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Missouri NNC Docket</value>
+            </filterItems>
+            <filterItems>
+                <field>Mass_Mailing_Campaign__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Missouri NNC Docket</value>
             </filterItems>
             <isOptional>true</isOptional>
         </lookupFilter>
