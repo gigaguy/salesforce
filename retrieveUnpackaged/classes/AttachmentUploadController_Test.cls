@@ -61,7 +61,7 @@ public class AttachmentUploadController_Test {
                     
       //  Forms__c form = new Forms__c(Unauthenticated_Owner__c = u.Id, RecordtypeId = [select id from RecordType where sObjectType = 'Forms__c' and DeveloperName = 'Sample_Record_Type'].ID);
       //  insert form;
-        Forms__c form = FormPageController.insertNewForms('12345', [select id from RecordType where name = 'Sample Record Type' limit 1].ID, u.id, u.id);
+        Forms__c form = FormPageController.insertNewForms('12345', [select id from RecordType where sObjectType = 'Forms__c' AND name = 'Sample Record Type' limit 1].ID, u.id, u.id);
         
         System.runAs(u){
         Test.setCurrentPageReference(new PageReference('Page.FileUpload'));

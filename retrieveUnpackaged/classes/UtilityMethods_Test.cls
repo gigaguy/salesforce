@@ -41,5 +41,10 @@ public class UtilityMethods_Test {
         utilityMethods.validateSession('12346', u2.id); // returns FALSE
         
         utilityMethods.getLicName(u.id);
+        
+        set<id> userIDs = new set<id>();
+        userIDs.add(u.id);
+        userIDs.add(u2.id);
+        utilityMethods.getUserDepartments(userIDs);
     }
 }

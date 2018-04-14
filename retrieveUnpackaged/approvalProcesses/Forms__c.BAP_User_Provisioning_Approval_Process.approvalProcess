@@ -88,6 +88,10 @@
     <label>BAP User Provisioning Approval Process</label>
     <recallActions>
         <action>
+            <name>BAP_User_Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
             <name>Dev_Sandbox_recalled</name>
             <type>Alert</type>
         </action>

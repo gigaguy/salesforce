@@ -3400,6 +3400,10 @@
         <name>Authorization_Role_Reason</name>
     </validationRules>
     <validationRules>
+        <errorMessage><!-- Please select a valid &apos;Form Type&apos; --></errorMessage>
+        <name>BAP_Form_Type_not_blank</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Only Approvers can edit the Business Justification. --></errorMessage>
         <name>Business_Justification_Editability_Rule</name>
     </validationRules>

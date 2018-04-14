@@ -5586,6 +5586,40 @@ Prepare_Form_for__r.Email
         <label>BAP Provisioning</label>
     </listViews>
     <listViews>
+        <fullName>BAP_Provisioning_Submitted_for_Approval</fullName>
+        <columns>NAME</columns>
+        <columns>Form_Type__c</columns>
+        <columns>Name__c</columns>
+        <columns>Authorization_Reason__c</columns>
+        <columns>Role__c</columns>
+        <columns>Approval_Step__c</columns>
+        <columns>Sandbox_Last_Refreshed__c</columns>
+        <columns>Description__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Forms__c.BAP_Provisioning</value>
+        </filters>
+        <filters>
+            <field>Name__c</field>
+            <operation>notContain</operation>
+            <value>Test-</value>
+        </filters>
+        <filters>
+            <field>Approval_Step__c</field>
+            <operation>equals</operation>
+            <value>Submitted for Approval</value>
+        </filters>
+        <filters>
+            <field>Form_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Recalled</value>
+        </filters>
+        <label>BAP Provisioning Submitted for Approval</label>
+    </listViews>
+    <listViews>
         <fullName>Completed_Purchase_Card_Actions</fullName>
         <columns>NAME</columns>
         <columns>RECORDTYPE</columns>
@@ -25729,6 +25763,13 @@ Prepare_Form_for__r.Email
         <errorConditionFormula>ISPICKVAL(Authorization_Reason__c, &quot;Role&quot;) &amp;&amp; ISPICKVAL(Role__c, &quot;&quot;)</errorConditionFormula>
         <errorDisplayField>Role__c</errorDisplayField>
         <errorMessage>If Authorization Reason &quot;Role&quot; is chosen, Role field must be completed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BAP_Form_Type_not_blank</fullName>
+        <active>true</active>
+        <description>Please select a valid &apos;Form Type&apos;</description>
+        <errorConditionFormula>ISPICKVAL( Form_Type__c , &quot;&quot;)</errorConditionFormula>
+        <errorMessage>Please select a valid &apos;Form Type&apos;</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Business_Justification_Editability_Rule</fullName>

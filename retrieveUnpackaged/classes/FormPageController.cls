@@ -314,14 +314,35 @@ public without sharing class FormPageController  {
         string qName = 'Form - '+formName+' Line Item';
         string liRT = 'notEnabled';
                 
-        try{liRT = [select id, name from recordtype where sObjectType = 'Line_Item__c' and IsActive = true and Name = :qName limit 1].id;}
-        catch(exception e){system.debug('notEnabled');}
-        
+        try{
+        liRT = [select id, name from recordtype where sObjectType = 'Line_Item__c' and IsActive = true and Name = :qName limit 1].id;
         string formRTDesc = [select id, Description from recordtype where sObjectType = 'Forms__c' and name = :formName limit 1].Description;
           if (formRTDesc.contains('grid') || formRTDesc.contains('Grid')){liRT='grid';}        
-        
+          }
+        catch(exception e){system.debug('notEnabled');}
         
         return liRT;
+    }
+    
+    @AuraEnabled
+    public static string getLineItemLabel(string formName){
+        string qName = 'Form - '+formName+' Line Item';
+        string liLabel = 'noLabel';
+         
+        try{
+        string formRTDesc = [select id, Description from recordtype where sObjectType = 'Forms__c' and name = :formName limit 1].Description;
+        
+          if (formRTDesc.contains('Testing')){formRTDesc = '(LI Label: test)';}
+          if (formRTDesc.contains('LI Label')){
+              liLabel=formRTDesc.right(formRTDesc.length()-formRTDesc.indexOf('LI Label: ',1))
+                         .right(formRTDesc.right(formRTDesc.length()-formRTDesc.indexOf('LI Label: ',1)).length()-10)
+                         .left(formRTDesc.right(formRTDesc.length()-formRTDesc.indexOf('LI Label: ',1))
+                         .right(formRTDesc.right(formRTDesc.length()-formRTDesc.indexOf('LI Label: ',1)).length()-10).length()-1);       
+                }
+            }    
+        catch(exception e){system.debug('noLabel');}
+        
+        return liLabel;
     }
     
     @AuraEnabled

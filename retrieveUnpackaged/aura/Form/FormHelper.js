@@ -49,15 +49,46 @@
                 else if (resp==='grid'){
                     component.set("v.gridEnabled",true);
                     component.set("v.rtLineItemEnabled", false);
+                    this.checkLineItemLabel(component, formName);
                 }
                 else {
                     component.set("v.rtLineItemEnabled", true);
                     var rtID = resp;
+                    this.checkLineItemLabel(component, formName);
                     this.getDisplayFields(component, rtID);
                 }
              }
             else {
                 component.set("v.rtLineItemEnabled", false);
+            }
+        });
+     $A.enqueueAction(action);
+        
+    },
+    checkLineItemLabel : function(component, formName){
+        console.log('in helper.checkLineItemLabel');
+        var action = component.get("c.getLineItemLabel");
+        	action.setParams({
+			"formName" : formName
+        });
+        action.setCallback(this, function(response){
+            var name = response.getState();
+            console.log('checking for line item label');
+            console.log('name ' + name);
+            console.log('response ' + response.getReturnValue());
+            if (name === "SUCCESS") {
+                var resp = response.getReturnValue();
+                if(resp==='noLabel'){
+                component.set("v.lineItemLabel", 'noLabel');
+                }
+                else {
+                    component.set("v.lineItemLabel", resp);
+                    console.log('lineItemLabel: '+component.get("v.lineItemLabel"));
+                }
+             }
+            else {
+                component.set("v.lineItemLabel", 'noLabel');
+                console.log('problem getting line item label');
             }
         });
      $A.enqueueAction(action);
@@ -305,6 +336,14 @@
                         console.error(message);}
             });
         $A.enqueueAction(action);
+    },
+    sendToGridVF : function(component){
+        console.log('in helper.sendToGridVF');
+        
+    	//after saving to enable line item and grid enabled, send to vf page for grid input
+        console.log('sending user to /LineItemsGrid?sid='+component.get("v.sessionID")+'&formID='+component.get("v.viewFormID"));
+        window.location.href='/LineItemsGrid?sid='+component.get("v.sessionID")+'&formID='+component.get("v.viewFormID");
+            
     },
     lineItemSortBy : function(component, field){
         console.log('in helper.lineItemSortBy');

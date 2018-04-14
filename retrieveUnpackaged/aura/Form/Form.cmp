@@ -61,6 +61,7 @@
     <aura:attribute name="saveClosingLineItem" type="boolean" default="false"/>
     <aura:attribute name="saveNextingLineItem" type="boolean" default="false"/>
     <aura:attribute name="lineItemNav" type="boolean" default="false"/>
+    <aura:attribute name="lineItemLabel" type="string"/>
     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}" />
@@ -271,7 +272,12 @@
                 <h2 id="header99" class="slds-text-heading--medium">
                  Status:
                 <aura:if isTrue="{!v.submittedForm==false}">
+                    <aura:if isTrue="{!v.newForm.Approval_Step__c == null}">
                 	{!v.message}Not Submitted
+                        <aura:set attribute="else">
+                        	Not Submitted &nbsp; | &nbsp; {!v.newForm.Approval_Step__c}
+                        </aura:set>
+                    </aura:if>
                     <aura:set attribute="else">
                           Submitted &nbsp; | &nbsp; {!v.newForm.Approval_Step__c}
                     </aura:set>
@@ -602,7 +608,12 @@
             <!-- LINE ITEM BUTTONS -->
             <aura:if isTrue="{!(v.rtLineItemEnabled || v.gridEnabled) &amp;&amp; v.viewLineItemList==false &amp;&amp; v.showLineItem==false}">
               <aura:if isTrue="{!(v.isNew || v.isCopy) &amp;&amp; ((v.showLineItem==false &amp;&amp; v.lineItemNoCreate==false) || v.gridEnabled)}">  
-            	  <ui:button class="slds-button slds-button--neutral" label="Save to Enable Line Items" press="{!c.enableLineItems}" />
+            	  <aura:if isTrue="{!v.lineItemLabel=='noLabel'}">
+                  	<ui:button class="slds-button slds-button--neutral" label="Save to Enable Line Items" press="{!c.enableLineItems}" />
+                  	<aura:set attribute="else">
+                    	<ui:button class="slds-button slds-button--neutral" label="{!'Save &amp; Enter '+v.lineItemLabel}" press="{!c.enableLineItems}" />
+                    </aura:set>
+                  </aura:if>
                 <aura:set attribute="else">
                     <aura:if isTrue="{!v.isNew==false &amp;&amp; v.isCopy==false}">
                         <aura:if isTrue="{!v.submittedForm==false &amp;&amp; v.lineItemNoCreate==false &amp;&amp; v.gridEnabled==false}">
@@ -612,8 +623,15 @@
                                 <ui:button label="View Line Items" press="{!c.viewLineItemList}" class="slds-button slds-button--neutral" />
                             <aura:set attribute="else">
                   <aura:if isTrue="{!v.gridEnabled}">
-                    <a href="{!'/LineItemsGrid?sid='+v.sessionID+'&amp;formID='+v.viewFormID}" target="_self" style="color: black; text-decoration-line: underline;" onclick="{!c.closeModal}"> <ui:button label="Go To Line Item" /></a>
-                    </aura:if>
+                     <aura:if isTrue="{!v.lineItemLabel=='noLabel'}">
+	                    <a href="{!'/LineItemsGrid?sid='+v.sessionID+'&amp;formID='+v.viewFormID}" target="_self" style="color: black; text-decoration-line: underline;" onclick="{!c.closeModal}"> 
+                          <ui:button label="Go To Line Item" /></a>
+                       <aura:set attribute="else">
+                       	  <a href="{!'/LineItemsGrid?sid='+v.sessionID+'&amp;formID='+v.viewFormID}" target="_self" style="color: black; text-decoration-line: underline;" onclick="{!c.closeModal}"> 
+                          <ui:button label="{!v.lineItemLabel}" /></a>   	
+                       </aura:set>
+     			      </aura:if>
+                  </aura:if>
                 </aura:set></aura:if>
                             </aura:set>
                         </aura:if>

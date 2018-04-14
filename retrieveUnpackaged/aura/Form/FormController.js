@@ -1,6 +1,6 @@
 ({
     doInit : function(component, event, helper) {
-        
+
         var action = component.get("c.getFormRTs");
         action.setParams({
 			"sID" : component.get("v.sessionID"),
@@ -13,10 +13,15 @@
                 var y;
                 var newDesc;
                 for (y = 0; y < formRTList.length; y++){
-                    if(formRTList[y].Description.includes('(grid)') || formRTList[y].Description.includes('(Grid)')){
-                      newDesc = formRTList[y].Description.replace("(grid)", "");
-                      newDesc = formRTList[y].Description.replace("(Grid)", "");
-                      formRTList[y].Description = newDesc;
+                    if(formRTList[y].Description.includes('(grid)') 
+                       || formRTList[y].Description.includes('(Grid)') 
+                       || formRTList[y].Description.includes('LI Label')){
+                          newDesc = formRTList[y].Description.replace("(grid)", "");
+                          newDesc = formRTList[y].Description.replace("(Grid)", "");
+                        if(newDesc.includes('LI Label')){
+                            newDesc = newDesc.slice(0,newDesc.indexOf("(LI Label")-1);
+                          }
+                          formRTList[y].Description = newDesc;
                     }
                 }               
                 //component.set("v.forms", response.getReturnValue());                
@@ -938,9 +943,7 @@
         
         try {
             
-            if(component.get("v.gridEnabled"))
-	            {component.set("v.enablingLineItems", false);}
-             else{{component.set("v.enablingLineItems", true);}}
+            component.set("v.enablingLineItems", true);
             component.set("v.trySubmit", false);
             component.get("v.theModal").get("e.recordSave").fire();
             console.log('no error');
@@ -981,6 +984,11 @@
             component.set("v.onSubmit", true);
           }
         
+        //if saving to enable line item and grid enabled
+        if(component.get("v.gridEnabled") && component.get("v.enablingLineItems")){
+           helper.sendToGridVF(component);
+          }
+        else{
         // Update display of forms
         var action = component.get("c.findExistingForms");
         action.setParams({
@@ -1035,8 +1043,8 @@
             $A.enqueueAction(a);
          }
         
-        //if enabling line items
-        if(component.get("v.enablingLineItems")){
+        //if enabling line items and not grid enabled
+        if(component.get("v.enablingLineItems") && component.get("v.gridEnabled")==false){
             component.set("v.enablingLineItems", false);
             var a = component.get("c.viewLineItemList");
         	$A.enqueueAction(a);
@@ -1071,7 +1079,7 @@
             var a = component.get("c.createNewLineItem");
        	   $A.enqueueAction(a);
         }
-        
+      }  
 	},
     hideAttachments : function(component, event, helper) { // hides list of attachments when user hits "hide attachments" button
         console.log('in hideAttachments');

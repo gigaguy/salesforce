@@ -571,6 +571,15 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>BAP_User_Recalled</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Recalled&quot;</formula>
+        <name>BAP User Recalled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Manager_Signature</fullName>
         <field>Immediate_Supervisor_s_Signature__c</field>
         <literalValue>1</literalValue>

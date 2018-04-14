@@ -209,4 +209,22 @@ public class UtilityMethods {
          
     }
     
+    
+    // ARTT 04-02-18  
+    public static Map<Id, String> getUserDepartments(Set<Id> userIds) {
+        Map<Id, String> userIdsWithDepartment = new Map<Id, String>();
+
+        List<User> users = [
+                SELECT Id, Department
+                FROM User
+                WHERE Id IN :userIds
+        ];
+
+        for (User user : users) {
+            userIdsWithDepartment.put(user.Id, user.Department);
+        }
+
+        return userIdsWithDepartment;
+    }
+    
 }
