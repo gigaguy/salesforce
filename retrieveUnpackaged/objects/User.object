@@ -61,6 +61,14 @@
     <enableFeeds>true</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
+        <fullName>Agree_To_Rules_of_Behavior__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Agree To Rules of Behavior</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Building__c</fullName>
         <externalId>false</externalId>
         <label>Building</label>
@@ -69,6 +77,17 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Funding_Official__c</fullName>
+        <description>Used for WebForms approval process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for WebForms approval process</inlineHelpText>
+        <label>Funding Official</label>
+        <relationshipName>Funding_Official</relationshipName>
+        <restrictedAdminField>false</restrictedAdminField>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
     </fields>
     <fields>
         <fullName>Grade__c</fullName>
@@ -193,10 +212,67 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>QA_Manager__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>ORD-111 BAP form</description>
+        <externalId>false</externalId>
+        <label>QA Manager</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>SUPV_CODE_DESCR__c</fullName>
         <externalId>false</externalId>
         <label>Supervisor Type</label>
         <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Session_Environment__c</fullName>
+        <externalId>false</externalId>
+        <label>Session Environment</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Session_IP__c</fullName>
+        <externalId>false</externalId>
+        <label>Session IP</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Session_Timestamp__c</fullName>
+        <externalId>false</externalId>
+        <label>Session Timestamp</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Session_Token__c</fullName>
+        <externalId>false</externalId>
+        <label>Session Token</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature__c</fullName>
+        <externalId>false</externalId>
+        <label>Signature</label>
+        <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
@@ -213,6 +289,28 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Supervisor_2__c</fullName>
+        <description>Used for WebForms approval process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for WebForms approval process</inlineHelpText>
+        <label>Supervisor 2</label>
+        <relationshipName>Supervisor_2</relationshipName>
+        <restrictedAdminField>false</restrictedAdminField>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>Supervisor__c</fullName>
+        <description>Used for WebForms approval process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for WebForms approval process</inlineHelpText>
+        <label>Supervisor</label>
+        <relationshipName>Supervisor</relationshipName>
+        <restrictedAdminField>false</restrictedAdminField>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
         <fullName>Supervisors__c</fullName>
         <externalId>false</externalId>
         <label>Supervisors</label>
@@ -221,6 +319,28 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_Keeper__c</fullName>
+        <description>Used for WebForms approval process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for WebForms approval process</inlineHelpText>
+        <label>Time Keeper</label>
+        <relationshipName>Time_Keeper</relationshipName>
+        <restrictedAdminField>false</restrictedAdminField>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>Training_Officer__c</fullName>
+        <description>Used for WebForms approval process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for WebForms approval process</inlineHelpText>
+        <label>Training Officer</label>
+        <relationshipName>Training_Officer</relationshipName>
+        <restrictedAdminField>false</restrictedAdminField>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
     </fields>
     <listViews>
         <fullName>ActiveUsers</fullName>
@@ -237,6 +357,26 @@
             <value>1</value>
         </filters>
         <label>Active Users</label>
+    </listViews>
+    <listViews>
+        <fullName>Active_Users_with_IDs</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.SAML_SUBJECT</columns>
+        <columns>PASTA_Person_ID__c</columns>
+        <columns>LAN_ID__c</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Active Users with IDs</label>
     </listViews>
     <listViews>
         <fullName>AdminUsers</fullName>

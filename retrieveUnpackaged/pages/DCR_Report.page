@@ -1,0 +1,16 @@
+<apex:page >
+
+<apex:pageBlock > 
+<a href="https://qlikviz.epa.gov/extensions/OAR_OTAQ_SoF/OAR_OTAQ_SoF.html" target="_blank"><h2>Click to open Qlik Reports in New Tab</h2></a>
+
+</apex:pageBlock> 
+
+
+<apex:pageBlock > 
+<iframe id="qView" height="730px" width="100%" name="AppName" src="https://qlikviz.epa.gov/extensions/OAR_OTAQ_SoF/OAR_OTAQ_SoF.html" frameborder="0"></iframe>
+
+</apex:pageBlock> 
+
+
+
+</apex:page>

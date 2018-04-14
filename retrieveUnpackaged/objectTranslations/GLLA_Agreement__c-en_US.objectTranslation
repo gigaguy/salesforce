@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Agreement</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Agreements</value>
+    </caseValues>
+    <fields>
+        <label><!-- Cash Contributions --></label>
+        <name>Cash_Contributions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comment --></label>
+        <name>Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contributions --></label>
+        <name>Contributions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Signed --></label>
+        <name>Date_Signed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Federal Cost Share Amount --></label>
+        <name>Federal_Cost_Share_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Kind Contributions --></label>
+        <name>In_Kind_Contributions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master Project ID --></label>
+        <name>Master_Project_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- NFS Cost Share Amount --></label>
+        <name>NFS_Cost_Share_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- NFS Cost Share Percentage --></label>
+        <name>NFS_Cost_Share_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-Federal Sponsor --></label>
+        <name>Non_Federal_Sponsor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization Code --></label>
+        <name>Organization_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization Type(s) --></label>
+        <name>Organization_Type_s__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Agreement --></label>
+        <name>Original_Agreement__c</name>
+        <relationshipLabel><!-- Agreements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Agreement Amount --></label>
+        <name>Project_Agreement_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Lead --></label>
+        <name>Project_Lead__c</name>
+        <relationshipLabel><!-- Agreements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Phase --></label>
+        <name>Project_Phase__c</name>
+        <picklistValues>
+            <masterLabel>Feasibility Study</masterLabel>
+            <translation><!-- Feasibility Study --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Design Investigation</masterLabel>
+            <translation><!-- Pre-Design Investigation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Remedial Action</masterLabel>
+            <translation><!-- Remedial Action --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Remedial Design</masterLabel>
+            <translation><!-- Remedial Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Remedial Investigation</masterLabel>
+            <translation><!-- Remedial Investigation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project Title --></label>
+        <name>Project_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Type --></label>
+        <name>Project_Type__c</name>
+        <picklistValues>
+            <masterLabel>Monitor/Evaluate</masterLabel>
+            <translation><!-- Monitor/Evaluate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Remediation</masterLabel>
+            <translation><!-- Remediation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Agreements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Site/Project Code --></label>
+        <name>Site_Project_Code__c</name>
+    </fields>
+    <layouts>
+        <layout>Agreement Layout</layout>
+        <sections>
+            <label><!-- Agreement Details --></label>
+            <section>Agreement Details</section>
+        </sections>
+        <sections>
+            <label><!-- Contributions --></label>
+            <section>Contributions</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Project Details --></label>
+            <section>Project Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Amendment Layout</layout>
+        <sections>
+            <label><!-- Agreement Details --></label>
+            <section>Agreement Details</section>
+        </sections>
+        <sections>
+            <label><!-- Contributions --></label>
+            <section>Contributions</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Project Details --></label>
+            <section>Project Details</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Amendment --></label>
+        <name>Amendment</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Original --></label>
+        <name>Original</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

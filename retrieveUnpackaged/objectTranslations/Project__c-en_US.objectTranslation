@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Project</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Projects</value>
+    </caseValues>
+    <fields>
+        <label><!-- AHRC --></label>
+        <name>AHRC__c</name>
+        <picklistValues>
+            <masterLabel>561</masterLabel>
+            <translation><!-- 561 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>56A - IO-DC</masterLabel>
+            <translation><!-- 56A - IO-DC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>56C - CD</masterLabel>
+            <translation><!-- 56C - CD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>56D - TATD</masterLabel>
+            <translation><!-- 56D - TATD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>56E - IO-AA</masterLabel>
+            <translation><!-- 56E - IO-AA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>56F - TCD</masterLabel>
+            <translation><!-- 56F - TCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>56H - ASD</masterLabel>
+            <translation><!-- 56H - ASD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- All Project Codes must contain 4 digits --></help>
+        <label><!-- Project Code --></label>
+        <name>Project_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Name --></label>
+        <name>Project_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFID --></label>
+        <name>SFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub-Task Name --></label>
+        <name>Sub_Task_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub-Task --></label>
+        <name>Sub_Task__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub-Task Code --></label>
+        <name>Sub_Task_code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task Name --></label>
+        <name>Task_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task / Group Line Code --></label>
+        <name>Task_code__c</name>
+    </fields>
+    <layouts>
+        <layout>Project Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- All Project Codes must be 4 digits --></errorMessage>
+        <name>Minimum_4_digits</name>
+    </validationRules>
+</CustomObjectTranslation>
