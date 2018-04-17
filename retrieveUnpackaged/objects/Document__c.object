@@ -10524,6 +10524,7 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
         <columns>BOC_1__c</columns>
         <columns>FOC_1a__c</columns>
         <columns>Project__c</columns>
+        <columns>Vendor__c</columns>
         <columns>PRC__c</columns>
         <columns>CREATEDBY_USER</columns>
         <columns>Total_Dollar_Amount__c</columns>
@@ -10531,12 +10532,17 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
         <filters>
             <field>RECORDTYPE</field>
             <operation>equals</operation>
-            <value>Document__c.Document,Document__c.Document_Contract,Document__c.Document_Grant,Document__c.Document_IA,Document__c.Document_Other</value>
+            <value>Document__c.Document_Contract</value>
         </filters>
         <filters>
             <field>AHRC__c</field>
             <operation>equals</operation>
             <value>56C - CD</value>
+        </filters>
+        <filters>
+            <field>Vendor__c</field>
+            <operation>contains</operation>
+            <value>Jacobs</value>
         </filters>
         <label>CD - Documents</label>
     </listViews>

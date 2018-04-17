@@ -1014,6 +1014,7 @@
         <columns>NAME</columns>
         <columns>Submission_Number__c</columns>
         <columns>Submission_Status__c</columns>
+        <columns>Have_Snippets__c</columns>
         <columns>Agency_Name__c</columns>
         <columns>Commenter_Category__c</columns>
         <columns>Commenter_Name__c</columns>
@@ -1024,6 +1025,11 @@
             <field>RECORDTYPE</field>
             <operation>equals</operation>
             <value>Submission__c.Missouri_NNC_Docket</value>
+        </filters>
+        <filters>
+            <field>Submission_Status__c</field>
+            <operation>equals</operation>
+            <value>Submission Entered</value>
         </filters>
         <label>Missouri NNC Submissions</label>
     </listViews>
