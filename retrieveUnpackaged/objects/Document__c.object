@@ -10468,6 +10468,11 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
             <operation>equals</operation>
             <value>56H - ASD</value>
         </filters>
+        <filters>
+            <field>DCN__c</field>
+            <operation>startsWith</operation>
+            <value>1856H7X08</value>
+        </filters>
         <label>ASD - Documents</label>
     </listViews>
     <listViews>
@@ -10482,11 +10487,6 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
         <columns>RECORDTYPE</columns>
         <columns>Total_Dollar_Amount__c</columns>
         <filterScope>Everything</filterScope>
-        <filters>
-            <field>CREATEDBY_USER</field>
-            <operation>equals</operation>
-            <value>Kim Schmittou</value>
-        </filters>
         <label>All</label>
     </listViews>
     <listViews>
