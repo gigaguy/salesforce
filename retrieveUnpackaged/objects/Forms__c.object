@@ -3990,6 +3990,15 @@ Prepare_Form_for__r.Position_Title__c ))</formula>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
         <label>Related Application Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Application__c.Status__c</field>
+                <operation>equals</operation>
+                <value>In Production</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
         <referenceTo>Application__c</referenceTo>
         <relationshipLabel>Forms</relationshipLabel>
         <relationshipName>Forms</relationshipName>

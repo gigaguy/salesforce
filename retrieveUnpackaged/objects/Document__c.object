@@ -10453,6 +10453,7 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
     <label>Document</label>
     <listViews>
         <fullName>ASD_Documents</fullName>
+        <booleanFilter>1 AND 2</booleanFilter>
         <columns>NAME</columns>
         <columns>DCN__c</columns>
         <columns>AHRC__c</columns>
@@ -10471,7 +10472,7 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
         <filters>
             <field>DCN__c</field>
             <operation>startsWith</operation>
-            <value>1856H7X08</value>
+            <value>1856H7X08,1856H7X09</value>
         </filters>
         <label>ASD - Documents</label>
     </listViews>
