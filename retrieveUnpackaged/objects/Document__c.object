@@ -66,7 +66,7 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>AHRC_Code__c</fullName>
         <externalId>false</externalId>
@@ -10453,7 +10453,6 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
     <label>Document</label>
     <listViews>
         <fullName>ASD_Documents</fullName>
-        <booleanFilter>1 AND 2</booleanFilter>
         <columns>NAME</columns>
         <columns>DCN__c</columns>
         <columns>AHRC__c</columns>
@@ -10529,21 +10528,16 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
         <columns>PRC__c</columns>
         <columns>CREATEDBY_USER</columns>
         <columns>Total_Dollar_Amount__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Document__c.Document_Contract</value>
-        </filters>
+        <filterScope>Mine</filterScope>
         <filters>
             <field>AHRC__c</field>
             <operation>equals</operation>
             <value>56C - CD</value>
         </filters>
         <filters>
-            <field>Vendor__c</field>
-            <operation>contains</operation>
-            <value>Jacobs</value>
+            <field>BOC_1__c</field>
+            <operation>equals</operation>
+            <value>21 - Travel Subject To Ceiling</value>
         </filters>
         <label>CD - Documents</label>
     </listViews>
@@ -72520,7 +72514,7 @@ IF($RecordType.Name = &apos;OTAQ Division Sub-Allocation&apos;, &apos;Sub-Alloca
         <searchResultsAdditionalFields>Total_Dollar_Amount__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Op_Plan__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Private</sharingModel>
     <validationRules>
         <fullName>Contract_Number_NoSpecChar</fullName>
         <active>true</active>

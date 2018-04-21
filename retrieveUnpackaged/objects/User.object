@@ -69,6 +69,26 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Bargain_Unit_Status_Desc__c</fullName>
+        <externalId>false</externalId>
+        <label>Bargain Unit Status Desc</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bargain_Unit_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Bargain Unit Status</label>
+        <length>5</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Building__c</fullName>
         <externalId>false</externalId>
         <label>Building</label>

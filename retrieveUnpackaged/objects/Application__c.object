@@ -603,6 +603,11 @@
             <operation>equals</operation>
             <value>Application__c.Candidate_Application</value>
         </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>In Development,In Production</value>
+        </filters>
         <label>Applications</label>
     </listViews>
     <listViews>

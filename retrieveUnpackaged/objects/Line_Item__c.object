@@ -341,14 +341,14 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
         <columns>Employee__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>Current_User_View__c</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <filters>
             <field>RECORDTYPE</field>
             <operation>equals</operation>
             <value>Line_Item__c.Training</value>
+        </filters>
+        <filters>
+            <field>Course_Title__c</field>
+            <operation>equals</operation>
+            <value>GSA SmartPay Purchase Card Training</value>
         </filters>
         <label>My Purchase Card Training</label>
     </listViews>

@@ -672,6 +672,19 @@ TEXT(Training_Start_Date__c))</formula>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Card_Holder__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>EPA-PCOR</description>
+        <externalId>false</externalId>
+        <label>Card Holder</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Forms_Card_Holder_User</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Card_Holder_s_Email__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -1277,6 +1290,18 @@ TEXT(Continued_Service_Agreement_Expiration__c))</formula>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CreatedDateTime__c</fullName>
+        <description>Calculated field to display both the date and time the record was created, since reports only show date for CreatedDate.  For Forms object reports.  Timothy Hinds, 2018.04.16.</description>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CreatedDateTime</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
     </fields>
     <fields>
         <fullName>Current_Approver__c</fullName>
@@ -2160,6 +2185,48 @@ TEXT(Training_End_Date__c))</formula>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Form_Purpose__c</fullName>
+        <description>Calculated field for use in views providing meaningful information for record types where Name is not filled in.</description>
+        <externalId>false</externalId>
+        <formula>CASE (RecordType.Name, 
+  &apos;BAP Provisioning&apos;,
+    &apos;BAP Provisioning for &apos; &amp;  NULLVALUE(Name__c, NULLVALUE(Type_1_Owner_Contact__c, Form_Owner__c)),
+  &apos;EPA-100&apos;, 
+    &apos;Episodic Flexiplace Request for &apos; &amp; Form_Owner__c,
+  &apos;EPA-3160-6v5&apos;, 
+    &apos;Leave Bank Election Form for &apos; &amp;  Form_Owner__c,
+  &apos;SF-182&apos;,
+    &apos;Training Request for &apos; &amp; Form_Owner__c,
+  &apos;ORD-111&apos;,
+    &apos;ORD Quality Assurance Review Form for &apos; &amp;  Form_Owner__c,
+  &apos;Purchase Card: Cancellation Check or Card&apos;, 
+    &apos;Cancellation of Purchase Card or Check for &apos; &amp;   Card_Holder__r.FirstName &amp; &apos; &apos; &amp; Card_Holder__r.LastName,
+  &apos;Purchase Card: Change Cardholder AO&apos;, 
+    &apos;Change of Approving Official for &apos; &amp;   Card_Holder__r.FirstName &amp; &apos; &apos; &amp; Card_Holder__r.LastName,
+  &apos;Purchase Card: Change Contact Information&apos;, 
+    &apos;Change of Contact Information for &apos; &amp;   Card_Holder__r.FirstName &amp; &apos; &apos; &amp; Card_Holder__r.LastName,
+  &apos;Purchase Card: Change Monthly Limit&apos;, 
+    &apos;Change Monthly Limit for &apos; &amp;   Card_Holder__r.FirstName &amp; &apos; &apos; &amp; Card_Holder__r.LastName,
+  &apos;Purchase Card: Change Name on Card/Check&apos;, 
+    &apos;Change of Name for &apos; &amp;   Card_Holder__r.FirstName &amp; &apos; &apos; &amp; Card_Holder__r.LastName,
+  &apos;Purchase Card: Change Suspension of Card/Check&apos;, 
+    &apos;Suspension of  for &apos; &amp;   Card_Holder__r.FirstName &amp; &apos; &apos; &amp; Card_Holder__r.LastName,
+  &apos;Purchase Card: New Approving Official (AO)&apos;, 
+    &apos;New Approving Official &apos; &amp;   Card_Holder__r.FirstName &amp; &apos; &apos; &amp; Card_Holder__r.LastName,
+  &apos;Purchase Card: New Convenience Check&apos;, 
+    &apos;New Convenience Check for &apos; &amp;   Card_Holder__r.FirstName &amp; &apos; &apos; &amp; Card_Holder__r.LastName,
+  &apos;Purchase Card: New Purchase Card&apos;, 
+    &apos;New Purchase Card for &apos; &amp;   Card_Holder__r.FirstName &amp; &apos; &apos; &amp; Card_Holder__r.LastName,
+  &apos;Other Type of Form for &apos; &amp; Form_Owner__c
+)</formula>
+        <label>Form Purpose</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Form_Record_Name__c</fullName>
         <externalId>false</externalId>
         <formula>Name</formula>
@@ -2537,6 +2604,18 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LastModifiedDateTime__c</fullName>
+        <description>Calculated field to display both the date and time the record was last modified, since reports only show date for LastModifiedDate.  For Forms object reports.  Timothy Hinds, 2018.04.16.</description>
+        <externalId>false</externalId>
+        <formula>LastModifiedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LastModifiedDateTime</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
     </fields>
     <fields>
         <fullName>Last_Approval_Reassignment__c</fullName>
@@ -5574,7 +5653,7 @@ Prepare_Form_for__r.Email
         <fullName>All_Forms</fullName>
         <columns>NAME</columns>
         <columns>RECORDTYPE</columns>
-        <columns>Name__c</columns>
+        <columns>Form_Purpose__c</columns>
         <columns>Form_Owner__c</columns>
         <columns>LAST_UPDATE</columns>
         <columns>Approval_Step__c</columns>
@@ -5594,10 +5673,8 @@ Prepare_Form_for__r.Email
         <fullName>BAP_Provisioning</fullName>
         <columns>NAME</columns>
         <columns>Form_Type__c</columns>
+        <columns>Form_Purpose__c</columns>
         <columns>Name__c</columns>
-        <columns>Authorization_Reason__c</columns>
-        <columns>Role__c</columns>
-        <columns>Approval_Step__c</columns>
         <columns>Sandbox_Last_Refreshed__c</columns>
         <columns>Description__c</columns>
         <columns>LAST_UPDATE</columns>
@@ -25763,8 +25840,7 @@ Prepare_Form_for__r.Email
         <searchFilterFields>Name__c</searchFilterFields>
         <searchFilterFields>Purchase_Card_Request_Type__c</searchFilterFields>
         <searchFilterFields>RECORDTYPE</searchFilterFields>
-        <searchResultsAdditionalFields>Name__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Form_Purpose__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Form_Owner__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Approval_Step__c</searchResultsAdditionalFields>

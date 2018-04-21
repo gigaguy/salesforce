@@ -295,6 +295,11 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Card Holder --></label>
+        <name>Card_Holder__c</name>
+        <relationshipLabel><!-- Forms (Card Holder) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Card Holder&apos;s Email --></label>
         <name>Card_Holder_s_Email__c</name>
     </fields>
@@ -533,6 +538,10 @@
     <fields>
         <label><!-- Course Title --></label>
         <name>Course_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- CreatedDateTime --></label>
+        <name>CreatedDateTime__c</name>
     </fields>
     <fields>
         <label><!-- Current Approver --></label>
@@ -895,6 +904,10 @@
         <name>Form_Owner__c</name>
     </fields>
     <fields>
+        <label><!-- Form Purpose --></label>
+        <name>Form_Purpose__c</name>
+    </fields>
+    <fields>
         <label><!-- Form Record Name --></label>
         <name>Form_Record_Name__c</name>
     </fields>
@@ -1051,6 +1064,10 @@
     <fields>
         <label><!-- Justification for Limit Change --></label>
         <name>Justification_for_Limit_Change__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastModifiedDateTime --></label>
+        <name>LastModifiedDateTime__c</name>
     </fields>
     <fields>
         <label><!-- Last Approval Reassignment --></label>

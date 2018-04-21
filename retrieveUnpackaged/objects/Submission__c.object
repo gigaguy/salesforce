@@ -1027,9 +1027,9 @@
             <value>Submission__c.Missouri_NNC_Docket</value>
         </filters>
         <filters>
-            <field>Submission_Status__c</field>
-            <operation>equals</operation>
-            <value>Snippets Entered</value>
+            <field>Letter_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Modified Mass Mailer</value>
         </filters>
         <label>Missouri NNC Submissions</label>
     </listViews>
