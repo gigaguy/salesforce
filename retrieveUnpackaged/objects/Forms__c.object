@@ -4074,7 +4074,7 @@ Prepare_Form_for__r.Position_Title__c ))</formula>
             <filterItems>
                 <field>Application__c.Status__c</field>
                 <operation>equals</operation>
-                <value>In Production</value>
+                <value>In Development, In Production</value>
             </filterItems>
             <isOptional>false</isOptional>
         </lookupFilter>
@@ -5665,6 +5665,15 @@ Prepare_Form_for__r.Email
         <filterScope>Queue</filterScope>
         <label>BAPM_Approvers</label>
         <queue>BAPM_Approvers</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>BAP_Admins_Forms</fullName>
+        <filterScope>Queue</filterScope>
+        <label>BAP Admins</label>
+        <queue>BAP_Admins</queue>
         <sharedTo>
             <allInternalUsers></allInternalUsers>
         </sharedTo>
