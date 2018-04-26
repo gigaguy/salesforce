@@ -500,6 +500,11 @@
             <operation>equals</operation>
             <value>Snippet__c.Waters_of_the_US</value>
         </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operation>startsWith</operation>
+            <value>11.1</value>
+        </filters>
         <label>All Waters of the US</label>
     </listViews>
     <listViews>
