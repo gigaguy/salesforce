@@ -128,6 +128,35 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Allocated Amount --></label>
+        <name>Award_Allocated_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Award Budget Fiscal Year --></label>
+        <name>Award_Budget_Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Award Budget Org --></label>
+        <name>Award_Budget_Org__c</name>
+        <relationshipLabel><!-- Documents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Award Budget Start Date --></label>
+        <name>Award_Budget_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Award In Process Amount --></label>
+        <name>Award_In_Process_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remaining Budget --></label>
+        <name>Award_Remaining_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Budget --></label>
+        <name>Award_Total_Budget__c</name>
+    </fields>
+    <fields>
         <help><!-- Beginning Budget Fiscal Year / Ending Budget Fiscal Year --></help>
         <label><!-- BBFY/EBFY --></label>
         <name>BBFY_EBFY__c</name>
@@ -6435,6 +6464,11 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Parent Budget --></label>
+        <name>Parent_Budget__c</name>
+        <relationshipLabel><!-- Child Budgets --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Primary --></label>
         <name>Primary__c</name>
         <picklistValues>
@@ -7939,6 +7973,21 @@
         <name>Work_Assignment_TDD_Number__c</name>
     </fields>
     <layouts>
+        <layout>Document - Award Budget</layout>
+        <sections>
+            <label><!-- Account --></label>
+            <section>Account</section>
+        </sections>
+        <sections>
+            <label><!-- Amounts --></label>
+            <section>Amounts</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
         <layout>Document - Bankcard Purchase</layout>
         <sections>
             <label><!-- Account --></label>
@@ -8104,6 +8153,10 @@
     <recordTypes>
         <label><!-- Document - Bankcard Purchase --></label>
         <name>Document</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Document - Award Budget --></label>
+        <name>Document_Award_Budget</name>
     </recordTypes>
     <recordTypes>
         <label><!-- Document - Contract --></label>

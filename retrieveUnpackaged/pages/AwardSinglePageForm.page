@@ -1,0 +1,205 @@
+<apex:page id="AwardSinglePageForm" standardController="Award__c" extensions="PDFFormCreatorController" lightningStylesheets="true" renderAs="pdf">
+    <html>
+    <head>
+        <style type="text/css" media="print">
+            @page {
+                size: 8.5in 11in;
+                margin: .5in .5in .5in .5in;
+                @bottom-center {
+                    content: element(footer);
+                }
+            }
+
+            div.footer {
+                display: block;
+                padding: 10px;
+                position: running(footer);
+            }
+        </style>
+    </head>
+    <apex:form >
+        <apex:panelGrid width="100%" columns="2" cellPadding="5%">
+            <apex:outputPanel id="epaLogo">
+                <apex:image id="logoImage" value="{!$Resource.EPALogo}" alt="EPA Logo" />
+            </apex:outputPanel>
+            <apex:outputPanel id="instructions">
+                <div style="text-align:center">
+                    <h2>ENVIRONMENTAL PROTECTION AGENCY</h2>
+                    <h3>Recommendation for Incentive Award</h3>
+                </div>
+            </apex:outputPanel>
+        </apex:panelGrid>
+        <hr />
+
+        <apex:outputPanel >
+            <h4>Instructions:</h4>
+            <ol>
+                <li>Awards should be based on EPA policy for award types, amounts and approval level (signature) requirements. For additional
+                    information on approval level requirements for awards, refer to the EPA Delegations Manual.</li>
+                <li>For detailed information on awards, review the EPA Recognition Policy and Procedures Manual.</li>
+                <li>Complete this form for all Individual Cash Awards, On‐the‐Spot Awards and Time‐Off Awards.</li>
+                <li>Attach the completed form to the electronic Request for Award. <b>**For Use with FPPS Only – Do Not Send Hardcopy to SPO**</b></li>
+                <li>Provide a copy of the completed form to the employee when the electronic award has been processed.</li>
+            </ol>
+        </apex:outputPanel>
+        <hr />
+
+        <apex:panelGrid columns="2" width="100%">
+            <apex:outputPanel >
+                <apex:outputText value="Employee Name: " />
+                <apex:outputText value="{!employeeName}" />
+            </apex:outputPanel>
+            <apex:outputPanel >
+                <apex:outputText value="Employee Id: " />
+                <apex:outputText value="{!employeeId}" />
+            </apex:outputPanel>
+        </apex:panelGrid>
+        <hr />
+
+        <apex:panelGrid columns="2" width="100%">
+            <apex:outputPanel >
+                <apex:outputText value="Type of Award: " />
+            </apex:outputPanel>
+            <apex:panelGrid columns="2" width="100%" cellSpacing="75%">
+                <apex:outputPanel >
+                    <div style="font-size: small">
+                        <apex:image value="/img/checkbox_checked.gif" id="onTheSpotAwardChecked" rendered="{!IF(onTheSpotAward, true, false)}"/>
+                        <apex:image value="/img/checkbox_unchecked.gif" id="onTheSpotAwardUnchecked" rendered="{!IF(!onTheSpotAward, true, false)}"/>
+                        <apex:outputText value="On-the-Spot Award" />
+                    </div>
+                </apex:outputPanel>
+                <apex:outputPanel >
+                    <div style="font-size: small">
+                        <apex:image value="/img/checkbox_checked.gif" id="groupCashChecked" rendered="{!IF(groupCashAward, true, false)}"/>
+                        <apex:image value="/img/checkbox_unchecked.gif" id="groupCashUnchecked" rendered="{!IF(!groupCashAward, true, false)}"/>
+                        <apex:outputText value="Group Cash Award" />
+                    </div>
+                </apex:outputPanel>
+                <apex:outputPanel >
+                    <div style="font-size: small">
+                        <apex:image value="/img/checkbox_checked.gif" id="individualCashAwardChecked" rendered="{!IF(individualCashAward, true, false)}"/>
+                        <apex:image value="/img/checkbox_unchecked.gif" id="individualCashAwardUnchecked" rendered="{!IF(!individualCashAward, true, false)}"/>
+                        <apex:outputText value="Individual Cash Award" />
+                    </div>
+                </apex:outputPanel>
+                <apex:outputPanel >
+                    <div style="font-size: small">
+                        <apex:image value="/img/checkbox_checked.gif" id="groupTimeOffAwardChecked" rendered="{!IF(groupTimeOff, true, false)}"/>
+                        <apex:image value="/img/checkbox_unchecked.gif" id="groupTimeOffAwardUnchecked" rendered="{!IF(!groupTimeOff, true, false)}"/>
+                        <apex:outputText value="Group Time Off Award" />
+                    </div>
+                </apex:outputPanel>
+                <apex:outputPanel >
+                    <div style="font-size: small">
+                        <apex:image value="/img/checkbox_checked.gif" id="timeOffAwardChecked" rendered="{!IF(timeOffAward, true, false)}"/>
+                        <apex:image value="/img/checkbox_unchecked.gif" id="timeOffAwardUnchecked" rendered="{!IF(!timeOffAward, true, false)}"/>
+                        <apex:outputText value="Time Off Award" />
+                    </div>
+                </apex:outputPanel>
+            </apex:panelGrid>
+        </apex:panelGrid>
+        <hr />
+
+        <apex:panelGrid columns="3" width="100%">
+            <apex:outputPanel >
+                <apex:outputText value="Total Amount of Award ($): " />
+                <apex:outputText value="{0, number, ###,###,##0}">
+                    <apex:param value="{!cashAwardAmount}"  />
+                </apex:outputText>
+            </apex:outputPanel>
+            <apex:outputPanel >
+                <apex:outputText value="AND/OR" />
+            </apex:outputPanel>
+            <apex:outputPanel >
+                <apex:outputText value="Total Number of Hours: " />
+                <apex:outputText value="{!timeOffAmount}" />
+            </apex:outputPanel>
+        </apex:panelGrid>
+        <br />
+
+        <apex:panelGrid width="100%">
+            <apex:outputPanel >
+                <apex:outputText value="Type of Benefits on which the award is based (Cash awards only): " />
+            </apex:outputPanel>
+            <apex:panelGrid columns="2" width="100%">
+                <apex:outputPanel >
+                    <apex:image value="/img/checkbox_checked.gif" id="tangibleChecked" rendered="{!IF(tangibleBenefit, true, false)}" />
+                    <apex:image value="/img/checkbox_unchecked.gif" id="tangibleUnchecked" rendered="{!IF(!tangibleBenefit, true, false)}" />
+                    <apex:outputText value="Tangible Benefit" />
+                </apex:outputPanel>
+                <apex:outputPanel >
+                    <apex:image value="/img/checkbox_checked.gif" id="intangibleChecked" rendered="{!IF(intangibleBenefit, true, false)}" />
+                    <apex:image value="/img/checkbox_unchecked.gif" id="intangibleUnchecked" rendered="{!IF(!intangibleBenefit, true, false)}" />
+                    <apex:outputText value="Intangible Benefit" />
+                </apex:outputPanel>
+            </apex:panelGrid>
+        </apex:panelGrid>
+        <hr />
+
+        <apex:panelGrid columns="5" width="100%">
+            <apex:outputPanel >
+                <apex:outputText value="Value of Benefit: " />
+            </apex:outputPanel>
+            <apex:outputPanel >
+                <apex:image value="/img/checkbox_checked.gif" id="moderateChecked" rendered="{!IF(moderate, true, false)}"/>
+                <apex:image value="/img/checkbox_unchecked.gif" id="moderateUnchecked" rendered="{!IF(!moderate, true, false)}"/>
+                <apex:outputText value="Moderate" />
+            </apex:outputPanel>
+            <apex:outputPanel >
+                <apex:image value="/img/checkbox_checked.gif" id="substantialChecked" rendered="{!IF(substantial, true, false)}"/>
+                <apex:image value="/img/checkbox_unchecked.gif" id="substantialUnchecked" rendered="{!IF(!substantial, true, false)}"/>
+                <apex:outputText value="Substantial" />
+            </apex:outputPanel>
+            <apex:outputPanel >
+                <apex:image value="/img/checkbox_checked.gif" id="highChecked" rendered="{!IF(high, true, false)}"/>
+                <apex:image value="/img/checkbox_unchecked.gif" id="highUnchecked" rendered="{!IF(!high, true, false)}"/>
+                <apex:outputText value="High" />
+            </apex:outputPanel>
+            <apex:outputPanel >
+                <apex:image value="/img/checkbox_checked.gif" id="exceptionalChecked" rendered="{!IF(exceptional, true, false)}"/>
+                <apex:image value="/img/checkbox_unchecked.gif" id="exceptionalUnchecked" rendered="{!IF(!exceptional, true, false)}"/>
+                <apex:outputText value="Exceptional" />
+            </apex:outputPanel>
+        </apex:panelGrid>
+        <apex:panelGrid columns="5" width="100%">
+            <apex:outputPanel >
+                <apex:outputText value="Extent of Contribution: " />
+            </apex:outputPanel>
+            <apex:outputPanel >
+                <apex:image value="/img/checkbox_checked.gif" id="limitedChecked" rendered="{!IF(limited, true, false)}"/>
+                <apex:image value="/img/checkbox_unchecked.gif" id="limitedUnchecked" rendered="{!IF(!limited, true, false)}"/>
+                <apex:outputText value="Limited" />
+            </apex:outputPanel>
+            <apex:outputPanel >
+                <apex:image value="/img/checkbox_checked.gif" id="extendedChecked" rendered="{!IF(extended, true, false)}"/>
+                <apex:image value="/img/checkbox_unchecked.gif" id="extendedUnchecked" rendered="{!IF(!extended, true, false)}"/>
+                <apex:outputText value="Extended" />
+            </apex:outputPanel>
+            <apex:outputPanel >
+                <apex:image value="/img/checkbox_checked.gif" id="broadChecked" rendered="{!IF(broad, true, false)}"/>
+                <apex:image value="/img/checkbox_unchecked.gif" id="broadUnchecked" rendered="{!IF(!broad, true, false)}"/>
+                <apex:outputText value="Broad" />
+            </apex:outputPanel>
+            <apex:outputPanel >
+                <apex:image value="/img/checkbox_checked.gif" id="generalChecked" rendered="{!IF(general, true, false)}"/>
+                <apex:image value="/img/checkbox_unchecked.gif" id="generalUnchecked" rendered="{!IF(!general, true, false)}"/>
+                <apex:outputText value="General" />
+            </apex:outputPanel>
+        </apex:panelGrid>
+        <hr />
+
+        <apex:outputPanel >
+            <div>
+                <b>Narrative Justification for Award:</b>
+            </div>
+        </apex:outputPanel>
+        <apex:panelGrid width="100%" border="2">
+            <apex:outputText value="{!justification}" />
+        </apex:panelGrid>
+    </apex:form>
+
+    <div class="footer">
+        <apex:image value="/img/checkbox_checked.gif"/> <b>As the Authorizing Official I certify that all necessary concurrences have been gained for approval of this award.</b>
+    </div>
+    </html>
+</apex:page>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Group_Award_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Group_Award_Compact_Layout</fullName>
+        <fields>Group_Award_Name__c</fields>
+        <fields>Name</fields>
+        <fields>CreatedById</fields>
+        <label>Group Award Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Object to help link together individual award records into a group award. A group award is really only justification of an award to multiple recipients.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Award_Justification__c</fullName>
+        <description>Justification for giving the group award.</description>
+        <externalId>false</externalId>
+        <label>Award Justification</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Group_Award_Name__c</fullName>
+        <description>Name of the group award given by the user.</description>
+        <externalId>false</externalId>
+        <label>Group Award Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Group Award</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>GRP-{0000000}</displayFormat>
+        <label>Group Award Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Group Awards</pluralLabel>
+    <recordTypes>
+        <fullName>Standard_Group_Award</fullName>
+        <active>true</active>
+        <description>Standard Group Award record type for a generic group award record.</description>
+        <label>Standard Group Award</label>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Group_Award_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Award_Justification__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATEDBY_USER</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Group_Award_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Award_Justification__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CREATEDBY_USER</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>Group_Award_Name__c</searchFilterFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>OBJECT_ID</searchFilterFields>
+        <searchResultsAdditionalFields>Group_Award_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OBJECT_ID</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

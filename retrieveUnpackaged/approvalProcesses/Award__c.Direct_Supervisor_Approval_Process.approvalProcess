@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Emp_Name__c</field>
+        <field>Emp_ID__c</field>
+        <field>Owner</field>
+        <field>Status__c</field>
+        <field>Submitted_Date__c</field>
+        <field>Cash_Award_Amount__c</field>
+        <field>Time_Off_Amount__c</field>
+        <field>Group_Award_Name__c</field>
+        <field>Group_Award_Amount__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Owner</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Direct supervisor to the employee given the award when the requesting official is outside the awardee&apos;s org but within ORD.</description>
+        <label>Direct Supervisor Approval</label>
+        <name>Direct_Supervisor_Approval</name>
+    </approvalStep>
+    <description>If an award is given to an employee within ORD but outside the supervisor&apos;s immediate organization, the employee&apos;s direct supervisor must also approve the award.</description>
+    <emailTemplate>Award_Email_Templates/Direct_Supervisor_Approval_Needed</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Award__c.Outside_ORD__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Award__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Received by OARS/Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Award__c.Outside_Org__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Set_Award_Status_to_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Set_Award_Status_Post_Dir_Super_Reject</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Award_Status_Pending_Supervisor_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Direct Supervisor Approval Process</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Supervisor__c</userHierarchyField>
+    </nextAutomatedApprover>
+    <recallActions>
+        <action>
+            <name>Set_Award_Status_to_Planned</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

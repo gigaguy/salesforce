@@ -1,0 +1,6 @@
+<apex:page showHeader="true"
+           id="PDFFormCreator"
+           standardController="Award__c"
+           extensions="PDFFormCreatorController"
+           action="{!createOnePageForm}">
+</apex:page>

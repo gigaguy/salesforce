@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Award</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Awards</value>
+    </caseValues>
+    <fields>
+        <label><!-- Authorizing Official Name --></label>
+        <name>Authorizing_Official_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Authorizing Official OLD --></label>
+        <name>Authorizing_Official_OLD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Authorizing Official Title --></label>
+        <name>Authorizing_Official_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Authorizing Official --></label>
+        <name>Authorizing_Official__c</name>
+        <relationshipLabel><!-- Awards (Authorizing Official) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Award Type --></label>
+        <name>Award_Type__c</name>
+        <picklistValues>
+            <masterLabel>Cash</masterLabel>
+            <translation><!-- Cash --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group Award</masterLabel>
+            <translation><!-- Group Award --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On-the-Spot</masterLabel>
+            <translation><!-- On-the-Spot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QSI</masterLabel>
+            <translation><!-- QSI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STAA Awards</masterLabel>
+            <translation><!-- STAA Awards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Time Off</masterLabel>
+            <translation><!-- Time Off --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Title 42</masterLabel>
+            <translation><!-- Title 42 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Branch --></label>
+        <name>Branch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Budget --></label>
+        <name>Budget__c</name>
+        <relationshipLabel><!-- Awards --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Cash Awards over $2,000 require AO approval. Collective awards over $5,000 for an awardee require two levels of approval. --></help>
+        <label><!-- Cash Award Amount --></label>
+        <name>Cash_Award_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Required for Awardees in the Cinc. Union. Press and hold the Ctrl key to select multiple options. --></help>
+        <label><!-- Cincinnati Office Justification --></label>
+        <name>Cincinnati_Office_Justification__c</name>
+        <picklistValues>
+            <masterLabel>Achieves Specific Scientific Advancements</masterLabel>
+            <translation><!-- Achieves Specific Scientific Advancements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exemplifies core values of the EPA</masterLabel>
+            <translation><!-- Exemplifies core values of the EPA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Improved performance over the prior period</masterLabel>
+            <translation><!-- Improved performance over the prior period --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Improves service to the public</masterLabel>
+            <translation><!-- Improves service to the public --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prepares outstanding publications</masterLabel>
+            <translation><!-- Prepares outstanding publications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reduced costs, expert performance, increased efficiencies</masterLabel>
+            <translation><!-- Reduced costs, expert performance, increased efficiencies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Substantially surpasses performance goals</masterLabel>
+            <translation><!-- Substantially surpasses performance goals --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cost Center/Work Code --></label>
+        <name>Cost_Center_Work_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Funded --></label>
+        <name>Date_Funded__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter or edit if the awardee is on detail. --></help>
+        <label><!-- Detail Org --></label>
+        <name>Detail_Org__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+    </fields>
+    <fields>
+        <label><!-- Emp ID --></label>
+        <name>Emp_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Emp Name --></label>
+        <name>Emp_Name__c</name>
+        <relationshipLabel><!-- Awards (Emp Name) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Extent of Contribution --></label>
+        <name>Extent_of_Contribution__c</name>
+        <picklistValues>
+            <masterLabel>Broad</masterLabel>
+            <translation><!-- Broad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extended</masterLabel>
+            <translation><!-- Extended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Limited</masterLabel>
+            <translation><!-- Limited --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- NOT ENTERED BY REQUESTING OFFICIAL! --></help>
+        <label><!-- FPPS # --></label>
+        <name>FPPS_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Grade --></label>
+        <name>Grade__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Award Amount --></label>
+        <name>Group_Award_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Award Name OLD --></label>
+        <name>Group_Award_Name_OLD__c</name>
+    </fields>
+    <fields>
+        <help><!-- Create Group Award Names or leverage existing names in order to tag and organize group awards. --></help>
+        <label><!-- Group Award Name --></label>
+        <name>Group_Award_Name__c</name>
+        <relationshipLabel><!-- Awards --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- HR Representative --></label>
+        <name>HR_Representative__c</name>
+        <relationshipLabel><!-- Awards (HR Representative) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Approval date will be left blank if IOAA approval is not needed. --></help>
+        <label><!-- IOAA Approval Date --></label>
+        <name>IOAA_Approval_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- IOAA Approver --></label>
+        <name>IOAA_Approver__c</name>
+        <relationshipLabel><!-- Awards (IOAA Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Indicates an award that&apos;s only used for validation purposes. --></help>
+        <label><!-- Incoming Award --></label>
+        <name>Incoming_Award__c</name>
+    </fields>
+    <fields>
+        <label><!-- LCO --></label>
+        <name>LCO__c</name>
+    </fields>
+    <fields>
+        <label><!-- OTS Amount --></label>
+        <name>OTS_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Occupational Series --></label>
+        <name>Occupational_Series__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please check if the award is going towards an individual outside of your organization. --></help>
+        <label><!-- Outside LCO --></label>
+        <name>Outside_LCO__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please check if the Awardee is outside of ORD. If you do not check this field for non-ORD employees, the award will be at risk of not being processed. --></help>
+        <label><!-- Outside ORD --></label>
+        <name>Outside_ORD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outside Org --></label>
+        <name>Outside_Org__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner Contact --></label>
+        <name>Owner_Contact__c</name>
+        <relationshipLabel><!-- Awards (Owner Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Owner Department --></label>
+        <name>Owner_Dept__c</name>
+    </fields>
+    <fields>
+        <label><!-- Paid Amount --></label>
+        <name>Paid_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- NOT ENTERED BY REQUESTING OFFICIAL! --></help>
+        <label><!-- Calendar Pay Period --></label>
+        <name>Pay_Period__c</name>
+        <picklistValues>
+            <masterLabel>201722</masterLabel>
+            <translation><!-- 201722 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201723</masterLabel>
+            <translation><!-- 201723 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201724</masterLabel>
+            <translation><!-- 201724 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201725</masterLabel>
+            <translation><!-- 201725 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201726</masterLabel>
+            <translation><!-- 201726 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201801</masterLabel>
+            <translation><!-- 201801 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201802</masterLabel>
+            <translation><!-- 201802 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201803</masterLabel>
+            <translation><!-- 201803 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201804</masterLabel>
+            <translation><!-- 201804 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201805</masterLabel>
+            <translation><!-- 201805 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201806</masterLabel>
+            <translation><!-- 201806 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201807</masterLabel>
+            <translation><!-- 201807 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201808</masterLabel>
+            <translation><!-- 201808 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201809</masterLabel>
+            <translation><!-- 201809 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201810</masterLabel>
+            <translation><!-- 201810 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201811</masterLabel>
+            <translation><!-- 201811 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201812</masterLabel>
+            <translation><!-- 201812 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201813</masterLabel>
+            <translation><!-- 201813 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201814</masterLabel>
+            <translation><!-- 201814 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201815</masterLabel>
+            <translation><!-- 201815 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201816</masterLabel>
+            <translation><!-- 201816 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201817</masterLabel>
+            <translation><!-- 201817 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201818</masterLabel>
+            <translation><!-- 201818 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201819</masterLabel>
+            <translation><!-- 201819 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201820</masterLabel>
+            <translation><!-- 201820 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201821</masterLabel>
+            <translation><!-- 201821 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201822</masterLabel>
+            <translation><!-- 201822 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201823</masterLabel>
+            <translation><!-- 201823 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201824</masterLabel>
+            <translation><!-- 201824 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201825</masterLabel>
+            <translation><!-- 201825 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201826</masterLabel>
+            <translation><!-- 201826 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201827</masterLabel>
+            <translation><!-- 201827 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pay Plan --></label>
+        <name>Pay_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payroll Representative --></label>
+        <name>Payroll_Representative__c</name>
+        <relationshipLabel><!-- Awards (Payroll Representative) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Planned Date --></label>
+        <name>Planned_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Position Title --></label>
+        <name>Position_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- QSI --></label>
+        <name>QSI__c</name>
+    </fields>
+    <fields>
+        <label><!-- RO HR Code --></label>
+        <name>RO_HR_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- RO HR Org --></label>
+        <name>RO_HR_Org__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requesting Official Supervisor Title --></label>
+        <name>Requesting_Official_Supervisor_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requesting Official/Supervisor --></label>
+        <name>Requesting_Official_Supervisor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requires IOAA Approval --></label>
+        <name>Requires_IOAA_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requires Supervisor Approval --></label>
+        <name>Requires_Supervisor_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- STAA Award Amount --></label>
+        <name>STAA_Award_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sent to OHR --></label>
+        <name>Sent_to_OHR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Awaiting Funding</masterLabel>
+            <translation><!-- Awaiting Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Funded</masterLabel>
+            <translation><!-- Funded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR Review</masterLabel>
+            <translation><!-- HR Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paid</masterLabel>
+            <translation><!-- Paid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Direct Supervisor Approval</masterLabel>
+            <translation><!-- Pending Direct Supervisor Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned</masterLabel>
+            <translation><!-- Planned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for SSC</masterLabel>
+            <translation><!-- Ready for SSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received by OARS/Approved</masterLabel>
+            <translation><!-- Received by OARS/Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reference</masterLabel>
+            <translation><!-- Reference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent for Union Review</masterLabel>
+            <translation><!-- Sent for Union Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>To SSC</masterLabel>
+            <translation><!-- To SSC --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Step --></label>
+        <name>Step__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submitted Date --></label>
+        <name>Submitted_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supervisor Approval Date --></label>
+        <name>Supervisor_Approval_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- If using the group award functionality, this field will automatically assume the justification of the group award. --></help>
+        <label><!-- Supervisor Justification --></label>
+        <name>Supervisor_Justification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supervisors --></label>
+        <name>Supervisors__c</name>
+    </fields>
+    <fields>
+        <help><!-- Time Off awards greater than the awardee&apos;s normal work day require AO approval. --></help>
+        <label><!-- Time Off Amount --></label>
+        <name>Time_Off_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title 42,SL, ST Award Amount --></label>
+        <name>Title_42_SL_ST_Award_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of Benefit --></label>
+        <name>Type_of_Benefit__c</name>
+        <picklistValues>
+            <masterLabel>Intangible</masterLabel>
+            <translation><!-- Intangible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tangible</masterLabel>
+            <translation><!-- Tangible --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Union Review Date --></label>
+        <name>Union_Review_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Union Review Status --></label>
+        <name>Union_Review_Status__c</name>
+        <picklistValues>
+            <masterLabel>Sent for Union Review</masterLabel>
+            <translation><!-- Sent for Union Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Union Approved</masterLabel>
+            <translation><!-- Union Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Union Rejected</masterLabel>
+            <translation><!-- Union Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Union Review Not Necessary</masterLabel>
+            <translation><!-- Union Review Not Necessary --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Value of Benefit --></label>
+        <name>Value_of_Benefit__c</name>
+        <picklistValues>
+            <masterLabel>Exceptional</masterLabel>
+            <translation><!-- Exceptional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moderate</masterLabel>
+            <translation><!-- Moderate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Substantial</masterLabel>
+            <translation><!-- Substantial --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- NOT ENTERED BY REQUESTING OFFICIAL! --></help>
+        <label><!-- Work Code Lookup --></label>
+        <name>Work_Code_Lookup__c</name>
+        <relationshipLabel><!-- Awards (Cost Center) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Work Code --></label>
+        <name>Work_Code__c</name>
+    </fields>
+    <layouts>
+        <layout>Award Layout</layout>
+        <sections>
+            <label><!-- Award --></label>
+            <section>Award</section>
+        </sections>
+        <sections>
+            <label><!-- Awardee --></label>
+            <section>Awardee</section>
+        </sections>
+        <sections>
+            <label><!-- Awarding Org --></label>
+            <section>Awarding Org</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Justification --></label>
+            <section>Justification</section>
+        </sections>
+        <sections>
+            <label><!-- Work Flow --></label>
+            <section>Work Flow</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Create 1-Page PDF --></label>
+        <name>Create_1_Page_PDF</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Submit for Approval --></label>
+        <name>Submit_for_Approval_CustomAction</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- Standard Award --></label>
+        <name>Standard_Award</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- An award not in a Planned stage cannot change owners. Please contact administrative support for any questions and/or guidance. --></errorMessage>
+        <name>Non_Planned_Award_Cannot_Change_Owners</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change the award amount value after the award has been submitted or approved. --></errorMessage>
+        <name>Prevent_Amount_Change_Post_Submit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- An award cannot be submitted if it is not associated with a budget. Please associate the award with a budget and try to submit again. --></errorMessage>
+        <name>Submitting_Awards_Without_Budget</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Award must have all of Type and Value of Benefit, Extent of Contribution, and Supervisor Justification filled out before submitting. Please check those fields for completion and try submitting again. --></errorMessage>
+        <name>Submitting_Awards_Without_Justification</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A time off award cannot exceed 80 hours. Please update the time off amount. --></errorMessage>
+        <name>Time_Off_Greater_than_80_Hours</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The OTS Amount must be at least 1.2x greater than the Cash Award Amount or the Cash Award Amount must be greater than 0 if there is an OTS Amount. Please update the amounts and try saving again. --></errorMessage>
+        <name>Validate_Cash_Award_Amount</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_2_Page_PDF --></label>
+        <name>Create_2_Page_PDF</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Submit_for_Approval_Custom --></label>
+        <name>Submit_for_Approval_Custom</name>
+    </webLinks>
+</CustomObjectTranslation>

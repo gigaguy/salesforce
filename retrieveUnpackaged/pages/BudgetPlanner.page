@@ -1,0 +1,28 @@
+<!--
+ - Allows users to see budgets they have access to and set those budgets accordingly.
+ -->
+
+<apex:page id="BudgetPlanner" controller="BudgetPlannerController" lightningStylesheets="true" showHeader="false" sideBar="false">
+    <apex:slds />
+    <apex:pageMessages />
+
+    <!-- START DATA TABLE AND INPUT FORM -->
+    <div class="slds-p-around--small">
+        <apex:form >
+            <apex:pageBlock title="LCO Budgets">
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Save" action="{!save}" />
+                </apex:pageBlockButtons>
+
+                <apex:pageBlockTable value="{!budgetList}" var="budget" id="budgetTable">
+                    <apex:column value="{!budget.Name}" />
+                    <apex:column value="{!budget.Award_Budget_Org__r.Name}" />
+                    <apex:column headerValue="Total Budget Amount">
+                        <apex:inputField value="{!budget.Award_Total_Budget__c}" />
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:form>
+    </div>
+    <!--- END DATA TABLE AND INPUT FORM -->
+</apex:page>

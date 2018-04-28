@@ -1,0 +1,7 @@
+<apex:page showHeader="true"
+           id="SubmitSingleAwardApproval"
+           standardController="Award__c"
+           extensions="SubmitForApprovalController"
+           action="{!submitSingleAward}">
+    <apex:messages />
+</apex:page>

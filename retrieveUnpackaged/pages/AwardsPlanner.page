@@ -1,0 +1,135 @@
+<apex:page id="AwardsPlanner" controller="MyAwardPlannerController" lightningStylesheets="true" showHeader="false" sideBar="false">
+    <apex:slds />
+    <apex:includeScript value="{!URLFOR($Resource.jQuery)}" />
+    <apex:pageMessages />
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+    <body>
+    <!-- START BUDGET AND CASH AMOUNT CARDS -->
+    <div id="statusCards" class="slds-grid slds-gutters">
+        <div class="slds-col slds-p-around--small">
+            <article class="slds-card">
+                <div class="slds-card__header">
+                    <h2>
+                        <span class="slds-text-heading--small">Total Budget</span>
+                    </h2>
+                </div>
+                <div class="slds-media__body slds-p-left--large slds-p-bottom--small">
+                    $ <span class="slds-card__body" id="totalBudgetAmount">{!totalBudgetAmount}</span>
+                </div>
+            </article>
+        </div>
+        <div class="slds-col slds-p-around--small">
+            <article class="slds-card">
+                <div class="slds-card__header">
+                    <h2>
+                        <span class="slds-text-heading--small">Total Allocated Amount</span>
+                    </h2>
+                </div>
+                <div class="slds-media__body slds-p-left--large slds-p-bottom--small">
+                    $ <span class="slds-card__body" id="totalAllocatedAmount">{!totalAllocatedAmount}</span>
+                </div>
+            </article>
+        </div>
+        <div class="slds-col slds-p-around--small">
+            <article class="slds-card">
+                <div class="slds-card__header">
+                    <h2>
+                        <span class="slds-text-heading--small">Total Planned Amount</span>
+                    </h2>
+                </div>
+                <div class="slds-media__body slds-p-left--large slds-p-bottom--small" id="cashAmountCard">
+                    $ <span class="slds-card__body" id="totalCashAmount">0.00</span>
+                </div>
+            </article>
+        </div>
+        <div class="slds-col slds-p-around--small">
+            <article class="slds-card">
+                <div class="slds-card__header">
+                    <h2>
+                        <span class="slds-text-heading--small">Total Budget Remaining</span>
+                    </h2>
+                </div>
+                <div class="slds-media__body slds-p-left--large slds-p-bottom--small">
+                    $ <span class="slds-card__body" id="remainingBudgetAmount">0.00</span>
+                </div>
+            </article>
+        </div>
+    </div>
+    <!-- END BUDGET AND CASH AMOUNT CARDS -->
+
+    <!-- START DATA TABLE AND INPUT FORM -->
+    <div class="slds-p-around--small">
+        <apex:form >
+            <!-- START EDIT AWARDS SECTION -->
+            <apex:pageBlock title="Your Planned Awards">
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Save" action="{!save}"/>
+                    <apex:commandButton value="Submit Awards for Approval" action="{!submitAwardsForApproval}"/>
+                </apex:pageBlockButtons>
+
+                <apex:pageBlockTable value="{!awardsList}" var="aw" id="awardTable">
+                    <apex:column >
+                        <apex:inputCheckbox value="{!aw.selected}"/>
+                    </apex:column>
+                    <apex:column headerValue="Award Internal Id">
+                        <apex:outputLink value="{!URLFOR($Action.Award__c.View, aw.award.Id)}">{!aw.award.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!aw.award.Emp_Name__c}"/>
+                    <apex:column value="{!aw.award.LCO__c}"/>
+                    <apex:column value="{!aw.award.Division__c}"/>
+                    <apex:column value="{!aw.award.Branch__c}"/>
+                    <apex:column headerValue="Cash Award Value">
+                        <apex:inputField value="{!aw.award.Cash_Award_Amount__c}" styleClass="cashAwards" onChange="updateTotalAmount(), calculateRemainingBudget()"/>
+                    </apex:column>
+                    <apex:column headerValue="Time Off Award Value">
+                        <apex:inputField value="{!aw.award.Time_Off_Amount__c}" styleClass="timeOff"/>
+                    </apex:column>
+                    <apex:column headerValue="OTS Value">
+                        <apex:inputField value="{!aw.award.OTS_Amount__c}" styleClass="otsAmount" onChange="updateTotalAmount(), calculateRemainingBudget()"/>
+                    </apex:column>
+                    <apex:column headerValue="Outside ORD">
+                        <apex:inputCheckbox value="{!aw.award.Outside_ORD__c}" styleClass="outsideOrd"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+
+            </apex:pageBlock>
+        </apex:form>
+    </div>
+    <!-- END DATA TABLE AND INPUT FORM -->
+
+    <script>
+        function updateTotalAmount() {
+            var allAwards = 0;
+            var awardTotal = 0;
+            var otsTotal = 0;
+            var awardAmounts = document.querySelectorAll(".cashAwards");
+            var otsAmounts = document.querySelectorAll(".otsAmount");
+
+            Array.prototype.forEach.call(awardAmounts, function (award) {
+                awardTotal = awardTotal + parseFloat(award.value.replace(/,/g, ''));
+            });
+
+            Array.prototype.forEach.call(otsAmounts, function (award) {
+                otsTotal = otsTotal + parseFloat(award.value.replace(/,/g, ''));
+            });
+
+            allAwards = awardTotal + otsTotal;
+
+            $("#totalCashAmount").text(allAwards.toFixed(2));
+        }
+    </script>
+    <script>
+        function calculateRemainingBudget() {
+            var remaining = parseFloat($("#totalBudgetAmount").text()) - parseFloat($("#totalCashAmount").text()) - parseFloat($("#totalAllocatedAmount").text());
+            $("#remainingBudgetAmount").text(remaining.toFixed(2));
+        }
+    </script>
+    <script>
+        $(document).ready(function() {
+            updateTotalAmount();
+            calculateRemainingBudget();
+        });
+    </script>
+    </body>
+    </html>
+</apex:page>

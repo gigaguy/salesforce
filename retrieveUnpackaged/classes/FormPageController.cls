@@ -89,15 +89,21 @@ public without sharing class FormPageController  {
     
     @AuraEnabled
     public static string deleteForm(ID formID, string sID){
-        
-        //find any related Line Items and delete
-        list<line_item__c> litems = [select id from line_item__c where related_form__c = :formID];
-        delete litems;
+        //4-26-2018 LSpack: added check to prevent deletion of any orphan Line Item records
+        if(formID != null) {
+            //find any related Line Items and delete
+            list<line_item__c> litems = [select id from line_item__c where related_form__c = :formID];
+            delete litems;
+    	}
         
         //delete form
-        delete [select id from Forms__c where ID = :formID];
-        
-        return 'Form Deleted';
+        if(formID == null){
+            return 'Form not Found';
+            }
+        else {
+            delete [select id from Forms__c where ID = :formID];
+            return 'Form Deleted';
+        }
     }
     
     @AuraEnabled
@@ -213,9 +219,13 @@ public without sharing class FormPageController  {
         
     @AuraEnabled
     public static string deleteFormAttachment(ID attID){
-     
+        if(attID==null){
+            return 'Attachment not found.';
+        } 
+        else {
             delete [select id from Attachment where ID = :attID];
             return '-- Attachment Deleted';    
+        }
     }
     
     @AuraEnabled
@@ -430,9 +440,13 @@ public without sharing class FormPageController  {
     
     @AuraEnabled
     public static string deleteLineItem(ID liID, string sID){
-        delete [select id from Line_Item__c where ID = :liID];
-        
-        return 'Line Item Deleted - Form ';
+        if(liID==null){
+            return 'Line Item not Found';
+            }
+        else {
+            delete [select id from Line_Item__c where ID = :liID];
+            return 'Line Item Deleted - Form ';
+        }
     }
 
     @AuraEnabled

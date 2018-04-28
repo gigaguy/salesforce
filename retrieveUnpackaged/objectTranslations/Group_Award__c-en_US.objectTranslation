@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Group Award</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Group Awards</value>
+    </caseValues>
+    <fields>
+        <label><!-- Award Justification --></label>
+        <name>Award_Justification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Award Name --></label>
+        <name>Group_Award_Name__c</name>
+    </fields>
+    <layouts>
+        <layout>Group Award Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Standard Group Award --></label>
+        <name>Standard_Group_Award</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,1874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Awards_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Awards_Compact_Layout</fullName>
+        <fields>Emp_Name__c</fields>
+        <fields>Status__c</fields>
+        <fields>Award_Type__c</fields>
+        <fields>Cash_Award_Amount__c</fields>
+        <fields>Time_Off_Amount__c</fields>
+        <label>Awards Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Record of award given to employee.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Authorizing_Official_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.Supervisor__r.FirstName + &quot; &quot; + Owner:User.Supervisor__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Authorizing Official Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Authorizing_Official_OLD__c</fullName>
+        <description>Individual responsible for approving any award over threshold. This should be the Requesting Official&apos;s supervisor.</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&apos;/&apos; + Owner_Contact__r.Supervisor__c , Owner_Contact__r.Supervisor__r.FirstName + &apos; &apos; +  Owner_Contact__r.Supervisor__r.LastName, &quot;_self&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Authorizing Official OLD</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Authorizing_Official_Title__c</fullName>
+        <description>Authorizing official&apos;s title from the record Owner&apos;s related Contact record.</description>
+        <externalId>false</externalId>
+        <formula>Owner_Contact__r.Supervisor__r.Title</formula>
+        <label>Authorizing Official Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Authorizing_Official__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Requesting official&apos;s supervisor. Responsible for the award&apos;s first level of approval.</description>
+        <externalId>false</externalId>
+        <label>Authorizing Official</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Awards_Authorizing_Official</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Award_Type__c</fullName>
+        <description>Type of award given to employee.</description>
+        <externalId>false</externalId>
+        <label>Award Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>QSI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Time Off</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cash</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Group Award</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>On-the-Spot</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Title 42</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>STAA Awards</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Branch__c</fullName>
+        <description>Calculated field based on the 2nd component of the Requesting Official&apos;s Department.</description>
+        <externalId>false</externalId>
+        <label>Branch</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Budget__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Budget that the award will be allocated toward.</description>
+        <externalId>false</externalId>
+        <label>Budget</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Document__c.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Document - Award Budget</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Document__c</referenceTo>
+        <relationshipLabel>Awards</relationshipLabel>
+        <relationshipName>Budgeted_Awards</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cash_Award_Amount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Amount of award given to employee (monetary awards only).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Cash Awards over $2,000 require AO approval. Collective awards over $5,000 for an awardee require two levels of approval.</inlineHelpText>
+        <label>Cash Award Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Cincinnati_Office_Justification__c</fullName>
+        <description>Required for Cincinnati Union Employees. Justification specific to the Cinc. Union form.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Required for Awardees in the Cinc. Union. Press and hold the Ctrl key to select multiple options.</inlineHelpText>
+        <label>Cincinnati Office Justification</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Substantially surpasses performance goals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Improved performance over the prior period</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reduced costs, expert performance, increased efficiencies</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Exemplifies core values of the EPA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Achieves Specific Scientific Advancements</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Prepares outstanding publications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Improves service to the public</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>7</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Cost_Center_Work_Code__c</fullName>
+        <description>Work Code/Cost Center/Cost Structure for which the award will be charged against.</description>
+        <externalId>false</externalId>
+        <label>Cost Center/Work Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Funded__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Funded</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Detail_Org__c</fullName>
+        <description>Populated if the awardee is on detail. The field will reflect the organization in which the awardee is serving a detail.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter or edit if the awardee is on detail.</inlineHelpText>
+        <label>Detail Org</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <description>The third component of the Requesting Officials department.</description>
+        <externalId>false</externalId>
+        <label>Division</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Emp_ID__c</fullName>
+        <description>Awardee&apos;s Employee ID</description>
+        <externalId>false</externalId>
+        <formula>Emp_Name__r.Employee_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Emp ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Emp_Name__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Awardee&apos;s Name</description>
+        <externalId>false</externalId>
+        <label>Emp Name</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Awards (Emp Name)</relationshipLabel>
+        <relationshipName>Employee</relationshipName>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Extent_of_Contribution__c</fullName>
+        <description>Extent of Contribution as defined on EPA&apos;s recommendation for incentive award form.</description>
+        <externalId>false</externalId>
+        <label>Extent of Contribution</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Limited</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Extended</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Broad</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FPPS_Number__c</fullName>
+        <description>Federal Personnel and Payroll System number. Used to track the award once it is processed in FPPS.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>NOT ENTERED BY REQUESTING OFFICIAL!</inlineHelpText>
+        <label>FPPS #</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grade__c</fullName>
+        <description>Grade of the Awardee.</description>
+        <externalId>false</externalId>
+        <formula>Emp_Name__r.Grade__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Grade</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Award_Amount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Group Award Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Group_Award_Name_OLD__c</fullName>
+        <externalId>false</externalId>
+        <label>Group Award Name OLD</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Award_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the Group Award object to determine which awards are part of a group award. The individual awards, though, are processed as normal.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Create Group Award Names or leverage existing names in order to tag and organize group awards.</inlineHelpText>
+        <label>Group Award Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Group_Award__c.CreatedBy.Id</field>
+                <operation>equals</operation>
+                <valueField>$User.Id</valueField>
+            </filterItems>
+            <infoMessage>Please choose a group award that you have created.</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Group_Award__c</referenceTo>
+        <relationshipLabel>Awards</relationshipLabel>
+        <relationshipName>Awards</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HR_Representative__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>HR personnel responsible for carrying out post approval functions.</description>
+        <externalId>false</externalId>
+        <label>HR Representative</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Award_HR_Rep</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>IOAA_Approval_Date__c</fullName>
+        <description>Date IOAA representative approves the award, if necessary.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Approval date will be left blank if IOAA approval is not needed.</inlineHelpText>
+        <label>IOAA Approval Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IOAA_Approver__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The designated person with IOAA who would need to approve the award request, if necessary.</description>
+        <externalId>false</externalId>
+        <label>IOAA Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>IOAA_Awards</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Incoming_Award__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to indicate reference records that are not part of the workflow, but used for validation calculations.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates an award that&apos;s only used for validation purposes.</inlineHelpText>
+        <label>Incoming Award</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LCO__c</fullName>
+        <externalId>false</externalId>
+        <label>LCO</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OTS_Amount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>OTS Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Occupational_Series__c</fullName>
+        <externalId>false</externalId>
+        <formula>Emp_Name__r.Occ_Series__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Occupational Series</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Outside_LCO__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if an award is for an individual outside that is outside of the Requesting Official&apos;s organization.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please check if the award is going towards an individual outside of your organization.</inlineHelpText>
+        <label>Outside LCO</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Outside_ORD__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the award is going to an individual outside of the RPIO.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please check if the Awardee is outside of ORD. If you do not check this field for non-ORD employees, the award will be at risk of not being processed.</inlineHelpText>
+        <label>Outside ORD</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Outside_Org__c</fullName>
+        <description>Evaluates to true if the requesting officials HR Org is not equal to the employee&apos;s HR Org.</description>
+        <externalId>false</externalId>
+        <formula>AND(NOT(ISNULL(Emp_Name__r.Account.Name)), NOT(ISNULL(RO_HR_Org__c))) &amp;&amp; Emp_Name__r.Account.Name &lt;&gt; RO_HR_Org__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Outside Org</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Owner_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The contact record related the owner&apos;s user record.</description>
+        <externalId>false</externalId>
+        <label>Owner Contact</label>
+        <lookupFilter>
+            <active>false</active>
+            <errorMessage>The Contact&apos;s related User Id does not match the Owner&apos;s User Id.</errorMessage>
+            <filterItems>
+                <field>Contact.User__r.Id</field>
+                <operation>equals</operation>
+                <valueField>$Source.OwnerId</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Awards (Owner Contact)</relationshipLabel>
+        <relationshipName>Owned_Awards</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Owner_Dept__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.Department</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owner Department</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Paid_Amount__c</fullName>
+        <description>The actual amount paid to the employee after taxes, etc., have been taken out.</description>
+        <externalId>false</externalId>
+        <label>Paid Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Period__c</fullName>
+        <description>The pay period in which the employee was paid.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>NOT ENTERED BY REQUESTING OFFICIAL!</inlineHelpText>
+        <label>Calendar Pay Period</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>201722</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201723</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201724</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201725</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201726</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201801</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201802</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201803</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201804</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201805</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201806</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201807</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201808</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201809</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201810</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201811</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201812</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201813</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201814</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201815</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201816</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201817</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201818</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201819</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201820</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201821</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201822</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201823</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201824</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201825</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201826</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>201827</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Pay_Plan__c</fullName>
+        <externalId>false</externalId>
+        <formula>Emp_Name__r.Pay_Plan__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Pay Plan</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payroll_Representative__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Payroll personnel responsible for performing payroll-related functions for the award.</description>
+        <externalId>false</externalId>
+        <label>Payroll Representative</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Awards_Payroll_Rep</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Planned_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Planned Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Position_Title__c</fullName>
+        <externalId>false</externalId>
+        <formula>Emp_Name__r.Position_Title__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Position Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>QSI__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>QSI</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RO_HR_Code__c</fullName>
+        <description>Requesting Official&apos;s HR organization code.</description>
+        <externalId>false</externalId>
+        <formula>Owner_Contact__r.Account.Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>RO HR Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RO_HR_Org__c</fullName>
+        <description>Requesting Official&apos;s HR organization name.</description>
+        <externalId>false</externalId>
+        <formula>Owner_Contact__r.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>RO HR Org</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requesting_Official_Supervisor_Title__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.Title</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Requesting Official Supervisor Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requesting_Official_Supervisor__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.FirstName + &quot; &quot; + Owner:User.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Requesting Official/Supervisor</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requires_IOAA_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>True if the saved award requires IOAA approval. The box should be read-only in the permission set and layout and should only be updated by Apex logic.</description>
+        <externalId>false</externalId>
+        <label>Requires IOAA Approval</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Requires_Supervisor_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>True if the saved award requires Supervisor approval. The box should be read-only in the permission set and page layout and should be updated solely by Apex logic.</description>
+        <externalId>false</externalId>
+        <label>Requires Supervisor Approval</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>STAA_Award_Amount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>STAA Award Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Sent_to_OHR__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked if the record had been sent to OHR (Shared Services Center).</description>
+        <externalId>false</externalId>
+        <label>Sent to OHR</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Reference</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Planned</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pending Direct Supervisor Approval</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Received by OARS/Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HR Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sent for Union Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Awaiting Funding</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ready for SSC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>To SSC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Funded</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Paid</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Ready for Work Codes</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Step__c</fullName>
+        <externalId>false</externalId>
+        <formula>Emp_Name__r.Step__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Step</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submitted_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Submitted Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Supervisor_Approval_Date__c</fullName>
+        <description>Date Supervisor approves the record. If the record is automatically approved (doesn&apos;t require Supervisor approval), approval date will equal submitted date.</description>
+        <externalId>false</externalId>
+        <label>Supervisor Approval Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Supervisor_Justification__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If using the group award functionality, this field will automatically assume the justification of the group award.</inlineHelpText>
+        <label>Supervisor Justification</label>
+        <length>10000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Supervisors__c</fullName>
+        <externalId>false</externalId>
+        <formula>Emp_Name__r.Supervisors__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Supervisors</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_Off_Amount__c</fullName>
+        <description>Amount of time-off hours given to employee.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Time Off awards greater than the awardee&apos;s normal work day require AO approval.</inlineHelpText>
+        <label>Time Off Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title_42_SL_ST_Award_Amount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Title 42,SL, ST Award Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <formula>Emp_Name__r.Title</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type_of_Benefit__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of Benefit</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Tangible</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Intangible</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Union_Review_Date__c</fullName>
+        <description>Date award was sent for union review, if necessary.</description>
+        <externalId>false</externalId>
+        <label>Union Review Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Union_Review_Status__c</fullName>
+        <description>Status of an award when under union review consideration.</description>
+        <externalId>false</externalId>
+        <label>Union Review Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sent for Union Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Union Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Union Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Union Review Not Necessary</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Value_of_Benefit__c</fullName>
+        <description>Value of Benefit as defined on EPA&apos;s recommendation for incentive award form.</description>
+        <externalId>false</externalId>
+        <label>Value of Benefit</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Moderate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Substantial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Exceptional</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Work_Code_Lookup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>NOT ENTERED BY REQUESTING OFFICIAL!</inlineHelpText>
+        <label>Work Code Lookup</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Awards (Cost Center)</relationshipLabel>
+        <relationshipName>Cost_Center</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Work_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>Work_Code_Lookup__r.Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Work Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Award</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Emp_Name__c</columns>
+        <columns>Requesting_Official_Supervisor__c</columns>
+        <columns>Award_Type__c</columns>
+        <columns>Cash_Award_Amount__c</columns>
+        <columns>Time_Off_Amount__c</columns>
+        <columns>Status__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <columns>Budget__c</columns>
+        <columns>Branch__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Funded</fullName>
+        <columns>NAME</columns>
+        <columns>Emp_Name__c</columns>
+        <columns>Status__c</columns>
+        <columns>Cash_Award_Amount__c</columns>
+        <columns>Time_Off_Amount__c</columns>
+        <columns>LCO__c</columns>
+        <columns>Division__c</columns>
+        <columns>Branch__c</columns>
+        <columns>Work_Code_Lookup__c</columns>
+        <columns>Work_Code__c</columns>
+        <columns>Pay_Period__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Funded</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Award__c.Standard_Award</value>
+        </filters>
+        <label>Funded</label>
+    </listViews>
+    <listViews>
+        <fullName>HRD_Items</fullName>
+        <columns>NAME</columns>
+        <columns>Emp_Name__c</columns>
+        <columns>Status__c</columns>
+        <columns>Cash_Award_Amount__c</columns>
+        <columns>Time_Off_Amount__c</columns>
+        <columns>LCO__c</columns>
+        <columns>Division__c</columns>
+        <columns>Branch__c</columns>
+        <columns>Submitted_Date__c</columns>
+        <columns>Supervisor_Approval_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Received by OARS/Approved,HR Review,Sent for Union Review</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Award__c.Standard_Award</value>
+        </filters>
+        <label>Received by OARS/Approved</label>
+    </listViews>
+    <listViews>
+        <fullName>HR_Union_Review_Awards</fullName>
+        <columns>NAME</columns>
+        <columns>Emp_Name__c</columns>
+        <columns>Cash_Award_Amount__c</columns>
+        <columns>Status__c</columns>
+        <columns>Budget__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Received by OARS/Approved,HR Review,Sent for Union Review</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Award__c.Standard_Award</value>
+        </filters>
+        <label>HR Union Review</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Planned_Awards</fullName>
+        <columns>NAME</columns>
+        <columns>Emp_Name__c</columns>
+        <columns>Division__c</columns>
+        <columns>Branch__c</columns>
+        <columns>Outside_LCO__c</columns>
+        <columns>Outside_ORD__c</columns>
+        <columns>Cash_Award_Amount__c</columns>
+        <columns>Time_Off_Amount__c</columns>
+        <columns>Group_Award_Amount__c</columns>
+        <columns>Group_Award_Name__c</columns>
+        <columns>Type_of_Benefit__c</columns>
+        <columns>Value_of_Benefit__c</columns>
+        <columns>Extent_of_Contribution__c</columns>
+        <columns>Supervisor_Justification__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Planned</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Award__c.Standard_Award</value>
+        </filters>
+        <label>My Planned Awards</label>
+    </listViews>
+    <listViews>
+        <fullName>Open_Payroll_Items</fullName>
+        <columns>NAME</columns>
+        <columns>Emp_Name__c</columns>
+        <columns>Status__c</columns>
+        <columns>Cash_Award_Amount__c</columns>
+        <columns>Time_Off_Amount__c</columns>
+        <columns>LCO__c</columns>
+        <columns>Division__c</columns>
+        <columns>Branch__c</columns>
+        <columns>Work_Code_Lookup__c</columns>
+        <columns>Work_Code__c</columns>
+        <columns>Pay_Period__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Awaiting Funding</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Award__c.Standard_Award</value>
+        </filters>
+        <label>Awaiting Funding</label>
+    </listViews>
+    <listViews>
+        <fullName>Ready_for_SSC</fullName>
+        <columns>NAME</columns>
+        <columns>Emp_Name__c</columns>
+        <columns>Status__c</columns>
+        <columns>Cash_Award_Amount__c</columns>
+        <columns>Time_Off_Amount__c</columns>
+        <columns>LCO__c</columns>
+        <columns>Division__c</columns>
+        <columns>Branch__c</columns>
+        <columns>Sent_to_OHR__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Ready for SSC</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Award__c.Standard_Award</value>
+        </filters>
+        <label>Ready for SSC</label>
+    </listViews>
+    <listViews>
+        <fullName>SSC_Tasks</fullName>
+        <columns>NAME</columns>
+        <columns>Cost_Center_Work_Code__c</columns>
+        <columns>Emp_Name__c</columns>
+        <columns>Award_Type__c</columns>
+        <columns>Cash_Award_Amount__c</columns>
+        <columns>Group_Award_Amount__c</columns>
+        <columns>Group_Award_Name__c</columns>
+        <columns>Time_Off_Amount__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>To SSC</value>
+        </filters>
+        <label>SSC Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>Submitted</fullName>
+        <columns>NAME</columns>
+        <columns>Emp_Name__c</columns>
+        <columns>Status__c</columns>
+        <columns>Division__c</columns>
+        <columns>Branch__c</columns>
+        <columns>Cash_Award_Amount__c</columns>
+        <columns>Time_Off_Amount__c</columns>
+        <columns>Group_Award_Name__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Planned</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Award__c.Standard_Award</value>
+        </filters>
+        <label>Submitted</label>
+    </listViews>
+    <listViews>
+        <fullName>To_SSC</fullName>
+        <columns>NAME</columns>
+        <columns>Emp_Name__c</columns>
+        <columns>Status__c</columns>
+        <columns>Cash_Award_Amount__c</columns>
+        <columns>Time_Off_Amount__c</columns>
+        <columns>LCO__c</columns>
+        <columns>Division__c</columns>
+        <columns>Branch__c</columns>
+        <columns>FPPS_Number__c</columns>
+        <columns>Sent_to_OHR__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>To SSC</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Award__c.Standard_Award</value>
+        </filters>
+        <label>To SSC</label>
+    </listViews>
+    <nameField>
+        <displayFormat>AWARD-{0000000}</displayFormat>
+        <label>Award Internal ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Awards</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Standard_Award</fullName>
+        <active>true</active>
+        <description>Standard Award record type.</description>
+        <label>Standard Award</label>
+        <picklistValues>
+            <picklist>Award_Type__c</picklist>
+            <values>
+                <fullName>Cash</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On-the-Spot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STAA Awards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Time Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Title 42</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cincinnati_Office_Justification__c</picklist>
+            <values>
+                <fullName>Achieves Specific Scientific Advancements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exemplifies core values of the EPA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Improved performance over the prior period</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Improves service to the public</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prepares outstanding publications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reduced costs%2C expert performance%2C increased efficiencies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Substantially surpasses performance goals</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Extent_of_Contribution__c</picklist>
+            <values>
+                <fullName>Broad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Limited</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Pay_Period__c</picklist>
+            <values>
+                <fullName>201722</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201723</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201724</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201725</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201726</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201801</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201802</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201803</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201804</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201805</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201806</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201807</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201808</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201809</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201810</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201811</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201812</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201813</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201814</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201815</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201816</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201817</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201818</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201819</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201820</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201821</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201822</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201823</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201824</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201825</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201826</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>201827</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Awaiting Funding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funded</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HR Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Direct Supervisor Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Ready for SSC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received by OARS%2FApproved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent for Union Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>To SSC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Benefit__c</picklist>
+            <values>
+                <fullName>Intangible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tangible</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Union_Review_Status__c</picklist>
+            <values>
+                <fullName>Sent for Union Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Union Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Union Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Union Review Not Necessary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_of_Benefit__c</picklist>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Substantial</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Emp_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Requesting_Official_Supervisor__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Non_Planned_Award_Cannot_Change_Owners</fullName>
+        <active>true</active>
+        <description>An award that is not in the Planned stage cannot change owners.</description>
+        <errorConditionFormula>ISCHANGED( OwnerId ) &amp;&amp; NOT(  ISPICKVAL(Status__c, &quot;Planned&quot;) )</errorConditionFormula>
+        <errorMessage>An award not in a Planned stage cannot change owners. Please contact administrative support for any questions and/or guidance.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_Amount_Change_Post_Submit</fullName>
+        <active>true</active>
+        <description>Prevent a user from changing any of the award amount fields if the award is not in the Planned stage.</description>
+        <errorConditionFormula>NOT( OR(ISPICKVAL(Status__c, &quot;Planned&quot;), ISPICKVAL(Status__c, &quot;Rejected&quot;)) ) &amp;&amp; OR( ISCHANGED(Cash_Award_Amount__c),  ISCHANGED(Time_Off_Amount__c), ISCHANGED(Group_Award_Amount__c) )</errorConditionFormula>
+        <errorMessage>You cannot change the award amount value after the award has been submitted or approved.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Submitting_Awards_Without_Budget</fullName>
+        <active>true</active>
+        <description>Awards cannot be submitted if they are not associated with a budget.</description>
+        <errorConditionFormula>ISPICKVAL(Status__c, &quot;Submitted&quot;) &amp;&amp; ISBLANK(Budget__c)</errorConditionFormula>
+        <errorMessage>An award cannot be submitted if it is not associated with a budget. Please associate the award with a budget and try to submit again.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Submitting_Awards_Without_Justification</fullName>
+        <active>true</active>
+        <description>Prevent submitting an award without proper justification.</description>
+        <errorConditionFormula>AND(ISPICKVAL(Status__c, &quot;Submitted&quot;),  NOT(ISPICKVAL(PRIORVALUE(Status__c), &quot;Submitted&quot;)), 
+OR(ISBLANK(TEXT(Type_of_Benefit__c)), ISBLANK(TEXT(Value_of_Benefit__c)), ISBLANK(TEXT(Extent_of_Contribution__c)), ISNULL(Supervisor_Justification__c)))</errorConditionFormula>
+        <errorMessage>Award must have all of Type and Value of Benefit, Extent of Contribution, and Supervisor Justification filled out before submitting. Please check those fields for completion and try submitting again.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Time_Off_Greater_than_80_Hours</fullName>
+        <active>true</active>
+        <description>Validation rule that prevents a user from saving or submitting an award that is greater than 80 hours.</description>
+        <errorConditionFormula>Time_Off_Amount__c &gt; 80</errorConditionFormula>
+        <errorMessage>A time off award cannot exceed 80 hours. Please update the time off amount.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Validate_Cash_Award_Amount</fullName>
+        <active>true</active>
+        <description>The cash award amount must be 1.2x the OTS amount if the OTS amount field is populated.</description>
+        <errorConditionFormula>OR((OTS_Amount__c &lt;&gt; 0 &amp;&amp; Cash_Award_Amount__c &lt;&gt; 0 &amp;&amp; Cash_Award_Amount__c &lt; (1.2 * OTS_Amount__c)), OTS_Amount__c &lt;&gt; 0 &amp;&amp; Cash_Award_Amount__c == 0)</errorConditionFormula>
+        <errorMessage>The OTS Amount must be at least 1.2x greater than the Cash Award Amount or the Cash Award Amount must be greater than 0 if there is an OTS Amount. Please update the amounts and try saving again.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Create_2_Page_PDF</fullName>
+        <availability>online</availability>
+        <description>Creates the 2-page justification PDF</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Create 2-Page PDF</masterLabel>
+        <openType>sidebar</openType>
+        <page>AwardDoublePageForm</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_for_Approval_Custom</fullName>
+        <availability>online</availability>
+        <description>Custom submit for approval process.</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Submit for Approval</masterLabel>
+        <openType>sidebar</openType>
+        <page>SubmitSingleAwardForApproval</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>
