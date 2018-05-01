@@ -11,10 +11,33 @@
     <defaultCaseOwnerType>User</defaultCaseOwnerType>
     <defaultCaseUser>hinds.timothy2@epa.gov</defaultCaseUser>
     <emailToCase>
-        <enableEmailToCase>false</enableEmailToCase>
+        <enableEmailToCase>true</enableEmailToCase>
+        <enableHtmlEmail>true</enableHtmlEmail>
+        <enableOnDemandEmailToCase>true</enableOnDemandEmailToCase>
+        <enableThreadIDInBody>true</enableThreadIDInBody>
+        <enableThreadIDInSubject>true</enableThreadIDInSubject>
+        <notifyOwnerOnNewCaseEmail>true</notifyOwnerOnNewCaseEmail>
+        <overEmailLimitAction>Bounce</overEmailLimitAction>
+        <preQuoteSignature>false</preQuoteSignature>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Email</caseOrigin>
+            <caseOwner>BAP_Admins</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Low</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>bap_admins@epa.gov</emailAddress>
+            <emailServicesAddress>bap_admins@f-34dhagrqa7q9i3ctdxll5k2azc4qcsqvgyqjz8kmzoosxx39en.t-gzsfea0.na21.case.salesforce.com</emailServicesAddress>
+            <isVerified>true</isVerified>
+            <routingName>BAP Admin</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <unauthorizedSenderAction>Discard</unauthorizedSenderAction>
     </emailToCase>
     <enableCaseFeed>true</enableCaseFeed>
+    <enableDraftEmails>false</enableDraftEmails>
     <enableEarlyEscalationRuleTriggers>false</enableEarlyEscalationRuleTriggers>
+    <enableEmailActionDefaultsHandler>false</enableEmailActionDefaultsHandler>
     <enableSuggestedSolutions>true</enableSuggestedSolutions>
     <notifyContactOnCaseComment>false</notifyContactOnCaseComment>
     <notifyDefaultCaseOwner>true</notifyDefaultCaseOwner>
