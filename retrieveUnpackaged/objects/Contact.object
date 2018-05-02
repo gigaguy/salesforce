@@ -623,16 +623,6 @@ DATE(YEAR(GSA_SmartPay_Training_Date__c) + 2, Month(GSA_SmartPay_Training_Date__
         <columns>CORE.USERS.FIRST_NAME</columns>
         <columns>CORE.USERS.LAST_NAME</columns>
         <filterScope>Everything</filterScope>
-        <filters>
-            <field>ACCOUNT.NAME</field>
-            <operation>contains</operation>
-            <value>OTAQ</value>
-        </filters>
-        <filters>
-            <field>CONTACT.FIRST_NAME</field>
-            <operation>equals</operation>
-            <value>Philip</value>
-        </filters>
         <label>All Contacts</label>
     </listViews>
     <listViews>
