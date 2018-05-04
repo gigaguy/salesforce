@@ -548,6 +548,51 @@
         <label>All WOTUS Recommendations Snippets</label>
     </listViews>
     <listViews>
+        <fullName>Topic_1_0_Step_1_Test</fullName>
+        <columns>RECORDTYPE</columns>
+        <columns>Topic__c</columns>
+        <columns>NAME</columns>
+        <columns>Agency_Name__c</columns>
+        <columns>Commenter_Category__c</columns>
+        <columns>Submission_Number__c</columns>
+        <columns>Snippet_Status__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Snippet__c.Waters_of_the_US</value>
+        </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operation>equals</operation>
+            <value>2.0</value>
+        </filters>
+        <label>Topic 2.0 Step 1 Test</label>
+    </listViews>
+    <listViews>
+        <fullName>Topic_1_0_Test</fullName>
+        <columns>RECORDTYPE</columns>
+        <columns>Topic__c</columns>
+        <columns>NAME</columns>
+        <columns>Agency_Name__c</columns>
+        <columns>Commenter_Name__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Snippet_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Topic__c</field>
+            <operation>equals</operation>
+            <value>1.0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Snippet__c.Waters_of_the_US_Step_0</value>
+        </filters>
+        <label>Topic 1.0 Step 0 Timeframe</label>
+    </listViews>
+    <listViews>
         <fullName>Waters_of_the_US</fullName>
         <columns>NAME</columns>
         <filterScope>Everything</filterScope>

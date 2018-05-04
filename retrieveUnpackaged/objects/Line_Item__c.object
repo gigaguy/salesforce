@@ -326,10 +326,16 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
         <columns>Course_Title__c</columns>
         <columns>Completion_Date__c</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>Employee__c</field>
+            <operation>contains</operation>
+            <value>Tywanna Greene</value>
+        </filters>
         <label>All</label>
     </listViews>
     <listViews>
         <fullName>My_Purchase_Card_Training</fullName>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
         <columns>NAME</columns>
         <columns>Course_Title__c</columns>
         <columns>Completion_Date__c</columns>
@@ -339,6 +345,11 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
             <field>RECORDTYPE</field>
             <operation>equals</operation>
             <value>Line_Item__c.Training</value>
+        </filters>
+        <filters>
+            <field>Course_Title__c</field>
+            <operation>equals</operation>
+            <value>PCard Agency Supplemental Training,PaymentNet (PNET)</value>
         </filters>
         <filters>
             <field>Course_Title__c</field>
@@ -357,7 +368,7 @@ CASE( MOD( Date__c - DATE(1900, 1, 7), 7), 0, &quot;Sunday&quot;, 1, &quot;Monda
         <filters>
             <field>Employee__c</field>
             <operation>contains</operation>
-            <value>Pinney</value>
+            <value>kimberly loesch</value>
         </filters>
         <label>purchase card training</label>
     </listViews>

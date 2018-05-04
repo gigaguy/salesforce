@@ -5812,6 +5812,11 @@ Prepare_Form_for__r.Email
             <operation>equals</operation>
             <value>New,Submitted for Approval,Approved,Rejected,Recalled,Completed,Pending</value>
         </filters>
+        <filters>
+            <field>Employee_Name_SF_182__c</field>
+            <operation>equals</operation>
+            <value>knoke</value>
+        </filters>
         <label>New Purchase Card Actions</label>
     </listViews>
     <listViews>
