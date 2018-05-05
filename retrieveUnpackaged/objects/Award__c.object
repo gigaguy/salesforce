@@ -159,6 +159,20 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Awardee_Direct_Supervisor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Awardee&apos;s Direct Supervisor. Used when a requesting official submits an award for someone outside of his/her organization.</description>
+        <externalId>false</externalId>
+        <label>Awardee Direct Supervisor</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Awards</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Branch__c</fullName>
         <description>Calculated field based on the 2nd component of the Requesting Official&apos;s Department.</description>
         <externalId>false</externalId>
@@ -499,6 +513,18 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Justification_Matrix__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;https://usepa.sharepoint.com/:b:/r/sites/ORD/OARS/RA/Admin/Awards%20Documents/Justification%20Matrix.pdf?csf=1&amp;e=qLZtGM &quot;, &quot;Justification Matrix&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Justification Matrix</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>LCO__c</fullName>
         <externalId>false</externalId>
         <label>LCO</label>
@@ -522,6 +548,18 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OTS_Calculator__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;https://usepa.sharepoint.com/:x:/r/sites/ORD/OARS/RA/Admin/Awards%20Documents/OTS_Calculator_2017.xlsx?d=w9f3c9e253ce24679bab497445cb28b0a&amp;csf=1&amp;e=Bb0aNM&quot;, &quot;OTS Calculator on Sharepoint&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OTS Calculator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Occupational_Series__c</fullName>
@@ -563,7 +601,7 @@
         <fullName>Outside_Org__c</fullName>
         <description>Evaluates to true if the requesting officials HR Org is not equal to the employee&apos;s HR Org.</description>
         <externalId>false</externalId>
-        <formula>AND(NOT(ISNULL(Emp_Name__r.Account.Name)), NOT(ISNULL(RO_HR_Org__c))) &amp;&amp; Emp_Name__r.Account.Name &lt;&gt; RO_HR_Org__c</formula>
+        <formula>AND(NOT(ISNULL(Emp_Name__r.Account.Name)), NOT(ISNULL(RO_HR_Org2__c))) &amp;&amp; Emp_Name__r.Account.Name &lt;&gt; RO_HR_Org2__r.Name</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Outside Org</label>
         <trackHistory>false</trackHistory>
@@ -828,7 +866,7 @@
         <fullName>RO_HR_Code__c</fullName>
         <description>Requesting Official&apos;s HR organization code.</description>
         <externalId>false</externalId>
-        <formula>Owner_Contact__r.Account.Code__c</formula>
+        <formula>RO_HR_Org2__r.Code__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>RO HR Code</label>
         <required>false</required>
@@ -836,6 +874,21 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RO_HR_Org2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Requesting officials HR Org at the time the award was created. If the requesting official was on detail, then the official&apos;s detail org will be listed.</description>
+        <externalId>false</externalId>
+        <label>RO HR Org</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Awards (RO HR Org)</relationshipLabel>
+        <relationshipName>Awards_HR_Org</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>RO_HR_Org__c</fullName>
@@ -1094,6 +1147,47 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Award_Amount_on_Submit__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Reports the cumulative value of cash awards the Awardee has received FY to date, at the time of the award submission.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reports the cumulative value of cash awards the Awardee has received FY to date, at the time of the award submission.</inlineHelpText>
+        <label>Total Awards on Submit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Time_Off_on_Submit__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Reports the cumulative value of time off awards the Awardee has received CY to date, at the time of the award submission.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reports the cumulative value of time off awards the Awardee has received CY to date, at the time of the award submission.</inlineHelpText>
+        <label>Total Time Off on Submit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Two_Page_Form_Required__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requires_IOAA_Approval__c ||  Requires_Supervisor_Approval__c || Outside_ORD__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>2-Page Form Required</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Type_of_Benefit__c</fullName>

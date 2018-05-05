@@ -58,6 +58,11 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Awardee Direct Supervisor --></label>
+        <name>Awardee_Direct_Supervisor__c</name>
+        <relationshipLabel><!-- Awards (Awardee Direct Supervisor) --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Branch --></label>
         <name>Branch__c</name>
     </fields>
@@ -194,12 +199,20 @@
         <name>Incoming_Award__c</name>
     </fields>
     <fields>
+        <label><!-- Justification Matrix --></label>
+        <name>Justification_Matrix__c</name>
+    </fields>
+    <fields>
         <label><!-- LCO --></label>
         <name>LCO__c</name>
     </fields>
     <fields>
         <label><!-- OTS Amount --></label>
         <name>OTS_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- OTS Calculator --></label>
+        <name>OTS_Calculator__c</name>
     </fields>
     <fields>
         <label><!-- Occupational Series --></label>
@@ -392,6 +405,11 @@
     </fields>
     <fields>
         <label><!-- RO HR Org --></label>
+        <name>RO_HR_Org2__c</name>
+        <relationshipLabel><!-- Awards (RO HR Org) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- RO HR Org --></label>
         <name>RO_HR_Org__c</name>
     </fields>
     <fields>
@@ -509,6 +527,20 @@
         <name>Title__c</name>
     </fields>
     <fields>
+        <help><!-- Reports the cumulative value of cash awards the Awardee has received FY to date, at the time of the award submission. --></help>
+        <label><!-- Total Awards on Submit --></label>
+        <name>Total_Award_Amount_on_Submit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reports the cumulative value of time off awards the Awardee has received CY to date, at the time of the award submission. --></help>
+        <label><!-- Total Time Off on Submit --></label>
+        <name>Total_Time_Off_on_Submit__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2-Page Form Required --></label>
+        <name>Two_Page_Form_Required__c</name>
+    </fields>
+    <fields>
         <label><!-- Type of Benefit --></label>
         <name>Type_of_Benefit__c</name>
         <picklistValues>
@@ -604,6 +636,14 @@
     <quickActions>
         <label><!-- Create 1-Page PDF --></label>
         <name>Create_1_Page_PDF</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Create 2-Page PDF --></label>
+        <name>Create_2_Page_PDF2</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Sharing --></label>
+        <name>Sharing</name>
     </quickActions>
     <quickActions>
         <label><!-- Submit for Approval --></label>

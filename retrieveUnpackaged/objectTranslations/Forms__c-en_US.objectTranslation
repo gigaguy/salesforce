@@ -650,6 +650,10 @@
         <name>Description__c</name>
     </fields>
     <fields>
+        <label><!-- Destination --></label>
+        <name>Destination__c</name>
+    </fields>
+    <fields>
         <label><!-- Developed in accordance with: --></label>
         <name>Developed_in_accordance_with_1__c</name>
         <picklistValues>
@@ -758,6 +762,10 @@
         <name>E__c</name>
     </fields>
     <fields>
+        <label><!-- Earned Travel Comp Hours Total --></label>
+        <name>Earned_Travel_Comp_Hours_Total__c</name>
+    </fields>
+    <fields>
         <label><!-- Effective Date --></label>
         <name>Effective_Date__c</name>
     </fields>
@@ -846,6 +854,10 @@
         <help><!-- Clicking this box digitally dates and signs this form. --></help>
         <label><!-- Employee&apos;s Signature --></label>
         <name>Employee_s_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Travel End Date --></label>
+        <name>End_Date_TCTO__c</name>
     </fields>
     <fields>
         <label><!-- Ending Date of Development Activity: --></label>
@@ -1014,6 +1026,10 @@
         </lookupFilter>
         <name>HR_Organization__c</name>
         <relationshipLabel><!-- Forms --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- (Hidden) Able to Create Time Entries --></label>
+        <name>Hidden_Able_to_Create_Time_Entries__c</name>
     </fields>
     <fields>
         <label><!-- ID Number --></label>
@@ -1458,6 +1474,10 @@
         <name>Note__c</name>
     </fields>
     <fields>
+        <label><!-- Number of Days (TCTO) --></label>
+        <name>Number_of_Days_TCTO__c</name>
+    </fields>
+    <fields>
         <label><!-- Office Telephone --></label>
         <name>Office_Telephone2__c</name>
     </fields>
@@ -1696,6 +1716,10 @@
             <masterLabel>Use of Existing Data</masterLabel>
             <translation><!-- Use of Existing Data --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Proposed Travel Comp Hours Total --></label>
+        <name>Proposed_Travel_Comp_Hours_Total__c</name>
     </fields>
     <fields>
         <label><!-- Purchase Card Request Type --></label>
@@ -2173,6 +2197,11 @@
         <name>Special_accommodation_needed__c</name>
     </fields>
     <fields>
+        <help><!-- Airplane --></help>
+        <label><!-- Travel Start Date --></label>
+        <name>Start_Date_TCTO__c</name>
+    </fields>
+    <fields>
         <label><!-- State --></label>
         <name>State__c</name>
     </fields>
@@ -2208,6 +2237,70 @@
     <fields>
         <label><!-- Support Sample Record Type --></label>
         <name>Support_Sample_Record_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support TCTO Request --></label>
+        <name>Support_TCTO_Request__c</name>
+    </fields>
+    <fields>
+        <label><!-- TCTO Approval Status --></label>
+        <name>TCTO_Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved (Earned Hours)</masterLabel>
+            <translation><!-- Approved (Earned Hours) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved (Proposed Hours)</masterLabel>
+            <translation><!-- Approved (Proposed Hours) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled (Earned Hours)</masterLabel>
+            <translation><!-- Recalled (Earned Hours) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled (Proposed Hours)</masterLabel>
+            <translation><!-- Recalled (Proposed Hours) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected (Earned Hours)</masterLabel>
+            <translation><!-- Rejected (Earned Hours) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected (Proposed Hours)</masterLabel>
+            <translation><!-- Rejected (Proposed Hours) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted / Pending Approval (Earned Hours)</masterLabel>
+            <translation><!-- Submitted / Pending Approval (Earned Hours) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted / Pending Approval (Proposed Hours)</masterLabel>
+            <translation><!-- Submitted / Pending Approval (Proposed Hours) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- TCTO Request Type --></label>
+        <name>TCTO_Request_Type__c</name>
+        <picklistValues>
+            <masterLabel>Earned Hours Approved</masterLabel>
+            <translation><!-- Earned Hours Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Earned Hours Request</masterLabel>
+            <translation><!-- Earned Hours Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposed Hours Approved</masterLabel>
+            <translation><!-- Proposed Hours Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposed Hours Request</masterLabel>
+            <translation><!-- Proposed Hours Request --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Target Date --></label>
@@ -3339,6 +3432,25 @@
             <section>System Information</section>
         </sections>
     </layouts>
+    <layouts>
+        <layout>TCTO Request</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- TCTO Request Information --></label>
+            <section>TCTO Request Information</section>
+        </sections>
+        <sections>
+            <label><!-- Travel Compensatory Time Off (TCTO) Request Form --></label>
+            <section>Travel Compensatory Time Off (TCTO) Request Form</section>
+        </sections>
+    </layouts>
     <recordTypes>
         <label><!-- BAP Provisioning --></label>
         <name>BAP_Provisioning</name>
@@ -3402,6 +3514,10 @@
     <recordTypes>
         <label><!-- Sample Record Type --></label>
         <name>Sample_Record_Type</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- TCTO Request --></label>
+        <name>TCTO_Request</name>
     </recordTypes>
     <startsWith>Consonant</startsWith>
     <validationRules>
@@ -3483,6 +3599,14 @@
     <validationRules>
         <errorMessage><!-- Please enter a vaild source --></errorMessage>
         <name>Source_deployment_valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Travel Start Date and the Travel End Date must contain a date --></errorMessage>
+        <name>TCTO_Both_Travel_Dates_Must_be_filled</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Travel Start Date must occur be the Travel End Date --></errorMessage>
+        <name>TCTO_Travel_Date_Error</name>
     </validationRules>
     <webLinks>
         <label><!-- Printable_View --></label>

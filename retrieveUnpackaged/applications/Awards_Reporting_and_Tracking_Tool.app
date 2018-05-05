@@ -11,9 +11,9 @@
     <tab>Awards_Planner</tab>
     <tab>Award__c</tab>
     <tab>Budget_Planner</tab>
-    <tab>standard-Task</tab>
     <tab>standard-report</tab>
     <tab>Edit_My_Approvers</tab>
+    <tab>Awards_Qlik_Report</tab>
     <uiType>Lightning</uiType>
     <utilityBar>Awards_Manager_UtilityBar</utilityBar>
 </CustomApplication>

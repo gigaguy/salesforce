@@ -1,0 +1,23 @@
+<!--
+ - Custom page and button to direct users to the awards Qlik application.
+ -->
+
+<apex:page id="QlikReport" lightningStylesheets="true" applyHtmlTag="false" showHeader="false">
+    <html>
+    <body>
+    <div style="padding-top: 50px; text-align: center">
+        <apex:form >
+            <apex:commandButton style="font-size: 18pt; height: 50px; width: 300px;" value="View Qlik Reports" onClick="gotoQlikReport(); return false;"/>
+        </apex:form>
+    </div>
+    </body>
+
+
+    <script>
+        function gotoQlikReport() {
+            var win = window.open('https://qlikviz.epa.gov/extensions/ORD_ARTT/ORD_ARTT.html', '_blank');
+            win.focus();
+        }
+    </script>
+    </html>
+</apex:page>

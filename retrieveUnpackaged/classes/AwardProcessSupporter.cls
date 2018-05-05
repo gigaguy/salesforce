@@ -43,12 +43,6 @@ public class AwardProcessSupporter {
         List<Id> awardIds = new List<Id>();
         Map<Id, Decimal> currentAwardValuesMap = new Map<Id, Decimal>();
 
-        /*
-         * Employee Salesforce Ids and award Ids are needed for querying earlier or other
-         * TODO - Properly handle cases where a single employee has 2 awards in a single context
-         * TODO - Should you after updating an award reset the checks for all planned awards
-         * TODO - Create fields on the contact record to show how much in planned, awarded amounts there are for that contact in the current FY
-         */
         for (Award__c award : awards) {
             employeeIds.add(award.Emp_Name__c);
             awardIds.add(award.Id);
@@ -73,6 +67,9 @@ public class AwardProcessSupporter {
             }
 
             Decimal totalValue = previousAwardsValues + currentAwardValuesMap.get(award.Emp_Name__c);
+            if (totalValue > 0) {
+                award.Total_Award_Amount_on_Submit__c = totalValue;
+            }
 
             if (totalValue >= 5000) {
                 award.Requires_IOAA_Approval__c = true;
@@ -242,6 +239,10 @@ public class AwardProcessSupporter {
             for (Award__c award : awardsWithHours) {
                 if (employeeIdsWithTimeOff.containsKey(award.Emp_Name__c)) {
                     Decimal totalTime = award.Time_Off_Amount__c + employeeIdsWithTimeOff.get(award.Emp_Name__c);
+                    if (totalTime > 0) {
+                        award.Total_Time_Off_on_Submit__c = totalTime;
+                    }
+
                     if (totalTime > 80) {
                         award.addError('Employee will receive more than 80 hours of time off for this calendar year. ' +
                                 'Please adjust the time off amount and submit again.');
@@ -295,7 +296,7 @@ public class AwardProcessSupporter {
         Map<Id, Contact> contactsByUserIds = new Map<Id, Contact>();
 
         List<Contact> contacts = [
-                SELECT Id, User__c, Supervisor__c, Account.Name
+                SELECT Id, User__c, Supervisor__c, AccountId, Detail_Org__c
                 FROM Contact
                 WHERE User__c IN :userIds
         ];

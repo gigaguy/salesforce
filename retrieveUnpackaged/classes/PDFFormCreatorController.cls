@@ -5,6 +5,7 @@ public with sharing class PDFFormCreatorController {
     public String employeePosition {get; set;}
     public String employeeGrade {get; set;}
     public String employeeOrganization {get; set;}
+    public String employeePhoneNumber {get; set;}
     public String awardWorkCode {get; set;}
     public Decimal cashAwardAmount {get; set;}
     public Decimal timeOffAmount {get; set;}
@@ -28,7 +29,9 @@ public with sharing class PDFFormCreatorController {
     public String requestingOfficialTitle {get; set;}
     public String authorizingOfficialName {get; set;}
     public String authorizingOfficialTitle {get; set;}
-    public Date currentDate {get; set;}
+    public Datetime currentDatetime {get; set;}
+    public String currentDate {get; set;}
+    public Date submittedDate {get; set;}
 
     public PDFFormCreatorController(ApexPages.StandardController stdController) {
         this.awardId = stdController.getId();
@@ -39,6 +42,7 @@ public with sharing class PDFFormCreatorController {
         this.employeePosition = currentAward.Emp_Name__r.Position_Title__c;
         this.employeeGrade = currentAward.Emp_Name__r.Grade__c;
         this.employeeOrganization = currentAward.Emp_Name__r.Account.Name;
+        this.employeePhoneNumber = currentAward.Emp_Name__r.Phone;
         this.awardWorkCode = currentAward.Work_Code__c;
         this.cashAwardAmount = currentAward.Cash_Award_Amount__c;
         this.timeOffAmount = currentAward.Time_Off_Amount__c;
@@ -47,7 +51,9 @@ public with sharing class PDFFormCreatorController {
         this.requestingOfficialTitle = currentAward.Requesting_Official_Supervisor_Title__c;
         this.authorizingOfficialName = currentAward.Authorizing_Official_Name__c;
         this.authorizingOfficialTitle = currentAward.Authorizing_Official_Title__c;
-        this.currentDate = Date.today();
+        this.currentDatetime = System.now();
+        this.currentDate = Date.today().format();
+        this.submittedDate = currentAward.Submitted_Date__c;
 
         // Set class variables based on picklist values
         this.tangibleBenefit = currentAward.Type_of_Benefit__c == 'Tangible' ? true : false;
@@ -107,7 +113,7 @@ public with sharing class PDFFormCreatorController {
                         Extent_of_Contribution__c, Cash_Award_Amount__c, Group_Award_Name__c, Work_Code__c,
                         Supervisor_Justification__c, Type_of_Benefit__c, Value_of_Benefit__c, OTS_Amount__c, Time_Off_Amount__c,
                         Requesting_Official_Supervisor__c, Requesting_Official_Supervisor_Title__c, Authorizing_Official_Name__c,
-                        Authorizing_Official_Title__c
+                        Authorizing_Official_Title__c, Submitted_Date__c, Emp_Name__r.Phone, Cincinnati_Office_Justification__c
                 FROM Award__c
                 WHERE Id = :awardId
                 LIMIT 1

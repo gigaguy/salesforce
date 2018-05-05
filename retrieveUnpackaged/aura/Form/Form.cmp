@@ -611,7 +611,7 @@
             	  <aura:if isTrue="{!v.lineItemLabel=='noLabel'}">
                   	<ui:button class="slds-button slds-button--neutral" label="Save to Enable Line Items" press="{!c.enableLineItems}" />
                   	<aura:set attribute="else">
-                    	<ui:button class="slds-button slds-button--neutral" label="{!'Save &amp; Enter '+v.lineItemLabel}" press="{!c.enableLineItems}" />
+                    	<ui:button class="slds-button slds-button--neutral" label="{!'Save &amp; '+v.lineItemLabel}" press="{!c.enableLineItems}" />
                     </aura:set>
                   </aura:if>
                 <aura:set attribute="else">

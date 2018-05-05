@@ -1,6 +1,11 @@
 <!--
  - Created by justindove on 3/30/18.
- -->
-
-<apex:page id="DoublePagePDFCreator">
+- <apex:page id="DoublePagePDFCreator">
+- </apex:page>
+-->
+<apex:page showHeader="true"
+           id="DoublePagePDFCreator"
+           standardController="Award__c"
+           extensions="PDFFormCreatorController"
+           action="{!createDoublePageForm}">
 </apex:page>

@@ -201,18 +201,16 @@
         </apex:panelGrid>
         <hr />
 
-        <apex:outputPanel >
-            <div>
-                <b>Narrative Justification for Award:</b>
-            </div>
-        </apex:outputPanel>
-        <apex:panelGrid width="100%" border="2">
-            <apex:outputText value="{!justification}" />
-        </apex:panelGrid>
-        <hr />
-
-        <div class="footer" style="page-break-after:always;">
-            <apex:image value="/img/checkbox_checked.gif"/> <b>As the Authorizing Official I certify that all necessary concurrences have been gained for approval of this award.</b>
+        <div style="page-break-after: always">
+            <apex:outputPanel >
+                <div>
+                    <b>Narrative Justification for Award:</b>
+                </div>
+            </apex:outputPanel>
+            <apex:panelGrid width="100%" border="2">
+                <apex:outputText value="{!justification}" />
+            </apex:panelGrid>
+            <hr />
         </div>
 
         <apex:outputPanel >
@@ -272,6 +270,12 @@
                     <apex:outputText value="Title: "/>
                     <apex:outputText value="{!authorizingOfficialTitle}" />
                 </apex:panelGrid>
+            </apex:outputPanel>
+            <apex:outputPanel >
+                <apex:outputText >{!requestingOfficialName} approved via the ORD Awards Reporting and Tracking tool on {!currentDatetime}</apex:outputText>
+            </apex:outputPanel>
+            <apex:outputPanel >
+                <apex:outputText >{!authorizingOfficialName} approved via the ORD Awards Reporting and Tracking tool on {!currentDatetime}</apex:outputText>
             </apex:outputPanel>
         </apex:panelGrid>
     </apex:form>

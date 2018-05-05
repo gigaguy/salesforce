@@ -1,10 +1,7 @@
 <apex:page id="AwardSinglePageForm" standardController="Award__c" extensions="PDFFormCreatorController" lightningStylesheets="true" renderAs="pdf">
-    <html>
     <head>
         <style type="text/css" media="print">
             @page {
-                size: 8.5in 11in;
-                margin: .5in .5in .5in .5in;
                 @bottom-center {
                     content: element(footer);
                 }
@@ -12,11 +9,14 @@
 
             div.footer {
                 display: block;
-                padding: 10px;
+                padding: 5px;
+                text-align: center;
+                font-size: 10px;
                 position: running(footer);
             }
         </style>
     </head>
+
     <apex:form >
         <apex:panelGrid width="100%" columns="2" cellPadding="5%">
             <apex:outputPanel id="epaLogo">
@@ -199,7 +199,8 @@
     </apex:form>
 
     <div class="footer">
-        <apex:image value="/img/checkbox_checked.gif"/> <b>As the Authorizing Official I certify that all necessary concurrences have been gained for approval of this award.</b>
+            <apex:image value="/img/checkbox_checked.gif"/> <b>The Authorizing Official, {!requestingOfficialName}, certified that
+                all necessary concurrences have been gained for approval of this award by approving the award in the ORD Awards
+                Reporting and Tracking tool on {!submittedDate}</b>
     </div>
-    </html>
 </apex:page>

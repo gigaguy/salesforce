@@ -1,0 +1,163 @@
+<apex:page Controller="LineItemsGridController" title="Line Item Table" showheader="false" sidebar="false" cache="false" action="{!ValidateOrRedirect}" >
+    
+    <style>
+        body { background-color: #E0F1FF; }
+        
+        .msg {
+        font-size: .75rem;
+        line-height: 1.25;
+        color: rgb(84, 105, 141);
+        text-transform: uppercase;
+        letter-spacing: .0625rem;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: block;
+        -webkit-margin-before: 1em;
+        -webkit-margin-after: 1em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        margin-left: 200px;
+        margin-bottom: 20px;
+        margin-top: -20px;
+        width: 75%;
+        text-align: center;
+        font-family: 'Salesforce Sans',Arial,sans-serif;
+        background: rgb(253, 253, 253);
+        -webkit-tap-highlight-color: transparent;
+        }
+        
+        .gridTable{
+        border-collapse: collapse;
+        background-color: white;
+        border: 1px solid black;
+        }
+        
+        .gridDiv
+        {
+        height: 60%;    
+        width: 99%;      
+        overflow-y: scroll;    
+        overflow-x: scroll;
+        }
+        
+        .gridTable_th {
+        padding-left: 1px;
+        padding-right: 1px;
+        padding-bottom: 5px;
+        text-align: center;
+        white-space:pre-line;
+        }
+        
+        .gridTable_td{
+        padding: 10px;
+        align: center;
+        white-space: nowrap;
+        }
+        
+        .dateFormat
+        {
+        display: none;
+        }
+        
+        .gridTable_tr:hover {background-color:#f5f5f5;}
+        
+    </style>
+    
+    <!--Header-->
+    <apex:form >
+        <apex:outputpanel >
+            <div class="topBar1" style="width: 100%; height: 110px; background-color: #0E6993; min-width: 1175px;">
+                <a href="http://workplace.epa.gov/" style="margin-left: 25%;"><img src="{!$Resource.EPAOneLogo}" style="margin-top: 20px;"/></a>
+            </div>
+            <div class="topBar2" style="width: 100%; height: 38px; background-color: #0A5071; min-width: 1175px;">
+                &nbsp;
+            </div>
+        </apex:outputpanel>
+        <div class="WebFormsNav" style="width: 100%; height: 200px; min-width: 1150px;">
+            <table style="width: 80%; padding: 20px;">
+                <tr>
+                    <td style="width: 180px; vertical-align: top;">
+                        <img src="{!$Resource.EPALogo}"/>
+                    </td>
+                    <td style="vertical-align: top;">
+                        <h1 style="font-size: 250%; padding-bottom: 20px;">{!lineItemIdentifier} Travel/Work Hours for Form ID: {!form.Name}</h1>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </apex:form>
+    <!-- End Header -->
+    
+    <!--Body-->
+    
+    <div style="padding-left: 10px;"> 
+        
+        <apex:form id="LineTableForm">
+            <apex:pageMessages />
+            <div align="center">
+                <apex:commandLink action="https://usepa.sharepoint.com/:w:/r/sites/oei_Community/BAP/Shared%20Documents/User%20Guides/TCTO_User_Guide_05022018.docx?d=wb25b36ff619c483798ab63c77eb88022&csf=1&e=kkrF0y" target="_blank" >
+                    <apex:commandButton value="Help"  style="font-size: large;margin:5px;padding-left:5px;padding-right:5px;" />
+                </apex:commandLink>
+                <apex:commandButton value="Add Day" action="{!addRow}" disabled="{!readOnlyFlag}" style="font-size:large;margin:5px;padding-left:5px;padding-right:5px"/>
+                <apex:commandButton value="Calculate Travel Comp " action="{!saveTable}" disabled="{!readOnlyFlag}" style="font-size:large;padding-left:5px;padding-right:5px;margin-left:100px" />
+                
+                <!--apex:commandButton value="Submit For Approval" action="{!submitFormFromLineItem}" disabled="{!readOnlyFlag}" style="font-size: large;margin:5px"/-->
+                <apex:commandButton value="Save & Return To Request" action="{!saveAndReturn}" style="font-size: large;margin:5px;padding-left:5px;padding-right:5px"/>
+                
+            </div>
+            <div class="gridDiv">
+                <table border="1" class="gridTable" id="table">
+                    <tr class="gridTable_tr">
+                        <!--Header-->
+                        <apex:repeat value="{!fieldHeader}" var="headerVar">
+                            <th class="gridTable_th" >
+                                {!headerVar}
+                            </th>
+                        </apex:repeat>
+                        <!--apex:outputPanel rendered="{!!readOnlyFlag}">
+<th class="gridTable_th" >
+Delete
+</th>
+</apex:outputPanel-->
+                    </tr>
+                    <!-- Edit Generation-->
+                    <apex:repeat value="{!lineItemCollection}" var="lineItem" rendered="{!!readOnlyFlag}"> <!-- add field list here-->
+                        <tr class="gridTable_tr">
+                            <apex:repeat value="{!apiList}" var="fieldName">
+                                <td class="gridTable_td">
+                                    <apex:inputField value="{!lineItem[fieldName]}" />
+                                </td>
+                            </apex:repeat>
+                            <!--td class="gridTable_td" rendered="{!!readOnlyFlag}">
+<apex:commandLink value="Delete" action="{!deleteRow}" styleClass="btn" rendered="{!!readOnlyFlag}">
+<apex:param name="itemToDelete" value="{!lineItem.id}" assignTo="{!lineToDelete}"/>
+</apex:commandLink>
+</td-->
+                        </tr>
+                    </apex:repeat>
+                    
+                    <!--Read Only Generation -->
+                    <apex:repeat value="{!lineItemCollection}" var="lineItem" rendered="{!readOnlyFlag}"> <!-- add field list here-->
+                        <tr class="gridTable_tr">
+                            <apex:repeat value="{!apiList}" var="fieldName">
+                                <td class="gridTable_td">
+                                    <apex:outputField value="{!lineItem[fieldName]}"/>
+                                </td>
+                            </apex:repeat>
+                        </tr>
+                    </apex:repeat>
+                </table>
+                <br/>
+                
+            </div>
+            <p>
+                <b>* Ignore Workday Hours:</b> Check box if you are not normally scheduled for work this day (e.g., weekend) or if your travel falls entirely outside normal work hours.
+            </p>
+            <p>
+                <b>* Offset:</b>  Enter in increments of 0.25 hour.  Offset hours include time for meals during travel, normal home-to-office commute time on first day of travel, <br/>and normal office-to-home commute time on last day of travel, including weekend travel. (Note: does not apply when leaving for travel from office or returning from travel to office)
+            </p>
+            
+        </apex:form>
+    </div>
+</apex:page>

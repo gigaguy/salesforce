@@ -45,7 +45,12 @@
         <type>Flexipage</type>
     </actionOverrides>
     <allowInChatterGroups>true</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>Application</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Application</fullName>
+        <fields>Application_Name__c</fields>
+        <label>Application</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
@@ -85,6 +90,19 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Application_Name__c</fullName>
+        <description>Contains the Name of the Application.  Rename to this field so the Name field could be made an auto-number. 2018-05-04 (Form 28526)</description>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Board_Member__c</fullName>
@@ -579,8 +597,9 @@
     <label>Application</label>
     <listViews>
         <fullName>All</fullName>
-        <columns>Office__c</columns>
         <columns>NAME</columns>
+        <columns>Office__c</columns>
+        <columns>Application_Name__c</columns>
         <columns>Form_Number__c</columns>
         <columns>RECORDTYPE</columns>
         <columns>Notes__c</columns>
@@ -593,11 +612,13 @@
     <listViews>
         <fullName>Applications</fullName>
         <columns>NAME</columns>
+        <columns>Application_Name__c</columns>
         <columns>Status__c</columns>
         <columns>Primary_Contact__c</columns>
         <columns>Responsible_Org__c</columns>
         <columns>LAST_UPDATE</columns>
         <columns>Status_By__c</columns>
+        <columns>RECORDTYPE</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>RECORDTYPE</field>
@@ -626,10 +647,11 @@
         <label>Forms - BAP Workflow</label>
     </listViews>
     <nameField>
-        <label>Name</label>
+        <displayFormat>EPA-APP-{000000000}</displayFormat>
+        <label>ID</label>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Applications</pluralLabel>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
@@ -963,11 +985,15 @@
         </picklistValues>
     </recordTypes>
     <searchLayouts>
+        <customTabListAdditionalFields>Application_Name__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Form_Number__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Responsible_Org__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Migration_Priority__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Migration_Status__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Application_Name__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Application_Name__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Application_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>UPDATEDBY_USER</searchResultsAdditionalFields>

@@ -1579,6 +1579,17 @@ TEXT(Continued_Service_Agreement_Expiration__c))</formula>
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>Destination__c</fullName>
+        <externalId>false</externalId>
+        <label>Destination</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Developed_in_accordance_with_1__c</fullName>
         <description>ORD-111</description>
         <externalId>false</externalId>
@@ -1883,6 +1894,19 @@ IF( ISBLANK( Prepare_Form_for__c ),
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Earned_Travel_Comp_Hours_Total__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <externalId>false</externalId>
+        <label>Earned Travel Comp Hours Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Effective_Date__c</fullName>
         <description>EPA-3160-6v5</description>
         <externalId>false</externalId>
@@ -2028,6 +2052,15 @@ Applicant_Name_Last_First_MI2__c)</formula>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>End_Date_TCTO__c</fullName>
+        <externalId>false</externalId>
+        <label>Travel End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Ending_Date_of_Development_Activity__c</fullName>
@@ -2451,6 +2484,16 @@ IF( ISBLANK( Prepare_Form_for__c ) ,
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Hidden_Able_to_Create_Time_Entries__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>This is a field to prevent Time Entries from begin created more than once. This is used in the process builder</description>
+        <externalId>false</externalId>
+        <label>(Hidden) Able to Create Time Entries</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>ID_Number__c</fullName>
@@ -3207,6 +3250,20 @@ Course_Title__c)</formula>
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>Number_of_Days_TCTO__c</fullName>
+        <externalId>false</externalId>
+        <formula>(End_Date_TCTO__c - Start_Date_TCTO__c) + 1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number of Days (TCTO)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Office_Telephone2__c</fullName>
         <description>SF-182</description>
         <externalId>false</externalId>
@@ -3646,6 +3703,19 @@ Prepare_Form_for__r.Position_Title__c ))</formula>
             </valueSetDefinition>
         </valueSet>
         <visibleLines>7</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Proposed_Travel_Comp_Hours_Total__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <externalId>false</externalId>
+        <label>Proposed Travel Comp Hours Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Purchase_Card_Request_Type__c</fullName>
@@ -4476,6 +4546,16 @@ Prepare_Form_for__r.Occ_Series__c ))</formula>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Start_Date_TCTO__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Airplane</inlineHelpText>
+        <label>Travel Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>State__c</fullName>
         <defaultValue>$User.State</defaultValue>
         <externalId>false</externalId>
@@ -4594,6 +4674,99 @@ Prepare_Form_for__r.Step__c ))</formula>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Support_TCTO_Request__c</fullName>
+        <defaultValue>&quot;To Be Determined&quot;</defaultValue>
+        <description>TCTO Request</description>
+        <externalId>false</externalId>
+        <label>Support TCTO Request</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>TCTO_Approval_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>TCTO Approval Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Submitted / Pending Approval (Proposed Hours)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected (Proposed Hours)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Recalled (Proposed Hours)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved (Proposed Hours)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted / Pending Approval (Earned Hours)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected (Earned Hours)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Recalled (Earned Hours)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved (Earned Hours)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TCTO_Request_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>TCTO Request Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Proposed Hours Request</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Proposed Hours Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Earned Hours Request</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Earned Hours Approved</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Target_Date__c</fullName>
@@ -6228,6 +6401,17 @@ Prepare_Form_for__r.Email
             <group>SF_182_OIG</group>
         </sharedTo>
     </listViews>
+    <listViews>
+        <fullName>TCTO</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Start_Date_TCTO__c</columns>
+        <columns>End_Date_TCTO__c</columns>
+        <columns>Proposed_Travel_Comp_Hours_Total__c</columns>
+        <columns>Earned_Travel_Comp_Hours_Total__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>TCTO</label>
+    </listViews>
     <nameField>
         <displayFormat>{00000}</displayFormat>
         <label>Record ID</label>
@@ -6801,6 +6985,64 @@ Prepare_Form_for__r.Email
             <values>
                 <fullName>Training Officer</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
     </recordTypes>
@@ -7825,6 +8067,64 @@ Prepare_Form_for__r.Email
             <values>
                 <fullName>Not Applicable</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -9270,6 +9570,64 @@ Prepare_Form_for__r.Email
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Training_Accreditation_Indicator__c</picklist>
             <values>
                 <fullName>N%2FA</fullName>
@@ -10709,6 +11067,64 @@ Prepare_Form_for__r.Email
             <values>
                 <fullName>Not Applicable</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -12154,6 +12570,64 @@ Prepare_Form_for__r.Email
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Training_Accreditation_Indicator__c</picklist>
             <values>
                 <fullName>N%2FA</fullName>
@@ -13596,6 +14070,64 @@ Prepare_Form_for__r.Email
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Training_Accreditation_Indicator__c</picklist>
             <values>
                 <fullName>N%2FA</fullName>
@@ -15035,6 +15567,64 @@ Prepare_Form_for__r.Email
             <values>
                 <fullName>Not Applicable</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -16567,6 +17157,64 @@ Prepare_Form_for__r.Email
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Type_of_Action__c</picklist>
             <values>
                 <fullName>Existing with Significant Modification to Work</fullName>
@@ -17135,6 +17783,64 @@ Prepare_Form_for__r.Email
             <values>
                 <fullName>TimeKeeper</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
     </recordTypes>
@@ -17921,6 +18627,64 @@ Prepare_Form_for__r.Email
             <values>
                 <fullName>Not Applicable</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -18986,6 +19750,64 @@ Prepare_Form_for__r.Email
             <values>
                 <fullName>Not Applicable</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -20431,6 +21253,64 @@ Prepare_Form_for__r.Email
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Training_Accreditation_Indicator__c</picklist>
             <values>
                 <fullName>N%2FA</fullName>
@@ -21637,6 +22517,64 @@ Prepare_Form_for__r.Email
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Type_of_Action__c</picklist>
             <values>
                 <fullName>Existing with Significant Modification to Work</fullName>
@@ -22700,6 +23638,64 @@ Prepare_Form_for__r.Email
             <values>
                 <fullName>Not Applicable</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -23779,6 +24775,64 @@ Prepare_Form_for__r.Email
             <values>
                 <fullName>TimeKeeper</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -25428,6 +26482,1809 @@ Prepare_Form_for__r.Email
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Accreditation_Indicator__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Credit_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Semester Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Quarter Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Continuing Education Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 CEP - OIG 24 HR Reg</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Credit__c</picklist>
+            <values>
+                <fullName>0 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 credits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 credits</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Delivery_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Traditional Classroom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 On the Job</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Technology Based</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Conference%2FWorkshop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Blended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06 Correspondence</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Designation_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Undergraduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Graduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Continuing Education Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Post Graduate Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Purpose_Type__c</picklist>
+            <values>
+                <fullName>01 Program%2FMission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 New Work Assignment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Improve Present Performance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Future Staffing Needs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Develop Unavailable Skill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06 Retention</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Source_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Government Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Government External</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Non-government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 Government State%2FLocal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 Foreign Governments and Orgs</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Sub_Type_Code__c</picklist>
+            <values>
+                <fullName>01-Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02-Medical %26 Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03-Scientific</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04-Engineering %26 Architecture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05-Human Resources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06-Budget%2FFinance Business Admin%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>07-Planning %26 Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08-Information Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09-Project Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10-Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11-Logistic Specialty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12-Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13-Clerical %28non-supervisory clerical%2Fadmin%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14-Trade %26 Craft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15-Foreign Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16-Leadership%2FManager%2FCommunications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20-Pre-supervisory Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21-Supervisory Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>22-Management Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23-Leadership Development Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24-SES Candidate Development Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25-Executive Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26-Mentoring Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27-Coaching Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32-Mandated Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>34-Leadership Skills</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35-Internal Agency Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36-Technical Skills</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Type_Code__c</picklist>
+            <values>
+                <fullName>01 Training Program Area %28Technical%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 Development Training Area %28Cross-functional%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 Basic Training Area %28Orientation etc%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Action__c</picklist>
+            <values>
+                <fullName>Existing with Significant Modification to Work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Appointment__c</picklist>
+            <values>
+                <fullName>10 Career %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15 Career-Conditional %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20 Nonpermanent %28Competitive Service%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 Schedule A %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32 Schedule B %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35 Schedule D %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36 Executive %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>38 Other %28Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40 Schedule A %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>42 Schedule B %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>44 Schedule C %28Nonpermanent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45 Schedule D %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>46 Executive %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>48 Other %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 Career %28Senior Exec Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>55 Noncareer %28Senior Exec Permanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60 Limited Term %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>65 Limited Emergency %28Nonpermanent%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>X2_QA_Project_Plan__c</picklist>
+            <values>
+                <fullName>Application of QA and QC activities to the single project covered by the contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programmatic QA Project Plan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>X4_Select_Documentation_Type__c</picklist>
+            <values>
+                <fullName>Documentation of the application of QA and QC activities to applicable project%28s%29%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Existing documentation of the application of QA and QC activities will be used %28give details below%29%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programmatic QA Project Plan with supplements for each specific project%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>of_Approval_Supervisors__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>TCTO_Request</fullName>
+        <active>true</active>
+        <description>Travel Compensatory Time Off (TCTO) Request Form (Grid) (LI Label: View/Edit Hours)</description>
+        <label>TCTO Request</label>
+        <picklistValues>
+            <picklist>Account_Type__c</picklist>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>COOP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ERT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FSSI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IMPREST ACCOUNT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Cardholder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SACO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UTIL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Routing_Options__c</picklist>
+            <values>
+                <fullName>Ann Arbor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cincinnati</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HQ Office of Human Resources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OIG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research Triangle Park</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Are_you_replacing_an_existing_AO__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Authorization_Reason__c</picklist>
+            <values>
+                <fullName>Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organizational Allocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Role</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>C_Reason__c</picklist>
+            <values>
+                <fullName>Enter reason in Comment field below%3A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I am a family member of the recipient and I wish to donate leave%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>There is insufficient donated leave to carry the leave recipient through the period of the medical emergency%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cancelling__c</picklist>
+            <values>
+                <fullName>Both</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Check</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Check_Request_Type__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reorder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Continued_Service_Agreement__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Actions__c</picklist>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Simplified Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Task Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work Assignment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Deployment_Destination__c</picklist>
+            <values>
+                <fullName>Integrate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staging</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Developed_in_accordance_with_1__c</picklist>
+            <values>
+                <fullName>Other %28provide details in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2 and R-5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Developed_in_accordance_with_2__c</picklist>
+            <values>
+                <fullName>Other %28provide details in %22Other Details%22%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Developed_in_accordance_with_3__c</picklist>
+            <values>
+                <fullName>Other %28provide details in %22%22Other Details%22%22%29%22</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-2 and R-5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Developed_in_accordance_with_4__c</picklist>
+            <values>
+                <fullName>Documentation developed pre-award%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation identified in Statement of Work or Performance Work Statement %28proved section number in %22Other Details%22%29%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation will be identified in individual Statements of Work or Performance Work Statement%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28provide details in %22Other Details%22%29%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplement to Programmatic QA Project Plan %28provide name in %22Other Details%22%29%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Employee_Location__c</picklist>
+            <values>
+                <fullName>Ann Arbor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cincinnati</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Las Vegas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Program Manager%2FHeadquarters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RTP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Form_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted for Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Form_Type__c</picklist>
+            <values>
+                <fullName>Code Storage MB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom Object</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Storage MB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deployment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Developer Sandbox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Files Storage MB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Starter User</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Furnish_Invoice_to__c</picklist>
+            <values>
+                <fullName>No Cost Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchase Card Transaction %28Select Card Holder%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA Cincinnati Finance Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USEPA RTP Finance Center</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Location__c</picklist>
+            <values>
+                <fullName>ADA OK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ANN ARBOR MI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ATHENS GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BOISE ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BOSTON - REGION 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHICAGO IL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHICAGO REGION 5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CINCINNATI%2C OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cincinnati OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corvallis OR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DULUTH MN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edison NJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAI On-Line</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fort Meade%2C MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GULF BREEZE FL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HQ - CRYSTAL GATEWAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HQ - CRYSTAL STATION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HQ - OCFO ONLY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HQ - OFFICE OF WATER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HQ - OSTRI- CRYSTAL GATEWAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HQ - WIC 3N</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HQ CMM2 OPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HQ or Washington DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HQ%2C CMM2%2C OPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Las Vegas NV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Montgomery AL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NARRAGANSETT RI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Orleans%2C LA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OPPT%2FEAD NETI 2138</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On-Line Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PC Refresher On-Line</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REGION 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REGION 3 - WELLINGING WV LAB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REGION 6 - HOUSTON LAB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RTP NC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RTP NC%2C NC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SHEPHARDSTOWN WV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>San Juan PR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shepherdstown WV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC - 1310 L St%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC - AR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC - AR North Room B-305</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC - AR South</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC - CG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC - CM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC - CS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC - EE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC - OFFICE OF WATER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC - PY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC - RRB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC OCFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington DC%2C OAM ONLY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web-Based Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Non_contract_Actions__c</picklist>
+            <values>
+                <fullName>CRADA%2FMTA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cooperative Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funds Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interagency Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intramural</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Organization__c</picklist>
+            <values>
+                <fullName>Ann Arbor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cincinnati</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Las Vegas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OARM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCSPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OECA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OEI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OIG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OITA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OLEM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ORD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RTP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Position_Level__c</picklist>
+            <values>
+                <fullName>Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-supervisory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisory</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type_s__c</picklist>
+            <values>
+                <fullName>Decision Support Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Measurements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Informatics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Models%5CApplications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28use %22Other Description%22 field%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Use of Existing Data</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Purchase_Card_Request_Type__c</picklist>
+            <values>
+                <fullName>Cancellation of Card or Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change Cardholder AO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change Contact Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change Monthly Limit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change Name on Card or Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Approving Official %28AO%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Convenience Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Purchase Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suspension of Card or Check</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_Category__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>To Be Specified in Individual Actions</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QA_Documentation__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revision of Existing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_for_Cancelling_Cardholder_Account__c</picklist>
+            <values>
+                <fullName>Account%28s%29 No Longer Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lost of Misplace Card or Checks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resigned%2FTerminated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transferred</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_for_Temporary_Closure__c</picklist>
+            <values>
+                <fullName>Detailed to a New Job%2FOffice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extended Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leave of Absence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Recipient_Organization__c</picklist>
+            <values>
+                <fullName>Ann Arbor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cincinnati</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Las Vegas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OAR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OARM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCSPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OECA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OEI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OGC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OIG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OITA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OLEM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ORD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RTP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Region 9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Status__c</picklist>
+            <values>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donation %28Member%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donation %28Non-Member%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Season</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resubmission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_is_for__c</picklist>
+            <values>
+                <fullName>Myself</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_1__c</picklist>
+            <values>
+                <fullName>No %28If no%2C go directly to %22Signatures%22 Section%2E%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_2__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Response_3__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Role__c</picklist>
+            <values>
+                <fullName>FCO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health %26 Safety Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IT Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Section 508 Compliance Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TimeKeeper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Officer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Select_Documentation_Type_1__c</picklist>
+            <values>
+                <fullName>Combined documentation %26 application %28QA%2FQC%29 to contract%27s single project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation of an organization%E2%80%99s Quality System</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Select_Documentation_Type_3__c</picklist>
+            <values>
+                <fullName>Combined documentation %26 application %28QA%2FQC%29 to contract%27s single project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documentation of an organization%E2%80%99s Quality System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Earned Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted %2F Pending Approval %28Proposed Hours%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TCTO_Request_Type__c</picklist>
+            <values>
+                <fullName>Earned Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earned Hours Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proposed Hours Request</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Training_Accreditation_Indicator__c</picklist>
             <values>
                 <fullName>N%2FA</fullName>
@@ -26047,6 +28904,21 @@ NOT(ISBLANK(Vendor_Email_Address__c))
         <errorConditionFormula>ISPICKVAL( Form_Type__c, &quot;Deployment&quot;) &amp;&amp; ISBLANK( Deployment_Source_Sandbox__c )</errorConditionFormula>
         <errorDisplayField>Deployment_Source_Sandbox__c</errorDisplayField>
         <errorMessage>Please enter a vaild source</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TCTO_Both_Travel_Dates_Must_be_filled</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK( Start_Date_TCTO__c) &amp;&amp; NOT(ISBLANK(End_Date_TCTO__c)) || NOT(ISBLANK( Start_Date_TCTO__c)) &amp;&amp; ISBLANK(End_Date_TCTO__c)</errorConditionFormula>
+        <errorMessage>The Travel Start Date and the Travel End Date must contain a date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TCTO_Travel_Date_Error</fullName>
+        <active>true</active>
+        <errorConditionFormula>RecordType.Name = &apos;TCTO Request&apos; &amp;&amp;
+NOT(ISBLANK(Start_Date_TCTO__c)) &amp;&amp;
+NOT(ISBLANK(End_Date_TCTO__c)) &amp;&amp;
+End_Date_TCTO__c &lt; Start_Date_TCTO__c</errorConditionFormula>
+        <errorMessage>Travel Start Date must occur be the Travel End Date</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Printable_View</fullName>

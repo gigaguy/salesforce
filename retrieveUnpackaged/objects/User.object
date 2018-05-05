@@ -452,4 +452,11 @@
         <searchResultsAdditionalFields>CORE.USERS.EMAIL</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>EPA_Starter_Cannot_Edit_Another_User</fullName>
+        <active>true</active>
+        <description>Prevents any user from the &quot;EPA Starter&quot; Profile for editing the User record of another User, but still allows editing of their own User record.</description>
+        <errorConditionFormula>AND($User.ProfileId = &apos;00et0000000QI5m&apos;, Id &lt;&gt; $User.Id)</errorConditionFormula>
+        <errorMessage>You are not allowed to edit another user&apos;s record or information because you have the &quot;EPA Starter&quot; profile.</errorMessage>
+    </validationRules>
 </CustomObject>

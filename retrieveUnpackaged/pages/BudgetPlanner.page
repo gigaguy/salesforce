@@ -15,7 +15,9 @@
                 </apex:pageBlockButtons>
 
                 <apex:pageBlockTable value="{!budgetList}" var="budget" id="budgetTable">
-                    <apex:column value="{!budget.Name}" />
+                    <apex:column headerValue="Budget Internal Id">
+                        <apex:outputLink value="{!URLFOR($Action.Document__c.View, budget.Id)}">{!budget.Name}</apex:outputLink>
+                    </apex:column>
                     <apex:column value="{!budget.Award_Budget_Org__r.Name}" />
                     <apex:column headerValue="Total Budget Amount">
                         <apex:inputField value="{!budget.Award_Total_Budget__c}" />

@@ -26,6 +26,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Name --></label>
+        <name>Application_Name__c</name>
+    </fields>
+    <fields>
         <label><!-- Board Member --></label>
         <name>Board_Member__c</name>
         <relationshipLabel><!-- Applications (Board Member) --></relationshipLabel>

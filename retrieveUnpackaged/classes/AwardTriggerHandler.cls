@@ -2,7 +2,7 @@ public class AwardTriggerHandler {
 
     public static void beforeInsert(List<Award__c> beforeInsertList) {
         setDivisionAndBranch(beforeInsertList);
-        setOwnersContactAndApprover(beforeInsertList);
+        setOwnersContactAndApprovers(beforeInsertList);
         setBudgetOnAward(beforeInsertList);
     }
 
@@ -71,7 +71,6 @@ public class AwardTriggerHandler {
      */
     @TestVisible
     private static void setBudgetOnAward(List<Award__c> awards) {
-        Set<String> hrOrgNames = new Set<String>();
         Map<String, Document__c> budgetsByDepartment = new Map<String, Document__c>();
         Set<Id> ownerContactIds = new Set<Id>();
 
@@ -84,13 +83,14 @@ public class AwardTriggerHandler {
         }
 
         Contact[] ownerContacts = [
-                SELECT Id, Account.Name
+                SELECT Id, Account.Name, Detail_Org__r.Name
                 FROM Contact
                 WHERE Id IN :ownerContactIds
         ];
 
         for (Contact contact : ownerContacts) {
-            orgNamesByOwnerContactIds.put(contact.Id, contact.Account.Name);
+            // If the supervisor is on detail, then use the Detail Org instead of the Organization they belong to
+            orgNamesByOwnerContactIds.put(contact.Id, contact.Detail_Org__r.Name == null ? contact.Account.Name : contact.Detail_Org__r.Name);
         }
 
         List<Document__c> budgets = AwardProcessSupporter.getBudgetsByOrganizationName(orgNamesByOwnerContactIds.values());
@@ -156,18 +156,23 @@ public class AwardTriggerHandler {
      * @param awards List of awards to be inserted.
      */
     @TestVisible
-    private static void setOwnersContactAndApprover(List<Award__c> awards) {
+    private static void setOwnersContactAndApprovers(List<Award__c> awards) {
         List<Id> ownerIds = new List<Id>();
+        List<Id> awardeeIds = new List<Id>();
         for (Award__c award : awards) {
             ownerIds.add(award.OwnerId);
+            awardeeIds.add(award.Emp_Name__c);
         }
 
         Map<Id, Contact> contactsByUserField = AwardProcessSupporter.getContactsByUserId(ownerIds);
+        Map<Id, Contact> awardeesById = new Map<Id, Contact>([SELECT Id, Supervisor__c FROM Contact WHERE Id IN :awardeeIds]);
 
         for (Award__c award : awards) {
             if (contactsByUserField.containsKey(award.OwnerId)) {
                 award.Owner_Contact__c = contactsByUserField.get(award.OwnerId).Id;
+                award.RO_HR_Org2__c = contactsByUserField.get(award.OwnerId).Detail_Org__c == null ? contactsByUserField.get(award.OwnerId).AccountId : contactsByUserField.get(award.OwnerId).Detail_Org__c;
                 award.Authorizing_Official__c = contactsByUserField.get(award.OwnerId).Supervisor__c;
+                award.Awardee_Direct_Supervisor__c = awardeesById.get(award.Emp_Name__c).Supervisor__c;
             }
         }
     }
@@ -260,7 +265,7 @@ public class AwardTriggerHandler {
         }
 
         if (!awardsToUpdate.isEmpty()) {
-            setOwnersContactAndApprover(awardsToUpdate);
+            setOwnersContactAndApprovers(awardsToUpdate);
             setDivisionAndBranch(awardsToUpdate);
             setBudgetOnAward(awardsToUpdate);
         }
@@ -304,7 +309,6 @@ public class AwardTriggerHandler {
             for (Award__c award : directSuperApprovalAwards) {
                 Approval.ProcessSubmitRequest approvalReq = new Approval.ProcessSubmitRequest();
                 approvalReq.setSubmitterId(userId);
-                approvalReq.setNextApproverIds(new List<Id>{supervisorsByEmployeeId.get(award.Emp_Name__c)});
                 approvalReq.setProcessDefinitionNameOrId('Direct_Supervisor_Approval_Process');
                 approvalReq.setObjectId(award.Id);
                 approvalReq.setComments('Please review this award for approval.');

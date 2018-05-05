@@ -106,6 +106,21 @@
         <template>unfiled$public/EPA_3160_6v5_Moving_to_Leave_Bank_Team</template>
     </alerts>
     <alerts>
+        <fullName>Earned_Hours_Approved</fullName>
+        <description>Earned Hours Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Unlicensed_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>User_Time_Keeper__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>TCTO_Email_Templates/TCTO_Earned_Hours_Approved</template>
+    </alerts>
+    <alerts>
         <fullName>FinalApproval</fullName>
         <description>FinalApproval</description>
         <protected>false</protected>
@@ -177,6 +192,17 @@
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/ORD_111_Forms_Submission_Confirm_submitted_by_other_person</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposed_Hours_Approved</fullName>
+        <description>Proposed Hours Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Unlicensed_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>TCTO_Email_Templates/TCTO_Proposed_Hours_Approved</template>
     </alerts>
     <alerts>
         <fullName>Purchase_Card_Approved_Notice_to_PC_Team_for_Action</fullName>
@@ -362,6 +388,26 @@
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Forms_Submission_Confirmation</template>
     </alerts>
+    <alerts>
+        <fullName>TCTO_Earned_Hours_Rejection</fullName>
+        <description>TCTO Earned Hours Rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>TCTO_Email_Templates/TCTO_Request_Earned_Hours_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>TCTO_Proposed_Hours_Rejection</fullName>
+        <description>TCTO Proposed Hours Rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>TCTO_Email_Templates/TCTO_Request_Proposed_Hours_Rejected</template>
+    </alerts>
     <fieldUpdates>
         <fullName>Approval_Step_Approved</fullName>
         <field>Approval_Step__c</field>
@@ -371,6 +417,33 @@
         <operation>Formula</operation>
         <protected>false</protected>
         <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Step_Awaiting_Approval_1</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting Supervisor Approval For Proposed Hours&quot;</formula>
+        <name>Approval Step - Awaiting Approval 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Step_Awaiting_Approval_2</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Awaiting Supervisor Approval For Earned Hours&quot;</formula>
+        <name>Approval Step - Awaiting Approval 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Step_Pending_Earned_Hours</fullName>
+        <field>Approval_Step__c</field>
+        <formula>&quot;Pending Earned Hours Entry&quot;</formula>
+        <name>Approval Step - Pending Earned Hours</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Approval_Step_Prepared_As</fullName>
@@ -599,6 +672,15 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Set_Earned_Hours_Total</fullName>
+        <field>Earned_Travel_Comp_Hours_Total__c</field>
+        <formula>Proposed_Travel_Comp_Hours_Total__c</formula>
+        <name>Set Earned Hours Total</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Status_Update_to_Submitted_for_Approval</fullName>
         <description>Update to submitted for approval</description>
         <field>Form_Status__c</field>
@@ -632,6 +714,42 @@ ispickval(of_Approval_Supervisors__c, &quot;2&quot;),
         <field>Form_Status__c</field>
         <literalValue>Rejected</literalValue>
         <name>Status Updated to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>TCTO_Request_Earned_Hours_Approved</fullName>
+        <field>TCTO_Request_Type__c</field>
+        <literalValue>Earned Hours Approved</literalValue>
+        <name>TCTO Request: Earned Hours Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>TCTO_Status_Proposed_Hours_approved</fullName>
+        <field>TCTO_Approval_Status__c</field>
+        <literalValue>Approved (Proposed Hours)</literalValue>
+        <name>TCTO Status - Proposed Hours approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>TCTO_Type_Earned_Request</fullName>
+        <field>TCTO_Request_Type__c</field>
+        <literalValue>Earned Hours Request</literalValue>
+        <name>TCTO Type - Earned Request</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>TCTO_Type_Proposed_Hours_Approved</fullName>
+        <field>TCTO_Request_Type__c</field>
+        <literalValue>Earned Hours Request</literalValue>
+        <name>TCTO Type - Proposed Hours Approved</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
         <protected>false</protected>
