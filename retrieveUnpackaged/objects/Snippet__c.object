@@ -503,7 +503,7 @@
         <filters>
             <field>Topic__c</field>
             <operation>startsWith</operation>
-            <value>11.1</value>
+            <value>2.0</value>
         </filters>
         <label>All Waters of the US</label>
     </listViews>
@@ -546,6 +546,75 @@
             <value>Snippet__c.WOTUS_Recommendations</value>
         </filters>
         <label>All WOTUS Recommendations Snippets</label>
+    </listViews>
+    <listViews>
+        <fullName>Step_1_13_9_13_11</fullName>
+        <booleanFilter>1 AND (2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8)</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Agency_Name__c</columns>
+        <columns>Commenter_Category__c</columns>
+        <columns>Commenter_Name__c</columns>
+        <columns>Submission_Number__c</columns>
+        <columns>Topic__c</columns>
+        <columns>Snippet_Status__c</columns>
+        <columns>Notes__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Snippet__c.Waters_of_the_US</value>
+        </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operation>equals</operation>
+            <value>13.9</value>
+        </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operation>equals</operation>
+            <value>13.10</value>
+        </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operation>equals</operation>
+            <value>13.11</value>
+        </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operation>equals</operation>
+            <value>13.5</value>
+        </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operation>equals</operation>
+            <value>13.6</value>
+        </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operation>equals</operation>
+            <value>13.7</value>
+        </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operation>equals</operation>
+            <value>13.8</value>
+        </filters>
+        <label>Step 1?, 13.5-13.11</label>
+    </listViews>
+    <listViews>
+        <fullName>Step_1_Topic_13_Rulemaking</fullName>
+        <columns>NAME</columns>
+        <columns>Agency_Name__c</columns>
+        <columns>Commenter_Category__c</columns>
+        <columns>Commenter_Name__c</columns>
+        <columns>Submission_Number__c</columns>
+        <columns>Topic__c</columns>
+        <columns>Snippet_Status__c</columns>
+        <columns>Notes__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <label>Step 1 Commenting Query</label>
     </listViews>
     <listViews>
         <fullName>Topic_1_0_Step_1_Test</fullName>
@@ -607,6 +676,51 @@
             <value>17.</value>
         </filters>
         <label>Waters of the US</label>
+    </listViews>
+    <listViews>
+        <fullName>Waters_of_the_US_Step_1_Record_type_f</fullName>
+        <booleanFilter>1 AND (2 OR 3 OR 4 OR 5 OR 6)</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Agency_Name__c</columns>
+        <columns>Commenter_Category__c</columns>
+        <columns>Commenter_Name__c</columns>
+        <columns>Submission_Number__c</columns>
+        <columns>Topic__c</columns>
+        <columns>Snippet_Status__c</columns>
+        <columns>Notes__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Snippet__c.Waters_of_the_US</value>
+        </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operation>equals</operation>
+            <value>13.0</value>
+        </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operation>equals</operation>
+            <value>13.1</value>
+        </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operation>equals</operation>
+            <value>13.2</value>
+        </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operation>equals</operation>
+            <value>13.4</value>
+        </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operation>equals</operation>
+            <value>13.3</value>
+        </filters>
+        <label>Step 1?, 13.0-13.4</label>
     </listViews>
     <nameField>
         <displayFormat>SBC-{000000}</displayFormat>
