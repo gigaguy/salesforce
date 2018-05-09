@@ -3754,20 +3754,6 @@ Weekend_or_Not_Scheduled_Workday__c = FALSE,
         </filters>
         <label>My Purchase Card Training</label>
     </listViews>
-    <listViews>
-        <fullName>purchase_card_training</fullName>
-        <columns>NAME</columns>
-        <columns>Employee__c</columns>
-        <columns>Course_Title__c</columns>
-        <columns>Completion_Date__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Employee__c</field>
-            <operation>contains</operation>
-            <value>kimberly loesch</value>
-        </filters>
-        <label>purchase card training</label>
-    </listViews>
     <nameField>
         <displayFormat>LI-{000000}</displayFormat>
         <label>Line Item Name</label>
